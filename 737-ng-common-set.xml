@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <sim>
+    <author>David Culp (FDM), Syd Adams(glass instruments),Innis Cunningham (3D and Panel)</author>
+    <status>early-production</status>
+    <flight-model>jsb</flight-model>
+    <systems>
+      <path>Systems/systems.xml</path>
+    </systems>
+    <instrumentation>
+      <path>Systems/instrumentation.xml</path>
+    </instrumentation>
+    <sound>
+      <path>Sounds/737-sound.xml</path>
+    </sound>
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+    <allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
+    <model>
+      <pushback>
+        <kp type="double">100</kp>
+        <ki type="double">25</ki>
+        <kd type="double">0</kd>
+        <position-norm type="double">0</position-norm>
+      </pushback>
+    </model>
+    <view n="1">
+      <config>
+        <!-- big plane, so extend chase view offset a bit -->
+        <z-offset-m type="double" archive="y">-80.0</z-offset-m>
+      </config>
+    </view>
+    <chase-distance-m>-30</chase-distance-m>
+    <flaps>
+      <setting>0.000</setting>
+      <!-- flaps up -->
+      <setting>0.125</setting>
+      <!-- flaps 1  -->
+      <setting>0.250</setting>
+      <!-- flaps 2  -->
+      <setting>0.375</setting>
+      <!-- flaps 5  -->
+      <setting>0.500</setting>
+      <!-- flaps 10 -->
+      <setting>0.625</setting>
+      <!-- flaps 15 -->
+      <setting>0.750</setting>
+      <!-- flaps 25 -->
+      <setting>0.875</setting>
+      <!-- flaps 30 -->
+      <setting>1.000</setting>
+      <!-- flaps 40 -->
+    </flaps>
+    <ai>
+      <submodels>
+        <contrails type="bool">false</contrails>
+      </submodels>
+    </ai>
+    <submodels>
+      <serviceable>true</serviceable>
+      <path>submodels.xml</path>
+    </submodels>
+    <menubar>
+      <default>
+        <menu n="5">
+          <item n="10">
+            <label>Pushback</label>
+            <name>pushback</name>
+            <binding>
+              <command>dialog-show</command>
+              <dialog-name>pushback</dialog-name>
+            </binding>
+          </item>
+        </menu>
+        <menu n="100">
+          <label>737-800</label>
+          <enabled type="bool">true</enabled>
+          <item>
+            <label>Autostart</label>
+            <binding>
+              <command>property-toggle</command>
+              <property>sim/model/start-idling</property>
+            </binding>
+          </item>
+          <item>
+            <label>Select Livery</label>
+            <binding>
+              <command>nasal</command>
+              <script>aircraft.livery.dialog.toggle()</script>
+            </binding>
+          </item>
+          <item>
+              <label>Show/Hide Yokes</label>
+              <binding>
+                  <command>property-toggle</command>
+                  <property>sim/yokes-visible</property>
+              </binding>
+          </item>
+        </menu>
+      </default>
+    </menubar>
+    <checklists include="737ng-checklist.xml"/>
+    <yokes-visible type="bool">1</yokes-visible>
+  </sim>
+
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <level-lbs archive="y">8630</level-lbs>
+      </tank>
+      <tank n="1">
+        <level-lbs archive="y">8630</level-lbs>
+      </tank>
+      <tank n="2">
+        <level-lbs archive="y">9000</level-lbs>
+      </tank>
+      <tank n="3">
+        <hidden type="bool">1</hidden>
+      </tank>
+      <tank n="4">
+        <hidden type="bool">1</hidden>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <engines>
+    <engine n="0">
+      <running>true</running>
+    </engine>
+    <engine n="1">
+      <running>true</running>
+    </engine>
+  </engines>
+
+  <controls>
+
+    <gear>
+      <autobrakes type="int">-1</autobrakes>
+      <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
+    </gear>
+
+    <fuel>
+      <crossfeed type="bool">0</crossfeed>
+      <tank n="0">
+        <pump-fwd type="bool">0</pump-fwd>
+        <pump-aft type="bool">0</pump-aft>
+      </tank>
+      <tank n="1">
+        <pump-fwd type="bool">0</pump-fwd>
+        <pump-aft type="bool">0</pump-aft>
+      </tank>
+      <tank n="2">
+        <pump-left type="bool">0</pump-left>
+        <pump-right type="bool">0</pump-right>
+      </tank>
+    </fuel>
+
+  </controls>
+
+  <nasal>
+
+  </nasal>
+
+  <instrumentation>
+
+  </instrumentation>
+
+</PropertyList>

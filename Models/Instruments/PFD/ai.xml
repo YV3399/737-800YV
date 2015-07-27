@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+    <name>AI</name>
+    <w-base>132</w-base>
+    <h-base>138</h-base>
+
+    <layers>
+   
+  <layer>
+   <name>ati</name>
+   <w>208</w>
+   <h>665</h>
+   <emissive>true</emissive>
+   <texture>
+    <path>Models/Instruments/PFD/ati.png</path>
+    <x1>0.063</x1>
+    <y1>0.0</y1>
+    <x2>0.433</x2>
+    <y2>1.0</y2>
+    </texture>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>orientation/roll-deg</property>
+     <min>-360.0</min>
+     <max>360.0</max>
+     <scale>-1</scale>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <property>/orientation/pitch-deg</property>
+     <min>-90.0</min>
+     <max>90.0</max>
+     <scale>-3.14</scale>
+     <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+  
+
+    <layer>
+   <name>ati</name>
+   <w>15</w>
+   <h>15</h>
+   <emissive>true</emissive>
+   <texture>
+    <path>Models/Instruments/PFD/ah-face3A.png</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+    </texture>
+   <transformations>       
+    <transformation>
+     <type>rotation</type>
+     <property>orientation/roll-deg</property>
+     <min>-90.0</min>
+     <max>90.0</max>
+     <scale>-1</scale>  
+     <offset>0</offset>      
+    </transformation>
+     <transformation>
+     <type>y-shift</type>      
+     <offset>55</offset>      
+    </transformation>
+    </transformations>
+    </layer> 
+</layers>
+
+</PropertyList>

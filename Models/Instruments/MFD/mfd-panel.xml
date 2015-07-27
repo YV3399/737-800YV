@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<name>MFD Panel</name>
+<background>Models/Instruments/MFD/black.png</background>
+<w>256</w>
+<h>256</h>
+
+<instruments> 
+
+    <instrument include="APP.xml">
+        <condition>
+            <and>
+                <greater-than>
+                    <property>systems/electrical/outputs/efis</property>
+                    <value>15</value>
+                </greater-than>
+                <equals>
+                    <property>instrumentation/efis/mfd/display-mode</property>
+                    <value>APP</value>
+                </equals>
+            </and>
+        </condition>
+        <name>app</name>
+        <x>128</x>
+        <y>128</y>
+        <w>256</w>
+        <h>256</h>
+    </instrument>
+
+    <instrument include="VOR.xml">
+        <condition>
+            <and>
+                <greater-than>
+                    <property>systems/electrical/outputs/efis</property>
+                    <value>15</value>
+                </greater-than>
+                <equals>
+                    <property>instrumentation/efis/mfd/display-mode</property>
+                    <value>VOR</value>
+                </equals>
+            </and>
+        </condition>
+        <name>vor</name>
+        <x>128</x>
+        <y>128</y>
+        <w>256</w>
+        <h>256</h>
+    </instrument>
+
+    <instrument include="MAP.xml">
+        <condition>
+            <and>
+                <greater-than>
+                    <property>systems/electrical/outputs/efis</property>
+                    <value>15</value>
+                </greater-than>
+                <equals>
+                    <property>instrumentation/efis/mfd/display-mode</property>
+                    <value>MAP</value>
+                </equals>
+            </and>
+        </condition>
+        <name>map</name>
+        <x>128</x>
+        <y>128</y>
+        <w>256</w>
+        <h>256</h>
+    </instrument>
+
+    <instrument include="PLAN.xml">
+        <condition>
+            <and>
+                <greater-than>
+                    <property>systems/electrical/outputs/efis</property>
+                    <value>15</value>
+                </greater-than>
+                <equals>
+                    <property>instrumentation/efis/mfd/display-mode</property>
+                    <value>PLAN</value>
+                </equals>
+            </and>
+        </condition>
+        <name>plan</name>
+        <x>128</x>
+        <y>128</y>
+        <w>256</w>
+        <h>256</h>
+    </instrument> 
+    
+    <instrument include="radar.xml">
+        <condition>
+            <and>
+                <greater-than>
+                    <property>systems/electrical/outputs/efis</property>
+                    <value>15</value>
+                </greater-than>
+                <equals>
+                    <property>instrumentation/radar/switch</property>
+                    <value>on</value>
+                </equals>
+            </and>
+        </condition> 
+        <name>radar</name>
+        <x>128</x>
+        <y>128</y>
+        <w>256</w>
+        <h>256</h>
+    </instrument> 
+
+</instruments>
+
+</PropertyList>

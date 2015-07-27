@@ -1,0 +1,63 @@
+<!--
+Syd Adams
+777-200 Navigation display
+-->
+
+<PropertyList>
+
+ <path>EFB.ac</path>
+
+    <panel>
+        <path>Aircraft/737-300/Models/Instruments/EFB/chart.xml</path>
+        <bottom-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.078</y-m>
+            <z-m>-0.104</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>0.003</x-m>
+            <y-m>0.078</y-m>
+            <z-m>-0.104</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.078</y-m>
+            <z-m>0.104</z-m>
+        </top-left>
+    </panel>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Btn.zoomin</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/groundradar/range</property>
+            <step>-0.1</step>
+            <min>0.1</min>
+            <max>10</max>
+            <wrap>0</wrap>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Btn.zoomout</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/groundradar/range</property>
+            <step>0.1</step>
+            <min>0.1</min>
+            <max>10</max>
+            <wrap>0</wrap>
+        </binding>
+        </action>
+    </animation>
+
+</PropertyList>

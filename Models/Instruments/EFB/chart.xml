@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+    <name>Airport Chart</name>
+    <background>Aircraft/737-300/Models/Instruments/EFB/transparent.png</background>
+    <w>512</w>
+    <h>684</h>
+
+    <instruments>
+
+        <instrument include="airport-display.xml">
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/bus-volts</property>
+                    <value>15</value>
+                </greater-than>
+            </condition>
+            <name>Chart</name>
+            <x>256</x>
+            <y>362</y>
+            <w>512</w>
+            <h>512</h>
+        </instrument>
+
+
+        <instrument include="charttext.xml">
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/bus-volts</property>
+                    <value>15</value>
+                </greater-than>
+            </condition>
+            <name>Text</name>
+            <x>256</x>
+            <y>342</y>
+            <w>512</w>
+            <h>684</h>
+        </instrument>
+ 
+    </instruments>
+
+</PropertyList>

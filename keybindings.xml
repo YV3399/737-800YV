@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+
+
+        <keyboard>
+            <key n="127">
+                <name>Delete</name>
+                <desc>Toggle Reversers</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/engines/engine[0]/reverser</property>
+                </binding>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/engines/engine[1]/reverser</property>
+                </binding>
+            </key>
+            <key n="267">
+                <name>F11</name>
+                <desc>Pop up autopilot dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>dialogs.ap_settings.toggle()</script>
+                </binding>
+            </key>
+            <key n="268">
+                <name>F12</name>
+                <desc>Radio Stack</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>dialogs.Radio.open()</script>
+                </binding>
+            </key>
+            <key n="1">
+                <name>Ctrl-A</name>
+                <desc>enter altitude hold mode</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>B737.afds.input(1,1);</script>
+                </binding>
+            </key>
+             <key n="7">
+                <name>Ctrl-G</name>
+                <desc>APP mode arm</desc>
+                <binding>
+					<command>nasal</command>
+					<script>B737.afds.input(3,1);</script>
+                </binding>
+            </key>
+            <key n="8">
+                <name>Ctrl-H</name>
+                <desc>engage heading hold mode</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>B737.afds.input(0,1);</script>
+                </binding>
+            </key>
+            <key n="61">
+                <name>=</name>
+                <desc>toggle auto spoilers</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.toggleAutoSpoilers();</script>
+                </binding>
+            </key>
+            <key n="12">
+                <name>Ctrl-L</name>
+                <desc>toggle cabin lights</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/lighting/cabin-lights</property>
+                </binding>
+            </key>
+            <key n="14">
+                <name>Ctrl-N</name>
+                <desc>LNAV</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>B737.afds.input(0,3);</script>
+                </binding>
+            </key>
+            <key n="15">
+                <name>Ctrl-o</name>
+                <desc>A/P ~ Engage/Disengage</desc>
+                <binding>
+                    <command>property-toggle</command>
+ 					<property>instrumentation/afds/inputs/AP</property>
+                </binding>
+            </key>
+            <key n="16">
+                <name>Ctrl-P</name>
+                <desc>enter VS mode</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>B737.afds.input(1,2);</script>
+                </binding>
+            </key>
+            <key n="19">
+                <name>Ctrl-S</name>
+                <desc>toggle autothrottle</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>B737.afds.input(2,5);</script>
+                </binding>
+            </key>
+            <key n="20">
+                <name>Ctrl-t</name>
+                <desc>TO/GA switch</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>B737.afds.input(2,2);</script>
+                </binding>
+            </key>
+            <key n="23">
+                <name>Ctrl-W</name>
+                <desc>enable/disable EICAS warning unit</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>instrumentation/weu/serviceable</property>
+                </binding>
+            </key>
+            <!--
+            <key n="40">
+                <name>(</name>
+                <repeatable type="bool">true</repeatable>
+                <desc>Roll trim- Left</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/aileron-trim</property>
+                    <step type="double">-0.012</step>
+                </binding>
+            </key>
+            <key n="41">
+                <name>)</name>
+                <repeatable type="bool">true</repeatable>
+                <desc>Roll trim++ Right</desc>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/controls/flight/aileron-trim</property>
+                    <step type="double">0.012</step>
+                </binding>
+            </key>
+            -->
+            
+            <!--
+             <key n="108">
+                <name>l</name>
+                <desc>toggle landing lights</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.toggleLandingLights();</script>
+                </binding>
+            </key>
+            <key n="109">
+                <name>m</name>
+                <desc>mute current master warning</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>b777.Weu.mute_warnings();</script>
+                </binding>
+            </key>
+            <key n="115">
+                <name>s</name>
+                <desc>autostart / shutdown</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.autostart();</script>
+                </binding>
+            </key>
+            -->
+        </keyboard>
+  </PropertyList>
+  

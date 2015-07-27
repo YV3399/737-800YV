@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- 
+
+  
+-->
+<system name="NoseWheelSteering">
+
+  <property>fcs/tiller-cmd-norm</property>
+
+  <channel name="Steering">
+
+  <!-- Calculation of steerable section -->
+         
+    <pure_gain name="fcs/steering/steer-cmd-norm">
+      <input>fcs/steer-cmd-norm</input>
+      <gain>0.0705</gain>
+    </pure_gain>  
+
+    <summer name="fcs/steering/steer-cmd-norm-final">
+      <input>fcs/steering/steer-cmd-norm</input>
+      <input>fcs/tiller-cmd-norm</input>
+      <clipto>
+        <min>-1</min>
+        <max>1</max>
+      </clipto>
+    </summer>   
+
+    <kinematic name="fcs/steering/steer-cmd-norm-kinematic">
+      <input>fcs/steering/steer-cmd-norm-final</input>
+        <traverse>
+          <setting>
+            <position>-1</position>
+            <time>0</time>
+          </setting>
+          <setting>
+            <position>1</position>
+            <time>2</time>
+          </setting>
+        </traverse>
+    </kinematic>
+	  
+    <pure_gain name="fcs/steering/steer-pos-deg">
+      <input>fcs/steering/steer-cmd-norm-kinematic</input>
+      <gain>78</gain>
+      <output>fcs/steer-pos-deg</output>
+    </pure_gain>
+
+  </channel>
+
+</system>

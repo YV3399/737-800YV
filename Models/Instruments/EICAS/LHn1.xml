@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+    <name>LHn1</name>
+    <w-base>80</w-base>
+    <h-base>80</h-base>
+
+    <layers>
+        
+         <layer>
+            <name>Face</name>
+            <emissive>true</emissive>
+            <w>80</w>
+            <h>80</h>
+            <texture>
+                <path>Models/Instruments/EICAS/eng-n1.png</path>
+                <x1>0.0</x1>
+                <y1>0.0</y1>
+                <x2>1.0</x2>
+                <y2>1.0</y2>
+            </texture>                  
+        </layer>
+         
+        <layer>
+            <name>needle1</name>
+            <emissive>true</emissive>
+            <w>35</w>
+            <h>25</h>
+            <texture>
+                <path>Models/Instruments/EICAS/eng-n1.png</path>
+                <x1>0.0</x1>
+                <y1>0.0</y1>
+                <x2>0.2</x2>
+                <y2>0.2</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/engines/engine[1]/n1</property>
+                    <scale>1.97</scale>                                           
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>9</offset>
+                </transformation>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>12</offset>
+                </transformation>
+            </transformations>
+        </layer>        
+    </layers>
+
+</PropertyList>

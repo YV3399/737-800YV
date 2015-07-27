@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>HorzStab.ac</path> 
+
+  <animation>
+  <type>rotate</type>
+  <object-name>lhelevator</object-name>
+  <object-name>lhelevatortab</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>15</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>17.13</x-m>
+   <y-m>-0.36</y-m>
+   <z-m> 1.64</z-m>
+  </center>
+  <axis>
+   <x>-0.33</x>
+   <y>1.0</y>
+   <z>-0.2</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>  
+  <object-name>lhelevatortab</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-15</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>17.84</x-m>
+   <y-m>-0.51</y-m>
+   <z-m> 1.74</z-m>
+  </center>
+  <axis>
+   <x>-0.29</x>
+   <y>1.0</y>
+   <z>-0.18</z>
+  </axis>
+ </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>rhelevator</object-name>
+  <object-name>rhelevatortab</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>15</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>17.13</x-m>
+   <y-m>0.36</y-m>
+   <z-m>1.64</z-m>
+  </center>
+  <axis>
+   <x>0.33</x>
+   <y>1.0</y>
+   <z>0.2</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>  
+  <object-name>rhelevatortab</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-15</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>17.84</x-m>
+   <y-m>0.51</y-m>
+   <z-m>1.74</z-m>
+  </center>
+  <axis>
+   <x>0.29</x>
+   <y>1.0</y>
+   <z>0.18</z>
+  </axis>
+ </animation>
+
+
+</PropertyList>
+
+

@@ -1,0 +1,26 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+MATERIAL "lit" rgb 1 0.97912 0.97912 amb 1 1 1 emis 1 1 1 spec 0 0 0 shi 49 trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "flash"
+data 5
+flash
+texture "lights.rgb"
+texrep 1 1
+crease 30.000000
+numvert 4
+0 0.6 0.6
+0 -0.6 0.6
+0 -0.6 -0.6
+0 0.6 -0.599999
+numsurf 1
+SURF 0x00
+mat 1
+refs 4
+0 0.52999997139 0.97000002861
+3 0.97000002861 0.97000002861
+2 0.97000002861 0.52999997139
+1 0.52999997139 0.52999997139
+kids 0

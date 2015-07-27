@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+    <name>Airport Chart</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>ground network</name>
+            <texture>
+                <path>Aircraft/Instruments/Textures/od_groundradar.rgb</path>
+                <x1>0</x1>
+                <y1>0</y1>
+                <x2>1</x2>
+                <y2>1</y2>
+            </texture>
+            <emissive>1</emissive>
+            <w>512</w>
+            <h>512</h>
+        </layer>
+
+
+    </layers>
+
+</PropertyList>

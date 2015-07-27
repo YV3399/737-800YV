@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+   <path>att-ball.ac</path>
+    
+   <animation>
+  <type>rotate</type>   
+  <object-name>Ball</object-name> 
+     <property>orientation/roll-deg</property>
+     <min>-360.0</min>
+     <max>360.0</max>
+     <scale>-1</scale>
+     <axis>
+   <x>1</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+  <animation>
+  <type>rotate</type>   
+  <object-name>Ball</object-name> 
+     <property>/orientation/pitch-deg</property>
+      <interpolation>
+	    <entry><ind>-90.0</ind><dep>-220</dep></entry>
+            <entry><ind>0.0</ind><dep>0</dep></entry>
+            <entry><ind>90.0</ind><dep>220</dep></entry>
+        </interpolation>
+     <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+   <animation>
+  <type>rotate</type>   
+  <object-name>Bank-Bug</object-name> 
+     <property>orientation/roll-deg</property>
+     <min>-360.0</min>
+     <max>360.0</max>
+     <scale>-1</scale>
+     <axis>
+   <x>1</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+</PropertyList>

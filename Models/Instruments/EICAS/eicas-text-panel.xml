@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<name>EFIS Panel text</name>
+<background>Models/Instruments/EICAS/transparent.png</background>
+<w>420</w>
+<h>256</h>
+
+<instruments>
+
+    <instrument include="eicastext.xml">
+    <condition>
+        <greater-than>
+           <property>systems/electrical/outputs/efis</property>
+            <value>15</value>
+        </greater-than>
+    </condition>
+        <name>text</name>
+        <x>210</x>
+        <y>128</y>
+        <w>420</w>
+        <h>256</h>
+    </instrument>
+
+</instruments>
+
+</PropertyList>

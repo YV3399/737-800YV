@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+    <name>Chart text</name>
+    <background>Aircraft/737-300/Models/Instruments/EFB/transparent-bg.png</background>
+    <w-base>512</w-base>
+    <h-base>684</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Text</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>14</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>AIRPORT MAP</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-73</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>306</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Text1</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>14</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>literal</type>
+                    <text>NORTH-UP                  TRU</text>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-160</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>280</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Airport ID</name>
+            <type>text</type>
+            <font>arial_black</font>
+            <point-size>24</point-size>
+            <color>
+                <red>0.8</red>
+                <green>0.8</green>
+                <blue>0.8</blue>
+            </color>
+            <chunks>
+                <chunk>
+                    <type>text-value</type>
+                    <property>instrumentation/groundradar/id</property>
+                </chunk>
+            </chunks>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-36</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>275</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+</PropertyList>

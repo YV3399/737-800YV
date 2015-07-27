@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+    <name>Flaps</name>
+    <w-base>20</w-base>
+    <h-base>50</h-base>
+
+    <layers>
+
+        <layer>
+            <name>indicator</name>
+            <emissive>true</emissive>
+            <w>20</w>
+            <h>100</h>
+            <texture>
+                <path>Models/Instruments/EICAS/gauges.png</path>
+                <x1>0.319</x1>
+                <y1>0.001</y1>
+                <x2>0.400</x2>
+                <y2>0.499</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>25</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <property>surface-positions/flap-pos-norm</property>
+                    <scale>-50</scale>
+                </transformation>
+            </transformations>
+        </layer>
+        <!--
+        <layer>
+            <name>fmask</name>
+            <emissive>true</emissive>
+            <w>20</w>
+            <h>50</h>
+            <texture>
+                <path>Models/Instruments/EICAS/gauges.png</path>
+                <x1>0.512</x1>
+                <y1>0.535</y1>
+                <x2>0.668</x2>
+                <y2>0.925</y2>
+            </texture>
+        </layer>
+        -->
+    </layers>
+
+</PropertyList>

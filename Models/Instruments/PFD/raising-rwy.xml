@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+    <name>raising-rwy</name>
+    <w-base>50</w-base>
+    <h-base>70</h-base>
+
+    <layers>
+
+    <layer>
+        <name>raising-rwy</name>
+        <w>30</w>
+        <h>70</h>
+        <texture>
+            <path>Models/Instruments/PFD/ati.png</path>
+              <x1>0.573</x1>
+              <y1>0.13</y1>
+              <x2>0.82</x2>
+              <y2>0.264</y2>
+        </texture>
+        <transformations>
+            <transformation>
+                <type>x-shift</type>
+                <property>instrumentation/nav/heading-needle-deflection</property>
+                <scale>1.4</scale>
+            </transformation>
+             <transformation>
+                <type>y-shift</type>
+                <property>position/altitude-agl-ft</property>
+                <scale>-0.22</scale>
+            </transformation>
+        </transformations>
+        <emissive>true</emissive>
+    </layer>      
+</layers>
+
+</PropertyList>

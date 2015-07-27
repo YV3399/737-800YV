@@ -1,0 +1,1470 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>autopilot-panel.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>CPT-COURSE</object-name>
+         <property>/instrumentation/nav[0]/radials/selected-deg</property> 
+          <factor>-5.0</factor>         
+        <center>
+            <x-m>0.033</x-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.0231</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>rotate</type>
+        <object-name>HDG-SEL</object-name>
+        <property>/autopilot/settings/heading-bug-deg</property> 
+          <factor>-5.0</factor>         
+        <center>
+            <x-m>0.033</x-m>
+            <y-m>-0.047</y-m>
+            <z-m>0.025</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+     <animation>
+        <type>rotate</type>
+        <object-name>BANK</object-name>
+        <property>/controls/autoflight/bank-angle-select</property>          
+          <factor>-5.8</factor> 
+         <offset-deg>240</offset-deg>         
+        <center>
+            <x-m>0.033</x-m>
+            <y-m>-0.047</y-m>
+            <z-m>0.025</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+     <animation>
+        <type>rotate</type>
+        <object-name>at-arm</object-name>
+         <property>/controls/autoflight/autothrottle-arm</property> 
+          <factor>-30.0</factor>         
+        <center>
+            <x-m>0.02</x-m>
+            <y-m>-0.17</y-m>
+            <z-m>0.04</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>   
+
+         <animation>
+   	<type>textranslate</type>
+   	<object-name>CMD-A</object-name>
+	 <property>/controls/autoflight/autopilot/engage</property>
+   	<factor>0.5</factor>
+   	<axis>
+    	<x>0</x>
+     	<y>1</y>
+    	 <z>0</z>
+   	</axis>
+ 	</animation>
+
+       <animation>
+   	<type>textranslate</type>
+   	 <object-name>ALT-HLD</object-name>
+	 <property>/controls/autoflight/autopilot/alt-hld</property>        
+   	<factor>0.5</factor>
+   	<axis>
+    	<x>0</x>
+     	<y>1</y>
+    	 <z>0</z>
+   	</axis>
+ 	</animation>
+
+         <animation>
+   	<type>textranslate</type>
+   	<object-name>HDG-HLD</object-name>
+	 <property>/controls/autoflight/autopilot/hdg-sel</property>        
+   	<factor>0.5</factor>
+   	<axis>
+    	<x>0</x>
+     	<y>1</y>
+    	 <z>0</z>
+   	</axis>
+ 	</animation>
+
+          <animation>
+   	<type>textranslate</type>
+   	 <object-name>APP</object-name>
+	 <property>/controls/autoflight/autopilot/app</property>        
+   	<factor>0.5</factor>
+   	<axis>
+    	<x>0</x>
+     	<y>1</y>
+    	 <z>0</z>
+   	</axis>
+ 	</animation>
+
+         <animation>
+   	<type>textranslate</type>
+   	 <object-name>VOR-LOC</object-name>
+	 <property>/controls/autoflight/autopilot/vor</property>        
+   	<factor>0.5</factor>
+   	<axis>
+    	<x>0</x>
+     	<y>1</y>
+    	 <z>0</z>
+   	</axis>
+ 	</animation> 
+
+         <animation>
+   	<type>textranslate</type>
+   	 <object-name>SPEED</object-name>
+	 <property>/controls/autoflight/autothrottle-engage</property>        
+   	<factor>-0.06</factor>
+   	<axis>
+    	<x>0</x>
+     	<y>1</y>
+    	 <z>0</z>
+   	</axis>
+ 	</animation>   
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>CRS.1</object-name>
+        <property>instrumentation/nav[0]/radials/selected-deg</property>
+        <factor>0.1</factor>         
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>CRS.2</object-name>
+        <property>instrumentation/nav[0]/radials/selected-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>CRS.3</object-name>
+        <property>instrumentation/nav[0]/radials/selected-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>ALT.3</object-name>
+        <property>/autopilot/settings/target-altitude-ft</property> 
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>  
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>ALT.4</object-name>
+        <property>/autopilot/settings/target-altitude-ft</property> 
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+  
+     <animation>
+        <type>textranslate</type>
+        <object-name>ALT.5</object-name>
+        <property>/autopilot/settings/target-altitude-ft</property> 
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>HDG.1</object-name>
+        <property>/autopilot/settings/heading-bug-deg</property> 
+        <factor>0.1</factor>         
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>HDG.2</object-name>
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>HDG.3</object-name>
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>IAS.2</object-name>
+        <property>/autopilot/settings/target-speed-kt</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>IAS.3</object-name>
+        <property>/autopilot/settings/target-speed-kt</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>ALT-HLD</object-name>
+        <property>/controls/autoflight/autopilot/alt-hld</property>
+        <factor>-0.058</factor>
+        <step>1.0</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>CMD-A</object-name>
+        <property>/controls/autoflight/autopilot/engage</property>
+        <factor>-0.06</factor>
+        <step>1.0</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>APP</object-name>
+        <property>/controls/autoflight/autopilot/app</property>
+        <factor>-0.06</factor>
+        <step>1.0</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VOR-LOC</object-name>
+        <property>/controls/autoflight/autopilot/vor</property>
+        <factor>-0.06</factor>
+        <step>1.0</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>HDG-HLD</object-name>
+        <property>/controls/autoflight/autopilot/hdg-sel</property>
+        <factor>-0.06</factor>
+        <step>1.0</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+    <!--EFIS Animations-->
+<!--
+      <animation>
+        <type>rotate</type>
+        <object-name>BARO.knob</object-name>
+        <object-name>BARO.knob.001</object-name>
+        <property>instrumentation/efis/inputs/kpa-mode</property>
+        <factor>80</factor>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.041</y-m>
+            <z-m>0.028</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    -->
+    <animation>
+        <type>rotate</type>
+        <object-name>Range.knob</object-name>
+       
+        <property>instrumentation/efis/inputs/range</property>
+        <interpolation>
+            <entry><ind>10</ind><dep>0</dep></entry>
+            <entry><ind>20</ind><dep>30</dep></entry>
+            <entry><ind>40</ind><dep>60</dep></entry>
+            <entry><ind>80</ind><dep>90</dep></entry>
+            <entry><ind>160</ind><dep>120</dep></entry>
+            <entry><ind>320</ind><dep>150</dep></entry>
+            <entry><ind>640</ind><dep>180</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>-0.3</y-m>
+            <z-m>0.013</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <!--
+    <animation>
+        <type>rotate</type>
+        <object-name>MINS.knob</object-name>
+        <object-name>MINS.knob.001</object-name>
+        <property>instrumentation/efis/inputs/minimums-mode</property>
+        <factor>80</factor>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>-0.041</y-m>
+            <z-m>0.028</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>MODE.knob</object-name>
+        <object-name>MODE.knob.001</object-name>
+        <property>instrumentation/efis/mfd/mode-num</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>30</dep></entry>
+            <entry><ind>2</ind><dep>60</dep></entry>
+            <entry><ind>3</ind><dep>90</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>-0.020</y-m>
+            <z-m>-0.001</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+     -->
+    <animation>
+        <type>translate</type>
+        <object-name>Lvor.toggle</object-name>
+        <property>instrumentation/efis/inputs/lh-vor-adf</property>
+        <factor>0.003</factor>
+        <center>
+            <x-m>0.030</x-m>
+            <y-m>-0.361</y-m>
+            <z-m>-0.014</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>Rvor.toggle</object-name>
+        <property>instrumentation/efis/inputs/rh-vor-adf</property>
+        <factor>0.003</factor>
+        <center>
+            <x-m>0.030</x-m>
+            <y-m>0.270</y-m>
+            <z-m>0.014</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>-->      
+    <!--PICK ANIMATIONS-->
+     <animation>
+        <type>pick</type>
+        <object-name>CMD-A</object-name>
+        <visible>1</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>                    
+          <binding>
+           <condition>          
+                <equals>          
+                         <property>/controls/autoflight/autopilot/engage</property>
+                             <value type="bool">false</value>          
+                </equals>
+          </condition>      
+          <command>property-assign</command>
+          <property>/controls/autoflight/autopilot/engage</property>
+          <value type="bool">true</value>                   
+          </binding> 
+          <binding>
+           <condition>          
+                <equals>          
+                         <property>/controls/autoflight/autopilot/engage</property>
+                             <value type="bool">true</value>          
+                </equals>
+          </condition>  
+          <command>property-assign</command>
+          <property>/autopilot/locks/heading</property>
+          <value type="string">off</value>
+          </binding>           
+          <binding>
+           <condition>          
+                <equals>          
+                         <property>/controls/autoflight/autopilot/engage</property>
+                             <value type="bool">true</value>          
+                </equals>
+          </condition>  
+          <command>property-assign</command>
+          <property>/autopilot/locks/altitude</property>
+          <value type="string">off</value>
+          </binding>       
+          <binding>
+           <condition>          
+                <equals>          
+                         <property>/controls/autoflight/autopilot/engage</property>
+                             <value type="bool">true</value>          
+                </equals>
+          </condition>             
+          <command>property-assign</command>
+          <property>/autopilot/locks/vert-speed</property>
+          <value type="string">off</value>
+          </binding>                  
+        </action>
+      </animation>
+
+      <animation>
+        <type>pick</type>
+        <object-name>DISENGAGE</object-name>
+        <visible>1</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+          <binding>
+          <command>property-assign</command>
+          <property>/controls/autoflight/autopilot/engage</property>
+          <value type="bool">false</value>  
+                <step>1</step>
+                <min>0</min>
+                <max>6</max>
+                <wrap>false</wrap>
+          </binding>
+
+          <binding>
+          <command>property-assign</command>
+          <property>/autopilot/locks/heading</property>
+          <value type="string">off</value>
+          </binding>           
+
+          <binding>
+          <command>property-assign</command>
+          <property>/autopilot/locks/altitude</property>
+          <value type="string">off</value>
+          </binding>          
+
+          <binding>
+          <command>property-assign</command>
+           <property>/controls/autoflight/autopilot/alt-hld</property>
+                   <value>0</value>
+          </binding>
+     
+          <binding>
+          <command>property-assign</command>
+           <property>/controls/autoflight/autopilot/hdg-sel</property>
+                   <value type="bool">false</value>
+          </binding>
+
+         <binding>
+          <command>property-assign</command>
+           <property>/controls/autoflight/autopilot/app</property>
+                   <value type="bool">false</value>
+          </binding>
+
+          <binding>
+          <command>property-assign</command>
+           <property>/controls/autoflight/autopilot/vor</property>
+                   <value type="bool">false</value>
+          </binding> 
+        </action>
+      </animation>
+
+      <animation>
+        <type>pick</type>
+        <object-name>at-arm</object-name>
+        <visible>1</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>                    
+          <binding>
+           <condition>          
+                <equals>          
+                         <property>/controls/autoflight/autothrottle-arm</property>
+                             <value type="bool">false</value>          
+                </equals>
+          </condition>      
+          <command>property-assign</command>
+           <property>/controls/autoflight/autothrottle-arm</property>
+          <value type="bool">true</value>                   
+          </binding>          
+        </action>
+      </animation>
+
+      <animation>
+        <type>pick</type>
+        <object-name>at-arm</object-name>
+        <visible>1</visible>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>                    
+          <binding>
+           <condition>          
+                <equals>          
+                         <property>/controls/autoflight/autothrottle-arm</property>
+                             <value type="bool">true</value>          
+                </equals>
+          </condition>      
+          <command>property-assign</command>
+           <property>/controls/autoflight/autothrottle-arm</property>
+          <value type="bool">false</value>                   
+          </binding> 
+          <binding>
+           <command>property-assign</command>
+           <property>/autopilot/locks/speed</property>
+          <value type="string">off</value>                   
+          </binding> 
+          <binding>
+           <command>property-assign</command>
+           <property>/controls/autoflight/autothrottle-engage</property>
+          <value type="string">false</value>                   
+          </binding> 
+        </action>
+      </animation>
+
+      <animation>
+        <type>pick</type>
+        <object-name>ALT-HLD</object-name>
+        <visible>1</visible>
+        <action>
+        <button>0</button>
+            <repeatable>false</repeatable> 
+       <binding>            
+         <condition>
+              <and>
+                <equals>
+                 <property>/controls/autoflight/autopilot/engage</property>
+                   <value type="bool">true</value>
+                </equals>
+                <equals>
+                  <property>/autopilot/locks/altitude</property>
+                   <value type="string">off</value>
+                </equals>                 
+             </and>
+         </condition>          
+         <command>property-assign</command>
+         <property>/autopilot/locks/altitude</property>
+         <value type="string">ALT-ACQ</value>
+         </binding>
+         <binding>
+         <condition>             
+                <equals>
+                   <property>/autopilot/locks/altitude</property>
+                    <value type="string">ALT-ACQ</value>
+                </equals>                
+         </condition> 
+         <command>property-assign</command>
+          <property>/controls/autoflight/autopilot/alt-hld</property>
+          <value>1</value>
+          </binding>          
+         </action>
+     </animation>     
+
+     <animation>
+        <type>pick</type>
+        <object-name>HDG-HLD</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>false</repeatable>             
+          <binding>
+               <condition>
+                 <and> 
+                    <equals>
+                    <property>/controls/autoflight/autopilot/engage</property>
+                     <value type="bool">true</value>
+                   </equals>
+                    <equals>
+                     <property>/controls/autoflight/autopilot/app</property>
+          <value type="bool">false</value>>
+                   </equals>
+               </and>
+          </condition>
+          <command>property-assign</command>
+          <property>/autopilot/locks/heading</property>
+          <value type="string">HDG-SEL</value>
+          </binding>
+
+          <binding>
+          <condition>                
+                    <equals>
+                    <property>/autopilot/locks/heading</property>
+                      <value type="string">HDG-SEL</value>
+                   </equals>              
+          </condition>
+           <command>property-assign</command>
+           <property>/controls/autoflight/autopilot/hdg-sel</property>
+            <value type="bool">true</value>
+       </binding>  
+
+        <binding>
+          <condition>                
+                    <equals>
+                    <property>/autopilot/locks/heading</property>
+                      <value type="string">HDG-SEL</value>
+                   </equals>              
+          </condition>
+           <command>property-assign</command>
+           <property>/controls/autoflight/autopilot/vor</property>
+            <value type="bool">false</value>
+       </binding>       
+      </action> 
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>APP</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>false</repeatable>             
+       <binding>
+        <condition>        
+       <equals>
+       <property>/controls/autoflight/autopilot/engage</property>
+       <value type="bool">true</value>
+       </equals>       
+       </condition> 
+       <command>property-assign</command>
+       <property>/autopilot/locks/altitude</property>
+       <value type="string">G/S</value>
+       </binding>
+
+       <binding>
+       <condition>        
+       <equals>
+       <property>/controls/autoflight/autopilot/engage</property>
+       <value type="bool">true</value>
+       </equals>        
+       </condition> 
+       <command>property-assign</command>
+       <property>/autopilot/locks/heading</property>
+       <value type="string">VOR-LOC</value>
+       </binding>
+      
+       <binding>
+        <condition>       
+       <equals>
+        <property>/autopilot/locks/altitude</property>
+       <value type="string">G/S</value>
+       </equals>        
+       </condition> 
+       <command>property-assign</command>
+      <property>/controls/autoflight/autopilot/app</property>
+       <value type="bool">true</value>
+       </binding>
+
+       <binding>
+       <condition>       
+       <equals>
+        <property>/autopilot/locks/altitude</property>
+       <value type="string">G/S</value>
+       </equals>        
+       </condition> 
+       <command>property-assign</command>
+      <property>/controls/autoflight/autopilot/vor</property>
+       <value type="bool">false</value>
+       </binding> 
+
+       <binding>
+       <condition>       
+       <equals>
+        <property>/autopilot/locks/altitude</property>
+       <value type="string">G/S</value>
+       </equals>        
+       </condition> 
+       <command>property-assign</command>
+      <property>/controls/autoflight/autopilot/alt-hld</property>
+       <value>0</value>
+       </binding>
+
+       <binding>
+       <condition>       
+       <equals>
+        <property>/autopilot/locks/altitude</property>
+       <value type="string">G/S</value>
+       </equals>        
+       </condition> 
+       <command>property-assign</command>
+      <property>/controls/autoflight/autopilot/hdg-sel</property>
+       <value type="bool">false</value>
+       </binding>       
+      </action> 
+    </animation>  
+
+     <animation>
+        <type>pick</type>
+        <object-name>VOR-LOC</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>false</repeatable>           
+       <binding>
+               <condition>
+                 <and> 
+                    <equals>
+                    <property>/controls/autoflight/autopilot/engage</property>
+                     <value type="bool">true</value>
+                   </equals>
+                    <equals>
+                     <property>/controls/autoflight/autopilot/app</property>
+          <value type="bool">false</value>>
+                   </equals>
+               </and>
+          </condition>
+          <command>property-assign</command>
+          <property>/autopilot/locks/heading</property>
+           <value type="string">VOR-LOC</value>
+          </binding>        
+       <binding>           
+       <command>property-assign</command>
+       <property>/controls/autoflight/autopilot/hdg-sel</property>
+       <value type="bool">false</value>
+       </binding> 
+         <binding>
+               <condition>
+                 <and> 
+                    <equals>
+                    <property>/controls/autoflight/autopilot/engage</property>
+                     <value type="bool">true</value>
+                   </equals>
+                    <equals>
+                     <property>/controls/autoflight/autopilot/app</property>
+          <value type="bool">false</value>>
+                   </equals>
+               </and>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/autoflight/autopilot/vor</property>
+            <value type="bool">true</value>
+          </binding>          
+      </action> 
+
+    </animation> 
+
+     <animation>
+        <type>pick</type>
+        <object-name>SPEED</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>false</repeatable>           
+       <binding>
+               <condition>                
+                    <equals>
+                    <property>/controls/autoflight/autothrottle-arm</property>
+                     <value type="bool">true</value>
+                   </equals>                  
+          </condition>
+          <command>property-assign</command>
+          <property>/autopilot/locks/speed</property>
+           <value type="string">THR</value>
+          </binding>
+          <binding>
+          <condition>                
+                    <equals>
+                    <property>/controls/autoflight/autothrottle-arm</property>
+                     <value type="bool">true</value>
+                   </equals>                  
+          </condition>
+           <command>property-assign</command>
+           <property>/controls/autoflight/autothrottle-engage</property>
+          <value type="string">true</value>                   
+          </binding>     
+             
+      </action> 
+
+    </animation> 
+     
+     <animation>
+        <type>pick</type>
+        <object-name>CPT-COURSE</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/instrumentation/nav[0]/radials/selected-deg</property> 
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>                
+       <wrap>true</wrap>       
+       </binding>
+      </action> 
+    </animation>
+      
+     <animation>
+        <type>pick</type>
+        <object-name>CPT-COURSE</object-name>
+        <visible>1</visible>
+        <action>
+         <button>1</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/instrumentation/nav[0]/radials/selected-deg</property> 
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>                
+       <wrap>true</wrap>       
+       </binding>
+      </action> 
+    </animation> 
+    
+    <animation>
+        <type>pick</type>
+        <object-name>HDG-SEL</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>
+       <interval-sec>0.2</interval-sec>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/autopilot/settings/heading-bug-deg</property> 
+       <step>1</step>
+       <min>0</min>
+       <max>360</max>                
+       <wrap>true</wrap>       
+       </binding>
+      </action> 
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDG-SEL</object-name>
+        <visible>1</visible>
+        <action>
+         <button>1</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/autopilot/settings/heading-bug-deg</property> 
+       <step>-1</step>
+       <min>0</min>
+       <max>360</max>                
+       <wrap>true</wrap>       
+       </binding>
+      </action> 
+    </animation> 
+
+    <animation>
+        <type>pick</type>
+        <object-name>ALT-SEL</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/autopilot/settings/target-altitude-ft</property>
+       <step>100</step>
+       <min>0</min>
+       <max>40000</max>                
+       <wrap>false</wrap>       
+       </binding>
+      </action> 
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ALT-SEL</object-name>
+        <visible>1</visible>
+        <action>
+         <button>1</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/autopilot/settings/target-altitude-ft</property> 
+       <step>-100</step>
+       <min>0</min>
+       <max>40000</max>                
+       <wrap>false</wrap>       
+       </binding>
+      </action> 
+    </animation>    
+
+     <animation>
+        <type>pick</type>
+        <object-name>IAS-MACH</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/autopilot/settings/target-speed-kt</property> 
+       <step>10</step>
+       <min>0</min>
+       <max>300</max>                
+       <wrap>false</wrap>       
+       </binding>      
+      </action> 
+    </animation>     
+
+      <animation>
+        <type>pick</type>
+        <object-name>IAS-MACH</object-name>
+        <visible>1</visible>
+        <action>
+         <button>1</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/autopilot/settings/target-speed-kt</property> 
+       <step>-10</step>
+       <min>0</min>
+       <max>300</max>                
+       <wrap>false</wrap>       
+       </binding>
+      </action> 
+    </animation> 
+
+     <animation>
+        <type>pick</type>
+        <object-name>BANK</object-name>
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/controls/autoflight/bank-angle-select</property> 
+       <step>5</step>
+       <min>0</min>
+       <max>30</max>                
+       <wrap>false</wrap>       
+       </binding>
+      </action> 
+    </animation> 
+
+    <animation>
+        <type>pick</type>
+        <object-name>BANK</object-name>
+        <visible>1</visible>
+        <action>
+         <button>1</button>
+            <repeatable>true</repeatable>           
+       <binding>   
+       <command>property-adjust</command>
+       <property>/controls/autoflight/bank-angle-select</property> 
+       <step>-5</step>
+       <min>0</min>
+       <max>30</max>                
+       <wrap>false</wrap>       
+       </binding>
+      </action> 
+    </animation> 
+
+    <!--EFIS Pick Animations-->
+
+    <animation>
+        <type>pick</type>
+        <object-name>ND.center</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("center",0);</script>
+        </binding>
+        </action>
+    </animation>
+    <!--
+    <animation>
+        <type>pick</type>
+        <object-name>Mtrs.btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>instrumentation/efis/inputs/alt-meters</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>FPV.btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>instrumentation/efis/inputs/fpv-view</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RDR.pos</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>instrumentation/radar/display-controls/pos</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RDR.data</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>instrumentation/radar/display-controls/data</property>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RDR.terr</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>b777.Efis.ctl_func("terr",0);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RDR.arpt</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>b777.Efis.ctl_func("arpt",0);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RDR.wpt</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>b777.Efis.ctl_func("wpt",0);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RDR.sta</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("sta",0);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RDR.wxr</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("wxr",0);</script>
+        </binding>
+        </action>
+    </animation>
+-->
+    <animation>
+        <type>pick</type>
+        <object-name>Rvor.toggle</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("rhvor",1);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Rvor.toggle</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("rhvor",-1);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Lvor.toggle</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("lhvor",1);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Lvor.toggle</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("lhvor",-1);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Range.knob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("range",-1);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>Range.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("range",1);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>TFC</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("tfc",1);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>BARO.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/efis/inputs/kpa-mode</property>
+            <value>0</value>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>BARO.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/efis/inputs/kpa-mode</property>
+            <value>1</value>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>BARO.knob2</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+             <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter/setting-inhg</property>
+                <step>0.01</step>
+                <min>26.0</min>
+                <max>33.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>BARO.knob2</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+             <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter/setting-inhg</property>
+                <step>-0.01</step>
+                <min>26.0</min>
+                <max>33.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>inhg.reset</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+             <binding>
+                <command>property-assign</command>
+                <property>instrumentation/altimeter/setting-inhg</property>
+                <value>29.92</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>MINS.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+             <binding>
+                <command>property-assign</command>
+                <property>instrumentation/efis/inputs/minimums-mode</property>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>MINS.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+             <binding>
+                <command>property-assign</command>
+                <property>instrumentation/efis/inputs/minimums-mode</property>
+                <value>1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>MINS.knob2</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+             <binding>
+                <command>nasal</command>
+                <script>B737.Efis.ctl_func("dh",10);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>MINS.knob2</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+             <binding>
+                <command>nasal</command>
+                <script>B737.Efis.ctl_func("dh",-10);</script>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>DH.reset</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+             <binding>
+                <command>nasal</command>
+                <script>B737.Efis.ctl_func("dh",0);</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>MODE.knob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("display",1);</script>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>MODE.knob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>nasal</command>
+            <script>B737.Efis.ctl_func("display",-1);</script>
+        </binding>
+        </action>
+    </animation>
+                                          
+
+</PropertyList>
+
+

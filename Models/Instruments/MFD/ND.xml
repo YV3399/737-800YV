@@ -1,0 +1,48 @@
+<!--
+Syd Adams
+777-200 Navigation display
+-->
+
+<PropertyList>
+
+ <path>EFIS.ac</path>
+     
+    <panel>
+        <path>Models/Instruments/MFD/mfd-panel.xml</path>
+        <bottom-left>
+            <x-m>-0.003</x-m>
+            <y-m>-0.070</y-m>
+            <z-m>-0.077</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>-0.003</x-m>
+            <y-m>0.068</y-m>
+            <z-m>-0.077</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.070</y-m>
+            <z-m>0.074</z-m>
+        </top-left>
+    </panel>
+    
+    <panel>
+        <path>Models/Instruments/MFD/mfdtext-panel.xml</path>
+         <bottom-left>
+            <x-m>-0.003</x-m>
+            <y-m>-0.070</y-m>
+            <z-m>-0.077</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>-0.003</x-m>
+            <y-m>0.068</y-m>
+            <z-m>-0.077</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.070</y-m>
+            <z-m>0.074</z-m>
+        </top-left>
+    </panel>
+   
+</PropertyList>

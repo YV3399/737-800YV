@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+   <path>standby-asi.ac</path> 
+       
+       <animation>
+<type>material</type> 
+<object-name>Frame</object-name>
+<emission>
+    <red>0.1</red>
+    <green>0.1</green>
+    <blue>0.1</blue>
+	    <factor-prop>/controls/lighting/panel-norm[0]</factor-prop>
+ </emission>
+</animation> 
+
+     <animation>
+	<type>material</type> 
+	<object-name>face</object-name>
+	<emission>
+    		<red>0.8</red>
+    		<green>0.8</green>
+    		<blue>0.8</blue>
+	    <factor-prop>/controls/lighting/panel-norm[0]</factor-prop>
+ 	</emission>
+</animation> 
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>iastape</object-name>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>60.0</ind><dep>0.0244</dep></entry>
+            <entry><ind>300.0</ind><dep>0.4120</dep></entry>
+            <entry><ind>580</ind><dep>0.8697</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ALT.needle</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.036</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.008</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>alttxt.004</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.1</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>alttxt.003</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>alttxt.002</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>alttxt.001</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>alttxt</object-name>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>inhg.001</object-name>
+        <property>/instrumentation/altimeter/setting-inhg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>inhg.002</object-name>
+        <property>/instrumentation/altimeter/setting-inhg</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>inhg.003</object-name>
+        <property>/instrumentation/altimeter/setting-inhg</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>inhg.004</object-name>
+        <property>/instrumentation/altimeter/setting-inhg</property>
+        <factor>10.0</factor>
+        <step>0.01</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>kpa.001</object-name>
+        <property>/instrumentation/efis/kpa</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>kpa.002</object-name>
+        <property>/instrumentation/efis/kpa</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>kpa.003</object-name>
+        <property>/instrumentation/efis/kpa</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>kpa.004</object-name>
+        <property>/instrumentation/efis/kpa</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+</PropertyList>
