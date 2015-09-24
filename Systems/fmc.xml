@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- 
+
+  
+-->
+<system name="FMC Calculations">
+
+  <channel name="Calculations">
+
+     <fcs_function name="/instrumentation/fmc/cg">
+        <function>
+            <description>MAC in percents</description>
+            <product>
+              <sum>
+                <property>inertia/cg-x-in</property>
+                <value>-695.0475</value>
+              </sum>
+              <value>0.641807329</value>
+            </product>
+        </function>
+     </fcs_function>
+
+  </channel>
+
+</system>

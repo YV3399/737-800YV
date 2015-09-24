@@ -16,13 +16,13 @@
 -->
 
     <metrics>
-        <wingarea unit="FT2"> 1341.00 </wingarea>
-        <wingspan unit="IN">  1350.81 </wingspan>
-        <chord unit="IN">      155.81 </chord>
-        <htailarea unit="FT2"> 352.80 </htailarea>
-        <htailarm unit="IN">   696.72 </htailarm>
-        <vtailarea unit="FT2"> 284.60 </vtailarea>
-        <vtailarm unit="IN">   642.83 </vtailarm>
+        <wingarea unit="FT2"> 1341.00 </wingarea> <!-- value from simulator data. Checked -->
+        <wingspan unit="IN">  1350.81 </wingspan> <!-- value from simulator data. Checked -->
+        <chord unit="IN">      155.81 </chord> <!-- value from simulator data. Checked -->
+        <htailarea unit="FT2"> 352.80 </htailarea> <!-- value from simulator data. Checked -->
+        <htailarm unit="IN">   696.72 </htailarm> <!-- value from simulator data. Checked -->
+        <vtailarea unit="FT2"> 284.60 </vtailarea> <!-- value from simulator data. Checked -->
+        <vtailarm unit="IN">   642.83 </vtailarm> <!-- value from simulator data. Checked -->
         <location name="AERORP" unit="IN">
             <x>  734 </x> <!-- 25% MAC -->
             <y>    0 </y>
@@ -77,7 +77,7 @@
               <side>120.0 </side>
             </force_lag_filter>
             <wheel_slip_filter> 120.0 </wheel_slip_filter>
-            <max_steer unit="DEG"> 35 </max_steer>
+            <max_steer unit="DEG"> 78 </max_steer>
             <brake_group> NONE </brake_group>
             <retractable>1</retractable>
         </contact>
@@ -269,6 +269,7 @@
    <system file="pushback"/>
    <system file="steering"/>
    <system file="fuel"/>
+   <system file="fmc"/>
 
 
     <flight_control name="FCS: 737">
@@ -318,25 +319,99 @@
                 </clipto>
             </summer>
 
-            <aerosurface_scale name="Left Aileron Control">
-                <input>fcs/roll-trim-sum</input>
-                <range>
-                    <min>-0.35</min>
-                    <max> 0.35</max>
-                </range>
+            <fcs_function name="Left Aileron Control">
+                <function>
+                    <table>
+                        <independentVar>fcs/roll-trim-sum</independentVar>
+                        <tableData>
+                            -1              -0.3577924967
+                            -0.9195402299   -0.3271881482
+                            -0.8620689655   -0.3028076439
+                            -0.8045977011   -0.2784271396
+                            -0.7471264368   -0.2540448899
+                            -0.6896551724   -0.2296643856
+                            -0.632183908    -0.2078407886
+                            -0.5747126437   -0.1861428554
+                            -0.5172413793   -0.1644445731
+                            -0.4597701149   -0.1427468143
+                            -0.4022988506   -0.1210490556
+                            -0.3448275862   -0.0993512969
+                            -0.2873563218   -0.0792398679
+                            -0.2298850575   -0.0591930161
+                            -0.1724137931   -0.0391461643
+                            -0.1149425287   -0.0198375868
+                            -0.0574712644   -0.000818809
+                            0               0.0181999444
+                            0.0574712644    0.035044117
+                            0.1149425287    0.0518179528
+                            0.1724137931    0.0685919632
+                            0.2298850575    0.085421126
+                            0.2873563218    0.1023026486
+                            0.3448275862    0.1191841713
+                            0.4022988506    0.1345229974
+                            0.4597701149    0.1495581363
+                            0.5172413793    0.1645932751
+                            0.5747126437    0.1796275413
+                            0.632183908     0.1946635528
+                            0.6896551724    0.209697819
+                            0.7471264368    0.2231124196
+                            0.8045977011    0.2363751766
+                            0.8620689655    0.2496361882
+                            0.9195402299    0.2628989452
+                            1               0.2705260341
+                        </tableData>
+                    </table>
+                </function>
                 <output>fcs/left-aileron-pos-rad</output>
-            </aerosurface_scale>
+            </fcs_function>
 
-            <aerosurface_scale name="Right Aileron Control">
-                <input>-fcs/roll-trim-sum</input>
-                <range>
-                    <min>-0.35</min>
-                    <max> 0.35</max>
-                </range>
+            <fcs_function name="Right Aileron Control">
+                <function>
+                    <table>
+                        <independentVar>fcs/roll-trim-sum</independentVar>
+                        <tableData>
+                            -1              0.2705260341
+                            -0.9195402299   0.2628989452
+                            -0.8620689655   0.2496361882
+                            -0.8045977011   0.2363751766
+                            -0.7471264368   0.2231124196
+                            -0.6896551724   0.209697819
+                            -0.632183908    0.1946635528
+                            -0.5747126437   0.1796275413
+                            -0.5172413793   0.1645932751
+                            -0.4597701149   0.1495581363
+                            -0.4022988506   0.1345229974
+                            -0.3448275862   0.1191841713
+                            -0.2873563218   0.1023026486
+                            -0.2298850575   0.085421126
+                            -0.1724137931   0.0685919632
+                            -0.1149425287   0.0518179528
+                            -0.0574712644   0.035044117
+                            0               0.0181999444
+                            0.0574712644    -0.000818809
+                            0.1149425287    -0.0198375868
+                            0.1724137931    -0.0391461643
+                            0.2298850575    -0.0591930161
+                            0.2873563218    -0.0792398679
+                            0.3448275862    -0.0993512969
+                            0.4022988506    -0.1210490556
+                            0.4597701149    -0.1427468143
+                            0.5172413793    -0.1644445731
+                            0.5747126437    -0.1861428554
+                            0.632183908     -0.2078407886
+                            0.6896551724    -0.2296643856
+                            0.7471264368    -0.2540448899
+                            0.8045977011    -0.2784271396
+                            0.8620689655    -0.3028076439
+                            0.9195402299    -0.3271881482
+                            1               -0.3577924967
+                        </tableData>
+                    </table>
+                </function>
                 <output>fcs/right-aileron-pos-rad</output>
-            </aerosurface_scale>
+            </fcs_function>
 
-            <aerosurface_scale name="Left aileron Normalized">
+           <aerosurface_scale name="Left aileron Normalized">
                 <input>fcs/left-aileron-pos-rad</input>
                 <domain>
                     <min>-0.35</min>
@@ -494,8 +569,120 @@
             </kinematic>
 
         </channel>
+
         <channel name="Flight Spoilers">
           <!-- operated by the speedbrake handle and roll control -->
+
+          <fcs_function name="Left outbrd spoilers command">
+                <function>
+                    <table>
+                        <independentVar>fcs/roll-trim-sum</independentVar>
+                        <tableData>
+-1  33.0184
+-0.9885057471   33.0184
+-0.9770114943   33.0184
+-0.9655172414   33.0184
+-0.9540229885   32.7803
+-0.9425287356   32.444
+-0.9310344828   32.10765
+-0.9195402299   31.77135
+-0.908045977    31.43505
+-0.8965517241   31.08955
+-0.8850574713   30.6224
+-0.8735632184   30.08215
+-0.8620689655   29.378
+-0.8505747126   28.67385
+-0.8390804598   27.9697
+-0.8275862069   27.26555
+-0.816091954    26.5761
+-0.8045977011   25.93135
+-0.7931034483   25.2966
+-0.7816091954   24.6618
+-0.7701149425   24.02705
+-0.7586206897   23.3923
+-0.7471264368   22.7575
+-0.7356321839   22.12275
+-0.724137931    21.488
+-0.7126436782   20.85325
+-0.7011494253   20.2185
+-0.6896551724   19.58375
+-0.6781609195   19.04075
+-0.6666666667   18.52865
+-0.6551724138   18.0166
+-0.6436781609   17.5045
+-0.632183908    16.99245
+-0.6206896552   16.48035
+-0.6091954023   15.9683
+-0.5977011494   15.468
+-0.5862068966   14.9896
+-0.5747126437   14.52185
+-0.5632183908   14.0885
+-0.5517241379   13.65515
+-0.5402298851   13.22175
+-0.5287356322   12.7883
+-0.5172413793   12.33675
+-0.5057471264   11.8852
+-0.4942528736   11.4337
+-0.4827586207   11.0293
+-0.4712643678   10.676655
+-0.4597701149   10.33607
+-0.4482758621   9.995485
+-0.4367816092   9.6549
+-0.4252873563   9.314265
+-0.4137931034   8.973695
+-0.4022988506   8.6331
+-0.3908045977   8.29243
+-0.3793103448   7.944395
+-0.367816092    7.59636
+-0.3563218391   7.248325
+-0.3448275862   6.90029
+-0.3333333333   6.552255
+-0.3218390805   6.2255
+-0.3103448276   5.932125
+-0.2988505747   5.638755
+-0.2873563218   5.345385
+-0.275862069    5.052015
+-0.2643678161   4.75864
+-0.2528735632   4.46527
+-0.2413793103   4.15397
+-0.2298850575   3.83479
+-0.2183908046   3.440555
+-0.2068965517   3.040925
+-0.1954022989   2.574015
+-0.183908046    2.030135
+-0.1724137931   1.4862485
+-0.1609195402   0.942369
+-0.1494252874   0.5379572
+-0.1379310345   0.2302212
+-0.1264367816   0
+-0.1149425287   0
+-0.1034482759   0
+-0.091954023    0
+-0.0804597701   0
+-0.0689655172   0
+-0.0574712644   0
+-0.0459770115   0
+-0.0344827586   0
+-0.0229885057   0
+-0.0114942529   0
+0   0
+                        </tableData>
+                    </table>
+                </function>
+                <output>fcs/spoilers-23-cmd</output>
+            </fcs_function>
+
+            <actuator name="Spoilers 23 pos deg">
+                <input>fcs/spoilers-23-cmd</input>
+                <lag>0</lag>
+                <rate_limit>100</rate_limit>
+                <bias>0</bias>
+                <deadband_width>1</deadband_width>
+                <hysteresis_width>2</hysteresis_width>
+                <output>fcs/spoilers-23-pos</output>
+            </actuator>
+
+
             <kinematic name="Flight Spoilers Control">
                 <input>fcs/speedbrake-cmd-norm</input>
                 <traverse>
@@ -512,6 +699,7 @@
             </kinematic>
 
         </channel>
+
         <channel name="Ground Spoilers">
           <!-- these only operate on the ground -->
             <kinematic name="Ground Spoilers Control">
@@ -541,7 +729,7 @@
                   <table>
                       <independentVar>aero/h_b-mac-ft</independentVar>
                       <tableData>
-                          0.0000	0.0480
+                          0.0000	0.4800
                           0.1000	0.5150
                           0.1500	0.6290
                           0.2000	0.7090

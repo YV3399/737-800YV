@@ -95,6 +95,16 @@
                   <property>sim/yokes-visible</property>
               </binding>
           </item>
+          <item>
+            <label>Tiller steering</label>
+            <binding>
+              <command>nasal</command>
+              <script>
+                var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800/Dialogs/tiller-steering.xml");
+                tiller.open();
+              </script>
+            </binding>
+          </item>
         </menu>
       </default>
     </menubar>

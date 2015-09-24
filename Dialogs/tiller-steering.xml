@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name>tiller_steering</name>
+  <layout>vbox</layout>
+  <draggable>true</draggable>
+  <resizable>true</resizable>
+
+  <nasal>
+    <open>
+      props.globals.initNode("/sim/gui/dialogs/tiller_steering/value", 0.0);
+      setprop("fdm/jsbsim/fcs/tiller-cmd-norm", 0.0);
+    </open>
+    <close>
+      setprop("/sim/gui/dialogs/tiller_steering/value", 0.0);
+      setprop("fdm/jsbsim/fcs/tiller-cmd-norm", 0.0);
+    </close>
+  </nasal>
+
+  <group>
+    <layout>hbox</layout>
+    <text>
+      <label>Tiller Steering</label>
+    </text>
+
+    <empty>
+      <stretch>true</stretch>
+    </empty>
+
+    <button>
+      <legend/>
+      <key>Esc</key>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <stretch>true</stretch>
+    <layout>vbox</layout>
+    <halign>left</halign>
+    <valign>top</valign>
+    <padding>5</padding>
+    <pref-width>300</pref-width>
+  
+    <group>
+      <layout>hbox</layout>
+      <halign>center</halign>
+      
+      <dial>
+        <min>-78</min>
+        <max>78</max>
+        <wrap>false</wrap>
+        <property>/sim/gui/dialogs/tiller_steering/value</property>
+      <!--  <enable><property>/fdm/jsbsim/fcs/realism/tiller-enabled</property></enable> -->
+        <binding>
+          <command>dialog-apply</command>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script><![CDATA[
+            setprop("fdm/jsbsim/fcs/tiller-cmd-norm",
+            getprop("/sim/gui/dialogs/tiller_steering/value") / 78.0);
+            ]]>
+          </script>
+        </binding>
+      </dial>
+      
+      <group>
+        <layout>vbox</layout>
+        <halign>left</halign>
+        
+        <text>
+          <halign>left</halign>
+          <property>fdm/jsbsim/fcs/steer-pos-deg</property>
+          <format>%2.0f degrees</format>
+          <live>true</live>
+          <!--<enable><property>/fdm/jsbsim/fcs/realism/tiller-enabled</property></enable>-->
+        </text>
+        <button>
+          <legend>Center</legend>
+          <border>2</border>
+          <!--<enable><property>/fdm/jsbsim/fcs/realism/tiller-enabled</property></enable>-->
+          <binding>
+            <command>nasal</command>
+            <script>
+              setprop("/sim/gui/dialogs/tiller_steering/value", 0.0);
+              setprop("fdm/jsbsim/fcs/tiller-cmd-norm", 0.0);
+            </script>
+          </binding>
+          <binding>
+            <command>dialog-update</command>
+          </binding>
+        </button>
+        
+      </group>
+    </group>
+  </group>
+
+  <hrule/>
+
+</PropertyList>
