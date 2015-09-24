@@ -1,12 +1,40 @@
 <?xml version="1.0"?>
 <PropertyList>
   <sim>
-    <author>David Culp (FDM), Syd Adams(glass instruments),Innis Cunningham (3D and Panel)</author>
+    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (current development)</author>
     <status>early-production</status>
     <flight-model>jsb</flight-model>
+
     <systems>
-      <path>Systems/systems.xml</path>
+      <electrical>
+        <path></path>
+      </electrical>
+      <pitot>
+        <name>pitot</name>
+        <number>0</number>
+      </pitot>
+      <static>
+        <name>static</name>
+        <number>0</number>
+        <tau>1</tau>
+      </static>
+      <vacuum>
+        <name>vacuum</name>
+        <number>0</number>
+        <rpm>engines/engine[0]n1</rpm>
+        <scale>20.0</scale>
+      </vacuum>
+      <vacuum>
+        <name>vacuum</name>
+        <number>1</number>
+        <rpm>engines/engine[1]/n1</rpm>
+        <scale>20.0</scale>
+      </vacuum>
+      <autopilot>
+        <path>Aircraft/737-800/Systems/737_pfd.xml</path>
+      </autopilot>
     </systems>
+
     <instrumentation>
       <path>Systems/instrumentation.xml</path>
     </instrumentation>
@@ -50,15 +78,18 @@
       <setting>1.000</setting>
       <!-- flaps 40 -->
     </flaps>
+
     <ai>
       <submodels>
         <contrails type="bool">false</contrails>
       </submodels>
     </ai>
+
     <submodels>
       <serviceable>true</serviceable>
       <path>submodels.xml</path>
     </submodels>
+
     <menubar>
       <default>
         <menu n="5">
@@ -108,8 +139,11 @@
         </menu>
       </default>
     </menubar>
+
     <checklists include="737ng-checklist.xml"/>
+
     <yokes-visible type="bool">1</yokes-visible>
+
   </sim>
 
   <consumables>
@@ -141,6 +175,13 @@
     </engine>
   </engines>
 
+  <autopilot>
+    <settings>
+      <target-speed-kt type="int">100</target-speed-kt>
+      <target-altitude-ft type="int">2700</target-altitude-ft>
+    </settings>
+  </autopilot>
+
   <controls>
 
     <gear>
@@ -167,7 +208,10 @@
   </controls>
 
   <nasal>
-
+    <boeing737>
+      <file>Aircraft/Generic/limits.nas</file>
+      <file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
+    </boeing737>
   </nasal>
 
   <instrumentation>

@@ -27,6 +27,50 @@
                  
 	</sim>
 
+	<limits> <!-- based on EI-RUA aircraft data -->
+		<mass-and-balance>
+			<maximum-ramp-mass-lbs>173000</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>172500</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>144000</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>136000</maximum-zero-fuel-mass-lbs>
+		</mass-and-balance>
+		<max-flap-extension-speed>
+			<flaps>0.125</flaps>
+			<speed>250</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.250</flaps>
+			<speed>250</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.375</flaps>
+			<speed>250</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.500</flaps>
+			<speed>210</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.625</flaps>
+			<speed>200</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.750</flaps>
+			<speed>190</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.875</flaps>
+			<speed>175</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>1.000</flaps>
+			<speed>162</speed>
+		</max-flap-extension-speed>
+		<max-gear-extension-speed>270</max-gear-extension-speed>
+		<vne>340</vne>
+		<max-positive-g>2.5</max-positive-g> 
+	</limits>
+
 </PropertyList>
 
 

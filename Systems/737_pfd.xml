@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+
+    <filter>
+        <name>Stall speed margin computer</name> 
+        <type>gain</type>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <gain>0.9</gain>
+        <input>
+            <property>autopilot/route-manager/destination/field-elevation-ft</property>
+        </input>
+        <reference>
+            <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        </reference>
+        <output>instrumentation/pfd/touchdown-zone-diff</output>
+    </filter>
+    <filter>
+        <name>Stall speed margin computer</name> 
+        <type>gain</type>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <gain>0.9</gain>
+        <input>
+            <property>instrumentation/mk-viii/inputs/arinc429/decision-height</property>
+        </input>
+        <reference>
+            <property>instrumentation/altimeter/indicated-altitude-ft</property>
+        </reference>
+        <output>instrumentation/pfd/minimums-diff</output>
+    </filter>
+  
+    <filter>
+        <name>IAS speed limit</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input> 
+            <expression>
+                <table>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
+                    <entry><ind>617294</ind><dep>138</dep></entry>
+                    <entry><ind>655875</ind><dep>141</dep></entry>
+                    <entry><ind>873030</ind><dep>158</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/weu/state/stall-speed</output>
+    </filter>
+    
+    <filter>
+        <name>VSI needle</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+
+        <input> 
+            <expression>
+                <table>
+                    <property>velocities/vertical-speed-fps</property> 
+                    <entry><ind>-100</ind><dep>-64</dep></entry>
+                    <entry><ind>-33.3333</ind><dep>-58</dep></entry>
+                    <entry><ind>-16.6666</ind><dep>-43</dep></entry>
+                    <entry><ind>16.6666</ind><dep>43</dep></entry>
+                    <entry><ind>33.3333</ind><dep>58</dep></entry>
+                    <entry><ind>100</ind><dep>64</dep></entry>
+                </table>
+            </expression>
+        </input>
+    
+        <output>instrumentation/pfd/vsi-needle-deg</output>
+    </filter>
+    
+    <filter>
+        <name>Flaps 0</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input>
+            <expression>
+                <table>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
+                    <entry><ind>     0</ind><dep>148</dep></entry>
+                    <entry><ind>875000</ind><dep>267</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/pfd/flaps-0-kt</output>
+    </filter>
+    <filter>
+        <name>Flaps 1</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input>
+            <expression>
+                <table>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
+                    <entry><ind>     0</ind><dep>130</dep></entry>
+                    <entry><ind>875000</ind><dep>245</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/pfd/flaps-1-kt</output>
+    </filter>
+    <filter>
+        <name>Flaps 5</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input>
+            <expression>
+                <table>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
+                    <entry><ind>     0</ind><dep>111</dep></entry>
+                    <entry><ind>875000</ind><dep>226</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/pfd/flaps-5-kt</output>
+    </filter>
+    <filter>
+        <name>Flaps 10</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input>
+            <expression>
+                <table>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
+                    <entry><ind>     0</ind><dep>88</dep></entry>
+                    <entry><ind>875000</ind><dep>207</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/pfd/flaps-10-kt</output>
+    </filter>
+    <filter>
+        <name>Flaps 20</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input>
+            <expression>
+                <table>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
+                    <entry><ind>     0</ind><dep>75</dep></entry>
+                    <entry><ind>875000</ind><dep>199</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/pfd/flaps-20-kt</output>
+    </filter>
+    <filter>
+        <name>Flaps 25</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input>
+            <expression>
+                <table>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
+                    <entry><ind>     0</ind><dep>66</dep></entry>
+                    <entry><ind>875000</ind><dep>197</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/pfd/flaps-25-kt</output>
+    </filter>
+    <filter>
+        <name>Flaps 30</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input> 
+            <expression>
+                <table>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
+                    <entry><ind>     0</ind><dep>67</dep></entry>
+                    <entry><ind>875000</ind><dep>186</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/pfd/flaps-30-kt</output>
+    </filter>
+    
+  <!-- =============================================================== -->
+  <!--                        PFD display preprocessors                -->
+  <!-- =============================================================== -->
+
+  
+  <filter>
+      <name>Flap 0 speed margin computer</name> 
+      <type>gain</type>
+      <update-interval-secs type="double">0.05</update-interval-secs>
+      <gain>0.01538</gain>
+      <input>
+          <property>instrumentation/pfd/flaps-0-kt</property>
+      </input>
+      <reference>
+          <property>velocities/airspeed-kt</property>
+      </reference>
+      <output>instrumentation/pfd/flaps-0-diff</output>
+      <min>-2</min>
+      <max>2</max>
+  </filter>
+  <filter>
+      <name>Flap 1 speed margin computer</name> 
+      <type>gain</type>
+      <update-interval-secs type="double">0.05</update-interval-secs>
+      <gain>0.01538</gain>
+      <input>
+          <property>/instrumentation/fmc/vspeeds/Vref1</property>
+      </input>
+      <reference>
+          <property>velocities/airspeed-kt</property>
+      </reference>
+      <output>instrumentation/pfd/flaps-1-diff</output>
+      <min>-2</min>
+      <max>2</max>
+  </filter>
+  <filter>
+      <name>Flap 5 speed margin computer</name> 
+      <type>gain</type>
+      <update-interval-secs type="double">0.05</update-interval-secs>
+      <gain>0.01538</gain>
+      <input>
+          <property>/instrumentation/fmc/vspeeds/Vref5</property>
+      </input>
+      <reference>
+          <property>velocities/airspeed-kt</property>
+      </reference>
+      <output>instrumentation/pfd/flaps-5-diff</output>
+      <min>-2</min>
+      <max>2</max>
+  </filter>
+  <filter>
+      <name>Flap 10 speed margin computer</name> 
+      <type>gain</type>
+      <update-interval-secs type="double">0.05</update-interval-secs>
+      <gain>0.01538</gain>
+      <input>
+          <property>/instrumentation/fmc/vspeeds/Vref10</property>
+      </input>
+      <reference>
+          <property>velocities/airspeed-kt</property>
+      </reference>
+      <output>instrumentation/pfd/flaps-10-diff</output>
+      <min>-2</min>
+      <max>2</max>
+  </filter>
+  <filter>
+      <name>Flap 20 speed margin computer</name> 
+      <type>gain</type>
+      <update-interval-secs type="double">0.05</update-interval-secs>
+      <gain>0.01538</gain>
+      <input>
+          <property>/instrumentation/fmc/vspeeds/Vref20</property>
+      </input>
+      <reference>
+          <property>velocities/airspeed-kt</property>
+      </reference>
+      <output>instrumentation/pfd/flaps-20-diff</output>
+      <min>-2</min>
+      <max>2</max>
+  </filter>
+  <filter>
+      <name>Flap 25 speed margin computer</name> 
+      <type>gain</type>
+      <update-interval-secs type="double">0.05</update-interval-secs>
+      <gain>0.01538</gain>
+      <input>
+          <property>instrumentation/pfd/flaps-25-kt</property>
+      </input>
+      <reference>
+          <property>velocities/airspeed-kt</property>
+      </reference>
+      <output>instrumentation/pfd/flaps-25-diff</output>
+      <min>-2</min>
+      <max>2</max>
+  </filter>
+  <filter>
+      <name>Stall speed margin computer</name> 
+      <type>gain</type>
+      <update-interval-secs type="double">0.05</update-interval-secs>
+      <gain>0.01538</gain>
+      <input>
+          <property>instrumentation/weu/state/stall-speed</property>
+      </input>
+      <reference>
+          <property>velocities/airspeed-kt</property>
+      </reference>
+      <output>instrumentation/pfd/stallspeed-diff</output>
+      <min>-2</min>
+      <max>2</max>
+  </filter>
+  
+  <filter>
+      <name>Over speed margin computer</name> 
+      <type>gain</type>
+      <update-interval-secs type="double">0.05</update-interval-secs>
+      <gain>0.01538</gain>
+      <input>
+          <property>instrumentation/fmc/vspeeds/Vmax</property>
+      </input>
+      <reference>
+          <property>velocities/airspeed-kt</property>
+      </reference>
+      <output>instrumentation/pfd/overspeed-diff</output>
+      <min>-2</min>
+      <max>2</max>
+  </filter>
+
+  <!-- =============================================================== -->
+  <!--                 speed trend vector processing                   -->
+  <!-- =============================================================== -->
+
+  <predict-simple>
+    <name>speed predictor (smoothed)</name>
+    <update-interval-secs type="double">0.1</update-interval-secs>
+    <input>velocities/airspeed-kt</input>
+    <output>instrumentation/pfd/speed-lookahead</output>
+    <seconds>10.0</seconds>
+    <filter-gain>0.05</filter-gain>
+  </predict-simple>
+
+  <filter>
+    <name>PFD preprocessor (spd trend up)</name>
+    <type>gain</type>
+    <update-interval-secs type="double">0.1</update-interval-secs>
+    <input>
+      <property>instrumentation/pfd/speed-lookahead</property>
+    </input>
+    <reference>
+      <property>velocities/airspeed-kt</property>
+      <offset>90</offset>
+    </reference>
+    <gain>-0.002667</gain>
+    <output>instrumentation/pfd/speed-trend-up</output>
+    <max>0.24</max>
+    <min>0</min>
+  </filter>
+
+  <filter>
+    <name>PFD preprocessor (spd trend down)</name>
+    <type>gain</type>
+    <update-interval-secs type="double">0.1</update-interval-secs>
+    <input>
+      <property>instrumentation/pfd/speed-lookahead</property>
+      <min>0</min>
+    </input>
+    <reference>
+      <property>velocities/airspeed-kt</property>
+      <offset>-90</offset>
+    </reference>
+    <gain>-0.002667</gain>
+    <output>instrumentation/pfd/speed-trend-down</output>
+    <min>-0.24</min>
+    <max>0</max>
+  </filter>
+  
+  <filter>
+    <name>PFD preprocessor (spd command)</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>0.000675</gain>
+    <input>
+      <property>autopilot/settings/target-speed-kt</property>
+    </input>
+    <reference>
+      <property>velocities/airspeed-kt</property>
+    </reference>
+    <output>instrumentation/pfd/speed-command-diff</output>
+    <min>-0.057375</min>
+    <max>0.057375</max>
+  </filter>
+  
+  <filter>
+    <name>PFD preprocessor (spd command)</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>0.01538</gain>
+    <input>
+      <property>instrumentation/fmc/vspeeds/V1</property>
+    </input>
+    <reference>
+      <property>velocities/airspeed-kt</property>
+    </reference>
+    <output>instrumentation/pfd/v1-diff</output>
+    <min>-1</min>
+    <max>1</max>
+  </filter>
+  
+  <filter>
+    <name>PFD preprocessor (spd command)</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>0.000675</gain>
+    <input>
+      <property>instrumentation/fmc/vspeeds/V2</property>
+    </input>
+    <reference>
+      <property>velocities/airspeed-kt</property>
+    </reference>
+    <output>instrumentation/pfd/v2-diff</output>
+    <min>-0.057375</min>
+    <max>0.057375</max>
+  </filter>
+  
+  <filter>
+    <name>PFD preprocessor (spd command)</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>0.01538</gain>
+    <input>
+      <property>instrumentation/fmc/vspeeds/VR</property>
+    </input>
+    <reference>
+      <property>velocities/airspeed-kt</property>
+    </reference>
+    <output>instrumentation/pfd/vr-diff</output>
+    <min>-1</min>
+    <max>1</max>
+  </filter>
+  
+  
+    <filter>
+        <name>VS autopilot</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input> 
+            <expression>
+                <table>
+                    <property>/autopilot/settings/vertical-speed-fpm</property> 
+                    <entry><ind>-6000</ind><dep>-218.5</dep></entry>
+                    <entry><ind>-2000</ind><dep>-169</dep></entry>
+                    <entry><ind>-1000</ind><dep>-98</dep></entry>
+                    <entry><ind>    0</ind><dep>0</dep></entry>
+                    <entry><ind> 1000</ind><dep>98</dep></entry>
+                    <entry><ind> 2000</ind><dep>169</dep></entry>
+                    <entry><ind> 6000</ind><dep>218.5</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>instrumentation/pfd/target-vs</output>
+    </filter>
+
+</PropertyList>

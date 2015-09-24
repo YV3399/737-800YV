@@ -6,43 +6,18 @@ Syd Adams
 <PropertyList>
 
  <path>EFIS.ac</path>
-   
-    <panel>
-        <path>Models/Instruments/PFD/pfd-panel.xml</path>
-        <bottom-left>
-            <x-m>0.003</x-m>
-            <y-m>-0.090</y-m>
-            <z-m>-0.087</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>0.003</x-m>
-            <y-m>0.090</y-m>
-            <z-m>-0.087</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>0.003</x-m>
-            <y-m>-0.090</y-m>
-            <z-m>0.094</z-m>
-        </top-left>
-    </panel>
 
-    <panel>
-        <path>Models/Instruments/PFD/text-panel.xml</path>
-        <bottom-left>
-            <x-m>0.004</x-m>
-            <y-m>-0.090</y-m>
-            <z-m>-0.087</z-m>
-        </bottom-left>
-        <bottom-right>
-            <x-m>0.004</x-m>
-            <y-m>0.090</y-m>
-            <z-m>-0.087</z-m>
-        </bottom-right>
-        <top-left>
-            <x-m>0.004</x-m>
-            <y-m>-0.090</y-m>
-            <z-m>0.094</z-m>
-        </top-left>
-    </panel>
+<animation>
+	<type>pick</type>
+	<object-name>pfdScreen</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>boeing737.showPfd();</script>
+		</binding>
+	</action>
+</animation>
     
 </PropertyList>
