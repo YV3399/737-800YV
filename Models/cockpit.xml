@@ -4,13 +4,13 @@
 <PropertyList>
    <path>cockpit.ac</path>
 
-     <animation>
+     <!--<animation>
         <type>select</type>
         <object-name>PFD1</object-name>
         <condition>
             <property>sim/current-view/internal</property>
         </condition>
-    </animation>    
+    </animation>    -->
 
       <model>
         <name>PFD1</name>
