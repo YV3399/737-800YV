@@ -20,6 +20,69 @@
         </function>
      </fcs_function>
 
+    <fcs_function name="/instrumentation/fmc/v-ref-15">
+      <function>
+        <description>Vref calculation for flaps 15</description>
+        <table>
+          <independentVar>inertia/weight-lbs</independentVar>
+          <tableData>
+            88183 121
+            99206 128
+            110229  136
+            121252  143
+            132275  149
+            143298  156
+            154321  161
+            165344  167
+            176367  172
+            187390  177
+          </tableData>
+        </table>
+      </function>
+    </fcs_function>
+
+    <fcs_function name="/instrumentation/fmc/v-ref-30">
+      <function>
+        <description>Vref calculation for flaps 30</description>
+        <table>
+          <independentVar>inertia/weight-lbs</independentVar>
+          <tableData>
+            88183 115
+            99206 122
+            110229  129
+            121252  136
+            132275  142
+            143298  148
+            154321  153
+            165344  158
+            176367  163
+            187390  168
+          </tableData>
+        </table>
+      </function>
+    </fcs_function>
+
+    <fcs_function name="/instrumentation/fmc/v-ref-40">
+      <function>
+        <description>Vref calculation for flaps 40</description>
+        <table>
+          <independentVar>inertia/weight-lbs</independentVar>
+          <tableData>
+            88183 108
+            99206 115
+            110229  122
+            121252  128
+            132275  135
+            143298  141
+            154321  146
+            165344  151
+            176367  155
+            187390  160
+          </tableData>
+        </table>
+      </function>
+    </fcs_function>
+
   </channel>
 
 </system>

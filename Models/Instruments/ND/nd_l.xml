@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>nd_l.ac</path>
+
+<animation>
+	<type>pick</type>
+	<object-name>ndScreenL</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>nd.showNd();</script>
+		</binding>
+	</action>
+</animation>
+
+</PropertyList>
+

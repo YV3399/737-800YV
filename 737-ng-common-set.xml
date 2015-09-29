@@ -208,10 +208,16 @@
   </controls>
 
   <nasal>
+
     <boeing737>
       <file>Aircraft/Generic/limits.nas</file>
       <file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
     </boeing737>
+
+    <nd>
+      <file>Aircraft/737-800/Nasal/ND.nas</file>
+    </nd>
+
   </nasal>
 
   <instrumentation>

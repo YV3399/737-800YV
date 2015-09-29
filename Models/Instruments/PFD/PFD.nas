@@ -111,7 +111,7 @@ var canvas_PFD = {
 		if (mach >= 0.4 ) {
 			me["machText"].setText(sprintf("%.3f",mach));
 		} else {
-			me["machText"].setText(sprintf("GS %.0f",gs));
+			me["machText"].setText(sprintf("GS%.0f",gs));
 		}
 		me["altText1"].setText(sprintf("%2.0f",math.floor(apAlt/1000)));
 		me["altText2"].setText(sprintf("%03.0f",math.mod(apAlt,1000)));
@@ -332,12 +332,12 @@ var canvas_PFD = {
 			me["v1"].hide();
 			me["vr"].hide();
 		}
-		if (getprop("instrumentation/pfd/flaps-0-kt") != nil) {
-			me["flaps0"].setTranslation(0,-getprop("instrumentation/pfd/flaps-0-kt")*5.63915);
-			me["flaps1"].setTranslation(0,-getprop("instrumentation/pfd/flaps-1-kt")*5.63915);
-			me["flaps5"].setTranslation(0,-getprop("instrumentation/pfd/flaps-5-kt")*5.63915);
-			me["flaps10"].setTranslation(0,-getprop("instrumentation/pfd/flaps-10-kt")*5.63915);
-			me["flaps20"].setTranslation(0,-getprop("instrumentation/pfd/flaps-20-kt")*5.63915);
+		if (getprop("instrumentation/fmc/v-ref-40") != nil) {
+			me["flaps0"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+70)*5.63915);
+			me["flaps1"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+50)*5.63915);
+			me["flaps5"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+30)*5.63915);
+			me["flaps10"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+30)*5.63915);
+			me["flaps20"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+20)*5.63915);
 		}
 		
 		if (getprop("instrumentation/fmc/phase-name") == "APPROACH") {
@@ -347,8 +347,9 @@ var canvas_PFD = {
 				var vref = getprop("instrumentation/pfd/flaps-25-kt");
 			me["vref"].show();
 			me["vref"].setTranslation(0,-vref*5.63915);
-		} else
+		} else {
 			me["vref"].hide();
+		}
 		
 		me["flaps0"].hide();
 		me["flaps1"].hide();
@@ -356,9 +357,11 @@ var canvas_PFD = {
 		me["flaps10"].hide();
 		me["flaps20"].hide();
 		if (alt < 20000) {
-			if (flaps == 0.033) {
+			if (flaps == 0) {
+				me["flaps0"].show();
+			} elsif (flaps == 0.125) {
 				me["flaps0"].show(); me["flaps1"].show();
-			} elsif (flaps == 0.167) {
+			} elsif (flaps == 0.375) {
 				me["flaps1"].show(); me["flaps5"].show();
 			} elsif (flaps == 0.333) {
 				me["flaps5"].show(); me["flaps10"].show();

@@ -41,41 +41,25 @@
             <pitch-deg>0</pitch-deg>
         </offsets>
       </model> 
-<!--
-      <animation>
-        <type>select</type>
-        <object-name>ND1</object-name>
-        <condition>
-            <property>sim/current-view/internal</property>
-        </condition>
-    </animation>
--->  
+ 
    <model>
         <name>ND1</name>
-        <path>Models/Instruments/MFD/ND.xml</path>
+        <path>Models/Instruments/ND/nd_l.xml</path>
         <offsets>
             <x-m>0.336</x-m>
-            <y-m>-0.275</y-m>
-            <z-m>0.902</z-m>
+            <y-m>-0.253</y-m>
+            <z-m>0.916</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
-<!--
-    <animation>
-        <type>select</type>
-        <object-name>ND2</object-name>
-        <condition>
-            <property>sim/current-view/internal</property>
-        </condition>
-    </animation>
- -->  
+ 
     <model>
         <name>ND2</name>
-        <path>Models/Instruments/MFD/ND.xml</path>
+        <path>Models/Instruments/ND/nd_r.xml</path>
         <offsets>
             <x-m>0.336</x-m>
-            <y-m>0.275</y-m>
-            <z-m>0.902</z-m>
+            <y-m>0.253</y-m>
+            <z-m>0.916</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
