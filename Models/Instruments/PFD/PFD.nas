@@ -26,7 +26,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpd","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsCourse","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpd","vr","vref","vsiNeedle","vsPointer"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpd","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsCourse","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -227,11 +227,20 @@ var canvas_PFD = {
 			me["tenThousand"].hide();
 		if (vSpd != nil) {
 			var vertSpd = vSpd*60;
-			if (abs(vertSpd) > 400) {
-				me["vertSpd"].setText(sprintf("%4.0f",roundToNearest(vertSpd,50)));
-				me["vertSpd"].show();
+			if (vertSpd > 0 ) {
+				if (abs(vertSpd) > 400) {
+					me["vertSpdUp"].setText(sprintf("%4.0f",roundToNearest(vertSpd,50)));
+					me["vertSpdUp"].show();
+				} else {
+					me["vertSpdUp"].hide();
+				}
 			} else {
-				me["vertSpd"].hide();
+				if (abs(vertSpd) > 400) {
+					me["vertSpdDn"].setText(sprintf("%4.0f",roundToNearest(abs(vertSpd),50)));
+					me["vertSpdDn"].show();
+				} else {
+					me["vertSpdDn"].hide();
+				}
 			}
 			if (getprop("instrumentation/pfd/target-vs") != nil)
 				me["vsPointer"].setTranslation(0,-getprop("instrumentation/pfd/target-vs"));
