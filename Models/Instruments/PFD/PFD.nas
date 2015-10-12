@@ -80,7 +80,7 @@ var canvas_PFD = {
 		var hdg =  getprop("orientation/heading-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
 		var wow = getprop("gear/gear/wow");
-		var apAlt = getprop("autopilot/settings/target-altitude-ft");
+		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
 		
 		#10 deg = 105px
@@ -251,7 +251,7 @@ var canvas_PFD = {
 			elsif (radioAlt > 100)
 				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,10)));
 			else
-				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,2)));
+				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-4,2)));
 			me["radioAltInd"].show();
 		} else {
 			me["radioAltInd"].hide();
@@ -284,35 +284,16 @@ var canvas_PFD = {
 		else
 			me["afdsMode"].setText("");
 		
-		var apSpd = getprop("/autopilot/locks/speed");
-		if (apSpd == "speed-with-throttle")
-			me["atMode"].setText("SPD");
-		elsif (apSpd ==  "speed-with-pitch-trim")
-			me["atMode"].setText("THR");
-		else
-			me["atMode"].setText("");
-		var apRoll = getprop("/autopilot/locks/heading");
-		if (apRoll == "wing-leveler")
-			me["rollMode"].setText("HDG HOLD");
-		elsif (apRoll ==  "dg-heading-hold")
-			me["rollMode"].setText("HDG SEL");
-		elsif (apRoll ==  "nav1-hold")
-			me["rollMode"].setText("LNAV");
-		else
-			me["rollMode"].setText("");
-		me["vsPointer"].hide();
-		var apPitch = getprop("/autopilot/locks/altitude");
-		if (apPitch == "vertical-speed-hold") {
-			me["pitchMode"].setText("V/S");
-			me["vsPointer"].show();
-		} elsif (apPitch ==  "altitude-hold")
-			me["pitchMode"].setText("ALT");
-		elsif (apPitch ==  "gs1-hold")
-			me["pitchMode"].setText("G/S");
-		elsif (apPitch ==  "speed-with-pitch-trim")
-			me["pitchMode"].setText("FLCH SPD");
-		else
-			me["pitchMode"].setText("");
+		var apSpd = getprop("/autopilot/display/throttle-mode");
+		me["atMode"].setText(apSpd);
+
+		var apRoll = getprop("/autopilot/display/roll-mode");
+		me["rollMode"].setText(apRoll);
+
+		var apPitch = getprop("/autopilot/display/pitch-mode");
+		me["pitchMode"].setText(apPitch);
+
+		settimer(func me.update_ap_modes(), 0.5);
 	},
 	update_slow: func()
 	{

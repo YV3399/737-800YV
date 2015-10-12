@@ -1,0 +1,1378 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <!-- =============================================================== -->
+ <!-- Roll Axis Modes                                                 -->
+ <!-- =============================================================== -->
+
+  <pi-simple-controller>
+    <name>Roll rate comparator</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <and>
+          <or>
+            <property>/autopilot/internal/CMDA</property>
+            <property>/autopilot/internal/CMDB</property>
+          </or>
+          <or>
+            <property>/autopilot/internal/LNAV-HDG</property>
+            <property>/autopilot/internal/LNAV-NAV</property>
+            <property>/autopilot/internal/LNAV</property>
+            <property>/autopilot/internal/GA-ROLL</property>
+          </or>
+        </and>
+      </condition>
+    </enable>	
+    <input>
+      <prop>/orientation/roll-rate-degps</prop>
+    </input>
+    <reference>
+      <condition>
+        <and>
+          <property>/autopilot/internal/FCC-A-master</property>
+          <not><property>/autopilot/internal/FCC-B-master</property></not>
+        </and>
+      </condition>
+      <prop>/autopilot/settings/fcca-target-roll-rate</prop>
+    </reference>
+    <reference>
+      <condition>
+        <and>
+          <property>/autopilot/internal/FCC-B-master</property>
+          <not><property>/autopilot/internal/FCC-A-master</property></not>
+        </and>
+      </condition>
+      <prop>/autopilot/settings/fccb-target-roll-rate</prop>
+    </reference>
+    <reference>
+      <prop>/autopilot/settings/fcca-target-roll-rate</prop>
+      <scale>0.5</scale>
+      <offset>
+        <prop>/autopilot/settings/fccb-target-roll-rate</prop>
+        <scale>0.5</scale>
+      </offset>
+    </reference>
+    <output>
+      <prop>/controls/flight/aileron</prop>
+    </output>
+    <config>
+      <Kp>0.01</Kp>          <!-- proportional gain -->
+      <Ki>0.16</Ki>          <!-- integral gain -->
+      <u_min>                <!-- minimum output clamp with flaps NOT up (25 degrees of steering wheel) -->
+        <condition>
+          <greater-than>
+            <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
+            <value>0.124</value>
+          </greater-than>
+        </condition>
+        <value>-0.285714286</value>
+      </u_min>
+      <u_max>                <!-- maximum output clamp with flaps NOT up (25 degrees of steering wheel) -->
+        <condition>
+          <greater-than>
+            <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
+            <value>0.124</value>
+          </greater-than>
+        </condition>
+        <value>0.285714286</value>
+      </u_max>
+      <u_min>-0.194285714</u_min> <!-- minimum output clamp with flaps up (17 degrees of steering wheel) -->
+      <u_max>0.194285714</u_max>   <!-- maximum output clamp with flaps up (17 degrees of steering wheel) -->
+    </config>
+  </pi-simple-controller>
+  
+ <!-- =============================================================== -->
+ <!-- Pitch Axis Modes                                                -->
+ <!-- =============================================================== -->
+
+
+  <pi-simple-controller>
+    <name>Pitch comparator</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <property>/autopilot/internal/PITCH-ACTIVE</property>
+      </condition>
+    </enable>	
+    <input>
+      <prop>/orientation/pitch-deg</prop>
+    </input>
+    <reference>
+      <condition>
+        <and>
+          <property>/autopilot/internal/FCC-A-master</property>
+          <not><property>/autopilot/internal/FCC-B-master</property></not>
+        </and>
+      </condition>
+      <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
+    </reference>
+    <reference>
+      <condition>
+        <and>
+          <property>/autopilot/internal/FCC-B-master</property>
+          <not><property>/autopilot/internal/FCC-A-master</property></not>
+        </and>
+      </condition>
+      <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
+    </reference>
+    <reference>
+      <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
+      <scale>0.5</scale>
+      <offset>
+        <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
+        <scale>0.5</scale>
+      </offset>
+    </reference>
+    <output>
+      <prop>/autopilot/settings/target-accel-pitch</prop>
+    </output>
+    <config>
+      <Kp>0.1</Kp>          <!-- proportional gain -->
+      <Ki>0.0</Ki>          <!-- integral gain -->
+      <u_min>-0.2</u_min> <!-- minimum output clamp -->
+      <u_max>0.2</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <enable>
+      <condition>
+        <property>/autopilot/internal/PITCH-ACTIVE</property>
+      </condition>
+    </enable>	
+    <input>
+      <expression>
+        <sum>
+          <property>/autopilot/settings/target-accel-pitch</property>
+          <div>
+            <value>1</value>
+            <cos>
+              <div>
+                <property>/orientation/roll-deg</property>
+                <value>57.2957795131</value>
+              </div>
+            </cos>
+          </div>
+          <value>-1</value>
+        </sum>
+      </expression> 
+    </input>
+  <output>
+    <prop>/autopilot/settings/target-accel</prop>
+  </output>
+</filter>
+
+<filter> <!-- Max authority calculation -->
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <prop>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</prop>
+    <scale>-0.0003623188</scale>
+    <offset>0.182357143</offset>
+  </input>
+  <output>
+    <prop>/autopilot/settings/max-authority-pos</prop>
+  </output>
+  <min>0.059</min>
+  <max>0.143</max>
+</filter>
+
+<filter> <!-- Max authority calculation negative -->
+  <type>gain</type>
+  <gain>-1</gain>
+  <input>
+    <prop>/autopilot/settings/max-authority-pos</prop>
+  </input>
+  <output>
+    <prop>/autopilot/settings/max-authority-neg</prop>
+  </output>
+</filter>
+
+  <pi-simple-controller>
+    <name>Acceleration comparator</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <and>
+          <or>
+            <property>/autopilot/internal/CMDA</property>
+            <property>/autopilot/internal/CMDB</property>
+          </or>
+          <property>/autopilot/internal/PITCH-ACTIVE</property>
+        </and>
+      </condition>
+    </enable>	
+    <input>
+      <prop>/autopilot/settings/current-accel</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/settings/target-accel</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/elevator</prop>
+    </output>
+    <config>
+      <Kp>-1.2</Kp>          <!-- proportional gain -->
+      <Ki>-0.3</Ki>          <!-- integral gain -->
+      <u_min>/autopilot/settings/max-authority-neg</u_min> <!-- minimum output clamp -->
+      <u_max>/autopilot/settings/max-authority-pos</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+<filter>
+  <type>gain</type>
+  <gain>0.08</gain>
+  <input>
+    <property>/orientation/pitch-rate-degps</property>
+  </input>
+  <output>
+    <prop>/autopilot/internal/elevator-damp</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <enable>
+      <condition>
+        <and>
+          <or>
+            <property>/autopilot/internal/CMDA</property>
+            <property>/autopilot/internal/CMDB</property>
+          </or>
+          <property>/autopilot/internal/PITCH-ACTIVE</property>
+        </and>
+      </condition>
+    </enable>	
+    <input>
+      <expression>
+        <sum>
+          <property>/autopilot/internal/elevator-damp</property>
+          <property>/autopilot/internal/elevator</property>
+        </sum>
+      </expression> 
+    </input>
+  <output>
+    <prop>/controls/flight/elevator</prop>
+  </output>
+</filter>
+
+<!-- helper which calculates current acceleration -->
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <sum>
+          <property>/accelerations/n-z-cg-fps_sec</property>
+          <value>1</value>
+        </sum>
+        <value>-1</value>
+      </product>
+    </expression>
+  </input>
+  <output>
+    <prop>/autopilot/settings/current-accel</prop>
+  </output>
+</filter>
+
+<!--
+============================
+== STABILIZER Trim system ==
+============================
+-->
+<!-- 10% of authority calculation -->
+<filter>
+  <type>gain</type>
+  <gain>0.30</gain>
+  <input>
+    <property>/autopilot/settings/max-authority-pos</property>
+  </input>
+  <output>
+    <prop>/autopilot/settings/max-authority-pos-ten-percent</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>0.30</gain>
+  <input>
+    <property>/autopilot/settings/max-authority-neg</property>
+  </input>
+  <output>
+    <prop>/autopilot/settings/max-authority-neg-ten-percent</prop>
+  </output>
+</filter>
+
+<!-- 2% of authority calculation -->
+
+<filter>
+  <type>gain</type>
+  <gain>0.12</gain>
+  <input>
+    <property>/autopilot/settings/max-authority-pos</property>
+  </input>
+  <output>
+    <prop>/autopilot/settings/max-authority-pos-two-percent</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>0.12</gain>
+  <input>
+    <property>/autopilot/settings/max-authority-neg</property>
+  </input>
+  <output>
+    <prop>/autopilot/settings/max-authority-neg-two-percent</prop>
+  </output>
+</filter>
+
+
+ <logic>
+  <enable>
+      <condition>
+        <and>
+          <or>
+            <property>/autopilot/internal/CMDA</property>
+            <property>/autopilot/internal/CMDB</property>
+          </or>
+          <property>/autopilot/internal/PITCH-ACTIVE</property>
+        </and>
+      </condition>
+  </enable>
+   <input>
+     <or>
+       <greater-than>
+         <property>/controls/flight/elevator</property>
+         <property>/autopilot/settings/max-authority-pos-ten-percent</property>
+       </greater-than>
+       <less-than>
+         <property>/controls/flight/elevator</property>
+         <property>/autopilot/settings/max-authority-neg-ten-percent</property>
+       </less-than>
+     </or>
+   </input>
+   <output>/b737/helpers/elevator-cmd-gr-10</output>
+ </logic>
+
+ <filter>
+  <type>moving-average</type>
+  <samples>480</samples>
+  <input>/b737/helpers/elevator-cmd-gr-10</input>
+  <output>/b737/helpers/elevator-cmd-av-4</output> <!-- average for 4 seconds -->
+ </filter>
+
+ <logic>
+   <input>
+     <greater-than>
+       <property>/b737/helpers/elevator-cmd-av-4</property>
+       <value>0.75</value>
+     </greater-than>
+   </input>
+   <output>/b737/helpers/trim-feel-3-4</output>
+ </logic>
+
+<filter>
+  <name>Stabilizer position sample and hold</name>
+  <debug>false</debug>
+  <enable>
+      <condition>
+        <and>
+          <or>
+            <property>/autopilot/internal/CMDA</property>
+            <property>/autopilot/internal/CMDB</property>
+          </or>
+          <property>/autopilot/internal/PITCH-ACTIVE</property>
+          <property>/autopilot/internal/stab-autotrim</property>
+        </and>
+      </condition>
+  </enable>
+  <type>gain</type>
+  <gain>1.0</gain>
+  <input>
+    <condition>
+     <and>
+      <property>/b737/helpers/trim-feel-3-4</property>
+      <greater-than>
+        <property>/controls/flight/elevator</property>
+        <property>/autopilot/settings/max-authority-pos-two-percent</property>
+      </greater-than>
+     </and>
+    </condition>
+    <value>0.25</value>
+  </input>
+  <input>
+    <condition>
+     <and>
+      <property>/b737/helpers/trim-feel-3-4</property>
+      <less-than>
+        <property>/controls/flight/elevator</property>
+        <property>/autopilot/settings/max-authority-neg-two-percent</property>
+      </less-than>
+     </and>
+    </condition>
+    <value>14</value>
+  </input>
+  <input>/fdm/jsbsim/fcs/stabilizer-pos-unit</input>
+  <output>/fdm/jsbsim/fcs/stabilizer/stab-target</output>
+ </filter>
+
+ <!-- =============================================================== -->
+ <!-- Autothrottle                                                    -->
+ <!-- =============================================================== -->
+
+  <pid-controller>
+    <name>IAS Auto Throttle</name>
+    <debug>false</debug>
+      <enable>
+       <condition>
+        <and>
+          <property>/autopilot/internal/SPD</property>
+          <property>/autopilot/internal/SPD-SPEED</property>
+        </and>
+      </condition>
+     </enable>	
+    <input>
+      <prop>/instrumentation/airspeed-indicator/indicated-speed-kt</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/settings/target-speed-kt</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-n1</prop>
+    </output>
+    <config>
+      <Kp>8.4</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>10.0</Ti>       <!-- integrator time -->
+      <Td>0.00001</Td>    <!-- derivator time -->
+      <u_min>22.0</u_min>  <!-- minimum output clamp -->
+      <u_max>/autopilot/settings/max-n1</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+<filter> <!-- translate maximum N1 to target N1 -->
+  <type>gain</type>
+  <gain>1</gain>
+  <enable>
+       <condition>
+        <and>
+          <property>/autopilot/internal/SPD</property>
+          <property>/autopilot/internal/SPD-N1</property>
+        </and>
+      </condition>
+  </enable>	
+  <input>
+    <property>/autopilot/settings/max-n1</property>
+  </input>
+  <output>
+    <prop>/autopilot/internal/target-n1</prop>
+  </output>
+</filter>
+
+<filter> <!-- throttle setting from any mode (from TARGET N1) -->
+  <type>gain</type>
+  <gain>1</gain>
+  <enable>
+       <condition>
+        <and>
+          <property>/autopilot/internal/SPD</property>
+          <property>/autopilot/internal/THROTTLE-ACTIVE</property>
+        </and>
+      </condition>
+  </enable>	
+  <input> <!-- N1 range from 22 to 106 -->
+    <expression>
+      <sum>
+        <product>
+          <property>/autopilot/internal/target-n1</property>
+          <value>0.0119047619</value>
+        </product>
+        <value>-0.2619047619</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/autopilot/internal/at-throttle</prop>
+  </output>
+</filter>
+
+<filter>
+  <name>SERVO-DRIVER:autothrottle</name>	
+  <type>noise-spike</type>
+  <max-rate-of-change>
+    <condition>
+      <and>
+        <property>/autopilot/internal/toga-20-sec</property>
+        <greater-than-equals>
+          <property>/autopilot/internal/at-throttle</property>
+          <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
+        </greater-than-equals>
+        <property>/autopilot/internal/SPD</property>
+        <property>/autopilot/internal/THROTTLE-ACTIVE</property>
+      </and>
+    </condition>
+    <value>.233</value>
+  </max-rate-of-change>
+  <max-rate-of-change>
+    <condition>
+      <and>
+        <less-than>
+          <property>/autopilot/internal/at-throttle</property>
+          <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
+        </less-than>
+        <property>/autopilot/internal/SPD</property>
+        <property>/autopilot/internal/THROTTLE-ACTIVE</property>
+      </and>
+    </condition>
+    <value>0.0468</value>
+  </max-rate-of-change>
+  <max-rate-of-change>
+    <condition>
+      <and>
+        <greater-than-equals>
+          <property>/autopilot/internal/at-throttle</property>
+          <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
+        </greater-than-equals>
+        <property>/autopilot/internal/SPD</property>
+        <property>/autopilot/internal/THROTTLE-ACTIVE</property>
+      </and>
+    </condition>
+    <value>.0932</value>
+  </max-rate-of-change>
+  <max-rate-of-change>10</max-rate-of-change>
+  <input>
+    <condition>
+      <not>
+        <and>
+          <property>/autopilot/internal/SPD</property>
+          <property>/autopilot/internal/THROTTLE-ACTIVE</property>
+        </and>
+      </not>
+    </condition>
+    <prop>/controls/engines/engine[0]/throttle</prop>
+  </input>
+  <input>/autopilot/internal/at-throttle</input>
+  <output>
+    <prop>/autopilot/internal/servo-throttle[0]</prop>
+    <prop>/autopilot/internal/servo-throttle[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <enable>
+    <condition>
+      <property>/autopilot/internal/SPD-MACH</property>
+    </condition>
+  </enable>	
+  <input>
+    <expression>
+      <div>
+        <product>
+          <property>/autopilot/settings/target-speed-mach</property>
+          <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+          <property>/fdm/jsbsim/atmosphere/a-fps</property>
+          <value>0.5924838012959</value>
+        </product>
+        <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
+      </div>
+    </expression> 
+  </input>
+  <output>
+    <prop>/autopilot/settings/target-speed-kt</prop>
+  </output>
+</filter>
+
+ <!-- =============================================================== -->
+ <!-- Reverser calculator                                             -->
+ <!-- =============================================================== -->
+
+  <pi-simple-controller>
+    <name>Thrust comparator</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <equals>
+          <property>/engines/engine[0]/reverser-pos-norm</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </enable>	
+    <input>
+      <prop>/engines/engine[0]/thrust_lb</prop>
+      <offset>
+        <property>/fdm/jsbsim/aero/function/left-engine-reverse-drag</property>
+        <scale>-1</scale>
+      </offset>
+    </input>
+    <reference>
+      <prop>/engines/engine[0]/reverse-thrust-lbs</prop>
+      <scale>/b737/helpers/density-correction</scale>
+    </reference>
+    <output>
+      <prop>/fdm/jsbsim/propulsion/engine[0]/reverser-angle-rad</prop>
+    </output>
+    <config>
+      <Kp>-0.0</Kp>          <!-- proportional gain -->
+      <Ki>-0.003</Ki>          <!-- integral gain -->
+      <u_min>0</u_min> <!-- minimum output clamp -->
+      <u_max>3.14</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+  <pi-simple-controller>
+    <name>Thrust comparator</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <equals>
+          <property>/engines/engine[1]/reverser-pos-norm</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </enable>	
+    <input>
+      <prop>/engines/engine[1]/thrust_lb</prop>
+      <offset>
+        <property>/fdm/jsbsim/aero/function/right-engine-reverse-drag</property>
+        <scale>-1</scale>
+      </offset>
+    </input>
+    <reference>
+      <prop>/engines/engine[1]/reverse-thrust-lbs</prop>
+      <scale>/b737/helpers/density-correction</scale>
+    </reference>
+    <output>
+      <prop>/fdm/jsbsim/propulsion/engine[1]/reverser-angle-rad</prop>
+    </output>
+    <config>
+      <Kp>-0.0</Kp>          <!-- proportional gain -->
+      <Ki>-0.003</Ki>          <!-- integral gain -->
+      <u_min>0</u_min> <!-- minimum output clamp -->
+      <u_max>3.14</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+ <!-- =============================================================== -->
+ <!-- Just helpers                                                    -->
+ <!-- =============================================================== -->
+
+<!-- air density correction factor -->
+   <filter>
+    <type>gain</type>
+    <input>
+      <property>/environment/density-slugft3</property>
+    </input>
+    <output>/b737/helpers/density-correction</output>
+    <gain>420.716058732</gain>
+  </filter>
+
+<!-- is VOR/LOC engaged and on course? for NAV1 -->
+   <filter>
+    <type>gain</type>
+    <input>
+      <property>/instrumentation/nav[0]/radials/target-radial-deg</property>
+      <offset>
+        <property>orientation/track-deg</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>/autopilot/internal/vorloc-track-delta[0]</output>
+    <period>
+      <min>-180</min>
+      <max>180</max>
+    </period>
+    <gain>1.0</gain>
+  </filter>
+
+ <logic>
+   <input>
+     <and>
+       <greater-than>
+         <property>/instrumentation/nav[0]/heading-needle-deflection-norm</property>
+         <value>-0.2</value>
+       </greater-than>
+       <less-than>
+         <property>/instrumentation/nav[0]/heading-needle-deflection-norm</property>
+         <value>0.2</value>
+       </less-than>
+       <greater-than>
+         <property>/autopilot/internal/vorloc-track-delta[0]</property>
+         <value>-5</value>
+       </greater-than>
+       <less-than>
+         <property>/autopilot/internal/vorloc-track-delta[0]</property>
+         <value>5</value>
+       </less-than>
+       <property>/autopilot/internal/LNAV-NAV</property>
+     </and>
+   </input>
+   <output>/autopilot/internal/VORLOC-NAV1-ONCOURSE</output>
+ </logic>
+
+<!-- is VOR/LOC engaged and on course? for NAV2 -->
+   <filter>
+    <type>gain</type>
+    <input>
+      <property>/instrumentation/nav[1]/radials/target-radial-deg</property>
+      <offset>
+        <property>orientation/track-deg</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>/autopilot/internal/vorloc-track-delta[1]</output>
+    <period>
+      <min>-180</min>
+      <max>180</max>
+    </period>
+    <gain>1.0</gain>
+  </filter>
+
+ <logic>
+   <input>
+     <and>
+       <greater-than>
+         <property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
+         <value>-0.2</value>
+       </greater-than>
+       <less-than>
+         <property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
+         <value>0.2</value>
+       </less-than>
+       <greater-than>
+         <property>/autopilot/internal/vorloc-track-delta[1]</property>
+         <value>-5</value>
+       </greater-than>
+       <less-than>
+         <property>/autopilot/internal/vorloc-track-delta[1]</property>
+         <value>5</value>
+       </less-than>
+       <property>/autopilot/internal/LNAV-NAV</property>
+     </and>
+   </input>
+   <output>/autopilot/internal/VORLOC-NAV2-ONCOURSE</output>
+ </logic>
+
+<!-- helper which calculates negative and positive values for maximum bank for different modes -->
+<filter>
+  <type>gain</type>
+  <gain>-1</gain>
+  <input>
+    <condition>
+      <property>/autopilot/internal/VORLOC-NAV1-ONCOURSE</property>
+    </condition>
+    <value>8</value>
+  </input>
+  <input>
+    <condition>
+      <or>
+        <property>/autopilot/internal/LNAV</property>
+        <property>/autopilot/internal/LNAV-NAV</property>
+      </or>
+    </condition>
+    <value>30</value>
+  </input>
+  <input>
+    <property>/autopilot/settings/maximum-bank-limit</property>
+  </input>
+  <output>
+    <prop>/autopilot/settings/maximum-bank-neg</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>-1</gain>
+  <input>
+    <property>/autopilot/settings/maximum-bank-neg</property>
+  </input>
+  <output>
+    <prop>/autopilot/settings/maximum-bank</prop>
+  </output>
+</filter>
+
+<!-- drift angle calculator -->
+   <filter>
+    <name>drift angle</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <input>
+      <property>/orientation/track-magnetic-deg</property>
+      <offset>
+        <property>orientation/heading-magnetic-deg</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>autopilot/internal/drift-angle-deg</output>
+    <period>
+      <min>-180</min>
+      <max>180</max>
+    </period>
+    <gain>1.0</gain>
+  </filter>
+
+<!-- calculate derivate for heading needle NAV1 -->
+
+  <predict-simple>
+    <seconds>1</seconds>
+    <filter-gain>0</filter-gain>
+    <input>/instrumentation/nav[0]/heading-needle-deflection-norm</input>
+    <output>autopilot/internal/lookahead-1-sec-nav1-heading-needle</output>
+  </predict-simple>
+
+  <filter>
+    <type>gain</type>
+    <input>
+      <property>autopilot/internal/lookahead-1-sec-nav1-heading-needle</property>
+      <offset>
+        <property>/instrumentation/nav[0]/heading-needle-deflection-norm</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>autopilot/internal/nav1-heading-needle-rate</output>
+    <gain>1.0</gain>
+  </filter>
+
+<!-- calculate derivate for heading needle NAV2 -->
+
+  <predict-simple>
+    <seconds>1</seconds>
+    <filter-gain>0</filter-gain>
+    <input>/instrumentation/nav[1]/heading-needle-deflection-norm</input>
+    <output>autopilot/internal/lookahead-1-sec-nav2-heading-needle</output>
+  </predict-simple>
+
+  <filter>
+    <type>gain</type>
+    <input>
+      <property>autopilot/internal/lookahead-1-sec-nav2-heading-needle</property>
+      <offset>
+        <property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>autopilot/internal/nav2-heading-needle-rate</output>
+    <gain>1.0</gain>
+  </filter>
+
+<!-- calculate derivate for glideslope error NAV1 -->
+
+  <predict-simple>
+    <seconds>1</seconds>
+    <filter-gain>0</filter-gain>
+    <input>instrumentation/nav[0]/gs-needle-deflection-norm</input>
+    <output>autopilot/internal/lookahead-1-sec-nav1-gs-needle</output>
+  </predict-simple>
+
+  <filter>
+    <type>gain</type>
+    <input>
+      <property>autopilot/internal/lookahead-1-sec-nav1-gs-needle</property>
+      <offset>
+        <property>instrumentation/nav[0]/gs-needle-deflection-norm</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>autopilot/internal/nav1-gs-rate</output>
+    <gain>1.0</gain>
+  </filter>
+
+<!-- calculate derivate for glideslope error NAV2 -->
+
+  <predict-simple>
+    <seconds>1</seconds>
+    <filter-gain>0</filter-gain>
+    <input>instrumentation/nav[1]/gs-needle-deflection-norm</input>
+    <output>autopilot/internal/lookahead-1-sec-nav2-gs-needle</output>
+  </predict-simple>
+
+  <filter>
+    <type>gain</type>
+    <input>
+      <property>autopilot/internal/lookahead-1-sec-nav2-gs-needle</property>
+      <offset>
+        <property>instrumentation/nav[1]/gs-needle-deflection-norm</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>autopilot/internal/nav2-gs-rate</output>
+    <gain>1.0</gain>
+  </filter>
+
+<!-- calculate derivate for crosstrack error for LNAV and crosstarck-error in meters -->
+
+  <filter>
+    <name>z derivate FMS</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <property>/autopilot/route-manager/active</property>
+      </condition>
+    </enable>
+    <type>gain</type>
+    <input>
+      <property>/instrumentation/gps/wp/wp[1]/course-error-nm</property>
+    </input>
+    <output>/autopilot/internal/fms-crosstrack-error-m</output>
+    <gain>1852</gain>
+  </filter>
+
+  <predict-simple>
+    <name>z-fms value in 1 second</name>
+    <debug type="bool">false</debug>
+    <enable>
+      <condition>
+        <property>/autopilot/route-manager/active</property>
+      </condition>
+    </enable>
+    <seconds>1</seconds>
+    <filter-gain>0</filter-gain>
+    <input>/autopilot/internal/fms-crosstrack-error-m</input>
+    <output>/autopilot/internal/lookahead-1-sec-fms-crosstrack-m</output>
+  </predict-simple>
+
+  <filter>
+    <name>z-fms derivate</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <property>/autopilot/route-manager/active</property>
+      </condition>
+    </enable>
+    <type>gain</type>
+    <input>
+      <property>/autopilot/internal/lookahead-1-sec-fms-crosstrack-m</property>
+      <offset>
+        <property>/autopilot/internal/fms-crosstrack-error-m</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>autopilot/internal/fms-crosstrack-rate-mps</output>
+    <gain>1.0</gain>
+  </filter>
+
+<!-- calculate 15 sec period from WP change -->
+
+  <filter>
+    <name>15 sec period</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <property>/autopilot/route-manager/active</property>
+      </condition>
+    </enable>
+    <type>gain</type>
+    <input>
+      <property>/autopilot/internal/wp-change-time</property>
+      <offset>
+        <property>/sim/time/elapsed-sec</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>/autopilot/internal/wp-change-period</output>
+    <gain>-1</gain>
+  </filter>
+
+ <logic>
+   <input>
+     <greater-than>
+       <property>/autopilot/internal/wp-change-period</property>
+       <property>/autopilot/internal/wp-change-check-period</property>
+     </greater-than>
+   </input>
+   <output>/autopilot/internal/wp-crosstrack-hold</output>
+ </logic>
+
+
+<!-- calculate 20 sec period from TOGA button -->
+
+  <filter>
+    <name>20 sec period from TOGA</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <property>/autopilot/internal/TOGA</property>
+      </condition>
+    </enable>
+    <type>gain</type>
+    <input>
+      <property>/autopilot/display/toga-mode-last-change</property>
+      <offset>
+        <property>/sim/time/elapsed-sec</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>/autopilot/internal/toga-period</output>
+    <gain>-1</gain>
+  </filter>
+
+ <logic>
+   <input>
+     <less-than>
+       <property>/autopilot/internal/toga-period</property>
+       <value>20</value>
+     </less-than>
+   </input>
+   <output>/autopilot/internal/toga-20-sec</output>
+ </logic>
+
+<!-- calculate real vertical speed -->
+
+  <predict-simple>
+    <name>alt change in 60 second</name>
+    <debug type="bool">false</debug>
+    <seconds>60</seconds>
+    <filter-gain>0</filter-gain>
+    <input>/position/altitude-ft</input>
+    <output>/autopilot/internal/lookahead-60-sec-altitude-ft</output>
+  </predict-simple>
+
+  <filter>
+    <name>VS fpm</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <input>
+      <property>/autopilot/internal/lookahead-60-sec-altitude-ft</property>
+      <offset>
+        <property>/position/altitude-ft</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>autopilot/internal/current-vertical-speed-fpm</output>
+    <gain>1.0</gain>
+  </filter>
+
+<!-- Any of pitch mode active -->
+
+ <logic>
+   <input>
+     <or>
+       <property>/autopilot/internal/VNAV-VS</property>
+       <property>/autopilot/internal/VNAV-GS</property>
+       <property>/autopilot/internal/VNAV-FLARE</property>
+       <property>/autopilot/internal/VNAV-ALT-ACQ</property>
+       <property>/autopilot/internal/VNAV-ALT</property>
+       <property>/autopilot/internal/LVLCHG</property>
+       <property>/autopilot/internal/TOGA</property>
+       <property>/autopilot/internal/GA</property>
+     </or>
+   </input>
+   <output>/autopilot/internal/PITCH-ACTIVE</output>
+ </logic>
+
+<!-- Any of throttle mode active -->
+
+ <logic>
+   <input>
+     <or>
+       <property>/autopilot/internal/SPD-N1</property>
+       <property>/autopilot/internal/SPD-SPEED</property>
+       <property>/autopilot/internal/SPD-RETARD</property>
+       <property>/autopilot/internal/TOGA</property>
+       <property>/autopilot/internal/GA</property>
+     </or>
+   </input>
+   <output>/autopilot/internal/THROTTLE-ACTIVE</output>
+ </logic>
+
+<!-- Activation logic for pitch in TOGA -->
+
+  <filter>
+    <type>gain</type>
+    <input>
+      <property>/autopilot/settings/target-speed-kt</property>
+      <offset>18</offset>
+    </input>
+    <output>/autopilot/settings/target-speed-kt-plus-20</output>
+    <gain>1</gain>
+  </filter>
+
+ <logic>
+   <input>
+     <greater-than>
+       <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+       <property>/autopilot/settings/target-speed-kt-plus-20</property>
+     </greater-than>
+   </input>
+   <output>/autopilot/logic/v2-plus-20</output>
+ </logic>
+
+ <logic>
+   <input>
+     <less-than>
+       <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+       <property>/autopilot/settings/target-speed-kt</property>
+     </less-than>
+   </input>
+   <output>/autopilot/logic/v2-minus</output>
+ </logic>
+
+ <flipflop>
+   <type>RS</type> <!-- or SR -->
+   <S>
+     <property>/autopilot/logic/v2-plus-20</property>
+   </S>
+   <R>
+     <property>/autopilot/logic/v2-minus</property>
+   </R>
+   <output>/autopilot/logic/toga-pitch</output>
+ </flipflop>
+
+ <!-- RETARD logic at 27 feet -->
+
+ <logic>
+    <enable>
+      <condition>
+        <property>/autopilot/internal/SPD</property>
+      </condition>
+    </enable>
+   <input>
+     <and>
+       <property>/autopilot/internal/SPD-SPEED</property>
+       <less-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>33.5</value>
+       </less-than>
+       <greater-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>6</value>
+       </greater-than>
+     </and>
+   </input>
+   <output>/autopilot/logic/retard-27ft</output>
+ </logic>
+
+ <!-- FLARE arm logic at 1500-800 feet -->
+
+ <logic>
+    <enable>
+      <condition>
+        <and>
+          <property>/autopilot/internal/CMDA</property>
+          <property>/autopilot/internal/CMDB</property>
+          <not><property>/autopilot/internal/VNAV-FLARE-armed</property></not>
+        </and>
+      </condition>
+    </enable>
+   <input>
+     <and>
+       <property>/autopilot/internal/VNAV-GS</property>
+       <less-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>1506.5</value>
+       </less-than>
+       <greater-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>6</value>
+       </greater-than>
+     </and>
+   </input>
+   <output>/autopilot/logic/flare-arm</output>
+ </logic>
+
+ <!-- FLARE logic at 50 feet -->
+
+ <logic>
+    <enable>
+      <condition>
+        <and>
+          <property>/autopilot/internal/CMDA</property>
+          <property>/autopilot/internal/CMDB</property>
+        </and>
+      </condition>
+    </enable>
+   <input>
+     <and>
+       <property>/autopilot/internal/VNAV-FLARE-armed</property>
+       <less-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>56.5</value>
+       </less-than>
+       <greater-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>6</value>
+       </greater-than>
+     </and>
+   </input>
+   <output>/autopilot/logic/flare-50ft</output>
+ </logic>
+
+ <!-- AP disengage logic at 350 feet -->
+
+ <logic>
+    <enable>
+      <condition>
+        <or>
+          <property>/autopilot/internal/CMDA</property>
+          <property>/autopilot/internal/CMDB</property>
+        </or>
+      </condition>
+    </enable>
+   <input>
+     <and>
+       <not>
+         <or>
+           <property>/autopilot/internal/VNAV-FLARE-armed</property>
+           <property>/autopilot/internal/VNAV-FLARE</property>
+           <property>/autopilot/internal/GA</property>
+         </or>
+       </not>
+       <less-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>356.5</value>
+       </less-than>
+       <greater-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>0.1</value>
+       </greater-than>
+     </and>
+   </input>
+   <output>/autopilot/logic/ap-disengage-350ft</output>
+ </logic>
+
+ <!-- THR HLD announcement logic -->
+
+ <logic>
+    <enable>
+      <condition>
+        <property>/autopilot/internal/TOGA</property>
+      </condition>
+    </enable>
+   <input>
+     <and>
+       <equals>
+         <property>/autopilot/display/throttle-mode</property>
+         <value>N1</value>
+       </equals>
+       <greater-than>
+         <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+         <value>84</value>
+       </greater-than>
+     </and>
+   </input>
+   <output>/autopilot/logic/thr-hld-84kts</output>
+ </logic>
+
+ <!-- ARM after THR HLD at TOGA announcement logic -->
+
+  <filter>
+    <name>18 sec period after lift-off</name>
+    <type>gain</type>
+    <input>
+      <property>/b737/sensors/lift-off-time</property>
+      <offset>
+        <property>/sim/time/elapsed-sec</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>/autopilot/internal/lift-off-period</output>
+    <gain>-1</gain>
+  </filter>
+
+ <logic>
+    <enable>
+      <condition>
+        <and>
+          <property>/autopilot/internal/TOGA</property>
+          <equals>
+            <property>/autopilot/display/throttle-mode</property>
+            <value>THR HLD</value>
+          </equals>
+        </and>
+      </condition>
+    </enable>
+   <input>
+     <and>
+       <greater-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>406.5</value>
+       </greater-than>
+       <greater-than>
+         <property>/autopilot/internal/lift-off-period</property>
+         <value>18</value>
+       </greater-than>
+     </and>
+   </input>
+   <output>/autopilot/logic/at-arm-toga</output>
+ </logic>
+
+<!-- Translate flap retraction speed into target speed in GA mode -->
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <enable>
+     <condition>
+       <property>/autopilot/internal/GA</property>
+     </condition>
+  </enable>	
+  <input>
+    <property>/b737/flaps-min-retr-speed</property>
+  </input>
+  <output>
+    <prop>/autopilot/settings/target-speed-kt</prop>
+  </output>
+</filter>
+
+<!-- debug section -->
+
+  <pi-simple-controller>
+    <name>Thrust comparator</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <property>/debug/catch-mac</property>
+      </condition>
+    </enable>	
+    <input>
+      <prop>/instrumentation/fmc/cg</prop>
+    </input>
+    <reference>
+      <prop>/debug/target-mac</prop>
+    </reference>
+    <output>
+      <prop>/fdm/jsbsim/inertia/pointmass-location-X-inches[1]</prop>
+    </output>
+    <config>
+      <Kp>-0.0</Kp>          <!-- proportional gain -->
+      <Ki>/debug/mac-coeff</Ki>          <!-- integral gain -->
+      <u_min>-1000</u_min> <!-- minimum output clamp -->
+      <u_max>3000</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+  <pi-simple-controller>
+    <name>Thrust comparator</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <property>/debug/catch-weight</property>
+      </condition>
+    </enable>	
+    <input>
+      <prop>/fdm/jsbsim/inertia/weight-lbs</prop>
+    </input>
+    <reference>
+      <prop>/debug/target-weight-lbs</prop>
+    </reference>
+    <output>
+      <prop>/fdm/jsbsim/inertia/pointmass-weight-lbs[1]</prop>
+    </output>
+    <config>
+      <Kp>-0.0</Kp>          <!-- proportional gain -->
+      <Ki>3</Ki>          <!-- integral gain -->
+      <u_min>-1000</u_min> <!-- minimum output clamp -->
+      <u_max>300000</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+</PropertyList>

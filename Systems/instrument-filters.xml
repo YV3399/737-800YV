@@ -1,0 +1,1954 @@
+<PropertyList>
+
+<!-- Helper for smooth slip-skid indication -->
+<filter n="10001">
+  <name>slip-skid-filter</name>	
+  <debug>false</debug>
+  <feedback-if-disabled>true</feedback-if-disabled>
+  <type>noise-spike</type>
+  <max-rate-of-change>3</max-rate-of-change>
+  <input>/fdm/jsbsim/instrumentation/slip-skid-indicator/slip-skid-deg</input>
+  <output>
+    <prop>instrumentation/slip-skid-indicator/slip-skid-deg-filtered</prop>
+  </output>
+</filter>
+
+<filter n="10002">
+   <type>gain</type>
+   <input>
+     <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+     <min>45</min>
+     <max>1000</max>
+   </input>
+   <gain>1</gain>
+   <output>/instrumentation/airspeed-indicator/indicated-speed-numbers-kt</output>
+</filter>
+
+<filter n="10003">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <abs>
+        <dif>
+          <property>/instrumentation/altimeter[0]/indicated-altitude-ft</property>
+          <property>/autopilot/settings/target-altitude-mcp-ft</property>
+        </dif>
+      </abs>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/helpers/alt-diff-ft[0]</prop>
+  </output>
+</filter>
+
+<filter n="10004">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <abs>
+        <dif>
+          <property>/instrumentation/altimeter[1]/indicated-altitude-ft</property>
+          <property>/autopilot/settings/target-altitude-mcp-ft</property>
+        </dif>
+      </abs>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/helpers/alt-diff-ft[1]</prop>
+  </output>
+</filter>
+
+<filter n="10005"> <!-- how many time past from last MCP ALT change -->
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <property>/sim/time/elapsed-sec</property>
+    <offset>
+      <property>/b737/sound/mcp-last-change</property>
+      <scale>-1</scale>
+    </offset>
+  </input>
+  <output>
+    <property>/b737/sound/mcp-period</property>
+  </output>
+</filter>
+
+ <logic n="10006">
+   <input>
+     <and>
+       <greater-than>
+         <property>/b737/helpers/alt-diff-ft[0]</property>
+         <value>300</value>
+       </greater-than>
+       <less-than>
+         <property>/b737/helpers/alt-diff-ft[0]</property>
+         <value>900</value>
+       </less-than>
+       <greater-than>
+         <property>/b737/sound/mcp-period</property>
+         <value>3</value>
+       </greater-than>
+       <not>
+         <or>
+           <greater-than>
+             <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
+             <value>0.749</value>
+           </greater-than>
+           <property>/autopilot/internal/VNAV-GS</property>
+         </or>
+       </not>
+     </and>
+   </input>
+   <output>/b737/sound/alt-acq</output>
+ </logic>
+
+<filter n="10007">
+  <type>gain</type>
+  <gain>-3430</gain> <!-- 162 turns from 17 to 0. Measured from real aircraft. -->
+  <input>
+    <property>/fdm/jsbsim/fcs/stabilizer-pos-unit</property>
+  </input>
+  <output>
+    <property>/b737/helpers/trim-wheel-abs-pos</property>
+  </output>
+</filter>
+
+<filter n="10008">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <mod>
+          <property>/b737/helpers/trim-wheel-abs-pos</property>
+          <value>360</value>
+        </mod>
+        <value>-0.002777777777777777777777</value>
+      </product>
+    </expression>
+  </input>
+  <output>
+    <prop>/b737/helpers/trim-wheel-pos</prop>
+  </output>
+</filter>
+
+ <logic n="10009">
+   <input>
+     <and>
+       <greater-than>
+         <property>/b737/helpers/trim-wheel-pos</property>
+         <value>0.1</value>
+       </greater-than>
+       <less-than>
+         <property>/b737/helpers/trim-wheel-pos</property>
+         <value>0.9</value>
+       </less-than>
+     </and>
+   </input>
+   <output>/b737/sound/stab-trim</output>
+ </logic>
+
+<!-- VOR/LOC lamp on MCP -->
+ <logic>
+   <input>
+     <and>
+       <or>
+         <property>/autopilot/internal/LNAV-NAV-armed</property>
+         <property>/autopilot/internal/LNAV-NAV</property>
+       </or>
+       <not>
+         <property>/autopilot/internal/VNAV-GS-armed</property>
+       </not>
+       <not>
+         <or>
+           <property>/autopilot/internal/VNAV-GS</property>
+           <property>/autopilot/internal/VNAV-FLARE</property>
+         </or>
+       </not>
+     </and>
+   </input>
+   <output>/autopilot/internal/LNAV-NAV-light</output>
+ </logic>
+
+<!-- Calculating output for FLIGHT DIRECTORS -->
+
+<!-- ROLL -->
+<filter n="10010">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <and>
+        <property>/autopilot/internal/FCC-B-master</property>
+        <not><property>/autopilot/internal/FCC-A-master</property></not>
+      </and>
+    </condition>
+    <prop>/autopilot/settings/fccb-target-bank</prop>
+  </input>
+  <input>
+    <prop>/autopilot/settings/fcca-target-bank</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-left-bank</prop>
+  </output>
+</filter>
+
+<filter n="10011">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <and>
+        <property>/autopilot/internal/FCC-A-master</property>
+        <not><property>/autopilot/internal/FCC-B-master</property></not>
+      </and>
+    </condition>
+    <prop>/autopilot/settings/fcca-target-bank</prop>
+  </input>
+  <input>
+    <prop>/autopilot/settings/fccb-target-bank</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-right-bank</prop>
+  </output>
+</filter>
+
+<!-- PITCH -->
+<filter n="10012">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <and>
+        <property>/autopilot/internal/FCC-B-master</property>
+        <not><property>/autopilot/internal/FCC-A-master</property></not>
+      </and>
+    </condition>
+    <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
+  </input>
+  <input>
+    <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-left-pitch</prop>
+  </output>
+</filter>
+
+<filter n="10013">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <and>
+        <property>/autopilot/internal/FCC-A-master</property>
+        <not><property>/autopilot/internal/FCC-B-master</property></not>
+      </and>
+    </condition>
+    <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
+  </input>
+  <input>
+    <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-right-pitch</prop>
+  </output>
+</filter>
+
+<!-- Transfer weight to kilogramms-->
+<filter n="10014">
+  <type>gain</type>
+  <gain>0.4536</gain>
+  <input>
+    <prop>/fdm/jsbsim/inertia/weight-lbs</prop>
+  </input>
+  <output>
+    <prop>/fdm/jsbsim/inertia/weight-kg</prop>
+  </output>
+</filter>
+
+<!-- For altimeter tooltips -->
+<filter n="10015">
+   <type>gain</type>
+   <input>
+     <property>/instrumentation/altimeter[0]/setting-hpa</property>
+   </input>
+   <gain>1</gain>
+   <output>/b737/instrumentation/altimeter[0]/setting-hpa</output>
+</filter>
+<filter n="10016">
+   <type>gain</type>
+   <input>
+     <property>/instrumentation/altimeter[1]/setting-hpa</property>
+   </input>
+   <gain>1</gain>
+   <output>/b737/instrumentation/altimeter[1]/setting-hpa</output>
+</filter>
+<filter n="10017">
+   <type>gain</type>
+   <input>
+     <property>/instrumentation/altimeter[2]/setting-hpa</property>
+   </input>
+   <gain>1</gain>
+   <output>/b737/instrumentation/altimeter[2]/setting-hpa</output>
+</filter>
+
+<!-- Predicted drag-->
+<filter n="10018">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <div>
+        <product>
+          <property>/fdm/jsbsim/forces/fwx-aero-lbs</property>
+          <property>/autopilot/settings/target-speed-kt</property>
+          <property>/autopilot/settings/target-speed-kt</property>
+        </product>
+        <sum>
+          <product>
+            <property>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</property>
+            <property>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</property>
+          </product>
+          <value>0.0000001</value>
+        </sum>
+      </div>
+    </expression>
+  </input>
+  <output>
+    <prop>/autopilot/helpers/predicted-drag-lbs</prop>
+  </output>
+</filter>
+
+<!-- ############################################################################# -->
+<!-- Calculating engine sound params                                               -->
+<!-- ############################################################################# -->
+
+<!-- Soundpack 1 -->
+
+<filter>
+  <type>gain</type>
+  <gain>0.48328877</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property>
+          <value>0.0195983012</value>
+        </product>
+        <value>-0.6832341158</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/Int-Fan-1-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <property>/engines/engine[0]/n1</property>
+            <entry><ind>	 74.8344</ind>	<dep>	0</dep></entry>
+            <entry><ind>	 82.1192</ind>	<dep>	0.05</dep></entry>
+            <entry><ind>	85.4305</ind>	<dep>	0.1512766</dep></entry>
+            <entry><ind>	86.5342</ind>	<dep>	0.35106384</dep></entry>
+            <entry><ind>	95.8057</ind>	<dep>	0.47872341</dep></entry>
+            <entry><ind>	100</ind>	<dep>	0.55319149</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/Int-Fan-1-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>0.48328877</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property>
+          <value>0.0208703492</value>
+        </product>
+        <value>-0.5125669167</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/Int-Spool-1-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <property>/engines/engine[0]/n1</property>
+<entry><ind>45.4746</ind> <dep>0</dep></entry>
+<entry><ind>48.5651</ind> <dep>0.07446808</dep></entry>
+<entry><ind>50.5519</ind> <dep>0.17021276</dep></entry>
+<entry><ind>52.7594</ind> <dep>0.31914894</dep></entry>
+<entry><ind>64.2384</ind> <dep>0.57446808</dep></entry>
+<entry><ind>79.2494</ind> <dep>0.55319149</dep></entry>
+<entry><ind>88.9625</ind> <dep>0.11702127</dep></entry>
+<entry><ind>100</ind> <dep>0.0212766</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/Int-Spool-1-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>0.48328877</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property>
+          <value>0.0079120437</value>
+        </product>
+        <value>0.7603996484</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/Int-Idle-12-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <property>/engines/engine[0]/n1</property>
+<entry><ind>26.0486</ind> <dep>0.0106383</dep></entry>
+<entry><ind>27.5938</ind> <dep>0.12765958</dep></entry>
+<entry><ind>28.9183</ind> <dep>0.24468084</dep></entry>
+<entry><ind>47.6821</ind> <dep>0.27659575</dep></entry>
+<entry><ind>49.4481</ind> <dep>0.10638298</dep></entry>
+<entry><ind>53.4216</ind> <dep>0</dep></entry>
+<entry><ind>70.8609</ind> <dep>0</dep></entry>
+<entry><ind>87.4</ind> <dep>0</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/Int-Idle-12-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>0.48328877</gain> <!-- <gain>0.943396226</gain> -->
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property>
+          <value>0.7489626556</value>
+        </product>
+        <value>0.7745477178</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/Int-Idle-1-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <property>/engines/engine[0]/n1</property>
+<entry><ind>10.1545</ind> <dep>0</dep></entry>
+<entry><ind>11.9205</ind> <dep>0.25531916</dep></entry>
+<entry><ind>17.8808</ind> <dep>0.28723404</dep></entry>
+<entry><ind>28.2561</ind> <dep>0.30851065</dep></entry>
+<entry><ind>36.6</ind> <dep>0.17021</dep></entry>
+<entry><ind>46.5784</ind> <dep>0.09574468</dep></entry>
+<entry><ind>56.7329</ind> <dep>0.06382979</dep></entry>
+<entry><ind>65.1214</ind> <dep>0</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/Int-Idle-1-volume[0]</prop>
+  </output>
+</filter>
+
+<!-- Soundpack 2 -->
+
+<!-- left engine -->
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>1.28571428571429</value>
+        </product>
+        <value>0.264285714285714</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban11-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.25</ind> <dep>0</dep></entry>
+            <entry><ind>0.352</ind> <dep>0.0641</dep></entry>
+            <entry><ind>0.412</ind> <dep>0.17308001</dep></entry>
+            <entry><ind>0.449</ind> <dep>0.33333</dep></entry>
+            <entry><ind>0.565</ind> <dep>0.39362</dep></entry>
+            <entry><ind>0.62</ind> <dep>0.1859</dep></entry>
+            <entry><ind>0.681</ind> <dep>0.07051</dep></entry>
+            <entry><ind>0.801</ind> <dep>0</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban11-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>1.10759493670886</value>
+        </product>
+        <value>0.0998417721518985</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban12-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.57</ind> <dep>0</dep></entry>
+            <entry><ind>0.62</ind> <dep>0.07051</dep></entry>
+            <entry><ind>0.667</ind> <dep>0.22436001</dep></entry>
+            <entry><ind>0.704</ind> <dep>0.44230999</dep></entry>
+            <entry><ind>0.819</ind> <dep>0.48717999</dep></entry>
+            <entry><ind>0.88</ind> <dep>0.21153999</dep></entry>
+            <entry><ind>0.944</ind> <dep>0.07051</dep></entry>
+            <entry><ind>1</ind> <dep>0.03205</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban12-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.810810810810811</value>
+        </product>
+        <value>0.168189189189189</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban13-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.65</ind> <dep>0</dep></entry>
+            <entry><ind>0.801</ind> <dep>0.04487</dep></entry>
+            <entry><ind>0.86</ind> <dep>0.11</dep></entry>
+            <entry><ind>0.91</ind> <dep>0.325</dep></entry>
+            <entry><ind>0.93</ind> <dep>0.585</dep></entry>
+            <entry><ind>1</ind> <dep>0.585</dep></entry>
+            <entry><ind>1</ind> <dep>0.585</dep></entry>
+            <entry><ind>1</ind> <dep>0.585</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban13-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.773869346733668</value>
+        </product>
+        <value>0.226130653266332</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban14-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.6</ind> <dep>0</dep></entry>
+            <entry><ind>0.821192</ind> <dep>0.12765958</dep></entry>
+            <entry><ind>0.898</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban14-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.466960352422907</value>
+        </product>
+        <value>0.596519823788546</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban21-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.25</ind> <dep>0.26923</dep></entry>
+            <entry><ind>0.565</ind> <dep>0.26282</dep></entry>
+            <entry><ind>0.623</ind> <dep>0.10638</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban21-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.45822102425876</value>
+        </product>
+        <value>0.578436657681941</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban22-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.55</ind> <dep>0</dep></entry>
+            <entry><ind>0.649</ind> <dep>0.09574</dep></entry>
+            <entry><ind>0.695364</ind> <dep>0.25531916</dep></entry>
+            <entry><ind>0.761589</ind> <dep>0.30851065</dep></entry>
+            <entry><ind>0.815</ind> <dep>0.12179</dep></entry>
+            <entry><ind>0.92</ind> <dep>0</dep></entry>
+            <entry><ind>0.92</ind> <dep>0</dep></entry>
+            <entry><ind>0.92</ind> <dep>0</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban22-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.365853658536585</value>
+        </product>
+        <value>0.645121951219512</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban23-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.69</ind> <dep>0</dep></entry>
+            <entry><ind>0.755</ind> <dep>0.10256</dep></entry>
+            <entry><ind>0.81</ind> <dep>0.34615002</dep></entry>
+            <entry><ind>0.889</ind> <dep>0.42307999</dep></entry>
+            <entry><ind>0.944</ind> <dep>0.29487</dep></entry>
+            <entry><ind>1</ind> <dep>0.27</dep></entry>
+            <entry><ind>1</ind> <dep>0.27</dep></entry>
+            <entry><ind>1</ind> <dep>0.27</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban23-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.75</value>
+        </product>
+        <value>0.25</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban24-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.8</ind> <dep>0</dep></entry>
+            <entry><ind>0.907285</ind> <dep>0.13829787</dep></entry>
+            <entry><ind>0.944812</ind> <dep>0.28723404</dep></entry>
+            <entry><ind>0.966887</ind> <dep>0.4680851</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban24-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>1.22932330827068</value>
+        </product>
+        <value>0.661135338345865</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban11-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.025</ind> <dep>0</dep></entry>
+            <entry><ind>0.048565</ind> <dep>0.20212767</dep></entry>
+            <entry><ind>0.11</ind> <dep>0.23415001</dep></entry>
+            <entry><ind>0.201</ind> <dep>0.28049</dep></entry>
+            <entry><ind>0.269316</ind> <dep>0.27659575</dep></entry>
+            <entry><ind>0.33</ind> <dep>0.23659</dep></entry>
+            <entry><ind>0.333333</ind> <dep>0.24468084</dep></entry>
+            <entry><ind>0.504</ind> <dep>0.00488</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban11-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>1.25971143174251</value>
+        </product>
+        <value>0.485288568257492</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban12-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.12</ind> <dep>0</dep></entry>
+            <entry><ind>0.309</ind> <dep>0.09574</dep></entry>
+            <entry><ind>0.366</ind> <dep>0.17021</dep></entry>
+            <entry><ind>0.424</ind> <dep>0.2766</dep></entry>
+            <entry><ind>0.492</ind> <dep>0.31915001</dep></entry>
+            <entry><ind>0.556</ind> <dep>0.2766</dep></entry>
+            <entry><ind>0.66</ind> <dep>0.11702</dep></entry>
+            <entry><ind>0.762</ind> <dep>0.012</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban12-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>1.20717131474104</value>
+        </product>
+        <value>0.268828685258964</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban13-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.25</ind> <dep>0</dep></entry>
+            <entry><ind>0.434879</ind> <dep>0.17021276</dep></entry>
+            <entry><ind>0.558</ind> <dep>0.35105999</dep></entry>
+            <entry><ind>0.649</ind> <dep>0.43617001</dep></entry>
+            <entry><ind>0.737</ind> <dep>0.44681</dep></entry>
+            <entry><ind>0.837</ind> <dep>0.31915001</dep></entry>
+            <entry><ind>0.912</ind> <dep>0.1383</dep></entry>
+            <entry><ind>1</ind> <dep>0.01</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban13-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.731403735289522</value>
+        </product>
+        <value>0.268809264710478</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban14-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.721416</ind> <dep>0</dep></entry>
+            <entry><ind>0.801324</ind> <dep>0.08510638</dep></entry>
+            <entry><ind>0.843267</ind> <dep>0.18085106</dep></entry>
+            <entry><ind>0.883848</ind> <dep>0.40243904</dep></entry>
+            <entry><ind>0.927405</ind> <dep>0.57317074</dep></entry>
+            <entry><ind>0.955535</ind> <dep>0.64878052</dep></entry>
+            <entry><ind>0.976407</ind> <dep>0.68048782</dep></entry>
+            <entry><ind>0.999093</ind> <dep>0.71219513</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban14-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.714857774268349</value>
+        </product>
+        <value>0.502142225731651</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban21-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0</ind> <dep>0.1</dep></entry>
+            <entry><ind>0.262</ind> <dep>0.24</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban21-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.797583081570997</value>
+        </product>
+        <value>0.568416918429003</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban22-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.2</ind> <dep>0</dep></entry>
+            <entry><ind>0.309051</ind> <dep>0.08510638</dep></entry>
+            <entry><ind>0.358</ind> <dep>0.29787001</dep></entry>
+            <entry><ind>0.497</ind> <dep>0.41488998</dep></entry>
+            <entry><ind>0.539</ind> <dep>0.2</dep></entry>
+            <entry><ind>0.655</ind> <dep>0</dep></entry>
+            <entry><ind>0.736</ind> <dep>0</dep></entry>
+            <entry><ind>0.736</ind> <dep>0</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban22-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.738197424892704</value>
+        </product>
+        <value>0.365802575107296</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban23-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.396</ind> <dep>0</dep></entry>
+            <entry><ind>0.501</ind> <dep>0.17021</dep></entry>
+            <entry><ind>0.547</ind> <dep>0.45744999</dep></entry>
+            <entry><ind>0.722</ind> <dep>0.67021004</dep></entry>
+            <entry><ind>0.879</ind> <dep>0.14894</dep></entry>
+            <entry><ind>1</ind> <dep>0.02</dep></entry>
+            <entry><ind>1</ind> <dep>0.02</dep></entry>
+            <entry><ind>1</ind> <dep>0.02</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban23-volume[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[0]/n2</property><value>0.00952380952380952</value>
+          <value>0.685266746618207</value>
+        </product>
+        <value>0.264733253381793</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban24-pitch[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[0]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.566</ind> <dep>0</dep></entry>
+            <entry><ind>0.729</ind> <dep>0.16</dep></entry>
+            <entry><ind>0.813</ind> <dep>0.8</dep></entry>
+            <entry><ind>0.998</ind> <dep>0.98400002</dep></entry>
+            <entry><ind>1</ind> <dep>0.98400002</dep></entry>
+            <entry><ind>1</ind> <dep>0.98800003</dep></entry>
+            <entry><ind>1</ind> <dep>0.98800003</dep></entry>
+            <entry><ind>1</ind> <dep>0.98800003</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban24-volume[0]</prop>
+  </output>
+</filter>
+
+<!-- right engine -->
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>1.28571428571429</value>
+        </product>
+        <value>0.264285714285714</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban11-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.25</ind> <dep>0</dep></entry>
+            <entry><ind>0.352</ind> <dep>0.0641</dep></entry>
+            <entry><ind>0.412</ind> <dep>0.17308001</dep></entry>
+            <entry><ind>0.449</ind> <dep>0.33333</dep></entry>
+            <entry><ind>0.565</ind> <dep>0.39362</dep></entry>
+            <entry><ind>0.62</ind> <dep>0.1859</dep></entry>
+            <entry><ind>0.681</ind> <dep>0.07051</dep></entry>
+            <entry><ind>0.801</ind> <dep>0</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban11-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>1.10759493670886</value>
+        </product>
+        <value>0.0998417721518985</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban12-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.57</ind> <dep>0</dep></entry>
+            <entry><ind>0.62</ind> <dep>0.07051</dep></entry>
+            <entry><ind>0.667</ind> <dep>0.22436001</dep></entry>
+            <entry><ind>0.704</ind> <dep>0.44230999</dep></entry>
+            <entry><ind>0.819</ind> <dep>0.48717999</dep></entry>
+            <entry><ind>0.88</ind> <dep>0.21153999</dep></entry>
+            <entry><ind>0.944</ind> <dep>0.07051</dep></entry>
+            <entry><ind>1</ind> <dep>0.03205</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban12-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.810810810810811</value>
+        </product>
+        <value>0.168189189189189</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban13-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.65</ind> <dep>0</dep></entry>
+            <entry><ind>0.801</ind> <dep>0.04487</dep></entry>
+            <entry><ind>0.86</ind> <dep>0.11</dep></entry>
+            <entry><ind>0.91</ind> <dep>0.325</dep></entry>
+            <entry><ind>0.93</ind> <dep>0.585</dep></entry>
+            <entry><ind>1</ind> <dep>0.585</dep></entry>
+            <entry><ind>1</ind> <dep>0.585</dep></entry>
+            <entry><ind>1</ind> <dep>0.585</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban13-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.773869346733668</value>
+        </product>
+        <value>0.226130653266332</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban14-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.6</ind> <dep>0</dep></entry>
+            <entry><ind>0.821192</ind> <dep>0.12765958</dep></entry>
+            <entry><ind>0.898</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban14-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.466960352422907</value>
+        </product>
+        <value>0.596519823788546</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban21-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.25</ind> <dep>0.26923</dep></entry>
+            <entry><ind>0.565</ind> <dep>0.26282</dep></entry>
+            <entry><ind>0.623</ind> <dep>0.10638</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+            <entry><ind>0.72</ind> <dep>0</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban21-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.45822102425876</value>
+        </product>
+        <value>0.578436657681941</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban22-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.55</ind> <dep>0</dep></entry>
+            <entry><ind>0.649</ind> <dep>0.09574</dep></entry>
+            <entry><ind>0.695364</ind> <dep>0.25531916</dep></entry>
+            <entry><ind>0.761589</ind> <dep>0.30851065</dep></entry>
+            <entry><ind>0.815</ind> <dep>0.12179</dep></entry>
+            <entry><ind>0.92</ind> <dep>0</dep></entry>
+            <entry><ind>0.92</ind> <dep>0</dep></entry>
+            <entry><ind>0.92</ind> <dep>0</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban22-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.365853658536585</value>
+        </product>
+        <value>0.645121951219512</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban23-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.69</ind> <dep>0</dep></entry>
+            <entry><ind>0.755</ind> <dep>0.10256</dep></entry>
+            <entry><ind>0.81</ind> <dep>0.34615002</dep></entry>
+            <entry><ind>0.889</ind> <dep>0.42307999</dep></entry>
+            <entry><ind>0.944</ind> <dep>0.29487</dep></entry>
+            <entry><ind>1</ind> <dep>0.27</dep></entry>
+            <entry><ind>1</ind> <dep>0.27</dep></entry>
+            <entry><ind>1</ind> <dep>0.27</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban23-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.75</value>
+        </product>
+        <value>0.25</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban24-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.8</ind> <dep>0</dep></entry>
+            <entry><ind>0.907285</ind> <dep>0.13829787</dep></entry>
+            <entry><ind>0.944812</ind> <dep>0.28723404</dep></entry>
+            <entry><ind>0.966887</ind> <dep>0.4680851</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+            <entry><ind>1</ind> <dep>0.45</dep></entry>
+        </table>
+      <property>sim/current-view/internal</property>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-ban24-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>1.22932330827068</value>
+        </product>
+        <value>0.661135338345865</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban11-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.025</ind> <dep>0</dep></entry>
+            <entry><ind>0.048565</ind> <dep>0.20212767</dep></entry>
+            <entry><ind>0.11</ind> <dep>0.23415001</dep></entry>
+            <entry><ind>0.201</ind> <dep>0.28049</dep></entry>
+            <entry><ind>0.269316</ind> <dep>0.27659575</dep></entry>
+            <entry><ind>0.33</ind> <dep>0.23659</dep></entry>
+            <entry><ind>0.333333</ind> <dep>0.24468084</dep></entry>
+            <entry><ind>0.504</ind> <dep>0.00488</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban11-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>1.25971143174251</value>
+        </product>
+        <value>0.485288568257492</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban12-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.12</ind> <dep>0</dep></entry>
+            <entry><ind>0.309</ind> <dep>0.09574</dep></entry>
+            <entry><ind>0.366</ind> <dep>0.17021</dep></entry>
+            <entry><ind>0.424</ind> <dep>0.2766</dep></entry>
+            <entry><ind>0.492</ind> <dep>0.31915001</dep></entry>
+            <entry><ind>0.556</ind> <dep>0.2766</dep></entry>
+            <entry><ind>0.66</ind> <dep>0.11702</dep></entry>
+            <entry><ind>0.762</ind> <dep>0.012</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban12-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>1.20717131474104</value>
+        </product>
+        <value>0.268828685258964</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban13-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.25</ind> <dep>0</dep></entry>
+            <entry><ind>0.434879</ind> <dep>0.17021276</dep></entry>
+            <entry><ind>0.558</ind> <dep>0.35105999</dep></entry>
+            <entry><ind>0.649</ind> <dep>0.43617001</dep></entry>
+            <entry><ind>0.737</ind> <dep>0.44681</dep></entry>
+            <entry><ind>0.837</ind> <dep>0.31915001</dep></entry>
+            <entry><ind>0.912</ind> <dep>0.1383</dep></entry>
+            <entry><ind>1</ind> <dep>0.01</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban13-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.731403735289522</value>
+        </product>
+        <value>0.268809264710478</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban14-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.721416</ind> <dep>0</dep></entry>
+            <entry><ind>0.801324</ind> <dep>0.08510638</dep></entry>
+            <entry><ind>0.843267</ind> <dep>0.18085106</dep></entry>
+            <entry><ind>0.883848</ind> <dep>0.40243904</dep></entry>
+            <entry><ind>0.927405</ind> <dep>0.57317074</dep></entry>
+            <entry><ind>0.955535</ind> <dep>0.64878052</dep></entry>
+            <entry><ind>0.976407</ind> <dep>0.68048782</dep></entry>
+            <entry><ind>0.999093</ind> <dep>0.71219513</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban14-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.714857774268349</value>
+        </product>
+        <value>0.502142225731651</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban21-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0</ind> <dep>0.1</dep></entry>
+            <entry><ind>0.262</ind> <dep>0.24</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+            <entry><ind>0.35</ind> <dep>0</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban21-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.797583081570997</value>
+        </product>
+        <value>0.568416918429003</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban22-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.2</ind> <dep>0</dep></entry>
+            <entry><ind>0.309051</ind> <dep>0.08510638</dep></entry>
+            <entry><ind>0.358</ind> <dep>0.29787001</dep></entry>
+            <entry><ind>0.497</ind> <dep>0.41488998</dep></entry>
+            <entry><ind>0.539</ind> <dep>0.2</dep></entry>
+            <entry><ind>0.655</ind> <dep>0</dep></entry>
+            <entry><ind>0.736</ind> <dep>0</dep></entry>
+            <entry><ind>0.736</ind> <dep>0</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban22-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.738197424892704</value>
+        </product>
+        <value>0.365802575107296</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban23-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.396</ind> <dep>0</dep></entry>
+            <entry><ind>0.501</ind> <dep>0.17021</dep></entry>
+            <entry><ind>0.547</ind> <dep>0.45744999</dep></entry>
+            <entry><ind>0.722</ind> <dep>0.67021004</dep></entry>
+            <entry><ind>0.879</ind> <dep>0.14894</dep></entry>
+            <entry><ind>1</ind> <dep>0.02</dep></entry>
+            <entry><ind>1</ind> <dep>0.02</dep></entry>
+            <entry><ind>1</ind> <dep>0.02</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban23-volume[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <sum>
+        <product>
+          <property>/engines/engine[1]/n2</property><value>0.00952380952380952</value>
+          <value>0.685266746618207</value>
+        </product>
+        <value>0.264733253381793</value>
+      </sum>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban24-pitch[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <product>
+        <table>
+          <product><property>/engines/engine[1]/n2</property><value>0.00952380952380952</value></product>
+            <entry><ind>0.566</ind> <dep>0</dep></entry>
+            <entry><ind>0.729</ind> <dep>0.16</dep></entry>
+            <entry><ind>0.813</ind> <dep>0.8</dep></entry>
+            <entry><ind>0.998</ind> <dep>0.98400002</dep></entry>
+            <entry><ind>1</ind> <dep>0.98400002</dep></entry>
+            <entry><ind>1</ind> <dep>0.98800003</dep></entry>
+            <entry><ind>1</ind> <dep>0.98800003</dep></entry>
+            <entry><ind>1</ind> <dep>0.98800003</dep></entry>
+        </table>
+      <abs><sum><property>sim/current-view/internal</property><value>-1</value></sum></abs>
+    </product>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/sound/sp2-xban24-volume[1]</prop>
+  </output>
+</filter>
+
+</PropertyList>

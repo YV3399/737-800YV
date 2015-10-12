@@ -476,380 +476,121 @@
         <type>pick</type>
         <object-name>CMD-A</object-name>
         <visible>1</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>                    
-          <binding>
-           <condition>          
-                <equals>          
-                         <property>/controls/autoflight/autopilot/engage</property>
-                             <value type="bool">false</value>          
-                </equals>
-          </condition>      
-          <command>property-assign</command>
-          <property>/controls/autoflight/autopilot/engage</property>
-          <value type="bool">true</value>                   
-          </binding> 
-          <binding>
-           <condition>          
-                <equals>          
-                         <property>/controls/autoflight/autopilot/engage</property>
-                             <value type="bool">true</value>          
-                </equals>
-          </condition>  
-          <command>property-assign</command>
-          <property>/autopilot/locks/heading</property>
-          <value type="string">off</value>
-          </binding>           
-          <binding>
-           <condition>          
-                <equals>          
-                         <property>/controls/autoflight/autopilot/engage</property>
-                             <value type="bool">true</value>          
-                </equals>
-          </condition>  
-          <command>property-assign</command>
-          <property>/autopilot/locks/altitude</property>
-          <value type="string">off</value>
-          </binding>       
-          <binding>
-           <condition>          
-                <equals>          
-                         <property>/controls/autoflight/autopilot/engage</property>
-                             <value type="bool">true</value>          
-                </equals>
-          </condition>             
-          <command>property-assign</command>
-          <property>/autopilot/locks/vert-speed</property>
-          <value type="string">off</value>
-          </binding>                  
-        </action>
+  <action>
+    <name>Toggle CMDA</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.cmda_button_press();
+      </script>   
+    </binding>
+  </action>
       </animation>
 
       <animation>
         <type>pick</type>
         <object-name>DISENGAGE</object-name>
         <visible>1</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-          <binding>
-          <command>property-assign</command>
-          <property>/controls/autoflight/autopilot/engage</property>
-          <value type="bool">false</value>  
-                <step>1</step>
-                <min>0</min>
-                <max>6</max>
-                <wrap>false</wrap>
-          </binding>
-
-          <binding>
-          <command>property-assign</command>
-          <property>/autopilot/locks/heading</property>
-          <value type="string">off</value>
-          </binding>           
-
-          <binding>
-          <command>property-assign</command>
-          <property>/autopilot/locks/altitude</property>
-          <value type="string">off</value>
-          </binding>          
-
-          <binding>
-          <command>property-assign</command>
-           <property>/controls/autoflight/autopilot/alt-hld</property>
-                   <value>0</value>
-          </binding>
-     
-          <binding>
-          <command>property-assign</command>
-           <property>/controls/autoflight/autopilot/hdg-sel</property>
-                   <value type="bool">false</value>
-          </binding>
-
-         <binding>
-          <command>property-assign</command>
-           <property>/controls/autoflight/autopilot/app</property>
-                   <value type="bool">false</value>
-          </binding>
-
-          <binding>
-          <command>property-assign</command>
-           <property>/controls/autoflight/autopilot/vor</property>
-                   <value type="bool">false</value>
-          </binding> 
-        </action>
+          <action>
+  <name>AP disengage</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.apdsng_button_press();
+      </script>   
+    </binding>
+  </action>
       </animation>
 
       <animation>
         <type>pick</type>
         <object-name>at-arm</object-name>
         <visible>1</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>                    
-          <binding>
-           <condition>          
-                <equals>          
-                         <property>/controls/autoflight/autothrottle-arm</property>
-                             <value type="bool">false</value>          
-                </equals>
-          </condition>      
-          <command>property-assign</command>
-           <property>/controls/autoflight/autothrottle-arm</property>
-          <value type="bool">true</value>                   
-          </binding>          
-        </action>
-      </animation>
-
-      <animation>
-        <type>pick</type>
-        <object-name>at-arm</object-name>
-        <visible>1</visible>
-        <action>
-            <button>1</button>
-            <repeatable>false</repeatable>                    
-          <binding>
-           <condition>          
-                <equals>          
-                         <property>/controls/autoflight/autothrottle-arm</property>
-                             <value type="bool">true</value>          
-                </equals>
-          </condition>      
-          <command>property-assign</command>
-           <property>/controls/autoflight/autothrottle-arm</property>
-          <value type="bool">false</value>                   
-          </binding> 
-          <binding>
-           <command>property-assign</command>
-           <property>/autopilot/locks/speed</property>
-          <value type="string">off</value>                   
-          </binding> 
-          <binding>
-           <command>property-assign</command>
-           <property>/controls/autoflight/autothrottle-engage</property>
-          <value type="string">false</value>                   
-          </binding> 
-        </action>
+  <action>
+    <name>AT Arm Switch</name>
+   <button>0</button>
+   <repeatable>false</repeatable> 
+   <binding>
+    <command>property-toggle</command>
+    <property>/autopilot/internal/SPD</property>
+    <step>1</step>
+    <min>0></min>
+    <max>1</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
       </animation>
 
       <animation>
         <type>pick</type>
         <object-name>ALT-HLD</object-name>
         <visible>1</visible>
-        <action>
-        <button>0</button>
-            <repeatable>false</repeatable> 
-       <binding>            
-         <condition>
-              <and>
-                <equals>
-                 <property>/controls/autoflight/autopilot/engage</property>
-                   <value type="bool">true</value>
-                </equals>
-                <equals>
-                  <property>/autopilot/locks/altitude</property>
-                   <value type="string">off</value>
-                </equals>                 
-             </and>
-         </condition>          
-         <command>property-assign</command>
-         <property>/autopilot/locks/altitude</property>
-         <value type="string">ALT-ACQ</value>
-         </binding>
-         <binding>
-         <condition>             
-                <equals>
-                   <property>/autopilot/locks/altitude</property>
-                    <value type="string">ALT-ACQ</value>
-                </equals>                
-         </condition> 
-         <command>property-assign</command>
-          <property>/controls/autoflight/autopilot/alt-hld</property>
-          <value>1</value>
-          </binding>          
-         </action>
+  <action>
+    <name>Toggle ALT Mode</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.althld_button_press();
+      </script>   
+    </binding>
+  </action>
      </animation>     
 
      <animation>
         <type>pick</type>
         <object-name>HDG-HLD</object-name>
         <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>false</repeatable>             
-          <binding>
-               <condition>
-                 <and> 
-                    <equals>
-                    <property>/controls/autoflight/autopilot/engage</property>
-                     <value type="bool">true</value>
-                   </equals>
-                    <equals>
-                     <property>/controls/autoflight/autopilot/app</property>
-          <value type="bool">false</value>>
-                   </equals>
-               </and>
-          </condition>
-          <command>property-assign</command>
-          <property>/autopilot/locks/heading</property>
-          <value type="string">HDG-SEL</value>
-          </binding>
-
-          <binding>
-          <condition>                
-                    <equals>
-                    <property>/autopilot/locks/heading</property>
-                      <value type="string">HDG-SEL</value>
-                   </equals>              
-          </condition>
-           <command>property-assign</command>
-           <property>/controls/autoflight/autopilot/hdg-sel</property>
-            <value type="bool">true</value>
-       </binding>  
-
-        <binding>
-          <condition>                
-                    <equals>
-                    <property>/autopilot/locks/heading</property>
-                      <value type="string">HDG-SEL</value>
-                   </equals>              
-          </condition>
-           <command>property-assign</command>
-           <property>/controls/autoflight/autopilot/vor</property>
-            <value type="bool">false</value>
-       </binding>       
-      </action> 
+  <action>
+    <name>Toggle Heading Bug Mode</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.hdg_button_press();
+      </script>   
+    </binding>
+  </action>
     </animation>
 
     <animation>
         <type>pick</type>
         <object-name>APP</object-name>
         <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>false</repeatable>             
-       <binding>
-        <condition>        
-       <equals>
-       <property>/controls/autoflight/autopilot/engage</property>
-       <value type="bool">true</value>
-       </equals>       
-       </condition> 
-       <command>property-assign</command>
-       <property>/autopilot/locks/altitude</property>
-       <value type="string">G/S</value>
-       </binding>
-
-       <binding>
-       <condition>        
-       <equals>
-       <property>/controls/autoflight/autopilot/engage</property>
-       <value type="bool">true</value>
-       </equals>        
-       </condition> 
-       <command>property-assign</command>
-       <property>/autopilot/locks/heading</property>
-       <value type="string">VOR-LOC</value>
-       </binding>
-      
-       <binding>
-        <condition>       
-       <equals>
-        <property>/autopilot/locks/altitude</property>
-       <value type="string">G/S</value>
-       </equals>        
-       </condition> 
-       <command>property-assign</command>
-      <property>/controls/autoflight/autopilot/app</property>
-       <value type="bool">true</value>
-       </binding>
-
-       <binding>
-       <condition>       
-       <equals>
-        <property>/autopilot/locks/altitude</property>
-       <value type="string">G/S</value>
-       </equals>        
-       </condition> 
-       <command>property-assign</command>
-      <property>/controls/autoflight/autopilot/vor</property>
-       <value type="bool">false</value>
-       </binding> 
-
-       <binding>
-       <condition>       
-       <equals>
-        <property>/autopilot/locks/altitude</property>
-       <value type="string">G/S</value>
-       </equals>        
-       </condition> 
-       <command>property-assign</command>
-      <property>/controls/autoflight/autopilot/alt-hld</property>
-       <value>0</value>
-       </binding>
-
-       <binding>
-       <condition>       
-       <equals>
-        <property>/autopilot/locks/altitude</property>
-       <value type="string">G/S</value>
-       </equals>        
-       </condition> 
-       <command>property-assign</command>
-      <property>/controls/autoflight/autopilot/hdg-sel</property>
-       <value type="bool">false</value>
-       </binding>       
-      </action> 
+  <action>
+    <name>Toggle APP (G/S) Mode</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.app_button_press();
+      </script>   
+    </binding>
+  </action> 
     </animation>  
 
      <animation>
         <type>pick</type>
         <object-name>VOR-LOC</object-name>
         <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>false</repeatable>           
-       <binding>
-               <condition>
-                 <and> 
-                    <equals>
-                    <property>/controls/autoflight/autopilot/engage</property>
-                     <value type="bool">true</value>
-                   </equals>
-                    <equals>
-                     <property>/controls/autoflight/autopilot/app</property>
-          <value type="bool">false</value>>
-                   </equals>
-               </and>
-          </condition>
-          <command>property-assign</command>
-          <property>/autopilot/locks/heading</property>
-           <value type="string">VOR-LOC</value>
-          </binding>        
-       <binding>           
-       <command>property-assign</command>
-       <property>/controls/autoflight/autopilot/hdg-sel</property>
-       <value type="bool">false</value>
-       </binding> 
-         <binding>
-               <condition>
-                 <and> 
-                    <equals>
-                    <property>/controls/autoflight/autopilot/engage</property>
-                     <value type="bool">true</value>
-                   </equals>
-                    <equals>
-                     <property>/controls/autoflight/autopilot/app</property>
-          <value type="bool">false</value>>
-                   </equals>
-               </and>
-          </condition>
-          <command>property-assign</command>
-          <property>/controls/autoflight/autopilot/vor</property>
-            <value type="bool">true</value>
-          </binding>          
-      </action> 
+  <action>
+    <name>Toggle VOR/LOC Mode</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.vorloc_button_press();
+      </script>   
+    </binding>
+  </action> 
 
     </animation> 
 
@@ -857,33 +598,17 @@
         <type>pick</type>
         <object-name>SPEED</object-name>
         <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>false</repeatable>           
-       <binding>
-               <condition>                
-                    <equals>
-                    <property>/controls/autoflight/autothrottle-arm</property>
-                     <value type="bool">true</value>
-                   </equals>                  
-          </condition>
-          <command>property-assign</command>
-          <property>/autopilot/locks/speed</property>
-           <value type="string">THR</value>
-          </binding>
-          <binding>
-          <condition>                
-                    <equals>
-                    <property>/controls/autoflight/autothrottle-arm</property>
-                     <value type="bool">true</value>
-                   </equals>                  
-          </condition>
-           <command>property-assign</command>
-           <property>/controls/autoflight/autothrottle-engage</property>
-          <value type="string">true</value>                   
-          </binding>     
-             
-      </action> 
+  <action>
+    <name>Toggle SPEED</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.speed_button_press();
+      </script>   
+    </binding>
+  </action>
 
     </animation> 
      
@@ -969,7 +694,7 @@
             <repeatable>true</repeatable>           
        <binding>   
        <command>property-adjust</command>
-       <property>/autopilot/settings/target-altitude-ft</property>
+       <property>/autopilot/settings/target-altitude-mcp-ft</property>
        <step>100</step>
        <min>0</min>
        <max>40000</max>                
@@ -987,7 +712,7 @@
             <repeatable>true</repeatable>           
        <binding>   
        <command>property-adjust</command>
-       <property>/autopilot/settings/target-altitude-ft</property> 
+       <property>/autopilot/settings/target-altitude-mcp-ft</property> 
        <step>-100</step>
        <min>0</min>
        <max>40000</max>                

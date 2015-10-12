@@ -6,33 +6,89 @@
     <flight-model>jsb</flight-model>
 
     <systems>
+
       <electrical>
         <path></path>
       </electrical>
+
       <pitot>
         <name>pitot</name>
         <number>0</number>
       </pitot>
+
+      <pitot>
+        <name>pitot</name>
+        <number>1</number>
+      </pitot>
+
+      <pitot>
+        <name>pitot</name>
+        <number>2</number>
+      </pitot>
+
+      <pitot>
+        <name>pitot</name>
+        <number>3</number>
+      </pitot>
+
       <static>
         <name>static</name>
         <number>0</number>
         <tau>1</tau>
       </static>
+
+      <static>
+        <name>static</name>
+        <number>1</number>
+        <tau>1</tau>
+      </static>
+
+      <static>
+        <name>static</name>
+        <number>2</number>
+        <tau>1</tau>
+      </static>
+
+      <static>
+        <name>static</name>
+        <number>3</number>
+        <tau>1</tau>
+      </static>
+
       <vacuum>
         <name>vacuum</name>
         <number>0</number>
         <rpm>engines/engine[0]n1</rpm>
         <scale>20.0</scale>
       </vacuum>
+
       <vacuum>
         <name>vacuum</name>
         <number>1</number>
         <rpm>engines/engine[1]/n1</rpm>
         <scale>20.0</scale>
       </vacuum>
+
+      <autopilot>
+        <path>Aircraft/737-800/Systems/737-afds.xml</path>
+      </autopilot>
+
+      <autopilot>
+        <path>Aircraft/737-800/Systems/737-fcc-a.xml</path>
+      </autopilot>
+
+      <autopilot>
+        <path>Aircraft/737-800/Systems/737-fcc-b.xml</path>
+      </autopilot>
+
       <autopilot>
         <path>Aircraft/737-800/Systems/737_pfd.xml</path>
       </autopilot>
+
+      <property-rule n="101">
+        <path>Aircraft/737-800/Systems/instrument-filters.xml</path>
+      </property-rule>
+
     </systems>
 
     <instrumentation>
@@ -108,8 +164,8 @@
           <item>
             <label>Autostart</label>
             <binding>
-              <command>property-toggle</command>
-              <property>sim/model/start-idling</property>
+              <command>nasal</command>
+              <script>boeing737.autostart()</script>
             </binding>
           </item>
           <item>
@@ -175,17 +231,95 @@
     </engine>
   </engines>
 
-  <autopilot>
+<autopilot>
     <settings>
-      <target-speed-kt type="int">100</target-speed-kt>
-      <target-altitude-ft type="int">2700</target-altitude-ft>
-    </settings>
+      <vertical-speed-knob type="int">0</vertical-speed-knob>
+      <target-altitude-mcp-ft type="double">3000</target-altitude-mcp-ft>
+      <target-speed-kt type="double">110</target-speed-kt>
+      <target-speed-mach type="double">.65</target-speed-mach>       
+      <heading-bug-deg type="double">0</heading-bug-deg>
+      <true-heading-deg type="double">0</true-heading-deg>
+      <maximum-bank-limit type="double">30</maximum-bank-limit>
+      <min-lvlchg-vs type="double">-7800</min-lvlchg-vs>
+      <max-lvlchg-vs type="double">6000</max-lvlchg-vs>
+      <max-n1 type="double">95</max-n1>
+      <to-n1 type="double">106</to-n1>
+      <reduced-ga-n1-delta type="double">10</reduced-ga-n1-delta>
+      <alt-acq-target-alt type="double">0</alt-acq-target-alt>
+      <alt-hold-delta type="double">0</alt-hold-delta>
+
+      <fcca-target-roll-rate type="double">0</fcca-target-roll-rate>
+      <fcca-target-bank type="double">0</fcca-target-bank>
+      <fcca-target-pitch-deg type="double">0</fcca-target-pitch-deg>
+
+      <fccb-target-roll-rate type="double">0</fccb-target-roll-rate>
+      <fccb-target-bank type="double">0</fccb-target-bank>
+      <fccb-target-pitch-deg type="double">0</fccb-target-pitch-deg>
+   </settings>
+
+    <internal>
+      <CMDA type="bool">false</CMDA>
+      <CMDB type="bool">false</CMDB>
+      <ATArm type="bool">false</ATArm>
+      <IAS-SEL type="bool">true</IAS-SEL>
+      <LNAV type="bool">false</LNAV>
+      <LNAV-NAV type="bool">false</LNAV-NAV>
+      <LNAV-NAV-armed type="bool">false</LNAV-NAV-armed>
+      <LNAV-HDG type="bool">false</LNAV-HDG>
+
+      <VNAV type="bool">false</VNAV>
+      <VNAV-VS type="bool">false</VNAV-VS>
+      <VNAV-VS-armed type="bool">false</VNAV-VS-armed>
+      <VNAV-ALT type="bool">false</VNAV-ALT>
+      <VNAV-ALT-ACQ type="bool">false</VNAV-ALT-ACQ>
+      <VNAV-ALT-light type="bool">false</VNAV-ALT-light>
+      <VNAV-GS type="bool">false</VNAV-GS>
+      <VNAV-GS-armed type="bool">false</VNAV-GS-armed>
+      <VNAV-FLARE type="bool">false</VNAV-FLARE>
+      <VNAV-FLARE-armed type="bool">false</VNAV-FLARE-armed>
+
+      <LVLCHG type="bool">false</LVLCHG>
+      <TOGA type="bool">false</TOGA>
+      <GA type="bool">false</GA>
+      <GA-ROLL type="bool">false</GA-ROLL>
+            
+      <SPD type="bool">false</SPD>
+      <SPD-SPEED type="bool">false</SPD-SPEED>
+      <SPD-N1 type="bool">false</SPD-N1>
+      <SPD-RETARD type="bool">false</SPD-RETARD>
+      <SPD-IAS type="bool">true</SPD-IAS>
+      <SPD-MACH type="bool">false</SPD-MACH>
+
+      <FCC-A-master type="bool">false</FCC-A-master>
+      <FCC-B-master type="bool">false</FCC-B-master>
+      <FCC-added type="string"></FCC-added>
+
+      <wp-change-check-period type="double">10</wp-change-check-period>
+
+      <stab-autotrim type="bool">1</stab-autotrim>
+    </internal>
+
+    <display>
+      <roll-mode type="string"></roll-mode>
+      <pitch-mode type="string"></pitch-mode>
+      <throttle-mode type="string"></throttle-mode>
+      <roll-mode-armed type="string"></roll-mode-armed>
+      <pitch-mode-armed type="string"></pitch-mode-armed>
+      <throttle-mode-armed type="string"></throttle-mode-armed>
+      <roll-mode-last-change type="double">0</roll-mode-last-change>
+      <pitch-mode-last-change type="double">0</pitch-mode-last-change>
+      <throttle-mode-last-change type="double">0</throttle-mode-last-change>
+      <roll-mode-rectangle type="bool">0</roll-mode-rectangle>
+      <pitch-mode-rectangle type="bool">0</pitch-mode-rectangle>
+      <throttle-mode-rectangle type="bool">0</throttle-mode-rectangle>
+    </display>
+
   </autopilot>
 
   <controls>
 
     <gear>
-      <autobrakes type="int">-1</autobrakes>
+      <autobrakes type="int">0</autobrakes>
       <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
     </gear>
 
@@ -207,12 +341,98 @@
 
   </controls>
 
+
+
+  <fdm>
+    <jsbsim>
+      <fcs>
+        <flap-lrs type="double">0</flap-lrs>
+        <slats-cmd type="double">0</slats-cmd>
+        <slats-pos type="double">0</slats-pos>
+        <stabilizer-pos-unit type="double">3</stabilizer-pos-unit>
+        <brake-left-cmd type="double">0</brake-left-cmd>
+        <brake-right-cmd type="double">0</brake-right-cmd>
+        <autobrake>
+          <autobrake-in-use type="bool">0</autobrake-in-use>
+          <autobrake-used type="bool">0</autobrake-used>
+          <target-decel-fps_sec2 type="double">0</target-decel-fps_sec2>
+          <start-time-sec type="double">0</start-time-sec>
+        </autobrake>
+        <stabilizer>
+          <stab-target>3</stab-target>
+          <trim-rate type="double">0</trim-rate>
+        </stabilizer>
+      </fcs>
+      <metrics>
+        <aerorp-mac type="double">0.30</aerorp-mac>
+        <roll type="double">0.2</roll>
+        <basic-moment type="double">-0.25</basic-moment>
+      </metrics>
+    </jsbsim>
+  </fdm>
+
+  <b737>
+    <controls>
+      <flight>
+        <spoilers-lever-pos type="double">0</spoilers-lever-pos>
+        <yaw-damper type="bool">1</yaw-damper>
+      </flight>
+    </controls>
+    <sensors>
+      <air-ground type="string">ground</air-ground>
+      <main-gear-spin type="bool">false</main-gear-spin>
+      <was-in-air type="bool">false</was-in-air>
+      <lift-off-time type="double">0</lift-off-time>
+      <landing-time type="double">0</landing-time>
+      <landing type="bool">true</landing>
+    </sensors>
+    <sound>
+      <apdisco type="bool">0</apdisco>
+      <spoiler-auto type="bool">0</spoiler-auto>
+      <stab-trim type="bool">0</stab-trim>
+      <sound-pack type="int">2</sound-pack>
+      <mcp-last-change type="double">0</mcp-last-change>
+    </sound>
+    <ap-hide-helper type="bool">0</ap-hide-helper>
+    <at-helper type="bool">1</at-helper>
+  </b737>
+
+  <systems>
+    <pitot n="1">
+      <serviceable type="bool">true</serviceable>
+    </pitot>
+    <pitot n="2">
+      <serviceable type="bool">true</serviceable>
+    </pitot>
+    <pitot n="3">
+      <serviceable type="bool">true</serviceable>
+    </pitot>
+    <static n="1">
+      <serviceable type="bool">true</serviceable>
+    </static>
+    <static n="2">
+      <serviceable type="bool">true</serviceable>
+    </static>
+    <static n="3">
+      <serviceable type="bool">true</serviceable>
+    </static>
+  </systems>
+
   <nasal>
 
     <boeing737>
       <file>Aircraft/Generic/limits.nas</file>
       <file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
+      <file>Aircraft/737-800/Nasal/autostart.nas</file>
+      <file>Aircraft/737-800/Nasal/air-ground.nas</file>
+      <file>Aircraft/737-800/Nasal/controls.nas</file>
+      <file>Aircraft/737-800/Nasal/friction.nas</file>
+      <file>Aircraft/737-800/Nasal/liveries.nas</file>
     </boeing737>
+
+    <autopilot737>
+      <file>Aircraft/737-800/Nasal/autopilot.nas</file>
+    </autopilot737>
 
     <nd>
       <file>Aircraft/737-800/Nasal/ND.nas</file>
@@ -221,6 +441,15 @@
   </nasal>
 
   <instrumentation>
+
+      <radar-altimeter>
+    <serviceable type="bool">true</serviceable>
+    <antenna>
+      <x-offset-m type="double">-16</x-offset-m>
+      <y-offset-m type="double">0</y-offset-m>
+      <z-offset-m type="double">2.5</z-offset-m>
+    </antenna>
+  </radar-altimeter>
 
   </instrumentation>
 
