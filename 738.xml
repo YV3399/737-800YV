@@ -723,7 +723,7 @@
           
           <pure_gain name="fcs/stabilizer/trim-rate-per-tick">
             <input>fcs/stabilizer/trim-rate</input>
-            <gain>0.0083333333333333</gain>
+            <gain>simulation/dt</gain>
           </pure_gain>
 
           <summer name="fcs/stabilizer/errorfree-stab-error">
@@ -741,6 +741,18 @@
             <input> fcs/stabilizer/stab-error </input>
             <output>fcs/stabilizer-pos-unit</output>
           </summer>
+
+            <fcs_function name="fcs/stab">
+            <function>
+              <product>
+                <sum>
+                    <property>fcs/stabilizer-pos-unit</property>
+                    <value>-4</value>
+                </sum>
+                <value>-1</value>
+              </product>
+            </function>
+          </fcs_function>
 
         </channel>
 
@@ -1115,15 +1127,75 @@
                     <property>aero/function/kCLge</property>
                     <property>aero/function/kCLsb</property>
                     <property>aero/function/kCLsp</property>
-                      <table>
-                          <independentVar>aero/alpha-rad</independentVar>
-                          <tableData>
-                             -0.20     -0.68
-                              0.00	0.20
-                              0.23	1.20
-                              0.46	0.20
-                          </tableData>
-                      </table>
+                    <sum>
+                    <table>
+                        <independentVar>aero/alpha-rad</independentVar>
+                        <tableData>
+                            -0.1745 -1.1577
+                            -0.1571 -1.0364
+                            -0.1396 -0.915
+                            -0.1222 -0.7936
+                            -0.1047 -0.6722
+                            -0.0873 -0.5508
+                            -0.0698 -0.4294
+                            -0.0524 -0.308
+                            -0.0349 -0.1867
+                            -0.0175 -0.0643
+                            0       0.0589
+                            0.0175  0.182
+                            0.0349  0.3052
+                            0.0524  0.4284
+                            0.0698  0.5425
+                            0.0873  0.6554
+                            0.1047  0.7683
+                            0.1222  0.8621
+                            0.1396  0.9496
+                            0.1571  1.0371
+                            0.1745  1.1354
+                            0.192   1.2368
+                            0.2094  1.3383
+                            0.2269  1.4313
+                            0.2443  1.4883
+                            0.2618  1.5452
+                            0.2793  1.5771
+                            0.2967  1.5986
+                            0.3142  1.5531
+                            0.3316  1.4613
+                            0.3491  1.3873
+                            0.3665  1.3342
+                            0.384   1.285
+                            0.4014  1.2694
+                            0.4189  1.2595
+                            0.4363  1.2633
+                            0.4538  1.267
+                            0.4712  1.2708
+                            0.4887  1.2746
+                            0.5061  1.2724
+                            0.5236  1.2694
+                            0.5411  1.2664
+                            0.5585  1.2634
+                            0.576   1.2605
+                            0.5934  1.2613
+                            0.6109  1.2621
+                            0.6283  1.2629
+                            0.6458  1.2637
+                            0.6632  1.2645
+                            0.6807  1.2653
+                            0.6981  1.2661
+                            0.7156  1.2667
+                            0.733   1.2659
+                            0.7505  1.265
+                            0.7679  1.2642
+                            0.7854  1.2633
+                            0.8029  1.2624
+                            0.8203  1.2616
+                            0.8378  1.2607
+                            0.8552  1.2598
+                            0.8727  1.259
+                        </tableData>
+                    </table>
+                    <property>metrics/lift</property>
+                </sum>
                 </product>
             </function>
 
@@ -1147,6 +1219,16 @@
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/elevator-pos-rad</property>
                     <value>0.2</value>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/CLdstab">
+                <description>Lift_due_to_Stabilizer_Deflection</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/stab</property>
+                    <value>0.007</value>
                 </product>
             </function>
 
@@ -1243,6 +1325,14 @@
                               2.0	-0.30
                           </tableData>
                       </table>
+                </product>
+            </function>
+            <function name="aero/coefficient/Cmdstab">
+                <description>Pitch_moment_due_to_stabilizer</description>
+                <product>
+                    <property>metrics/lh-ft</property>
+                    <property>aero/coefficient/CLdstab</property>
+                    <value>-1</value>
                 </product>
             </function>
             <function name="aero/coefficient/Cmq">

@@ -235,7 +235,7 @@
     <settings>
       <vertical-speed-knob type="int">0</vertical-speed-knob>
       <target-altitude-mcp-ft type="double">3000</target-altitude-mcp-ft>
-      <target-speed-kt type="double">110</target-speed-kt>
+      <target-speed-kt type="double">100</target-speed-kt>
       <target-speed-mach type="double">.65</target-speed-mach>       
       <heading-bug-deg type="double">0</heading-bug-deg>
       <true-heading-deg type="double">0</true-heading-deg>
@@ -365,7 +365,7 @@
       </fcs>
       <metrics>
         <aerorp-mac type="double">0.30</aerorp-mac>
-        <roll type="double">0.2</roll>
+        <lift type="double">0.0</lift>
         <basic-moment type="double">-0.25</basic-moment>
       </metrics>
     </jsbsim>
@@ -442,12 +442,184 @@
 
   <instrumentation>
 
+
+
+    <adf>
+      <volume-norm type="double">0.0</volume-norm>
+    </adf>
+  
+    <adf n="1">
+      <volume-norm type="double">0.0</volume-norm>
+    </adf>
+
+    <comm>
+      <volume type="double">0.7</volume>
+      <power-btn type="bool">1</power-btn>  
+      <power-good type="bool">1</power-good>
+    </comm>
+  
+    <comm n="1">
+      <volume type="double">0.7</volume>
+      <power-btn type="bool">1</power-btn>  
+      <power-good type="bool">1</power-good>
+    </comm>
+
+    <nav>
+      <volume type="double">0.0</volume>
+    </nav>
+  
+    <nav n="1">
+      <volume type="double">0.0</volume>
+    </nav>
+
+    <dme>
+      <frequencies>
+        <source type="string">/instrumentation/nav[0]/frequencies/selected-mhz</source>
+      </frequencies>
+      <serviceable type="bool">true</serviceable>
+    </dme>
+
+    <dme n="1">
+      <frequencies>
+        <source type="string">/instrumentation/nav[1]/frequencies/selected-mhz</source>
+      </frequencies>
+      <serviceable type="bool">true</serviceable>
+    </dme>
+
+    <nav-compass>
+      <nav-display type="int">0</nav-display>
+      <nav-display n="1" type="int">0</nav-display>
+    </nav-compass>
+      
+
+    <flightdirector>
+      <fd-left-on>0</fd-left-on>
+      <fd-right-on>0</fd-right-on>
+    </flightdirector>
+
+    <gps>
+      <config>
+        <over-flight-distance-nm type="double">1</over-flight-distance-nm>
+      </config>
+    </gps>
+
+    <transponder>
+      <id-code>1200</id-code>
+    </transponder>
+
+    <airspeed-indicator>
+      <speed-bug-pushed type="bool">true</speed-bug-pushed>
+      <speed-bug type="int">182</speed-bug>
+    </airspeed-indicator>  
+
+    <airspeed-indicator n="1">
+      <serviceable type="bool">true</serviceable>
+    </airspeed-indicator>
+
+    <airspeed-indicator n="2">
+      <serviceable type="bool">true</serviceable>
+    </airspeed-indicator>
+
+    <altimeter n="1">
+      <serviceable type="bool">true</serviceable>
+    </altimeter>
+
+    <altimeter n="2">
+      <serviceable type="bool">true</serviceable>
+    </altimeter>
+
+    <mk-viii>                         <!-- http://wiki.flightgear.org/index.php/GPWS -->
+
+      <serviceable>true</serviceable>  <!-- EGPWS_ENABLE -->
+
+      <configuration-module>
+        <category-1>  255 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+        <category-3>   2 </category-3>  <!-- POSITION_INPUT_SELECT -->
+        <category-4>  13 </category-4>  <!-- ALTITUDE_CALLOUTS -->
+        <category-5>   0 </category-5>  <!-- AUDIO_MENU_SELECT -->
+        <category-6>   1 </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->
+        <category-7> 124 </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->
+        <category-8>   4 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT -->
+        <category-9>   3 </category-9>  <!-- NAVIGATION_INPUT_SELECT -->
+        <category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->
+        <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+        <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
+      </configuration-module>
+
+      <inputs>                         <!-- Module I/O -->
+        <arinc429>
+          <decision-height-ncd> true </decision-height-ncd>
+          <decision-height> 200 </decision-height>
+        </arinc429>
+        <rs-232>
+          <present-status>
+            <landing-flaps type="double">0.5</landing-flaps>
+          </present-status>
+        </rs-232>
+      </inputs>
+
+      <speaker>                        <!-- Speaker Configuration -->
+        <max-dist> 2 </max-dist>        <!-- Max. distance where speaker is heard -->
+        <reference-dist> 1 </reference-dist> <!-- Distance to pilot -->
+        <volume> 0.8 </volume>          <!-- Volume at reference distance -->
+      </speaker>
+    </mk-viii>
+
+    <wxradar>
+      <serviceable>true</serviceable>
+      <range type="int" archive="y">40</range>
+      <minimized type="bool" archive="y">false</minimized>
+      <switch archive="y">on</switch>
+      <mode archive="y">wx</mode>
+      <lightning type="bool" archive="y">false</lightning>
+      <display-mode archive="y">arc</display-mode>
+    </wxradar>
+
+    <radar>
+      <range type="int" archive="y">40</range>
+    </radar>
+
+    <turn-indicator>
+      <serviceable type="bool">true</serviceable>
+      <spin type="double">1</spin>
+    </turn-indicator>
+
+<!--
+    <vor-adf>
+      <vor1-select type="double">1</vor1-select>
+      <vor2-select type="double">1</vor2-select>
+      <adf1-select type="double">0</adf1-select>
+      <adf2-select type="double">0</adf2-select>
+    </vor-adf> 
+-->
+
+    <cdu>
+      <display>IDENT</display>
+      <ident>
+        <model>737-800</model>
+        <engines>CFM56-7B26</engines>
+      </ident>
+      <input type="string"/>
+      <serviceable type="bool">true</serviceable>
+    </cdu>
+
+    <fmc>
+      <to-flap type="double">5</to-flap>
+      <derated-to>
+        <zone type="int">1</zone>
+        <assumed-temp-degc type="double">15</assumed-temp-degc>
+        <method-assumed type="bool">0</method-assumed>
+        <method-derate-20k type="bool">0</method-derate-20k>
+        <runway-elevation-ft type="double">0</runway-elevation-ft>
+      </derated-to>
+    </fmc>
+
       <radar-altimeter>
     <serviceable type="bool">true</serviceable>
     <antenna>
       <x-offset-m type="double">-16</x-offset-m>
       <y-offset-m type="double">0</y-offset-m>
-      <z-offset-m type="double">2.5</z-offset-m>
+      <z-offset-m type="double">2.51</z-offset-m>
     </antenna>
   </radar-altimeter>
 

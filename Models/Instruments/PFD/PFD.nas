@@ -77,7 +77,7 @@ var canvas_PFD = {
 		var mach = getprop("velocities/mach");
 		var pitch = getprop("orientation/pitch-deg");
 		var roll =  getprop("orientation/roll-deg");
-		var hdg =  getprop("orientation/heading-deg");
+		var hdg =  getprop("orientation/heading-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
 		var wow = getprop("gear/gear/wow");
 		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
@@ -277,9 +277,9 @@ var canvas_PFD = {
 	update_ap_modes: func()
 	{
 		# Modes
-		if (getprop("autopilot/locks/passive-mode") == 1)
+		if ((getprop("autopilot/internal/CMDA") != 1 and getprop("autopilot/internal/CMDB") != 1) and (getprop("instrumentation/flightdirector/fd-left-on") == 1 or getprop("instrumentation/flightdirector/fd-right-on") == 1))
 			me["afdsMode"].setText("FD");
-		elsif (getprop("autopilot/locks/altitude") != "" or getprop("autopilot/locks/heading") != "" or getprop("autopilot/locks/speed") != "")
+		elsif (getprop("autopilot/internal/CMDA") == 1 or getprop("autopilot/internal/CMDB") == 1)
 			me["afdsMode"].setText("CMD");
 		else
 			me["afdsMode"].setText("");
