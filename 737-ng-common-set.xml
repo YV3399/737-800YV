@@ -8,7 +8,7 @@
     <systems>
 
       <electrical>
-        <path></path>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
       </electrical>
 
       <pitot>
