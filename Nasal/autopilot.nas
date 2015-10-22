@@ -148,17 +148,20 @@ var changeover_button_press = func {
 	if (getprop("/autopilot/internal/SPD-IAS")) {
 		target_ias = getprop("/autopilot/settings/target-speed-kt");
 		target_mach = math.round((target_ias * tas/ias) / ( a * 0.5924838012959), 0.01);
-		if (target_mach > 0.89) target_mach = 0.89;
-		if (target_mach < 0.60) target_mach = 0.60;
-		setprop("/autopilot/settings/target-speed-mach", target_mach);
+		if (target_mach < 0.60) {}#target_mach = 0.60;
+		else {
+			if (target_mach > 0.89) target_mach = 0.89;
+			
+			setprop("/autopilot/settings/target-speed-mach", target_mach);
 
-		setprop("/autopilot/internal/SPD-IAS", 0);
-		setprop("/autopilot/internal/SPD-MACH", 1);
+			setprop("/autopilot/internal/SPD-IAS", 0);
+			setprop("/autopilot/internal/SPD-MACH", 1);
+		}
 	} else {
 		target_mach = getprop("/autopilot/settings/target-speed-mach");
 		target_ias = math.round((target_mach * ias * a * 0.5924838012959) / tas, 1);
 		if (target_ias > 399) target_ias = 399;
-		if (target_ias < 110) target_ias = 110;
+		if (target_ias < 100) target_ias = 100;
 		setprop("/autopilot/settings/target-speed-kt", target_ias);
 
 		setprop("/autopilot/internal/SPD-MACH", 0);

@@ -91,17 +91,25 @@ var canvas_PFD = {
 		me["compass"].setRotation(-hdg*D2R);
 			
 		# Flight director
-		if (getprop("autopilot/locks/passive-mode") == 1) {
-			if (getprop("autopilot/internal/target-roll-deg") != nil) {
-				var fdRoll = (roll-getprop("/autopilot/internal/target-roll-deg"))*10.5;
+		if (getprop("/instrumentation/flightdirector/fd-left-on") == 1) {
+			if (getprop("/instrumentation/flightdirector/fd-left-bank") != nil) {
+				var fdRoll = (roll-getprop("/instrumentation/flightdirector/fd-left-bank"))*3;
 				if (fdRoll > 200)
 					fdRoll = 200;
 				elsif (fdRoll < -200)
 					fdRoll = -200;
 				me["fdX"].setTranslation(-fdRoll,0);
 			}
+			if (getprop("/instrumentation/flightdirector/fd-left-pitch") != nil) {
+				var fdPitch = (pitch-getprop("/instrumentation/flightdirector/fd-left-pitch"))*10.5;
+				if (fdPitch > 200)
+					fdPitch = 200;
+				elsif (fdPitch < -200)
+					fdPitch = -200;
+				me["fdY"].setTranslation(0,fdPitch);
+			}
 			me["fdX"].show();
-			#fdY.show();
+			me["fdY"].show();
 		} else {
 			me["fdX"].hide();
 			me["fdY"].hide();
@@ -322,12 +330,15 @@ var canvas_PFD = {
 			me["v1"].hide();
 			me["vr"].hide();
 		}
-		if (getprop("instrumentation/fmc/v-ref-40") != nil) {
-			me["flaps0"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+70)*5.63915);
-			me["flaps1"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+50)*5.63915);
-			me["flaps5"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+30)*5.63915);
-			me["flaps10"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+30)*5.63915);
-			me["flaps20"].setTranslation(0,-(getprop("instrumentation/fmc/v-ref-40")+20)*5.63915);
+
+		var vref40 = getprop("instrumentation/fmc/v-ref-40");
+		if (vref40 != nil) {
+			vref40 = roundToNearest(vref40,1);
+			me["flaps0"].setTranslation(0,-(vref40+70)*5.63915);
+			me["flaps1"].setTranslation(0,-(vref40+50)*5.63915);
+			me["flaps5"].setTranslation(0,-(vref40+30)*5.63915);
+			me["flaps10"].setTranslation(0,-(vref40+30)*5.63915);
+			me["flaps20"].setTranslation(0,-(vref40+20)*5.63915);
 		}
 		
 		if (getprop("instrumentation/fmc/phase-name") == "APPROACH") {

@@ -5,7 +5,7 @@ MATERIAL "Material.001" rgb 0.8 0.8 0.8 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 sh
 MATERIAL "DefaultWhite.003" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.5 0.5 0.5 shi 64 trans 0
 MATERIAL "ac3dmat1.018" rgb 0.8 0.8 0.8 amb 0.2 0.2 0.2 emis 0.3 0.3 0.3 spec 0.5 0.5 0.5 shi 10 trans 0
 OBJECT world
-kids 66
+kids 67
 OBJECT group
 name "ALT-SEL"
 kids 2
@@ -33918,4 +33918,20 @@ refs 3
 4 0.0 0.0
 6 0.0 0.0
 5 0.0 0.0
+kids 0
+OBJECT poly
+name "vswheel"
+numvert 4
+0.0305 -0.0027 -0.0913
+0.0305 0.0331 -0.0913
+0.0305 0.0331 -0.0823
+0.0305 -0.0027 -0.0823
+numsurf 1
+SURF 0X20
+mat 1
+refs 4
+0 0 0
+3 0 0
+2 0 0
+1 0 0
 kids 0

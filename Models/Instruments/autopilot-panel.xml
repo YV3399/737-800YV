@@ -4,7 +4,7 @@
 
  <path>autopilot-panel.ac</path>
 
-    <animation>
+    <!--<animation>
         <type>rotate</type>
         <object-name>CPT-COURSE</object-name>
          <property>/instrumentation/nav[0]/radials/selected-deg</property> 
@@ -36,7 +36,7 @@
             <y>0</y>
             <z>0</z>
         </axis>
-    </animation>
+    </animation>-->
 
      <animation>
         <type>rotate</type>
@@ -59,7 +59,7 @@
      <animation>
         <type>rotate</type>
         <object-name>at-arm</object-name>
-         <property>/controls/autoflight/autothrottle-arm</property> 
+         <property>/autopilot/internal/SPD</property> 
           <factor>-30.0</factor>         
         <center>
             <x-m>0.02</x-m>
@@ -76,7 +76,7 @@
          <animation>
    	<type>textranslate</type>
    	<object-name>CMD-A</object-name>
-	 <property>/controls/autoflight/autopilot/engage</property>
+	 <property>/autopilot/internal/CMDA</property>
    	<factor>0.5</factor>
    	<axis>
     	<x>0</x>
@@ -85,10 +85,22 @@
    	</axis>
  	</animation>
 
+         <animation>
+    <type>textranslate</type>
+    <object-name>CMD-B</object-name>
+   <property>/autopilot/internal/CMDB</property>
+    <factor>0.5</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+       <z>0</z>
+    </axis>
+  </animation>
+
        <animation>
    	<type>textranslate</type>
    	 <object-name>ALT-HLD</object-name>
-	 <property>/controls/autoflight/autopilot/alt-hld</property>        
+	 <property>/autopilot/internal/VNAV-ALT-light</property>        
    	<factor>0.5</factor>
    	<axis>
     	<x>0</x>
@@ -100,7 +112,7 @@
          <animation>
    	<type>textranslate</type>
    	<object-name>HDG-HLD</object-name>
-	 <property>/controls/autoflight/autopilot/hdg-sel</property>        
+	 <property>/autopilot/internal/LNAV-HDG</property>        
    	<factor>0.5</factor>
    	<axis>
     	<x>0</x>
@@ -186,7 +198,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.3</object-name>
-        <property>/autopilot/settings/target-altitude-ft</property> 
+        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -199,7 +211,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.4</object-name>
-        <property>/autopilot/settings/target-altitude-ft</property> 
+        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
@@ -212,7 +224,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.5</object-name>
-        <property>/autopilot/settings/target-altitude-ft</property> 
+        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
         <factor>0.00001</factor>
         <step>10000</step>
         <axis>
@@ -259,6 +271,19 @@
             <z>0</z>
         </axis>
     </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>IAS.1</object-name>
+        <property>/autopilot/settings/target-speed-kt</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
 
     <animation>
         <type>textranslate</type>
@@ -470,8 +495,84 @@
             <y>0</y>
             <z>1</z>
         </axis>
-    </animation>-->      
+    </animation>
+
+
     <!--PICK ANIMATIONS-->
+
+    <!-- Captains FD Switch -->
+
+  <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>cap-fd</object-name>
+  <action>
+    <name>Captains FD switch</name>
+   <button>0</button>
+   <repeatable>false</repeatable> 
+   <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/flightdirector/fd-left-on</property>
+    <step>1</step>
+    <min>0></min>
+    <max>1</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>cap-fd</object-name>
+   <property>/instrumentation/flightdirector/fd-left-on</property>
+   <factor>-30</factor>
+   <offset-deg>30</offset-deg>
+   <center>
+     <x-m>0.0234</x-m>
+     <z-m>0.0035</z-m>
+   </center>
+   <axis>
+     <y>1</y>
+   </axis>
+ </animation>
+
+ <!-- Co-Pilots FD Switch -->
+ 
+  <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>fo-fd</object-name>
+  <action>
+    <name>Co-Pilots FD switch</name>
+   <button>0</button>
+   <repeatable>false</repeatable> 
+   <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/flightdirector/fd-right-on</property>
+    <step>1</step>
+    <min>0></min>
+    <max>1</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>fo-fd</object-name>
+   <property>/instrumentation/flightdirector/fd-right-on</property>
+   <factor>-30</factor>
+   <offset-deg>30</offset-deg>
+   <center>
+     <x-m>0.0234</x-m>
+     <z-m>0.0035</z-m>
+   </center>
+   <axis>
+     <y>1</y>
+   </axis>
+ </animation>
+
+
      <animation>
         <type>pick</type>
         <object-name>CMD-A</object-name>
@@ -484,6 +585,23 @@
       <command>nasal</command>
       <script>
         autopilot737.cmda_button_press();
+      </script>   
+    </binding>
+  </action>
+      </animation>
+
+           <animation>
+        <type>pick</type>
+        <object-name>CMD-B</object-name>
+        <visible>1</visible>
+  <action>
+    <name>Toggle CMDB</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.cmdb_button_press();
       </script>   
     </binding>
   </action>
@@ -525,6 +643,57 @@
   </action>
       </animation>
 
+        <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>mach-ias</object-name>
+  <action>
+    <name>CHANGEOVER button</name>
+    <button>0</button>
+    <repeatable>false</repeatable> 
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.changeover_button_press();
+      </script>   
+    </binding>
+  </action>
+ </animation>
+
+  <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>N1</object-name>
+  <action>
+    <name>Toggle N1</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.n1_button_press();
+      </script>   
+    </binding>
+  </action>
+ </animation>
+
+  <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>LVL-CHG.</object-name>
+  <action>
+    <name>Toggle LVLCHG</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.lvlchg_button_press();
+      </script>   
+    </binding>
+  </action>
+ </animation>
+
       <animation>
         <type>pick</type>
         <object-name>ALT-HLD</object-name>
@@ -541,6 +710,41 @@
     </binding>
   </action>
      </animation>     
+
+      <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>V/S</object-name>
+  <action>
+    <name>Toggle VS Mode</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.vs_button_press();
+      </script>   
+    </binding>
+  </action>
+ </animation>
+
+  <animation>
+  <type>knob</type>
+  <visible>false</visible>
+  <object-name>vswheel</object-name>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+        <property>/autopilot/settings/vertical-speed-knob</property>
+        <factor>1</factor>
+        <min>-89</min>
+        <max>70</max>    
+        <wrap>false</wrap>
+    </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+  <drag-scale>5</drag-scale>
+  </animation>
 
      <animation>
         <type>pick</type>
@@ -613,149 +817,155 @@
     </animation> 
      
      <animation>
-        <type>pick</type>
-        <object-name>CPT-COURSE</object-name>
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/instrumentation/nav[0]/radials/selected-deg</property> 
-       <step>1</step>
-       <min>0</min>
-       <max>360</max>                
-       <wrap>true</wrap>       
-       </binding>
-      </action> 
+        <type>knob</type>
+        <object-name>CPT-COURSE_1</object-name>
+        <property>/instrumentation/nav[0]/radials/selected-deg</property>
+        <factor>-0.5</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.222</y-m>
+            <z-m>0.0234</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/nav/radials/selected-deg</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>360</max>                
+        <wrap>true</wrap>
+      </binding>
+    </action>
     </animation>
-      
-     <animation>
-        <type>pick</type>
-        <object-name>CPT-COURSE</object-name>
-        <visible>1</visible>
-        <action>
-         <button>1</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/instrumentation/nav[0]/radials/selected-deg</property> 
-       <step>-1</step>
-       <min>0</min>
-       <max>360</max>                
-       <wrap>true</wrap>       
-       </binding>
-      </action> 
-    </animation> 
+
+         <animation>
+        <type>knob</type>
+        <object-name>F/O-COURSE.001</object-name>
+        <property>/instrumentation/nav[1]/radials/selected-deg</property>
+        <factor>-0.5</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0.2078</y-m>
+            <z-m>0.0237</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/nav[1]/radials/selected-deg</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>360</max>                
+        <wrap>true</wrap>
+      </binding>
+    </action>
+    </animation>
     
     <animation>
-        <type>pick</type>
+        <type>knob</type>
         <object-name>HDG-SEL</object-name>
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>
-       <interval-sec>0.2</interval-sec>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/autopilot/settings/heading-bug-deg</property> 
-       <step>1</step>
-       <min>0</min>
-       <max>360</max>                
-       <wrap>true</wrap>       
-       </binding>
-      </action> 
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <factor>-0.5</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.0468</y-m>
+            <z-m>0.0255</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/autopilot/settings/heading-bug-deg</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>360</max>                
+        <wrap>true</wrap>
+      </binding>
+    </action>
     </animation>
 
-    <animation>
-        <type>pick</type>
-        <object-name>HDG-SEL</object-name>
-        <visible>1</visible>
-        <action>
-         <button>1</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/autopilot/settings/heading-bug-deg</property> 
-       <step>-1</step>
-       <min>0</min>
-       <max>360</max>                
-       <wrap>true</wrap>       
-       </binding>
-      </action> 
-    </animation> 
+  <animation>
+    <type>knob</type>
+    <object-name>ALT-SEL</object-name>
+    <property>/autopilot/settings/target-altitude-mcp-ft</property>
+    <factor>-0.1</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0.0271</y-m>
+      <z-m>0.0242</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/autopilot/settings/target-altitude-mcp-ft</property>
+        <factor>100</factor>
+        <min>0</min>
+        <max>50000</max>                
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>   
+
+<!-- Speed knob control --> 
 
     <animation>
-        <type>pick</type>
-        <object-name>ALT-SEL</object-name>
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/autopilot/settings/target-altitude-mcp-ft</property>
-       <step>100</step>
-       <min>0</min>
-       <max>40000</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
+        <type>knob</type>
+        <object-name>IAS-MACH</object-name>
+        <property>/autopilot/settings/speed-bug</property>
+        <factor>-5</factor>
+      <center>
+        <x-m>0.0</x-m>
+        <y-m>-0.117</y-m>
+        <z-m>0.0157</z-m>
+      </center>
+      <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+      </axis>
+    <drag-scale>2</drag-scale>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/autopilot/settings/speed-bug</property>
+        <factor>1</factor>
+      </binding>
+    </action>
+    <increase>
+      <binding>
+        <command>nasal</command>
+        <script>
+         autopilot737.speed_increase();
+        </script>   
+      </binding>
+    </increase>
+    <decrease>
+      <binding>
+        <command>nasal</command>
+        <script>
+         autopilot737.speed_decrease();
+        </script>   
+      </binding>
+    </decrease>
     </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>ALT-SEL</object-name>
-        <visible>1</visible>
-        <action>
-         <button>1</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/autopilot/settings/target-altitude-mcp-ft</property> 
-       <step>-100</step>
-       <min>0</min>
-       <max>40000</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation>    
-
-     <animation>
-        <type>pick</type>
-        <object-name>IAS-MACH</object-name>
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/autopilot/settings/target-speed-kt</property> 
-       <step>10</step>
-       <min>0</min>
-       <max>300</max>                
-       <wrap>false</wrap>       
-       </binding>      
-      </action> 
-    </animation>     
-
-      <animation>
-        <type>pick</type>
-        <object-name>IAS-MACH</object-name>
-        <visible>1</visible>
-        <action>
-         <button>1</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/autopilot/settings/target-speed-kt</property> 
-       <step>-10</step>
-       <min>0</min>
-       <max>300</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation> 
 
      <animation>
         <type>pick</type>
