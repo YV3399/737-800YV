@@ -278,7 +278,6 @@
 
             <summer name="Pitch Trim Sum">
                 <input>fcs/elevator-cmd-norm</input>
-                <input>fcs/pitch-trim-cmd-norm</input>
                 <clipto>
                     <min>-1</min>
                     <max> 1</max>
@@ -516,15 +515,15 @@
                     </setting>
                     <setting>
                         <position>0.125</position>
-                        <time>5</time>
+                        <time>13</time>
                     </setting>
                     <setting>
                         <position>0.25</position>
-                        <time>4</time>
+                        <time>3</time>
                     </setting>
                     <setting>
                         <position>0.375</position>
-                        <time>3</time>
+                        <time>4</time>
                     </setting>
                     <setting>
                         <position>0.5</position>
@@ -532,7 +531,7 @@
                     </setting>
                     <setting>
                         <position>0.625</position>
-                        <time>2</time>
+                        <time>3</time>
                     </setting>
                     <setting>
                         <position>0.75</position>
@@ -540,11 +539,11 @@
                     </setting>
                     <setting>
                         <position>0.875</position>
-                        <time>2</time>
+                        <time>5</time>
                     </setting>
                     <setting>
                         <position>1</position>
-                        <time>2</time>
+                        <time>5</time>
                     </setting>
                 </traverse>
                 <output>fcs/flap-pos-norm</output>
@@ -1241,6 +1240,26 @@
                 </product>
             </function>
 
+            <function name="aero/coefficient/CLdlail">
+                <description>Lift_due_to_Left_Aileron_Deflection</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/left-aileron-pos-rad</property>
+                    <value>0.07</value>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/CLdrail">
+                <description>Lift_due_to_Right_Aileron_Deflection</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/right-aileron-pos-rad</property>
+                    <value>0.07</value>
+                </product>
+            </function>
+
         </axis>
 
         <axis name="ROLL">
@@ -1280,20 +1299,19 @@
                 </product>
             </function>
 
-            <function name="aero/coefficient/Clda">
-                <description>Roll_moment_due_to_aileron</description>
+            <function name="aero/coefficient/Cldla">
+                <description>Roll_moment_due_to_left_aileron</description>
                 <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>metrics/bw-ft</property>
-                    <property>fcs/left-aileron-pos-rad</property>
-                      <table>
-                          <independentVar>velocities/mach</independentVar>
-                          <tableData>
-                              0.0	0.100
-                              2.0	0.033
-                          </tableData>
-                      </table>
+                    <property>aero/coefficient/CLdlail</property>
+                    <value>44.5</value>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/Cldra">
+                <description>Roll_moment_due_to_right_aileron</description>
+                <product>
+                    <property>aero/coefficient/CLdrail</property>
+                    <value>-44.5</value>
                 </product>
             </function>
 
