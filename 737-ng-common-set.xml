@@ -231,6 +231,67 @@
     </engine>
   </engines>
 
+  <input>
+    <keyboard>
+
+      <key n="4">
+        <name>ctrl+d</name>
+        <desc>Autopilot disconnect</desc>
+        <binding>
+          <command>nasal</command>
+          <script>
+            autopilot737.apdsng_button_press();
+          </script>
+        </binding>
+      </key>
+
+      <key n="68">
+        <name>shift+d</name>
+        <desc>Autothrottle off</desc>
+        <binding>
+          <command>nasal</command>
+          <script>
+            setprop("/autopilot/internal/SPD", 0);
+          </script>
+        </binding>
+      </key>
+
+      <key n="100">
+        <name>d</name>
+        <desc>TOGA button</desc>
+        <binding>
+          <command>nasal</command>
+          <script>autopilot737.toga_button();</script>
+        </binding>
+      </key>
+
+      <key n="106">
+        <name>j</name>
+        <desc>Decrease spoiler lever position</desc>
+        <binding>
+          <command>property-adjust</command>
+          <property>b737/controls/flight/spoilers-lever-pos</property>
+          <step type="double">-1</step>
+          <min type="double">0</min>
+          <max type="double">6</max>
+        </binding>
+      </key>
+      
+      <key n="107">
+        <name>k</name>
+        <desc>Increase spoiler lever position</desc>
+        <binding>
+          <command>property-adjust</command>
+          <property>b737/controls/flight/spoilers-lever-pos</property>
+          <step type="double">1</step>
+          <min type="double">0</min>
+          <max type="double">6</max>
+        </binding>
+      </key>
+
+    </keyboard>
+  </input>
+
 <autopilot>
     <settings>
       <vertical-speed-knob type="int">0</vertical-speed-knob>

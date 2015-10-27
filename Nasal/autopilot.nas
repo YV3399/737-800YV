@@ -944,21 +944,23 @@ var toga_engage = func {
 	setprop("/autopilot/internal/SPD-RETARD", 0);
 	setprop("/autopilot/internal/TOGA", 1);
 
-	var derate_20k = getprop("/instrumentation/fmc/derated-to/method-derate-20k");
-	var assumed = getprop("/instrumentation/fmc/derated-to/method-assumed");
-	if (!derate_20k and !assumed) {
-		var takeoff_n1 = getprop("/autopilot/settings/to-n1-22k");
-	} elsif (derate_20k and !assumed) {
-		var takeoff_n1 = getprop("/autopilot/settings/to-n1-20k");
-	} elsif (!derate_20k and assumed) {
-		var max_n1 = getprop("/autopilot/settings/assumed-max-n1-22k");
-		var delta_n1 = getprop("/autopilot/settings/assumed-n1-delta-22k");
-		var takeoff_n1 = max_n1 - delta_n1;
-	} elsif (derate_20k and assumed) {
-		var max_n1 = getprop("/autopilot/settings/assumed-max-n1-20k");
-		var delta_n1 = getprop("/autopilot/settings/assumed-n1-delta-20k");
-		var takeoff_n1 = max_n1 - delta_n1;
-	}
+	#var derate_20k = getprop("/instrumentation/fmc/derated-to/method-derate-20k");
+	#var assumed = getprop("/instrumentation/fmc/derated-to/method-assumed");
+	#if (!derate_20k and !assumed) {
+	#	var takeoff_n1 = getprop("/autopilot/settings/to-n1-22k");
+	#} elsif (derate_20k and !assumed) {
+	#	var takeoff_n1 = getprop("/autopilot/settings/to-n1-20k");
+	#} elsif (!derate_20k and assumed) {
+	#	var max_n1 = getprop("/autopilot/settings/assumed-max-n1-22k");
+	#	var delta_n1 = getprop("/autopilot/settings/assumed-n1-delta-22k");
+	#	var takeoff_n1 = max_n1 - delta_n1;
+	#} elsif (derate_20k and assumed) {
+	#	var max_n1 = getprop("/autopilot/settings/assumed-max-n1-20k");
+	#	var delta_n1 = getprop("/autopilot/settings/assumed-n1-delta-20k");
+	#	var takeoff_n1 = max_n1 - delta_n1;
+	#}
+
+	var takeoff_n1 = getprop("/autopilot/settings/to-n1-26k");
 
 	setprop("/autopilot/internal/target-n1", takeoff_n1);
 

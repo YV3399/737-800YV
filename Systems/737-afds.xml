@@ -489,14 +489,14 @@
         </and>
       </condition>
   </enable>	
-  <input> <!-- N1 range from 22 to 106 -->
+  <input> <!-- N1 range from 19.76 to 104 -->
     <expression>
       <sum>
         <product>
           <property>/autopilot/internal/target-n1</property>
-          <value>0.0119047619</value>
+          <value>0.0118706791</value>
         </product>
-        <value>-0.2619047619</value>
+        <value>-0.2345804223</value>
       </sum>
     </expression> 
   </input>
