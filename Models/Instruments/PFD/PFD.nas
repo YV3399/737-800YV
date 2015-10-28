@@ -26,7 +26,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpd","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsCourse","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsCourse","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -43,7 +43,8 @@ var canvas_PFD = {
 		m["risingRwyPtr_scale"] = m["risingRwyPtr"].createTransform();
 		m["risingRwyPtr"].createTransform().setTranslation(c2[0], c2[1]);
 		
-		m["horizon"].set("clip", "rect(241.8, 694.7, 733.5, 211.1)");
+		#m["horizon"].set("clip", "rect(241.8, 694.7, 733.5, 211.1)");
+		m["horizon"].set("clip", "rect(242, 695, 733, 211)");
 		m["minSpdInd"].set("clip", "rect(156, 1024, 829, 0)");
 		m["maxSpdInd"].set("clip", "rect(156, 1024, 829, 0)");
 		m["spdTape"].set("clip", "rect(156, 1024, 829, 0)");
@@ -53,7 +54,9 @@ var canvas_PFD = {
 		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 930)");
 		m["compass"].set("clip", "rect(700, 1024, 990, 0)");
 		m["curAlt3"].set("clip", "rect(463, 1024, 531, 0)");
-		m["curSpdTen"].set("clip", "rect(464, 1024, 559, 0)");
+		m["curSpdTen"].set("clip", "rect(456, 1024, 540, 0)");
+		m["curSpdDig1"].set("clip", "rect(456, 1024, 540, 0)");
+		m["curSpdDig2"].set("clip", "rect(456, 1024, 540, 0)");
 		
 		setlistener("autopilot/locks/passive-mode",            func { m.update_ap_modes() } );
 		setlistener("autopilot/locks/altitude",                func { m.update_ap_modes() } );
@@ -154,8 +157,19 @@ var canvas_PFD = {
 			curAltDiff = -420;
 		me["selAltPtr"].setTranslation(0,curAltDiff*0.9);
 
-		me["curSpd"].setText(sprintf("%2.0f",math.floor(ias/10)));
 		me["curSpdTen"].setTranslation(0,math.mod(ias,10)*45);
+		if (math.mod(ias,10) > 9 and math.mod(ias,10) < 10) {
+			var spdDig2Add = math.mod(ias,1);
+		} else {
+			var spdDig2Add = 0;
+		}
+		me["curSpdDig2"].setTranslation(0,(math.floor(math.mod(ias,100)/10) + spdDig2Add)*58.5);
+		if (math.mod(ias,100) > 99 and math.mod(ias,100) < 100) {
+			var spdDig1Add = math.mod(ias,1);
+		} else {
+			var spdDig1Add = 0;
+		}
+		me["curSpdDig1"].setTranslation(0,(math.floor(math.mod(ias,1000)/100) + spdDig1Add)*58.5);
 		
 		if (getprop("instrumentation/marker-beacon/outer")) {
 			me["markerBeacon"].show();
@@ -301,6 +315,12 @@ var canvas_PFD = {
 		var apPitch = getprop("/autopilot/display/pitch-mode");
 		me["pitchMode"].setText(apPitch);
 
+		var apRollArm = getprop("/autopilot/display/roll-mode-armed");
+		me["rollArmMode"].setText(apRollArm);
+
+		var apPitchArm = getprop("/autopilot/display/pitch-mode-armed");
+		me["pitchArmMode"].setText(apPitchArm);
+
 		settimer(func me.update_ap_modes(), 0.5);
 	},
 	update_slow: func()
@@ -392,7 +412,7 @@ var canvas_PFD = {
 		me["baroSet"].setText(sprintf("%2.2f",getprop("instrumentation/altimeter/setting-inhg")));
 		me["ilsCourse"].setText(sprintf("CRS %3.0f",getprop("instrumentation/nav/radials/selected-deg")));
 		me["dhText"].setText(sprintf("DH%3.0f",dh));
-		me["selHdgText"].setText(sprintf("%3.0f",getprop("autopilot/settings/true-heading-deg")));
+		me["selHdgText"].setText(sprintf("%3.0f",getprop("autopilot/settings/heading-bug-deg")));
 		me["speedText"].setText(sprintf("%3.0f",apSpd));
 		
 		settimer(func me.update_slow(), 0.5);
@@ -416,6 +436,6 @@ setlistener("sim/signals/fdm-initialized", func() {
 setlistener("sim/signals/reinit", func pfd_display.del());
 
 var showPfd = func() {
-	var dlg = canvas.Window.new([700, 700], "dialog").set("resize", 1);
+	var dlg = canvas.Window.new([512, 512], "dialog").set("resize", 1);
 	dlg.setCanvas(pfd_display);
 }
