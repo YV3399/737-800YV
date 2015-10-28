@@ -51,7 +51,7 @@ var canvas_PFD = {
 		m["altTape"].set("clip", "rect(156, 1024, 829, 0)");
 		m["cmdSpd"].set("clip", "rect(156, 1024, 829, 0)");
 		m["selAltPtr"].set("clip", "rect(156, 1024, 829, 0)");
-		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 930)");
+		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 952)");
 		m["compass"].set("clip", "rect(700, 1024, 990, 0)");
 		m["curAlt3"].set("clip", "rect(463, 1024, 531, 0)");
 		m["curSpdTen"].set("clip", "rect(456, 1024, 540, 0)");
@@ -291,8 +291,10 @@ var canvas_PFD = {
 		me["spdTape"].setTranslation(0,ias*5.639);
 		me["altTape"].setTranslation(0,alt*0.9);
 		
-		if(var vsiDeg = getprop("instrumentation/pfd/vsi-needle-deg") != nil)
+		var vsiDeg = getprop("instrumentation/pfd/vsi-needle-deg");
+		if( vsiDeg != nil) {
 			me["vsiNeedle"].setRotation(vsiDeg*D2R);
+		}
 		
 		settimer(func me.update(), 0.04);
 	},

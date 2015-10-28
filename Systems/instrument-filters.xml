@@ -13,17 +13,6 @@
   </output>
 </filter>
 
-<filter n="10002">
-   <type>gain</type>
-   <input>
-     <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-     <min>45</min>
-     <max>1000</max>
-   </input>
-   <gain>1</gain>
-   <output>/instrumentation/airspeed-indicator/indicated-speed-numbers-kt</output>
-</filter>
-
 <filter n="10003">
   <type>gain</type>
   <gain>1</gain>

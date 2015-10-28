@@ -57,13 +57,19 @@
         <input> 
             <expression>
                 <table>
-                    <property>velocities/vertical-speed-fps</property> 
-                    <entry><ind>-100</ind><dep>-64</dep></entry>
-                    <entry><ind>-33.3333</ind><dep>-58</dep></entry>
-                    <entry><ind>-16.6666</ind><dep>-43</dep></entry>
-                    <entry><ind>16.6666</ind><dep>43</dep></entry>
-                    <entry><ind>33.3333</ind><dep>58</dep></entry>
-                    <entry><ind>100</ind><dep>64</dep></entry>
+                    <property>velocities/vertical-speed-fps</property>
+                    <entry><ind>-100</ind><dep>-68.8</dep></entry>
+                    <entry><ind>-66.6666</ind><dep>-66.5</dep></entry>
+                    <entry><ind>-33.3333</ind><dep>-63.5</dep></entry>
+                    <entry><ind>-25</ind><dep>-57.5</dep></entry>
+                    <entry><ind>-16.6666</ind><dep>-50</dep></entry>
+                    <entry><ind>-8.3333</ind><dep>-30.5</dep></entry>
+                    <entry><ind>8.3333</ind><dep>30.5</dep></entry>
+                    <entry><ind>16.6666</ind><dep>50</dep></entry>
+                    <entry><ind>25</ind><dep>57.5</dep></entry>
+                    <entry><ind>33.3333</ind><dep>63.5</dep></entry>
+                    <entry><ind>66.6666</ind><dep>66.5</dep></entry>
+                    <entry><ind>100</ind><dep>68.8</dep></entry>
                 </table>
             </expression>
         </input>
