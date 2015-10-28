@@ -26,7 +26,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsCourse","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -57,6 +57,7 @@ var canvas_PFD = {
 		m["curSpdTen"].set("clip", "rect(456, 1024, 540, 0)");
 		m["curSpdDig1"].set("clip", "rect(456, 1024, 540, 0)");
 		m["curSpdDig2"].set("clip", "rect(456, 1024, 540, 0)");
+		m["risingRwy"].set("clip", "rect(0, 695, 1024, 211)");
 		
 		setlistener("autopilot/locks/passive-mode",            func { m.update_ap_modes() } );
 		setlistener("autopilot/locks/altitude",                func { m.update_ap_modes() } );
@@ -118,7 +119,7 @@ var canvas_PFD = {
 			me["fdY"].hide();
 		}
 		
-		me["cmdSpd"].setTranslation(0,-(apSpd-ias)*6);
+		me["cmdSpd"].setTranslation(0,-(apSpd-ias)*5.63915);
 		if (mach >= 0.4 ) {
 			me["machText"].setText(sprintf("%.3f",mach));
 		} else {
@@ -184,45 +185,57 @@ var canvas_PFD = {
 			me["markerBeacon"].hide();
 		}
 		
-		if(getprop("instrumentation/nav/signal-quality-norm") or 0 > 0.95) {
-			var deflection = getprop("instrumentation/nav/heading-needle-deflection-norm"); # 1 dot = 1 degree, full needle deflection is 10 deg
-			if (deflection > 0.3)
-				deflection = 0.3;
-			if (deflection < -0.3)
-				deflection = -0.3;
+		var navSignalQuality = getprop("instrumentation/nav[0]/signal-quality-norm") or 0;
+		var navIsLocalizer = getprop("instrumentation/nav[0]/nav-loc") or 0;
+		if (navSignalQuality > 0.95 and navIsLocalizer) {
+			var deflection = getprop("instrumentation/nav[0]/heading-needle-deflection-norm"); # 1 dot = 1 degree, full needle deflection is 10 deg
+			var expanded = getprop("/autopilot/display/localizer_expanded");
 				
 			me["locPtr"].show();
+			
+			if(abs(deflection) < 0.95) {
+				me["locPtr"].setColorFill(1,0,1,1);
+			}
+			else {
+				me["locPtr"].setColorFill(0,0,0,1);
+			}
 			
 			if (radioAlt < 2500) {
 				me["risingRwy"].show();
 				me["risingRwyPtr"].show();
 				if (radioAlt< 200) {
-					if(abs(deflection) < 0.1)
-						me["risingRwy"].setTranslation(deflection*500,-(200-radioAlt)*0.682);
-					else
-						me["risingRwy"].setTranslation(deflection*250,-(200-radioAlt)*0.682);
+					if(expanded) {
+						if (deflection > 0.3) deflection = 0.3;
+						if (deflection < -0.3) deflection = -0.3;
+						me["risingRwy"].setTranslation(deflection*600,-(200-radioAlt)*0.682);
+					} else {
+						me["risingRwy"].setTranslation(deflection*180,-(200-radioAlt)*0.682);
+					}
 					me["risingRwyPtr_scale"].setScale(1, ((200-radioAlt)*0.682)/11);
 				} else {
-					me["risingRwy"].setTranslation(deflection*150,0);
+					if(expanded) {
+						if (deflection > 0.3) deflection = 0.3;
+						if (deflection < -0.3) deflection = -0.3;
+						me["risingRwy"].setTranslation(deflection*600,0);
+					} else {
+						me["risingRwy"].setTranslation(deflection*180,0);
+					}
 					me["risingRwyPtr_scale"].setScale(1, 1);
 				}
 			} else {
 				me["risingRwy"].hide();
 				me["risingRwyPtr"].hide();
 			}
-			
-			if(abs(deflection) < 0.233) # 2 1/3 dot
-				me["locPtr"].setColorFill(1,0,1,1);
-			else
-				me["locPtr"].setColorFill(1,0,1,0);
-			if(abs(deflection) < 0.1) {
-				me["locPtr"].setTranslation(deflection*500,0);
-				me["risingRwyPtr"].setTranslation(deflection*500,0);
+			if(expanded) {
+				if (deflection > 0.3) deflection = 0.3;
+				if (deflection < -0.3) deflection = -0.3;
+				me["locPtr"].setTranslation(deflection*600,0);
+				me["risingRwyPtr"].setTranslation(deflection*600,0);
 				me["locScaleExp"].show();
 				me["locScale"].hide();
 			} else {
-				me["locPtr"].setTranslation(deflection*250,0);
-				me["risingRwyPtr"].setTranslation(deflection*250,0);
+				me["locPtr"].setTranslation(deflection*180,0);
+				me["risingRwyPtr"].setTranslation(deflection*180,0);
 				me["locScaleExp"].hide();
 				me["locScale"].show();
 			}
@@ -235,9 +248,23 @@ var canvas_PFD = {
 		}
 		
 		if(getprop("instrumentation/nav/gs-in-range")) {
-			me["gsPtr"].show();
+			var track = getprop("/orientation/track-magnetic-deg");
+			var mcp_course = getprop("/instrumentation/nav[0]/radials/selected-deg");
+			var trk_crs_diff = math.abs(geo.normdeg180(track - mcp_course));
+			if (trk_crs_diff < 90) {
+				me["gsPtr"].show();
+			} else {
+				me["gsPtr"].hide();
+			}
 			me["gsScale"].show();
-			me["gsPtr"].setTranslation(0,-getprop("instrumentation/nav/gs-needle-deflection-norm")*140);
+			var gs_deflection=getprop("instrumentation/nav/gs-needle-deflection-norm");
+			me["gsPtr"].setTranslation(0,-gs_deflection*180);
+			if(abs(gs_deflection) < 0.95) {
+				me["gsPtr"].setColorFill(1,0,1,1);
+			}
+			else {
+				me["gsPtr"].setColorFill(0,0,0,1);
+			}
 		} else {
 			me["gsPtr"].hide();
 			me["gsScale"].hide();
@@ -278,17 +305,11 @@ var canvas_PFD = {
 		} else {
 			me["radioAltInd"].hide();
 		}
-		#if (getprop("instrumentation/dme/in-range")) {
-		if(getprop("instrumentation/nav/nav-distance") != nil)
-			me["dmeDist"].setText(sprintf("DME %2.01f",getprop("instrumentation/nav/nav-distance")*0.000539));
-		#	dmeDist.show();
-		#} else {
-		#	dmeDist.hide();
-		#}
+		me["dmeDist"].setText(sprintf("DME %s",getprop("instrumentation/dme[0]/KDI572-574/nm")));
 		if (getprop("instrumentation/pfd/speed-trend-up") != nil)
 			me["spdTrend_scale"].setScale(1, (getprop("instrumentation/pfd/speed-lookahead")-ias)/20);
 		
-		me["spdTape"].setTranslation(0,ias*5.639);
+		me["spdTape"].setTranslation(0,ias*5.63915);
 		me["altTape"].setTranslation(0,alt*0.9);
 		
 		var vsiDeg = getprop("instrumentation/pfd/vsi-needle-deg");
@@ -359,9 +380,6 @@ var canvas_PFD = {
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
 		var dh = getprop("instrumentation/mk-viii/inputs/arinc429/decision-height");
 		
-		if (var navId = getprop("instrumentation/nav/nav-id") != nil)
-			me["ilsId"].setText(navId);
-		
 		var v1 = getprop("instrumentation/fmc/speeds/v1-kt") or 0;
 		if (v1 > 0) {
 			if (wow) {
@@ -411,7 +429,7 @@ var canvas_PFD = {
 			} elsif (flaps == 0.125) {
 				me["flaps0"].show(); me["flaps1"].show();
 			} elsif (flaps == 0.375) {
-				me["flaps1"].show(); me["flaps5"].show();
+				me["flaps0"].show(); me["flaps1"].show(); me["flaps5"].show();
 			} elsif (flaps == 0.333) {
 				me["flaps5"].show(); me["flaps10"].show();
 			} elsif (flaps == 0.667) {
@@ -445,7 +463,13 @@ var canvas_PFD = {
 			me["baroSet"].setText(sprintf("%4.0f",getprop("instrumentation/altimeter/setting-hpa")));
 			me["baroUnit"].setText("hpa");
 		}
-		me["ilsCourse"].setText(sprintf("CRS %3.0f",getprop("instrumentation/nav/radials/selected-deg")));
+		var navId = getprop("instrumentation/nav[0]/nav-id");
+		var navFrq = getprop("instrumentation/nav[0]/frequencies/selected-mhz-fmt") or 0;
+		if (navId == "" or navId == nil) {
+			me["ilsId"].setText(sprintf("%s/%3.0f",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
+		} else {
+			me["ilsId"].setText(sprintf("%s/%3.0f",navId,getprop("instrumentation/nav/radials/selected-deg")));
+		}
 		me["dhText"].setText(sprintf("DH%3.0f",dh));
 		me["selHdgText"].setText(sprintf("%3.0f",getprop("autopilot/settings/heading-bug-deg")));
 		me["speedText"].setText(sprintf("%3.0f",apSpd));

@@ -317,6 +317,7 @@
       <roll-mode-rectangle type="bool">0</roll-mode-rectangle>
       <pitch-mode-rectangle type="bool">0</pitch-mode-rectangle>
       <throttle-mode-rectangle type="bool">0</throttle-mode-rectangle>
+      <localizer-expanded type="bool">0</localizer-expanded>
     </display>
 
   </autopilot>
