@@ -29,9 +29,9 @@
      inkscape:window-height="716"
      id="namedview102"
      showgrid="false"
-     inkscape:zoom="0.99999889"
-     inkscape:cx="436.70064"
-     inkscape:cy="669.95357"
+     inkscape:zoom="0.707106"
+     inkscape:cx="278.72139"
+     inkscape:cy="362.5575"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -712,7 +712,7 @@
 <text
        inkscape:label="#text3956"
        sodipodi:linespacing="125%"
-       id="text3143"
+       id="baroUnit"
        y="893.29694"
        x="864.33167"
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00ff00;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
@@ -4848,4 +4848,25 @@
          x="38.129448"
          y="688.75909"
          style="font-size:45px;line-height:129.99999523%;fill:#ffffff" /></text>
-</g></svg>
+<rect
+       style="fill:none;fill-rule:evenodd;stroke:#00ff00;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rollModeChange"
+       width="170.00018"
+       height="29.500032"
+       x="377.25043"
+       y="35.748901"
+       inkscape:label="#rect3942" /><rect
+       style="fill:none;fill-opacity:0;fill-rule:evenodd;stroke:#00ff00;stroke-width:2.01756978000000009;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       id="spdModeChange"
+       width="173.00018"
+       height="29.500032"
+       x="198.15086"
+       y="35.820271"
+       inkscape:label="#rect3942" /><rect
+       style="fill:none;fill-opacity:0;fill-rule:evenodd;stroke:#00ff00;stroke-width:2.01756978000000009;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       id="pitchModeChange"
+       width="173.00018"
+       height="29.500032"
+       x="553.75061"
+       y="35.748901"
+       inkscape:label="#rect3942" /></g></svg>

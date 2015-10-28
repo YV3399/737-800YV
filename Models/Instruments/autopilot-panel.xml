@@ -193,6 +193,44 @@
             <y>1</y>
             <z>0</z>
         </axis>
+    </animation>  
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>FO-CRS.1</object-name>
+        <property>instrumentation/nav[1]/radials/selected-deg</property>
+        <factor>0.1</factor>         
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>FO-CRS.2</object-name>
+        <property>instrumentation/nav[1]/radials/selected-deg</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation> 
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>FO-CRS.3</object-name>
+        <property>instrumentation/nav[1]/radials/selected-deg</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
     </animation> 
 
      <animation>
@@ -526,7 +564,7 @@
    <object-name>cap-fd</object-name>
    <property>/instrumentation/flightdirector/fd-left-on</property>
    <factor>-30</factor>
-   <offset-deg>30</offset-deg>
+   <offset-deg>0</offset-deg>
    <center>
      <x-m>0.0234</x-m>
      <z-m>0.0035</z-m>
@@ -1012,8 +1050,8 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-            <command>nasal</command>
-            <script>B737.Efis.ctl_func("center",0);</script>
+            <command>property-toggle</command>
+            <property>/instrumentation/efis/inputs/nd-centered</property>
         </binding>
         </action>
     </animation>
@@ -1227,29 +1265,16 @@
     </animation>
 
     <animation>
-        <type>pick</type>
+        <type>knob</type>
         <object-name>BARO.knob</object-name>
         <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
             <binding>
-            <command>property-assign</command>
+            <command>property-adjust</command>
             <property>instrumentation/efis/inputs/kpa-mode</property>
-            <value>0</value>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>BARO.knob</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-assign</command>
-            <property>instrumentation/efis/inputs/kpa-mode</property>
-            <value>1</value>
+            <factor>1</factor>
+            <min>0</min>
+            <max>1</max>                
+            <wrap>false</wrap>
         </binding>
         </action>
     </animation>

@@ -11,64 +11,6 @@
         <path>Aircraft/Generic/generic-electrical.xml</path>
       </electrical>
 
-      <pitot>
-        <name>pitot</name>
-        <number>0</number>
-      </pitot>
-
-      <pitot>
-        <name>pitot</name>
-        <number>1</number>
-      </pitot>
-
-      <pitot>
-        <name>pitot</name>
-        <number>2</number>
-      </pitot>
-
-      <pitot>
-        <name>pitot</name>
-        <number>3</number>
-      </pitot>
-
-      <static>
-        <name>static</name>
-        <number>0</number>
-        <tau>1</tau>
-      </static>
-
-      <static>
-        <name>static</name>
-        <number>1</number>
-        <tau>1</tau>
-      </static>
-
-      <static>
-        <name>static</name>
-        <number>2</number>
-        <tau>1</tau>
-      </static>
-
-      <static>
-        <name>static</name>
-        <number>3</number>
-        <tau>1</tau>
-      </static>
-
-      <vacuum>
-        <name>vacuum</name>
-        <number>0</number>
-        <rpm>engines/engine[0]n1</rpm>
-        <scale>20.0</scale>
-      </vacuum>
-
-      <vacuum>
-        <name>vacuum</name>
-        <number>1</number>
-        <rpm>engines/engine[1]/n1</rpm>
-        <scale>20.0</scale>
-      </vacuum>
-
       <autopilot>
         <path>Aircraft/737-800/Systems/737-afds.xml</path>
       </autopilot>
@@ -85,6 +27,8 @@
         <path>Aircraft/737-800/Systems/737_pfd.xml</path>
       </autopilot>
 
+      <path>Aircraft/737-300/Systems/systems.xml</path>
+
       <property-rule n="101">
         <path>Aircraft/737-800/Systems/instrument-filters.xml</path>
       </property-rule>
@@ -92,7 +36,7 @@
     </systems>
 
     <instrumentation>
-      <path>Systems/instrumentation.xml</path>
+      <path>Aircraft/737-800/Systems/instrumentation.xml</path>
     </instrumentation>
     <sound>
       <path>Sounds/737-sound.xml</path>

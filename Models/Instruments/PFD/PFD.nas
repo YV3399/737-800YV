@@ -26,7 +26,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsCourse","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsCourse","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -309,6 +309,11 @@ var canvas_PFD = {
 			me["afdsMode"].setText("");
 		
 		var apSpd = getprop("/autopilot/display/throttle-mode");
+		if (apSpd == "ARM") {
+			me["atMode"].setColor(1,1,1);
+		} else {
+			me["atMode"].setColor(0,1,0);
+		}
 		me["atMode"].setText(apSpd);
 
 		var apRoll = getprop("/autopilot/display/roll-mode");
@@ -322,6 +327,27 @@ var canvas_PFD = {
 
 		var apPitchArm = getprop("/autopilot/display/pitch-mode-armed");
 		me["pitchArmMode"].setText(apPitchArm);
+
+		var spdChange = getprop("/autopilot/display/throttle-mode-rectangle");
+		if ( spdChange == 1 ) {
+			me["spdModeChange"].show();
+		} else {
+			me["spdModeChange"].hide();
+		}
+
+		var rollChange = getprop("/autopilot/display/roll-mode-rectangle");
+		if ( rollChange == 1 ) {
+			me["rollModeChange"].show();
+		} else {
+			me["rollModeChange"].hide();
+		}
+
+		var pitchChange = getprop("/autopilot/display/pitch-mode-rectangle");
+		if ( pitchChange == 1 ) {
+			me["pitchModeChange"].show();
+		} else {
+			me["pitchModeChange"].hide();
+		}
 
 		settimer(func me.update_ap_modes(), 0.5);
 	},
@@ -411,7 +437,14 @@ var canvas_PFD = {
 			me["minSpdInd"].show();
 			me["maxSpdInd"].show();
 		}
-		me["baroSet"].setText(sprintf("%2.2f",getprop("instrumentation/altimeter/setting-inhg")));
+		var pressureUnit = getprop("instrumentation/efis/inputs/kpa-mode");
+		if ( pressureUnit == 0 ) {
+			me["baroSet"].setText(sprintf("%2.2f",getprop("instrumentation/altimeter/setting-inhg")));
+			me["baroUnit"].setText("in.");
+		} else {
+			me["baroSet"].setText(sprintf("%4.0f",getprop("instrumentation/altimeter/setting-hpa")));
+			me["baroUnit"].setText("hpa");
+		}
 		me["ilsCourse"].setText(sprintf("CRS %3.0f",getprop("instrumentation/nav/radials/selected-deg")));
 		me["dhText"].setText(sprintf("DH%3.0f",dh));
 		me["selHdgText"].setText(sprintf("%3.0f",getprop("autopilot/settings/heading-bug-deg")));

@@ -2,6 +2,7 @@ AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
 MATERIAL "interior" rgb 0.8 0.8 0.8 amb 0 0 0 emis 0.1 0.1 0.1 spec 0 0 0 shi 0 trans 0
 MATERIAL "instr-lights" rgb 0 0 0 amb 0 0 0 emis 0 0 0 spec 0 0 0 shi 0 trans 0
+MATERIAL "buttonlights" rgb 1 1 1 amb 1 1 1 emis 1 1 1 spec 0.33 0.33 0.33 shi 32 trans 0
 OBJECT world
 kids 2
 OBJECT poly
@@ -587,7 +588,7 @@ numvert 4
 0.008442 0.075093 0.102949
 numsurf 1
 SURF 0x20
-mat 1
+mat 3
 refs 4
 2 0.0 0.0
 3 0.0 1.0

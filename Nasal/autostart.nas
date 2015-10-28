@@ -11,6 +11,8 @@ var autostart = func {
 	setprop("/controls/electric/battery-switch",1);
 	setprop("/controls/electric/apugen1",1);
 	setprop("/controls/electric/apugen2",1);
+
+	setprop("/systems/electrical/outputs/efis",28); #for central eicas function
 	
 	setprop("/controls/fuel/tank[0]/pump-aft",1);
 	setprop("/controls/fuel/tank[0]/pump-fwd",1);

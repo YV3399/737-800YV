@@ -29463,7 +29463,7 @@ numvert 0
 numsurf 0
 kids 0
 OBJECT poly
-name "Plane.021"
+name "FO-CRS.3"
 data 9
 Plane.027
 texture "digits2.png"
@@ -29484,7 +29484,7 @@ refs 4
 1 0.0977810621262 0.00388761050999
 kids 0
 OBJECT poly
-name "Plane.022"
+name "FO-CRS.2"
 data 9
 Plane.003
 texture "digits2.png"
@@ -29505,7 +29505,7 @@ refs 4
 1 0.0977080017328 0.0038810481783
 kids 0
 OBJECT poly
-name "Plane.023"
+name "FO-CRS.1"
 data 9
 Plane.028
 texture "digits2.png"
