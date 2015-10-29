@@ -125,7 +125,7 @@ var canvas_PFD = {
 		if (mach < 0.38) setprop("instrumentation/pfd/display-mach", 0);
 		var displayMach = getprop("instrumentation/pfd/display-mach");
 		if ( displayMach ) {
-			me["machText"].setText(sprintf("%.3f",mach));
+			me["machText"].setText(sprintf(".%3.0f",mach*1000));
 		} else {
 			me["machText"].setText(sprintf("GS%.0f",gs));
 		}
@@ -162,7 +162,7 @@ var canvas_PFD = {
 			curAltDiff = -420;
 		me["selAltPtr"].setTranslation(0,curAltDiff*0.9);
 
-		me["curSpdTen"].setTranslation(0,math.mod(ias,10)*45);
+		me["curSpdTen"].setTranslation(0,math.mod(ias,10)*33.75);
 		if (math.mod(ias,10) > 9 and math.mod(ias,10) < 10) {
 			var spdDig2Add = math.mod(ias,1);
 		} else {
@@ -295,8 +295,12 @@ var canvas_PFD = {
 					me["vertSpdDn"].hide();
 				}
 			}
-			if (getprop("instrumentation/pfd/target-vs") != nil)
+			if (getprop("instrumentation/pfd/target-vs") != nil and getprop("autopilot/internal/VNAV-VS")) {
+				me["vsPointer"].show();
 				me["vsPointer"].setTranslation(0,-getprop("instrumentation/pfd/target-vs"));
+			} else {
+				me["vsPointer"].hide();
+			}
 		}
 		if (radioAlt < 2500) {
 			if (radioAlt > 500)
@@ -442,8 +446,30 @@ var canvas_PFD = {
 		}
 		if (getprop("instrumentation/weu/state/stall-speed") != nil)
 			me["minSpdInd"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed")*5.63915);
-		if (getprop("instrumentation/pfd/overspeed-kt") != nil)
-			me["maxSpdInd"].setTranslation(0,-getprop("instrumentation/pfd/overspeed-kt")*5.63915);
+
+		var mmoKt = getprop("instrumentation/pfd/mmo-kt") or 500;
+		var maxIAS = 340;
+		if ( mmoKt < 340 ) {
+			var maxIAS = mmoKt;
+		}
+		if (flaps == 0.125) {
+			maxIAS = getprop("limits/max-flap-extension-speed[0]/speed");
+		} elsif (flaps == 0.250) {
+			maxIAS = getprop("limits/max-flap-extension-speed[1]/speed");
+		} elsif (flaps == 0.375) {
+			maxIAS = getprop("limits/max-flap-extension-speed[2]/speed");
+		} elsif (flaps == 0.500) {
+			maxIAS = getprop("limits/max-flap-extension-speed[3]/speed");
+		} elsif (flaps == 0.625) {
+			maxIAS = getprop("limits/max-flap-extension-speed[4]/speed");
+		} elsif (flaps == 0.750) {
+			maxIAS = getprop("limits/max-flap-extension-speed[5]/speed");
+		} elsif (flaps == 0.875) {
+			maxIAS = getprop("limits/max-flap-extension-speed[6]/speed");
+		} elsif (flaps == 1.000) {
+			maxIAS = getprop("limits/max-flap-extension-speed[7]/speed");
+		}
+		me["maxSpdInd"].setTranslation(0,maxIAS*-5.63915);
 		if (dh != nil)
 			me["minimums"].setTranslation(0,-dh*0.9);
 		if (getprop("autopilot/route-manager/destination/field-elevation-ft") != nil) {

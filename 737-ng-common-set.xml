@@ -622,6 +622,7 @@
 
     <pfd>
       <display-mach type="bool">false</display-mach>
+      <overspeed-kt type="double">340</overspeed-kt>
     </pfd>
 
       <radar-altimeter>

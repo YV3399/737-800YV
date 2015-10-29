@@ -3,7 +3,7 @@
 <PropertyList>
 
     <filter>
-        <name>IAS speed limit</name>
+        <name>IAS lower speed limit</name>
         <type>gain</type>
         <gain>1.0</gain>
         <update-interval-secs type="double">0.1</update-interval-secs>
@@ -18,6 +18,36 @@
             </expression>
         </input>
         <output>instrumentation/weu/state/stall-speed</output>
+    </filter>
+
+    <filter>
+        <name>Mmo converted to IAS speed limit</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <update-interval-secs type="double">0.1</update-interval-secs>
+        <input>
+          <condition>
+            <not-equals>
+              <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
+              <value>0</value>
+            </not-equals>
+          </condition>
+            <expression>
+              <div>
+                <product>
+                  <property>/fdm/jsbsim/atmosphere/a-fps</property>
+                  <value>0.82</value>
+                  <value>0.5913174946</value>
+                  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                </product>
+                <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
+               </div>
+            </expression>
+        </input>
+        <input>
+          <value>500</value>
+        </input>
+        <output>instrumentation/pfd/mmo-kt</output>
     </filter>
     
     <filter>
@@ -55,10 +85,18 @@
   <!--                 speed trend vector processing                   -->
   <!-- =============================================================== -->
 
+  <filter>
+    <name>Median airspeed last 1 sec</name>
+    <type>moving-average</type>
+    <samples>120</samples>
+    <input>instrumentation/airspeed-indicator/indicated-speed-kt</input>
+    <output>instrumentation/pfd/airspeed-kt-1sec-avg</output>
+  </filter>
+
   <predict-simple>
     <name>speed predictor (smoothed)</name>
-    <update-interval-secs type="double">0.1</update-interval-secs>
-    <input>velocities/airspeed-kt</input>
+    <update-interval-secs type="double">0.04</update-interval-secs>
+    <input>instrumentation/pfd/airspeed-kt-1sec-avg</input>
     <output>instrumentation/pfd/speed-lookahead</output>
     <seconds>10.0</seconds>
     <filter-gain>0.05</filter-gain>
@@ -67,12 +105,12 @@
   <filter>
     <name>PFD preprocessor (spd trend up)</name>
     <type>gain</type>
-    <update-interval-secs type="double">0.1</update-interval-secs>
+    <update-interval-secs type="double">0.04</update-interval-secs>
     <input>
       <property>instrumentation/pfd/speed-lookahead</property>
     </input>
     <reference>
-      <property>velocities/airspeed-kt</property>
+      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
       <offset>90</offset>
     </reference>
     <gain>-0.002667</gain>
@@ -84,13 +122,13 @@
   <filter>
     <name>PFD preprocessor (spd trend down)</name>
     <type>gain</type>
-    <update-interval-secs type="double">0.1</update-interval-secs>
+    <update-interval-secs type="double">0.04</update-interval-secs>
     <input>
       <property>instrumentation/pfd/speed-lookahead</property>
       <min>0</min>
     </input>
     <reference>
-      <property>velocities/airspeed-kt</property>
+      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
       <offset>-90</offset>
     </reference>
     <gain>-0.002667</gain>

@@ -180,6 +180,34 @@
     <prop>/autopilot/settings/fcca-target-bank</prop>
   </input>
   <output>
+    <prop>/instrumentation/flightdirector/fd-left-bank-nf</prop>
+  </output>
+</filter>
+
+<filter n="100101">
+  <name>Median left fd roll pos</name>
+  <type>moving-average</type>
+  <samples>120</samples>
+  <input>/instrumentation/flightdirector/fd-left-bank-nf</input>
+  <output>/instrumentation/flightdirector/fd-left-bank-f</output>
+</filter>
+
+<filter n="100102">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100</value>
+      </greater-than>
+    </condition>
+    <prop>/instrumentation/flightdirector/fd-left-bank-f</prop>
+  </input>
+  <input>
+    <prop>/instrumentation/flightdirector/fd-left-bank-nf</prop>
+  </input>
+  <output>
     <prop>/instrumentation/flightdirector/fd-left-bank</prop>
   </output>
 </filter>
@@ -198,6 +226,34 @@
   </input>
   <input>
     <prop>/autopilot/settings/fccb-target-bank</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-right-bank-nf</prop>
+  </output>
+</filter>
+
+<filter n="100111">
+  <name>Median right fd roll pos</name>
+  <type>moving-average</type>
+  <samples>120</samples>
+  <input>/instrumentation/flightdirector/fd-right-bank-nf</input>
+  <output>/instrumentation/flightdirector/fd-right-bank-f</output>
+</filter>
+
+<filter n="100112">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100</value>
+      </greater-than>
+    </condition>
+    <prop>/instrumentation/flightdirector/fd-right-bank-f</prop>
+  </input>
+  <input>
+    <prop>/instrumentation/flightdirector/fd-right-bank-nf</prop>
   </input>
   <output>
     <prop>/instrumentation/flightdirector/fd-right-bank</prop>
@@ -221,11 +277,39 @@
     <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
   </input>
   <output>
-    <prop>/instrumentation/flightdirector/fd-left-pitch</prop>
+    <prop>/instrumentation/flightdirector/fd-left-pitch-nf</prop>
   </output>
 </filter>
 
 <filter n="10013">
+  <name>Median left fd pitch pos</name>
+  <type>moving-average</type>
+  <samples>120</samples>
+  <input>/instrumentation/flightdirector/fd-left-pitch-nf</input>
+  <output>/instrumentation/flightdirector/fd-left-pitch-f</output>
+</filter>
+
+<filter n="10014">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100</value>
+      </greater-than>
+    </condition>
+    <prop>/instrumentation/flightdirector/fd-left-pitch-f</prop>
+  </input>
+  <input>
+    <prop>/instrumentation/flightdirector/fd-left-pitch-nf</prop>
+  </input>
+  <output>
+    <prop>/instrumentation/flightdirector/fd-left-pitch</prop>
+  </output>
+</filter>
+
+<filter n="10015">
   <type>gain</type>
   <gain>1</gain>
   <input>
@@ -241,12 +325,40 @@
     <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
   </input>
   <output>
+    <prop>/instrumentation/flightdirector/fd-right-pitch-nf</prop>
+  </output>
+</filter>
+
+<filter n="10016">
+  <name>Median right fd pitch pos</name>
+  <type>moving-average</type>
+  <samples>120</samples>
+  <input>/instrumentation/flightdirector/fd-right-pitch-nf</input>
+  <output>/instrumentation/flightdirector/fd-right-pitch-f</output>
+</filter>
+
+<filter n="10017">
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <condition>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100</value>
+      </greater-than>
+    </condition>
+    <prop>/instrumentation/flightdirector/fd-right-pitch-f</prop>
+  </input>
+  <input>
+    <prop>/instrumentation/flightdirector/fd-right-pitch-nf</prop>
+  </input>
+  <output>
     <prop>/instrumentation/flightdirector/fd-right-pitch</prop>
   </output>
 </filter>
 
 <!-- Transfer weight to kilogramms-->
-<filter n="10014">
+<filter n="10018">
   <type>gain</type>
   <gain>0.4536</gain>
   <input>
@@ -258,7 +370,7 @@
 </filter>
 
 <!-- For altimeter tooltips -->
-<filter n="10015">
+<filter n="10019">
    <type>gain</type>
    <input>
      <property>/instrumentation/altimeter[0]/setting-hpa</property>
@@ -266,7 +378,7 @@
    <gain>1</gain>
    <output>/b737/instrumentation/altimeter[0]/setting-hpa</output>
 </filter>
-<filter n="10016">
+<filter n="10020">
    <type>gain</type>
    <input>
      <property>/instrumentation/altimeter[1]/setting-hpa</property>
@@ -274,7 +386,7 @@
    <gain>1</gain>
    <output>/b737/instrumentation/altimeter[1]/setting-hpa</output>
 </filter>
-<filter n="10017">
+<filter n="10021">
    <type>gain</type>
    <input>
      <property>/instrumentation/altimeter[2]/setting-hpa</property>
