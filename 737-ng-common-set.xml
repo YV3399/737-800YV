@@ -426,6 +426,10 @@
 
   <nasal>
 
+    <cdu>
+      <file>Aircraft/Instruments-3d/cdu/boeing.nas</file> <!-- old CDU-->
+    </cdu>
+
     <boeing737>
       <file>Aircraft/Generic/limits.nas</file>
       <file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
@@ -443,6 +447,10 @@
     <nd>
       <file>Aircraft/737-800/Nasal/ND.nas</file>
     </nd>
+
+    <Boeing>
+      <file>Aircraft/737-800/Nasal/cdu.nas</file>
+    </Boeing>
 
   </nasal>
 

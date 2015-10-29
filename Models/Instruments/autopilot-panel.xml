@@ -801,6 +801,25 @@
   </action>
     </animation>
 
+    <!-- LNAV button -->
+ 
+ <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>L-NAV</object-name>
+  <action>
+    <name>Toggle LNAV</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        autopilot737.lnav_button_press();
+      </script>   
+    </binding>
+  </action>
+ </animation>
+
     <animation>
         <type>pick</type>
         <object-name>APP</object-name>
