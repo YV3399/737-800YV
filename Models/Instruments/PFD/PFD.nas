@@ -74,11 +74,11 @@ var canvas_PFD = {
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
 		if (alt < 0)
 			alt = 0;
-		var ias = getprop("velocities/airspeed-kt");
+		var ias = getprop("instrumentation/airspeed-indicator/indicated-speed-kt");
 		if (ias < 45)
 			ias = 45;
 		var gs = getprop("velocities/groundspeed-kt");
-		var mach = getprop("velocities/mach");
+		var mach = getprop("instrumentation/airspeed-indicator/indicated-mach");
 		var pitch = getprop("orientation/pitch-deg");
 		var roll =  getprop("orientation/roll-deg");
 		var hdg =  getprop("orientation/heading-magnetic-deg");
@@ -120,7 +120,11 @@ var canvas_PFD = {
 		}
 		
 		me["cmdSpd"].setTranslation(0,-(apSpd-ias)*5.63915);
-		if (mach >= 0.4 ) {
+
+		if (mach > 0.4) setprop("instrumentation/pfd/display-mach", 1);
+		if (mach < 0.38) setprop("instrumentation/pfd/display-mach", 0);
+		var displayMach = getprop("instrumentation/pfd/display-mach");
+		if ( displayMach ) {
 			me["machText"].setText(sprintf("%.3f",mach));
 		} else {
 			me["machText"].setText(sprintf("GS%.0f",gs));

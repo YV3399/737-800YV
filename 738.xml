@@ -1226,7 +1226,7 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/elevator-pos-rad</property>
-                    <value>0.2</value>
+                    <value>0.3</value>
                 </product>
             </function>
 
@@ -1236,7 +1236,8 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/stab</property>
-                    <value>0.007</value>
+                    <value>0.017452778</value> <!-- deg to rad for easier elevator vs stabilizer efficiency tuning-->
+                    <value>0.6</value>
                 </product>
             </function>
 
@@ -1303,7 +1304,13 @@
                 <description>Roll_moment_due_to_left_aileron</description>
                 <product>
                     <property>aero/coefficient/CLdlail</property>
-                    <value>44.5</value>
+                    <sum>
+                        <value>44.5</value>
+                        <quotient>
+                            <property>inertia/cg-y-in</property>
+                            <value>12</value>
+                        </quotient>
+                    </sum>
                 </product>
             </function>
 
@@ -1311,7 +1318,13 @@
                 <description>Roll_moment_due_to_right_aileron</description>
                 <product>
                     <property>aero/coefficient/CLdrail</property>
-                    <value>-44.5</value>
+                    <sum>
+                        <value>-44.5</value>
+                        <quotient>
+                            <property>inertia/cg-y-in</property>
+                            <value>12</value>
+                        </quotient>
+                    </sum>
                 </product>
             </function>
 
@@ -1341,7 +1354,16 @@
             <function name="aero/coefficient/Cmde">
                 <description>Pitch_moment_due_to_elevator</description>
                 <product>
-                    <property>metrics/lh-ft</property>
+                    <sum>
+                        <property>metrics/lh-ft</property>
+                        <quotient>
+                            <difference>
+                                <value>734</value>
+                                <property>inertia/cg-x-in</property>
+                            </difference>
+                            <value>12</value>
+                        </quotient>
+                    </sum>
                     <property>aero/coefficient/CLde</property>
                     <value>-1</value>
                 </product>

@@ -620,6 +620,10 @@
       </derated-to>
     </fmc>
 
+    <pfd>
+      <display-mach type="bool">false</display-mach>
+    </pfd>
+
       <radar-altimeter>
     <serviceable type="bool">true</serviceable>
     <antenna>
