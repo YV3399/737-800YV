@@ -496,13 +496,18 @@ var canvas_PFD = {
 		var navId = getprop("instrumentation/nav[0]/nav-id");
 		var navFrq = getprop("instrumentation/nav[0]/frequencies/selected-mhz-fmt") or 0;
 		if (navId == "" or navId == nil) {
-			me["ilsId"].setText(sprintf("%s/%3.0f",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
+			me["ilsId"].setText(sprintf("%s/%03d",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
 		} else {
-			me["ilsId"].setText(sprintf("%s/%3.0f",navId,getprop("instrumentation/nav/radials/selected-deg")));
+			me["ilsId"].setText(sprintf("%s/%03d",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
 		me["dhText"].setText(sprintf("DH%3.0f",dh));
 		me["selHdgText"].setText(sprintf("%3.0f",getprop("autopilot/settings/heading-bug-deg")));
-		me["speedText"].setText(sprintf("%3.0f",apSpd));
+		if (getprop("/autopilot/internal/SPD-MACH")) {
+			me["speedText"].setText(sprintf(".%2.0f",getprop("/autopilot/settings/target-speed-mach")*100));
+		} else {
+			me["speedText"].setText(sprintf("%3.0f",apSpd));
+		}
+		
 		
 		settimer(func me.update_slow(), 0.5);
 	},
