@@ -26,7 +26,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps0","flaps1","flaps10","flaps20","flaps5","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -81,6 +81,7 @@ var canvas_PFD = {
 		var mach = getprop("instrumentation/airspeed-indicator/indicated-mach");
 		var pitch = getprop("orientation/pitch-deg");
 		var roll =  getprop("orientation/roll-deg");
+		var slipSkid = getprop("instrumentation/slip-skid-ball/indicated-slip-skid");
 		var hdg =  getprop("orientation/heading-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
 		var wow = getprop("gear/gear/wow");
@@ -91,6 +92,7 @@ var canvas_PFD = {
 		me.h_trans.setTranslation(0,pitch*10.5);
 		me.h_rot.setRotation(-roll*D2R,me["horizon"].getCenter());
 		
+		me["slipSkid"].setTranslation(slipSkid*-8,0);
 		me["bankPointer"].setRotation(-roll*D2R);
 		me["compass"].setRotation(-hdg*D2R);
 			
@@ -405,16 +407,7 @@ var canvas_PFD = {
 			me["vr"].hide();
 		}
 
-		var vref40 = getprop("instrumentation/fmc/v-ref-40");
-		if (vref40 != nil) {
-			vref40 = roundToNearest(vref40,1);
-			me["flaps0"].setTranslation(0,-(vref40+70)*5.63915);
-			me["flaps1"].setTranslation(0,-(vref40+50)*5.63915);
-			me["flaps5"].setTranslation(0,-(vref40+30)*5.63915);
-			me["flaps10"].setTranslation(0,-(vref40+30)*5.63915);
-			me["flaps20"].setTranslation(0,-(vref40+20)*5.63915);
-		}
-		
+			
 		if (getprop("instrumentation/fmc/phase-name") == "APPROACH") {
 			if (flaps == 1)
 				var vref = getprop("instrumentation/pfd/flaps-30-kt");
@@ -426,22 +419,93 @@ var canvas_PFD = {
 			me["vref"].hide();
 		}
 		
-		me["flaps0"].hide();
-		me["flaps1"].hide();
-		me["flaps5"].hide();
-		me["flaps10"].hide();
-		me["flaps20"].hide();
+		var vref40 = getprop("instrumentation/fmc/v-ref-40") or 0;
+		vref40 = roundToNearest(vref40,1);
+		
+		me["flaps-mark-1"].hide();
+		me["flaps-mark-2"].hide();
+		me["flaps-mark-3"].hide();
+		me["flaps-mark-4"].hide();
+		me["flaps-mark-5"].hide();
 		if (alt < 20000) {
 			if (flaps == 0) {
-				me["flaps0"].show();
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
 			} elsif (flaps == 0.125) {
-				me["flaps0"].show(); me["flaps1"].show();
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-2"].show();
+				me["flaps-mark-2-txt"].setText("1");
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+			} elsif (flaps == 0.250) {
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-2"].show();
+				me["flaps-mark-2-txt"].setText("1");
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-3"].show();
+				me["flaps-mark-3-txt"].setText("2");
+				me["flaps-mark-3"].setTranslation(0,-(vref40+40)*5.63915);
 			} elsif (flaps == 0.375) {
-				me["flaps0"].show(); me["flaps1"].show(); me["flaps5"].show();
-			} elsif (flaps == 0.333) {
-				me["flaps5"].show(); me["flaps10"].show();
-			} elsif (flaps == 0.667) {
-				me["flaps10"].show(); me["flaps20"].show();
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-2"].show();
+				me["flaps-mark-2-txt"].setText("1");
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-3"].show();
+				me["flaps-mark-3-txt"].setText("5");
+				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*5.63915);
+			} elsif (flaps == 0.500) {
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-2"].show();
+				me["flaps-mark-2-txt"].setText("1");
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-3"].show();
+				me["flaps-mark-3-txt"].setText("10");
+				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*5.63915);
+			} elsif (flaps == 0.625) {
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-2"].show();
+				me["flaps-mark-2-txt"].setText("1");
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-3"].show();
+				me["flaps-mark-3-txt"].setText("5");
+				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*5.63915);
+				me["flaps-mark-4"].show();
+				me["flaps-mark-4-txt"].setText("15");
+				me["flaps-mark-4"].setTranslation(0,-(vref40+20)*5.63915);
+			} elsif (flaps == 0.750) {
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-2"].show();
+				me["flaps-mark-2-txt"].setText("1");
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-3"].show();
+				me["flaps-mark-3-txt"].setText("5");
+				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*5.63915);
+				me["flaps-mark-4"].show();
+				me["flaps-mark-4-txt"].setText("15");
+				me["flaps-mark-4"].setTranslation(0,-(vref40+20)*5.63915);
+				me["flaps-mark-5"].show();
+				me["flaps-mark-5-txt"].setText("25");
+				me["flaps-mark-5"].setTranslation(0,-(vref40+10)*5.63915);
+			} elsif (flaps == 0.875) {
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+			} elsif (flaps == 1.000) {
+				me["flaps-mark-1"].show();
+				me["flaps-mark-1-txt"].setText("UP");
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
 			}
 		}
 		if (getprop("instrumentation/weu/state/stall-speed") != nil)
