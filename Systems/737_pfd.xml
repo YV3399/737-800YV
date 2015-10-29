@@ -9,12 +9,18 @@
         <update-interval-secs type="double">0.1</update-interval-secs>
         <input> 
             <expression>
+              <sum>
+                <property>instrumentation/fmc/v-ref-40</property>
                 <table>
-                    <property>/fdm/jsbsim/inertia/weight-lbs</property> 
-                    <entry><ind>617294</ind><dep>138</dep></entry>
-                    <entry><ind>655875</ind><dep>141</dep></entry>
-                    <entry><ind>873030</ind><dep>158</dep></entry>
+                    <property>/fdm/jsbsim/fcs/flap-pos-norm</property> 
+                    <entry><ind>0</ind><dep>26</dep></entry>
+                    <entry><ind>0.125</ind><dep>-6</dep></entry>
+                    <entry><ind>0.375</ind><dep>-8</dep></entry>
+                    <entry><ind>0.625</ind><dep>-22</dep></entry>
+                    <entry><ind>0.875</ind><dep>-25</dep></entry>
+                    <entry><ind>1</ind><dep>-26</dep></entry>
                 </table>
+              </sum>
             </expression>
         </input>
         <output>instrumentation/weu/state/stall-speed</output>
