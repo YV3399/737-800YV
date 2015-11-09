@@ -276,7 +276,7 @@
 
         <channel name="Pitch">
 
-            <summer name="Pitch Trim Sum">
+            <summer name="Pitch Trim Sum Cmd">
                 <input>fcs/elevator-cmd-norm</input>
                 <clipto>
                     <min>-1</min>
@@ -284,11 +284,26 @@
                 </clipto>
             </summer>
 
+            <kinematic name="Pitch Trim Sum">
+                <input>fcs/pitch-trim-sum-cmd</input>
+                <traverse>
+                    <setting>
+                        <position>-1</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>0.829</time> <!-- from report about Norwegian Air LN-DYM. Rate is 50 deg/sec -->
+                    </setting>
+                </traverse>
+                <output>fcs/pitch-trim-sum</output>
+            </kinematic>
+
             <aerosurface_scale name="Elevator Control">
                 <input>fcs/pitch-trim-sum</input>
                 <range>
-                    <min>-0.3</min>
-                    <max> 0.3</max>
+                    <min>-0.336</min>
+                    <max> 0.3875</max>
                 </range>
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>
@@ -296,8 +311,8 @@
             <aerosurface_scale name="Elevator Normalized">
                 <input>fcs/elevator-pos-rad</input>
                 <domain>
-                    <min>-0.3</min>
-                    <max> 0.3</max>
+                    <min>-0.336</min>
+                    <max> 0.3875</max>
                 </domain>
                 <range>
                     <min>-1</min>
@@ -307,6 +322,7 @@
             </aerosurface_scale>
 
         </channel>
+
         <channel name="Roll">
 
             <summer name="Roll Trim Sum">
