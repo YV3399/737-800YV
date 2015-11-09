@@ -94,6 +94,11 @@ var canvas_PFD = {
 		
 		me["slipSkid"].setTranslation(slipSkid*-8,0);
 		me["bankPointer"].setRotation(-roll*D2R);
+		if (math.abs(roll) < 35) {
+			me["bankPointer"].setColor(1,1,1);
+		} else {
+			me["bankPointer"].setColor(1,0.749,0);
+		}
 		me["compass"].setRotation(-hdg*D2R);
 			
 		# Flight director
