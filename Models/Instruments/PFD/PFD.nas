@@ -26,7 +26,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -94,11 +94,15 @@ var canvas_PFD = {
 		
 		me["slipSkid"].setTranslation(slipSkid*-8,0);
 		me["bankPointer"].setRotation(-roll*D2R);
+
 		if (math.abs(roll) < 35) {
-			me["bankPointer"].setColor(1,1,1);
+			me["bankPointerTriangle"].setColor(1,1,1);
+			me["slipSkid"].setColor(1,1,1);
 		} else {
-			me["bankPointer"].setColor(1,0.749,0);
+			me["bankPointerTriangle"].setColor(1,0.749,0);
+			me["slipSkid"].setColor(1,0.749,0);
 		}
+		
 		me["compass"].setRotation(-hdg*D2R);
 			
 		# Flight director
