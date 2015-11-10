@@ -333,6 +333,178 @@
         </axis>
     </animation>
 
+
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.1</object-name>
+        <property>/autopilot/settings/vertical-speed-fpm</property>
+
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.2</object-name>
+        <property>/autopilot/settings/vertical-speed-fpm</property>
+
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.3</object-name>
+        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.4</object-name>
+        <property>/autopilot/settings/vertical-speed-fpm</property>
+
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.1neg</object-name>
+        <property>/autopilot/settings/vertical-speed-fpm</property>
+
+        <factor>-0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.2neg</object-name>
+        <property>/autopilot/settings/vertical-speed-fpm</property>
+
+        <factor>-0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.3neg</object-name>
+        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <bias>99.99</bias>
+        <factor>-0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.4neg</object-name>
+        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <bias>999.99</bias>
+        <factor>-0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.5neg</object-name>
+        <condition>
+            <less-than>
+                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <value>0</value>
+            </less-than>
+        </condition>
+        <bias>1</bias>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <name>VSpos</name>
+        <object-name>VS.1</object-name>
+        <object-name>VS.2</object-name>
+        <object-name>VS.3</object-name>
+        <object-name>VS.4</object-name>
+        <object-name>VS.5</object-name>
+    </animation>
+    <animation>
+        <name>VSneg</name>
+        <object-name>VS.1neg</object-name>
+        <object-name>VS.2neg</object-name>
+        <object-name>VS.3neg</object-name>
+        <object-name>VS.4neg</object-name>
+        <object-name>VS.5neg</object-name>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>VSneg</object-name>
+        <condition>
+            <less-than>
+                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <value>0</value>
+            </less-than>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>VSpos</object-name>
+        <condition>
+            <not>
+            <less-than>
+                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <value>0</value>
+            </less-than>
+            </not>
+        </condition>
+    </animation>
+
     <animation>
         <type>textranslate</type>
         <object-name>IAS.1</object-name>
