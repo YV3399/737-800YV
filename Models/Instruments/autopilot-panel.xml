@@ -77,7 +77,7 @@
    	<type>textranslate</type>
    	<object-name>CMD-A</object-name>
 	 <property>/autopilot/internal/CMDA</property>
-   	<factor>0.5</factor>
+   	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
      	<y>1</y>
@@ -89,7 +89,7 @@
     <type>textranslate</type>
     <object-name>CMD-B</object-name>
    <property>/autopilot/internal/CMDB</property>
-    <factor>0.5</factor>
+    <factor>-0.125</factor>
     <axis>
       <x>0</x>
       <y>1</y>
@@ -97,11 +97,22 @@
     </axis>
   </animation>
 
+    <animation>
+        <type>textranslate</type>
+        <object-name>LVL-CHG.</object-name>
+        <property>/autopilot/internal/LVLCHG</property>
+        <factor>-0.125</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
        <animation>
    	<type>textranslate</type>
    	 <object-name>ALT-HLD</object-name>
 	 <property>/autopilot/internal/VNAV-ALT-light</property>        
-   	<factor>0.5</factor>
+   	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
      	<y>1</y>
@@ -109,11 +120,23 @@
    	</axis>
  	</animation>
 
+    <animation>
+        <type>textranslate</type>
+        <object-name>V/S</object-name>
+        <property>/autopilot/internal/VNAV-VS</property>
+        <factor>-0.125</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
          <animation>
    	<type>textranslate</type>
    	<object-name>HDG-HLD</object-name>
 	 <property>/autopilot/internal/LNAV-HDG</property>        
-   	<factor>0.5</factor>
+   	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
      	<y>1</y>
@@ -125,7 +148,7 @@
    	<type>textranslate</type>
    	 <object-name>APP</object-name>
 	 <property>/controls/autoflight/autopilot/app</property>        
-   	<factor>0.5</factor>
+   	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
      	<y>1</y>
@@ -137,7 +160,7 @@
    	<type>textranslate</type>
    	 <object-name>VOR-LOC</object-name>
 	 <property>/controls/autoflight/autopilot/vor</property>        
-   	<factor>0.5</factor>
+   	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
      	<y>1</y>
@@ -349,72 +372,10 @@
         </axis>
     </animation> 
 
-     <animation>
-        <type>textranslate</type>
-        <object-name>ALT-HLD</object-name>
-        <property>/controls/autoflight/autopilot/alt-hld</property>
-        <factor>-0.058</factor>
-        <step>1.0</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
 
-    <animation>
-        <type>textranslate</type>
-        <object-name>CMD-A</object-name>
-        <property>/controls/autoflight/autopilot/engage</property>
-        <factor>-0.06</factor>
-        <step>1.0</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation> 
 
-     <animation>
-        <type>textranslate</type>
-        <object-name>APP</object-name>
-        <property>/controls/autoflight/autopilot/app</property>
-        <factor>-0.06</factor>
-        <step>1.0</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation> 
 
-    <animation>
-        <type>textranslate</type>
-        <object-name>VOR-LOC</object-name>
-        <property>/controls/autoflight/autopilot/vor</property>
-        <factor>-0.06</factor>
-        <step>1.0</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation> 
-
-    <animation>
-        <type>textranslate</type>
-        <object-name>HDG-HLD</object-name>
-        <property>/controls/autoflight/autopilot/hdg-sel</property>
-        <factor>-0.06</factor>
-        <step>1.0</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation> 
-
-    <!--EFIS Animations-->
+      <!--EFIS Animations-->
 <!--
       <animation>
         <type>rotate</type>
