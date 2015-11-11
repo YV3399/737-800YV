@@ -45,12 +45,12 @@ var canvas_PFD = {
 		
 		#m["horizon"].set("clip", "rect(241.8, 694.7, 733.5, 211.1)");
 		m["horizon"].set("clip", "rect(242, 695, 733, 211)");
-		m["minSpdInd"].set("clip", "rect(156, 1024, 829, 0)");
-		m["maxSpdInd"].set("clip", "rect(156, 1024, 829, 0)");
-		m["spdTape"].set("clip", "rect(156, 1024, 829, 0)");
-		m["altTape"].set("clip", "rect(156, 1024, 829, 0)");
-		m["cmdSpd"].set("clip", "rect(156, 1024, 829, 0)");
-		m["selAltPtr"].set("clip", "rect(156, 1024, 829, 0)");
+		m["minSpdInd"].set("clip", "rect(160, 1024, 833, 0)");
+		m["maxSpdInd"].set("clip", "rect(160, 1024, 833, 0)");
+		m["spdTape"].set("clip", "rect(160, 1024, 833, 0)");
+		m["altTape"].set("clip", "rect(160, 1024, 833, 0)");
+		m["cmdSpd"].set("clip", "rect(160, 1024, 833, 0)");
+		m["selAltPtr"].set("clip", "rect(160, 1024, 833, 0)");
 		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 952)");
 		m["compass"].set("clip", "rect(700, 1024, 990, 0)");
 		m["curAlt3"].set("clip", "rect(463, 1024, 531, 0)");
@@ -84,7 +84,9 @@ var canvas_PFD = {
 		var slipSkid = getprop("instrumentation/slip-skid-ball/indicated-slip-skid");
 		var hdg =  getprop("orientation/heading-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
-		var wow = getprop("gear/gear/wow");
+		var air_ground = getprop("/b737/sensors/air-ground");
+		if ( air_ground == "ground") var wow = 1;
+		else var wow = 0;
 		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
 		
@@ -132,7 +134,10 @@ var canvas_PFD = {
 			me["fdY"].hide();
 		}
 		
-		me["cmdSpd"].setTranslation(0,-(apSpd-ias)*5.63915);
+		var speedDiff = apSpd-ias;
+		if ( speedDiff < -60 ) speedDiff = -60;
+		if ( speedDiff > 60 ) speedDiff = 60;
+		me["cmdSpd"].setTranslation(0,-(speedDiff)*5.63915);
 
 		if (mach > 0.4) setprop("instrumentation/pfd/display-mach", 1);
 		if (mach < 0.38) setprop("instrumentation/pfd/display-mach", 0);
@@ -175,19 +180,19 @@ var canvas_PFD = {
 			curAltDiff = -420;
 		me["selAltPtr"].setTranslation(0,curAltDiff*0.9);
 
-		me["curSpdTen"].setTranslation(0,math.mod(ias,10)*33.75);
+		me["curSpdTen"].setTranslation(0,math.mod(ias,10)*41.084538462);
 		if (math.mod(ias,10) > 9 and math.mod(ias,10) < 10) {
 			var spdDig2Add = math.mod(ias,1);
 		} else {
 			var spdDig2Add = 0;
 		}
-		me["curSpdDig2"].setTranslation(0,(math.floor(math.mod(ias,100)/10) + spdDig2Add)*58.5);
+		me["curSpdDig2"].setTranslation(0,(math.floor(math.mod(ias,100)/10) + spdDig2Add)*72.1);
 		if (math.mod(ias,100) > 99 and math.mod(ias,100) < 100) {
 			var spdDig1Add = math.mod(ias,1);
 		} else {
 			var spdDig1Add = 0;
 		}
-		me["curSpdDig1"].setTranslation(0,(math.floor(math.mod(ias,1000)/100) + spdDig1Add)*58.5);
+		me["curSpdDig1"].setTranslation(0,(math.floor(math.mod(ias,1000)/100) + spdDig1Add)*72.1);
 		
 		if (getprop("instrumentation/marker-beacon/outer")) {
 			me["markerBeacon"].show();
@@ -395,7 +400,9 @@ var canvas_PFD = {
 	},
 	update_slow: func()
 	{
-		var wow = getprop("gear/gear/wow");
+		var air_ground = getprop("/b737/sensors/air-ground");
+		if ( air_ground == "ground") var wow = 1;
+		else var wow = 0;
 		var flaps = getprop("/controls/flight/flaps");
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
