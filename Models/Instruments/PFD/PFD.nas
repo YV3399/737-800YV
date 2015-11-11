@@ -97,9 +97,11 @@ var canvas_PFD = {
 
 		if (math.abs(roll) < 35) {
 			me["bankPointerTriangle"].setColor(1,1,1);
+			me["bankPointerTriangle"].setColorFill(0,0.477,0.725,1);
 			me["slipSkid"].setColor(1,1,1);
 		} else {
 			me["bankPointerTriangle"].setColor(1,0.749,0);
+			me["bankPointerTriangle"].setColorFill(1,0.749,0,1);
 			me["slipSkid"].setColor(1,0.749,0);
 		}
 		

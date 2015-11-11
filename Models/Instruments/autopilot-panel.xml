@@ -486,22 +486,34 @@
         <type>select</type>
         <object-name>VSneg</object-name>
         <condition>
+          <and>
+            <equals>
+              <property>/autopilot/internal/VNAV-VS</property>
+              <value>true</value>
+            </equals>
             <less-than>
                 <property>/autopilot/settings/vertical-speed-fpm</property>
                 <value>0</value>
             </less-than>
+          </and>
         </condition>
     </animation>
     <animation>
         <type>select</type>
         <object-name>VSpos</object-name>
         <condition>
+          <and>
+            <equals>
+              <property>/autopilot/internal/VNAV-VS</property>
+              <value>true</value>
+            </equals>
             <not>
-            <less-than>
-                <property>/autopilot/settings/vertical-speed-fpm</property>
-                <value>0</value>
-            </less-than>
+              <less-than>
+                  <property>/autopilot/settings/vertical-speed-fpm</property>
+                  <value>0</value>
+              </less-than>
             </not>
+          </and>
         </condition>
     </animation>
 
