@@ -45,11 +45,11 @@ var canvas_PFD = {
 		
 		#m["horizon"].set("clip", "rect(241.8, 694.7, 733.5, 211.1)");
 		m["horizon"].set("clip", "rect(242, 695, 733, 211)");
-		m["minSpdInd"].set("clip", "rect(160, 1024, 833, 0)");
-		m["maxSpdInd"].set("clip", "rect(160, 1024, 833, 0)");
-		m["spdTape"].set("clip", "rect(160, 1024, 833, 0)");
+		m["minSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["maxSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["spdTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["cmdSpd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["altTape"].set("clip", "rect(160, 1024, 833, 0)");
-		m["cmdSpd"].set("clip", "rect(160, 1024, 833, 0)");
 		m["selAltPtr"].set("clip", "rect(160, 1024, 833, 0)");
 		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 952)");
 		m["compass"].set("clip", "rect(700, 1024, 990, 0)");
@@ -137,7 +137,7 @@ var canvas_PFD = {
 		var speedDiff = apSpd-ias;
 		if ( speedDiff < -60 ) speedDiff = -60;
 		if ( speedDiff > 60 ) speedDiff = 60;
-		me["cmdSpd"].setTranslation(0,-(speedDiff)*5.63915);
+		me["cmdSpd"].setTranslation(0,-(speedDiff)*6.145425);
 
 		if (mach > 0.4) setprop("instrumentation/pfd/display-mach", 1);
 		if (mach < 0.38) setprop("instrumentation/pfd/display-mach", 0);
@@ -335,7 +335,7 @@ var canvas_PFD = {
 		if (getprop("instrumentation/pfd/speed-trend-up") != nil)
 			me["spdTrend_scale"].setScale(1, (getprop("instrumentation/pfd/speed-lookahead")-ias)/20);
 		
-		me["spdTape"].setTranslation(0,ias*5.63915);
+		me["spdTape"].setTranslation(0,ias*6.145425);
 		me["altTape"].setTranslation(0,alt*0.9);
 		
 		var vsiDeg = getprop("instrumentation/pfd/vsi-needle-deg");
@@ -412,14 +412,14 @@ var canvas_PFD = {
 		if (v1 > 0) {
 			if (wow) {
 				me["v1"].show();
-				me["v1"].setTranslation(0,-getprop("instrumentation/fmc/speeds/v1-kt")*5.63915);
+				me["v1"].setTranslation(0,-getprop("instrumentation/fmc/speeds/v1-kt")*6.145425);
 				me["vr"].show();
-				me["vr"].setTranslation(0,-getprop("instrumentation/fmc/speeds/vr-kt")*5.63915);
+				me["vr"].setTranslation(0,-getprop("instrumentation/fmc/speeds/vr-kt")*6.145425);
 			} else {
 				me["v1"].hide();
 				me["vr"].hide();
 			}
-			me["v2"].setTranslation(0,-getprop("instrumentation/fmc/speeds/v2-kt")*5.63915);
+			me["v2"].setTranslation(0,-getprop("instrumentation/fmc/speeds/v2-kt")*6.145425);
 		} else {
 			me["v1"].hide();
 			me["vr"].hide();
@@ -432,7 +432,7 @@ var canvas_PFD = {
 			else
 				var vref = getprop("instrumentation/pfd/flaps-25-kt");
 			me["vref"].show();
-			me["vref"].setTranslation(0,-vref*5.63915);
+			me["vref"].setTranslation(0,-vref*6.145425);
 		} else {
 			me["vref"].hide();
 		}
@@ -449,85 +449,85 @@ var canvas_PFD = {
 			if (flaps == 0) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 			} elsif (flaps == 0.125) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 				me["flaps-mark-2"].show();
 				me["flaps-mark-2-txt"].setText("1");
-				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*6.145425);
 			} elsif (flaps == 0.250) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 				me["flaps-mark-2"].show();
 				me["flaps-mark-2-txt"].setText("1");
-				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*6.145425);
 				me["flaps-mark-3"].show();
 				me["flaps-mark-3-txt"].setText("2");
-				me["flaps-mark-3"].setTranslation(0,-(vref40+40)*5.63915);
+				me["flaps-mark-3"].setTranslation(0,-(vref40+40)*6.145425);
 			} elsif (flaps == 0.375) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 				me["flaps-mark-2"].show();
 				me["flaps-mark-2-txt"].setText("1");
-				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*6.145425);
 				me["flaps-mark-3"].show();
 				me["flaps-mark-3-txt"].setText("5");
-				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*5.63915);
+				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*6.145425);
 			} elsif (flaps == 0.500) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 				me["flaps-mark-2"].show();
 				me["flaps-mark-2-txt"].setText("1");
-				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*6.145425);
 				me["flaps-mark-3"].show();
 				me["flaps-mark-3-txt"].setText("10");
-				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*5.63915);
+				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*6.145425);
 			} elsif (flaps == 0.625) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 				me["flaps-mark-2"].show();
 				me["flaps-mark-2-txt"].setText("1");
-				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*6.145425);
 				me["flaps-mark-3"].show();
 				me["flaps-mark-3-txt"].setText("5");
-				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*5.63915);
+				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*6.145425);
 				me["flaps-mark-4"].show();
 				me["flaps-mark-4-txt"].setText("15");
-				me["flaps-mark-4"].setTranslation(0,-(vref40+20)*5.63915);
+				me["flaps-mark-4"].setTranslation(0,-(vref40+20)*6.145425);
 			} elsif (flaps == 0.750) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 				me["flaps-mark-2"].show();
 				me["flaps-mark-2-txt"].setText("1");
-				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*5.63915);
+				me["flaps-mark-2"].setTranslation(0,-(vref40+50)*6.145425);
 				me["flaps-mark-3"].show();
 				me["flaps-mark-3-txt"].setText("5");
-				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*5.63915);
+				me["flaps-mark-3"].setTranslation(0,-(vref40+30)*6.145425);
 				me["flaps-mark-4"].show();
 				me["flaps-mark-4-txt"].setText("15");
-				me["flaps-mark-4"].setTranslation(0,-(vref40+20)*5.63915);
+				me["flaps-mark-4"].setTranslation(0,-(vref40+20)*6.145425);
 				me["flaps-mark-5"].show();
 				me["flaps-mark-5-txt"].setText("25");
-				me["flaps-mark-5"].setTranslation(0,-(vref40+10)*5.63915);
+				me["flaps-mark-5"].setTranslation(0,-(vref40+10)*6.145425);
 			} elsif (flaps == 0.875) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 			} elsif (flaps == 1.000) {
 				me["flaps-mark-1"].show();
 				me["flaps-mark-1-txt"].setText("UP");
-				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*5.63915);
+				me["flaps-mark-1"].setTranslation(0,-(vref40+70)*6.145425);
 			}
 		}
 		if (getprop("instrumentation/weu/state/stall-speed") != nil)
-			me["minSpdInd"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed")*5.63915);
+			me["minSpdInd"].setTranslation(0,-getprop("instrumentation/weu/state/stall-speed")*6.145425);
 
 		var mmoKt = getprop("instrumentation/pfd/mmo-kt") or 500;
 		var maxIAS = 340;
@@ -551,7 +551,7 @@ var canvas_PFD = {
 		} elsif (flaps == 1.000) {
 			maxIAS = getprop("limits/max-flap-extension-speed[7]/speed");
 		}
-		me["maxSpdInd"].setTranslation(0,maxIAS*-5.63915);
+		me["maxSpdInd"].setTranslation(0,maxIAS*-6.145425);
 		if (dh != nil)
 			me["minimums"].setTranslation(0,-dh*0.9);
 		if (getprop("autopilot/route-manager/destination/field-elevation-ft") != nil) {
