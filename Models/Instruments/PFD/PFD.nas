@@ -26,7 +26,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","trkLine","compassBack","selHdg","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -42,6 +42,9 @@ var canvas_PFD = {
 		m["risingRwyPtr"].createTransform().setTranslation(-c2[0], -c2[1]);
 		m["risingRwyPtr_scale"] = m["risingRwyPtr"].createTransform();
 		m["risingRwyPtr"].createTransform().setTranslation(c2[0], c2[1]);
+		var c3 = m["compassBack"].getCenter();
+		m["selHdg"].setCenter(c3[0], c3[1]);
+		m["trkLine"].setCenter(c3[0], c3[1]);
 		
 		m["horizon"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 		m["minSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
@@ -51,7 +54,7 @@ var canvas_PFD = {
 		m["altTape"].set("clip", "rect(160, 1024, 833, 0)");
 		m["selAltPtr"].set("clip", "rect(160, 1024, 833, 0)");
 		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 952)");
-		m["compass"].set("clip", "rect(700, 1024, 990, 0)");
+		#m["compass"].set("clip", "rect(700, 1024, 990, 0)");
 		m["curAlt3"].set("clip", "rect(463, 1024, 531, 0)");
 		m["curSpdTen"].set("clip", "rect(456, 1024, 540, 0)");
 		m["curSpdDig1"].set("clip", "rect(456, 1024, 540, 0)");
@@ -82,12 +85,14 @@ var canvas_PFD = {
 		var roll =  getprop("orientation/roll-deg");
 		var slipSkid = getprop("instrumentation/slip-skid-ball/indicated-slip-skid");
 		var hdg =  getprop("orientation/heading-magnetic-deg");
+		var track = getprop("/orientation/track-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
 		var air_ground = getprop("/b737/sensors/air-ground");
 		if ( air_ground == "ground") var wow = 1;
 		else var wow = 0;
 		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
+		var apHdg = getprop("autopilot/settings/heading-bug-deg");
 		
 		#10 deg = 105px
 		me.h_trans.setTranslation(0,pitch*11.4625);
@@ -106,7 +111,12 @@ var canvas_PFD = {
 			me["slipSkid"].setColor(1,0.749,0);
 		}
 		
-		me["compass"].setRotation(-hdg*D2R);
+		var hdgDiff = geo.normdeg180(hdg - apHdg);
+		if ( hdgDiff < -35 ) hdgDiff = -35;
+		if ( hdgDiff > 35 ) hdgDiff = 35;
+		me["selHdg"].setRotation(-hdgDiff*1.58*D2R); # 1.58 - coefficient for compass
+		var trkDiff = geo.normdeg180(hdg - track);
+		me["trkLine"].setRotation(-trkDiff*1.58*D2R);
 			
 		# Flight director
 		if (getprop("/instrumentation/flightdirector/fd-left-on") == 1) {
@@ -272,7 +282,7 @@ var canvas_PFD = {
 		}
 		
 		if(getprop("instrumentation/nav/gs-in-range")) {
-			var track = getprop("/orientation/track-magnetic-deg");
+			
 			var mcp_course = getprop("/instrumentation/nav[0]/radials/selected-deg");
 			var trk_crs_diff = math.abs(geo.normdeg180(track - mcp_course));
 			if (trk_crs_diff < 90) {
@@ -584,7 +594,7 @@ var canvas_PFD = {
 		} else {
 			me["ilsId"].setText(sprintf("%s/%03d",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
-		me["dhText"].setText(sprintf("DH%3.0f",dh));
+		me["dhText"].setText(sprintf("%4.0f",dh));
 		me["selHdgText"].setText(sprintf("%03d",getprop("autopilot/settings/heading-bug-deg")));
 		if (getprop("/autopilot/internal/SPD-MACH")) {
 			me["speedText"].setText(sprintf(".%2.0f",getprop("/autopilot/settings/target-speed-mach")*100));
