@@ -26,7 +26,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","compass","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -43,8 +43,7 @@ var canvas_PFD = {
 		m["risingRwyPtr_scale"] = m["risingRwyPtr"].createTransform();
 		m["risingRwyPtr"].createTransform().setTranslation(c2[0], c2[1]);
 		
-		#m["horizon"].set("clip", "rect(241.8, 694.7, 733.5, 211.1)");
-		m["horizon"].set("clip", "rect(242, 695, 733, 211)");
+		m["horizon"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 		m["minSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["maxSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["spdTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
@@ -57,7 +56,7 @@ var canvas_PFD = {
 		m["curSpdTen"].set("clip", "rect(456, 1024, 540, 0)");
 		m["curSpdDig1"].set("clip", "rect(456, 1024, 540, 0)");
 		m["curSpdDig2"].set("clip", "rect(456, 1024, 540, 0)");
-		m["risingRwy"].set("clip", "rect(0, 695, 1024, 211)");
+		m["risingRwy"].set("clip", "rect(0, 693.673, 1024, 192.606)");
 		
 		setlistener("autopilot/locks/passive-mode",            func { m.update_ap_modes() } );
 		setlistener("autopilot/locks/altitude",                func { m.update_ap_modes() } );
@@ -91,7 +90,7 @@ var canvas_PFD = {
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
 		
 		#10 deg = 105px
-		me.h_trans.setTranslation(0,pitch*10.5);
+		me.h_trans.setTranslation(0,pitch*11.4625);
 		me.h_rot.setRotation(-roll*D2R,me["horizon"].getCenter());
 		
 		me["slipSkid"].setTranslation(slipSkid*-8,0);
@@ -120,7 +119,7 @@ var canvas_PFD = {
 				me["fdX"].setTranslation(-fdRoll,0);
 			}
 			if (getprop("/instrumentation/flightdirector/fd-left-pitch") != nil) {
-				var fdPitch = (pitch-getprop("/instrumentation/flightdirector/fd-left-pitch"))*10.5;
+				var fdPitch = (pitch-getprop("/instrumentation/flightdirector/fd-left-pitch"))*11.4625;
 				if (fdPitch > 200)
 					fdPitch = 200;
 				elsif (fdPitch < -200)
@@ -253,16 +252,19 @@ var canvas_PFD = {
 				if (deflection < -0.3) deflection = -0.3;
 				me["locPtr"].setTranslation(deflection*600,0);
 				me["risingRwyPtr"].setTranslation(deflection*600,0);
+				me["scaleCenter"].show();
 				me["locScaleExp"].show();
 				me["locScale"].hide();
 			} else {
 				me["locPtr"].setTranslation(deflection*180,0);
 				me["risingRwyPtr"].setTranslation(deflection*180,0);
+				me["scaleCenter"].show();
 				me["locScaleExp"].hide();
 				me["locScale"].show();
 			}
 		} else {
 			me["locPtr"].hide();
+			me["scaleCenter"].hide();
 			me["locScaleExp"].hide();
 			me["locScale"].hide();
 			me["risingRwy"].hide();
@@ -583,7 +585,7 @@ var canvas_PFD = {
 			me["ilsId"].setText(sprintf("%s/%03d",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
 		me["dhText"].setText(sprintf("DH%3.0f",dh));
-		me["selHdgText"].setText(sprintf("%3.0f",getprop("autopilot/settings/heading-bug-deg")));
+		me["selHdgText"].setText(sprintf("%03d",getprop("autopilot/settings/heading-bug-deg")));
 		if (getprop("/autopilot/internal/SPD-MACH")) {
 			me["speedText"].setText(sprintf(".%2.0f",getprop("/autopilot/settings/target-speed-mach")*100));
 		} else {
