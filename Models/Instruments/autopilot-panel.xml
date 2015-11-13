@@ -464,6 +464,24 @@
             <z>0</z>
         </axis>
     </animation>
+    <animation>
+        <type>textranslate</type>
+        <object-name>VS.5</object-name>
+        <condition>
+            <greater-than>
+                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+        <bias>2</bias>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
 
     <animation>
         <name>VSpos</name>
@@ -516,11 +534,110 @@
           </and>
         </condition>
     </animation>
+    <animation>
+        <type>select</type>
+        <object-name>VS.4</object-name>
+        <condition>
+            <and>
+                <equals>
+                    <property>/autopilot/internal/VNAV-VS</property>
+                    <value>true</value>
+                </equals>
+                <greater-than>
+                    <property>/autopilot/settings/vertical-speed-fpm</property>
+                    <value>999</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>VS.4neg</object-name>
+        <condition>
+            <and>
+                <equals>
+                    <property>/autopilot/internal/VNAV-VS</property>
+                    <value>true</value>
+                </equals>
+                <less-than>
+                    <property>/autopilot/settings/vertical-speed-fpm</property>
+                    <value>-999</value>
+                </less-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>VS.5</object-name>
+        <expression>
+            <sum>
+                <product>
+                    <floor>
+                        <div>
+                            <log10>
+                                <max>
+                                    <property>/autopilot/settings/vertical-speed-fpm</property>
+                                    <value>1</value>
+                                </max>
+                            </log10>
+                            <value>
+                                3
+                            </value>
+                        </div>
+                    </floor>
+                    <value>-0.0065</value>
+                </product>
+                <value>0.0065</value>
+            </sum>
+        </expression>
+
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>VS.5neg</object-name>
+        <expression>
+            <sum>
+                <product>
+                    <floor>
+                        <div>
+                            <log10>
+                                <max>
+                                    <abs>
+                                        <property>/autopilot/settings/vertical-speed-fpm</property>
+                                    </abs>
+                                    <value>1</value>
+                                </max>
+                            </log10>
+                            <value>
+                                3
+                            </value>
+                        </div>
+                    </floor>
+                    <value>-0.0065</value>
+                </product>
+                <value>0.0065</value>
+            </sum>
+        </expression>
+
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
 
     <animation>
         <type>textranslate</type>
         <object-name>IAS.1</object-name>
         <property>/autopilot/settings/target-speed-kt</property>
+
         <factor>0.1</factor>
         <step>1</step>
         <axis>
