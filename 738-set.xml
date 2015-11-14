@@ -19,7 +19,7 @@
 			<config>
 				<!-- x/y/z == right/up/back --> 
 				<x-offset-m archive="y">-0.4</x-offset-m>
-				<y-offset-m archive="y">1.43</y-offset-m>
+				<y-offset-m archive="y">1.41</y-offset-m>
 				<z-offset-m archive="y">-17.18</z-offset-m>
 				<pitch-offset-deg archive="y">-8.0</pitch-offset-deg>
 			</config>
