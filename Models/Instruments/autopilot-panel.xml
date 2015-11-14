@@ -171,16 +171,26 @@
          <animation>
    	<type>textranslate</type>
    	 <object-name>SPEED</object-name>
-	 <property>/controls/autoflight/autothrottle-engage</property>        
-   	<factor>-0.06</factor>
+	 <property>/autopilot/internal/SPD-SPEED</property>
+   	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
      	<y>1</y>
     	 <z>0</z>
    	</axis>
- 	</animation>   
-
-     <animation>
+ 	</animation>
+    <animation>
+        <type>textranslate</type>
+        <object-name>N1</object-name>
+        <property>/autopilot/internal/SPD-N1</property>
+        <factor>-0.125</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
         <type>textranslate</type>
         <object-name>CRS.1</object-name>
         <property>instrumentation/nav[0]/radials/selected-deg</property>
