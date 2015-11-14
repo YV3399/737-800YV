@@ -468,10 +468,10 @@
         <type>textranslate</type>
         <object-name>VS.5</object-name>
         <condition>
-            <greater-than>
+            <greater-than-equal>
                 <property>/autopilot/settings/vertical-speed-fpm</property>
                 <value>0</value>
-            </greater-than>
+            </greater-than-equal>
         </condition>
         <bias>2</bias>
         <factor>0.1</factor>
