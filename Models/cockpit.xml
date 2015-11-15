@@ -28,7 +28,7 @@
         <offsets>
             <x-m>0.100</x-m>
             <y-m>0.0</y-m>
-            <z-m>0.0</z-m>
+            <z-m>-0.030</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -52,33 +52,7 @@
       </model>
       -->   
 
- <animation>
-  <type>rotate</type>
-  <object-name>FlapNeedle</object-name>
-   <property>/surface-positions/flap-pos-norm[0]</property>
-     <interpolation>
-      <entry><ind>  0.000</ind><dep> 0.0</dep></entry>
-      <entry><ind>  0.125</ind><dep> -38.0</dep></entry>
-      <entry><ind>  0.250</ind><dep> -82.0</dep></entry>
-      <entry><ind>  0.375</ind><dep> -115.0</dep></entry>
-      <entry><ind>  0.500</ind><dep> -153.0</dep></entry>
-      <entry><ind>  0.625</ind><dep> -182.0</dep></entry>
-      <entry><ind>  0.750</ind><dep> -212.0</dep></entry>
-      <entry><ind>  0.875</ind><dep> -243.0</dep></entry>
-      <entry><ind>  1.000</ind><dep> -273.0</dep></entry>
-     </interpolation>   
-  <center>
 
-   <x-m>-6.94</x-m>
-   <y-m>0.048</y-m>
-   <z-m>1.0265</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
- </animation>
   <!--
   <animation>
   <type>rotate</type>   
@@ -263,44 +237,9 @@
   </axis>
  </animation>
 
- <animation>
-  <type>rotate</type>   
-  <object-name>autobrake</object-name>  
-   <property>/controls/gear/autobrakes</property> 
-  <factor>-45</factor>  
-  <center>
-   <x-m>-6.943</x-m>
-   <y-m>0.001</y-m>
-   <z-m>1.0215</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
 
- <animation>
-  <type>rotate</type>   
-  <object-name>lghandle</object-name>  
-   <property>/gear/gear[1]/position-norm</property> 
-    <interpolation>
-      <entry><ind>  1.0</ind><dep> 0.0</dep></entry>
-      <entry><ind>  0.999</ind><dep>-45</dep></entry>
-      <entry><ind>  0.001</ind><dep>-45</dep></entry>
-      <entry><ind>  0.0</ind><dep>-24.0</dep></entry>       
-     </interpolation>   
-  <center>
-   <x-m>0.28</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.95</z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+
+
 
   <animation>
   <type>rotate</type>   
