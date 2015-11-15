@@ -60,14 +60,14 @@
             <location unit="IN">
                 <x> 161 </x>
                 <y>   0 </y>
-                <z> -101.53 </z> <!-- BWL 106.57 -->
+                <z> -48.53 </z> <!-- BWL 106.57 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 60000 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
-            <damping_coeff_rebound unit="LBS/FT/SEC">4000</damping_coeff_rebound>
+            <spring_coeff unit="LBS/FT"> 120000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
+            <damping_coeff_rebound unit="LBS/FT/SEC">40000</damping_coeff_rebound>
             <relaxation_velocity>
               <rolling unit="FT/SEC">0.7</rolling>
               <side unit="FT/SEC">0.7</side>
@@ -83,16 +83,16 @@
         </contact>
         <contact name="Left Main Gear" type="BOGEY">
             <location unit="IN">
-                <x>  775 </x>
+                <x>  705 </x>
                 <y> -112.5 </y>
-                <z>  -109.79 </z> <!-- BWL 98.31 -->
+                <z>  -53.79 </z> <!-- BWL 98.31 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 120000 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 10000 </damping_coeff>
-            <damping_coeff_rebound unit="LBS/FT/SEC">10000</damping_coeff_rebound>
+            <spring_coeff unit="LBS/FT"> 500000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 100000 </damping_coeff>
+            <damping_coeff_rebound unit="LBS/FT/SEC">100000</damping_coeff_rebound>
             <relaxation_velocity>
               <rolling unit="FT/SEC">0.7</rolling>
               <side unit="FT/SEC">0.7</side>
@@ -108,16 +108,16 @@
         </contact>
         <contact name="Right Main Gear" type="BOGEY">
             <location unit="IN">
-                <x> 775 </x>
+                <x> 705 </x>
                 <y> 112.5 </y>
-                <z> -109.79 </z> <!-- BWL 98.31 -->
+                <z> -53.79 </z> <!-- BWL 98.31 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 120000 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 10000 </damping_coeff>
-            <damping_coeff_rebound unit="LBS/FT/SEC">10000</damping_coeff_rebound>
+            <spring_coeff unit="LBS/FT"> 500000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 100000 </damping_coeff>
+            <damping_coeff_rebound unit="LBS/FT/SEC">100000</damping_coeff_rebound>
             <relaxation_velocity>
               <rolling unit="FT/SEC">0.7</rolling>
               <side unit="FT/SEC">0.7</side>
