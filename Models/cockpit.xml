@@ -11,6 +11,16 @@
             <property>sim/current-view/internal</property>
         </condition>
     </animation>    -->
+    <model>
+        <name>flightdesk</name>
+        <path>flightdesk.xml</path>
+        <offsets>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
 
       <model>
         <name>PFD1</name>
