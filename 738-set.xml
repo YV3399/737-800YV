@@ -7,7 +7,7 @@
         
 		<aero>738</aero>
     <startup>
-      <splash-texture>splash-800.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash-800.png</splash-texture>
     </startup>
      
 		<model>
