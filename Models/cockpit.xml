@@ -17,7 +17,7 @@
         <path>Models/Instruments/PFD/PFD.xml</path>
         <offsets>
             <x-m>0.336</x-m>
-            <y-m>-0.488</y-m>
+            <y-m>-0.507</y-m>
             <z-m>0.906</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -36,7 +36,7 @@
         <path>Models/Instruments/PFD/PFD.xml</path>
         <offsets>
             <x-m>0.336</x-m>
-            <y-m>0.488</y-m>
+            <y-m>0.469</y-m>
             <z-m>0.906</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -47,7 +47,7 @@
         <path>Models/Instruments/ND/nd_l.xml</path>
         <offsets>
             <x-m>0.336</x-m>
-            <y-m>-0.275</y-m>
+            <y-m>-0.294</y-m>
             <z-m>0.906</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -58,7 +58,7 @@
         <path>Models/Instruments/ND/nd_r.xml</path>
         <offsets>
             <x-m>0.336</x-m>
-            <y-m>0.275</y-m>
+            <y-m>0.256</y-m>
             <z-m>0.906</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -77,7 +77,7 @@
         <path>Models/Instruments/EICAS/eicas.xml</path>
         <offsets>
             <x-m>0.336</x-m>
-            <y-m>-0.000</y-m>
+            <y-m>-0.019</y-m>
             <z-m>0.906</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -146,7 +146,7 @@
         <path>Models/Instruments/CLOCK/chronometer.xml</path>
         <offsets>
             <x-m>0.341</x-m>
-            <y-m>-0.645</y-m>
+            <y-m>-0.664</y-m>
             <z-m>0.925</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -157,7 +157,7 @@
         <path>Models/Instruments/CLOCK/chronometer.xml</path>
         <offsets>
             <x-m>0.341</x-m>
-            <y-m>0.645</y-m>
+            <y-m>0.626</y-m>
             <z-m>0.925</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -168,7 +168,7 @@
         <path>Models/Instruments/STANDBY/att-ball.xml</path>
         <offsets>
             <x-m>0.315</x-m>
-            <y-m>-0.136</y-m>
+            <y-m>-0.155</y-m>
             <z-m>1.025</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -179,7 +179,7 @@
         <path>Models/Instruments/STANDBY/vor.xml</path>
         <offsets>
             <x-m>0.315</x-m>
-            <y-m>-0.136</y-m>
+            <y-m>-0.155</y-m>
             <z-m>0.885</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -190,7 +190,7 @@
         <path>Models/Instruments/STANDBY/standby-asi.xml</path>
         <offsets>
             <x-m>0.315</x-m>
-            <y-m>-0.136</y-m>
+            <y-m>-0.155</y-m>
             <z-m>0.955</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
