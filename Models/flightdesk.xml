@@ -19,7 +19,7 @@
         <path>Models/Instruments/PFD/PFD.xml</path>
         <offsets>
             <x-m>-0.02</x-m>
-            <y-m>-0.527</y-m>
+            <y-m>-0.512</y-m>
             <z-m>-0.020</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -49,7 +49,7 @@
         <path>Models/Instruments/ND/nd_l.xml</path>
         <offsets>
             <x-m>-0.02</x-m>
-            <y-m>-0.314</y-m>
+            <y-m>-0.298</y-m>
             <z-m>-0.020</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -79,7 +79,7 @@
         <path>Models/Instruments/EICAS/eicas.xml</path>
         <offsets>
             <x-m>-0.02</x-m>
-            <y-m>-0.000</y-m>
+            <y-m>-0.002</y-m>
             <z-m>-0.020</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -147,8 +147,8 @@
         <factor>-45</factor>
         <center>
             <x-m>-6.943</x-m>
-            <y-m>0.0179</y-m>
-            <z-m>0.108</z-m>
+            <y-m>0.0159</y-m>
+            <z-m>0.1058</z-m>
         </center>
         <axis>
             <x>1.0</x>

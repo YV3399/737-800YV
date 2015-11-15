@@ -243,7 +243,7 @@
 
   <animation>
   <type>rotate</type>   
-  <object-name>parkbrake</object-name>  
+  <object-name>parkbrake_0</object-name>
    <property>/controls/gear/brake-parking</property> 
     <factor>45</factor>    
   <center>
@@ -257,6 +257,23 @@
    <z>0.0</z>
   </axis>
  </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>parkbrake_1</object-name>
+        <property>/controls/gear/brake-parking</property>
+        <factor>45</factor>
+        <center>
+            <x-m>0.81</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.66</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
  <!--
  
  
