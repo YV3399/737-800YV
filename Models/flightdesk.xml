@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>flightdesk.ac</path>
+
+
+    <model>
+        <name>AUTOPILOT</name>
+        <path>Models/Instruments/autopilot-panel.xml</path>
+        <offsets>
+            <x-m>0.080</x-m>
+            <y-m>-0.004</y-m>
+            <z-m>0.148</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>PFD1</name>
+        <path>Models/Instruments/PFD/PFD.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>-0.512</y-m>
+            <z-m>-0.020</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>PFD2</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>PFD2</name>
+        <path>Models/Instruments/PFD/PFD.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>0.489</y-m>
+            <z-m>-0.020</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>ND1</name>
+        <path>Models/Instruments/ND/nd_l.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>-0.298</y-m>
+            <z-m>-0.020</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>ND2</name>
+        <path>Models/Instruments/ND/nd_r.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>0.276</y-m>
+            <z-m>-0.020</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>EICAS</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>EICAS</name>
+        <path>Models/Instruments/EICAS/eicas.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>-0.002</y-m>
+            <z-m>-0.020</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>cap-CLOCK</name>
+        <path>Models/Instruments/CLOCK/chronometer.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>-0.679</y-m>
+            <z-m>0.0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>fo-CLOCK</name>
+        <path>Models/Instruments/CLOCK/chronometer.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>0.651</y-m>
+            <z-m>0.0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>STANDBY-AH</name>
+        <path>Models/Instruments/STANDBY/att-ball.xml</path>
+        <offsets>
+            <x-m>-0.050</x-m>
+            <y-m>-0.149</y-m>
+            <z-m>0.086</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>STANDBY-VOR</name>
+        <path>Models/Instruments/STANDBY/vor.xml</path>
+        <offsets>
+            <x-m>-0.050</x-m>
+            <y-m>-0.149</y-m>
+            <z-m>-0.053</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>STANDBY-ASI</name>
+        <path>Models/Instruments/STANDBY/standby-asi.xml</path>
+        <offsets>
+            <x-m>-0.050</x-m>
+            <y-m>-0.149</y-m>
+            <z-m>0.015</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>autobrake</object-name>
+        <property>/controls/gear/autobrakes</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-6.943</x-m>
+            <y-m>0.0159</y-m>
+            <z-m>0.1058</z-m>
+        </center>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FlapNeedle</object-name>
+        <property>/surface-positions/flap-pos-norm[0]</property>
+        <interpolation>
+            <entry><ind>  0.000</ind><dep> 0.0</dep></entry>
+            <entry><ind>  0.125</ind><dep> -38.0</dep></entry>
+            <entry><ind>  0.250</ind><dep> -82.0</dep></entry>
+            <entry><ind>  0.375</ind><dep> -115.0</dep></entry>
+            <entry><ind>  0.500</ind><dep> -153.0</dep></entry>
+            <entry><ind>  0.625</ind><dep> -182.0</dep></entry>
+            <entry><ind>  0.750</ind><dep> -212.0</dep></entry>
+            <entry><ind>  0.875</ind><dep> -243.0</dep></entry>
+            <entry><ind>  1.000</ind><dep> -273.0</dep></entry>
+        </interpolation>
+        <center>
+
+            <x-m>-6.94</x-m>
+            <y-m>0.062</y-m>
+            <z-m>0.113</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>lghandle</object-name>
+        <property>/gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry><ind>  1.0</ind><dep> 0.0</dep></entry>
+            <entry><ind>  0.999</ind><dep>-45</dep></entry>
+            <entry><ind>  0.001</ind><dep>-45</dep></entry>
+            <entry><ind>  0.0</ind><dep>-24.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>-0.102</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.000</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+</PropertyList>
