@@ -26,7 +26,23 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","trkLine","compassBack","selHdg","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode",
+		"bankPointer","slipSkid","baroSet","baroUnit",
+		"cmdSpd","trkLine","compassBack",
+		"selHdg","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen",
+		"dhText","dmeDist","fdX","fdY",
+		"compassLMark1","compassLMark2","compassLMark3","compassLMark4","compassLMark5","compassLMark6","compassLMark7","compassLMark8",
+		"compassSMark1","compassSMark2","compassSMark3","compassSMark4","compassSMark5","compassSMark6","compassSMark7","compassSMark8",
+		"compassLNmbr1","compassLNmbr2","compassLNmbr3",
+		"compassSNmbr1","compassSNmbr2","compassSNmbr3","compassSNmbr4","compassSNmbr5","compassSNmbr6",
+		"flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt",
+		"gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
+		"markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd",
+		"pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode",
+		"selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText",
+		"tenThousand","touchdown",
+		"v1","v2","vertSpdUp","vertSpdDn","vr","vref",
+		"vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -45,6 +61,32 @@ var canvas_PFD = {
 		var c3 = m["compassBack"].getCenter();
 		m["selHdg"].setCenter(c3[0], c3[1]);
 		m["trkLine"].setCenter(c3[0], c3[1]);
+		m["compassLMark1"].setCenter(c3[0], c3[1]);
+		m["compassLMark2"].setCenter(c3[0], c3[1]);
+		m["compassLMark3"].setCenter(c3[0], c3[1]);
+		m["compassLMark4"].setCenter(c3[0], c3[1]);
+		m["compassLMark5"].setCenter(c3[0], c3[1]);
+		m["compassLMark6"].setCenter(c3[0], c3[1]);
+		m["compassLMark7"].setCenter(c3[0], c3[1]);
+		m["compassLMark8"].setCenter(c3[0], c3[1]);
+		m["compassSMark1"].setCenter(c3[0], c3[1]);
+		m["compassSMark2"].setCenter(c3[0], c3[1]);
+		m["compassSMark3"].setCenter(c3[0], c3[1]);
+		m["compassSMark4"].setCenter(c3[0], c3[1]);
+		m["compassSMark5"].setCenter(c3[0], c3[1]);
+		m["compassSMark6"].setCenter(c3[0], c3[1]);
+		m["compassSMark7"].setCenter(c3[0], c3[1]);
+		m["compassSMark8"].setCenter(c3[0], c3[1]);
+		m["compassLNmbr1"].setCenter(c3[0], c3[1]);
+		m["compassLNmbr2"].setCenter(c3[0], c3[1]);
+		m["compassLNmbr3"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr1"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr2"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr3"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr4"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr5"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr6"].setCenter(c3[0], c3[1]);
+
 		
 		m["horizon"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 		m["minSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
@@ -116,7 +158,54 @@ var canvas_PFD = {
 		if ( hdgDiff > 35 ) hdgDiff = 35;
 		me["selHdg"].setRotation(-hdgDiff*1.58*D2R); # 1.58 - coefficient for compass
 		var trkDiff = geo.normdeg180(hdg - track);
+		if (gs < 5) trkDiff = 0;
 		me["trkLine"].setRotation(-trkDiff*1.58*D2R);
+		me["compassLMark1"].setRotation((hdg-(roundToNearest(hdg, 10)-40))*-1*1.58*D2R);
+		me["compassLMark2"].setRotation((hdg-(roundToNearest(hdg, 10)-30))*-1*1.58*D2R);
+		me["compassLMark3"].setRotation((hdg-(roundToNearest(hdg, 10)-20))*-1*1.58*D2R);
+		me["compassLMark4"].setRotation((hdg-(roundToNearest(hdg, 10)-10))*-1*1.58*D2R);
+		me["compassLMark5"].setRotation((hdg-(roundToNearest(hdg, 10)-0))*-1*1.58*D2R);
+		me["compassLMark6"].setRotation((hdg-(roundToNearest(hdg, 10)+10))*-1*1.58*D2R);
+		me["compassLMark7"].setRotation((hdg-(roundToNearest(hdg, 10)+20))*-1*1.58*D2R);
+		me["compassLMark8"].setRotation((hdg-(roundToNearest(hdg, 10)+30))*-1*1.58*D2R);
+		me["compassSMark1"].setRotation((hdg-(roundToNearest(hdg, 10)-35))*-1*1.58*D2R);
+		me["compassSMark2"].setRotation((hdg-(roundToNearest(hdg, 10)-25))*-1*1.58*D2R);
+		me["compassSMark3"].setRotation((hdg-(roundToNearest(hdg, 10)-15))*-1*1.58*D2R);
+		me["compassSMark4"].setRotation((hdg-(roundToNearest(hdg, 10)-5))*-1*1.58*D2R);
+		me["compassSMark5"].setRotation((hdg-(roundToNearest(hdg, 10)+5))*-1*1.58*D2R);
+		me["compassSMark6"].setRotation((hdg-(roundToNearest(hdg, 10)+15))*-1*1.58*D2R);
+		me["compassSMark7"].setRotation((hdg-(roundToNearest(hdg, 10)+25))*-1*1.58*D2R);
+		me["compassSMark8"].setRotation((hdg-(roundToNearest(hdg, 10)+35))*-1*1.58*D2R);
+		me["compassLNmbr1"].setRotation((hdg-(roundToNearest(hdg, 30)-30))*-1*1.58*D2R);
+		me["compassLNmbr2"].setRotation((hdg-(roundToNearest(hdg, 30)-00))*-1*1.58*D2R);
+		me["compassLNmbr3"].setRotation((hdg-(roundToNearest(hdg, 30)+30))*-1*1.58*D2R);
+		me["compassSNmbr1"].setRotation((hdg-(roundToNearest(hdg, 30)-40))*-1*1.58*D2R);
+		me["compassSNmbr2"].setRotation((hdg-(roundToNearest(hdg, 30)-20))*-1*1.58*D2R);
+		me["compassSNmbr3"].setRotation((hdg-(roundToNearest(hdg, 30)-10))*-1*1.58*D2R);
+		me["compassSNmbr4"].setRotation((hdg-(roundToNearest(hdg, 30)+10))*-1*1.58*D2R);
+		me["compassSNmbr5"].setRotation((hdg-(roundToNearest(hdg, 30)+20))*-1*1.58*D2R);
+		me["compassSNmbr6"].setRotation((hdg-(roundToNearest(hdg, 30)+40))*-1*1.58*D2R);
+		var LNmbr1 = (roundToNearest(hdg, 30)-30)/10;
+		var LNmbr2 = roundToNearest(hdg, 30)/10;
+		var LNmbr3 = (roundToNearest(hdg, 30)+30)/10;
+		if (LNmbr1 == 36) LNmbr1 = 0;
+		if (LNmbr2 == 36) LNmbr2 = 0;
+		if (LNmbr3 == 36) LNmbr3 = 0;
+		var SNmbr1 = geo.normdeg((roundToNearest(hdg, 30)-40))/10;
+		var SNmbr2 = geo.normdeg((roundToNearest(hdg, 30)-20))/10;
+		var SNmbr3 = geo.normdeg((roundToNearest(hdg, 30)-10))/10;
+		var SNmbr4 = geo.normdeg((roundToNearest(hdg, 30)+10))/10;
+		var SNmbr5 = geo.normdeg((roundToNearest(hdg, 30)+20))/10;
+		var SNmbr6 = geo.normdeg((roundToNearest(hdg, 30)+40))/10;
+		me["compassLNmbr1"].setText(sprintf("%0.0f", LNmbr1));
+		me["compassLNmbr2"].setText(sprintf("%0.0f", LNmbr2));
+		me["compassLNmbr3"].setText(sprintf("%0.0f", LNmbr3));
+		me["compassSNmbr1"].setText(sprintf("%0.0f", SNmbr1));
+		me["compassSNmbr2"].setText(sprintf("%0.0f", SNmbr2));
+		me["compassSNmbr3"].setText(sprintf("%0.0f", SNmbr3));
+		me["compassSNmbr4"].setText(sprintf("%0.0f", SNmbr4));
+		me["compassSNmbr5"].setText(sprintf("%0.0f", SNmbr5));
+		me["compassSNmbr6"].setText(sprintf("%0.0f", SNmbr6));
 			
 		# Flight director
 		if (getprop("/instrumentation/flightdirector/fd-left-on") == 1) {
