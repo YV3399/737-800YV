@@ -27,6 +27,8 @@ var canvas_PFD = {
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
 		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode",
+		"altTapeScale","altTextHigh1","altTextHigh2","altTextHigh3","altTextHigh4","altTextHigh5",
+		"altTextLow1","altTextLow2","altTextLow3","altTextLow4",
 		"bankPointer","slipSkid","baroSet","baroUnit",
 		"cmdSpd","trkLine","compassBack",
 		"selHdg","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen",
@@ -93,8 +95,9 @@ var canvas_PFD = {
 		m["maxSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["spdTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["cmdSpd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
-		m["altTape"].set("clip", "rect(160, 1024, 833, 0)");
-		m["selAltPtr"].set("clip", "rect(160, 1024, 833, 0)");
+		m["altTapeScale"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["altTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["selAltPtr"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 965)");
 		#m["compass"].set("clip", "rect(700, 1024, 990, 0)");
 		m["curAlt3"].set("clip", "rect(463, 1024, 531, 0)");
@@ -116,8 +119,8 @@ var canvas_PFD = {
 		#var radioAlt = getprop("position/altitude-agl-ft")-27.4;
 		var radioAlt = getprop("instrumentation/radar-altimeter/radar-altitude-ft") or 0;
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
-		if (alt < 0)
-			alt = 0;
+		#if (alt < 0)
+			#alt = 0;
 		var ias = getprop("instrumentation/airspeed-indicator/indicated-speed-kt");
 		if (ias < 45)
 			ias = 45;
@@ -272,11 +275,11 @@ var canvas_PFD = {
 			me["curAltBox"].setColor(1,1,1);
 			me["selAltBox"].hide();
 		}
-		if (curAltDiff > 420)
-			curAltDiff = 420;
-		elsif (curAltDiff < -420)
-			curAltDiff = -420;
-		me["selAltPtr"].setTranslation(0,curAltDiff*0.9);
+		if (curAltDiff > 400)
+			curAltDiff = 400;
+		elsif (curAltDiff < -400)
+			curAltDiff = -400;
+		me["selAltPtr"].setTranslation(0,curAltDiff*0.9132);
 
 		me["curSpdTen"].setTranslation(0,math.mod(ias,10)*41.084538462);
 		if (math.mod(ias,10) > 9 and math.mod(ias,10) < 10) {
@@ -437,7 +440,44 @@ var canvas_PFD = {
 			me["spdTrend_scale"].setScale(1, (getprop("instrumentation/pfd/speed-lookahead")-ias)/20);
 		
 		me["spdTape"].setTranslation(0,ias*6.145425);
-		me["altTape"].setTranslation(0,alt*0.9);
+		me["altTape"].setTranslation(0,alt*0.9132);
+
+		me["altTapeScale"].setTranslation(0,(alt - roundToNearest(alt, 1000))*0.9132);
+		var altNumLow = roundToNearest(alt, 1000)/1000 - 1;
+		var altNumHigh = roundToNearest(alt, 1000)/1000;
+		if ( altNumLow == 0 ) {
+			me["altTextLow1"].hide();
+			me["altTextLow2"].hide();
+			me["altTextLow3"].hide();
+			me["altTextLow4"].hide();
+		} else {
+			me["altTextLow1"].show();
+			me["altTextLow2"].show();
+			me["altTextLow3"].show();
+			me["altTextLow4"].show();
+		}
+		if ( altNumHigh == 0 ) {
+			me["altTextHigh1"].hide();
+			me["altTextHigh2"].hide();
+			me["altTextHigh3"].hide();
+			me["altTextHigh4"].hide();
+			me["altTextHigh5"].hide();
+		} else {
+			me["altTextHigh1"].show();
+			me["altTextHigh2"].show();
+			me["altTextHigh3"].show();
+			me["altTextHigh4"].show();
+			me["altTextHigh5"].show();
+		}
+		me["altTextLow1"].setText(sprintf("%0.0f", altNumLow));
+		me["altTextLow2"].setText(sprintf("%0.0f", altNumLow));
+		me["altTextLow3"].setText(sprintf("%0.0f", altNumLow));
+		me["altTextLow4"].setText(sprintf("%0.0f", altNumLow));
+		me["altTextHigh1"].setText(sprintf("%0.0f", altNumHigh));
+		me["altTextHigh2"].setText(sprintf("%0.0f", altNumHigh));
+		me["altTextHigh3"].setText(sprintf("%0.0f", altNumHigh));
+		me["altTextHigh4"].setText(sprintf("%0.0f", altNumHigh));
+		me["altTextHigh5"].setText(sprintf("%0.0f", altNumHigh));
 		
 		var vsiDeg = getprop("instrumentation/pfd/vsi-needle-deg");
 		if( vsiDeg != nil) {
