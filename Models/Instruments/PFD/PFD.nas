@@ -95,7 +95,7 @@ var canvas_PFD = {
 		m["cmdSpd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["altTape"].set("clip", "rect(160, 1024, 833, 0)");
 		m["selAltPtr"].set("clip", "rect(160, 1024, 833, 0)");
-		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 952)");
+		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 965)");
 		#m["compass"].set("clip", "rect(700, 1024, 990, 0)");
 		m["curAlt3"].set("clip", "rect(463, 1024, 531, 0)");
 		m["curSpdTen"].set("clip", "rect(456, 1024, 540, 0)");
@@ -679,9 +679,9 @@ var canvas_PFD = {
 		var navId = getprop("instrumentation/nav[0]/nav-id");
 		var navFrq = getprop("instrumentation/nav[0]/frequencies/selected-mhz-fmt") or 0;
 		if (navId == "" or navId == nil) {
-			me["ilsId"].setText(sprintf("%s/%03d",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
+			me["ilsId"].setText(sprintf("%s /%03d",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
 		} else {
-			me["ilsId"].setText(sprintf("%s/%03d",navId,getprop("instrumentation/nav/radials/selected-deg")));
+			me["ilsId"].setText(sprintf("%s /%03d",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
 		me["dhText"].setText(sprintf("%4.0f",dh));
 		me["selHdgText"].setText(sprintf("%03d",getprop("autopilot/settings/heading-bug-deg")));

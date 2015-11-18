@@ -65,18 +65,18 @@
             <expression>
                 <table>
                     <property>velocities/vertical-speed-fps</property>
-                    <entry><ind>-100</ind><dep>-68.8</dep></entry>
-                    <entry><ind>-66.6666</ind><dep>-66.5</dep></entry>
-                    <entry><ind>-33.3333</ind><dep>-63.5</dep></entry>
-                    <entry><ind>-25</ind><dep>-57.5</dep></entry>
-                    <entry><ind>-16.6666</ind><dep>-50</dep></entry>
-                    <entry><ind>-8.3333</ind><dep>-30.5</dep></entry>
-                    <entry><ind>8.3333</ind><dep>30.5</dep></entry>
-                    <entry><ind>16.6666</ind><dep>50</dep></entry>
-                    <entry><ind>25</ind><dep>57.5</dep></entry>
-                    <entry><ind>33.3333</ind><dep>63.5</dep></entry>
-                    <entry><ind>66.6666</ind><dep>66.5</dep></entry>
-                    <entry><ind>100</ind><dep>68.8</dep></entry>
+                    <entry><ind>-100</ind><dep>-74</dep></entry>
+                    <entry><ind>-66.6666</ind><dep>-71.8</dep></entry>
+                    <entry><ind>-33.3333</ind><dep>-69.3</dep></entry>
+                    <entry><ind>-25</ind><dep>-64.4</dep></entry>
+                    <entry><ind>-16.6666</ind><dep>-57.3</dep></entry>
+                    <entry><ind>-8.3333</ind><dep>-36</dep></entry>
+                    <entry><ind>8.3333</ind><dep>36</dep></entry>
+                    <entry><ind>16.6666</ind><dep>57.3</dep></entry>
+                    <entry><ind>25</ind><dep>64.4</dep></entry>
+                    <entry><ind>33.3333</ind><dep>69.3</dep></entry>
+                    <entry><ind>66.6666</ind><dep>71.8</dep></entry>
+                    <entry><ind>100</ind><dep>74</dep></entry>
                 </table>
             </expression>
         </input>
@@ -152,13 +152,13 @@
             <expression>
                 <table>
                     <property>/autopilot/settings/vertical-speed-fpm</property> 
-                    <entry><ind>-6000</ind><dep>-218.5</dep></entry>
-                    <entry><ind>-2000</ind><dep>-169</dep></entry>
-                    <entry><ind>-1000</ind><dep>-98</dep></entry>
+                    <entry><ind>-6000</ind><dep>-237</dep></entry>
+                    <entry><ind>-2000</ind><dep>-183</dep></entry>
+                    <entry><ind>-1000</ind><dep>-108</dep></entry>
                     <entry><ind>    0</ind><dep>0</dep></entry>
-                    <entry><ind> 1000</ind><dep>98</dep></entry>
-                    <entry><ind> 2000</ind><dep>169</dep></entry>
-                    <entry><ind> 6000</ind><dep>218.5</dep></entry>
+                    <entry><ind> 1000</ind><dep>108</dep></entry>
+                    <entry><ind> 2000</ind><dep>183</dep></entry>
+                    <entry><ind> 6000</ind><dep>237</dep></entry>
                 </table>
             </expression>
         </input>
