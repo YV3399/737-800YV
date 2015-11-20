@@ -57,7 +57,8 @@ var canvas_PFD = {
 		"compassSNmbr1","compassSNmbr2","compassSNmbr3","compassSNmbr4","compassSNmbr5","compassSNmbr6",
 		"flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt",
 		"gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
-		"markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd",
+		"ladderLimiter",
+		"markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","metric",
 		"pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode",
 		"selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText",
 		"tenThousand","touchdown",
@@ -106,9 +107,12 @@ var canvas_PFD = {
 		m["compassSNmbr4"].setCenter(c3[0], c3[1]);
 		m["compassSNmbr5"].setCenter(c3[0], c3[1]);
 		m["compassSNmbr6"].setCenter(c3[0], c3[1]);
+		var c4 = m["horizon"].getCenter();
+		m["ladderLimiter"].setCenter(c4[0], c4[1]);
 
 		
 		m["horizon"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
+		m["ladderLimiter"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 		m["minSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["maxSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["spdTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
@@ -138,11 +142,8 @@ var canvas_PFD = {
 	},
 	update: func()
 	{
-		#var radioAlt = getprop("position/altitude-agl-ft")-27.4;
 		var radioAlt = getprop("instrumentation/radar-altimeter/radar-altitude-ft") or 0;
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
-		#if (alt < 0)
-			#alt = 0;
 		var ias = getprop("instrumentation/airspeed-indicator/indicated-speed-kt");
 		if (ias < 45)
 			ias = 45;
@@ -160,6 +161,14 @@ var canvas_PFD = {
 		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
 		var apHdg = getprop("autopilot/settings/heading-bug-deg");
+		var metricMode = getprop("instrumentation/efis[0]/inputs/alt-meters");
+		var baroStdSet = getprop("instrumentation/efis[0]/inputs/setting-std");
+
+		if (metricMode) {
+			me["metric"].show();
+		} else {
+			me["metric"].hide();
+		}
 		
 		#10 deg = 105px
 		me.h_trans.setTranslation(0,pitch*11.4625);
@@ -167,6 +176,7 @@ var canvas_PFD = {
 		
 		me["slipSkid"].setTranslation(slipSkid*-8,0);
 		me["bankPointer"].setRotation(-roll*D2R);
+		me["ladderLimiter"].setRotation(-roll*D2R);
 
 		if (math.abs(roll) < 35) {
 			me["bankPointerTriangle"].setColor(1,1,1);
