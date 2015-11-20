@@ -5,8 +5,18 @@
 
 var roundToNearest = func(n, m) {
 	var x = int(n/m)*m;
-	if((math.mod(n,m)) > (m/2))
+	if((math.mod(n,m)) > (m/2) and n > 0)
 			x = x + m;
+	if((m - (math.mod(n,m))) > (m/2) and n < 0)
+			x = x - m;
+	return x;
+}
+
+var normten = func(x) {
+	while (x < 0)
+		x += 10;
+	while (x >= 10)
+		x -= 10;
 	return x;
 }
 
@@ -29,9 +39,17 @@ var canvas_PFD = {
 		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode",
 		"altTapeScale","altTextHigh1","altTextHigh2","altTextHigh3","altTextHigh4","altTextHigh5",
 		"altTextLow1","altTextLow2","altTextLow3","altTextLow4",
+		"altTextHighSmall2","altTextHighSmall3","altTextHighSmall4","altTextHighSmall5",
+		"altTextLowSmall1","altTextLowSmall2","altTextLowSmall3","altTextLowSmall4",
+		"altMinus",
 		"bankPointer","slipSkid","baroSet","baroUnit",
 		"cmdSpd","trkLine","compassBack",
-		"selHdg","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen",
+		"selHdg",
+		"curAltDig1","curAltDig1Low","curAltDig1High",
+		"curAltDig2","curAltDig2Low","curAltDig2High",
+		"curAltDig3","curAltDig3Low","curAltDig3High",
+		"curAltDig45","curAltDig45High1","curAltDig45High2","curAltDig45Low1","curAltDig45Low2",
+		"curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdDig3",
 		"dhText","dmeDist","fdX","fdY",
 		"compassLMark1","compassLMark2","compassLMark3","compassLMark4","compassLMark5","compassLMark6","compassLMark7","compassLMark8",
 		"compassSMark1","compassSMark2","compassSMark3","compassSMark4","compassSMark5","compassSMark6","compassSMark7","compassSMark8",
@@ -99,11 +117,15 @@ var canvas_PFD = {
 		m["altTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["selAltPtr"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 965)");
-		#m["compass"].set("clip", "rect(700, 1024, 990, 0)");
-		m["curAlt3"].set("clip", "rect(463, 1024, 531, 0)");
-		m["curSpdTen"].set("clip", "rect(456, 1024, 540, 0)");
-		m["curSpdDig1"].set("clip", "rect(456, 1024, 540, 0)");
-		m["curSpdDig2"].set("clip", "rect(456, 1024, 540, 0)");
+		m["curAltDig45"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curAltDig3"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curAltDig2"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curAltDig1"].set("clip", "rect(456, 1024, 539, 0)");
+		m["tenThousand"].set("clip", "rect(456, 1024, 539, 0)");
+		m["altMinus"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curSpdDig3"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curSpdDig1"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curSpdDig2"].set("clip", "rect(456, 1024, 539, 0)");
 		m["risingRwy"].set("clip", "rect(0, 693.673, 1024, 192.606)");
 		
 		setlistener("autopilot/locks/passive-mode",            func { m.update_ap_modes() } );
@@ -251,14 +273,88 @@ var canvas_PFD = {
 		me["altText1"].setText(sprintf("%2.0f",math.floor(apAlt/1000)));
 		me["altText2"].setText(sprintf("%03.0f",math.mod(apAlt,1000)));
 		me["mcpAltMtr"].setText(sprintf("%5.0f",apAlt*FT2M));
+
+		if (alt >= 10000 ) {
+			var altTenThousand = 20;
+		} elsif (alt > 9980 and alt < 10000) {
+			var altTenThousand = math.mod(alt,20);
+		} elsif (alt > 0 and alt <= 9980) {
+			var altTenThousand = 0;
+		} elsif (alt < -20) {
+			var altTenThousand = -20;
+		} else {
+			var altTenThousand = math.mod(alt,20)-20;
+		}
+		me["tenThousand"].setTranslation(0,altTenThousand*66/20);
+
+		if (alt < -20) {
+			var altMinus = 0;
+		} elsif (alt > 0) {
+			var altMinus = 20
+		} else {
+			var altMinus = math.mod(alt,20);
+		}
+		me["altMinus"].setTranslation(0,altMinus*66/20);
+
+		if (alt > 0) {
+			var altDig1High = sprintf("%1.0f",math.fmod(math.floor(alt/10000)+1,10));
+			var altDig1Low = sprintf("%1.0f",math.fmod(math.floor(alt/10000),10));
+		} else {
+			var altDig1High = sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/10000),10))-2));
+			var altDig1Low = sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/10000),10))-1));
+		}
+		if (altDig1High == 0) altDig1High = "";
+		if (altDig1Low == 0) altDig1Low = "";
+		me["curAltDig1High"].setText(altDig1High);
+		me["curAltDig1Low"].setText(altDig1Low);
+		if (math.abs(alt) < 50) {
+			var curAltDig1Add = 0;
+		} elsif (math.abs(math.fmod(alt,10000)) > 9980 and math.abs(math.fmod(alt,10000)) < 10000) {
+			var curAltDig1Add = math.mod(alt,20);
+		} else {
+			var curAltDig1Add = 0;
+		}
+		me["curAltDig1"].setTranslation(0,curAltDig1Add*64/20);
 		
-		#if ()
-		#	gpwsAlert.setText(getprop("instrumentation/mk-viii/outputs/warning"));
-		#else
-		#	gpwsAlert.setText("");
-		me["curAlt1"].setText(sprintf("%2.0f",math.floor(alt/1000)));
-		me["curAlt2"].setText(sprintf("%1.0f",math.mod(math.floor(alt/100),10)));
-		me["curAlt3"].setTranslation(0,(math.mod(alt,100)/20)*35);
+		if (alt > 0) {
+			me["curAltDig2High"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/1000)+1,10)));
+			me["curAltDig2Low"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/1000),10)));
+		} else {
+			me["curAltDig2High"].setText(sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/1000),10))-2)));
+			me["curAltDig2Low"].setText(sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/1000),10))-1)));
+		}
+		if (math.abs(alt) < 50) {
+			var curAltDig2Add = 0;
+		} elsif (math.abs(math.fmod(alt,1000)) > 980 and math.abs(math.fmod(alt,1000)) < 1000) {
+			var curAltDig2Add = math.mod(alt,20);
+		} else {
+			var curAltDig2Add = 0;
+		}
+		me["curAltDig2"].setTranslation(0,curAltDig2Add*64/20);
+
+		if (alt > 0) {
+			me["curAltDig3High"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/100)+1,10)));
+			me["curAltDig3Low"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/100),10)));
+		} else {
+			me["curAltDig3High"].setText(sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/100),10))-2)));
+			me["curAltDig3Low"].setText(sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/100),10))-1)));
+		}
+		if (math.abs(alt) < 50) {
+			var curAltDig3Add = 0;
+		} elsif (math.abs(math.fmod(alt,100)) > 80 and math.abs(math.fmod(alt,100)) < 100) {
+			var curAltDig3Add = math.mod(alt,20);
+		} else {
+			var curAltDig3Add = 0;
+		}
+		me["curAltDig3"].setTranslation(0,curAltDig3Add*59/20);
+
+		var altR20 = roundToNearest(alt, 20);
+		me["curAltDig45High2"].setText(sprintf("%02d",math.mod(math.abs(altR20+20),100)));
+		me["curAltDig45High1"].setText(sprintf("%02d",math.mod(math.abs(altR20),100)));
+		me["curAltDig45Low1"].setText(sprintf("%02d",math.mod(math.abs(altR20-20),100)));
+		me["curAltDig45Low2"].setText(sprintf("%02d",math.mod(math.abs(altR20-40),100)));
+		me["curAltDig45"].setTranslation(0,((alt - altR20)/20*36.31));
+
 		me["curAltMtrTxt"].setText(sprintf("%4.0f",alt*FT2M));
 		var curAltDiff = alt-apAlt;
 		if (abs(curAltDiff) > 300 and abs(curAltDiff) < 900) {
@@ -281,7 +377,7 @@ var canvas_PFD = {
 			curAltDiff = -400;
 		me["selAltPtr"].setTranslation(0,curAltDiff*0.9132);
 
-		me["curSpdTen"].setTranslation(0,math.mod(ias,10)*41.084538462);
+		me["curSpdDig3"].setTranslation(0,math.mod(ias,10)*41.084538462);
 		if (math.mod(ias,10) > 9 and math.mod(ias,10) < 10) {
 			var spdDig2Add = math.mod(ias,1);
 		} else {
@@ -443,41 +539,60 @@ var canvas_PFD = {
 		me["altTape"].setTranslation(0,alt*0.9132);
 
 		me["altTapeScale"].setTranslation(0,(alt - roundToNearest(alt, 1000))*0.9132);
-		var altNumLow = roundToNearest(alt, 1000)/1000 - 1;
-		var altNumHigh = roundToNearest(alt, 1000)/1000;
+		
+		if (roundToNearest(alt, 1000) == 0) {
+			me["altTextLowSmall1"].setText(sprintf("%0.0f",200));
+			me["altTextLowSmall2"].setText(sprintf("%0.0f",400));
+			me["altTextLowSmall3"].setText(sprintf("%0.0f",600));
+			me["altTextLowSmall4"].setText(sprintf("%0.0f",800));
+			me["altTextHighSmall2"].setText(sprintf("%0.0f",200));
+			me["altTextHighSmall3"].setText(sprintf("%0.0f",400));
+			me["altTextHighSmall4"].setText(sprintf("%0.0f",600));
+			me["altTextHighSmall5"].setText(sprintf("%0.0f",800));
+			var altNumLow = "-";
+			var altNumHigh = "";
+			var altNumCenter = altNumHigh;
+		} elsif (roundToNearest(alt, 1000) > 0) {
+			me["altTextLowSmall1"].setText(sprintf("%0.0f",800));
+			me["altTextLowSmall2"].setText(sprintf("%0.0f",600));
+			me["altTextLowSmall3"].setText(sprintf("%0.0f",400));
+			me["altTextLowSmall4"].setText(sprintf("%0.0f",200));
+			me["altTextHighSmall2"].setText(sprintf("%0.0f",200));
+			me["altTextHighSmall3"].setText(sprintf("%0.0f",400));
+			me["altTextHighSmall4"].setText(sprintf("%0.0f",600));
+			me["altTextHighSmall5"].setText(sprintf("%0.0f",800));
+			var altNumLow = roundToNearest(alt, 1000)/1000 - 1;
+			var altNumHigh = roundToNearest(alt, 1000)/1000;
+			var altNumCenter = altNumHigh;
+		} elsif (roundToNearest(alt, 1000) < 0) {
+			me["altTextLowSmall1"].setText(sprintf("%0.0f",200));
+			me["altTextLowSmall2"].setText(sprintf("%0.0f",400));
+			me["altTextLowSmall3"].setText(sprintf("%0.0f",600));
+			me["altTextLowSmall4"].setText(sprintf("%0.0f",800));
+			me["altTextHighSmall2"].setText(sprintf("%0.0f",800));
+			me["altTextHighSmall3"].setText(sprintf("%0.0f",600));
+			me["altTextHighSmall4"].setText(sprintf("%0.0f",400));
+			me["altTextHighSmall5"].setText(sprintf("%0.0f",200));
+			var altNumLow = roundToNearest(alt, 1000)/1000;
+			var altNumHigh = roundToNearest(alt, 1000)/1000 + 1;
+			var altNumCenter = altNumLow;
+		}
 		if ( altNumLow == 0 ) {
-			me["altTextLow1"].hide();
-			me["altTextLow2"].hide();
-			me["altTextLow3"].hide();
-			me["altTextLow4"].hide();
-		} else {
-			me["altTextLow1"].show();
-			me["altTextLow2"].show();
-			me["altTextLow3"].show();
-			me["altTextLow4"].show();
+			altNumLow = "";
 		}
-		if ( altNumHigh == 0 ) {
-			me["altTextHigh1"].hide();
-			me["altTextHigh2"].hide();
-			me["altTextHigh3"].hide();
-			me["altTextHigh4"].hide();
-			me["altTextHigh5"].hide();
-		} else {
-			me["altTextHigh1"].show();
-			me["altTextHigh2"].show();
-			me["altTextHigh3"].show();
-			me["altTextHigh4"].show();
-			me["altTextHigh5"].show();
+		if ( altNumHigh == 0 and alt < 0) {
+			altNumHigh = "-";
 		}
-		me["altTextLow1"].setText(sprintf("%0.0f", altNumLow));
-		me["altTextLow2"].setText(sprintf("%0.0f", altNumLow));
-		me["altTextLow3"].setText(sprintf("%0.0f", altNumLow));
-		me["altTextLow4"].setText(sprintf("%0.0f", altNumLow));
-		me["altTextHigh1"].setText(sprintf("%0.0f", altNumHigh));
-		me["altTextHigh2"].setText(sprintf("%0.0f", altNumHigh));
-		me["altTextHigh3"].setText(sprintf("%0.0f", altNumHigh));
-		me["altTextHigh4"].setText(sprintf("%0.0f", altNumHigh));
-		me["altTextHigh5"].setText(sprintf("%0.0f", altNumHigh));
+		me["altTextLow1"].setText(sprintf("%s", altNumLow));
+		me["altTextLow2"].setText(sprintf("%s", altNumLow));
+		me["altTextLow3"].setText(sprintf("%s", altNumLow));
+		me["altTextLow4"].setText(sprintf("%s", altNumLow));
+		me["altTextHigh1"].setText(sprintf("%s", altNumCenter));
+		me["altTextHigh2"].setText(sprintf("%s", altNumHigh));
+		me["altTextHigh3"].setText(sprintf("%s", altNumHigh));
+		me["altTextHigh4"].setText(sprintf("%s", altNumHigh));
+		me["altTextHigh5"].setText(sprintf("%s", altNumHigh));
+	
 		
 		var vsiDeg = getprop("instrumentation/pfd/vsi-needle-deg");
 		if( vsiDeg != nil) {
@@ -694,9 +809,9 @@ var canvas_PFD = {
 		}
 		me["maxSpdInd"].setTranslation(0,maxIAS*-6.145425);
 		if (dh != nil)
-			me["minimums"].setTranslation(0,-dh*0.9);
+			me["minimums"].setTranslation(0,-dh*0.9132);
 		if (getprop("autopilot/route-manager/destination/field-elevation-ft") != nil) {
-			me["touchdown"].setTranslation(0,-getprop("autopilot/route-manager/destination/field-elevation-ft")*0.9);
+			me["touchdown"].setTranslation(0,-getprop("autopilot/route-manager/destination/field-elevation-ft")*0.9132);
 			me["touchdown"].show();
 		} else
 			me["touchdown"].hide();
