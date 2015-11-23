@@ -42,7 +42,7 @@ var canvas_PFD = {
 		"altTextHighSmall2","altTextHighSmall3","altTextHighSmall4","altTextHighSmall5",
 		"altTextLowSmall1","altTextLowSmall2","altTextLowSmall3","altTextLowSmall4",
 		"altMinus",
-		"bankPointer","slipSkid","baroSet","baroUnit",
+		"bankPointer","slipSkid","baroSet","baroUnit","baroStd","baroPreSet","baroPreSetUnit",
 		"cmdSpd","trkLine","compassBack",
 		"selHdg",
 		"curAltDig1","curAltDig1Low","curAltDig1High",
@@ -55,12 +55,13 @@ var canvas_PFD = {
 		"compassSMark1","compassSMark2","compassSMark3","compassSMark4","compassSMark5","compassSMark6","compassSMark7","compassSMark8",
 		"compassLNmbr1","compassLNmbr2","compassLNmbr3",
 		"compassSNmbr1","compassSNmbr2","compassSNmbr3","compassSNmbr4","compassSNmbr5","compassSNmbr6",
+		"fpv",
 		"flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt",
 		"gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
 		"ladderLimiter",
 		"markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","metric",
 		"pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode",
-		"selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText",
+		"selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","spdTapeWhiteBug",
 		"tenThousand","touchdown",
 		"v1","v2","vertSpdUp","vertSpdDn","vr","vref",
 		"vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
@@ -113,10 +114,12 @@ var canvas_PFD = {
 		
 		m["horizon"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 		m["ladderLimiter"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
+		m["fpv"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 		m["minSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["maxSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["spdTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["cmdSpd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["spdTapeWhiteBug"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["altTapeScale"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["altTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["selAltPtr"].set("clip", "rect(126.5, 1024, 863.76, 0)");
@@ -150,6 +153,7 @@ var canvas_PFD = {
 		var gs = getprop("velocities/groundspeed-kt");
 		var mach = getprop("instrumentation/airspeed-indicator/indicated-mach");
 		var pitch = getprop("orientation/pitch-deg");
+		var path = getprop("orientation/path-deg");
 		var roll =  getprop("orientation/roll-deg");
 		var slipSkid = getprop("instrumentation/slip-skid-ball/indicated-slip-skid");
 		var hdg =  getprop("orientation/heading-magnetic-deg");
@@ -163,14 +167,26 @@ var canvas_PFD = {
 		var apHdg = getprop("autopilot/settings/heading-bug-deg");
 		var metricMode = getprop("instrumentation/efis[0]/inputs/alt-meters");
 		var baroStdSet = getprop("instrumentation/efis[0]/inputs/setting-std");
+		var fpv = getprop("instrumentation/efis[0]/inputs/fpv");
 
 		if (metricMode) {
 			me["metric"].show();
 		} else {
 			me["metric"].hide();
 		}
+
+		if (baroStdSet) {
+			me["baroStd"].show();
+			me["baroSet"].hide();
+			me["baroUnit"].hide();
+		} else {
+			me["baroStd"].hide();
+			me["baroSet"].show();
+			me["baroUnit"].show();
+			me["baroPreSet"].hide();
+			me["baroPreSetUnit"].hide();
+		}
 		
-		#10 deg = 105px
 		me.h_trans.setTranslation(0,pitch*11.4625);
 		me.h_rot.setRotation(-roll*D2R,me["horizon"].getCenter());
 		
@@ -501,6 +517,13 @@ var canvas_PFD = {
 			me["gsPtr"].hide();
 			me["gsScale"].hide();
 		}
+
+		if (fpv) {
+			me["fpv"].show();
+			me["fpv"].setTranslation((track-hdg)*11,(pitch-path)*11.4625)
+		} else {
+			me["fpv"].hide();
+		}
 		
 		if (alt < 10000)
 			me["tenThousand"].show();
@@ -508,16 +531,18 @@ var canvas_PFD = {
 			me["tenThousand"].hide();
 		if (vSpd != nil) {
 			var vertSpd = vSpd*60;
+			var vertSpdTxt = roundToNearest(abs(vertSpd),50);
+			if (vertSpdTxt > 9999) vertSpdTxt = 9999;
 			if (vertSpd > 0 ) {
 				if (abs(vertSpd) > 400) {
-					me["vertSpdUp"].setText(sprintf("%4.0f",roundToNearest(vertSpd,50)));
+					me["vertSpdUp"].setText(sprintf("%4.0f",vertSpdTxt));
 					me["vertSpdUp"].show();
 				} else {
 					me["vertSpdUp"].hide();
 				}
 			} else {
 				if (abs(vertSpd) > 400) {
-					me["vertSpdDn"].setText(sprintf("%4.0f",roundToNearest(abs(vertSpd),50)));
+					me["vertSpdDn"].setText(sprintf("%4.0f",vertSpdTxt));
 					me["vertSpdDn"].show();
 				} else {
 					me["vertSpdDn"].hide();
@@ -685,11 +710,14 @@ var canvas_PFD = {
 				me["v1"].hide();
 				me["vr"].hide();
 			}
-			me["v2"].setTranslation(0,-getprop("instrumentation/fmc/speeds/v2-kt")*6.145425);
 		} else {
 			me["v1"].hide();
 			me["vr"].hide();
 		}
+
+		me["v2"].hide(); #i have never seen V2 bug on 737-800 PFD
+
+		me["spdTapeWhiteBug"].hide(); #will implement in future
 
 			
 		if (getprop("instrumentation/fmc/phase-name") == "APPROACH") {
@@ -836,10 +864,10 @@ var canvas_PFD = {
 		var pressureUnit = getprop("instrumentation/efis/inputs/kpa-mode");
 		if ( pressureUnit == 0 ) {
 			me["baroSet"].setText(sprintf("%2.2f",getprop("instrumentation/altimeter/setting-inhg")));
-			me["baroUnit"].setText("in.");
+			me["baroUnit"].setText("IN");
 		} else {
 			me["baroSet"].setText(sprintf("%4.0f",getprop("instrumentation/altimeter/setting-hpa")));
-			me["baroUnit"].setText("hpa");
+			me["baroUnit"].setText("HPA");
 		}
 		var navId = getprop("instrumentation/nav[0]/nav-id");
 		var navFrq = getprop("instrumentation/nav[0]/frequencies/selected-mhz-fmt") or 0;

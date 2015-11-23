@@ -27,6 +27,10 @@
         <path>Aircraft/737-800/Systems/737_pfd.xml</path>
       </autopilot>
 
+      <autopilot>
+        <path>Aircraft/737-800/Systems/aircraft-systems-logic.xml</path>
+      </autopilot>
+
       <path>Aircraft/737-300/Systems/systems.xml</path>
 
       <property-rule n="101">
@@ -507,8 +511,8 @@
       
 
     <flightdirector>
-      <fd-left-on>0</fd-left-on>
-      <fd-right-on>0</fd-right-on>
+      <fd-left-on type="bool">0</fd-left-on>
+      <fd-right-on type="bool">0</fd-right-on>
     </flightdirector>
 
     <gps>
