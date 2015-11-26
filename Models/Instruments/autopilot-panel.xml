@@ -3,7 +3,26 @@
 <PropertyList>
 
  <path>autopilot-panel.ac</path>
-
+    <model>
+        <name>efis-control-panel-left</name>
+        <path>efis-control-panel-left.xml</path>
+        <offsets>
+            <x-m>0.0</x-m>
+            <y-m>-0.3131</y-m>
+            <z-m>0.0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+        <name>efis-control-panel-right</name>
+        <path>efis-control-panel-right.xml</path>
+        <offsets>
+            <x-m>0.0</x-m>
+            <y-m>0.320</y-m>
+            <z-m>0.0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
     <!--<animation>
         <type>rotate</type>
         <object-name>CPT-COURSE</object-name>
@@ -706,106 +725,6 @@
         </axis>
     </animation>
     -->
-    <animation>
-        <type>rotate</type>
-        <object-name>Range.knob</object-name>
-       
-        <property>instrumentation/efis/inputs/range</property>
-        <interpolation>
-            <entry><ind>10</ind><dep>0</dep></entry>
-            <entry><ind>20</ind><dep>30</dep></entry>
-            <entry><ind>40</ind><dep>60</dep></entry>
-            <entry><ind>80</ind><dep>90</dep></entry>
-            <entry><ind>160</ind><dep>120</dep></entry>
-            <entry><ind>320</ind><dep>150</dep></entry>
-            <entry><ind>640</ind><dep>180</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>-0.3</y-m>
-            <z-m>0.013</z-m>
-        </center>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-    <!--
-    <animation>
-        <type>rotate</type>
-        <object-name>MINS.knob</object-name>
-        <object-name>MINS.knob.001</object-name>
-        <property>instrumentation/efis/inputs/minimums-mode</property>
-        <factor>80</factor>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>-0.041</y-m>
-            <z-m>0.028</z-m>
-        </center>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>MODE.knob</object-name>
-        <object-name>MODE.knob.001</object-name>
-        <property>instrumentation/efis/mfd/mode-num</property>
-        <interpolation>
-            <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>1</ind><dep>30</dep></entry>
-            <entry><ind>2</ind><dep>60</dep></entry>
-            <entry><ind>3</ind><dep>90</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>-0.020</y-m>
-            <z-m>-0.001</z-m>
-        </center>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-     -->
-    <animation>
-        <type>translate</type>
-        <object-name>Lvor.toggle</object-name>
-        <property>instrumentation/efis/inputs/lh-vor-adf</property>
-        <factor>0.003</factor>
-        <center>
-            <x-m>0.030</x-m>
-            <y-m>-0.361</y-m>
-            <z-m>-0.014</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>1</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>Rvor.toggle</object-name>
-        <property>instrumentation/efis/inputs/rh-vor-adf</property>
-        <factor>0.003</factor>
-        <center>
-            <x-m>0.030</x-m>
-            <y-m>0.270</y-m>
-            <z-m>0.014</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>1</z>
-        </axis>
-    </animation>
 
 
     <!--PICK ANIMATIONS-->
