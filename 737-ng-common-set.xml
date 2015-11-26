@@ -405,6 +405,9 @@
     </sound>
     <ap-hide-helper type="bool">0</ap-hide-helper>
     <at-helper type="bool">1</at-helper>
+    <warnings>
+      <altitude-alert-mode type="int">0</altitude-alert-mode> <!-- 0 - acq, 1 - deviation -->
+    </warnings>
   </b737>
 
   <systems>
@@ -442,6 +445,7 @@
       <file>Aircraft/737-800/Nasal/controls.nas</file>
       <file>Aircraft/737-800/Nasal/friction.nas</file>
       <file>Aircraft/737-800/Nasal/liveries.nas</file>
+      <file>Aircraft/737-800/Nasal/systems.nas</file>
     </boeing737>
 
     <autopilot737>
@@ -524,11 +528,6 @@
     <transponder>
       <id-code>1200</id-code>
     </transponder>
-
-    <airspeed-indicator>
-      <speed-bug-pushed type="bool">true</speed-bug-pushed>
-      <speed-bug type="int">182</speed-bug>
-    </airspeed-indicator>  
 
     <airspeed-indicator n="1">
       <serviceable type="bool">true</serviceable>
@@ -637,12 +636,21 @@
       <overspeed-kt type="double">340</overspeed-kt>
     </pfd>
 
-      <radar-altimeter>
+  <radar-altimeter n="0">
     <serviceable type="bool">true</serviceable>
     <antenna>
-      <x-offset-m type="double">-16</x-offset-m>
+      <x-offset-m type="double">11.9359</x-offset-m> <!-- From MFEPD. Transmitter STA 430, receiver 450. -->
       <y-offset-m type="double">0</y-offset-m>
-      <z-offset-m type="double">2.51</z-offset-m>
+      <z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
+    </antenna>
+  </radar-altimeter>
+
+  <radar-altimeter n="1">
+    <serviceable type="bool">true</serviceable>
+    <antenna>
+      <x-offset-m type="double">12.9359</x-offset-m> <!-- From MFEPD. Transmitter STA 390, receiver 410. -->
+      <y-offset-m type="double">0</y-offset-m>
+      <z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
     </antenna>
   </radar-altimeter>
 

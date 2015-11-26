@@ -382,11 +382,18 @@ var canvas_PFD = {
 		me["curAltDig45"].setTranslation(0,((alt - altR20)/20*36.31));
 
 		me["curAltMtrTxt"].setText(sprintf("%4.0f",alt*FT2M));
-		var curAltDiff = alt-apAlt;
-		if (abs(curAltDiff) > 300 and abs(curAltDiff) < 900) {
+		
+		var altAlert = getprop("/b737/warnings/altitude-alert");
+		var altAlertMode = getprop("/b737/warnings/altitude-alert-mode");
+		if (altAlert) {
 			me["curAltBox"].setStrokeLineWidth(5);
-			if ((alt > apAlt and vSpd > 1) or (alt < apAlt and vSpd < 1)) {
-				me["curAltBox"].setColor(1,0.5,0);
+			if (altAlertMode == 1) {
+				var time = getprop("/sim/time/elapsed-sec");
+				if (math.mod(time, 0.7) < 0.35) {
+					me["curAltBox"].setColor(1,0.749,0);
+				} else {
+					me["curAltBox"].setColor(1,1,1);
+				}
 				me["selAltBox"].hide();
 			} else {
 				me["curAltBox"].setColor(1,1,1);
@@ -397,6 +404,8 @@ var canvas_PFD = {
 			me["curAltBox"].setColor(1,1,1);
 			me["selAltBox"].hide();
 		}
+
+		var curAltDiff = alt-apAlt;
 		if (curAltDiff > 400)
 			curAltDiff = 400;
 		elsif (curAltDiff < -400)
@@ -409,13 +418,13 @@ var canvas_PFD = {
 		} else {
 			var spdDig2Add = 0;
 		}
-		me["curSpdDig2"].setTranslation(0,(math.floor(math.mod(ias,100)/10) + spdDig2Add)*72.1);
+		me["curSpdDig2"].setTranslation(0,(math.floor(math.mod(ias,100)/10) + spdDig2Add)*71.7);
 		if (math.mod(ias,100) > 99 and math.mod(ias,100) < 100) {
 			var spdDig1Add = math.mod(ias,1);
 		} else {
 			var spdDig1Add = 0;
 		}
-		me["curSpdDig1"].setTranslation(0,(math.floor(math.mod(ias,1000)/100) + spdDig1Add)*72.1);
+		me["curSpdDig1"].setTranslation(0,(math.floor(math.mod(ias,1000)/100) + spdDig1Add)*71.7);
 		
 		if (getprop("instrumentation/marker-beacon/outer")) {
 			me["markerBeacon"].show();
@@ -557,11 +566,11 @@ var canvas_PFD = {
 		}
 		if (radioAlt < 2500) {
 			if (radioAlt > 500)
-				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,20)));
+				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-7.5,20)));
 			elsif (radioAlt > 100)
-				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,10)));
+				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-7.5,10)));
 			else
-				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-4,2)));
+				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-7.5,2)));
 			me["radioAltInd"].show();
 		} else {
 			me["radioAltInd"].hide();
