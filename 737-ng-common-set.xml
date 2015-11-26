@@ -440,6 +440,7 @@
     <boeing737>
       <file>Aircraft/Generic/limits.nas</file>
       <file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
+      <file>Aircraft/737-800/Models/Instruments/EICAS/upperEICAS.nas</file>
       <file>Aircraft/737-800/Nasal/autostart.nas</file>
       <file>Aircraft/737-800/Nasal/air-ground.nas</file>
       <file>Aircraft/737-800/Nasal/controls.nas</file>
