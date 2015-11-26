@@ -28,7 +28,7 @@ var canvas_upperEICAS = {
 		canvas.parsesvg(upperEICAS, "Aircraft/737-800/Models/Instruments/EICAS/upperEICAS.svg", {'font-mapper': font_mapper});
 		
 		var svg_keys = ["engine0N1","engine0N1Decimal","engine1N1","engine1N1Decimal",
-		"needleN1_0","needleN1_1","tat"];
+		"needleN1_0","needleN1_1","tat","tank1Thousand","tank1Decimal","tank2Thousand","tank2Decimal","tankCtrThousand","tankCtrDecimal"];
 		foreach(var key; svg_keys) {
 			m[key] = upperEICAS.getElementById(key);
 		}
@@ -39,8 +39,10 @@ var canvas_upperEICAS = {
 	{
 		var n1_0 = getprop("/engines/engine[0]/n1");
 		var n1_1 = getprop("/engines/engine[1]/n1");
-
 		var tat = int(getprop("/fdm/jsbsim/propulsion/tat-c"));
+		var tank1 = roundToNearest(getprop("/consumables/fuel/tank[0]/level-kg"), 20);
+		var tank2 = roundToNearest(getprop("/consumables/fuel/tank[1]/level-kg"), 20);
+		var tankCtr = roundToNearest(getprop("/consumables/fuel/tank[2]/level-kg"), 20);
 
 		var n1_0_int = int(n1_0);
 		var n1_0_dec = int(10*math.mod(n1_0,1));
@@ -55,6 +57,33 @@ var canvas_upperEICAS = {
 		me["needleN1_1"].setRotation(n1_1*1.965*D2R);
 
 		me["tat"].setText(sprintf("%s", tat));
+
+		if (tank1 < 1000 ) {
+			me["tank1Thousand"].hide();
+			me["tank1Decimal"].setText(sprintf("%3.0f",math.mod(tank1,1000)));
+		} else {
+			me["tank1Thousand"].show();
+			me["tank1Thousand"].setText(sprintf("%1.0f",int(tank1/1000)));
+			me["tank1Decimal"].setText(sprintf("%03.0f",math.mod(tank1,1000)));
+		}
+		if (tank2 < 1000 ) {
+			me["tank2Thousand"].hide();
+			me["tank2Decimal"].setText(sprintf("%3.0f",math.mod(tank2,1000)));
+		} else {
+			me["tank2Thousand"].show();
+			me["tank2Thousand"].setText(sprintf("%1.0f",int(tank2/1000)));
+			me["tank2Decimal"].setText(sprintf("%03.0f",math.mod(tank2,1000)));
+		}
+		if (tankCtr < 1000 ) {
+			me["tankCtrThousand"].hide();
+			me["tankCtrDecimal"].setText(sprintf("%3.0f",math.mod(tankCtr,1000)));
+		} else {
+			me["tankCtrThousand"].show();
+			me["tankCtrThousand"].setText(sprintf("%1.0f",int(tankCtr/1000)));
+			me["tankCtrDecimal"].setText(sprintf("%03.0f",math.mod(tankCtr,1000)));
+		}
+		
+
 
 		settimer(func me.update(), 0.04);
 	},

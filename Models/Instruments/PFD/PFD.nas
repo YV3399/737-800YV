@@ -564,13 +564,14 @@ var canvas_PFD = {
 				me["vsPointer"].hide();
 			}
 		}
+		radioAlt = radioAlt - 7.5;
 		if (radioAlt < 2500) {
 			if (radioAlt > 500)
-				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-7.5,20)));
+				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,20)));
 			elsif (radioAlt > 100)
-				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-7.5,10)));
+				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,10)));
 			else
-				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-7.5,2)));
+				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,2)));
 			me["radioAltInd"].show();
 		} else {
 			me["radioAltInd"].hide();
