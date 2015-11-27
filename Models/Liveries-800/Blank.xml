@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Blank</name>
+            <texture>/models/737-800.png</texture>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
