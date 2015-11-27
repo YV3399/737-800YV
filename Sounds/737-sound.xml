@@ -19,7 +19,7 @@
             <max>1</max>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>sim/sound/volume</property>
              <value>1</value>
         </volume>
         <position>
@@ -50,7 +50,7 @@
             <max>0.6</max>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>sim/sound/volume</property>
         </volume>
         <position>
             <x>0</x>
@@ -77,7 +77,7 @@
             <max>1.0</max>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>sim/sound/volume</property>
         </volume>
         <position>
             <x>0</x>
@@ -100,7 +100,7 @@
             <max>0.6</max>
         </volume>
         <volume>
-            <property>sim/sound/Ovolume</property>
+            <property>sim/sound/volume</property>
         </volume>
         <pitch>
             <property>/engines/engine[1]/n2</property>
