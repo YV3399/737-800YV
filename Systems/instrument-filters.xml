@@ -278,30 +278,4 @@
   </output>
 </filter>
 
-<!-- For altimeter tooltips -->
-<filter n="10019">
-   <type>gain</type>
-   <input>
-     <property>/instrumentation/altimeter[0]/setting-hpa</property>
-   </input>
-   <gain>1</gain>
-   <output>/b737/instrumentation/altimeter[0]/setting-hpa</output>
-</filter>
-<filter n="10020">
-   <type>gain</type>
-   <input>
-     <property>/instrumentation/altimeter[1]/setting-hpa</property>
-   </input>
-   <gain>1</gain>
-   <output>/b737/instrumentation/altimeter[1]/setting-hpa</output>
-</filter>
-<filter n="10021">
-   <type>gain</type>
-   <input>
-     <property>/instrumentation/altimeter[2]/setting-hpa</property>
-   </input>
-   <gain>1</gain>
-   <output>/b737/instrumentation/altimeter[2]/setting-hpa</output>
-</filter>
-
 </PropertyList>

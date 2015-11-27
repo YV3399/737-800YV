@@ -28,6 +28,7 @@ var canvas_upperEICAS = {
 		canvas.parsesvg(upperEICAS, "Aircraft/737-800/Models/Instruments/EICAS/upperEICAS.svg", {'font-mapper': font_mapper});
 		
 		var svg_keys = ["engine0N1","engine0N1Decimal","engine1N1","engine1N1Decimal",
+		"EGT_0","EGT_1","needleEGT_0","needleEGT_1","ff_0","ff_1",
 		"needleN1_0","needleN1_1","tat","tank1Thousand","tank1Decimal","tank2Thousand","tank2Decimal","tankCtrThousand","tankCtrDecimal"];
 		foreach(var key; svg_keys) {
 			m[key] = upperEICAS.getElementById(key);
@@ -39,7 +40,11 @@ var canvas_upperEICAS = {
 	{
 		var n1_0 = getprop("/engines/engine[0]/n1");
 		var n1_1 = getprop("/engines/engine[1]/n1");
-		var tat = int(getprop("/fdm/jsbsim/propulsion/tat-c"));
+		var egt_0 = (getprop("/engines/engine[0]/egt-degf")-32)/1.8;
+		var egt_1 = (getprop("/engines/engine[1]/egt-degf")-32)/1.8;
+		var fuel_flow_0 = getprop("/fdm/jsbsim/propulsion/engine[0]/fuel-flow-rate-pps")*0.4536*3.600;
+		var fuel_flow_1 = getprop("/fdm/jsbsim/propulsion/engine[1]/fuel-flow-rate-pps")*0.4536*3.600;
+		var tat = roundToNearest(getprop("/fdm/jsbsim/propulsion/tat-c"),1);
 		var tank1 = roundToNearest(getprop("/consumables/fuel/tank[0]/level-kg"), 20);
 		var tank2 = roundToNearest(getprop("/consumables/fuel/tank[1]/level-kg"), 20);
 		var tankCtr = roundToNearest(getprop("/consumables/fuel/tank[2]/level-kg"), 20);
@@ -56,7 +61,15 @@ var canvas_upperEICAS = {
 		me["needleN1_0"].setRotation(n1_0*1.965*D2R);
 		me["needleN1_1"].setRotation(n1_1*1.965*D2R);
 
-		me["tat"].setText(sprintf("%s", tat));
+		me["EGT_0"].setText(sprintf("%3.0f",egt_0));
+		me["EGT_1"].setText(sprintf("%3.0f",egt_1));
+		me["needleEGT_0"].setRotation(egt_0*0.2015*D2R);
+		me["needleEGT_1"].setRotation(egt_1*0.2015*D2R);
+
+		me["ff_0"].setText(sprintf("%01.2f",fuel_flow_0));
+		me["ff_1"].setText(sprintf("%01.2f",fuel_flow_1));
+
+		me["tat"].setText(sprintf("%+2.0f", tat));
 
 		if (tank1 < 1000 ) {
 			me["tank1Thousand"].hide();

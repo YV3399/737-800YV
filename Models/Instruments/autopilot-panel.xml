@@ -117,6 +117,18 @@
   </animation>
 
     <animation>
+    <type>textranslate</type>
+    <object-name>L-NAV</object-name>
+   <property>/autopilot/internal/LNAV</property>
+    <factor>-0.125</factor>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+       <z>0</z>
+    </axis>
+  </animation>
+
+    <animation>
         <type>textranslate</type>
         <object-name>LVL-CHG.</object-name>
         <property>/autopilot/internal/LVLCHG</property>
@@ -178,7 +190,7 @@
          <animation>
    	<type>textranslate</type>
    	 <object-name>VOR-LOC</object-name>
-	 <property>/controls/autoflight/autopilot/vor</property>        
+	 <property>/autopilot/internal/LNAV-NAV-light</property>        
    	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
