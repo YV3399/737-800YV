@@ -106,42 +106,9 @@
     <output>instrumentation/pfd/speed-lookahead</output>
     <seconds>10.0</seconds>
     <filter-gain>0.05</filter-gain>
+    <min>30</min>
+    <max>450</max>
   </predict-simple>
-
-  <filter>
-    <name>PFD preprocessor (spd trend up)</name>
-    <type>gain</type>
-    <update-interval-secs type="double">0.04</update-interval-secs>
-    <input>
-      <property>instrumentation/pfd/speed-lookahead</property>
-    </input>
-    <reference>
-      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
-      <offset>90</offset>
-    </reference>
-    <gain>-0.002667</gain>
-    <output>instrumentation/pfd/speed-trend-up</output>
-    <max>0.24</max>
-    <min>0</min>
-  </filter>
-
-  <filter>
-    <name>PFD preprocessor (spd trend down)</name>
-    <type>gain</type>
-    <update-interval-secs type="double">0.04</update-interval-secs>
-    <input>
-      <property>instrumentation/pfd/speed-lookahead</property>
-      <min>0</min>
-    </input>
-    <reference>
-      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
-      <offset>-90</offset>
-    </reference>
-    <gain>-0.002667</gain>
-    <output>instrumentation/pfd/speed-trend-down</output>
-    <min>-0.24</min>
-    <max>0</max>
-  </filter>
  
     <filter>
         <name>VS autopilot</name>

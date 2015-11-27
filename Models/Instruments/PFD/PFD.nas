@@ -118,6 +118,7 @@ var canvas_PFD = {
 		m["minSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["maxSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["spdTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["spdTrend"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["cmdSpd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["spdTapeWhiteBug"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["altTapeScale"].set("clip", "rect(126.5, 1024, 863.76, 0)");
@@ -134,11 +135,7 @@ var canvas_PFD = {
 		m["curSpdDig1"].set("clip", "rect(456, 1024, 539, 0)");
 		m["curSpdDig2"].set("clip", "rect(456, 1024, 539, 0)");
 		m["risingRwy"].set("clip", "rect(0, 693.673, 1024, 192.606)");
-		
-		setlistener("autopilot/locks/passive-mode",            func { m.update_ap_modes() } );
-		setlistener("autopilot/locks/altitude",                func { m.update_ap_modes() } );
-		setlistener("autopilot/locks/heading",                 func { m.update_ap_modes() } );
-		setlistener("autopilot/locks/speed",                   func { m.update_ap_modes() } );
+
 		m.update_ap_modes();
 
 		return m;
@@ -576,9 +573,18 @@ var canvas_PFD = {
 		} else {
 			me["radioAltInd"].hide();
 		}
+
 		me["dmeDist"].setText(sprintf("DME %s",getprop("instrumentation/dme[0]/KDI572-574/nm")));
-		if (getprop("instrumentation/pfd/speed-trend-up") != nil)
-			me["spdTrend_scale"].setScale(1, (getprop("instrumentation/pfd/speed-lookahead")-ias)/20);
+
+		var lookaheadSpd = getprop("instrumentation/pfd/speed-lookahead");
+		if (lookaheadSpd != nil) {
+			if (ias == 45 and lookaheadSpd < 45) {
+				me["spdTrend_scale"].setScale(1, 0);
+			} else {
+				me["spdTrend_scale"].setScale(1, (lookaheadSpd-ias)/20);
+			}
+			
+		}
 		
 		me["spdTape"].setTranslation(0,ias*6.145425);
 		me["altTape"].setTranslation(0,alt*0.9132);
