@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">KLM Royal Dutch Airline (retro)</name>
+            <texture>/Liveries-800/KLM-retro-800.png</texture>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
