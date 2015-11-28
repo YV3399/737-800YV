@@ -498,7 +498,7 @@
    <object-name>mgrhlinklower</object-name>
    <object-name>mgrhlowerstrut</object-name>
     <property>gear/gear[2]/compression-norm</property>
-   <factor>0.3</factor>
+   <factor>0.3048</factor>
    <center>
    <x-m>-7.20</x-m>
    <y-m>2.88</y-m>

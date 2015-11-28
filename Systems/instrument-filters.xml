@@ -1,97 +1,6 @@
+<?xml version="1.0"?>
+
 <PropertyList>
-
-<!-- Helper for smooth slip-skid indication -->
-<filter n="10001">
-  <name>slip-skid-filter</name>	
-  <debug>false</debug>
-  <feedback-if-disabled>true</feedback-if-disabled>
-  <type>noise-spike</type>
-  <max-rate-of-change>3</max-rate-of-change>
-  <input>/fdm/jsbsim/instrumentation/slip-skid-indicator/slip-skid-deg</input>
-  <output>
-    <prop>instrumentation/slip-skid-indicator/slip-skid-deg-filtered</prop>
-  </output>
-</filter>
-
-<filter n="10003">
-  <type>gain</type>
-  <gain>1</gain>
-  <input>
-    <expression>
-      <abs>
-        <dif>
-          <property>/instrumentation/altimeter[0]/indicated-altitude-ft</property>
-          <property>/autopilot/settings/target-altitude-mcp-ft</property>
-        </dif>
-      </abs>
-    </expression> 
-  </input>
-  <output>
-    <prop>/b737/helpers/alt-diff-ft[0]</prop>
-  </output>
-</filter>
-
-<filter n="10004">
-  <type>gain</type>
-  <gain>1</gain>
-  <input>
-    <expression>
-      <abs>
-        <dif>
-          <property>/instrumentation/altimeter[1]/indicated-altitude-ft</property>
-          <property>/autopilot/settings/target-altitude-mcp-ft</property>
-        </dif>
-      </abs>
-    </expression> 
-  </input>
-  <output>
-    <prop>/b737/helpers/alt-diff-ft[1]</prop>
-  </output>
-</filter>
-
-<filter n="10005"> <!-- how many time past from last MCP ALT change -->
-  <type>gain</type>
-  <gain>1</gain>
-  <input>
-    <property>/sim/time/elapsed-sec</property>
-    <offset>
-      <property>/b737/sound/mcp-last-change</property>
-      <scale>-1</scale>
-    </offset>
-  </input>
-  <output>
-    <property>/b737/sound/mcp-period</property>
-  </output>
-</filter>
-
- <logic n="10006">
-   <input>
-     <and>
-       <greater-than>
-         <property>/b737/helpers/alt-diff-ft[0]</property>
-         <value>300</value>
-       </greater-than>
-       <less-than>
-         <property>/b737/helpers/alt-diff-ft[0]</property>
-         <value>900</value>
-       </less-than>
-       <greater-than>
-         <property>/b737/sound/mcp-period</property>
-         <value>3</value>
-       </greater-than>
-       <not>
-         <or>
-           <greater-than>
-             <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
-             <value>0.749</value>
-           </greater-than>
-           <property>/autopilot/internal/VNAV-GS</property>
-         </or>
-       </not>
-     </and>
-   </input>
-   <output>/b737/sound/alt-acq</output>
- </logic>
 
 <filter n="10007">
   <type>gain</type>
@@ -367,32 +276,6 @@
   <output>
     <prop>/fdm/jsbsim/inertia/weight-kg</prop>
   </output>
-</filter>
-
-<!-- For altimeter tooltips -->
-<filter n="10019">
-   <type>gain</type>
-   <input>
-     <property>/instrumentation/altimeter[0]/setting-hpa</property>
-   </input>
-   <gain>1</gain>
-   <output>/b737/instrumentation/altimeter[0]/setting-hpa</output>
-</filter>
-<filter n="10020">
-   <type>gain</type>
-   <input>
-     <property>/instrumentation/altimeter[1]/setting-hpa</property>
-   </input>
-   <gain>1</gain>
-   <output>/b737/instrumentation/altimeter[1]/setting-hpa</output>
-</filter>
-<filter n="10021">
-   <type>gain</type>
-   <input>
-     <property>/instrumentation/altimeter[2]/setting-hpa</property>
-   </input>
-   <gain>1</gain>
-   <output>/b737/instrumentation/altimeter[2]/setting-hpa</output>
 </filter>
 
 </PropertyList>

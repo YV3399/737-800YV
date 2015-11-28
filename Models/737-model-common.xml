@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <PropertyList>
   <offsets>
-    <z-m>0.55</z-m>
-    <pitch-deg>-1.2</pitch-deg>
+    <z-m>0</z-m> <!-- old value = 0.55 -->
+    <pitch-deg>0</pitch-deg> <!-- old value = -1.2-->
   </offsets>
   <nasal n="0">
     <load>

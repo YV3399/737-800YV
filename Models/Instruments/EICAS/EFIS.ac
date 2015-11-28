@@ -2,7 +2,6 @@ AC3Db
 MATERIAL "DefaultWhite" rgb 1.0000 1.0000 1.0000  amb 0.2000 0.2000 0.2000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 10 trans 0.0000
 MATERIAL "interior" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.1000 0.1000 0.1000  spec 0.0000 0.0000 0.0000  shi 0 trans 0.0000
 MATERIAL "buttonlights" rgb 1.0000 1.0000 1.0000  amb 1.0000 1.0000 1.0000  emis 1.0000 1.0000 1.0000  spec 0.3300 0.3300 0.3300  shi 32 trans 0.0000
-MATERIAL "black" rgb 0.0000 0.0000 0.0000  amb 0.0000 0.0000 0.0000  emis 0.0000 0.0000 0.0000  spec 0.0000 0.0000 0.0000  shi 0 trans 0.0000
 OBJECT world
 name "Blender_export__EFIS.ac"
 kids 2
@@ -575,7 +574,7 @@ refs 3
 7 0.951474 0.924582
 kids 0
 OBJECT poly
-name "EFIS.screen"
+name "upperEICASScreen"
 loc 0.0000000 0.0000000 -0.0000000
 crease 30.0
 texture "screen-test.png"
@@ -587,7 +586,7 @@ numvert 4
 0.0084420 0.0750930 0.0924719
 numsurf 1
 SURF 0X20
-mat 3
+mat 2
 refs 4
 2 0.000000 0.000000
 3 0.000000 1.000000

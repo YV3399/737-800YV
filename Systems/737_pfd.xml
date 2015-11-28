@@ -65,18 +65,18 @@
             <expression>
                 <table>
                     <property>velocities/vertical-speed-fps</property>
-                    <entry><ind>-100</ind><dep>-68.8</dep></entry>
-                    <entry><ind>-66.6666</ind><dep>-66.5</dep></entry>
-                    <entry><ind>-33.3333</ind><dep>-63.5</dep></entry>
-                    <entry><ind>-25</ind><dep>-57.5</dep></entry>
-                    <entry><ind>-16.6666</ind><dep>-50</dep></entry>
-                    <entry><ind>-8.3333</ind><dep>-30.5</dep></entry>
-                    <entry><ind>8.3333</ind><dep>30.5</dep></entry>
-                    <entry><ind>16.6666</ind><dep>50</dep></entry>
-                    <entry><ind>25</ind><dep>57.5</dep></entry>
-                    <entry><ind>33.3333</ind><dep>63.5</dep></entry>
-                    <entry><ind>66.6666</ind><dep>66.5</dep></entry>
-                    <entry><ind>100</ind><dep>68.8</dep></entry>
+                    <entry><ind>-100</ind><dep>-74</dep></entry>
+                    <entry><ind>-66.6666</ind><dep>-71.8</dep></entry>
+                    <entry><ind>-33.3333</ind><dep>-69.3</dep></entry>
+                    <entry><ind>-25</ind><dep>-64.4</dep></entry>
+                    <entry><ind>-16.6666</ind><dep>-57.3</dep></entry>
+                    <entry><ind>-8.3333</ind><dep>-36</dep></entry>
+                    <entry><ind>8.3333</ind><dep>36</dep></entry>
+                    <entry><ind>16.6666</ind><dep>57.3</dep></entry>
+                    <entry><ind>25</ind><dep>64.4</dep></entry>
+                    <entry><ind>33.3333</ind><dep>69.3</dep></entry>
+                    <entry><ind>66.6666</ind><dep>71.8</dep></entry>
+                    <entry><ind>100</ind><dep>74</dep></entry>
                 </table>
             </expression>
         </input>
@@ -106,42 +106,9 @@
     <output>instrumentation/pfd/speed-lookahead</output>
     <seconds>10.0</seconds>
     <filter-gain>0.05</filter-gain>
+    <min>30</min>
+    <max>450</max>
   </predict-simple>
-
-  <filter>
-    <name>PFD preprocessor (spd trend up)</name>
-    <type>gain</type>
-    <update-interval-secs type="double">0.04</update-interval-secs>
-    <input>
-      <property>instrumentation/pfd/speed-lookahead</property>
-    </input>
-    <reference>
-      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
-      <offset>90</offset>
-    </reference>
-    <gain>-0.002667</gain>
-    <output>instrumentation/pfd/speed-trend-up</output>
-    <max>0.24</max>
-    <min>0</min>
-  </filter>
-
-  <filter>
-    <name>PFD preprocessor (spd trend down)</name>
-    <type>gain</type>
-    <update-interval-secs type="double">0.04</update-interval-secs>
-    <input>
-      <property>instrumentation/pfd/speed-lookahead</property>
-      <min>0</min>
-    </input>
-    <reference>
-      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
-      <offset>-90</offset>
-    </reference>
-    <gain>-0.002667</gain>
-    <output>instrumentation/pfd/speed-trend-down</output>
-    <min>-0.24</min>
-    <max>0</max>
-  </filter>
  
     <filter>
         <name>VS autopilot</name>
@@ -152,13 +119,13 @@
             <expression>
                 <table>
                     <property>/autopilot/settings/vertical-speed-fpm</property> 
-                    <entry><ind>-6000</ind><dep>-218.5</dep></entry>
-                    <entry><ind>-2000</ind><dep>-169</dep></entry>
-                    <entry><ind>-1000</ind><dep>-98</dep></entry>
+                    <entry><ind>-6000</ind><dep>-237</dep></entry>
+                    <entry><ind>-2000</ind><dep>-183</dep></entry>
+                    <entry><ind>-1000</ind><dep>-108</dep></entry>
                     <entry><ind>    0</ind><dep>0</dep></entry>
-                    <entry><ind> 1000</ind><dep>98</dep></entry>
-                    <entry><ind> 2000</ind><dep>169</dep></entry>
-                    <entry><ind> 6000</ind><dep>218.5</dep></entry>
+                    <entry><ind> 1000</ind><dep>108</dep></entry>
+                    <entry><ind> 2000</ind><dep>183</dep></entry>
+                    <entry><ind> 6000</ind><dep>237</dep></entry>
                 </table>
             </expression>
         </input>

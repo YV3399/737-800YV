@@ -33,10 +33,10 @@
             <y> -20 </y>
             <z>  56.18 </z>
         </location>
-        <location name="VRP" unit="IN">
-            <x> 0 </x>
+        <location name="VRP" unit="M">
+            <x> 19.8099 </x>
             <y> 0 </y>
-            <z> 0 </z>
+            <z> -0.0785 </z>
         </location>
     </metrics>
 

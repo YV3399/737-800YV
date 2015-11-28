@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <abs>
+        <dif>
+          <property>/instrumentation/altimeter[0]/indicated-altitude-ft</property>
+          <property>/autopilot/settings/target-altitude-mcp-ft</property>
+        </dif>
+      </abs>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/helpers/alt-diff-ft[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <expression>
+      <abs>
+        <dif>
+          <property>/instrumentation/altimeter[1]/indicated-altitude-ft</property>
+          <property>/autopilot/settings/target-altitude-mcp-ft</property>
+        </dif>
+      </abs>
+    </expression> 
+  </input>
+  <output>
+    <prop>/b737/helpers/alt-diff-ft[1]</prop>
+  </output>
+</filter>
+
+<filter> <!-- how many time past from last MCP ALT change -->
+  <type>gain</type>
+  <gain>1</gain>
+  <input>
+    <property>/sim/time/elapsed-sec</property>
+    <offset>
+      <property>/b737/sound/mcp-last-change</property>
+      <scale>-1</scale>
+    </offset>
+  </input>
+  <output>
+    <property>/b737/sound/mcp-period</property>
+  </output>
+</filter>
+
+<logic>
+  <name>Altitude alert FCC A</name>
+  <input>
+    <and>
+      <greater-than>
+        <property>/b737/helpers/alt-diff-ft[0]</property>
+        <value>300</value>
+      </greater-than>
+      <less-than>
+        <property>/b737/helpers/alt-diff-ft[0]</property>
+        <value>900</value>
+      </less-than>
+      <greater-than>
+        <property>/b737/sound/mcp-period</property>
+        <value>3</value>
+      </greater-than>
+    </and>
+  </input>
+  <output>/b737/warnings/altitude-alert-fcc-a</output>
+</logic>
+
+<logic>
+  <name>Altitude alert FCC B</name>
+  <input>
+    <and>
+      <greater-than>
+        <property>/b737/helpers/alt-diff-ft[1]</property>
+        <value>300</value>
+      </greater-than>
+      <less-than>
+        <property>/b737/helpers/alt-diff-ft[1]</property>
+        <value>900</value>
+      </less-than>
+      <greater-than>
+        <property>/b737/sound/mcp-period</property>
+        <value>3</value>
+      </greater-than>
+    </and>
+  </input>
+  <output>/b737/warnings/altitude-alert-fcc-b</output>
+</logic>
+
+<logic>
+  <name>Altitude alert B conditions</name>
+  <input>
+    <or>
+      <and>
+        <property>/autopilot/internal/CMDB</property>
+        <not><property>/autopilot/internal/CMDA</property></not>
+      </and>
+      <and>
+        <property>/instrumentation/flightdirector/fd-right-on</property>
+        <not><property>/instrumentation/flightdirector/fd-left-on</property></not>
+        <not><property>/autopilot/internal/CMDA</property></not>
+        <not><property>/autopilot/internal/CMDB</property></not>
+      </and>
+    </or>
+  </input>
+  <output>/b737/warnings/altitude-alert-b-conditions</output>
+</logic>
+
+<logic>
+  <name>Altitude alert</name>
+  <input>
+    <and>
+      <not>
+        <or>
+          <greater-than>
+            <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
+            <value>0.7</value> <!-- flaps more than 20 degrees -->
+          </greater-than>
+          <property>/autopilot/internal/VNAV-GS</property>
+        </or>
+      </not>
+      <or>
+        <and>
+          <not><property>/b737/warnings/altitude-alert-b-conditions</property></not>
+          <property>/b737/warnings/altitude-alert-fcc-a</property>
+        </and>
+        <and>
+          <property>/b737/warnings/altitude-alert-b-conditions</property>
+          <property>/b737/warnings/altitude-alert-fcc-b</property>
+        </and>
+      </or>
+    </and>
+  </input>
+  <output>/b737/warnings/altitude-alert</output>
+</logic>
+
+</PropertyList>

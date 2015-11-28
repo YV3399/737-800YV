@@ -15,8 +15,8 @@
   <object-name>ngrimrh</object-name>
   <object-name>ngtyrelh</object-name>
   <object-name>ngrimlh</object-name>
-   <property>controls/flight/rudder</property>
-   <factor>-20</factor>
+   <property>fdm/jsbsim/fcs/steer-pos-deg</property>
+   <factor>-1</factor>
     <center>
    <x-m>-15.5</x-m>
    <y-m>0.0</y-m>
@@ -85,7 +85,7 @@
   <object-name>noseaxle</object-name>
   <object-name>nlinklower</object-name>
     <property>gear/gear[0]/compression-norm</property>
-   <factor>2</factor>
+   <factor>0.3048</factor>
    <center>
    <x-m>-15.5</x-m>
    <y-m>0.0</y-m>

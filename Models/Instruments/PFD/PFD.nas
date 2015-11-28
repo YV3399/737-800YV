@@ -5,8 +5,18 @@
 
 var roundToNearest = func(n, m) {
 	var x = int(n/m)*m;
-	if((math.mod(n,m)) > (m/2))
+	if((math.mod(n,m)) > (m/2) and n > 0)
 			x = x + m;
+	if((m - (math.mod(n,m))) > (m/2) and n < 0)
+			x = x - m;
+	return x;
+}
+
+var normten = func(x) {
+	while (x < 0)
+		x += 10;
+	while (x >= 10)
+		x -= 10;
 	return x;
 }
 
@@ -26,7 +36,35 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode","bankPointer","slipSkid","baroSet","baroUnit","cmdSpd","trkLine","compassBack","selHdg","curAlt1","curAlt2","curAlt3","curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdTen","dhText","dmeDist","fdX","fdY","flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt","gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText","markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode","selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","tenThousand","touchdown","v1","v2","vertSpdUp","vertSpdDn","vr","vref","vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
+		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode",
+		"altTapeScale","altTextHigh1","altTextHigh2","altTextHigh3","altTextHigh4","altTextHigh5",
+		"altTextLow1","altTextLow2","altTextLow3","altTextLow4",
+		"altTextHighSmall2","altTextHighSmall3","altTextHighSmall4","altTextHighSmall5",
+		"altTextLowSmall1","altTextLowSmall2","altTextLowSmall3","altTextLowSmall4",
+		"altMinus",
+		"bankPointer","slipSkid","baroSet","baroUnit","baroStd","baroPreSet","baroPreSetUnit",
+		"cmdSpd","trkLine","compassBack",
+		"selHdg",
+		"curAltDig1","curAltDig1Low","curAltDig1High",
+		"curAltDig2","curAltDig2Low","curAltDig2High",
+		"curAltDig3","curAltDig3Low","curAltDig3High",
+		"curAltDig45","curAltDig45High1","curAltDig45High2","curAltDig45Low1","curAltDig45Low2",
+		"curAltBox","curAltMtrTxt","curSpdDig1","curSpdDig2","curSpdDig3",
+		"dhText","dmeDist","fdX","fdY",
+		"compassLMark1","compassLMark2","compassLMark3","compassLMark4","compassLMark5","compassLMark6","compassLMark7","compassLMark8",
+		"compassSMark1","compassSMark2","compassSMark3","compassSMark4","compassSMark5","compassSMark6","compassSMark7","compassSMark8",
+		"compassLNmbr1","compassLNmbr2","compassLNmbr3",
+		"compassSNmbr1","compassSNmbr2","compassSNmbr3","compassSNmbr4","compassSNmbr5","compassSNmbr6",
+		"fpv",
+		"flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt",
+		"gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
+		"ladderLimiter",
+		"markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","metric",
+		"pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode",
+		"selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","spdTapeWhiteBug",
+		"tenThousand","touchdown",
+		"v1","v2","vertSpdUp","vertSpdDn","vr","vref",
+		"vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
 		}
@@ -45,43 +83,74 @@ var canvas_PFD = {
 		var c3 = m["compassBack"].getCenter();
 		m["selHdg"].setCenter(c3[0], c3[1]);
 		m["trkLine"].setCenter(c3[0], c3[1]);
+		m["compassLMark1"].setCenter(c3[0], c3[1]);
+		m["compassLMark2"].setCenter(c3[0], c3[1]);
+		m["compassLMark3"].setCenter(c3[0], c3[1]);
+		m["compassLMark4"].setCenter(c3[0], c3[1]);
+		m["compassLMark5"].setCenter(c3[0], c3[1]);
+		m["compassLMark6"].setCenter(c3[0], c3[1]);
+		m["compassLMark7"].setCenter(c3[0], c3[1]);
+		m["compassLMark8"].setCenter(c3[0], c3[1]);
+		m["compassSMark1"].setCenter(c3[0], c3[1]);
+		m["compassSMark2"].setCenter(c3[0], c3[1]);
+		m["compassSMark3"].setCenter(c3[0], c3[1]);
+		m["compassSMark4"].setCenter(c3[0], c3[1]);
+		m["compassSMark5"].setCenter(c3[0], c3[1]);
+		m["compassSMark6"].setCenter(c3[0], c3[1]);
+		m["compassSMark7"].setCenter(c3[0], c3[1]);
+		m["compassSMark8"].setCenter(c3[0], c3[1]);
+		m["compassLNmbr1"].setCenter(c3[0], c3[1]);
+		m["compassLNmbr2"].setCenter(c3[0], c3[1]);
+		m["compassLNmbr3"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr1"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr2"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr3"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr4"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr5"].setCenter(c3[0], c3[1]);
+		m["compassSNmbr6"].setCenter(c3[0], c3[1]);
+		var c4 = m["horizon"].getCenter();
+		m["ladderLimiter"].setCenter(c4[0], c4[1]);
+
 		
 		m["horizon"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
+		m["ladderLimiter"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
+		m["fpv"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 		m["minSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["maxSpdInd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["spdTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["spdTrend"].set("clip", "rect(126.5, 1024, 863.76, 0)");
 		m["cmdSpd"].set("clip", "rect(126.5, 1024, 863.76, 0)");
-		m["altTape"].set("clip", "rect(160, 1024, 833, 0)");
-		m["selAltPtr"].set("clip", "rect(160, 1024, 833, 0)");
-		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 952)");
-		#m["compass"].set("clip", "rect(700, 1024, 990, 0)");
-		m["curAlt3"].set("clip", "rect(463, 1024, 531, 0)");
-		m["curSpdTen"].set("clip", "rect(456, 1024, 540, 0)");
-		m["curSpdDig1"].set("clip", "rect(456, 1024, 540, 0)");
-		m["curSpdDig2"].set("clip", "rect(456, 1024, 540, 0)");
+		m["spdTapeWhiteBug"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["altTapeScale"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["altTape"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["selAltPtr"].set("clip", "rect(126.5, 1024, 863.76, 0)");
+		m["vsiNeedle"].set("clip", "rect(287, 1024, 739, 965)");
+		m["curAltDig45"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curAltDig3"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curAltDig2"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curAltDig1"].set("clip", "rect(456, 1024, 539, 0)");
+		m["tenThousand"].set("clip", "rect(456, 1024, 539, 0)");
+		m["altMinus"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curSpdDig3"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curSpdDig1"].set("clip", "rect(456, 1024, 539, 0)");
+		m["curSpdDig2"].set("clip", "rect(456, 1024, 539, 0)");
 		m["risingRwy"].set("clip", "rect(0, 693.673, 1024, 192.606)");
-		
-		setlistener("autopilot/locks/passive-mode",            func { m.update_ap_modes() } );
-		setlistener("autopilot/locks/altitude",                func { m.update_ap_modes() } );
-		setlistener("autopilot/locks/heading",                 func { m.update_ap_modes() } );
-		setlistener("autopilot/locks/speed",                   func { m.update_ap_modes() } );
+
 		m.update_ap_modes();
 
 		return m;
 	},
 	update: func()
 	{
-		#var radioAlt = getprop("position/altitude-agl-ft")-27.4;
 		var radioAlt = getprop("instrumentation/radar-altimeter/radar-altitude-ft") or 0;
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
-		if (alt < 0)
-			alt = 0;
 		var ias = getprop("instrumentation/airspeed-indicator/indicated-speed-kt");
 		if (ias < 45)
 			ias = 45;
 		var gs = getprop("velocities/groundspeed-kt");
 		var mach = getprop("instrumentation/airspeed-indicator/indicated-mach");
 		var pitch = getprop("orientation/pitch-deg");
+		var path = getprop("orientation/path-deg");
 		var roll =  getprop("orientation/roll-deg");
 		var slipSkid = getprop("instrumentation/slip-skid-ball/indicated-slip-skid");
 		var hdg =  getprop("orientation/heading-magnetic-deg");
@@ -93,13 +162,34 @@ var canvas_PFD = {
 		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
 		var apHdg = getprop("autopilot/settings/heading-bug-deg");
+		var metricMode = getprop("instrumentation/efis[0]/inputs/alt-meters");
+		var baroStdSet = getprop("instrumentation/efis[0]/inputs/setting-std");
+		var fpv = getprop("instrumentation/efis[0]/inputs/fpv");
+
+		if (metricMode) {
+			me["metric"].show();
+		} else {
+			me["metric"].hide();
+		}
+
+		if (baroStdSet) {
+			me["baroStd"].show();
+			me["baroSet"].hide();
+			me["baroUnit"].hide();
+		} else {
+			me["baroStd"].hide();
+			me["baroSet"].show();
+			me["baroUnit"].show();
+			me["baroPreSet"].hide();
+			me["baroPreSetUnit"].hide();
+		}
 		
-		#10 deg = 105px
 		me.h_trans.setTranslation(0,pitch*11.4625);
 		me.h_rot.setRotation(-roll*D2R,me["horizon"].getCenter());
 		
 		me["slipSkid"].setTranslation(slipSkid*-8,0);
 		me["bankPointer"].setRotation(-roll*D2R);
+		me["ladderLimiter"].setRotation(-roll*D2R);
 
 		if (math.abs(roll) < 35) {
 			me["bankPointerTriangle"].setColor(1,1,1);
@@ -116,7 +206,54 @@ var canvas_PFD = {
 		if ( hdgDiff > 35 ) hdgDiff = 35;
 		me["selHdg"].setRotation(-hdgDiff*1.58*D2R); # 1.58 - coefficient for compass
 		var trkDiff = geo.normdeg180(hdg - track);
+		if (gs < 5) trkDiff = 0;
 		me["trkLine"].setRotation(-trkDiff*1.58*D2R);
+		me["compassLMark1"].setRotation((hdg-(roundToNearest(hdg, 10)-40))*-1*1.58*D2R);
+		me["compassLMark2"].setRotation((hdg-(roundToNearest(hdg, 10)-30))*-1*1.58*D2R);
+		me["compassLMark3"].setRotation((hdg-(roundToNearest(hdg, 10)-20))*-1*1.58*D2R);
+		me["compassLMark4"].setRotation((hdg-(roundToNearest(hdg, 10)-10))*-1*1.58*D2R);
+		me["compassLMark5"].setRotation((hdg-(roundToNearest(hdg, 10)-0))*-1*1.58*D2R);
+		me["compassLMark6"].setRotation((hdg-(roundToNearest(hdg, 10)+10))*-1*1.58*D2R);
+		me["compassLMark7"].setRotation((hdg-(roundToNearest(hdg, 10)+20))*-1*1.58*D2R);
+		me["compassLMark8"].setRotation((hdg-(roundToNearest(hdg, 10)+30))*-1*1.58*D2R);
+		me["compassSMark1"].setRotation((hdg-(roundToNearest(hdg, 10)-35))*-1*1.58*D2R);
+		me["compassSMark2"].setRotation((hdg-(roundToNearest(hdg, 10)-25))*-1*1.58*D2R);
+		me["compassSMark3"].setRotation((hdg-(roundToNearest(hdg, 10)-15))*-1*1.58*D2R);
+		me["compassSMark4"].setRotation((hdg-(roundToNearest(hdg, 10)-5))*-1*1.58*D2R);
+		me["compassSMark5"].setRotation((hdg-(roundToNearest(hdg, 10)+5))*-1*1.58*D2R);
+		me["compassSMark6"].setRotation((hdg-(roundToNearest(hdg, 10)+15))*-1*1.58*D2R);
+		me["compassSMark7"].setRotation((hdg-(roundToNearest(hdg, 10)+25))*-1*1.58*D2R);
+		me["compassSMark8"].setRotation((hdg-(roundToNearest(hdg, 10)+35))*-1*1.58*D2R);
+		me["compassLNmbr1"].setRotation((hdg-(roundToNearest(hdg, 30)-30))*-1*1.58*D2R);
+		me["compassLNmbr2"].setRotation((hdg-(roundToNearest(hdg, 30)-00))*-1*1.58*D2R);
+		me["compassLNmbr3"].setRotation((hdg-(roundToNearest(hdg, 30)+30))*-1*1.58*D2R);
+		me["compassSNmbr1"].setRotation((hdg-(roundToNearest(hdg, 30)-40))*-1*1.58*D2R);
+		me["compassSNmbr2"].setRotation((hdg-(roundToNearest(hdg, 30)-20))*-1*1.58*D2R);
+		me["compassSNmbr3"].setRotation((hdg-(roundToNearest(hdg, 30)-10))*-1*1.58*D2R);
+		me["compassSNmbr4"].setRotation((hdg-(roundToNearest(hdg, 30)+10))*-1*1.58*D2R);
+		me["compassSNmbr5"].setRotation((hdg-(roundToNearest(hdg, 30)+20))*-1*1.58*D2R);
+		me["compassSNmbr6"].setRotation((hdg-(roundToNearest(hdg, 30)+40))*-1*1.58*D2R);
+		var LNmbr1 = (roundToNearest(hdg, 30)-30)/10;
+		var LNmbr2 = roundToNearest(hdg, 30)/10;
+		var LNmbr3 = (roundToNearest(hdg, 30)+30)/10;
+		if (LNmbr1 == 36) LNmbr1 = 0;
+		if (LNmbr2 == 36) LNmbr2 = 0;
+		if (LNmbr3 == 36) LNmbr3 = 0;
+		var SNmbr1 = geo.normdeg((roundToNearest(hdg, 30)-40))/10;
+		var SNmbr2 = geo.normdeg((roundToNearest(hdg, 30)-20))/10;
+		var SNmbr3 = geo.normdeg((roundToNearest(hdg, 30)-10))/10;
+		var SNmbr4 = geo.normdeg((roundToNearest(hdg, 30)+10))/10;
+		var SNmbr5 = geo.normdeg((roundToNearest(hdg, 30)+20))/10;
+		var SNmbr6 = geo.normdeg((roundToNearest(hdg, 30)+40))/10;
+		me["compassLNmbr1"].setText(sprintf("%0.0f", LNmbr1));
+		me["compassLNmbr2"].setText(sprintf("%0.0f", LNmbr2));
+		me["compassLNmbr3"].setText(sprintf("%0.0f", LNmbr3));
+		me["compassSNmbr1"].setText(sprintf("%0.0f", SNmbr1));
+		me["compassSNmbr2"].setText(sprintf("%0.0f", SNmbr2));
+		me["compassSNmbr3"].setText(sprintf("%0.0f", SNmbr3));
+		me["compassSNmbr4"].setText(sprintf("%0.0f", SNmbr4));
+		me["compassSNmbr5"].setText(sprintf("%0.0f", SNmbr5));
+		me["compassSNmbr6"].setText(sprintf("%0.0f", SNmbr6));
 			
 		# Flight director
 		if (getprop("/instrumentation/flightdirector/fd-left-on") == 1) {
@@ -159,20 +296,101 @@ var canvas_PFD = {
 		me["altText1"].setText(sprintf("%2.0f",math.floor(apAlt/1000)));
 		me["altText2"].setText(sprintf("%03.0f",math.mod(apAlt,1000)));
 		me["mcpAltMtr"].setText(sprintf("%5.0f",apAlt*FT2M));
+
+		if (alt >= 10000 ) {
+			var altTenThousand = 20;
+		} elsif (alt > 9980 and alt < 10000) {
+			var altTenThousand = math.mod(alt,20);
+		} elsif (alt > 0 and alt <= 9980) {
+			var altTenThousand = 0;
+		} elsif (alt < -20) {
+			var altTenThousand = -20;
+		} else {
+			var altTenThousand = math.mod(alt,20)-20;
+		}
+		me["tenThousand"].setTranslation(0,altTenThousand*66/20);
+
+		if (alt < -20) {
+			var altMinus = 0;
+		} elsif (alt > 0) {
+			var altMinus = 20
+		} else {
+			var altMinus = math.mod(alt,20);
+		}
+		me["altMinus"].setTranslation(0,altMinus*66/20);
+
+		if (alt > 0) {
+			var altDig1High = sprintf("%1.0f",math.fmod(math.floor(alt/10000)+1,10));
+			var altDig1Low = sprintf("%1.0f",math.fmod(math.floor(alt/10000),10));
+		} else {
+			var altDig1High = sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/10000),10))-2));
+			var altDig1Low = sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/10000),10))-1));
+		}
+		if (altDig1High == 0) altDig1High = "";
+		if (altDig1Low == 0) altDig1Low = "";
+		me["curAltDig1High"].setText(altDig1High);
+		me["curAltDig1Low"].setText(altDig1Low);
+		if (math.abs(alt) < 50) {
+			var curAltDig1Add = 0;
+		} elsif (math.abs(math.fmod(alt,10000)) > 9980 and math.abs(math.fmod(alt,10000)) < 10000) {
+			var curAltDig1Add = math.mod(alt,20);
+		} else {
+			var curAltDig1Add = 0;
+		}
+		me["curAltDig1"].setTranslation(0,curAltDig1Add*64/20);
 		
-		#if ()
-		#	gpwsAlert.setText(getprop("instrumentation/mk-viii/outputs/warning"));
-		#else
-		#	gpwsAlert.setText("");
-		me["curAlt1"].setText(sprintf("%2.0f",math.floor(alt/1000)));
-		me["curAlt2"].setText(sprintf("%1.0f",math.mod(math.floor(alt/100),10)));
-		me["curAlt3"].setTranslation(0,(math.mod(alt,100)/20)*35);
+		if (alt > 0) {
+			me["curAltDig2High"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/1000)+1,10)));
+			me["curAltDig2Low"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/1000),10)));
+		} else {
+			me["curAltDig2High"].setText(sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/1000),10))-2)));
+			me["curAltDig2Low"].setText(sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/1000),10))-1)));
+		}
+		if (math.abs(alt) < 50) {
+			var curAltDig2Add = 0;
+		} elsif (math.abs(math.fmod(alt,1000)) > 980 and math.abs(math.fmod(alt,1000)) < 1000) {
+			var curAltDig2Add = math.mod(alt,20);
+		} else {
+			var curAltDig2Add = 0;
+		}
+		me["curAltDig2"].setTranslation(0,curAltDig2Add*64/20);
+
+		if (alt > 0) {
+			me["curAltDig3High"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/100)+1,10)));
+			me["curAltDig3Low"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/100),10)));
+		} else {
+			me["curAltDig3High"].setText(sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/100),10))-2)));
+			me["curAltDig3Low"].setText(sprintf("%1.0f",normten(math.abs(math.fmod(math.floor((alt-20)/100),10))-1)));
+		}
+		if (math.abs(alt) < 50) {
+			var curAltDig3Add = 0;
+		} elsif (math.abs(math.fmod(alt,100)) > 80 and math.abs(math.fmod(alt,100)) < 100) {
+			var curAltDig3Add = math.mod(alt,20);
+		} else {
+			var curAltDig3Add = 0;
+		}
+		me["curAltDig3"].setTranslation(0,curAltDig3Add*59/20);
+
+		var altR20 = roundToNearest(alt, 20);
+		me["curAltDig45High2"].setText(sprintf("%02d",math.mod(math.abs(altR20+20),100)));
+		me["curAltDig45High1"].setText(sprintf("%02d",math.mod(math.abs(altR20),100)));
+		me["curAltDig45Low1"].setText(sprintf("%02d",math.mod(math.abs(altR20-20),100)));
+		me["curAltDig45Low2"].setText(sprintf("%02d",math.mod(math.abs(altR20-40),100)));
+		me["curAltDig45"].setTranslation(0,((alt - altR20)/20*36.31));
+
 		me["curAltMtrTxt"].setText(sprintf("%4.0f",alt*FT2M));
-		var curAltDiff = alt-apAlt;
-		if (abs(curAltDiff) > 300 and abs(curAltDiff) < 900) {
+		
+		var altAlert = getprop("/b737/warnings/altitude-alert");
+		var altAlertMode = getprop("/b737/warnings/altitude-alert-mode");
+		if (altAlert) {
 			me["curAltBox"].setStrokeLineWidth(5);
-			if ((alt > apAlt and vSpd > 1) or (alt < apAlt and vSpd < 1)) {
-				me["curAltBox"].setColor(1,0.5,0);
+			if (altAlertMode == 1) {
+				var time = getprop("/sim/time/elapsed-sec");
+				if (math.mod(time, 0.7) < 0.35) {
+					me["curAltBox"].setColor(1,0.749,0);
+				} else {
+					me["curAltBox"].setColor(1,1,1);
+				}
 				me["selAltBox"].hide();
 			} else {
 				me["curAltBox"].setColor(1,1,1);
@@ -183,25 +401,27 @@ var canvas_PFD = {
 			me["curAltBox"].setColor(1,1,1);
 			me["selAltBox"].hide();
 		}
-		if (curAltDiff > 420)
-			curAltDiff = 420;
-		elsif (curAltDiff < -420)
-			curAltDiff = -420;
-		me["selAltPtr"].setTranslation(0,curAltDiff*0.9);
 
-		me["curSpdTen"].setTranslation(0,math.mod(ias,10)*41.084538462);
+		var curAltDiff = alt-apAlt;
+		if (curAltDiff > 400)
+			curAltDiff = 400;
+		elsif (curAltDiff < -400)
+			curAltDiff = -400;
+		me["selAltPtr"].setTranslation(0,curAltDiff*0.9132);
+
+		me["curSpdDig3"].setTranslation(0,math.mod(ias,10)*41.084538462);
 		if (math.mod(ias,10) > 9 and math.mod(ias,10) < 10) {
 			var spdDig2Add = math.mod(ias,1);
 		} else {
 			var spdDig2Add = 0;
 		}
-		me["curSpdDig2"].setTranslation(0,(math.floor(math.mod(ias,100)/10) + spdDig2Add)*72.1);
+		me["curSpdDig2"].setTranslation(0,(math.floor(math.mod(ias,100)/10) + spdDig2Add)*71.7);
 		if (math.mod(ias,100) > 99 and math.mod(ias,100) < 100) {
 			var spdDig1Add = math.mod(ias,1);
 		} else {
 			var spdDig1Add = 0;
 		}
-		me["curSpdDig1"].setTranslation(0,(math.floor(math.mod(ias,1000)/100) + spdDig1Add)*72.1);
+		me["curSpdDig1"].setTranslation(0,(math.floor(math.mod(ias,1000)/100) + spdDig1Add)*71.7);
 		
 		if (getprop("instrumentation/marker-beacon/outer")) {
 			me["markerBeacon"].show();
@@ -303,6 +523,13 @@ var canvas_PFD = {
 			me["gsPtr"].hide();
 			me["gsScale"].hide();
 		}
+
+		if (fpv) {
+			me["fpv"].show();
+			me["fpv"].setTranslation((track-hdg)*11,(pitch-path)*11.4625)
+		} else {
+			me["fpv"].hide();
+		}
 		
 		if (alt < 10000)
 			me["tenThousand"].show();
@@ -310,16 +537,18 @@ var canvas_PFD = {
 			me["tenThousand"].hide();
 		if (vSpd != nil) {
 			var vertSpd = vSpd*60;
+			var vertSpdTxt = roundToNearest(abs(vertSpd),50);
+			if (vertSpdTxt > 9999) vertSpdTxt = 9999;
 			if (vertSpd > 0 ) {
 				if (abs(vertSpd) > 400) {
-					me["vertSpdUp"].setText(sprintf("%4.0f",roundToNearest(vertSpd,50)));
+					me["vertSpdUp"].setText(sprintf("%4.0f",vertSpdTxt));
 					me["vertSpdUp"].show();
 				} else {
 					me["vertSpdUp"].hide();
 				}
 			} else {
 				if (abs(vertSpd) > 400) {
-					me["vertSpdDn"].setText(sprintf("%4.0f",roundToNearest(abs(vertSpd),50)));
+					me["vertSpdDn"].setText(sprintf("%4.0f",vertSpdTxt));
 					me["vertSpdDn"].show();
 				} else {
 					me["vertSpdDn"].hide();
@@ -332,23 +561,89 @@ var canvas_PFD = {
 				me["vsPointer"].hide();
 			}
 		}
+		radioAlt = radioAlt - 7.5;
 		if (radioAlt < 2500) {
 			if (radioAlt > 500)
 				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,20)));
 			elsif (radioAlt > 100)
 				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,10)));
 			else
-				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt-4,2)));
+				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,2)));
 			me["radioAltInd"].show();
 		} else {
 			me["radioAltInd"].hide();
 		}
+
 		me["dmeDist"].setText(sprintf("DME %s",getprop("instrumentation/dme[0]/KDI572-574/nm")));
-		if (getprop("instrumentation/pfd/speed-trend-up") != nil)
-			me["spdTrend_scale"].setScale(1, (getprop("instrumentation/pfd/speed-lookahead")-ias)/20);
+
+		var lookaheadSpd = getprop("instrumentation/pfd/speed-lookahead");
+		if (lookaheadSpd != nil) {
+			if (ias == 45 and lookaheadSpd < 45) {
+				me["spdTrend_scale"].setScale(1, 0);
+			} else {
+				me["spdTrend_scale"].setScale(1, (lookaheadSpd-ias)/20);
+			}
+			
+		}
 		
 		me["spdTape"].setTranslation(0,ias*6.145425);
-		me["altTape"].setTranslation(0,alt*0.9);
+		me["altTape"].setTranslation(0,alt*0.9132);
+
+		me["altTapeScale"].setTranslation(0,(alt - roundToNearest(alt, 1000))*0.9132);
+		
+		if (roundToNearest(alt, 1000) == 0) {
+			me["altTextLowSmall1"].setText(sprintf("%0.0f",200));
+			me["altTextLowSmall2"].setText(sprintf("%0.0f",400));
+			me["altTextLowSmall3"].setText(sprintf("%0.0f",600));
+			me["altTextLowSmall4"].setText(sprintf("%0.0f",800));
+			me["altTextHighSmall2"].setText(sprintf("%0.0f",200));
+			me["altTextHighSmall3"].setText(sprintf("%0.0f",400));
+			me["altTextHighSmall4"].setText(sprintf("%0.0f",600));
+			me["altTextHighSmall5"].setText(sprintf("%0.0f",800));
+			var altNumLow = "-";
+			var altNumHigh = "";
+			var altNumCenter = altNumHigh;
+		} elsif (roundToNearest(alt, 1000) > 0) {
+			me["altTextLowSmall1"].setText(sprintf("%0.0f",800));
+			me["altTextLowSmall2"].setText(sprintf("%0.0f",600));
+			me["altTextLowSmall3"].setText(sprintf("%0.0f",400));
+			me["altTextLowSmall4"].setText(sprintf("%0.0f",200));
+			me["altTextHighSmall2"].setText(sprintf("%0.0f",200));
+			me["altTextHighSmall3"].setText(sprintf("%0.0f",400));
+			me["altTextHighSmall4"].setText(sprintf("%0.0f",600));
+			me["altTextHighSmall5"].setText(sprintf("%0.0f",800));
+			var altNumLow = roundToNearest(alt, 1000)/1000 - 1;
+			var altNumHigh = roundToNearest(alt, 1000)/1000;
+			var altNumCenter = altNumHigh;
+		} elsif (roundToNearest(alt, 1000) < 0) {
+			me["altTextLowSmall1"].setText(sprintf("%0.0f",200));
+			me["altTextLowSmall2"].setText(sprintf("%0.0f",400));
+			me["altTextLowSmall3"].setText(sprintf("%0.0f",600));
+			me["altTextLowSmall4"].setText(sprintf("%0.0f",800));
+			me["altTextHighSmall2"].setText(sprintf("%0.0f",800));
+			me["altTextHighSmall3"].setText(sprintf("%0.0f",600));
+			me["altTextHighSmall4"].setText(sprintf("%0.0f",400));
+			me["altTextHighSmall5"].setText(sprintf("%0.0f",200));
+			var altNumLow = roundToNearest(alt, 1000)/1000;
+			var altNumHigh = roundToNearest(alt, 1000)/1000 + 1;
+			var altNumCenter = altNumLow;
+		}
+		if ( altNumLow == 0 ) {
+			altNumLow = "";
+		}
+		if ( altNumHigh == 0 and alt < 0) {
+			altNumHigh = "-";
+		}
+		me["altTextLow1"].setText(sprintf("%s", altNumLow));
+		me["altTextLow2"].setText(sprintf("%s", altNumLow));
+		me["altTextLow3"].setText(sprintf("%s", altNumLow));
+		me["altTextLow4"].setText(sprintf("%s", altNumLow));
+		me["altTextHigh1"].setText(sprintf("%s", altNumCenter));
+		me["altTextHigh2"].setText(sprintf("%s", altNumHigh));
+		me["altTextHigh3"].setText(sprintf("%s", altNumHigh));
+		me["altTextHigh4"].setText(sprintf("%s", altNumHigh));
+		me["altTextHigh5"].setText(sprintf("%s", altNumHigh));
+	
 		
 		var vsiDeg = getprop("instrumentation/pfd/vsi-needle-deg");
 		if( vsiDeg != nil) {
@@ -431,11 +726,14 @@ var canvas_PFD = {
 				me["v1"].hide();
 				me["vr"].hide();
 			}
-			me["v2"].setTranslation(0,-getprop("instrumentation/fmc/speeds/v2-kt")*6.145425);
 		} else {
 			me["v1"].hide();
 			me["vr"].hide();
 		}
+
+		me["v2"].hide(); #i have never seen V2 bug on 737-800 PFD
+
+		me["spdTapeWhiteBug"].hide(); #will implement in future
 
 			
 		if (getprop("instrumentation/fmc/phase-name") == "APPROACH") {
@@ -565,9 +863,9 @@ var canvas_PFD = {
 		}
 		me["maxSpdInd"].setTranslation(0,maxIAS*-6.145425);
 		if (dh != nil)
-			me["minimums"].setTranslation(0,-dh*0.9);
+			me["minimums"].setTranslation(0,-dh*0.9132);
 		if (getprop("autopilot/route-manager/destination/field-elevation-ft") != nil) {
-			me["touchdown"].setTranslation(0,-getprop("autopilot/route-manager/destination/field-elevation-ft")*0.9);
+			me["touchdown"].setTranslation(0,-getprop("autopilot/route-manager/destination/field-elevation-ft")*0.9132);
 			me["touchdown"].show();
 		} else
 			me["touchdown"].hide();
@@ -582,17 +880,17 @@ var canvas_PFD = {
 		var pressureUnit = getprop("instrumentation/efis/inputs/kpa-mode");
 		if ( pressureUnit == 0 ) {
 			me["baroSet"].setText(sprintf("%2.2f",getprop("instrumentation/altimeter/setting-inhg")));
-			me["baroUnit"].setText("in.");
+			me["baroUnit"].setText("IN");
 		} else {
 			me["baroSet"].setText(sprintf("%4.0f",getprop("instrumentation/altimeter/setting-hpa")));
-			me["baroUnit"].setText("hpa");
+			me["baroUnit"].setText("HPA");
 		}
 		var navId = getprop("instrumentation/nav[0]/nav-id");
 		var navFrq = getprop("instrumentation/nav[0]/frequencies/selected-mhz-fmt") or 0;
 		if (navId == "" or navId == nil) {
-			me["ilsId"].setText(sprintf("%s/%03d",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
+			me["ilsId"].setText(sprintf("%s /%03d",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
 		} else {
-			me["ilsId"].setText(sprintf("%s/%03d",navId,getprop("instrumentation/nav/radials/selected-deg")));
+			me["ilsId"].setText(sprintf("%s /%03d",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
 		me["dhText"].setText(sprintf("%4.0f",dh));
 		me["selHdgText"].setText(sprintf("%03d",getprop("autopilot/settings/heading-bug-deg")));
