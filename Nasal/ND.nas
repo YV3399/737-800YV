@@ -20,6 +20,7 @@ var myCockpit_switches = {
 	'toggle_true_north': 	{path: '/mfd/true-north', value:0, type:'BOOL'},
 	'toggle_rangearc':      {path: '/mfd/rangearc', value:0, type:'BOOL'},
 	'toggle_track_heading': {path: '/trk-selected', value:1, type:'BOOL'},
+	'toggle_hdg_bug_only': {path: '/mfd/hdg-bug-only', value:1, type:'BOOL'},
 	# add new switches here
 };
 
