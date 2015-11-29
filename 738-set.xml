@@ -7,7 +7,20 @@
         
 		<aero>738</aero>
     <startup>
-      <splash-texture>Aircraft/737-800/splash-800.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-1.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-2.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-3.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-4.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-5.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-6.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-7.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-8.png</splash-texture>
+	  <splash-texture>Aircraft/737-800/splash/splash-9.png</splash-texture>
+	  <splash-texture>Aircraft/737-800/splash/splash-10.png</splash-texture>
+      <splash-texture>Aircraft/737-800/splash/splash-11.png</splash-texture>
+	  <splash-texture>Aircraft/737-800/splash/splash-12.png</splash-texture>
+	    
     </startup>
      
 		<model>
