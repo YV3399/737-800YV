@@ -1134,9 +1134,56 @@ var throttle_mode_change = func {
 		setprop("/autopilot/display/throttle-mode-rectangle", 0);
 	}
 }
+var afds_mode_change = func {
+	var last_change = getprop("/autopilot/display/afds-mode-last-change[0]");
+	var current_time = getprop("/sim/time/elapsed-sec");
+	var period = current_time - last_change;
+
+	if (period <= 10) {
+		setprop("/autopilot/display/afds-mode-rectangle[0]", 1);
+		settimer(afds_mode_change, 0.5);
+	} else {
+		setprop("/autopilot/display/afds-mode-rectangle[0]", 0);
+	}
+}
 setlistener( "/autopilot/display/roll-mode", roll_mode_change, 0, 0);
 setlistener( "/autopilot/display/pitch-mode", pitch_mode_change, 0, 0);
 setlistener( "/autopilot/display/throttle-mode", throttle_mode_change, 0, 0);
+setlistener( "/autopilot/display/afds-mode[0]", afds_mode_change, 0, 0);
+
+var afds_mode_recognize = func {
+	var CMDA = getprop("/autopilot/internal/CMDA");
+	var CMDB = getprop("/autopilot/internal/CMDB");
+	var fd = getprop("/instrumentation/flightdirector/fd-left-on");
+	var GS  = getprop("/autopilot/internal/VNAV-GS");
+	var GS_armed  = getprop("/autopilot/internal/VNAV-GS-armed");
+	var LOC = getprop("/autopilot/internal/LNAV-NAV");
+	var flare_arm = getprop("/autopilot/internal/VNAV-FLARE-armed");
+
+	if (CMDA == 0 and CMDB == 0 and fd == 0) {
+		var afdsMode = "";
+	} elsif (CMDA == 0 and CMDB == 0 and fd == 1) {
+		var afdsMode = "FD";
+	} elsif ((CMDA == 1 or CMDB == 1) and GS == 0 and GS_armed == 0) {
+		var afdsMode = "CMD";
+	} elsif (CMDA == 1 and CMDB == 0 and (GS == 1 or GS_armed == 1) and LOC == 1) {
+		var afdsMode = "SINGLE CH";
+	} elsif (CMDA == 0 and CMDB == 1 and (GS == 1 or GS_armed == 1) and LOC == 1) {
+		var afdsMode = "SINGLE CH";
+	} elsif (CMDA == 1 and CMDB == 1 and flare_arm == 1) {
+		var afdsMode = "CMD";
+	} else {
+		var afdsMode = getprop("/autopilot/display/afds-mode[0]");
+	}
+	if (afdsMode != getprop("/autopilot/display/afds-mode[0]")) {
+		setprop("/autopilot/display/afds-mode-last-change", getprop("/sim/time/elapsed-sec"));
+		setprop("/autopilot/display/afds-mode[0]", afdsMode);
+	}
+	
+	settimer(afds_mode_recognize, 0.5);
+}
+
+afds_mode_recognize();
 
 ####################################
 ## Display ARMED PITCH MODE
