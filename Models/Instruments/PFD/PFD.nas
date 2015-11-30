@@ -57,7 +57,7 @@ var canvas_PFD = {
 		"compassSNmbr1","compassSNmbr2","compassSNmbr3","compassSNmbr4","compassSNmbr5","compassSNmbr6",
 		"fpv",
 		"flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt",
-		"gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
+		"gpwsAlert","gsPtr","gsScale","gsText","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
 		"ladderLimiter",
 		"markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","metric",
 		"pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode",
@@ -290,9 +290,13 @@ var canvas_PFD = {
 		if (mach < 0.38) setprop("instrumentation/pfd/display-mach", 0);
 		var displayMach = getprop("instrumentation/pfd/display-mach");
 		if ( displayMach ) {
+			me["gsText"].hide();
 			me["machText"].setText(sprintf(".%3.0f",mach*1000));
+			me["machText"].setTranslation(0,0);
 		} else {
-			me["machText"].setText(sprintf("GS%.0f",gs));
+			me["gsText"].show();
+			me["machText"].setText(sprintf("%.0f",gs));
+			me["machText"].setTranslation(15,0);
 		}
 		me["altText1"].setText(sprintf("%2.0f",math.floor(apAlt/1000)));
 		me["altText2"].setText(sprintf("%03.0f",math.mod(apAlt,1000)));

@@ -56,7 +56,7 @@
     </mass_balance>
 
     <ground_reactions>
-        <contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NWG compression is 12 in -->
+        <contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NWG compression is 12 in, but it's not looking as true -->
             <location unit="IN">
                 <x> 161 </x>
                 <y>   0 </y>

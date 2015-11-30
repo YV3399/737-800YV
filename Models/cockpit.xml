@@ -131,8 +131,8 @@
   <object-name>no1thrarm</object-name>
   <object-name>no1revarm</object-name> 
    <object-name>No1-knob</object-name>
-  <property>/controls/engines/engine[0]/throttle</property>
-  <factor>-25</factor>
+  <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
+  <factor>-48</factor>
   <offset-deg>30</offset-deg>   
   <center>
    <x-m>0.68</x-m>
@@ -171,8 +171,8 @@
   <object-name>no2thrarm</object-name>
   <object-name>no2revarm</object-name> 
    <object-name>No2-knob</object-name>
-  <property>/controls/engines/engine[1]/throttle</property>
-  <factor>-25</factor>
+  <property>/fdm/jsbsim/fcs/throttle-pos-norm[1]</property>
+  <factor>-48</factor>
   <offset-deg>30</offset-deg>   
   <center>
    <x-m>0.68</x-m>
@@ -218,12 +218,12 @@
   <type>rotate</type>   
   <object-name>sbhandle</object-name> 
   <object-name>sbarm</object-name>   
-   <property>/controls/flight/speedbrake-lever</property> 
+   <property>/b737/controls/flight/spoilers-lever-pos</property> 
   <interpolation>
-      <entry><ind>  0.0</ind><dep> -5.0</dep></entry>
-      <entry><ind>  1.0</ind><dep>5.0</dep></entry>
-      <entry><ind>  2.0</ind><dep>35</dep></entry>
-      <entry><ind>  3.0</ind><dep>50.0</dep></entry>       
+      <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+      <entry><ind>  1.0</ind><dep>4.0</dep></entry>
+      <entry><ind>  5.0</ind><dep>40</dep></entry>
+      <entry><ind>  6.0</ind><dep>50.0</dep></entry>       
      </interpolation>  
   <center>
    <x-m>0.68</x-m>
@@ -1774,7 +1774,7 @@
       <type>rotate</type>
       <object-name>yoke1</object-name>
       <property>controls/flight/aileron</property>
-      <factor>30</factor>
+      <factor>87</factor>
       <center>
           <x-m>1.0</x-m>
           <y-m>-0.535</y-m>
@@ -1791,7 +1791,7 @@
       <type>rotate</type>
       <object-name>yoke1.001</object-name>
       <property>controls/flight/aileron</property>
-      <factor>30</factor>
+      <factor>87</factor>
       <center>
           <x-m>1.0</x-m>
           <y-m>0.497</y-m>
