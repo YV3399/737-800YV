@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">American Airlines (2013)</name>
+            <texture>/Liveries-800/AAL.png</texture>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>

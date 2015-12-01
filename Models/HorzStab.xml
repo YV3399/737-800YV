@@ -9,7 +9,7 @@
   <object-name>lhelevator</object-name>
   <object-name>lhelevatortab</object-name>
   <property>controls/flight/elevator</property>
-  <factor>15</factor>
+  <factor>21</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>17.13</x-m>
@@ -46,7 +46,7 @@
   <object-name>rhelevator</object-name>
   <object-name>rhelevatortab</object-name>
   <property>controls/flight/elevator</property>
-  <factor>15</factor>
+  <factor>21</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>17.13</x-m>

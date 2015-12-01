@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Air Berlin</name>
+            <texture>Liveries-800/BER.png</texture>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>

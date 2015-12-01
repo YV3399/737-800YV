@@ -404,7 +404,7 @@
       </greater-than>
      </and>
     </condition>
-    <value>0.25</value>
+    <value>0.05</value>
   </input>
   <input>
     <condition>
@@ -416,7 +416,7 @@
       </less-than>
      </and>
     </condition>
-    <value>14</value>
+    <value>14.5</value>
   </input>
   <input>/fdm/jsbsim/fcs/stabilizer-pos-unit</input>
   <output>/fdm/jsbsim/fcs/stabilizer/stab-target</output>

@@ -201,16 +201,6 @@
     <offset>1.2</offset>
    </pitch>
   </squeal>
- 
-  <flap>
-   <name>flaps</name>
-   <mode>in-transit</mode>
-   <path>Sounds/flaps.wav</path>
-   <property>/surface-positions/flap-pos-norm</property>
-   <volume>
-    <factor>0.45</factor>
-   </volume>
-  </flap>
 
   <wind>
    <name>wind</name>
@@ -282,6 +272,34 @@
       <factor>1.0</factor>
     </volume>
   </altAlert>
+
+  <!-- Autopilot disconnect siren -->
+
+  <ap-disconnect>
+    <name>AP Disconnect</name>
+    <mode>looped</mode>
+    <path>Aircraft/737-800/Sounds/Apdisco.wav</path>
+    <condition>
+      <property>/b737/sound/apdisco</property>
+    </condition>
+    <volume>
+      <factor>1</factor>
+    </volume>
+  </ap-disconnect>
+
+  <!-- trimwheel sound -->
+
+  <trimming>
+    <name>trimming</name>
+    <mode>once</mode>
+    <path>Aircraft/737-800/Sounds/trim.wav</path>
+    <condition>
+      <property>/b737/sound/stab-trim</property>
+    </condition>
+    <volume>
+      <factor>1</factor>
+    </volume>
+  </trimming>
 
 </fx>
  

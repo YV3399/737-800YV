@@ -36,7 +36,7 @@ var canvas_PFD = {
 		
 		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
-		var svg_keys = ["afdsMode","altTape","altText1","altText2","atMode",
+		var svg_keys = ["afdsMode","afdsModeBox","altTape","altText1","altText2","atMode",
 		"altTapeScale","altTextHigh1","altTextHigh2","altTextHigh3","altTextHigh4","altTextHigh5",
 		"altTextLow1","altTextLow2","altTextLow3","altTextLow4",
 		"altTextHighSmall2","altTextHighSmall3","altTextHighSmall4","altTextHighSmall5",
@@ -57,11 +57,12 @@ var canvas_PFD = {
 		"compassSNmbr1","compassSNmbr2","compassSNmbr3","compassSNmbr4","compassSNmbr5","compassSNmbr6",
 		"fpv",
 		"flaps-mark-1","flaps-mark-1-txt","flaps-mark-2","flaps-mark-2-txt","flaps-mark-3","flaps-mark-3-txt","flaps-mark-4","flaps-mark-4-txt","flaps-mark-5","flaps-mark-5-txt",
-		"gpwsAlert","gsPtr","gsScale","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
+		"gpwsAlert","gsPtr","gsScale","gsText","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
 		"ladderLimiter",
 		"markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","metric",
 		"pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode",
 		"selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","spdTapeWhiteBug",
+		"singleCh","singleChBox",
 		"tenThousand","touchdown",
 		"v1","v2","vertSpdUp","vertSpdDn","vr","vref",
 		"vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
@@ -289,9 +290,13 @@ var canvas_PFD = {
 		if (mach < 0.38) setprop("instrumentation/pfd/display-mach", 0);
 		var displayMach = getprop("instrumentation/pfd/display-mach");
 		if ( displayMach ) {
+			me["gsText"].hide();
 			me["machText"].setText(sprintf(".%3.0f",mach*1000));
+			me["machText"].setTranslation(0,0);
 		} else {
-			me["machText"].setText(sprintf("GS%.0f",gs));
+			me["gsText"].show();
+			me["machText"].setText(sprintf("%.0f",gs));
+			me["machText"].setTranslation(15,0);
 		}
 		me["altText1"].setText(sprintf("%2.0f",math.floor(apAlt/1000)));
 		me["altText2"].setText(sprintf("%03.0f",math.mod(apAlt,1000)));
@@ -655,12 +660,28 @@ var canvas_PFD = {
 	update_ap_modes: func()
 	{
 		# Modes
-		if ((getprop("autopilot/internal/CMDA") != 1 and getprop("autopilot/internal/CMDB") != 1) and (getprop("instrumentation/flightdirector/fd-left-on") == 1 or getprop("instrumentation/flightdirector/fd-right-on") == 1))
-			me["afdsMode"].setText("FD");
-		elsif (getprop("autopilot/internal/CMDA") == 1 or getprop("autopilot/internal/CMDB") == 1)
-			me["afdsMode"].setText("CMD");
-		else
-			me["afdsMode"].setText("");
+		var afds = getprop("/autopilot/display/afds-mode[0]");
+		if (afds == "SINGLE CH") {
+			me["afdsMode"].hide();
+			me["afdsModeBox"].hide();
+			me["singleCh"].show();
+			if ( getprop("/autopilot/display/afds-mode-rectangle[0]") == 1 ) {
+				me["singleChBox"].show();
+			} else {
+				me["singleChBox"].hide();
+			}
+		} else {
+			me["singleCh"].hide();
+			me["singleChBox"].hide();
+			me["afdsMode"].show();
+			me["afdsMode"].setText(afds);
+			if ( getprop("/autopilot/display/afds-mode-rectangle[0]") == 1 ) {
+				me["afdsModeBox"].show();
+			} else {
+				me["afdsModeBox"].hide();
+			}
+		}
+		
 		
 		var apSpd = getprop("/autopilot/display/throttle-mode");
 		if (apSpd == "ARM") {
@@ -888,9 +909,9 @@ var canvas_PFD = {
 		var navId = getprop("instrumentation/nav[0]/nav-id");
 		var navFrq = getprop("instrumentation/nav[0]/frequencies/selected-mhz-fmt") or 0;
 		if (navId == "" or navId == nil) {
-			me["ilsId"].setText(sprintf("%s /%03d",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
+			me["ilsId"].setText(sprintf("%s /%03d°",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
 		} else {
-			me["ilsId"].setText(sprintf("%s /%03d",navId,getprop("instrumentation/nav/radials/selected-deg")));
+			me["ilsId"].setText(sprintf("%s /%03d°",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
 		me["dhText"].setText(sprintf("%4.0f",dh));
 		me["selHdgText"].setText(sprintf("%03d",getprop("autopilot/settings/heading-bug-deg")));

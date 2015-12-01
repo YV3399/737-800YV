@@ -178,7 +178,7 @@
           <animation>
    	<type>textranslate</type>
    	 <object-name>APP</object-name>
-	 <property>/controls/autoflight/autopilot/app</property>        
+	 <property>/autopilot/internal/VNAV-GS-armed</property>        
    	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>

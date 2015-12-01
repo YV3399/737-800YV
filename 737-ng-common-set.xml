@@ -322,6 +322,12 @@
       <pitch-mode-rectangle type="bool">0</pitch-mode-rectangle>
       <throttle-mode-rectangle type="bool">0</throttle-mode-rectangle>
       <localizer-expanded type="bool">0</localizer-expanded>
+      <afds-mode type="string" n="0"></afds-mode>
+      <afds-mode type="string" n="1"></afds-mode>
+      <afds-mode-rectangle type="bool" n="0">0</afds-mode-rectangle>
+      <afds-mode-rectangle type="bool" n="1">0</afds-mode-rectangle>
+      <afds-mode-last-change type="double" n="0">0</afds-mode-last-change>
+      <afds-mode-last-change type="double" n="1">0</afds-mode-last-change>
     </display>
 
   </autopilot>
