@@ -27,6 +27,7 @@
             <z>0</z>
         </axis>
     </animation>
+
     <!--
     <animation>
         <type>rotate</type>
@@ -84,6 +85,122 @@
             <y>0</y>
             <z>1</z>
         </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>Lvor.toggle</object-name>
+        <action>
+            <name>Left VOR ADF switch</name>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/efis/inputs/lh-vor-adf</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>Left VOR ADF switch</name>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/efis/inputs/lh-vor-adf</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>Left VOR ADF switch</name>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/efis/inputs/lh-vor-adf</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>Left VOR ADF switch</name>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/efis/inputs/lh-vor-adf</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>Lvor.toggle</object-name>
+        <action>
+            <name>Left VOR ADF switch</name>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/efis/inputs/rh-vor-adf</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>Left VOR ADF switch</name>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/efis/inputs/rh-vor-adf</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>Left VOR ADF switch</name>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/efis/inputs/rh-vor-adf</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>Left VOR ADF switch</name>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/efis/inputs/rh-vor-adf</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
     </animation>
 
     <animation>
