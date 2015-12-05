@@ -406,7 +406,6 @@
       <apdisco type="bool">0</apdisco>
       <spoiler-auto type="bool">0</spoiler-auto>
       <stab-trim type="bool">0</stab-trim>
-      <sound-pack type="int">2</sound-pack>
       <mcp-last-change type="double">0</mcp-last-change>
     </sound>
     <ap-hide-helper type="bool">0</ap-hide-helper>
