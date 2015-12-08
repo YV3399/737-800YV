@@ -70,121 +70,7 @@
     </animation>
      -->
 
-    <animation>
-        <type>pick</type>
-        <visible>true</visible>
-        <object-name>Lvor.toggle</object-name>
-        <action>
-            <name>Left VOR ADF switch</name>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/efis[1]/inputs/lh-vor-adf</property>
-                <step>1</step>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <action>
-            <name>Left VOR ADF switch</name>
-            <button>1</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/efis[1]/inputs/lh-vor-adf</property>
-                <step>-1</step>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <action>
-            <name>Left VOR ADF switch</name>
-            <button>3</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/efis[1]/inputs/lh-vor-adf</property>
-                <step>1</step>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <action>
-            <name>Left VOR ADF switch</name>
-            <button>4</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/efis[1]/inputs/lh-vor-adf</property>
-                <step>-1</step>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
 
-    <animation>
-        <type>pick</type>
-        <visible>true</visible>
-        <object-name>Lvor.toggle</object-name>
-        <action>
-            <name>Left VOR ADF switch</name>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/efis[1]/inputs/rh-vor-adf</property>
-                <step>1</step>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <action>
-            <name>Left VOR ADF switch</name>
-            <button>1</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/efis[1]/inputs/rh-vor-adf</property>
-                <step>-1</step>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <action>
-            <name>Left VOR ADF switch</name>
-            <button>3</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/efis[1]/inputs/rh-vor-adf</property>
-                <step>1</step>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <action>
-            <name>Left VOR ADF switch</name>
-            <button>4</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-adjust</command>
-                <property>/instrumentation/efis[1]/inputs/rh-vor-adf</property>
-                <step>-1</step>
-                <min>-1</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-        </action>
-    </animation>
     <animation>
         <type>translate</type>
         <object-name>Lvor.toggle</object-name>
@@ -200,6 +86,52 @@
             <y>0</y>
             <z>1</z>
         </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>Lvor.vor</object-name>
+        <action>
+            <name>Left VOR ADF switch to VOR</name>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/efis[1]/inputs/lh-vor-adf</property>
+                <value>1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>Lvor.off</object-name>
+        <action>
+            <name>Left VOR ADF switch off</name>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/efis[1]/inputs/lh-vor-adf</property>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>Lvor.adf</object-name>
+        <action>
+            <name>Left VOR ADF switch to ADF</name>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/efis[1]/inputs/lh-vor-adf</property>
+                <value>-1</value>
+            </binding>
+        </action>
     </animation>
 
     <animation>
@@ -217,5 +149,51 @@
             <y>0</y>
             <z>1</z>
         </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>Rvor.vor</object-name>
+        <action>
+            <name>Right VOR ADF switch to VOR</name>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/efis[1]/inputs/rh-vor-adf</property>
+                <value>1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>Rvor.off</object-name>
+        <action>
+            <name>Right VOR ADF switch off</name>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/efis[1]/inputs/rh-vor-adf</property>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>Rvor.adf</object-name>
+        <action>
+            <name>Right VOR ADF switch to ADF</name>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/instrumentation/efis[1]/inputs/rh-vor-adf</property>
+                <value>-1</value>
+            </binding>
+        </action>
     </animation>
 </PropertyList>
