@@ -36,7 +36,7 @@
         <location name="VRP" unit="M">
             <x> 19.8099 </x>
             <y> 0 </y>
-            <z> -0.0785 </z>
+            <z> 0.0785 </z>
         </location>
     </metrics>
 

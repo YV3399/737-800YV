@@ -266,7 +266,7 @@ if (AT_arm) {
 	setprop("/autopilot/internal/SPD-SPEED", 0);
 	setprop("/autopilot/internal/SPD-RETARD", 1);
 
-	setprop("/autopilot/internal/target-n1", 22);
+	setprop("/autopilot/internal/target-n1", 19.76);
 
 	setprop("/autopilot/display/throttle-mode-last-change", getprop("/sim/time/elapsed-sec"));
 	setprop("/autopilot/display/throttle-mode", "RETARD");
