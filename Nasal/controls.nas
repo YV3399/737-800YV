@@ -158,7 +158,7 @@ var landing_check = func{
 			setprop("b737/sound/spoiler-auto", 1);
 		}
 
-		if (!ab_used and GROUNDSPEED > 84) {
+		if (!ab_used and GROUNDSPEED > 88) { # 88 kts - value from AMM
 			autobrake_apply();
 		}
 	}

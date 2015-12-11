@@ -384,6 +384,17 @@
         <lift type="double">0.0</lift>
         <basic-moment type="double">-0.25</basic-moment>
       </metrics>
+      <gear>
+        <unit n="0">
+          <compression-ft type="double">0</compression-ft>
+        </unit>
+        <unit n="1">
+          <compression-ft type="double">0</compression-ft>
+        </unit>
+        <unit n="2">
+          <compression-ft type="double">0</compression-ft>
+        </unit>
+      </gear>
     </jsbsim>
   </fdm>
 
