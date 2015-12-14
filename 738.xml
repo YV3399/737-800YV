@@ -296,6 +296,22 @@
             <brake_group> NONE </brake_group>
             <retractable> 0 </retractable>
         </contact>
+
+        <contact type="STRUCTURE" name="NOSE">
+            <location unit="IN">
+                <x> 0 </x>
+                <y> 0 </y>
+                <z> 0 </z>
+            </location>
+            <static_friction> 1 </static_friction>
+            <dynamic_friction> 1 </dynamic_friction>
+            <rolling_friction> 0 </rolling_friction>
+            <spring_coeff unit="LBS/FT"> 20000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 5000 </damping_coeff>
+            <max_steer unit="DEG"> 0 </max_steer>
+            <brake_group> NONE </brake_group>
+            <retractable> 0 </retractable>
+        </contact>
     </ground_reactions>
 
     <propulsion>
