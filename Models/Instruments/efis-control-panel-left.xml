@@ -76,6 +76,66 @@
         </action>
     </animation>
 
+    <animation>
+        <type>knob</type>
+        <object-name>BARO.knob2</object-name>
+        <property>instrumentation/efis[0]/inputs/baro-knob</property>
+        <factor>5</factor>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.03414</y-m>
+            <z-m>0.03456</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/efis[0]/inputs/baro-knob</property>
+            </binding>
+        </action>
+        <increase>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(0,"BARO",1);</script>
+            </binding>
+        </increase>
+        <decrease>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(0,"BARO",-1);</script>
+            </binding>
+        </decrease>
+        <shift-increase>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(0,"BAROUNIT",1);</script>
+            </binding>
+        </shift-increase>
+        <shift-decrease>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(0,"BAROUNIT",-1);</script>
+            </binding>
+        </shift-decrease>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>inhg.reset</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(0,"STD",0);</script>
+            </binding>
+        </action>
+    </animation>
+
     <!--
     <animation>
         <type>rotate</type>
@@ -95,7 +155,7 @@
         </axis>
     </animation>
      -->
-     
+
     <animation>
         <type>translate</type>
         <object-name>Lvor.toggle</object-name>

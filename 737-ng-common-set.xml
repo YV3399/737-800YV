@@ -665,12 +665,20 @@
     <efis n="0">
       <inputs>
         <range-knob type="int">3</range-knob>
+        <kpa-mode type="bool">1</kpa-mode>
+        <baro-knob type="double">0</baro-knob>
+        <baro-previous type="double">1013</baro-previous>
+        <baro-previous-show type="bool">0</baro-previous-show>
       </inputs>
     </efis>
 
     <efis n="1">
       <inputs>
         <range-knob type="int">3</range-knob>
+        <kpa-mode type="bool">1</kpa-mode>
+        <baro-knob type="double">0</baro-knob>
+        <baro-previous type="double">1013</baro-previous>
+        <baro-previous-show type="bool">0</baro-previous-show>
       </inputs>
     </efis>
 

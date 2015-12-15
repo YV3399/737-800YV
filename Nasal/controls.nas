@@ -1,5 +1,14 @@
 ##
 
+var roundToNearest = func(n, m) {
+	var x = int(n/m)*m;
+	if((math.mod(n,m)) > (m/2) and n > 0)
+			x = x + m;
+	if((m - (math.mod(n,m))) > (m/2) and n < 0)
+			x = x - m;
+	return x;
+}
+
 var TRIM_RATE = 0.01;
 
 var elevatorTrim = func {
@@ -261,5 +270,59 @@ var efis_ctrl = func(n, knob, action) {
 		if (mode_knob == 2) {setprop("instrumentation/efis["~n~"]/mfd/display-mode", "MAP"); setprop("instrumentation/efis["~n~"]/trk-selected", 1);}
 		if (mode_knob == 3) {setprop("instrumentation/efis["~n~"]/mfd/display-mode", "PLAN"); setprop("instrumentation/efis["~n~"]/trk-selected", 0);}
 		setprop("instrumentation/efis["~n~"]/mfd/mode-num", mode_knob);
+	} elsif (knob == "BARO") {
+		var pressureUnit = getprop("instrumentation/efis["~n~"]/inputs/kpa-mode");
+		var baroStdSet = getprop("instrumentation/efis["~n~"]/inputs/setting-std");
+		if (baroStdSet == 0) {
+			if (pressureUnit == 1) {
+				var altimeter_setting = roundToNearest(getprop("instrumentation/altimeter["~n~"]/setting-hpa"), 1);
+				setprop("instrumentation/altimeter["~n~"]/setting-hpa", altimeter_setting + action);
+			} else {
+				var altimeter_setting = roundToNearest(getprop("instrumentation/altimeter["~n~"]/setting-inhg"), 0.01);
+				setprop("instrumentation/altimeter["~n~"]/setting-inhg", altimeter_setting + action*0.01);
+			}
+		} else {
+			setprop("instrumentation/efis["~n~"]/inputs/baro-previous-show", 1);
+			if (pressureUnit == 1) {
+				var altimeter_setting = roundToNearest(getprop("instrumentation/efis["~n~"]/inputs/baro-previous"), 1);
+				setprop("instrumentation/efis["~n~"]/inputs/baro-previous", altimeter_setting + action);
+			} else {
+				var altimeter_setting = roundToNearest(getprop("instrumentation/efis["~n~"]/inputs/baro-previous"), 0.01);
+				setprop("instrumentation/efis["~n~"]/inputs/baro-previous", altimeter_setting + action*0.01);
+			}
+		}
+	} elsif (knob == "STD") {
+		var baroStdSet = getprop("instrumentation/efis["~n~"]/inputs/setting-std");
+		var pressureUnit = getprop("instrumentation/efis["~n~"]/inputs/kpa-mode");
+		if (baroStdSet == 0) {
+			setprop("instrumentation/efis["~n~"]/inputs/baro-previous-show", 0);
+			if (pressureUnit == 1) {
+				var altimeter_setting = roundToNearest(getprop("instrumentation/altimeter["~n~"]/setting-hpa"), 1);
+				setprop("instrumentation/efis["~n~"]/inputs/baro-previous", altimeter_setting);
+			} else {
+				var altimeter_setting = roundToNearest(getprop("instrumentation/altimeter["~n~"]/setting-inhg"), 0.01);
+				setprop("instrumentation/efis["~n~"]/inputs/baro-previous", altimeter_setting);
+			}
+			setprop("instrumentation/altimeter["~n~"]/setting-inhg", 29.92);
+			setprop("instrumentation/efis["~n~"]/inputs/setting-std", 1);
+		} else {
+			if (pressureUnit == 1) {
+				var altimeter_setting = roundToNearest(getprop("instrumentation/efis["~n~"]/inputs/baro-previous"), 1);
+				setprop("instrumentation/altimeter["~n~"]/setting-hpa", altimeter_setting);
+			} else {
+				var altimeter_setting = roundToNearest(getprop("instrumentation/efis["~n~"]/inputs/baro-previous"), 0.01);
+				setprop("instrumentation/altimeter["~n~"]/setting-inhg", altimeter_setting);
+			}
+			setprop("instrumentation/efis["~n~"]/inputs/setting-std", 0);
+		}
+	} elsif (knob == "BAROUNIT") {
+		var pressureUnit = getprop("instrumentation/efis["~n~"]/inputs/kpa-mode");
+		if (pressureUnit == 1 and action == -1) {
+			setprop("instrumentation/efis["~n~"]/inputs/baro-previous", getprop("instrumentation/efis["~n~"]/inputs/baro-previous")*0.0295300586467);
+			setprop("instrumentation/efis["~n~"]/inputs/kpa-mode", 0);
+		} elsif (pressureUnit == 0 and action == 1) {
+			setprop("instrumentation/efis["~n~"]/inputs/baro-previous", getprop("instrumentation/efis["~n~"]/inputs/baro-previous")/0.0295300586467);
+			setprop("instrumentation/efis["~n~"]/inputs/kpa-mode", 1);
+		}
 	}
 }

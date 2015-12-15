@@ -165,6 +165,7 @@ var canvas_PFD = {
 		var apHdg = getprop("autopilot/settings/heading-bug-deg");
 		var metricMode = getprop("instrumentation/efis[0]/inputs/alt-meters");
 		var baroStdSet = getprop("instrumentation/efis[0]/inputs/setting-std");
+		var baroPreSetShow = getprop("instrumentation/efis[0]/inputs/baro-previous-show");
 		var fpv = getprop("instrumentation/efis[0]/inputs/fpv");
 
 		if (metricMode) {
@@ -184,6 +185,21 @@ var canvas_PFD = {
 			me["baroPreSet"].hide();
 			me["baroPreSetUnit"].hide();
 		}
+
+		if (baroStdSet and baroPreSetShow) {
+			me["baroPreSet"].show();
+			me["baroPreSetUnit"].show();
+			var pressureUnit = getprop("instrumentation/efis[0]/inputs/kpa-mode");
+			if ( pressureUnit == 0 ) {
+				me["baroPreSet"].setText(sprintf("%2.2f",getprop("instrumentation/efis[0]/inputs/baro-previous")));
+				me["baroPreSetUnit"].setText("IN");
+			} else {
+				me["baroPreSet"].setText(sprintf("%4.0f",getprop("instrumentation/efis[0]/inputs/baro-previous")));
+				me["baroPreSetUnit"].setText("HPA");
+			}
+		}
+
+
 		
 		me.h_trans.setTranslation(0,pitch*11.4625);
 		me.h_rot.setRotation(-roll*D2R,me["horizon"].getCenter());
@@ -900,10 +916,10 @@ var canvas_PFD = {
 		}
 		var pressureUnit = getprop("instrumentation/efis/inputs/kpa-mode");
 		if ( pressureUnit == 0 ) {
-			me["baroSet"].setText(sprintf("%2.2f",getprop("instrumentation/altimeter/setting-inhg")));
+			me["baroSet"].setText(sprintf("%2.2f",getprop("instrumentation/altimeter[0]/setting-inhg")));
 			me["baroUnit"].setText("IN");
 		} else {
-			me["baroSet"].setText(sprintf("%4.0f",getprop("instrumentation/altimeter/setting-hpa")));
+			me["baroSet"].setText(sprintf("%4.0f",getprop("instrumentation/altimeter[0]/setting-hpa")));
 			me["baroUnit"].setText("HPA");
 		}
 		var navId = getprop("instrumentation/nav[0]/nav-id");
@@ -922,7 +938,7 @@ var canvas_PFD = {
 		}
 		
 		
-		settimer(func me.update_slow(), 0.5);
+		settimer(func me.update_slow(), 0.1);
 	},
 };
 
