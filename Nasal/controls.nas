@@ -247,8 +247,7 @@ settimer (parking_brake_set, 2);
 
 var efis_ctrl = func(n, knob, action) {
 	if (knob == "RANGE") {
-		range_knob = getprop("/instrumentation/efis["~n~"]/inputs/range-knob");
-		range_knob = range_knob + action;
+		var range_knob = getprop("/instrumentation/efis["~n~"]/inputs/range-knob") + action;
 		if (range_knob < 0) range_knob = 0;
 		if (range_knob > 7) range_knob = 7;
 		setprop("/instrumentation/efis["~n~"]/inputs/range-nm", 10*math.pow(2,range_knob-1));
