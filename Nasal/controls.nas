@@ -252,5 +252,14 @@ var efis_ctrl = func(n, knob, action) {
 		if (range_knob > 7) range_knob = 7;
 		setprop("/instrumentation/efis["~n~"]/inputs/range-nm", 10*math.pow(2,range_knob-1));
 		setprop("/instrumentation/efis["~n~"]/inputs/range-knob",range_knob);
+	} elsif (knob == "MODE") {
+		var mode_knob = getprop("instrumentation/efis["~n~"]/mfd/mode-num") + action;
+		if (mode_knob < 0) mode_knob = 0;
+		if (mode_knob > 3) mode_knob = 3;
+		if (mode_knob == 0) {setprop("instrumentation/efis["~n~"]/mfd/display-mode", "APP"); setprop("instrumentation/efis["~n~"]/trk-selected", 0);}
+		if (mode_knob == 1) {setprop("instrumentation/efis["~n~"]/mfd/display-mode", "VOR"); setprop("instrumentation/efis["~n~"]/trk-selected", 0);}
+		if (mode_knob == 2) {setprop("instrumentation/efis["~n~"]/mfd/display-mode", "MAP"); setprop("instrumentation/efis["~n~"]/trk-selected", 1);}
+		if (mode_knob == 3) {setprop("instrumentation/efis["~n~"]/mfd/display-mode", "PLAN"); setprop("instrumentation/efis["~n~"]/trk-selected", 0);}
+		setprop("instrumentation/efis["~n~"]/mfd/mode-num", mode_knob);
 	}
 }

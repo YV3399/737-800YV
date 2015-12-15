@@ -34,6 +34,36 @@
     </animation>
 
     <animation>
+        <type>knob</type>
+        <object-name>MODE.knob</object-name>
+        <property>instrumentation/efis[1]/mfd/mode-num</property>
+        <factor>30</factor>
+        <offset-deg>-90</offset-deg>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>-0.01999</y-m>
+            <z-m>0.01252</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <increase>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(1,"MODE",1);</script>
+            </binding>
+        </increase>
+        <decrease>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(1,"MODE",-1);</script>
+            </binding>
+        </decrease>
+    </animation>
+
+    <animation>
         <type>pick</type>
         <object-name>ND.center</object-name>
         <action>
@@ -56,29 +86,6 @@
             <x-m>0.0</x-m>
             <y-m>-0.041</y-m>
             <z-m>0.028</z-m>
-        </center>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>MODE.knob</object-name>
-        <object-name>MODE.knob.001</object-name>
-        <property>instrumentation/efis/mfd/mode-num</property>
-        <interpolation>
-            <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>1</ind><dep>30</dep></entry>
-            <entry><ind>2</ind><dep>60</dep></entry>
-            <entry><ind>3</ind><dep>90</dep></entry>
-        </interpolation>
-        <center>
-            <x-m>0.0</x-m>
-            <y-m>-0.020</y-m>
-            <z-m>-0.001</z-m>
         </center>
         <axis>
             <x>-1</x>
@@ -120,7 +127,6 @@
             </binding>
         </action>
     </animation>
-
     <animation>
         <type>pick</type>
         <visible>false</visible>
@@ -183,7 +189,6 @@
             </binding>
         </action>
     </animation>
-
     <animation>
         <type>pick</type>
         <visible>false</visible>
@@ -214,4 +219,5 @@
             </binding>
         </action>
     </animation>
+
 </PropertyList>
