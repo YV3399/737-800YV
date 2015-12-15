@@ -618,15 +618,6 @@
       <spin type="double">1</spin>
     </turn-indicator>
 
-<!--
-    <vor-adf>
-      <vor1-select type="double">1</vor1-select>
-      <vor2-select type="double">1</vor2-select>
-      <adf1-select type="double">0</adf1-select>
-      <adf2-select type="double">0</adf2-select>
-    </vor-adf> 
--->
-
     <cdu>
       <display>IDENT</display>
       <ident>
@@ -670,6 +661,18 @@
       <z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
     </antenna>
   </radar-altimeter>
+
+    <efis n="0">
+      <inputs>
+        <range-knob type="int">3</range-knob>
+      </inputs>
+    </efis>
+
+    <efis n="1">
+      <inputs>
+        <range-knob type="int">3</range-knob>
+      </inputs>
+    </efis>
 
   </instrumentation>
 

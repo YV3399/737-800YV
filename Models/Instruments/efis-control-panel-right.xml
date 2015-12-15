@@ -2,30 +2,48 @@
 
 <PropertyList>
     <path>efis-control-panel.ac</path>
-    <animation>
-        <type>rotate</type>
-        <object-name>Range.knob</object-name>
 
-        <property>instrumentation/efis[1]/inputs/range</property>
-        <interpolation>
-            <entry><ind>10</ind><dep>0</dep></entry>
-            <entry><ind>20</ind><dep>30</dep></entry>
-            <entry><ind>40</ind><dep>60</dep></entry>
-            <entry><ind>80</ind><dep>90</dep></entry>
-            <entry><ind>160</ind><dep>120</dep></entry>
-            <entry><ind>320</ind><dep>150</dep></entry>
-            <entry><ind>640</ind><dep>180</dep></entry>
-        </interpolation>
+    <animation>
+        <type>knob</type>
+        <object-name>Range.knob</object-name>
+        <property>instrumentation/efis[1]/inputs/range-knob</property>
+        <factor>30</factor>
+        <offset-deg>-5</offset-deg>
         <center>
             <x-m>0.0</x-m>
-            <y-m>-0.3</y-m>
-            <z-m>0.013</z-m>
+            <y-m>0.0128</y-m>
+            <z-m>0.0128</z-m>
         </center>
         <axis>
             <x>-1</x>
             <y>0</y>
             <z>0</z>
         </axis>
+        <increase>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(1,"RANGE",1);</script>
+            </binding>
+        </increase>
+        <decrease>
+            <binding>
+                <command>nasal</command>
+                <script>boeing737.efis_ctrl(1,"RANGE",-1);</script>
+            </binding>
+        </decrease>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>ND.center</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-toggle</command>
+            <property>/instrumentation/efis[1]/inputs/nd-centered</property>
+        </binding>
+        </action>
     </animation>
     <!--
     <animation>

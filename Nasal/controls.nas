@@ -27,7 +27,7 @@ var elev_trim_stop = func {
   setprop("fdm/jsbsim/fcs/stabilizer/stab-target", stab_pos);
 }
 
-var trim_handler = func{
+var trim_handler = func {
   var old_trim = num( getprop("b737/controls/trim/stabilizer-old") );
   if ( old_trim == nil ) old_trim = 0.0;
   var new_trim = num( getprop("/controls/flight/elevator-trim") );
@@ -242,3 +242,16 @@ var parking_brake_set = func {
 	setprop("/sim/menubar/visibility", "true");
 }
 settimer (parking_brake_set, 2);
+
+# EFIS controls
+
+var efis_ctrl = func(n, knob, action) {
+	if (knob == "RANGE") {
+		range_knob = getprop("/instrumentation/efis["~n~"]/inputs/range-knob");
+		range_knob = range_knob + action;
+		if (range_knob < 0) range_knob = 0;
+		if (range_knob > 7) range_knob = 7;
+		setprop("/instrumentation/efis["~n~"]/inputs/range-nm", 10*math.pow(2,range_knob-1));
+		setprop("/instrumentation/efis["~n~"]/inputs/range-knob",range_knob);
+	}
+}
