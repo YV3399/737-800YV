@@ -30,7 +30,7 @@
 			<internal archive="y">true</internal>
 			<config>
 				<!-- x/y/z == right/up/back --> 
-				<x-offset-m archive="y">-0.4</x-offset-m>
+				<x-offset-m archive="y">-0.51</x-offset-m>
 				<y-offset-m archive="y">1.28</y-offset-m>
 				<z-offset-m archive="y">-17.18</z-offset-m>
 				<pitch-offset-deg archive="y">-8.0</pitch-offset-deg>
