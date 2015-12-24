@@ -7,9 +7,9 @@
         <name>AUTOPILOT</name>
         <path>Models/Instruments/autopilot-panel.xml</path>
         <offsets>
-            <x-m>0.080</x-m>
+            <x-m>0.050</x-m>
             <y-m>-0.004</y-m>
-            <z-m>0.148</z-m>
+            <z-m>0.153</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
