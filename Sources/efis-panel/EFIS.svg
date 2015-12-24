@@ -47,7 +47,7 @@
      id="namedview3041"
      showgrid="false"
      inkscape:zoom="0.90509668"
-     inkscape:cx="672.72715"
+     inkscape:cx="656.15434"
      inkscape:cy="212.97945"
      inkscape:window-x="-5"
      inkscape:window-y="-3"
@@ -71,7 +71,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="back"
-     style="opacity:0.40963859;display:inline"
+     style="opacity:0.40963859;display:none"
      sodipodi:insensitive="true">
     <image
        width="1024"
@@ -753,7 +753,10 @@
        sodipodi:rx="54.137863"
        sodipodi:ry="49.718445"
        d="m 497.18446,110.93787 a 54.137863,49.718445 0 1 1 -108.27572,0 54.137863,49.718445 0 1 1 108.27572,0 z"
-       transform="translate(0.47572845,2.2097086)" />
+       transform="translate(0.47572845,2.2097086)"
+       inkscape:export-filename="/home/rick/fgfs/737-800/Models/Instruments/EFIS-lettering.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        sodipodi:type="arc"
        style="fill:none;stroke:#ffffff;stroke-width:6;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline"
