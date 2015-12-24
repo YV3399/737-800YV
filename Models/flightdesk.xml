@@ -20,7 +20,7 @@
         <offsets>
             <x-m>-0.02</x-m>
             <y-m>-0.512</y-m>
-            <z-m>-0.020</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -39,7 +39,7 @@
         <offsets>
             <x-m>-0.02</x-m>
             <y-m>0.489</y-m>
-            <z-m>-0.020</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -50,7 +50,7 @@
         <offsets>
             <x-m>-0.02</x-m>
             <y-m>-0.298</y-m>
-            <z-m>-0.020</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -61,7 +61,7 @@
         <offsets>
             <x-m>-0.02</x-m>
             <y-m>0.276</y-m>
-            <z-m>-0.020</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -78,9 +78,9 @@
         <name>EICAS</name>
         <path>Models/Instruments/EICAS/eicas.xml</path>
         <offsets>
-            <x-m>-0.02</x-m>
-            <y-m>-0.002</y-m>
-            <z-m>-0.020</z-m>
+            <x-m>-0.020</x-m>
+            <y-m>0.002</y-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -91,7 +91,7 @@
         <offsets>
             <x-m>-0.02</x-m>
             <y-m>-0.679</y-m>
-            <z-m>0.0</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -102,7 +102,7 @@
         <offsets>
             <x-m>-0.02</x-m>
             <y-m>0.651</y-m>
-            <z-m>0.0</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
