@@ -15422,6 +15422,7 @@ refs 3
 kids 0
 OBJECT poly
 name "HDG.1"
+loc 0.0000000 0.0000000 0.0030000
 crease 30.0
 texture "digits2.png"
 texrep 1 1
@@ -15441,6 +15442,7 @@ refs 4
 kids 0
 OBJECT poly
 name "HDG.2"
+loc 0.0000000 0.0000000 0.0030000
 crease 30.0
 texture "digits2.png"
 texrep 1 1
@@ -15460,6 +15462,7 @@ refs 4
 kids 0
 OBJECT poly
 name "HDG.3"
+loc 0.0000000 0.0000000 0.0030000
 crease 30.0
 texture "digits2.png"
 texrep 1 1
