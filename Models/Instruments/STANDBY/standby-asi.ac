@@ -45,6 +45,7 @@ refs 4
 kids 0
 OBJECT poly
 name "alttxt"
+loc 0.0000000 0.0043744 0.0015036
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -64,6 +65,7 @@ refs 4
 kids 0
 OBJECT poly
 name "alttxt.001"
+loc 0.0000000 0.0043744 0.0015036
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -83,6 +85,7 @@ refs 4
 kids 0
 OBJECT poly
 name "alttxt.002"
+loc 0.0000000 0.0043744 0.0015036
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -102,6 +105,7 @@ refs 4
 kids 0
 OBJECT poly
 name "alttxt.003"
+loc 0.0000000 0.0043744 0.0015036
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -121,6 +125,7 @@ refs 4
 kids 0
 OBJECT poly
 name "alttxt.004"
+loc 0.0000000 0.0043744 0.0015036
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -319,14 +324,15 @@ refs 4
 kids 0
 OBJECT poly
 name "iastape"
+loc 0.0000000 -0.0002290 0.0000000
 crease 30.0
 texture "altasi.png"
 texrep 1 1
 numvert 4
-0.0292940 -0.0102460 0.0133400
-0.0292940 -0.0162720 0.0133400
-0.0292940 -0.0162720 -0.0151640
-0.0292940 -0.0102460 -0.0151640
+0.0292940 -0.0119021 0.0133400
+0.0292940 -0.0189021 0.0133400
+0.0292940 -0.0189021 -0.0151640
+0.0292940 -0.0119021 -0.0151640
 numsurf 1
 SURF 0X0
 mat 1
@@ -338,6 +344,7 @@ refs 4
 kids 0
 OBJECT poly
 name "inhg.001"
+loc 0.0000000 0.0000000 -0.0052118
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -357,6 +364,7 @@ refs 4
 kids 0
 OBJECT poly
 name "inhg.002"
+loc 0.0000000 0.0000000 -0.0052118
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -376,6 +384,7 @@ refs 4
 kids 0
 OBJECT poly
 name "inhg.003"
+loc 0.0000000 0.0000000 -0.0052118
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -395,6 +404,7 @@ refs 4
 kids 0
 OBJECT poly
 name "inhg.004"
+loc 0.0000000 0.0000000 -0.0052118
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -414,6 +424,7 @@ refs 4
 kids 0
 OBJECT poly
 name "kpa.001"
+loc 0.0000000 0.0000000 0.0069600
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -433,6 +444,7 @@ refs 4
 kids 0
 OBJECT poly
 name "kpa.002"
+loc 0.0000000 0.0000000 0.0069600
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -452,6 +464,7 @@ refs 4
 kids 0
 OBJECT poly
 name "kpa.003"
+loc 0.0000000 0.0000000 0.0069600
 crease 30.0
 texture "altasi.png"
 texrep 1 1
@@ -471,6 +484,7 @@ refs 4
 kids 0
 OBJECT poly
 name "kpa.004"
+loc 0.0000000 0.0000000 0.0069600
 crease 30.0
 texture "altasi.png"
 texrep 1 1

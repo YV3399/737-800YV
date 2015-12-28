@@ -7,7 +7,7 @@
         <name>AUTOPILOT</name>
         <path>Models/Instruments/autopilot-panel.xml</path>
         <offsets>
-            <x-m>0.050</x-m>
+            <x-m>0.070</x-m>
             <y-m>-0.004</y-m>
             <z-m>0.153</z-m>
             <pitch-deg>0</pitch-deg>
@@ -111,7 +111,7 @@
         <name>STANDBY-AH</name>
         <path>Models/Instruments/STANDBY/att-ball.xml</path>
         <offsets>
-            <x-m>-0.030</x-m>
+            <x-m>-0.045</x-m>
             <y-m>-0.156</y-m>
             <z-m>0.052</z-m>
             <pitch-deg>0</pitch-deg>
