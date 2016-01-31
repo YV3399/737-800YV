@@ -1166,7 +1166,7 @@ var afds_mode_recognize = func {
 		var afdsMode = "FD";
 	} elsif ((CMDA == 1 or CMDB == 1) and GS == 0 and GS_armed == 0) {
 		var afdsMode = "CMD";
-	} elsif ((CMDA == 1 or CMDB == 1) and (GS == 1 or GS_armed == 1) and LOC == 1) {
+	} elsif ((CMDA == 1 or CMDB == 1) and (GS == 1 or GS_armed == 1) and LOC == 1 and flare_arm == 0) {
 		var afdsMode = "SINGLE CH";
 	} elsif (CMDA == 1 and CMDB == 1 and flare_arm == 1) {
 		var afdsMode = "CMD";
