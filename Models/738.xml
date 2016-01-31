@@ -16,9 +16,9 @@
   <model n="110">
     <name>Pushback</name>
     <offsets>
-      <x-m>-17.0</x-m>
+      <x-m>-16.5</x-m>
       <y-m>0</y-m>
-      <z-m>-4.0</z-m>
+      <z-m>-2.75</z-m>
     </offsets>
   </model>
   <!-- Lights -->
