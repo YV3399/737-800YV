@@ -13,9 +13,9 @@
         <name>EICAS2</name>
         <path>Models/Instruments/EICAS/eicas.xml</path>
         <offsets>
-            <x-m>0.435</x-m>
-            <y-m>-0.020</y-m>
-            <z-m>0.733</z-m>
+            <x-m>0.426</x-m>
+            <y-m>-0.021</y-m>
+            <z-m>0.738</z-m>
             <pitch-deg>299.5</pitch-deg>
         </offsets>
     </model>
@@ -23,9 +23,9 @@
         <name>CDU1</name>
         <path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
         <offsets>
-            <x-m>0.480</x-m>
-            <y-m>-0.202</y-m>
-            <z-m>0.715</z-m>
+            <x-m>0.460</x-m>
+            <y-m>-0.203</y-m>
+            <z-m>0.725</z-m>
             <pitch-deg>299.5</pitch-deg>
         </offsets>
 
@@ -35,9 +35,9 @@
         <name>CDU2</name>
         <path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
         <offsets>
-            <x-m>0.480</x-m>
-            <y-m>0.160</y-m>
-            <z-m>0.715</z-m>
+            <x-m>0.460</x-m>
+            <y-m>0.162</y-m>
+            <z-m>0.725</z-m>
             <pitch-deg>299.5</pitch-deg>
         </offsets>
         <overlay>
