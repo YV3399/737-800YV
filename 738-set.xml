@@ -83,6 +83,68 @@
 		<max-positive-g>2.5</max-positive-g> 
 	</limits>
 
+	<payload>
+		<pax>
+			<business type="double">6</business>
+			<tourist type="double">22</tourist>
+			<economy type="double">50</economy>
+		</pax>
+		<weight>
+			<name type="string">Business class (8 pax max)</name>
+			<weight-lb alias="/payload/pax/business"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">8</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Tourist class (54 pax max)</name>
+			<weight-lb alias="/payload/pax/tourist"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">54</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Economy class (96 pax max)</name>
+			<weight-lb alias="/payload/pax/economy"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">96</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Cargo compartment 1A</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">1218</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Cargo compartment 1B</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">741</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Cargo compartment 2</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">5887</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Cargo compartment 3</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[6]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">9008</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Cargo compartment 4A</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[7]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">798</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Cargo compartment 4B</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[8]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">886</max-lb>
+		</weight>
+	</payload>
+
 </PropertyList>
 
 

@@ -53,6 +53,89 @@
             <y>   0 </y>
             <z>   0 </z>
         </location>
+
+        <pointmass name="Cabin Zone 0A"> <!-- Business class (8 pax max) Row 1-2 --> 
+            <weight unit="LBS"> 1324 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 301.5 </x>
+                <y> 0 </y>
+                <z> 27.5 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cabin Zone 0B"> <!-- Tourist class (54 pax max) Row 10-19 --> 
+            <weight unit="LBS"> 1324 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 541 </x>
+                <y> 0 </y>
+                <z> 27.5 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cabin Zone 0C"> <!-- Economy class (96 pax max) Row 20-36 --> 
+            <weight unit="LBS"> 1324 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 874 </x>
+                <y> 0 </y>
+                <z> 27.5 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 1A"> <!-- max 553 kg/1218 lbs --> 
+            <weight unit="LBS"> 500 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 284 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+
+        <pointmass name="Cargo compartment 1B"> <!-- max 336 kg/741 lbs --> 
+            <weight unit="LBS"> 200 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 334 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 2"> <!-- max 2670 kg/5887 lbs --> 
+            <weight unit="LBS"> 2500 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 464 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 3"> <!-- max 4086 kg/9008 lbs --> 
+            <weight unit="LBS"> 4000 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 932.5 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 4A"> <!-- max 362 kg/798 lbs --> 
+            <weight unit="LBS"> 400 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 1097.5 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 4B"> <!-- max 402 kg/886 lbs --> 
+            <weight unit="LBS"> 200 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 1175.5 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
     </mass_balance>
 
     <ground_reactions>
@@ -1307,7 +1390,6 @@
                     <property>aero/function/kCLge</property>
                     <property>aero/function/kCLsb</property>
                     <property>aero/function/kCLsp</property>
-                    <sum>
                     <table>
                         <independentVar>aero/alpha-rad</independentVar>
                         <tableData>
@@ -1374,8 +1456,6 @@
                             0.8727  1.2426
                         </tableData>
                     </table>
-                    <property>metrics/lift</property>
-                </sum>
                 </product>
             </function>
 
@@ -1428,7 +1508,7 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/left-aileron-pos-rad</property>
-                    <value>0.07</value>
+                    <value>0.042</value>
                 </product>
             </function>
 
@@ -1438,7 +1518,7 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/right-aileron-pos-rad</property>
-                    <value>0.07</value>
+                    <value>0.042</value>
                 </product>
             </function>
 

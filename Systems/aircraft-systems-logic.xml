@@ -142,4 +142,39 @@
   <output>/b737/warnings/altitude-alert</output>
 </logic>
 
+<!-- convert passengers into mass -->
+
+<filter>
+  <type>gain</type>
+  <gain>170</gain>
+  <input>
+    <prop>/payload/pax/business</prop>
+  </input>
+  <output>
+    <prop>/fdm/jsbsim/inertia/pointmass-weight-lbs[0]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>170</gain>
+  <input>
+    <prop>/payload/pax/tourist</prop>
+  </input>
+  <output>
+    <prop>/fdm/jsbsim/inertia/pointmass-weight-lbs[1]</prop>
+  </output>
+</filter>
+
+<filter>
+  <type>gain</type>
+  <gain>170</gain>
+  <input>
+    <prop>/payload/pax/economy</prop>
+  </input>
+  <output>
+    <prop>/fdm/jsbsim/inertia/pointmass-weight-lbs[2]</prop>
+  </output>
+</filter>
+
 </PropertyList>
