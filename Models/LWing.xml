@@ -643,10 +643,29 @@
  <animation>
   <type>rotate</type>   
   <object-name>spoiler1</object-name>
-  <object-name>spoiler2</object-name>
-   <object-name>spoiler3</object-name>
   <property>surface-positions/spoilers-pos-norm</property>
   <factor>-70</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>1.26</x-m>
+   <y-m>-7.63</y-m>
+   <z-m>0.19</z-m>
+  </center>
+  <axis>
+   <x>-0.325</x>
+   <y>1</y>
+   <z>-0.10</z>
+  </axis>
+ </animation>
+
+    <!-- these are the left outboard flight spoilers --> 
+  
+ <animation>
+  <type>rotate</type>
+  <object-name>spoiler2</object-name>
+   <object-name>spoiler3</object-name>
+  <property>/fdm/jsbsim/fcs/spoilers-23-pos</property>
+  <factor>-1</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>1.26</x-m>
@@ -666,31 +685,9 @@
   <type>rotate</type>   
   <object-name>spoiler4</object-name>
   <object-name>spoiler5</object-name>
-  <property>surface-positions/speedbrake-pos-norm</property>
-  <factor>-40</factor>
+  <property>/fdm/jsbsim/fcs/spoilers-45-pos</property>
+  <factor>-1</factor>
   <offset-deg>0</offset-deg>   
-  <center>
-   <x-m>0.61</x-m>
-   <y-m>-5.62</y-m>
-   <z-m>0.03</z-m>
-  </center>
-  <axis>
-   <x>-0.325</x>
-   <y>1</y>
-   <z>-0.10</z>
-  </axis>
- </animation>
-  
- <!-- these are the left flight spoilers --> 
-  
- <animation>
-  <type>rotate</type>   
-  <object-name>spoiler4</object-name>
-  <object-name>spoiler5</object-name>
-  <property>surface-positions/left-aileron-pos-norm</property>
-  <factor>10</factor>
-  <offset-deg>0</offset-deg>   
-  <max-deg>0</max-deg>
   <center>
    <x-m>0.61</x-m>
    <y-m>-5.62</y-m>
