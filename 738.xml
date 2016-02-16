@@ -40,12 +40,12 @@
         </location>
     </metrics>
 
-    <mass_balance>
-        <ixx unit="SLUG*FT2">    562000 </ixx>
-        <iyy unit="SLUG*FT2"> 1.473e+06 </iyy>
-        <izz unit="SLUG*FT2"> 1.894e+06 </izz>
+    <mass_balance> <!-- MOIs based on reverse engineering of FFS certification tests -->
+        <ixx unit="SLUG*FT2">    445000 </ixx>
+        <iyy unit="SLUG*FT2"> 2.141e+06 </iyy>
+        <izz unit="SLUG*FT2"> 2.588e+06 </izz>
         <ixy unit="SLUG*FT2">         0 </ixy>
-        <ixz unit="SLUG*FT2">      8000 </ixz>
+        <ixz unit="SLUG*FT2">    110000 </ixz>
         <iyz unit="SLUG*FT2">         0 </iyz>
         <emptywt unit="LBS">      97060 </emptywt> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
         <location name="CG" unit="IN">
@@ -369,13 +369,13 @@
         <tank type="FUEL"><!-- Left wing tank -->
             <location unit="IN">
                 <x> 767.01 </x> <!-- based on trimsheet calculation. Correct value -->
-                <y> -80 </y>
-                <z> -18 </z>
+                <y> -350 </y>
+                <z> 26.58 </z>
             </location>
             <drain_location unit="IN">
                 <x> 703.09</x> <!-- based on trimsheet calculation. Correct value -->
-                <y> -80 </y>
-                <z> -18 </z>
+                <y> -200 </y>
+                <z> 10.91 </z>
             </drain_location>
             <capacity unit="LBS"> 8630 </capacity>
             <contents unit="LBS"> 8630 </contents>
@@ -384,13 +384,13 @@
         <tank type="FUEL"><!-- Right wing tank -->
             <location unit="IN">
                 <x> 767.01 </x> <!-- based on trimsheet calculation. Correct value -->
-                <y> 80 </y>
-                <z> -18 </z>
+                <y> 350 </y>
+                <z> 26.58 </z>
             </location>
             <drain_location unit="IN">
                 <x> 703.09</x> <!-- based on trimsheet calculation. Correct value -->
-                <y> 80 </y>
-                <z> -18 </z>
+                <y> 200 </y>
+                <z> 10.91 </z>
             </drain_location>
             <capacity unit="LBS"> 8630 </capacity>
             <contents unit="LBS"> 8630 </contents>
@@ -400,12 +400,12 @@
             <location unit="IN">
                 <x> 675.41 </x> <!-- based on trimsheet calculation. Correct value -->
                 <y>   0 </y>
-                <z> -18 </z>
+                <z> -19.54 </z>
             </location>
             <drain_location unit="IN">
                 <x> 675.46 </x> <!-- based on trimsheet calculation. Correct value -->
                 <y> 0 </y>
-                <z> -18 </z>
+                <z> -97.4 </z>
             </drain_location>
             <capacity unit="LBS"> 28803 </capacity>
             <contents unit="LBS">  9000 </contents>
