@@ -36,16 +36,16 @@
         <location name="VRP" unit="M">
             <x> 19.8099 </x>
             <y> 0 </y>
-            <z> -0.0785 </z>
+            <z> 0.0785 </z>
         </location>
     </metrics>
 
-    <mass_balance>
-        <ixx unit="SLUG*FT2">    562000 </ixx>
-        <iyy unit="SLUG*FT2"> 1.473e+06 </iyy>
-        <izz unit="SLUG*FT2"> 1.894e+06 </izz>
+    <mass_balance> <!-- MOIs based on reverse engineering of FFS certification tests -->
+        <ixx unit="SLUG*FT2">    445000 </ixx>
+        <iyy unit="SLUG*FT2"> 2.141e+06 </iyy>
+        <izz unit="SLUG*FT2"> 2.588e+06 </izz>
         <ixy unit="SLUG*FT2">         0 </ixy>
-        <ixz unit="SLUG*FT2">      8000 </ixz>
+        <ixz unit="SLUG*FT2">    110000 </ixz>
         <iyz unit="SLUG*FT2">         0 </iyz>
         <emptywt unit="LBS">      97060 </emptywt> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
         <location name="CG" unit="IN">
@@ -53,10 +53,93 @@
             <y>   0 </y>
             <z>   0 </z>
         </location>
+
+        <pointmass name="Cabin Zone 0A"> <!-- Business class (8 pax max) Row 1-2 --> 
+            <weight unit="LBS"> 1324 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 301.5 </x>
+                <y> 0 </y>
+                <z> 27.5 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cabin Zone 0B"> <!-- Tourist class (54 pax max) Row 10-19 --> 
+            <weight unit="LBS"> 1324 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 541 </x>
+                <y> 0 </y>
+                <z> 27.5 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cabin Zone 0C"> <!-- Economy class (96 pax max) Row 20-36 --> 
+            <weight unit="LBS"> 1324 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 874 </x>
+                <y> 0 </y>
+                <z> 27.5 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 1A"> <!-- max 553 kg/1218 lbs --> 
+            <weight unit="LBS"> 500 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 284 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+
+        <pointmass name="Cargo compartment 1B"> <!-- max 336 kg/741 lbs --> 
+            <weight unit="LBS"> 200 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 334 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 2"> <!-- max 2670 kg/5887 lbs --> 
+            <weight unit="LBS"> 2500 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 464 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 3"> <!-- max 4086 kg/9008 lbs --> 
+            <weight unit="LBS"> 4000 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 932.5 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 4A"> <!-- max 362 kg/798 lbs --> 
+            <weight unit="LBS"> 400 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 1097.5 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
+        <pointmass name="Cargo compartment 4B"> <!-- max 402 kg/886 lbs --> 
+            <weight unit="LBS"> 200 </weight>
+            <location name="POINTMASS" unit="IN">
+                <x> 1175.5 </x>
+                <y> 0 </y>
+                <z> -30 </z>
+            </location>
+        </pointmass>
+
     </mass_balance>
 
     <ground_reactions>
-        <contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NWG compression is 12 in, but it's not looking as true -->
+        <contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NLG compression is 15.5 in -->
             <location unit="IN">
                 <x> 161 </x>
                 <y>   0 </y>
@@ -65,23 +148,72 @@
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 60000 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
-            <damping_coeff_rebound unit="LBS/FT/SEC">4000</damping_coeff_rebound>
-            <relaxation_velocity>
-              <rolling unit="FT/SEC">0.7</rolling>
-              <side unit="FT/SEC">0.7</side>
-            </relaxation_velocity>
-            <force_lag_filter>
-              <rolling> 120.0 </rolling>
-              <side>120.0 </side>
-            </force_lag_filter>
-            <wheel_slip_filter> 120.0 </wheel_slip_filter>
+            <strut_force>
+                <function>
+                    <sum>
+                        <product>
+                            <value>-1</value>
+                            <table>
+                                <independentVar>gear/unit[0]/compression-ft</independentVar>
+                                <tableData>
+                                    0       0
+                                    0.042   840
+                                    0.083   969
+                                    0.125   1108
+                                    0.167   1256
+                                    0.208   1414
+                                    0.25    1585
+                                    0.292   1770
+                                    0.333   1969
+                                    0.375   2185
+                                    0.417   2421
+                                    0.458   2679
+                                    0.5     2962
+                                    0.542   3274
+                                    0.583   3621
+                                    0.625   4007
+                                    0.667   4440
+                                    0.708   4930
+                                    0.75    5488
+                                    0.792   6129
+                                    0.833   6873
+                                    0.875   7748
+                                    0.917   8792
+                                    0.958   10059
+                                    1       11627
+                                    1.042   13620
+                                    1.083   16238
+                                    1.125   19828
+                                    1.167   25055
+                                    1.208   33371
+                                    1.25    48660
+                                    1.292   86030
+                                    1.3     200000
+                                </tableData>
+                            </table>
+                        </product>
+                        <ifthen>
+                            <ge>
+                                <property> gear/unit[0]/compression-velocity-fps </property>
+                                <value> 0.0 </value>
+                            </ge>
+                            <product>
+                                <value> -8000 </value>
+                                <property> gear/unit[0]/compression-velocity-fps </property>
+                            </product>
+                            <product>
+                                <value> -12000 </value>
+                                <property> gear/unit[0]/compression-velocity-fps </property>
+                            </product>
+                        </ifthen>
+                    </sum>
+                </function>
+            </strut_force>
             <max_steer unit="DEG"> 78 </max_steer>
             <brake_group> NONE </brake_group>
             <retractable>1</retractable>
         </contact>
-        <contact name="Left Main Gear" type="BOGEY">
+        <contact name="Left Main Gear" type="BOGEY"> <!-- from AMM - maximum MLG compression is 16 in -->
             <location unit="IN">
                 <x>  775 </x>
                 <y> -112.5 </y>
@@ -90,23 +222,73 @@
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 120000 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 10000 </damping_coeff>
-            <damping_coeff_rebound unit="LBS/FT/SEC">10000</damping_coeff_rebound>
-            <relaxation_velocity>
-              <rolling unit="FT/SEC">0.7</rolling>
-              <side unit="FT/SEC">0.7</side>
-            </relaxation_velocity>
-            <force_lag_filter>
-              <rolling> 120.0 </rolling>
-              <side> 120.0 </side>
-            </force_lag_filter>
-            <wheel_slip_filter> 120.0 </wheel_slip_filter>
+            <strut_force>
+                <function>
+                    <sum>
+                        <product>
+                            <value>-1</value>
+                            <table>
+                                <independentVar>gear/unit[1]/compression-ft</independentVar>
+                                <tableData>
+                                    0       0
+                                    0.042   555
+                                    0.083   1160
+                                    0.125   1804
+                                    0.167   2490
+                                    0.208   3222
+                                    0.25    4005
+                                    0.292   4844
+                                    0.333   5747
+                                    0.375   6719
+                                    0.417   7770
+                                    0.458   8910
+                                    0.5     10150
+                                    0.542   11504
+                                    0.583   12989
+                                    0.625   14625
+                                    0.667   16435
+                                    0.708   18449
+                                    0.75    20705
+                                    0.792   23247
+                                    0.833   26135
+                                    0.875   29444
+                                    0.917   33273
+                                    0.958   37755
+                                    1       43073
+                                    1.042   49485
+                                    1.083   57368
+                                    1.125   67292
+                                    1.167   80169
+                                    1.208   97547
+                                    1.25    122286
+                                    1.292   160318
+                                    1.333   226295
+                                    1.35    500000
+                                </tableData>
+                            </table>
+                        </product>
+                        <ifthen>
+                            <ge>
+                                <property> gear/unit[1]/compression-velocity-fps </property>
+                                <value> 0.0 </value>
+                            </ge>
+                            <product>
+                                <value> -20000 </value>
+                                <property> gear/unit[1]/compression-velocity-fps </property>
+                            </product>
+                            <product>
+                                <value> -30000 </value>
+                                <property> gear/unit[1]/compression-velocity-fps </property>
+                            </product>
+                        </ifthen>
+                    </sum>
+                </function>
+            </strut_force>
             <max_steer unit="DEG"> 0.0 </max_steer>
             <brake_group> LEFT </brake_group>
             <retractable>1</retractable>
         </contact>
-        <contact name="Right Main Gear" type="BOGEY">
+        <contact name="Right Main Gear" type="BOGEY"> <!-- from AMM - maximum MLG compression is 16 in -->
             <location unit="IN">
                 <x> 775 </x>
                 <y> 112.5 </y>
@@ -115,18 +297,68 @@
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 120000 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 10000 </damping_coeff>
-            <damping_coeff_rebound unit="LBS/FT/SEC">10000</damping_coeff_rebound>
-            <relaxation_velocity>
-              <rolling unit="FT/SEC">0.7</rolling>
-              <side unit="FT/SEC">0.7</side>
-            </relaxation_velocity>
-            <force_lag_filter>
-              <rolling> 120.0 </rolling>
-              <side> 120.0 </side>
-            </force_lag_filter>
-            <wheel_slip_filter> 120.0 </wheel_slip_filter>
+            <strut_force>
+                <function>
+                    <sum>
+                        <product>
+                            <value>-1</value>
+                            <table>
+                                <independentVar>gear/unit[2]/compression-ft</independentVar>
+                                <tableData>
+                                    0       0
+                                    0.042   555
+                                    0.083   1160
+                                    0.125   1804
+                                    0.167   2490
+                                    0.208   3222
+                                    0.25    4005
+                                    0.292   4844
+                                    0.333   5747
+                                    0.375   6719
+                                    0.417   7770
+                                    0.458   8910
+                                    0.5     10150
+                                    0.542   11504
+                                    0.583   12989
+                                    0.625   14625
+                                    0.667   16435
+                                    0.708   18449
+                                    0.75    20705
+                                    0.792   23247
+                                    0.833   26135
+                                    0.875   29444
+                                    0.917   33273
+                                    0.958   37755
+                                    1       43073
+                                    1.042   49485
+                                    1.083   57368
+                                    1.125   67292
+                                    1.167   80169
+                                    1.208   97547
+                                    1.25    122286
+                                    1.292   160318
+                                    1.333   226295
+                                    1.35    500000
+                                </tableData>
+                            </table>
+                        </product>
+                        <ifthen>
+                            <ge>
+                                <property> gear/unit[2]/compression-velocity-fps </property>
+                                <value> 0.0 </value>
+                            </ge>
+                            <product>
+                                <value> -20000 </value>
+                                <property> gear/unit[2]/compression-velocity-fps </property>
+                            </product>
+                            <product>
+                                <value> -30000 </value>
+                                <property> gear/unit[2]/compression-velocity-fps </property>
+                            </product>
+                        </ifthen>
+                    </sum>
+                </function>
+            </strut_force>
             <max_steer unit="DEG"> 0.0 </max_steer>
             <brake_group> RIGHT </brake_group>
             <retractable>1</retractable>
@@ -137,6 +369,22 @@
                 <x> 1417.05 </x>
                 <y> 0 </y>
                 <z> -13.5 </z> <!-- BWL 194.60 -->
+            </location>
+            <static_friction> 1 </static_friction>
+            <dynamic_friction> 1 </dynamic_friction>
+            <rolling_friction> 0 </rolling_friction>
+            <spring_coeff unit="LBS/FT"> 20000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 5000 </damping_coeff>
+            <max_steer unit="DEG"> 0 </max_steer>
+            <brake_group> NONE </brake_group>
+            <retractable> 0 </retractable>
+        </contact>
+
+        <contact type="STRUCTURE" name="NOSE">
+            <location unit="IN">
+                <x> 0 </x>
+                <y> 0 </y>
+                <z> 0 </z>
             </location>
             <static_friction> 1 </static_friction>
             <dynamic_friction> 1 </dynamic_friction>
@@ -204,13 +452,13 @@
         <tank type="FUEL"><!-- Left wing tank -->
             <location unit="IN">
                 <x> 767.01 </x> <!-- based on trimsheet calculation. Correct value -->
-                <y> -80 </y>
-                <z> -18 </z>
+                <y> -350 </y>
+                <z> 26.58 </z>
             </location>
             <drain_location unit="IN">
                 <x> 703.09</x> <!-- based on trimsheet calculation. Correct value -->
-                <y> -80 </y>
-                <z> -18 </z>
+                <y> -200 </y>
+                <z> 10.91 </z>
             </drain_location>
             <capacity unit="LBS"> 8630 </capacity>
             <contents unit="LBS"> 8630 </contents>
@@ -219,13 +467,13 @@
         <tank type="FUEL"><!-- Right wing tank -->
             <location unit="IN">
                 <x> 767.01 </x> <!-- based on trimsheet calculation. Correct value -->
-                <y> 80 </y>
-                <z> -18 </z>
+                <y> 350 </y>
+                <z> 26.58 </z>
             </location>
             <drain_location unit="IN">
                 <x> 703.09</x> <!-- based on trimsheet calculation. Correct value -->
-                <y> 80 </y>
-                <z> -18 </z>
+                <y> 200 </y>
+                <z> 10.91 </z>
             </drain_location>
             <capacity unit="LBS"> 8630 </capacity>
             <contents unit="LBS"> 8630 </contents>
@@ -235,12 +483,12 @@
             <location unit="IN">
                 <x> 675.41 </x> <!-- based on trimsheet calculation. Correct value -->
                 <y>   0 </y>
-                <z> -18 </z>
+                <z> -19.54 </z>
             </location>
             <drain_location unit="IN">
                 <x> 675.46 </x> <!-- based on trimsheet calculation. Correct value -->
                 <y> 0 </y>
-                <z> -18 </z>
+                <z> -97.4 </z>
             </drain_location>
             <capacity unit="LBS"> 28803 </capacity>
             <contents unit="LBS">  9000 </contents>
@@ -588,114 +836,237 @@
         <channel name="Flight Spoilers">
           <!-- operated by the speedbrake handle and roll control -->
 
-          <fcs_function name="Left outbrd spoilers command">
+          <fcs_function name="Outboard spoiler command low">
                 <function>
                     <table>
                         <independentVar>fcs/roll-trim-sum</independentVar>
                         <tableData>
--1  33.0184
--0.9885057471   33.0184
--0.9770114943   33.0184
--0.9655172414   33.0184
--0.9540229885   32.7803
--0.9425287356   32.444
--0.9310344828   32.10765
--0.9195402299   31.77135
--0.908045977    31.43505
--0.8965517241   31.08955
--0.8850574713   30.6224
--0.8735632184   30.08215
--0.8620689655   29.378
--0.8505747126   28.67385
--0.8390804598   27.9697
--0.8275862069   27.26555
--0.816091954    26.5761
--0.8045977011   25.93135
--0.7931034483   25.2966
--0.7816091954   24.6618
--0.7701149425   24.02705
--0.7586206897   23.3923
--0.7471264368   22.7575
--0.7356321839   22.12275
--0.724137931    21.488
--0.7126436782   20.85325
--0.7011494253   20.2185
--0.6896551724   19.58375
--0.6781609195   19.04075
--0.6666666667   18.52865
--0.6551724138   18.0166
--0.6436781609   17.5045
--0.632183908    16.99245
--0.6206896552   16.48035
--0.6091954023   15.9683
--0.5977011494   15.468
--0.5862068966   14.9896
--0.5747126437   14.52185
--0.5632183908   14.0885
--0.5517241379   13.65515
--0.5402298851   13.22175
--0.5287356322   12.7883
--0.5172413793   12.33675
--0.5057471264   11.8852
--0.4942528736   11.4337
--0.4827586207   11.0293
--0.4712643678   10.676655
--0.4597701149   10.33607
--0.4482758621   9.995485
--0.4367816092   9.6549
--0.4252873563   9.314265
--0.4137931034   8.973695
--0.4022988506   8.6331
--0.3908045977   8.29243
--0.3793103448   7.944395
--0.367816092    7.59636
--0.3563218391   7.248325
--0.3448275862   6.90029
--0.3333333333   6.552255
--0.3218390805   6.2255
--0.3103448276   5.932125
--0.2988505747   5.638755
--0.2873563218   5.345385
--0.275862069    5.052015
--0.2643678161   4.75864
--0.2528735632   4.46527
--0.2413793103   4.15397
--0.2298850575   3.83479
--0.2183908046   3.440555
--0.2068965517   3.040925
--0.1954022989   2.574015
--0.183908046    2.030135
--0.1724137931   1.4862485
--0.1609195402   0.942369
--0.1494252874   0.5379572
--0.1379310345   0.2302212
--0.1264367816   0
--0.1149425287   0
--0.1034482759   0
--0.091954023    0
--0.0804597701   0
--0.0689655172   0
--0.0574712644   0
--0.0459770115   0
--0.0344827586   0
--0.0229885057   0
--0.0114942529   0
-0   0
+                            -0.966  -33.0184
+                            -0.954  -32.5422
+                            -0.839  -25.816
+                            -0.69   -17.9607
+                            -0.483  -10.0735
+                            -0.23   -3.08542
+                            -0.172  -0.734767
+                            -0.161  -0.262478
+                            -0.149  0
+                            0.149   0
+                            0.161   0.262478
+                            0.172   0.734767
+                            0.23    3.08542
+                            0.483   10.0735
+                            0.69    17.9607
+                            0.839   25.816
+                            0.954   32.5422
+                            0.966   33.0184
                         </tableData>
                     </table>
                 </function>
-                <output>fcs/spoilers-23-cmd</output>
+                <output>fcs/spoilers-outb-cmd-low</output>
             </fcs_function>
 
-            <actuator name="Spoilers 23 pos deg">
-                <input>fcs/spoilers-23-cmd</input>
-                <lag>0</lag>
-                <rate_limit>100</rate_limit>
-                <bias>0</bias>
-                <deadband_width>1</deadband_width>
-                <hysteresis_width>2</hysteresis_width>
+            <fcs_function name="Outboard spoiler command high">
+                <function>
+                    <table>
+                        <independentVar>fcs/roll-trim-sum</independentVar>
+                        <tableData>
+                            -0.908  -33.0184
+                            -0.897  -33
+                            -0.885  -32.7384
+                            -0.874  -32.3305
+                            -0.828  -29.3878
+                            -0.69   -21.2068
+                            -0.494  -12.3579
+                            -0.322  -6.87439
+                            -0.207  -3.93022
+                            -0.126  -0
+                            0.126   0
+                            0.207   3.93022
+                            0.322   6.87439
+                            0.494   12.3579
+                            0.69    21.2068
+                            0.828   29.3878
+                            0.874   32.3305
+                            0.885   32.7384
+                            0.897   33
+                            0.908   33.0184
+                        </tableData>
+                    </table>
+                </function>
+                <output>fcs/spoilers-outb-cmd-high</output>
+            </fcs_function>
+
+            <pure_gain name="fcs/spoilers-outb-rollpos">
+                <input>fcs/spoilers-outb-rollpos</input>
+                <gain>1</gain>
+                <clipto>
+                    <min>fcs/spoilers-outb-cmd-low</min>
+                    <max>fcs/spoilers-outb-cmd-high</max>
+                </clipto>
+                <output>fcs/spoilers-outb-rollpos</output>
+            </pure_gain>
+
+            <fcs_function name="fcs/spoilers-23-pos">
+                <function>
+                    <sum>
+                        <product>
+                            <property>fcs/spoilers-outb-rollpos</property>
+                            <value>-1</value>
+                        </product>
+                        <table>
+                            <independentVar>fcs/speedbrake-cmd-norm</independentVar>
+                            <tableData>
+                                0       0
+                                0.65    25
+                                1       33
+                            </tableData>
+                        </table>
+                    </sum>
+                </function>
+                <clipto>
+                    <min>0</min>
+                    <max>33</max>
+                </clipto>
                 <output>fcs/spoilers-23-pos</output>
-            </actuator>
+            </fcs_function>
+
+            <fcs_function name="fcs/spoilers-1011-pos">
+                <function>
+                    <sum>
+                        <product>
+                            <property>fcs/spoilers-outb-rollpos</property>
+                            <value>1</value>
+                        </product>
+                        <table>
+                            <independentVar>fcs/speedbrake-cmd-norm</independentVar>
+                            <tableData>
+                                0       0
+                                0.65    25
+                                1       33
+                            </tableData>
+                        </table>
+                    </sum>
+                </function>
+                <clipto>
+                    <min>0</min>
+                    <max>33</max>
+                </clipto>
+                <output>fcs/spoilers-1011-pos</output>
+            </fcs_function>
+
+            <fcs_function name="Inboard spoiler command low">
+                <function>
+                    <table>
+                        <independentVar>fcs/roll-trim-sum</independentVar>
+                        <tableData>
+                            -0.931  -38.0876
+                            -0.851  -32.9198
+                            -0.759  -27.2137
+                            -0.667  -21.8692
+                            -0.253  -7.35186
+                            -0.172  -4.15259
+                            -0.115  0
+                            0.115   0
+                            0.172   4.15259
+                            0.253   7.35186
+                            0.667   21.8692
+                            0.759   27.2137
+                            0.851   32.9198
+                            0.931   38.0876
+                        </tableData>
+                    </table>
+                </function>
+                <output>fcs/spoilers-inbd-cmd-low</output>
+            </fcs_function>
+
+            <fcs_function name="Inboard spoiler command high">
+                <function>
+                    <table>
+                        <independentVar>fcs/roll-trim-sum</independentVar>
+                        <tableData>
+                            -0.874  -38.0876
+                            -0.839  -37.0523
+                            -0.759  -31.2959
+                            -0.678  -25.9222
+                            -0.575  -20.416
+                            -0.46   -15.5011
+                            -0.345  -11.8071
+                            -0.207  -7.50588
+                            -0.161  -5.15716
+                            -0.08   0
+                            0.08    0
+                            0.161   5.15716
+                            0.207   7.50588
+                            0.345   11.8071
+                            0.46    15.5011
+                            0.575   20.416
+                            0.678   25.9222
+                            0.759   31.2959
+                            0.839   37.0523
+                            0.874   38.0876
+                        </tableData>
+                    </table>
+                </function>
+                <output>fcs/spoilers-inbd-cmd-high</output>
+            </fcs_function>
+
+            <pure_gain name="fcs/spoilers-inbd-rollpos">
+                <input>fcs/spoilers-inbd-rollpos</input>
+                <gain>1</gain>
+                <clipto>
+                    <min>fcs/spoilers-inbd-cmd-low</min>
+                    <max>fcs/spoilers-inbd-cmd-high</max>
+                </clipto>
+                <output>fcs/spoilers-inbd-rollpos</output>
+            </pure_gain>
+
+            <fcs_function name="fcs/spoilers-45-pos">
+                <function>
+                    <sum>
+                        <product>
+                            <property>fcs/spoilers-inbd-rollpos</property>
+                            <value>-1</value>
+                        </product>
+                        <table>
+                            <independentVar>fcs/speedbrake-cmd-norm</independentVar>
+                            <tableData>
+                                0       0
+                                0.65    32
+                                1       38
+                            </tableData>
+                        </table>
+                    </sum>
+                </function>
+                <clipto>
+                    <min>0</min>
+                    <max>38</max>
+                </clipto>
+                <output>fcs/spoilers-45-pos</output>
+            </fcs_function>
+
+            <fcs_function name="fcs/spoilers-89-pos">
+                <function>
+                    <sum>
+                        <product>
+                            <property>fcs/spoilers-inbd-rollpos</property>
+                            <value>1</value>
+                        </product>
+                        <table>
+                            <independentVar>fcs/speedbrake-cmd-norm</independentVar>
+                            <tableData>
+                                0       0
+                                0.65    32
+                                1       38
+                            </tableData>
+                        </table>
+                    </sum>
+                </function>
+                <clipto>
+                    <min>0</min>
+                    <max>38</max>
+                </clipto>
+                <output>fcs/spoilers-89-pos</output>
+            </fcs_function>
 
 
             <kinematic name="Flight Spoilers Control">
@@ -1140,9 +1511,6 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>aero/function/kCLge</property>
-                    <property>aero/function/kCLsb</property>
-                    <property>aero/function/kCLsp</property>
-                    <sum>
                     <table>
                         <independentVar>aero/alpha-rad</independentVar>
                         <tableData>
@@ -1209,8 +1577,6 @@
                             0.8727  1.2426
                         </tableData>
                     </table>
-                    <property>metrics/lift</property>
-                </sum>
                 </product>
             </function>
 
@@ -1220,8 +1586,6 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>aero/function/kCLge</property>
-                    <property>aero/function/kCLsb</property>
-                    <property>aero/function/kCLsp</property>
                     <table>
                         <independentVar>fcs/flap-pos-norm</independentVar>
                         <tableData>
@@ -1263,7 +1627,7 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/left-aileron-pos-rad</property>
-                    <value>0.07</value>
+                    <value>0.042</value>
                 </product>
             </function>
 
@@ -1273,7 +1637,71 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/right-aileron-pos-rad</property>
-                    <value>0.07</value>
+                    <value>0.042</value>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/CLdspl23">
+                <description>Lift_loss_due_to_spoiler_2_3_deflection</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/spoilers-23-pos</property>
+                    <table>
+                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <tableData>
+                            0       -0.0008
+                            1       -0.00225
+                        </tableData>
+                    </table>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/CLdspl45">
+                <description>Lift_loss_due_to_spoiler_4_5_deflection</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/spoilers-45-pos</property>
+                    <table>
+                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <tableData>
+                            0       -0.0008
+                            1       -0.00225
+                        </tableData>
+                    </table>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/CLdspl89">
+                <description>Lift_loss_due_to_spoiler_8_9_deflection</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/spoilers-89-pos</property>
+                    <table>
+                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <tableData>
+                            0       -0.0008
+                            1       -0.00225
+                        </tableData>
+                    </table>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/CLdspl1011">
+                <description>Lift_loss_due_to_spoiler_10_11_deflection</description>
+                <product>
+                    <property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>fcs/spoilers-1011-pos</property>
+                    <table>
+                        <independentVar>fcs/flap-pos-norm</independentVar>
+                        <tableData>
+                            0       -0.0008
+                            1       -0.00225
+                        </tableData>
+                    </table>
                 </product>
             </function>
 
@@ -1336,6 +1764,62 @@
                     <property>aero/coefficient/CLdrail</property>
                     <sum>
                         <value>-44.5</value>
+                        <quotient>
+                            <property>inertia/cg-y-in</property>
+                            <value>12</value>
+                        </quotient>
+                    </sum>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/Cldspl23">
+                <description>Roll_moment_due_to_spoilers_2_3</description>
+                <product>
+                    <property>aero/coefficient/CLdspl23</property>
+                    <sum>
+                        <value>30</value>
+                        <quotient>
+                            <property>inertia/cg-y-in</property>
+                            <value>12</value>
+                        </quotient>
+                    </sum>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/Cldspl45">
+                <description>Roll_moment_due_to_spoilers_4_5</description>
+                <product>
+                    <property>aero/coefficient/CLdspl45</property>
+                    <sum>
+                        <value>24.5</value>
+                        <quotient>
+                            <property>inertia/cg-y-in</property>
+                            <value>12</value>
+                        </quotient>
+                    </sum>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/Cldspl89">
+                <description>Roll_moment_due_to_spoilers_8_9</description>
+                <product>
+                    <property>aero/coefficient/CLdspl89</property>
+                    <sum>
+                        <value>-24.5</value>
+                        <quotient>
+                            <property>inertia/cg-y-in</property>
+                            <value>12</value>
+                        </quotient>
+                    </sum>
+                </product>
+            </function>
+
+            <function name="aero/coefficient/Cldspl1011">
+                <description>Roll_moment_due_to_spoilers_10_11</description>
+                <product>
+                    <property>aero/coefficient/CLdspl1011</property>
+                    <sum>
+                        <value>-30</value>
                         <quotient>
                             <property>inertia/cg-y-in</property>
                             <value>12</value>

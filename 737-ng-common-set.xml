@@ -384,6 +384,17 @@
         <lift type="double">0.0</lift>
         <basic-moment type="double">-0.25</basic-moment>
       </metrics>
+      <gear>
+        <unit n="0">
+          <compression-ft type="double">0</compression-ft>
+        </unit>
+        <unit n="1">
+          <compression-ft type="double">0</compression-ft>
+        </unit>
+        <unit n="2">
+          <compression-ft type="double">0</compression-ft>
+        </unit>
+      </gear>
     </jsbsim>
   </fdm>
 
@@ -406,7 +417,6 @@
       <apdisco type="bool">0</apdisco>
       <spoiler-auto type="bool">0</spoiler-auto>
       <stab-trim type="bool">0</stab-trim>
-      <sound-pack type="int">2</sound-pack>
       <mcp-last-change type="double">0</mcp-last-change>
     </sound>
     <ap-hide-helper type="bool">0</ap-hide-helper>
@@ -608,15 +618,6 @@
       <spin type="double">1</spin>
     </turn-indicator>
 
-<!--
-    <vor-adf>
-      <vor1-select type="double">1</vor1-select>
-      <vor2-select type="double">1</vor2-select>
-      <adf1-select type="double">0</adf1-select>
-      <adf2-select type="double">0</adf2-select>
-    </vor-adf> 
--->
-
     <cdu>
       <display>IDENT</display>
       <ident>
@@ -660,6 +661,26 @@
       <z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
     </antenna>
   </radar-altimeter>
+
+    <efis n="0">
+      <inputs>
+        <range-knob type="int">3</range-knob>
+        <kpa-mode type="bool">1</kpa-mode>
+        <baro-knob type="double">0</baro-knob>
+        <baro-previous type="double">1013</baro-previous>
+        <baro-previous-show type="bool">0</baro-previous-show>
+      </inputs>
+    </efis>
+
+    <efis n="1">
+      <inputs>
+        <range-knob type="int">3</range-knob>
+        <kpa-mode type="bool">1</kpa-mode>
+        <baro-knob type="double">0</baro-knob>
+        <baro-previous type="double">1013</baro-previous>
+        <baro-previous-show type="bool">0</baro-previous-show>
+      </inputs>
+    </efis>
 
   </instrumentation>
 

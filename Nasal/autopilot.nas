@@ -266,7 +266,7 @@ if (AT_arm) {
 	setprop("/autopilot/internal/SPD-SPEED", 0);
 	setprop("/autopilot/internal/SPD-RETARD", 1);
 
-	setprop("/autopilot/internal/target-n1", 22);
+	setprop("/autopilot/internal/target-n1", 19.76);
 
 	setprop("/autopilot/display/throttle-mode-last-change", getprop("/sim/time/elapsed-sec"));
 	setprop("/autopilot/display/throttle-mode", "RETARD");
@@ -1166,9 +1166,7 @@ var afds_mode_recognize = func {
 		var afdsMode = "FD";
 	} elsif ((CMDA == 1 or CMDB == 1) and GS == 0 and GS_armed == 0) {
 		var afdsMode = "CMD";
-	} elsif (CMDA == 1 and CMDB == 0 and (GS == 1 or GS_armed == 1) and LOC == 1) {
-		var afdsMode = "SINGLE CH";
-	} elsif (CMDA == 0 and CMDB == 1 and (GS == 1 or GS_armed == 1) and LOC == 1) {
+	} elsif ((CMDA == 1 or CMDB == 1) and (GS == 1 or GS_armed == 1) and LOC == 1 and flare_arm == 0) {
 		var afdsMode = "SINGLE CH";
 	} elsif (CMDA == 1 and CMDB == 1 and flare_arm == 1) {
 		var afdsMode = "CMD";

@@ -7,9 +7,9 @@
         <name>AUTOPILOT</name>
         <path>Models/Instruments/autopilot-panel.xml</path>
         <offsets>
-            <x-m>0.080</x-m>
+            <x-m>0.130</x-m>
             <y-m>-0.004</y-m>
-            <z-m>0.148</z-m>
+            <z-m>0.153</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -18,9 +18,9 @@
         <name>PFD1</name>
         <path>Models/Instruments/PFD/PFD.xml</path>
         <offsets>
-            <x-m>-0.02</x-m>
-            <y-m>-0.512</y-m>
-            <z-m>-0.020</z-m>
+            <x-m>-0.026</x-m>
+            <y-m>-0.532</y-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -37,9 +37,9 @@
         <name>PFD2</name>
         <path>Models/Instruments/PFD/PFD.xml</path>
         <offsets>
-            <x-m>-0.02</x-m>
+            <x-m>-0.026</x-m>
             <y-m>0.489</y-m>
-            <z-m>-0.020</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -48,9 +48,9 @@
         <name>ND1</name>
         <path>Models/Instruments/ND/nd_l.xml</path>
         <offsets>
-            <x-m>-0.02</x-m>
-            <y-m>-0.298</y-m>
-            <z-m>-0.020</z-m>
+            <x-m>-0.026</x-m>
+            <y-m>-0.318</y-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -59,9 +59,9 @@
         <name>ND2</name>
         <path>Models/Instruments/ND/nd_r.xml</path>
         <offsets>
-            <x-m>-0.02</x-m>
+            <x-m>-0.026</x-m>
             <y-m>0.276</y-m>
-            <z-m>-0.020</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -78,9 +78,9 @@
         <name>EICAS</name>
         <path>Models/Instruments/EICAS/eicas.xml</path>
         <offsets>
-            <x-m>-0.02</x-m>
-            <y-m>-0.002</y-m>
-            <z-m>-0.020</z-m>
+            <x-m>-0.026</x-m>
+            <y-m>0.002</y-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -90,8 +90,8 @@
         <path>Models/Instruments/CLOCK/chronometer.xml</path>
         <offsets>
             <x-m>-0.02</x-m>
-            <y-m>-0.679</y-m>
-            <z-m>0.0</z-m>
+            <y-m>-0.689</y-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -102,7 +102,7 @@
         <offsets>
             <x-m>-0.02</x-m>
             <y-m>0.651</y-m>
-            <z-m>0.0</z-m>
+            <z-m>-0.062</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -111,9 +111,9 @@
         <name>STANDBY-AH</name>
         <path>Models/Instruments/STANDBY/att-ball.xml</path>
         <offsets>
-            <x-m>-0.050</x-m>
-            <y-m>-0.149</y-m>
-            <z-m>0.086</z-m>
+            <x-m>-0.045</x-m>
+            <y-m>-0.156</y-m>
+            <z-m>0.052</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -122,9 +122,9 @@
         <name>STANDBY-VOR</name>
         <path>Models/Instruments/STANDBY/vor.xml</path>
         <offsets>
-            <x-m>-0.050</x-m>
-            <y-m>-0.149</y-m>
-            <z-m>-0.053</z-m>
+            <x-m>-0.045</x-m>
+            <y-m>-0.156</y-m>
+            <z-m>-0.123</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -133,9 +133,9 @@
         <name>STANDBY-ASI</name>
         <path>Models/Instruments/STANDBY/standby-asi.xml</path>
         <offsets>
-            <x-m>-0.050</x-m>
-            <y-m>-0.149</y-m>
-            <z-m>0.015</z-m>
+            <x-m>-0.045</x-m>
+            <y-m>-0.156</y-m>
+            <z-m>-0.035</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -147,8 +147,8 @@
         <factor>-45</factor>
         <center>
             <x-m>-6.943</x-m>
-            <y-m>0.0159</y-m>
-            <z-m>0.1058</z-m>
+            <y-m>0.0212</y-m>
+            <z-m>0.07033</z-m>
         </center>
         <axis>
             <x>1.0</x>
@@ -175,8 +175,8 @@
         <center>
 
             <x-m>-6.94</x-m>
-            <y-m>0.062</y-m>
-            <z-m>0.113</z-m>
+            <y-m>0.081</y-m>
+            <z-m>0.07277</z-m>
         </center>
         <axis>
             <x>1</x>

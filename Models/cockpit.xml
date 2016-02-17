@@ -15,10 +15,10 @@
         <name>flightdesk</name>
         <path>flightdesk.xml</path>
         <offsets>
-            <x-m>0.400</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.90</z-m>
-            <pitch-deg>-14</pitch-deg>
+            <x-m>0.430</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.91</z-m>
+            <pitch-deg>-15</pitch-deg>
         </offsets>
     </model>
 
@@ -26,9 +26,9 @@
         <name>pedestal</name>
         <path>pedestal.xml</path>
         <offsets>
-            <x-m>0.100</x-m>
+            <x-m>0.1150</x-m>
             <y-m>0.0</y-m>
-            <z-m>-0.030</z-m>
+            <z-m>-0.075</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -1778,7 +1778,7 @@
       <center>
           <x-m>1.0</x-m>
           <y-m>-0.535</y-m>
-          <z-m>0.854</z-m>
+          <z-m>0.908</z-m>
       </center>
       <axis>
           <x>-1</x>
@@ -1795,7 +1795,7 @@
       <center>
           <x-m>1.0</x-m>
           <y-m>0.497</y-m>
-          <z-m>0.854</z-m>
+          <z-m>0.908</z-m>
       </center>
       <axis>
           <x>-1</x>

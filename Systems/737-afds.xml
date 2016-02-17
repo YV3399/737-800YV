@@ -369,10 +369,16 @@
 
  <logic>
    <input>
-     <greater-than>
-       <property>/b737/helpers/elevator-cmd-av-4</property>
-       <value>0.75</value>
-     </greater-than>
+      <and>
+        <greater-than>
+          <property>/b737/helpers/elevator-cmd-av-4</property>
+          <value>0.75</value>
+        </greater-than>
+        <greater-than>
+          <property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+          <value>400</value>
+        </greater-than>
+      </and>
    </input>
    <output>/b737/helpers/trim-feel-3-4</output>
  </logic>
