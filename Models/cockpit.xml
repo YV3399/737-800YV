@@ -23,6 +23,29 @@
     </model>
 
     <model>
+     <name>captain-pedals</name>
+     <path>pedals.xml</path>
+     <offsets>
+      <x-m>0.430</x-m>
+      <y-m>-0.53</y-m>
+      <z-m>0.315</z-m>
+      <pitch-deg>0</pitch-deg>
+     </offsets>
+    </model>
+
+    <model>
+     <name>fo-pedals</name>
+     <path>pedals.xml</path>
+     <offsets>
+      <x-m>0.430</x-m>
+      <y-m>0.48</y-m>
+      <z-m>0.315</z-m>
+      <pitch-deg>0</pitch-deg>
+     </offsets>
+    </model>
+
+
+ <model>
         <name>pedestal</name>
         <path>pedestal.xml</path>
         <offsets>
