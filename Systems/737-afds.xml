@@ -1322,7 +1322,10 @@
      </condition>
   </enable>	
   <input>
-    <property>/b737/flaps-min-retr-speed</property>
+    <property>/instrumentation/fmc/va-addition</property>
+    <offset>
+      <property>/instrumentation/fmc/v-ref-40-rounded</property>
+    </offset>
   </input>
   <output>
     <prop>/autopilot/settings/target-speed-kt</prop>

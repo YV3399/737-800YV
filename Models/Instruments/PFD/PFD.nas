@@ -786,6 +786,7 @@ var canvas_PFD = {
 		
 		var vref40 = getprop("instrumentation/fmc/v-ref-40") or 0;
 		vref40 = roundToNearest(vref40,1);
+		setprop("instrumentation/fmc/v-ref-40-rounded", vref40);
 		
 		me["flaps-mark-1"].hide();
 		me["flaps-mark-2"].hide();

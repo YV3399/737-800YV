@@ -253,6 +253,7 @@
       <max-lvlchg-vs type="double">6000</max-lvlchg-vs>
       <max-n1 type="double">95</max-n1>
       <to-n1 type="double">106</to-n1>
+      <ga-n1 type="double">95</ga-n1>
       <reduced-ga-n1-delta type="double">10</reduced-ga-n1-delta>
       <alt-acq-target-alt type="double">0</alt-acq-target-alt>
       <alt-hold-delta type="double">0</alt-hold-delta>
