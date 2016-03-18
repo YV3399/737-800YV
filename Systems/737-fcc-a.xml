@@ -7,7 +7,7 @@
 
 <!-- HDG SEL mode -->
    <filter>
-    <name>heading bug error computer/normalizer</name>
+    <name>heading bug error computer/normalizer for HDG mode</name>
     <debug>false</debug>
     <enable>
       <condition>
@@ -32,7 +32,7 @@
 
 <!-- GA mode -->
    <filter>
-    <name>heading bug error computer/normalizer</name>
+    <name>heading bug error computer/normalizer for GA mode</name>
     <debug>false</debug>
     <enable>
       <condition>
@@ -106,7 +106,7 @@
   </filter>
 
    <filter>
-    <name>heading bug error computer/normalizer</name>
+    <name>heading bug error computer/normalizer for VOR/LOC mode</name>
     <debug>false</debug>
     <enable>
       <condition>

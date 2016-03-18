@@ -604,7 +604,7 @@
  <!-- =============================================================== -->
 
   <pi-simple-controller>
-    <name>Thrust comparator</name>
+    <name>Thrust comparator engine #1</name>
     <debug>false</debug>
     <enable>
       <condition>
@@ -637,7 +637,7 @@
   </pi-simple-controller>
 
   <pi-simple-controller>
-    <name>Thrust comparator</name>
+    <name>Thrust comparator engine #2</name>
     <debug>false</debug>
     <enable>
       <condition>
@@ -1331,57 +1331,5 @@
     <prop>/autopilot/settings/target-speed-kt</prop>
   </output>
 </filter>
-
-<!-- debug section -->
-
-  <pi-simple-controller>
-    <name>Thrust comparator</name>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>/debug/catch-mac</property>
-      </condition>
-    </enable>	
-    <input>
-      <prop>/instrumentation/fmc/cg</prop>
-    </input>
-    <reference>
-      <prop>/debug/target-mac</prop>
-    </reference>
-    <output>
-      <prop>/fdm/jsbsim/inertia/pointmass-location-X-inches[1]</prop>
-    </output>
-    <config>
-      <Kp>-0.0</Kp>          <!-- proportional gain -->
-      <Ki>/debug/mac-coeff</Ki>          <!-- integral gain -->
-      <u_min>-1000</u_min> <!-- minimum output clamp -->
-      <u_max>3000</u_max>   <!-- maximum output clamp -->
-    </config>
-  </pi-simple-controller>
-
-  <pi-simple-controller>
-    <name>Thrust comparator</name>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>/debug/catch-weight</property>
-      </condition>
-    </enable>	
-    <input>
-      <prop>/fdm/jsbsim/inertia/weight-lbs</prop>
-    </input>
-    <reference>
-      <prop>/debug/target-weight-lbs</prop>
-    </reference>
-    <output>
-      <prop>/fdm/jsbsim/inertia/pointmass-weight-lbs[1]</prop>
-    </output>
-    <config>
-      <Kp>-0.0</Kp>          <!-- proportional gain -->
-      <Ki>3</Ki>          <!-- integral gain -->
-      <u_min>-1000</u_min> <!-- minimum output clamp -->
-      <u_max>300000</u_max>   <!-- maximum output clamp -->
-    </config>
-  </pi-simple-controller>
 
 </PropertyList>
