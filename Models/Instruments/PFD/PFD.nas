@@ -957,7 +957,7 @@ setlistener("sim/signals/fdm-initialized", func() {
 	pfd_canvas.update_slow();
 });
 
-setlistener("sim/signals/reinit", func pfd_display.del());
+#setlistener("sim/signals/reinit", func pfd_display.del());
 
 var showPfd = func() {
 	var dlg = canvas.Window.new([512, 512], "dialog").set("resize", 1);

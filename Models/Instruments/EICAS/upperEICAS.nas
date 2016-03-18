@@ -115,7 +115,7 @@ setlistener("sim/signals/fdm-initialized", func() {
 	upperEICAS_canvas.update();
 });
 
-setlistener("sim/signals/reinit", func upperEICAS_display.del());
+#setlistener("sim/signals/reinit", func upperEICAS_display.del());
 
 var showupperEICAS = func() {
 	var dlg = canvas.Window.new([512, 512], "dialog").set("resize", 1);
