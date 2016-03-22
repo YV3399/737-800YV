@@ -31,7 +31,7 @@
         <path>Aircraft/737-800/Systems/aircraft-systems-logic.xml</path>
       </autopilot>
 
-      <path>Aircraft/737-300/Systems/systems.xml</path>
+      <path>Aircraft/737-800/Systems/systems.xml</path>
 
       <property-rule n="101">
         <path>Aircraft/737-800/Systems/instrument-filters.xml</path>
