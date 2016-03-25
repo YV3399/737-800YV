@@ -29,7 +29,9 @@ var canvas_upperEICAS = {
 		
 		var svg_keys = ["engine0N1","engine0N1Decimal","engine1N1","engine1N1Decimal",
 		"EGT_0","EGT_1","needleEGT_0","needleEGT_1","ff_0","ff_1",
-		"needleN1_0","needleN1_1","tat","tank1Thousand","tank1Decimal","tank2Thousand","tank2Decimal","tankCtrThousand","tankCtrDecimal"];
+		"needleN1_0","needleN1_1","tat",
+		"tank1Thousand","tank1Decimal","tank2Thousand","tank2Decimal","tankCtrThousand","tankCtrDecimal",
+		"tank1Line"];
 		foreach(var key; svg_keys) {
 			m[key] = upperEICAS.getElementById(key);
 		}
@@ -95,6 +97,8 @@ var canvas_upperEICAS = {
 			me["tankCtrThousand"].setText(sprintf("%1.0f",int(tankCtr/1000)));
 			me["tankCtrDecimal"].setText(sprintf("%03.0f",math.mod(tankCtr,1000)));
 		}
+
+		me["tank1Line"].setData([2, 25],[0, 1024, 512, 512, 0, 0, -1024]);
 		
 
 
