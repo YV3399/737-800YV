@@ -21,7 +21,7 @@ var canvas_upperEICAS = {
 		var upperEICAS = canvas_group;
 		var font_mapper = func(family, weight)
 		{
-			if( family == "Liberation Sans" and weight == "normal" )
+			if( family == "'Liberation Sans'" and weight == "normal" )
 				return "LiberationFonts/LiberationSans-Regular.ttf";
 		};
 		
@@ -31,7 +31,7 @@ var canvas_upperEICAS = {
 		"EGT_0","EGT_1","needleEGT_0","needleEGT_1","ff_0","ff_1",
 		"needleN1_0","needleN1_1","tat",
 		"tank1Thousand","tank1Decimal","tank2Thousand","tank2Decimal","tankCtrThousand","tankCtrDecimal",
-		"tank1Line"];
+		"tank1Line","tank2Line","tankCtrLine"];
 		foreach(var key; svg_keys) {
 			m[key] = upperEICAS.getElementById(key);
 		}
@@ -98,9 +98,43 @@ var canvas_upperEICAS = {
 			me["tankCtrDecimal"].setText(sprintf("%03.0f",math.mod(tankCtr,1000)));
 		}
 
-		me["tank1Line"].setData([2, 25],[0, 1024, 512, 512, 0, 0, -1024]);
-		
+		#Drawing nice circles around fuel gauges.
+		var tank1Norm = tank1 / 3920;
+		var CtrX = 725;
+		var CtrY = 967;
+		var cmd = 18;
+		if (tank1Norm > 0.75) cmd = 22;
+		var radius = 78.5;
+		var startX = CtrX + math.cos(-150*D2R) * radius;
+		var startY = CtrY - math.sin(-150*D2R) * radius;
+		var angle = -tank1Norm * 240 - 150;
+		var finishX = CtrX + math.cos(angle*D2R) * radius;
+		var finishY = CtrY - math.sin(angle*D2R) * radius;
+		me["tank1Line"].setData([2, cmd],[startX, startY, radius, radius, 0, finishX, finishY]);
 
+		var tank2Norm = tank2 / 3920;
+		CtrX = 927.857;
+		CtrY = 967;
+		cmd = 18;
+		if (tank2Norm > 0.75) cmd = 22;
+		startX = CtrX + math.cos(-150*D2R) * radius;
+		startY = CtrY - math.sin(-150*D2R) * radius;
+		angle = -tank2Norm * 240 - 150;
+		finishX = CtrX + math.cos(angle*D2R) * radius;
+		finishY = CtrY - math.sin(angle*D2R) * radius;
+		me["tank2Line"].setData([2, cmd],[startX, startY, radius, radius, 0, finishX, finishY]);
+
+		var tankCtrNorm = tankCtr / 13060;
+		CtrX = 827.857;
+		CtrY = 823.429;
+		cmd = 18;
+		if (tankCtrNorm > 0.75) cmd = 22;
+		startX = CtrX + math.cos(-150*D2R) * radius;
+		startY = CtrY - math.sin(-150*D2R) * radius;
+		angle = -tankCtrNorm * 240 - 150;
+		finishX = CtrX + math.cos(angle*D2R) * radius;
+		finishY = CtrY - math.sin(angle*D2R) * radius;
+		me["tankCtrLine"].setData([2, cmd],[startX, startY, radius, radius, 0, finishX, finishY]);
 
 		settimer(func me.update(), 0.04);
 	},
