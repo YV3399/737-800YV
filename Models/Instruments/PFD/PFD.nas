@@ -407,10 +407,10 @@ var canvas_PFD = {
 			me["curAltBox"].setStrokeLineWidth(5);
 			if (altAlertMode == 1) {
 				var time = getprop("/sim/time/elapsed-sec");
-				if (math.mod(time, 0.7) < 0.35) {
+				if (math.mod(time, 0.45) < 0.225) {
 					me["curAltBox"].setColor(1,0.749,0);
 				} else {
-					me["curAltBox"].setColor(1,1,1);
+					me["curAltBox"].setColor(0,0,0);
 				}
 				me["selAltBox"].hide();
 			} else {
