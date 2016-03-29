@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Mandarian Airlines</name>
-            <texture>Liveries/MDA.png</texture>            
+            <texture>Liveries-800/MDA.png</texture>            
         </livery>        
     </model>
 </sim>

@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">westjet magic</name>
-            <texture>Liveries/C-GWSZ.png</texture>            
+            <texture>Liveries-800/C-GWSZ.png</texture>            
         </livery>        
     </model>
 </sim>
