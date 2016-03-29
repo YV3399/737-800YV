@@ -30,7 +30,7 @@ var canvas_PFD = {
 		var pfd = canvas_group;
 		var font_mapper = func(family, weight)
 		{
-			if( family == "Liberation Sans" and weight == "normal" )
+			if( family == "'Liberation Sans'" and weight == "normal" )
 				return "LiberationFonts/LiberationSans-Regular.ttf";
 		};
 		
@@ -60,7 +60,7 @@ var canvas_PFD = {
 		"gpwsAlert","gsPtr","gsScale","gsText","horizon","ilsId","locPtr","locScale","locScaleExp","scaleCenter","machText",
 		"ladderLimiter",
 		"markerBeacon","markerBeaconText","maxSpdInd","mcpAltMtr","minimums","minSpdInd","metric",
-		"pitchMode","pitchArmMode","radioAltInd","risingRwy","risingRwyPtr","rollMode","rollArmMode",
+		"pitchMode","pitchArmMode","radioAltInd","radioAltimeterDial","radioAltNeedle","risingRwy","risingRwyPtr","rollMode","rollArmMode",
 		"selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","spdTapeWhiteBug",
 		"singleCh","singleChBox",
 		"tenThousand","touchdown",
@@ -158,7 +158,7 @@ var canvas_PFD = {
 		var track = getprop("/orientation/track-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
 		var air_ground = getprop("/b737/sensors/air-ground");
-		if ( air_ground == "ground") var wow = 1;
+		if (air_ground == "ground") var wow = 1;
 		else var wow = 0;
 		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
 		var apSpd = getprop("autopilot/settings/target-speed-kt");
@@ -591,6 +591,27 @@ var canvas_PFD = {
 			else
 				me["radioAltInd"].setText(sprintf("%4.0f",roundToNearest(radioAlt,2)));
 			me["radioAltInd"].show();
+
+			if (radioAlt < 990) {
+				me["radioAltimeterDial"].show();
+
+				#Drawing nice circle around
+				var CtrX = 673.167;
+				var CtrY = 149.843;
+				var cmd = 18;
+				if (radioAlt > 500) cmd = 22;
+				var radius = 62;
+				var startX = CtrX + math.cos(90*D2R) * radius;
+				var startY = CtrY - math.sin(90*D2R) * radius;
+				var angle = -radioAlt * 0.36 + 90;
+				var finishX = CtrX + math.cos(angle*D2R) * radius;
+				var finishY = CtrY - math.sin(angle*D2R) * radius;
+				me["radioAltNeedle"].show();
+				me["radioAltNeedle"].setData([2, cmd],[startX, startY, radius, radius, 0, finishX, finishY]);
+			} else {
+				me["radioAltimeterDial"].hide();
+				me["radioAltNeedle"].hide();
+			}
 		} else {
 			me["radioAltInd"].hide();
 		}
