@@ -129,15 +129,17 @@
     </output>
     <config>
       <Kp>0.1</Kp>          <!-- proportional gain -->
-      <Ki>0.0</Ki>          <!-- integral gain -->
+      <Ki>0.0000001</Ki>          <!-- integral gain -->
       <u_min>-0.2</u_min> <!-- minimum output clamp -->
       <u_max>0.2</u_max>   <!-- maximum output clamp -->
     </config>
   </pi-simple-controller>
 
 <filter>
+  <name>Target Z acceleration calculator</name>
   <type>gain</type>
   <gain>1</gain>
+  <debug>false</debug>
   <enable>
       <condition>
         <property>/autopilot/internal/PITCH-ACTIVE</property>
@@ -234,8 +236,10 @@
 </filter>
 
 <filter>
+  <name>Elevator signal plus damper summer</name>
   <type>gain</type>
   <gain>1</gain>
+  <debug>false</debug>
   <enable>
       <condition>
         <and>

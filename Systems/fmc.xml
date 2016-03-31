@@ -20,6 +20,33 @@
         </function>
      </fcs_function>
 
+    <fcs_function name="/autopilot/settings/gs-deviation-sensitivity">
+      <function>
+        <description>Calculate deviation sensitivity for glideslope</description>
+        <table>
+          <independentVar>/position/altitude-agl-ft</independentVar>
+          <tableData>
+            200 0
+            500 3000
+          </tableData>
+        </table>
+      </function>
+    </fcs_function>
+
+    <fcs_function name="/autopilot/settings/vs-limitation">
+      <function>
+        <description>Calculate maximum vertical speed on glideslope glideslope</description>
+        <table>
+          <independentVar>/position/altitude-agl-ft</independentVar>
+          <tableData>
+            50 -920
+            200 -1000
+            400 -1500
+          </tableData>
+        </table>
+      </function>
+    </fcs_function>
+
     <fcs_function name="/instrumentation/fmc/v-ref-15">
       <function>
         <description>Vref calculation for flaps 15</description>

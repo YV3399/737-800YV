@@ -57,3 +57,29 @@ var shutdown = func {
 #	  setprop("/controls/engines/autostart",1);
 }
 
+var inAirStart = func {
+    if (getprop("position/altitude-agl-ft")>400) {
+    	setprop("controls/gear/brake-parking",0);
+    	setprop("/b737/sensors/was-in-air", "true");
+    	setprop("/b737/sensors/landing", 0);
+		autostart();
+		if(var vbaro = getprop("environment/metar/pressure-inhg")) {
+            setprop("instrumentation/altimeter[0]/setting-inhg", vbaro);
+            setprop("instrumentation/altimeter[1]/setting-inhg", vbaro);
+            setprop("instrumentation/altimeter[2]/setting-inhg", vbaro);
+        }
+        setprop("instrumentation/flightdirector/fd-left-on", 1);
+        setprop("instrumentation/flightdirector/fd-right-on", 1);
+        setprop("autopilot/settings/target-speed-kt", boeing737.roundToNearest(getprop("sim/presets/airspeed-kt"), 1));
+        setprop("autopilot/settings/heading-bug-deg", boeing737.roundToNearest(getprop("orientation/heading-magnetic-deg"), 1));
+        setprop("autopilot/settings/target-altitude-mcp-ft", boeing737.roundToNearest(getprop("sim/presets/altitude-ft"), 100));
+        setprop("autopilot/internal/SPD", 1);
+        autopilot737.hdg_mode_engage();
+        settimer(func {autopilot737.lvlchg_button_press();}, 1);
+        settimer(func {autopilot737.cmda_button_press();}, 1.2);
+    }
+}
+
+setlistener("sim/signals/fdm-initialized", inAirStart);
+setlistener("sim/signals/reinit", inAirStart);
+
