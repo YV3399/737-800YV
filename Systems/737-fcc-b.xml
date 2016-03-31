@@ -560,9 +560,9 @@
             <property>/position/altitude-agl-ft</property>
             <value>-6.5</value>
           </sum>
-          <value>-6</value>
+          <value>-7</value>
         </product>
-        <value>-200</value>
+        <value>-50</value>
       </sum>
     </expression>
   </input>
