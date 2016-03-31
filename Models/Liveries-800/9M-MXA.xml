@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Malaysia retro</name>
-            <texture>Liveries/9M-MXA.png</texture>            
+            <texture>Liveries-800/9M-MXA.png</texture>            
         </livery>        
     </model>
 </sim>

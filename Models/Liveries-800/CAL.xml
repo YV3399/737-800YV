@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">China Airlines</name>
-            <texture>Liveries/CAL.png</texture>            
+            <texture>Liveries-800/CAL.png</texture>            
         </livery>        
     </model>
 </sim>

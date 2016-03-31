@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Japan Express</name>
-            <texture>Liveries/JEX.png</texture>            
+            <texture>Liveries-800/JEX.png</texture>            
         </livery>        
     </model>
 </sim>
