@@ -76,24 +76,26 @@ var inAirStart = func {
         setprop("autopilot/settings/target-altitude-mcp-ft", boeing737.roundToNearest(getprop("sim/presets/altitude-ft"), 100));
         setprop("autopilot/internal/SPD", 1);
         autopilot737.hdg_mode_engage();
-        settimer(func {autopilot737.lvlchg_button_press();}, 1);
-        settimer(func {autopilot737.cmda_button_press();}, 1.2);
+        settimer(func {autopilot737.lvlchg_button_press();}, 5);
+        settimer(func {autopilot737.cmda_button_press();}, 5.2);
 
         # set ILS frequency
         var cur_runway = getprop("sim/presets/runway");
-        var runways = airportinfo(getprop("sim/presets/airport-id")).runways;
-        var r =runways[cur_runway];
-        if (r != nil and r.ils != nil)
-        {
-            setprop("instrumentation/nav[0]/frequencies/selected-mhz", (r.ils.frequency / 100));
-            setprop("instrumentation/nav[1]/frequencies/selected-mhz", (r.ils.frequency / 100));
-            settimer(func {
-            	var magvar = getprop("environment/magnetic-variation-deg");
-	            var crs = boeing737.roundToNearest(geo.normdeg(getprop("instrumentation/nav[0]/radials/target-radial-deg") - magvar), 1);
-	            setprop("instrumentation/nav[0]/radials/selected-deg", crs);
-	            setprop("instrumentation/nav[1]/radials/selected-deg", crs);
-	        }, 2);
-        }
+        if (cur_runway != "") {
+	        var runways = airportinfo(getprop("sim/presets/airport-id")).runways;
+	        var r =runways[cur_runway];
+	        if (r != nil and r.ils != nil)
+	        {
+	            setprop("instrumentation/nav[0]/frequencies/selected-mhz", (r.ils.frequency / 100));
+	            setprop("instrumentation/nav[1]/frequencies/selected-mhz", (r.ils.frequency / 100));
+	            settimer(func {
+	            	var magvar = getprop("environment/magnetic-variation-deg");
+		            var crs = boeing737.roundToNearest(geo.normdeg(getprop("instrumentation/nav[0]/radials/target-radial-deg") - magvar), 1);
+		            setprop("instrumentation/nav[0]/radials/selected-deg", crs);
+		            setprop("instrumentation/nav[1]/radials/selected-deg", crs);
+		        }, 2);
+	        }
+    	}
 
         #configure flaps and gears
         var vref40 = getprop("/instrumentation/fmc/v-ref-40");
