@@ -532,13 +532,13 @@
     <property>/instrumentation/nav/gs-rate-of-climb-fpm</property>
     <offset>
       <property>autopilot/internal/nav2-gs-rate</property>
-      <scale>3000.0</scale>
+      <scale>/autopilot/settings/gs-deviation-sensitivity</scale>
     </offset>
   </input>
   <output>
     <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
   </output>
-  <min>-1500</min>
+  <min>/autopilot/settings/vs-limitation</min>
   <max>0</max>
 </filter>
 
@@ -560,9 +560,9 @@
             <property>/position/altitude-agl-ft</property>
             <value>-6.5</value>
           </sum>
-          <value>-6</value>
+          <value>-7</value>
         </product>
-        <value>-200</value>
+        <value>-50</value>
       </sum>
     </expression>
   </input>
