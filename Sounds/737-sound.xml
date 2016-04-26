@@ -1,306 +1,483 @@
-<?xml version="1.0"?>
- 
-<PropertyList>
+<?xml version="1.0"?> 
 
+<PropertyList include="airliner-sound-supplement.xml">
  <fx>
-   <engine>
-        <name>left engine</name>
-        <path>Sounds/jet.wav</path>
-        <mode>looped</mode>
-        <condition>
-            <not>
-                <property>controls/engines/engine[0]/cutoff</property>
-            </not>
-        </condition>
-        <volume>
-            <property>engines/engine[0]/thrust-lbs</property>
-            <factor>0.15</factor>
-            <min>0.0</min>
-            <max>1</max>
-        </volume>
-        <volume>
-            <property>sim/sound/volume</property>
-             <value>1</value>
-        </volume>
-        <position>
-            <x>0</x>
-            <y>9.8</y>
-            <z>-3</z>
-        </position>
-        <reference-dist>200.0</reference-dist>
-        <max-dist>500.0</max-dist>
-    </engine>
-
-    <engine>
-        <name>left n1</name>
-        <path>Sounds/whine.wav</path>
-        <mode>looped</mode>
-        <property>engines/engine[0]/n2</property>
-        <pitch>
-            <property>/engines/engine[0]/n2</property>
-            <offset>0</offset>
-            <factor>0.02</factor>
-            <min>0.0</min>
-            <max>2.0</max>
-        </pitch>
-        <volume>
-            <property>engines/engine[0]/n2</property>
-            <factor>0.1</factor>
-            <min>0.0</min>
-            <max>0.6</max>
-        </volume>
-        <volume>
-            <property>sim/sound/volume</property>
-        </volume>
-        <position>
-            <x>0</x>
-            <y>9.8</y>
-            <z>-3</z>
-        </position>
-        <reference-dist>10.0</reference-dist>
-        <max-dist>30.0</max-dist>
-    </engine>
-
-    <engine>
-        <name>right engine</name>
-        <path>Sounds/jet.wav</path>
-        <mode>looped</mode>
-        <condition>
-            <not>
-                <property>controls/engines/engine[1]/cutoff</property>
-            </not>
-        </condition>
-        <volume>
-            <property>/engines/engine[1]/thrust-lbs</property>
-            <factor><factor>0.15</factor></factor>
-            <min>0.0</min>
-            <max>1.0</max>
-        </volume>
-        <volume>
-            <property>sim/sound/volume</property>
-        </volume>
-        <position>
-            <x>0</x>
-            <y>-9.8</y>
-            <z>-3</z>
-        </position>
-        <reference-dist>200.0</reference-dist>
-        <max-dist>500.0</max-dist>
-    </engine>
-
-    <engine>
-        <name>right n1</name>
-        <path>Sounds/whine.wav</path>
-        <mode>looped</mode>
-        <property>engines/engine[1]/n2</property>
-        <volume>
-            <property>engines/engine[1]/n2</property>
-            <factor>0.1</factor>
-            <min>0.0</min>
-            <max>0.6</max>
-        </volume>
-        <volume>
-            <property>sim/sound/volume</property>
-        </volume>
-        <pitch>
-            <property>/engines/engine[1]/n2</property>
-            <offset>0</offset>
-            <factor>0.02</factor>
-            <min>0.0</min>
-            <max>2.0</max>
-        </pitch>
-        <position>
-            <x>0</x>
-            <y>-9.8</y>
-            <z>-3</z>
-        </position>
-        <reference-dist>10.0</reference-dist>
-        <max-dist>30.0</max-dist>
-    </engine>
-
-  <rumble>
-   <name>rumble</name>
-   <mode>looped</mode>
-   <path>Sounds/rumble.wav</path>
-   <condition>
-    <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[1]/wow</property>
-     <property>/gear/gear[2]/wow</property>
-    </or>
-   </condition>
-   <volume>
-    <property>/velocities/airspeed-kt</property>
-    <type>log</type>
-    <factor>0.5</factor>
-   </volume>
-  </rumble>
-
-  <gear>
-   <name>gear</name>
-   <mode>in-transit</mode>
-   <path>Sounds/gear.wav</path>
-   <property>/gear/gear[0]/position-norm</property>
-   <pitch>
-    <internal>dt_play</internal>
-    <offset>1.0</offset>
-    <factor>-0.001</factor>
-   </pitch>
-  </gear>
-
-  <gear>
-   <name>gear-lock</name>
-   <path>Sounds/gear-lck.wav</path>
-   <condition>
-    <equals>
-     <property>/gear/gear[0]/position-norm</property>
-     <value>0</value>
-    </equals>
-   </condition>
-  </gear>
-  <!-- 
-  <gear>
-   <name>gear-horn</name>
-   <path>Sounds/gear-hrn.wav</path>
-   <mode>looped</mode>
-   <condition>
-    <equals>
-     <property>/gear/gear[0]/position-norm</property>
-     <value>0</value>
-     </equals>
-     </condition>      
-  </gear>
-  -->
-
-  <squeal>
-   <name>squeal</name>
-   <path>Sounds/squeal.wav</path>
-   <condition>
-    <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[1]/wow</property>
-     <property>/gear/gear[2]/wow</property>
-    </or>
-   </condition>
-   <volume>
-    <property>/velocities/speed-down-fps</property>
-    <factor>0.05</factor>
-   </volume>
-   <volume>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.01</factor>
-   </volume>
-   <volume>
-    <internal>dt_stop</internal>
-    <factor>0.05</factor>
-    <max>1.0</max>
-   </volume>
-   <pitch>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.0025</factor>
-    <offset>1.2</offset>
-   </pitch>
-  </squeal>
-
-  <wind>
-   <name>wind</name>
-   <mode>looped</mode>
-   <path>Sounds/wind.wav</path>
-   <property>/velocities/airspeed-kt</property>
-   <volume>
-    <property>/position/altitude-ft</property>
-    <factor>-0.000015</factor>
-    <offset>1.0</offset>
-    <min>0.1</min>
-    <max>1.0</max>
-   </volume>
-   <volume>
-     <property>/velocities/airspeed-kt</property>
-     <factor>0.0015</factor>
-     <min>0.03</min>
-     <max>0.25</max>
-   </volume>
-   <pitch>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.01</factor>
-    <offset>1.25</offset>
-   </pitch>
-  </wind>
-
-   <overspeed>
-	<name>overspeed</name>
-	<mode>looped</mode>
-	<path>Sounds/overspeed2.wav</path>
-	<condition>
-		<greater-than>
-		<property>velocities/airspeed-kt</property>
-		<value>340</value>
-		</greater-than>
-		<equals>
-		<property>sim/current-view/view-number</property>
-		<value>0</value>
-	      </equals>
-	</condition>
+	<engine>
+		<name>low l</name>
+		<mode>looped</mode>
+		<path>Sounds/low.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+		</condition>
 		<volume>
-		<factor>1.0</factor>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.044</factor>
+			<max>1</max>
 		</volume>
 		<pitch>
-		<factor>0.1</factor>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.02</factor>
+			<max>2</max>
 		</pitch>
-		<reference-dist>1.0</reference-dist>
-		<max-dist>2.0</max-dist>
-</overspeed>
- 
-  <stall>
-   <name>stall</name>
-   <path>Sounds/stall.wav</path>
-   <property>/sim/alarms/stall-warning</property>
-   <volume>
-    <property>/velocities/airspeed-kt</property>
-    <min>30.0</min>
-   </volume>
-  </stall>
-
-  <!-- Altitude alert sound -->
-
-  <altAlert>
-    <name>altAlert</name>
-    <mode>once</mode>
-    <path>Aircraft/737-800/Sounds/altAlert.wav</path>
-    <property>/b737/warnings/altitude-alert</property>
-    <volume>
-      <factor>1.0</factor>
-    </volume>
-  </altAlert>
-
-  <!-- Autopilot disconnect siren -->
-
-  <ap-disconnect>
-    <name>AP Disconnect</name>
-    <mode>looped</mode>
-    <path>Aircraft/737-800/Sounds/Apdisco.wav</path>
-    <condition>
-      <property>/b737/sound/apdisco</property>
-    </condition>
-    <volume>
-      <factor>1</factor>
-    </volume>
-  </ap-disconnect>
-
-  <!-- trimwheel sound -->
-
-  <trimming>
-    <name>trimming</name>
-    <mode>once</mode>
-    <path>Aircraft/737-800/Sounds/trim.wav</path>
-    <condition>
-      <property>/b737/sound/stab-trim</property>
-    </condition>
-    <volume>
-      <factor>1</factor>
-    </volume>
-  </trimming>
-
-</fx>
- 
+	</engine>
+	
+	<engine>
+		<name>low r</name>
+		<mode>looped</mode>
+		<path>Sounds/low.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.044</factor>
+			<max>1</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.02</factor>
+			<max>2</max>
+		</pitch>
+	</engine>
+	
+	
+	<engine>
+		<name>spool l</name>
+		<mode>looped</mode>
+		<path>Sounds/spool.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.02</factor>
+			<offset>-0.6</offset>
+			<min>0.6</min>
+			<max>1.6</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.015</factor>
+		</pitch>
+	</engine>
+	<engine>
+		<name>spool r</name>
+		<mode>looped</mode>
+		<path>Sounds/spool.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.02</factor>
+			<offset>-0.6</offset>
+			<min>0.6</min>
+			<max>1.6</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.015</factor>
+		</pitch>
+	</engine>
+	
+	
+	<engine>
+		<name>turbine0 l</name>
+		<mode>looped</mode>
+		<path>Sounds/turbine-seat.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<less-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>0</value>
+			</less-than>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>-11</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.06</factor>
+			<offset>-3.0</offset>
+			<min>3.0</min>
+			<max>6.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	<engine>
+		<name>turbine0 r</name>
+		<mode>looped</mode>
+		<path>Sounds/turbine-seat.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<less-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>0</value>
+			</less-than>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>-11</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.06</factor>
+			<offset>-3.0</offset>
+			<min>3.0</min>
+			<max>6.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	
+	<engine>
+		<name>turbine1 l</name>
+		<mode>looped</mode>
+		<path>Sounds/turbine.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<less-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>1</value>
+			</less-than>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.04</factor>
+			<offset>-2.0</offset>
+			<min>2.0</min>
+			<max>4.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	<engine>
+		<name>turbine1 r</name>
+		<mode>looped</mode>
+		<path>Sounds/turbine.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<less-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>1</value>
+			</less-than>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.04</factor>
+			<offset>-2.0</offset>
+			<min>2.0</min>
+			<max>4.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	
+	
+	<engine>
+		<name>roar0 l</name>
+		<mode>looped</mode>
+		<path>Sounds/roar0.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>-2</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.04</factor>
+			<offset>-1.0</offset>
+			<min>1.0</min>
+			<max>2.3</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	<engine>
+		<name>roar0 r</name>
+		<mode>looped</mode>
+		<path>Sounds/roar0.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>-2</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.04</factor>
+			<offset>-1.0</offset>
+			<min>1.0</min>
+			<max>2.3</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	
+	<engine>
+		<name>roar1 l</name>
+		<mode>looped</mode>
+		<path>Sounds/roar1.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>4</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.04</factor>
+			<offset>-1.0</offset>
+			<min>1.0</min>
+			<max>3.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	<engine>
+		<name>roar1 r</name>
+		<mode>looped</mode>
+		<path>Sounds/roar1.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>4</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.04</factor>
+			<offset>-1.0</offset>
+			<min>1.0</min>
+			<max>3.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<engine>
+		<name>low l out</name>
+		<mode>looped</mode>
+		<path>Sounds/xlow.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.044</factor>
+			<max>1</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.02</factor>
+			<max>2</max>
+		</pitch>
+	</engine>
+	<engine>
+		<name>low r out</name>
+		<mode>looped</mode>
+		<path>Sounds/xlow.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.044</factor>
+			<max>1</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.02</factor>
+			<max>2</max>
+		</pitch>
+	</engine>
+	
+	<engine>
+		<name>spool l out</name>
+		<mode>looped</mode>
+		<path>Sounds/xspool.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.02</factor>
+			<offset>-0.6</offset>
+			<min>0.6</min>
+			<max>1.6</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.015</factor>
+		</pitch>
+	</engine>
+	<engine>
+		<name>spool r out</name>
+		<mode>looped</mode>
+		<path>Sounds/xspool.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.02</factor>
+			<offset>-0.6</offset>
+			<min>0.6</min>
+			<max>1.6</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.015</factor>
+		</pitch>
+	</engine>
+	
+	<engine>
+		<name>turbine l out</name>
+		<mode>looped</mode>
+		<path>Sounds/xturbine.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.04</factor>
+			<offset>-2.0</offset>
+			<min>2.0</min>
+			<max>3.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	<engine>
+		<name>turbine r out</name>
+		<mode>looped</mode>
+		<path>Sounds/xturbine.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.04</factor>
+			<offset>-2.0</offset>
+			<min>2.0</min>
+			<max>3.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	
+	<engine>
+		<name>roar l out</name>
+		<mode>looped</mode>
+		<path>Sounds/xroar.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.04</factor>
+			<offset>-1.0</offset>
+			<min>1.0</min>
+			<max>3.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	<engine>
+		<name>roar r out</name>
+		<mode>looped</mode>
+		<path>Sounds/xroar.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<not><property>sim/current-view/internal</property></not>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.04</factor>
+			<offset>-1.0</offset>
+			<min>1.0</min>
+			<max>3.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+ </fx>
 </PropertyList>
