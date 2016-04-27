@@ -8,11 +8,9 @@
 
   <nasal>
     <open>
-      props.globals.initNode("/sim/gui/dialogs/tiller_steering/value", 0.0);
       setprop("fdm/jsbsim/fcs/tiller-cmd-norm", 0.0);
     </open>
     <close>
-      setprop("/sim/gui/dialogs/tiller_steering/value", 0.0);
       setprop("fdm/jsbsim/fcs/tiller-cmd-norm", 0.0);
     </close>
   </nasal>
@@ -54,21 +52,13 @@
       <halign>center</halign>
       
       <dial>
-        <min>-78</min>
-        <max>78</max>
+        <min>-1</min>
+        <max>1</max>
         <wrap>false</wrap>
-        <property>/sim/gui/dialogs/tiller_steering/value</property>
-      <!--  <enable><property>/fdm/jsbsim/fcs/realism/tiller-enabled</property></enable> -->
+	<live>true</live>
+	<property>/fdm/jsbsim/fcs/tiller-cmd-norm</property>
         <binding>
           <command>dialog-apply</command>
-        </binding>
-        <binding>
-          <command>nasal</command>
-          <script><![CDATA[
-            setprop("fdm/jsbsim/fcs/tiller-cmd-norm",
-            getprop("/sim/gui/dialogs/tiller_steering/value") / 78.0);
-            ]]>
-          </script>
         </binding>
       </dial>
       
@@ -81,16 +71,13 @@
           <property>fdm/jsbsim/fcs/steer-pos-deg</property>
           <format>%2.0f degrees</format>
           <live>true</live>
-          <!--<enable><property>/fdm/jsbsim/fcs/realism/tiller-enabled</property></enable>-->
         </text>
         <button>
           <legend>Center</legend>
           <border>2</border>
-          <!--<enable><property>/fdm/jsbsim/fcs/realism/tiller-enabled</property></enable>-->
           <binding>
             <command>nasal</command>
             <script>
-              setprop("/sim/gui/dialogs/tiller_steering/value", 0.0);
               setprop("fdm/jsbsim/fcs/tiller-cmd-norm", 0.0);
             </script>
           </binding>
