@@ -237,6 +237,61 @@
         </binding>
       </key>
 
+      <key n="113">
+        <name>q</name>
+        <desc>Turn tiller left</desc>
+        <binding>
+          <command>nasal</command>
+          <script>
+            boeing737.tiller_left();
+          </script>
+        </binding>
+      </key>
+
+      <key n="81">
+        <name>Q</name>
+        <desc>Turn tiller left small</desc>
+        <binding>
+          <command>nasal</command>
+          <script>
+            boeing737.tiller_left_small();
+          </script>
+        </binding>
+      </key>
+
+      <key n="101">
+        <name>e</name>
+        <desc>Turn tiller right</desc>
+        <binding>
+          <command>nasal</command>
+          <script>
+            boeing737.tiller_right();
+          </script>
+        </binding>
+      </key>
+
+      <key n="69">
+        <name>E</name>
+        <desc>Turn tiller right small</desc>
+        <binding>
+          <command>nasal</command>
+          <script>
+            boeing737.tiller_right_small();
+          </script>
+        </binding>
+      </key>
+
+      <key n="119">
+        <name>w</name>
+        <desc>Turn tiller to center</desc>
+        <binding>
+          <command>nasal</command>
+          <script>
+            boeing737.tiller_center();
+          </script>
+        </binding>
+      </key>
+
     </keyboard>
   </input>
 
