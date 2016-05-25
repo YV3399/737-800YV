@@ -434,7 +434,26 @@
   </pid-controller>
 
  <!-- LVLCHG mode -->
-  <pid-controller>
+
+  <filter>
+    <type>gain</type>
+    <gain>1</gain>
+    <input>
+      <property>/autopilot/settings/target-speed-kt</property>
+    </input>
+    <reference>
+      <property>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</property>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-speed-difference[0]</prop>
+    </output>
+    <min>-7</min>
+    <max>7</max>
+  </filter>
+
+  <filter>
+    <type>gain</type>
+    <gain>1</gain>
     <name>LVLCHG mode</name>
     <debug>false</debug>
     <enable>
@@ -443,26 +462,40 @@
       </condition>
     </enable>
     <input>
-      <prop>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</prop>
+      <expression>
+        <div>
+          <product>
+            <property>/instrumentation/airspeed-indicator[0]/true-speed-kt</property>
+            <value>101.2685914261</value>
+            <dif>
+              <product>
+                <property>/fdm/jsbsim/forces/fbx-prop-lbs</property>
+                <cos>
+                  <property>/fdm/jsbsim/aero/alpha-rad</property>
+                </cos>
+              </product>
+              <product>
+                <property>/fdm/jsbsim/forces/fwx-aero-lbs</property>
+                <sum>
+                  <value>1</value>
+                  <product>
+                    <property>/autopilot/internal/target-speed-difference[0]</property>
+                    <value>0.1</value>
+                  </product>
+                </sum>
+              </product>
+            </dif>
+          </product>
+          <property>/fdm/jsbsim/inertia/weight-lbs</property>
+        </div>
+      </expression>
     </input>
-    <reference>
-      <prop>/autopilot/settings/target-speed-kt</prop>
-    </reference>
     <output>
       <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
     </output>
-    <config>
-      <Kp>-180</Kp>      <!-- proportional gain -->
-      <beta>1.0</beta>    <!-- input value weighing factor -->
-      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-                          <!-- unfiltered derivative error -->
-      <Ti>10.0</Ti>       <!-- integrator time -->
-      <Td>0.00001</Td>    <!-- derivator time -->
-      <u_min>/autopilot/settings/min-lvlchg-vs</u_min> <!-- minimum output clamp -->
-      <u_max>/autopilot/settings/max-lvlchg-vs</u_max>  <!-- maximum output clamp -->
-    </config>
-  </pid-controller>
+      <min>/autopilot/settings/min-lvlchg-vs</min>
+      <max>/autopilot/settings/max-lvlchg-vs</max>
+  </filter>
 
  <!-- ALT ACQ -->
 
