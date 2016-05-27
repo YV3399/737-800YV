@@ -300,6 +300,7 @@
       <vertical-speed-knob type="int">0</vertical-speed-knob>
       <target-altitude-mcp-ft type="double">3000</target-altitude-mcp-ft>
       <target-speed-kt type="double">100</target-speed-kt>
+      <target-speed-kt-plus-20 type="double">120</target-speed-kt-plus-20>
       <target-speed-mach type="double">.65</target-speed-mach>       
       <heading-bug-deg type="double">0</heading-bug-deg>
       <true-heading-deg type="double">0</true-heading-deg>

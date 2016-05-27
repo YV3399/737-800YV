@@ -343,10 +343,39 @@
  <!-- Pitch Axis Modes                                                -->
  <!-- =============================================================== -->
 
+   <filter>
+    <type>gain</type>
+    <gain>1</gain>
+    <input>
+      <condition>
+        <and>
+          <property>/autopilot/internal/TOGA</property>
+          <property>/autopilot/logic/toga-pitch</property>
+          <less-than>
+            <property>/autopilot/settings/target-speed-kt</property>
+            <property>/autopilot/settings/target-speed-kt-plus-20</property>
+          </less-than>
+        </and>
+      </condition>
+      <property>/autopilot/settings/target-speed-kt-plus-20</property>
+    </input>
+    <input>
+      <property>/autopilot/settings/target-speed-kt</property>
+    </input>
+    <reference>
+      <property>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</property>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-speed-difference[1]</prop>
+    </output>
+    <min>-7</min>
+    <max>7</max>
+  </filter>
+
  <!-- TOGA mode -->
 
  <filter>
-  <name>VS translate B</name>
+  <name>VS translate</name>
   <debug>false</debug>
   <enable>
    <condition>
@@ -367,11 +396,13 @@
   <type>gain</type>
   <gain>1.0</gain>
   <input>autopilot/internal/current-vertical-speed-fpm</input>
-  <output>/autopilot/settings/fccb-vertical-speed-fpm</output>
+  <output>/autopilot/settings/fcca-vertical-speed-fpm</output>
  </filter>
 
-  <pid-controller>
-    <name>TOGA mode B</name>
+  <filter>
+    <type>gain</type>
+    <gain>1</gain>
+    <name>TOGA mode</name>
     <debug>false</debug>
     <enable>
       <condition>
@@ -382,29 +413,44 @@
       </condition>
     </enable>
     <input>
-      <prop>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</prop>
+      <expression>
+        <div>
+          <product>
+            <property>/instrumentation/airspeed-indicator[1]/true-speed-kt</property>
+            <value>101.2685914261</value>
+            <dif>
+              <product>
+                <property>/fdm/jsbsim/forces/fbx-prop-lbs</property>
+                <cos>
+                  <property>/fdm/jsbsim/aero/alpha-rad</property>
+                </cos>
+              </product>
+              <product>
+                <property>/fdm/jsbsim/forces/fwx-aero-lbs</property>
+                <sum>
+                  <value>1</value>
+                  <product>
+                    <property>/autopilot/internal/target-speed-difference[1]</property>
+                    <value>0.1</value>
+                  </product>
+                </sum>
+              </product>
+            </dif>
+          </product>
+          <property>/fdm/jsbsim/inertia/weight-lbs</property>
+        </div>
+      </expression>
     </input>
-    <reference>
-      <prop>/autopilot/settings/target-speed-kt</prop>
-      <offset>20</offset>
-    </reference>
     <output>
-      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
     </output>
-    <config>
-      <Kp>-180</Kp>
-      <beta>1.0</beta>
-      <alpha>0.1</alpha>
-      <gamma>0.0</gamma>
-      <Ti>10.0</Ti>
-      <Td>0.00001</Td>
-      <u_min>0</u_min>
-      <u_max>6000</u_max>
-    </config>
-  </pid-controller>
+    <min>0</min>
+    <max>6000</max>
+  </filter>
 
 <!-- GO-AROUND MODE -->
-  <pid-controller>
+  <filter>
+    <type>gain</type>
     <name>GA mode</name>
     <debug>false</debug>
     <enable>
@@ -413,28 +459,46 @@
       </condition>
     </enable>
     <input>
-      <prop>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</prop>
+      <expression>
+        <div>
+          <product>
+            <property>/instrumentation/airspeed-indicator[1]/true-speed-kt</property>
+            <value>101.2685914261</value>
+            <dif>
+              <product>
+                <property>/fdm/jsbsim/forces/fbx-prop-lbs</property>
+                <cos>
+                  <property>/fdm/jsbsim/aero/alpha-rad</property>
+                </cos>
+              </product>
+              <product>
+                <property>/fdm/jsbsim/forces/fwx-aero-lbs</property>
+                <sum>
+                  <value>1</value>
+                  <product>
+                    <property>/autopilot/internal/target-speed-difference[1]</property>
+                    <value>0.1</value>
+                  </product>
+                </sum>
+              </product>
+            </dif>
+          </product>
+          <property>/fdm/jsbsim/inertia/weight-lbs</property>
+        </div>
+      </expression>
     </input>
-    <reference>
-      <prop>/autopilot/settings/target-speed-kt</prop>
-    </reference>
     <output>
-      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
     </output>
-    <config>
-      <Kp>-180</Kp>
-      <beta>1.0</beta>
-      <alpha>0.1</alpha>
-      <gamma>0.0</gamma>
-      <Ti>10.0</Ti>
-      <Td>0.00001</Td>
-      <u_min>1000</u_min>
-      <u_max>3500</u_max>
-    </config>
-  </pid-controller>
+    <min>1000</min>
+    <max>3500</max>
+  </filter>
 
  <!-- LVLCHG mode -->
-  <pid-controller>
+
+  <filter>
+    <type>gain</type>
+    <gain>1</gain>
     <name>LVLCHG mode</name>
     <debug>false</debug>
     <enable>
@@ -443,26 +507,40 @@
       </condition>
     </enable>
     <input>
-      <prop>/instrumentation/airspeed-indicator[1]/indicated-speed-kt</prop>
+      <expression>
+        <div>
+          <product>
+            <property>/instrumentation/airspeed-indicator[1]/true-speed-kt</property>
+            <value>101.2685914261</value>
+            <dif>
+              <product>
+                <property>/fdm/jsbsim/forces/fbx-prop-lbs</property>
+                <cos>
+                  <property>/fdm/jsbsim/aero/alpha-rad</property>
+                </cos>
+              </product>
+              <product>
+                <property>/fdm/jsbsim/forces/fwx-aero-lbs</property>
+                <sum>
+                  <value>1</value>
+                  <product>
+                    <property>/autopilot/internal/target-speed-difference[1]</property>
+                    <value>0.1</value>
+                  </product>
+                </sum>
+              </product>
+            </dif>
+          </product>
+          <property>/fdm/jsbsim/inertia/weight-lbs</property>
+        </div>
+      </expression>
     </input>
-    <reference>
-      <prop>/autopilot/settings/target-speed-kt</prop>
-    </reference>
     <output>
-      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
     </output>
-    <config>
-      <Kp>-180</Kp>      <!-- proportional gain -->
-      <beta>1.0</beta>    <!-- input value weighing factor -->
-      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-                          <!-- unfiltered derivative error -->
-      <Ti>10.0</Ti>       <!-- integrator time -->
-      <Td>0.00001</Td>    <!-- derivator time -->
-      <u_min>/autopilot/settings/min-lvlchg-vs</u_min> <!-- minimum output clamp -->
-      <u_max>/autopilot/settings/max-lvlchg-vs</u_max>  <!-- maximum output clamp -->
-    </config>
-  </pid-controller>
+      <min>/autopilot/settings/min-lvlchg-vs</min>
+      <max>/autopilot/settings/max-lvlchg-vs</max>
+  </filter>
 
  <!-- ALT ACQ -->
 
@@ -473,7 +551,7 @@
       <condition>
         <property>/autopilot/internal/VNAV-ALT-ACQ</property>
       </condition>
-    </enable>	
+    </enable> 
     <input>
       <prop>/instrumentation/altimeter[1]/indicated-altitude-ft</prop>
     </input>
@@ -481,7 +559,7 @@
       <prop>/autopilot/settings/target-altitude-mcp-ft</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
     </output>
     <config>
       <Kp>7.5</Kp>          <!-- proportional gain -->
@@ -500,7 +578,7 @@
       <condition>
         <property>/autopilot/internal/VNAV-ALT</property>
       </condition>
-    </enable>	
+    </enable> 
     <input>
       <prop>/instrumentation/altimeter[1]/pressure-alt-ft</prop>
     </input>
@@ -508,7 +586,7 @@
       <prop>/autopilot/settings/target-alt-hold-ft</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
     </output>
     <config>
       <Kp>7.5</Kp>          <!-- proportional gain -->
@@ -527,16 +605,16 @@
     <condition>
       <property>/autopilot/internal/VNAV-GS</property>
     </condition>
-  </enable>	
+  </enable> 
   <input>
-    <property>/instrumentation/nav/gs-rate-of-climb-fpm</property>
+    <property>/instrumentation/nav[1]/gs-rate-of-climb-fpm</property>
     <offset>
-      <property>autopilot/internal/nav2-gs-rate</property>
+      <property>autopilot/internal/nav1-gs-rate</property>
       <scale>/autopilot/settings/gs-deviation-sensitivity</scale>
     </offset>
   </input>
   <output>
-    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+    <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
   </output>
   <min>/autopilot/settings/vs-limitation</min>
   <max>0</max>
@@ -551,7 +629,7 @@
     <condition>
       <property>/autopilot/internal/VNAV-FLARE</property>
     </condition>
-  </enable>	
+  </enable> 
   <input>
     <expression>
       <sum>
@@ -567,7 +645,7 @@
     </expression>
   </input>
   <output>
-    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+    <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
   </output>
 </filter>
 
@@ -580,12 +658,12 @@
     <condition>
       <property>/autopilot/internal/VNAV-VS</property>
     </condition>
-  </enable>	
+  </enable> 
   <input>
     <prop>/autopilot/settings/vertical-speed-fpm</prop>
   </input>
   <output>
-    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+    <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
   </output>
 </filter>
 
@@ -620,7 +698,7 @@
         </or>
       </condition>
       <value>15</value>
-    </input>	
+    </input>  
     <input>
       <condition>
         <and>
@@ -649,7 +727,7 @@
           <product>
             <asin>
               <div>
-                <property>/autopilot/settings/fccb-vertical-speed-fpm</property>
+                <property>/autopilot/settings/fcca-vertical-speed-fpm</property>
                 <product>
                   <property>/instrumentation/airspeed-indicator[1]/true-speed-kt</property>
                   <value>101.0696354508</value>
@@ -662,10 +740,10 @@
       </expression> 
     </input>
   <output>
-    <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
+    <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
   </output>
   <min>-10</min>
-  <max> 20</max>
+  <max> 25</max>
 </filter>
 
 </PropertyList>

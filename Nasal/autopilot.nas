@@ -94,9 +94,8 @@ setlistener( "/autopilot/settings/target-altitude-mcp-ft", mcp_alt_change, 0, 0)
 # LVL CHG button
 var lvlchg_button_press = func {
 
-	if (getprop("/autopilot/internal/TOGA")) {
-		var mcp_speed = getprop("/autopilot/settings/target-speed-kt");
-		setprop("/autopilot/settings/target-speed-kt", mcp_speed + 20);
+	if (getprop("/autopilot/internal/TOGA") and getprop("/autopilot/settings/target-speed-kt") < getprop("/autopilot/settings/target-speed-kt-plus-20")) {
+		setprop("/autopilot/settings/target-speed-kt", getprop("/autopilot/settings/target-speed-kt-plus-20"));
 	}
 
 var GS = getprop("/autopilot/internal/VNAV-GS");
@@ -218,7 +217,7 @@ var n1_engage = func {
 var AT_arm = getprop("/autopilot/internal/SPD");
 if (AT_arm) {
 	setprop("/autopilot/internal/SPD-SPEED", 0);
-	setprop("/autopilot/internal/TOGA", 0);
+	#setprop("/autopilot/internal/TOGA", 0);
 	setprop("/autopilot/internal/SPD-RETARD", 0);
 	setprop("/autopilot/internal/SPD-N1", 1);
 	setprop("/autopilot/internal/target-n1", getprop("/autopilot/settings/max-n1"));
@@ -963,6 +962,8 @@ var toga_engage = func {
 	var takeoff_n1 = getprop("/autopilot/settings/to-n1-26k");
 
 	setprop("/autopilot/internal/target-n1", takeoff_n1);
+
+	setprop("/autopilot/settings/target-speed-kt-plus-20", getprop("/autopilot/settings/target-speed-kt") + 20);
 
 	setprop("/autopilot/display/pitch-mode-last-change", getprop("/sim/time/elapsed-sec"));
 	setprop("/autopilot/display/toga-mode-last-change", getprop("/sim/time/elapsed-sec"));

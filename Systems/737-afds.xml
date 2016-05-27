@@ -1100,32 +1100,41 @@
   <filter>
     <type>gain</type>
     <input>
-      <property>/autopilot/settings/target-speed-kt</property>
-      <offset>18</offset>
+      <prop>/autopilot/settings/target-speed-kt-plus-20</prop>
     </input>
-    <output>/autopilot/settings/target-speed-kt-plus-20</output>
-    <gain>1</gain>
+    <reference>
+      <value>5</value>
+    </reference>
+    <output>
+      <prop>/autopilot/settings/target-speed-kt-plus-15</prop>
+    </output>
   </filter>
 
  <logic>
    <input>
      <greater-than>
        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-       <property>/autopilot/settings/target-speed-kt-plus-20</property>
+       <property>/autopilot/settings/target-speed-kt-plus-15</property>
      </greater-than>
    </input>
    <output>/autopilot/logic/v2-plus-20</output>
  </logic>
 
- <logic>
-   <input>
-     <less-than>
-       <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-       <property>/autopilot/settings/target-speed-kt</property>
-     </less-than>
-   </input>
-   <output>/autopilot/logic/v2-minus</output>
- </logic>
+  <logic>
+    <input>
+      <and>
+        <less-than>
+          <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+          <property>/autopilot/settings/target-speed-kt</property>
+        </less-than>
+        <less-than>
+          <property>/autopilot/settings/target-speed-kt</property>
+          <property>/autopilot/settings/target-speed-kt-plus-20</property>
+        </less-than>
+      </and>
+    </input>
+    <output>/autopilot/logic/v2-minus</output>
+  </logic>
 
  <flipflop>
    <type>RS</type> <!-- or SR -->
@@ -1268,6 +1277,10 @@
          <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
          <value>84</value>
        </greater-than>
+       <less-than>
+         <property>/position/altitude-agl-ft</property>
+         <value>406.5</value>
+       </less-than>
      </and>
    </input>
    <output>/autopilot/logic/thr-hld-84kts</output>
@@ -1294,6 +1307,7 @@
       <condition>
         <and>
           <property>/autopilot/internal/TOGA</property>
+          <not><property>/autopilot/internal/SPD-N1</property></not>
           <equals>
             <property>/autopilot/display/throttle-mode</property>
             <value>THR HLD</value>
