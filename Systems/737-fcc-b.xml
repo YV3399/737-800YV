@@ -47,7 +47,7 @@
         <scale>-1.0</scale>
       </offset>
     </input>
-    <output>/autopilot/internal/fcca-heading-bug-error-deg</output>
+    <output>/autopilot/internal/fccb-heading-bug-error-deg</output>
     <period>
       <min>-180</min>
       <max>180</max>
@@ -396,7 +396,7 @@
   <type>gain</type>
   <gain>1.0</gain>
   <input>autopilot/internal/current-vertical-speed-fpm</input>
-  <output>/autopilot/settings/fcca-vertical-speed-fpm</output>
+  <output>/autopilot/settings/fccb-vertical-speed-fpm</output>
  </filter>
 
   <filter>
@@ -442,7 +442,7 @@
       </expression>
     </input>
     <output>
-      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
     </output>
     <min>0</min>
     <max>6000</max>
@@ -488,7 +488,7 @@
       </expression>
     </input>
     <output>
-      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
     </output>
     <min>1000</min>
     <max>3500</max>
@@ -536,7 +536,7 @@
       </expression>
     </input>
     <output>
-      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
     </output>
       <min>/autopilot/settings/min-lvlchg-vs</min>
       <max>/autopilot/settings/max-lvlchg-vs</max>
@@ -559,7 +559,7 @@
       <prop>/autopilot/settings/target-altitude-mcp-ft</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
     </output>
     <config>
       <Kp>7.5</Kp>          <!-- proportional gain -->
@@ -586,7 +586,7 @@
       <prop>/autopilot/settings/target-alt-hold-ft</prop>
     </reference>
     <output>
-      <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
+      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
     </output>
     <config>
       <Kp>7.5</Kp>          <!-- proportional gain -->
@@ -614,7 +614,7 @@
     </offset>
   </input>
   <output>
-    <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
+    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
   </output>
   <min>/autopilot/settings/vs-limitation</min>
   <max>0</max>
@@ -645,7 +645,7 @@
     </expression>
   </input>
   <output>
-    <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
+    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
   </output>
 </filter>
 
@@ -663,7 +663,7 @@
     <prop>/autopilot/settings/vertical-speed-fpm</prop>
   </input>
   <output>
-    <prop>/autopilot/settings/fcca-vertical-speed-fpm</prop>
+    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
   </output>
 </filter>
 
@@ -727,7 +727,7 @@
           <product>
             <asin>
               <div>
-                <property>/autopilot/settings/fcca-vertical-speed-fpm</property>
+                <property>/autopilot/settings/fccb-vertical-speed-fpm</property>
                 <product>
                   <property>/instrumentation/airspeed-indicator[1]/true-speed-kt</property>
                   <value>101.0696354508</value>
@@ -740,7 +740,7 @@
       </expression> 
     </input>
   <output>
-    <prop>/autopilot/settings/fcca-target-pitch-deg</prop>
+    <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
   </output>
   <min>-10</min>
   <max> 25</max>
