@@ -51,6 +51,22 @@
 				<z-offset-m archive="y">-17.5</z-offset-m>
 			</config>
 		</view>
+		
+		<view n="109">
+			<name>Left Wing (Economy)</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<default-field-of-view-deg type="double">50</default-field-of-view-deg>
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<heading-offset-deg>60</heading-offset-deg>
+				<x-offset-m archive="y">-1.83</x-offset-m>
+				<y-offset-m archive="y">1.3</y-offset-m>
+				<z-offset-m archive="y">3.02</z-offset-m>
+			</config>
+		</view>
                  
 	</sim>
 
