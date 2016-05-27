@@ -609,7 +609,7 @@
   <input>
     <property>/instrumentation/nav[1]/gs-rate-of-climb-fpm</property>
     <offset>
-      <property>autopilot/internal/nav1-gs-rate</property>
+      <property>autopilot/internal/nav2-gs-rate</property>
       <scale>/autopilot/settings/gs-deviation-sensitivity</scale>
     </offset>
   </input>

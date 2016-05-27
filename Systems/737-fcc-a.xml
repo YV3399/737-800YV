@@ -6,7 +6,8 @@
  <!-- =============================================================== -->
 
 <!-- HDG SEL mode -->
-   <filter>
+
+  <filter>
     <name>heading bug error computer/normalizer for HDG mode</name>
     <debug>false</debug>
     <enable>
@@ -17,17 +18,15 @@
     <type>gain</type>
     <input>
       <property>autopilot/settings/heading-bug-deg</property>
-      <offset>
-        <property>orientation/heading-magnetic-deg</property>
-        <scale>-1.0</scale>
-      </offset>
     </input>
+    <reference>
+      <property>orientation/heading-magnetic-deg</property>
+    </reference>
     <output>/autopilot/internal/fcca-heading-bug-error-deg</output>
     <period>
       <min>-180</min>
       <max>180</max>
     </period>
-    <gain>1.0</gain>
   </filter>
 
 <!-- GA mode -->

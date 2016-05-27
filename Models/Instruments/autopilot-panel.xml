@@ -1151,7 +1151,7 @@
         <property>/autopilot/settings/heading-bug-deg</property>
         <factor>1</factor>
         <min>0</min>
-        <max>360</max>                
+        <max>360</max>
         <wrap>true</wrap>
       </binding>
     </action>

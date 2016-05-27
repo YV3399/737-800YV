@@ -365,8 +365,8 @@ var app_button_press = func {
 			setprop("/autopilot/internal/VNAV-GS-armed", 1);
 
 			if (LOC==0) {
-				setprop("/autopilot/internal/LNAV-NAV-armed", 1);
 				setprop("/autopilot/display/roll-mode-armed", "VOR/LOC");
+				setprop("/autopilot/internal/LNAV-NAV-armed", 1);
 			}
 		}
 	}
@@ -455,8 +455,8 @@ var vorloc_button_press = func {
 			setprop("/autopilot/display/roll-mode", "");
 		}
 	} elsif (!GS) {
-		setprop("/autopilot/internal/LNAV-NAV-armed", 1);
 		setprop("/autopilot/display/roll-mode-armed", "VOR/LOC");
+		setprop("/autopilot/internal/LNAV-NAV-armed", 1);
 	}
 }
 

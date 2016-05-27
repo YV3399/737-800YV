@@ -531,10 +531,6 @@
       <file>Aircraft/737-800/Nasal/ND.nas</file>
     </nd>
 
-    <Boeing>
-      <file>Aircraft/737-800/Nasal/cdu.nas</file>
-    </Boeing>
-
   </nasal>
 
   <instrumentation>
