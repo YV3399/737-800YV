@@ -1,0 +1,39 @@
+<PropertyList>
+
+<path>Fuel_Truck_Short_VolvoFM.ac</path>
+
+<!--offsets>
+<heading-deg>90</heading-deg>
+</offsets-->
+
+<animation>
+  <type>scale</type>
+  <x-offset>0.9</x-offset>
+  <y-offset>0.9</y-offset>
+  <z-offset>0.9</z-offset>
+ </animation>
+
+<animation>
+	<type>select</type>
+	<object-name>fuel_pipe</object-name>
+	<condition>
+		<equals>
+			<property>/services/fuel-truck/connect</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>fuel_pipe_disconnecte</object-name>
+	<condition>
+		<equals>
+			<property>/services/fuel-truck/connect</property>
+			<value>0</value>
+		</equals>
+	</condition>
+</animation>
+
+
+</PropertyList>

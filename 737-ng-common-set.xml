@@ -116,6 +116,38 @@
               <script>boeing737.autostart()</script>
             </binding>
           </item>
+		  <item>
+			<label>Fuel Truck Controls</label>
+			<name>fuel</name>
+			<binding>
+				<command>nasal</command>
+				<script>
+					var fuel = gui.Dialog.new("sim/gui/dialogs/fuel/dialog", "Aircraft/737-800/Systems/fuel-truck.xml");
+					fuel.open();
+				</script>
+			</binding>
+		  </item>
+          <item>
+			<name>gs</name>
+			<label>Ground Services</label>
+			<binding>
+				<command>nasal</command>
+				<script>
+					var gs = gui.Dialog.new("sim/gui/dialogs/gs/dialog", "Aircraft/737-800/Systems/ground-services-dlg.xml");
+					gs.open();
+				</script>
+			</binding>
+		  </item>
+		  <item>
+		      <label>Announcements</label>
+		      <binding>
+					<command>nasal</command>
+					<script>
+						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/737-800/Dialogs/announcements-dialog.xml");
+						mal.open();
+		       </script>
+		      </binding>
+          </item> 
           <item>
             <label>Select Livery</label>
             <binding>
@@ -140,6 +172,17 @@
               </script>
             </binding>
           </item>
+		  <item>
+			<name>lights</name>
+			<label>Lights</label>
+				<binding>
+					<command>nasal</command>
+					<script>
+						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800/Systems/lights-dlg.xml");
+						lights.open();
+					</script>
+				</binding>
+		  </item>
         </menu>
       </default>
     </menubar>
@@ -511,17 +554,21 @@
       <file>Aircraft/Instruments-3d/cdu/boeing.nas</file> <!-- old CDU-->
     </cdu>
 
-    <boeing737>
-      <file>Aircraft/Generic/limits.nas</file>
-      <file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
-      <file>Aircraft/737-800/Models/Instruments/EICAS/upperEICAS.nas</file>
-      <file>Aircraft/737-800/Nasal/autostart.nas</file>
-      <file>Aircraft/737-800/Nasal/air-ground.nas</file>
-      <file>Aircraft/737-800/Nasal/controls.nas</file>
-      <file>Aircraft/737-800/Nasal/friction.nas</file>
-      <file>Aircraft/737-800/Nasal/liveries.nas</file>
-      <file>Aircraft/737-800/Nasal/systems.nas</file>
+	<boeing737>
+		<file>Aircraft/Generic/limits.nas</file>
+		<file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
+		<file>Aircraft/737-800/Models/Instruments/EICAS/upperEICAS.nas</file>
+		<file>Aircraft/737-800/Nasal/autostart.nas</file>
+		<file>Aircraft/737-800/Nasal/air-ground.nas</file>
+		<file>Aircraft/737-800/Nasal/controls.nas</file>
+		<file>Aircraft/737-800/Nasal/friction.nas</file>
+		<file>Aircraft/737-800/Nasal/lighting.nas</file>     
+		<file>Aircraft/737-800/Nasal/tire-smoke.nas</file>
+		<file>Aircraft/737-800/Nasal/ground-services.nas</file>      
+		<file>Aircraft/737-800/Nasal/liveries.nas</file>
+		<file>Aircraft/737-800/Nasal/systems.nas</file>
     </boeing737>
+
 
     <autopilot737>
       <file>Aircraft/737-800/Nasal/autopilot.nas</file>

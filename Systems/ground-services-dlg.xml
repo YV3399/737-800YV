@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<name>ground_services</name>
+	<layout>vbox</layout>
+
+	<text>
+		<label>Ground Services Controls</label>
+	</text>
+
+	<hrule />
+		
+	<text>
+		<label>De-icing Truck</label>
+	</text>
+
+	<checkbox>
+		<label>Enable De-icing Truck</label>
+		<property>services/deicing_truck/enable</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+
+	<button>
+		<legend>De-ice Aircraft</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>
+				if (getprop("services/deicing_truck/enable") == 1) {
+					setprop("/services/deicing_truck/de-ice", 1);
+					screen.log.write("Starting De-icing Process...", 1, 1, 1);
+				} else
+					screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);
+			</script>
+		</binding>
+	</button>
+		
+	<!--hrule/>
+	
+	<text>
+		<label>Catering Truck</label>
+	</text>
+	
+	<checkbox>
+		<label>Enable Catering Truck</label>
+		<property>services/catering/enable</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+	
+	<button>
+		<legend>Toggle Catering</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>
+				if (getprop("services/catering/enable") == 1) {
+					dialogs.doors.toggle("cater_pos");
+				} else
+					screen.log.write("Please Enable the Catering truck first", 1, 0, 0);
+			</script>
+		</binding>
+	</button>
+	
+	<hrule /-->
+
+
+	<!--text>
+		<label>Landing Gear Chokes</label>
+	</text>
+	
+	<group>
+	<layout>table</layout>
+	
+	<text>
+		<row>0</row>
+		<col>0</col>
+		<label>Left Gear</label>
+	</text>
+	
+	<text>
+		<row>0</row>
+		<col>1</col>
+		<label>Nose Gear</label>
+	</text>
+	
+	<text>
+		<row>0</row>
+		<col>2</col>
+		<label>Right Gear</label>
+	</text>
+	
+	<checkbox>
+		<row>1</row>
+		<col>0</col>
+		<property>services/chokes/left</property>
+		<binding>
+			<command>dialog-appl<engine>
+	<name>de ice truck operation</name>
+	<path>/Aircraft/707-320/Sounds/electricalengine.wav</path>
+	<mode>looped</mode>
+        <condition>
+            <less-than>	
+	         <property>/velocities/groundspeed-kt</property>
+	         <value>1</value>
+	         </less-than>
+        </condition>
+        <volume>
+            <property>/services/deicing_truck/de-ice</property>
+            <value>1</value>
+        </volume>
+        <volume>
+            <property>sim/sound/Ovolume</property>
+        </volume>
+        <position>
+            <x-m>-15</x-m>
+		<y-m>9.5</y-m>
+		<z-m>-3.45</z-m>
+        </position>
+        <reference-dist>60.0</reference-dist>
+        <max-dist>50.0</max-dist>
+    </engine>y</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+	
+	<checkbox>
+		<row>1</row>
+		<col>1</col>
+		<property>services/chokes/nose</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+	
+	<checkbox>
+		<row>1</row>
+		<col>2</col>
+		<property>services/chokes/right</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+	
+	</group-->
+	
+	<hrule />
+	
+	<text>
+		<label>Other Ground Services</label>
+	</text>
+	
+	<checkbox>
+		<label>Enable Baggage Ramp</label>
+		<property>services/baggage/enable</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+	
+	<checkbox>
+		<label>Enable External Power Box</label>
+		<property>services/ext-pwr/enable</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+	<!--checkbox>
+		<label>Bus</label>
+		<property>controls/switches/bus</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox-->
+
+
+	<hrule />
+	
+	<group>
+	<layout>hbox</layout>
+
+		<button>
+			<legend>Close</legend>
+			<default>true</default>
+			<key>Esc</key>
+		<padding>5</padding>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+		
+	</group>
+
+</PropertyList>

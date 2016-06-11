@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<name>fuel_truck</name>
+	<layout>vbox</layout>
+
+	<text>
+		<label>Fuel Truck Controls</label>
+	</text>
+
+	<hrule />
+
+	<group>
+	<layout>vbox</layout>
+	
+		<group>
+		<layout>table</layout>
+
+		<text>
+		    <label>Request Fuel (max 29100 lbs)</label>
+		    <halign>right</halign>
+		    <row>0</row>
+		    <col>0</col>
+		</text>		
+
+		<text>
+		    <label>Fuel Quantity in Tanks (lbs)</label>
+		    <halign>right</halign>
+		    <row>1</row>
+		    <col>0</col>
+		</text>
+		
+		<input>
+            <row>1</row>
+            <col>1</col>
+            <property>consumables/fuel/total-fuel-lbs</property>
+            <live>true</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </input>
+	
+		<input>
+            <row>0</row>
+            <col>1</col>
+            <property>/services/fuel-truck/request-lbs</property>
+            <live>true</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </input>
+		
+		</group>
+		
+		<hrule />
+		
+			<checkbox>
+				<label>Enable Fuel Truck</label>
+				<property>services/fuel-truck/enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Connect pipe to Aircraft</label>
+				<property>services/fuel-truck/connect</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+		
+		<hrule />
+		
+		<group>
+		<layout>hbox</layout>
+		
+			<button>
+				<legend>Re-fuel</legend>
+				<padding>5</padding>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if ((getprop("services/fuel-truck/enable") == 1) and (getprop("services/fuel-truck/connect") == 1)) {
+
+							if (getprop("/services/fuel-truck/clean") == 1) {
+								screen.log.write("You can't load fuel while cleaning the tanks!'", 1, 0, 0); 
+							}
+							
+							if (getprop("/services/fuel-truck/request-lbs") > 90000) {
+								screen.log.write("Too much fuel requested!'", 1, 0, 0); 
+
+							} else {								
+									setprop("/services/fuel-truck/transfer", 1);
+									screen.log.write("Re-fueling process started...", 0, 0.584, 1); 
+							}
+						} else
+							screen.log.write("Please Enable and Connect the Fuel Truck First!", 1, 0, 0);
+
+					</script>
+				</binding>
+			</button>
+			
+			<button>
+				<legend>Stop!</legend>
+				<padding>5</padding>
+				<binding>
+					<command>nasal</command>
+					<script>
+						setprop("/services/fuel-truck/transfer", 0);
+						setprop("/services/fuel-truck/clean", 0);
+						screen.log.write("Operation stopped!", 1, 0, 0);
+					</script>
+				</binding>
+			</button>
+			
+			<button>
+				<legend>Drain Tanks</legend>
+				<padding>5</padding>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if ((getprop("services/fuel-truck/enable") == 1) and (getprop("services/fuel-truck/connect") == 1)) {
+						
+							if (getprop("/services/fuel-truck/transfer") == 1)
+								screen.log.write("You can't clean the tanks while loading fuel!'", 1, 0, 0);
+							else {
+								setprop("/services/fuel-truck/clean", 1);
+								screen.log.write("Cleaning Fuel Tanks...", 0, 0.584, 1);
+							}
+						} else
+							screen.log.write("Please Enable and Connect the Fuel Truck First!", 1, 0, 0);
+					</script>
+				</binding>
+			</button>
+		
+		</group>
+	
+	</group>
+
+	<hrule />
+	
+	<group>
+	<layout>hbox</layout>
+
+		<button>
+			<legend>Close</legend>
+			<default>true</default>
+			<key>Esc</key>
+		<padding>5</padding>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+		
+	</group>
+
+</PropertyList>

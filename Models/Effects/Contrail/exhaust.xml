@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--
+sweat by maggse
+    -->
+<PropertyList>
+
+<particlesystem>
+	<!-- <type>trail</type>-->
+	<name>flare</name>
+	<texture>contrail.rgb</texture>
+	<emissive>true</emissive>
+	<lighting>false</lighting>
+	<offsets>
+		<x-m>0.000</x-m>
+		<y-m>0.00</y-m>
+		<z-m>0.00</z-m>
+		<pitch-deg>90</pitch-deg>
+	</offsets>
+	
+	<attach>world</attach>
+	
+	<placer>
+		<type>point</type>
+		
+	</placer>
+	
+	<shooter>
+		<theta-min-deg>0</theta-min-deg>
+		<theta-max-deg>0</theta-max-deg>
+		<phi-min-deg>0</phi-min-deg>
+		<phi-max-deg>0</phi-max-deg>
+		<speed>
+			<value>11</value>
+			<spread>1</spread>
+		</speed>
+		<rotation-speed>
+			<x-min-deg-sec>0</x-min-deg-sec>
+			<y-min-deg-sec>0</y-min-deg-sec>
+			<z-min-deg-sec>10</z-min-deg-sec>
+			<x-max-deg-sec>0</x-max-deg-sec>
+			<y-max-deg-sec>10</y-max-deg-sec>
+			<z-max-deg-sec>20</z-max-deg-sec>
+		</rotation-speed>
+	</shooter>
+	
+	<counter>
+		<particles-per-sec>
+			<value>25</value>
+			<spread>0</spread>
+		</particles-per-sec>
+
+		
+	</counter>
+	
+	<align>billboard</align>
+	
+	<particle>
+		<start>
+        	<color>
+			<red>
+				<value>0.3</value>
+			</red>
+			<green>
+				<value>0.3</value>
+			</green>
+			<blue>
+				<value>0.3</value>
+			</blue>
+			<alpha>
+				<value>0.40</value>
+			</alpha>
+		</color>
+        		<size>
+          			<value>1.6</value>
+        		</size>
+      		</start>
+		<end>
+        	<color>
+			<red>
+				<value>0.65</value>
+			</red>
+			<green>
+				<value>0.45</value>
+			</green>
+			<blue>
+				<value>0.35</value>
+			</blue>
+			<alpha>
+				<value>0.2</value>
+			</alpha>
+		</color>
+        		<size>
+          			<value>0.4</value>
+        		</size>
+      		</end>
+
+		<life-sec>
+			<value>0.6</value>
+		</life-sec>
+		<mass-kg>0.5</mass-kg>
+		<radius-m>0.1</radius-m>
+	</particle>
+	
+	<program>
+		<fluid>air</fluid>
+		<gravity type="bool">true</gravity>
+		<wind type="bool">false</wind>
+	</program>
+	
+</particlesystem>
+
+</PropertyList>
+

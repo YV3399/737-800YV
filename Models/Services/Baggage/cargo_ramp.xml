@@ -1,0 +1,12 @@
+<PropertyList>
+
+<path>cargo_ramp.ac</path>
+
+<animation>
+  <type>scale</type>
+  <x-offset>0.70</x-offset>
+  <y-offset>0.70</y-offset>
+  <z-offset>0.70</z-offset>
+ </animation>
+
+</PropertyList>

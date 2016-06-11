@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <name>Cabin Announcements</name>
+  <layout>vbox</layout>
+
+<!-- Reminder, included are: Seatbelt, Departure, CrewDeparture, take-off, cruising, descending, brace -->
+
+  <text>
+    <label>Cabin Announcements</label>
+  </text>
+
+  <hrule/>
+
+  <group>
+    <layout>vbox</layout>
+    <halign>center</halign>
+
+<hrule/>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Seatbelts Sign</label>
+      <property>sim/sound/seatbelt-sign</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/seatbelt-sign</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>No Smoking Sign</label>
+      <property>sim/sound/no-smoking-sign</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/no-smoking-sign</property>
+      </binding>
+    </checkbox>
+
+ <hrule/>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Welcome Aboard</label>
+      <property>sim/sound/welcome</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/welcome</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Safety Briefing</label>
+      <property>sim/sound/safety</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/safety</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Pre-Take Off</label>
+      <property>sim/sound/pretakeoff</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/pretakeoff</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Climbing</label>
+      <property>sim/sound/climb</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/climb</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Cruise SeatBelt</label>
+      <property>sim/sound/cruise-seatbelt</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/cruise-seatbelt</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Cruising</label>
+      <property>sim/sound/cruise</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/cruise</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Descending</label>
+      <property>sim/sound/descent</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/descent</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Landing</label>
+      <property>sim/sound/land</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/land</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Parked at Gate</label>
+      <property>sim/sound/gate</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/gate</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Emergency</label>
+      <property>sim/sound/emergency</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/emergency</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Brace</label>
+      <property>sim/sound/brace</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/brace</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Turbulence</label>
+      <property>sim/sound/turbulence</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/turbulence</property>
+      </binding>
+    </checkbox>
+
+  <hrule/>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Boarding Music</label>
+      <property>sim/sound/music2</property>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/music2</property>
+      </binding>
+    </checkbox>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Passenger noise</label>
+      <property>sim/sound/passengers</property>
+      <binding>
+          <command>property-toggle</command>
+          <property>sim/sound/passengers</property>
+      </binding>
+    </checkbox>
+    
+    <hrule/>
+    
+    <checkbox>
+        <halign>left</halign>
+        <label>Auto-annunciator</label>
+        <property>aircraft-config/auto-annunciator</property>
+        <binding>
+            <command>property-toggle</command>
+            <property>aircraft-config/auto-annunciator</property>
+        </binding>
+    </checkbox>
+
+
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+
+    <empty><stretch>true</stretch></empty>
+  </group>
+
+</PropertyList>

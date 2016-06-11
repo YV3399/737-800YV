@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<name>Mobile Stairs</name>
+	<path>stairs.ac</path>
+
+<animation>
+  <type>scale</type>
+  <x-offset>0.5</x-offset>
+  <y-offset>0.5</y-offset>
+  <z-offset>0.5</z-offset>
+ </animation>
+
+<animation>
+  <type>material</type>
+  <object-name>paint</object-name>
+  <object-name>cover</object-name>
+  <object-name>cover-under</object-name>
+  <object-name>cover-rods</object-name>
+  <emission>
+    <red>0.1</red>
+    <green>0.1</green>
+    <blue>0.1</blue>
+    <!--factor-prop>/controls/lighting/digital-norm</factor-prop-->
+  </emission>
+</animation>
+
+
+
+<!-- LIVERY SELECT -->
+	<!-- Animation -->
+	<animation>
+		<type>material</type>
+		<object-name>paint</object-name>
+		<object-name>cover</object-name>
+		<property-base>/services/stairs</property-base>
+		<texture-prop>paint-end</texture-prop>
+	</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>cover</object-name>
+	<object-name>cover-under</object-name>
+	<object-name>cover-rods</object-name>
+	<condition>
+		<property>/services/stairs/cover</property>
+	</condition>
+</animation>
+		
+</PropertyList>

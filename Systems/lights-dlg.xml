@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<name>lights-dlg</name>
+	<layout>vbox</layout>
+
+	<text>
+		<label>737-800 Light Controller</label>
+	</text>
+
+	<hrule />
+
+	<group>
+		<layout>vbox</layout>
+
+		<text>
+			<label>Landing lights</label>
+		</text>
+
+		<group>
+			<layout>hbox</layout>
+
+			<checkbox>
+				<label>Left</label>
+				<property>controls/lighting/landing-lights[0]</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+
+			<checkbox>
+				<label>Nosegear</label>
+				<property>controls/lighting/landing-lights[1]</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+
+			<checkbox>
+				<label>Right</label>
+				<property>controls/lighting/landing-lights[2]</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+		</group>
+
+		<hrule/>
+
+		<checkbox>
+			<label>Navigation lights</label>
+			<property>controls/lighting/nav-lights</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+
+		<checkbox>
+			<label>Strobe lights</label>
+			<property>controls/lighting/strobe</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+
+		<checkbox>
+			<label>Beacon</label>
+			<property>controls/lighting/beacon</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+
+		
+
+
+<!--		<checkbox>
+			<label>Flight deck lights</label>
+			<property>controls/lighting/cockpit</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+
+		<text>
+			<label>Cabin lighting</label>
+		</text>
+
+		<slider>
+			<width>200</width>
+			<property>controls/lighting/interior</property>
+			<step>0.05</step>
+			<min>0</min>
+			<max>1</max>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</slider>
+
+		<text>
+			<label>Panel lighting</label>
+		</text>
+
+		<slider>
+			<width>200</width>
+			<property>controls/lighting/panel-norm</property>
+			<step>0.05</step>
+			<min>0</min>
+			<max>1</max>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+		</slider>-->
+
+		<!--checkbox>
+			<label>3D light cones</label>
+			<property>controls/lighting/cones</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox-->
+	</group>
+
+	<hrule />
+
+	<group>
+		<layout>vbox</layout>
+
+		<button>
+			<legend>Close</legend>
+			<default>true</default>
+			<key>Esc</key>
+		<padding>10</padding>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+
+</PropertyList>
