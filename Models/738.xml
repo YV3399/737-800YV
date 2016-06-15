@@ -257,16 +257,6 @@
 	</offsets>
 </model>
 
-<!-- Services by PR-GEO -->
-
-  <model>
-    <path>Aircraft/737-800/Models/Services/Services.xml</path>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </offsets>
-  </model>
   
   <!-- CONTRAIL -->
 

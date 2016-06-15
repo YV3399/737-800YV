@@ -738,6 +738,29 @@
   </axis>
  </animation>
  
+ <!-- left reverser--> 
+<animation> 
+	<type>translate</type>
+	<object-name>lreverserib_0</object-name>
+	<object-name>lreverserib_1</object-name>
+	<property>engines/engine[0]/reverser-pos-norm</property> 
+	<interpolation> 
+		<entry>  
+			<ind>0</ind>  
+			<dep>0.0</dep> 
+		</entry> 
+		<entry> 
+			<ind>1</ind> 
+			<dep>0.6</dep> 
+		</entry> 
+	</interpolation> 
+	<axis>
+		<x>1</x>  
+		<y>0</y> 
+		<z>0</z> 
+	</axis> 
+</animation> 
+ 
 
 </PropertyList>
 

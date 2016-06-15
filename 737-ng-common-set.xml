@@ -334,7 +334,16 @@
           </script>
         </binding>
       </key>
-
+	  <key n="127">
+        <name>Delete</name>
+        <desc>Toggle Reversers</desc>
+        <binding> 
+          <command>nasal</command>
+         <script>
+            reversethrust.togglereverser();
+        </script>
+        </binding>
+      </key>
     </keyboard>
   </input>
 
@@ -577,6 +586,10 @@
     <nd>
       <file>Aircraft/737-800/Nasal/ND.nas</file>
     </nd>
+	
+	<reversethrust>
+        <file>Aircraft/737-800/Nasal/reverse-thrust.nas</file>
+    </reversethrust>
 
   </nasal>
 
