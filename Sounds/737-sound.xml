@@ -60,7 +60,19 @@
         <reference-dist>10.0</reference-dist>
         <max-dist>30.0</max-dist>
     </engine>
-
+	
+	<engine>
+		<name>left-rev</name>
+		<path>Aircraft/737-800/Sounds/reverser.wav</path>
+		<condition>
+			<property>/controls/engines/engine[0]/reverser</property>
+		</condition>
+		<mode>looped</mode>
+		<volume>
+			<factor>0.1</factor>
+		</volume>
+	</engine>
+	
     <engine>
         <name>right engine</name>
         <path>Sounds/jet.wav</path>
@@ -117,7 +129,19 @@
         <reference-dist>10.0</reference-dist>
         <max-dist>30.0</max-dist>
     </engine>
-
+	
+	<engine>
+		<name>right-rev</name>
+		<path>Aircraft/737-800/Sounds/reverser.wav</path>
+		<condition>
+			<property>/controls/engines/engine[1]/reverser</property>
+		</condition>
+		<mode>looped</mode>
+		<volume>
+			<factor>0.1</factor>
+		</volume>
+  </engine>
+  
   <rumble>
    <name>rumble</name>
    <mode>looped</mode>
@@ -624,6 +648,7 @@
 			<reference-dist>20.0</reference-dist>
 			<max-dist>100.0</max-dist>
 		</announcement>
+	
 	
 
 </fx>
