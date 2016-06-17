@@ -106,21 +106,6 @@
 
 
 
-<model>
-	<path>Aircraft/737-800/Models/lights/landinglight.xml</path>
-	<name>NoseGearLandinglight</name>     
-	<condition>
-		<equals>
-			<property>gear/gear[0]/position-norm</property>
-			<value type="bool">true</value>
-		</equals>
-	</condition>
-	<offsets>
-		<x-m>-15.73</x-m>
-		<y-m>  0.00</y-m> 
-		<z-m> -1.60</z-m>      
-	</offsets>
-</model>
 
 <model>
 	<path>Aircraft/737-800/Models/lights/landinglight.xml</path>
