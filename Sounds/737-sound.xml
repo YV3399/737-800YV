@@ -180,9 +180,6 @@
     <offset>1.0</offset>
     <factor>-0.001</factor>
    </pitch>
-   <volume>
-	<factor>0.45</factor>
-   </volume>
   </gear>
 
   <gear>
