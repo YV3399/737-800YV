@@ -655,10 +655,10 @@
 			<mode>once</mode>
 			<condition>
 				<and>
-					<less-than>
+					<equals>
 						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
 						<value>310</value>
-					</less-than>
+					</equals>
 					<less-than>
 						<property>/velocities/vertical-speed-fps</property>
 						<value>-2</value>
@@ -682,10 +682,10 @@
 			<mode>once</mode>
 			<condition>
 				<and>
-					<less-than>
+					<equals>
 						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
 						<value>2500</value>
-					</less-than>
+					</equals>
 					<less-than>
 						<property>/velocities/vertical-speed-fps</property>
 						<value>-1</value>
