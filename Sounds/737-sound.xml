@@ -654,14 +654,16 @@
 			<path>Aircraft/737-800/Sounds/gpws/approaching-minimums.wav</path>
 			<mode>once</mode>
 			<condition>
-				<less-than>
-					<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
-					<value>310</value>
-				</less-than>
-				<less-than>
-					<property>/velocities/vertical-speed-fps</property>
-					<value>-2</value>
-				</less-than>
+				<and>
+					<less-than>
+						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+						<value>310</value>
+					</less-than>
+					<less-than>
+						<property>/velocities/vertical-speed-fps</property>
+						<value>-2</value>
+					</less-than>
+				</and>
 			</condition>
 			<volume>
 				<factor>8</factor>
@@ -679,14 +681,16 @@
 			<path>Aircraft/737-800/Sounds/gpws/altitude-2500.wav</path>
 			<mode>once</mode>
 			<condition>
-				<less-than>
-					<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
-					<value>2500</value>
-				</less-than>
-				<less-than>
-					<property>/velocities/vertical-speed-fps</property>
-					<value>-1</value>
-				</less-than>
+				<and>
+					<less-than>
+						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+						<value>2500</value>
+					</less-than>
+					<less-than>
+						<property>/velocities/vertical-speed-fps</property>
+						<value>-1</value>
+					</less-than>
+				</and>
 			</condition>
 			<volume>
 				<factor>8</factor>
