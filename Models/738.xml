@@ -46,4 +46,39 @@
       <z-m>-1.50</z-m>
     </offsets>
   </model>
+  
+
+<!-- Tyre Smoke -->
+
+<model>
+	<path>Aircraft/737-800/Models/Effects/tyre-smoke-nose.xml</path>
+	<name>tyre-smoke-n</name>
+	<offsets>
+		<x-m>-18.00</x-m>
+		<y-m>0.0</y-m>
+		<z-m>-5.50</z-m>
+	</offsets>
+</model>
+
+
+<model>
+	<path>Aircraft/737-800/Models/Effects/tyre-smoke-left.xml</path>
+	<name>tyre-smoke-l</name>
+	<offsets>
+		<x-m>-4.83</x-m>
+		<y-m>-2.14</y-m>
+		<z-m>-0.51</z-m>
+	</offsets>
+</model>
+
+<model>
+	<path>Aircraft/737-800/Models/Effects/tyre-smoke-right.xml</path>
+	<name>tyre-smoke-r</name>
+	<offsets>
+		<x-m>-4.83</x-m>
+		<y-m>2.14</y-m>
+		<z-m>0.51</z-m>
+	</offsets>
+</model>
+
 </PropertyList>
