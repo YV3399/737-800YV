@@ -648,6 +648,57 @@
 			<reference-dist>20.0</reference-dist>
 			<max-dist>100.0</max-dist>
 		</announcement>
+		
+		<gpws>
+			<name>apprmin</name>
+			<path>Aircraft/737-800/Sounds/gpws/approaching-minimums.wav</path>
+			<mode>once</mode>
+			<condition>
+				<less-than>
+					<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+					<value>310</value>
+				</less-than>
+				<less-than>
+					<property>/velocities/vertical-speed-fps</property>
+					<value>-2</value>
+				</less-than>
+			</condition>
+			<volume>
+				<factor>8</factor>
+			</volume>
+			<position>
+				<x>0.00</x>
+				<y>0.00</y>
+				<z>0.00</z>
+			</position>
+			<reference-dist>20.0</reference-dist>
+			<max-dist>100.0</max-dist>
+		</gpws>
+		<gpws>
+			<name>2500</name>
+			<path>Aircraft/737-800/Sounds/gpws/altitude-2500.wav</path>
+			<mode>once</mode>
+			<condition>
+				<less-than>
+					<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+					<value>2500</value>
+				</less-than>
+				<less-than>
+					<property>/velocities/vertical-speed-fps</property>
+					<value>-1</value>
+				</less-than>
+			</condition>
+			<volume>
+				<factor>8</factor>
+			</volume>
+			<position>
+				<x>0.00</x>
+				<y>0.00</y>
+				<z>0.00</z>
+			</position>
+			<reference-dist>20.0</reference-dist>
+			<max-dist>100.0</max-dist>
+		</gpws>
 	
 	
 
