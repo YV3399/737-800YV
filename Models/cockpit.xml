@@ -1827,6 +1827,47 @@
       </axis>
   </animation>
   
+     <!--<model>
+        <name>ldglightleftwing</name>
+        <path>landinglight.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>-->
+	<!--<model>
+        <name>ldglightrightwing</name>
+        <path>landinglight.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>-->
+    <!--<model>
+        <name>ldglightleftretr</name>
+        <path>landinglight.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>-->
+  
+    <!--<model>
+        <name>ldglightrightretr</name>
+        <path>landinglight.xml</path>
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>-->
 </PropertyList>
    
    
