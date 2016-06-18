@@ -156,7 +156,7 @@
    <volume>
     <property>/velocities/airspeed-kt</property>
     <type>log</type>
-    <factor>0.5</factor>
+    <factor>0.6</factor>
    </volume>
   </rumble>
 
@@ -170,6 +170,9 @@
     <offset>1.0</offset>
     <factor>-0.001</factor>
    </pitch>
+   <volume>
+	<factor>0.45</factor>
+   </volume>
   </gear>
 
   <gear>
