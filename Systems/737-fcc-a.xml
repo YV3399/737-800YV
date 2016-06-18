@@ -628,18 +628,18 @@
     <condition>
       <property>/autopilot/internal/VNAV-FLARE</property>
     </condition>
-  </enable>	
+  </enable>
   <input>
     <expression>
       <sum>
         <product>
           <sum>
-            <property>/position/altitude-agl-ft</property>
-            <value>-6.5</value>
+            <property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+            <value>-7.5</value>
           </sum>
           <value>-7</value>
         </product>
-        <value>-50</value>
+        <value>-150</value>
       </sum>
     </expression>
   </input>
@@ -736,7 +736,7 @@
             <value>57.2957795131</value>
           </product>
         </sum>
-      </expression> 
+      </expression>
     </input>
   <output>
     <prop>/autopilot/settings/fcca-target-pitch-deg</prop>

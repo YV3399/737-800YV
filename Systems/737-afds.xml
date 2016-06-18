@@ -81,7 +81,7 @@
       <u_max>0.194285714</u_max>   <!-- maximum output clamp with flaps up (17 degrees of steering wheel) -->
     </config>
   </pi-simple-controller>
-  
+
  <!-- =============================================================== -->
  <!-- Pitch Axis Modes                                                -->
  <!-- =============================================================== -->
@@ -160,7 +160,7 @@
           </div>
           <value>-1</value>
         </sum>
-      </expression> 
+      </expression>
     </input>
   <output>
     <prop>/autopilot/settings/target-accel</prop>
@@ -257,7 +257,7 @@
           <property>/autopilot/internal/elevator-damp</property>
           <property>/autopilot/internal/elevator</property>
         </sum>
-      </expression> 
+      </expression>
     </input>
   <output>
     <prop>/controls/flight/elevator</prop>
@@ -508,7 +508,7 @@
         </product>
         <value>-0.2345804223</value>
       </sum>
-    </expression> 
+    </expression>
   </input>
   <output>
     <prop>/autopilot/internal/at-throttle</prop>
@@ -596,7 +596,7 @@
         </product>
         <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
       </div>
-    </expression> 
+    </expression>
   </input>
   <output>
     <prop>/autopilot/settings/target-speed-kt</prop>
@@ -1192,7 +1192,7 @@
        </less-than>
        <greater-than>
          <property>/position/altitude-agl-ft</property>
-         <value>6</value>
+         <value>806.5</value>
        </greater-than>
      </and>
    </input>

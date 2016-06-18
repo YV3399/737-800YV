@@ -551,7 +551,7 @@
       <condition>
         <property>/autopilot/internal/VNAV-ALT-ACQ</property>
       </condition>
-    </enable> 
+    </enable>
     <input>
       <prop>/instrumentation/altimeter[1]/indicated-altitude-ft</prop>
     </input>
@@ -578,7 +578,7 @@
       <condition>
         <property>/autopilot/internal/VNAV-ALT</property>
       </condition>
-    </enable> 
+    </enable>
     <input>
       <prop>/instrumentation/altimeter[1]/pressure-alt-ft</prop>
     </input>
@@ -605,7 +605,7 @@
     <condition>
       <property>/autopilot/internal/VNAV-GS</property>
     </condition>
-  </enable> 
+  </enable>
   <input>
     <property>/instrumentation/nav[1]/gs-rate-of-climb-fpm</property>
     <offset>
@@ -629,18 +629,18 @@
     <condition>
       <property>/autopilot/internal/VNAV-FLARE</property>
     </condition>
-  </enable> 
+  </enable>
   <input>
     <expression>
       <sum>
         <product>
           <sum>
-            <property>/position/altitude-agl-ft</property>
-            <value>-6.5</value>
+            <property>/instrumentation/radar-altimeter[1]/radar-altitude-ft</property>
+            <value>-7.5</value>
           </sum>
           <value>-7</value>
         </product>
-        <value>-50</value>
+        <value>-150</value>
       </sum>
     </expression>
   </input>
@@ -658,7 +658,7 @@
     <condition>
       <property>/autopilot/internal/VNAV-VS</property>
     </condition>
-  </enable> 
+  </enable>
   <input>
     <prop>/autopilot/settings/vertical-speed-fpm</prop>
   </input>
@@ -698,7 +698,7 @@
         </or>
       </condition>
       <value>15</value>
-    </input>  
+    </input>
     <input>
       <condition>
         <and>
@@ -737,7 +737,7 @@
             <value>57.2957795131</value>
           </product>
         </sum>
-      </expression> 
+      </expression>
     </input>
   <output>
     <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
