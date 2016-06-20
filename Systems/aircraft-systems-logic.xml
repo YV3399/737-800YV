@@ -180,7 +180,6 @@
 <!-- 2500 GPWS sound -->
 
 <filter> <!-- radar altimeter vertical speed -->
-  <debug>true</debug>
   <type>derivative</type>
   <input>/instrumentation/radar-altimeter[0]/radar-altitude-ft</input>
   <output>/b737/warnings/gpws/radar-vertical-speed[0]</output>
