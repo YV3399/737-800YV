@@ -23,16 +23,7 @@
 
 			<checkbox>
 				<label>Left</label>
-				<property>controls/lighting/landing-lights[0]</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-
-			<checkbox>
-				<label>Nosegear</label>
-				<property>controls/lighting/landing-lights[1]</property>
+				<property>controls/lighting/landing-lights</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -41,7 +32,7 @@
 
 			<checkbox>
 				<label>Right</label>
-				<property>controls/lighting/landing-lights[2]</property>
+				<property>controls/lighting/landing-lights</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
