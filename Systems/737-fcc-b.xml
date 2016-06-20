@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 
 <PropertyList>
- <!-- =============================================================== -->
- <!-- Roll Axis Modes                                                 -->
- <!-- =============================================================== -->
+  <!-- =============================================================== -->
+  <!-- Roll Axis Modes                                                 -->
+  <!-- =============================================================== -->
 
-<!-- HDG SEL mode -->
-   <filter>
+  <!-- HDG SEL mode -->
+  <filter>
     <name>heading bug error computer/normalizer for HDG mode</name>
     <enable>
       <condition>
@@ -29,8 +29,8 @@
     <gain>1.0</gain>
   </filter>
 
-<!-- GA mode -->
-   <filter>
+  <!-- GA mode -->
+  <filter>
     <name>heading bug error computer/normalizer for GA mode</name>
     <enable>
       <condition>
@@ -53,7 +53,7 @@
     <gain>1.0</gain>
   </filter>
 
-<!-- VOR/LOC mode -->
+  <!-- VOR/LOC mode -->
   <filter>
     <name>nav2 heading error computer/normalizer</name>
     <type>gain</type>
@@ -97,12 +97,12 @@
       </expression>
     </input>
     <output>/autopilot/internal/target-heading-shift-nav2</output>
-      <min>-30</min>
-      <max>30</max>
+    <min>-30</min>
+    <max>30</max>
     <gain>1.0</gain>
   </filter>
 
-   <filter>
+  <filter>
     <name>heading bug error computer/normalizer for VOR/LOC mode</name>
     <enable>
       <condition>
@@ -146,7 +146,7 @@
     <gain>1.0</gain>
   </filter>
 
-<!-- LNAV mode -->
+  <!-- LNAV mode -->
   <filter>
     <name>fms heading error computer/normalizer</name>
     <type>gain</type>
@@ -174,14 +174,14 @@
       </expression>
     </input>
     <output>/autopilot/internal/target-heading-shift-fms</output>
-      <min>-30</min>
-      <max>30</max>
+    <min>-30</min>
+    <max>30</max>
     <gain>1.0</gain>
   </filter>
 
 
 
-   <filter>
+  <filter>
     <name>heading bug error computer/normalizer</name>
     <enable>
       <condition>
@@ -227,7 +227,7 @@
     <gain>1.0</gain>
   </filter>
 
-<!-- ###### Target bank calculator -->
+  <!-- ###### Target bank calculator -->
 
   <pi-simple-controller>
     <name>Calculator for target bank in HDG mode</name>
@@ -331,11 +331,11 @@
     </config>
   </pi-simple-controller>
 
- <!-- =============================================================== -->
- <!-- Pitch Axis Modes                                                -->
- <!-- =============================================================== -->
+  <!-- =============================================================== -->
+  <!-- Pitch Axis Modes                                                -->
+  <!-- =============================================================== -->
 
-   <filter>
+  <filter>
     <type>gain</type>
     <input>
       <condition>
@@ -363,31 +363,31 @@
     <max>7</max>
   </filter>
 
- <!-- TOGA mode -->
+  <!-- TOGA mode -->
 
- <filter>
-  <name>VS translate</name>
-  <enable>
-   <condition>
-    <not>
-      <or>
-        <and>
-          <property>/autopilot/internal/PITCH-ACTIVE</property>
-          <not><property>/autopilot/internal/TOGA</property></not>
-        </and>
-        <and>
-          <property>/autopilot/internal/TOGA</property>
-          <property>/autopilot/logic/toga-pitch</property>
-        </and>
-      </or>
-    </not>
-   </condition>
-  </enable>
-  <type>gain</type>
-  <gain>1.0</gain>
-  <input>autopilot/internal/current-vertical-speed-fpm</input>
-  <output>/autopilot/settings/fccb-vertical-speed-fpm</output>
- </filter>
+  <filter>
+    <name>VS translate</name>
+    <enable>
+      <condition>
+        <not>
+          <or>
+            <and>
+              <property>/autopilot/internal/PITCH-ACTIVE</property>
+              <not><property>/autopilot/internal/TOGA</property></not>
+            </and>
+            <and>
+              <property>/autopilot/internal/TOGA</property>
+              <property>/autopilot/logic/toga-pitch</property>
+            </and>
+          </or>
+        </not>
+      </condition>
+    </enable>
+    <type>gain</type>
+    <gain>1.0</gain>
+    <input>autopilot/internal/current-vertical-speed-fpm</input>
+    <output>/autopilot/settings/fccb-vertical-speed-fpm</output>
+  </filter>
 
   <filter>
     <type>gain</type>
@@ -436,7 +436,7 @@
     <max>6000</max>
   </filter>
 
-<!-- GO-AROUND MODE -->
+  <!-- GO-AROUND MODE -->
   <filter>
     <type>gain</type>
     <name>GA mode</name>
@@ -481,7 +481,7 @@
     <max>3500</max>
   </filter>
 
- <!-- LVLCHG mode -->
+  <!-- LVLCHG mode -->
 
   <filter>
     <type>gain</type>
@@ -523,11 +523,11 @@
     <output>
       <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
     </output>
-      <min>/autopilot/settings/min-lvlchg-vs</min>
-      <max>/autopilot/settings/max-lvlchg-vs</max>
+    <min>/autopilot/settings/min-lvlchg-vs</min>
+    <max>/autopilot/settings/max-lvlchg-vs</max>
   </filter>
 
- <!-- ALT ACQ -->
+  <!-- ALT ACQ -->
 
   <pi-simple-controller>
     <name>Altitude Acquire</name>
@@ -553,7 +553,7 @@
     </config>
   </pi-simple-controller>
 
- <!-- ALT HOLD -->
+  <!-- ALT HOLD -->
 
   <pi-simple-controller>
     <name>Altitude Hold</name>
@@ -579,79 +579,79 @@
     </config>
   </pi-simple-controller>
 
- <!-- GLIDESLOPE mode -->
+  <!-- GLIDESLOPE mode -->
 
-<filter>
-  <type>gain</type>
-  <enable>
-    <condition>
-      <property>/autopilot/internal/VNAV-GS</property>
-    </condition>
-  </enable>
-  <input>
-    <property>/instrumentation/nav[1]/gs-rate-of-climb-fpm</property>
-    <offset>
-      <property>autopilot/internal/nav2-gs-rate</property>
-      <scale>/autopilot/settings/gs-deviation-sensitivity</scale>
-    </offset>
-  </input>
-  <output>
-    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
-  </output>
-  <min>/autopilot/settings/vs-limitation</min>
-  <max>0</max>
-</filter>
+  <filter>
+    <type>gain</type>
+    <enable>
+      <condition>
+        <property>/autopilot/internal/VNAV-GS</property>
+      </condition>
+    </enable>
+    <input>
+      <property>/instrumentation/nav[1]/gs-rate-of-climb-fpm</property>
+      <offset>
+        <property>autopilot/internal/nav2-gs-rate</property>
+        <scale>/autopilot/settings/gs-deviation-sensitivity</scale>
+      </offset>
+    </input>
+    <output>
+      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+    </output>
+    <min>/autopilot/settings/vs-limitation</min>
+    <max>0</max>
+  </filter>
 
- <!-- FLARE mode -->
+  <!-- FLARE mode -->
 
-<filter>
-  <type>gain</type>
-  <enable>
-    <condition>
-      <property>/autopilot/internal/VNAV-FLARE</property>
-    </condition>
-  </enable>
-  <input>
-    <expression>
-      <sum>
-        <product>
-          <sum>
-            <property>/instrumentation/radar-altimeter[1]/radar-altitude-ft</property>
-            <value>-7.5</value>
-          </sum>
-          <value>-7</value>
-        </product>
-        <value>-150</value>
-      </sum>
-    </expression>
-  </input>
-  <output>
-    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
-  </output>
-</filter>
+  <filter>
+    <type>gain</type>
+    <enable>
+      <condition>
+        <property>/autopilot/internal/VNAV-FLARE</property>
+      </condition>
+    </enable>
+    <input>
+      <expression>
+        <sum>
+          <product>
+            <sum>
+              <property>/instrumentation/radar-altimeter[1]/radar-altitude-ft</property>
+              <value>-7.5</value>
+            </sum>
+            <value>-7</value>
+          </product>
+          <value>-150</value>
+        </sum>
+      </expression>
+    </input>
+    <output>
+      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+    </output>
+  </filter>
 
- <!-- VS mode -->
+  <!-- VS mode -->
 
-<filter>
-  <type>gain</type>
-  <enable>
-    <condition>
-      <property>/autopilot/internal/VNAV-VS</property>
-    </condition>
-  </enable>
-  <input>
-    <prop>/autopilot/settings/vertical-speed-fpm</prop>
-  </input>
-  <output>
-    <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
-  </output>
-</filter>
+  <filter>
+    <type>gain</type>
+    <enable>
+      <condition>
+        <property>/autopilot/internal/VNAV-VS</property>
+      </condition>
+    </enable>
+    <input>
+      <prop>/autopilot/settings/vertical-speed-fpm</prop>
+    </input>
+    <output>
+      <prop>/autopilot/settings/fccb-vertical-speed-fpm</prop>
+    </output>
+  </filter>
 
- <!-- VS hold for any mode -->
+  <!-- VS hold for any mode -->
 
-<filter>
-  <type>gain</type>
-  <enable>
+  <filter>
+    <type>gain</type>
+    <enable>
       <condition>
         <property>/autopilot/internal/PITCH-ACTIVE</property>
       </condition>
@@ -718,11 +718,11 @@
         </sum>
       </expression>
     </input>
-  <output>
-    <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
-  </output>
-  <min>-10</min>
-  <max> 25</max>
-</filter>
+    <output>
+      <prop>/autopilot/settings/fccb-target-pitch-deg</prop>
+    </output>
+    <min>-10</min>
+    <max> 25</max>
+  </filter>
 
 </PropertyList>
