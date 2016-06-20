@@ -159,16 +159,6 @@
     <factor>0.6</factor>
    </volume>
   </rumble>
-  
-  <flap>
-   <name>flaps</name>
-   <mode>in-transit</mode>
-   <path>Aircraft/737-800/Sounds/flaps.wav</path>
-   <property>/surface-positions/flap-pos-norm</property>
-   <volume>
-    <factor>0.45</factor>
-   </volume>
-  </flap>
 
   <gear>
    <name>gear</name>
@@ -692,14 +682,11 @@
 			<mode>once</mode>
 			<condition>
 				<and>
-					<equals>
+					<greater-than>
 						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
-						<value>2500</value>
-					</equals>
-					<less-than>
-						<property>/velocities/vertical-speed-fps</property>
-						<value>-1</value>
-					</less-than>
+						<value>2400</value>
+					</greater-than>
+						<property>/b737/warnings/gpws/ft2500</property>
 				</and>
 			</condition>
 			<volume>

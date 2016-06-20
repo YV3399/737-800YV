@@ -177,4 +177,43 @@
   </output>
 </filter>
 
+<!-- 2500 GPWS sound -->
+
+<filter> <!-- radar altimeter vertical speed -->
+  <debug>true</debug>
+  <type>derivative</type>
+  <input>/instrumentation/radar-altimeter[0]/radar-altitude-ft</input>
+  <output>/b737/warnings/gpws/radar-vertical-speed[0]</output>
+  <filter-time>60.0</filter-time>
+</filter>
+
+  <flipflop>
+    <type>RS</type> <!-- or SR -->
+    <S>
+      <and>
+        <less-than>
+          <property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+          <value>2500</value>
+        </less-than>
+        <less-than>
+          <property>/b737/warnings/gpws/radar-vertical-speed[0]</property>
+          <value>0</value>
+        </less-than>
+      </and>
+    </S>
+    <R>
+      <or>
+        <greater-than>
+          <property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+          <value>2500</value>
+        </greater-than>
+        <greater-than>
+          <property>/b737/warnings/gpws/radar-vertical-speed[0]</property>
+          <value>0</value>
+        </greater-than>
+      </or>
+    </R>
+    <output>/b737/warnings/gpws/ft2500</output>
+  </flipflop>
+
 </PropertyList>
