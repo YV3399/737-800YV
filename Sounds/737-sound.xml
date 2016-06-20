@@ -145,7 +145,7 @@
   <rumble>
    <name>rumble</name>
    <mode>looped</mode>
-   <path>Sounds/rumble.wav</path>
+   <path>Aircraft/737-800/Sounds/rumble.wav</path>
    <condition>
     <or>
      <property>/gear/gear[0]/wow</property>
@@ -156,14 +156,24 @@
    <volume>
     <property>/velocities/airspeed-kt</property>
     <type>log</type>
-    <factor>0.5</factor>
+    <factor>0.6</factor>
    </volume>
   </rumble>
+  
+  <flap>
+   <name>flaps</name>
+   <mode>in-transit</mode>
+   <path>Aircraft/737-800/Sounds/flaps.wav</path>
+   <property>/surface-positions/flap-pos-norm</property>
+   <volume>
+    <factor>0.45</factor>
+   </volume>
+  </flap>
 
   <gear>
    <name>gear</name>
    <mode>in-transit</mode>
-   <path>Sounds/gear.wav</path>
+   <path>Aircraft/737-800/Sounds/gear.wav</path>
    <property>/gear/gear[0]/position-norm</property>
    <pitch>
     <internal>dt_play</internal>
@@ -172,7 +182,7 @@
    </pitch>
   </gear>
 
-  <gear>
+  <!--<gear>
    <name>gear-lock</name>
    <path>Sounds/gear-lck.wav</path>
    <condition>
@@ -181,7 +191,7 @@
      <value>0</value>
     </equals>
    </condition>
-  </gear>
+  </gear>-->
   <!-- 
   <gear>
    <name>gear-horn</name>
@@ -277,7 +287,7 @@
  
   <stall>
    <name>stall</name>
-   <path>Sounds/stall.wav</path>
+   <path>Aircraft/737-800/Sounds/stall.wav</path>
    <property>/sim/alarms/stall-warning</property>
    <volume>
     <property>/velocities/airspeed-kt</property>
@@ -654,14 +664,16 @@
 			<path>Aircraft/737-800/Sounds/gpws/approaching-minimums.wav</path>
 			<mode>once</mode>
 			<condition>
-				<less-than>
-					<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
-					<value>310</value>
-				</less-than>
-				<less-than>
-					<property>/velocities/vertical-speed-fps</property>
-					<value>-2</value>
-				</less-than>
+				<and>
+					<equals>
+						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+						<value>310</value>
+					</equals>
+					<less-than>
+						<property>/velocities/vertical-speed-fps</property>
+						<value>-2</value>
+					</less-than>
+				</and>
 			</condition>
 			<volume>
 				<factor>8</factor>
@@ -679,14 +691,16 @@
 			<path>Aircraft/737-800/Sounds/gpws/altitude-2500.wav</path>
 			<mode>once</mode>
 			<condition>
-				<less-than>
-					<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
-					<value>2500</value>
-				</less-than>
-				<less-than>
-					<property>/velocities/vertical-speed-fps</property>
-					<value>-1</value>
-				</less-than>
+				<and>
+					<equals>
+						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
+						<value>2500</value>
+					</equals>
+					<less-than>
+						<property>/velocities/vertical-speed-fps</property>
+						<value>-1</value>
+					</less-than>
+				</and>
 			</condition>
 			<volume>
 				<factor>8</factor>
