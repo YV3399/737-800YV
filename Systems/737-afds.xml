@@ -81,7 +81,7 @@
       <u_max>0.194285714</u_max>   <!-- maximum output clamp with flaps up (17 degrees of steering wheel) -->
     </config>
   </pi-simple-controller>
-  
+
  <!-- =============================================================== -->
  <!-- Pitch Axis Modes                                                -->
  <!-- =============================================================== -->
@@ -160,7 +160,7 @@
           </div>
           <value>-1</value>
         </sum>
-      </expression> 
+      </expression>
     </input>
   <output>
     <prop>/autopilot/settings/target-accel</prop>
@@ -257,7 +257,7 @@
           <property>/autopilot/internal/elevator-damp</property>
           <property>/autopilot/internal/elevator</property>
         </sum>
-      </expression> 
+      </expression>
     </input>
   <output>
     <prop>/controls/flight/elevator</prop>
@@ -508,7 +508,7 @@
         </product>
         <value>-0.2345804223</value>
       </sum>
-    </expression> 
+    </expression>
   </input>
   <output>
     <prop>/autopilot/internal/at-throttle</prop>
@@ -596,7 +596,7 @@
         </product>
         <property>/instrumentation/airspeed-indicator/true-speed-kt</property>
       </div>
-    </expression> 
+    </expression>
   </input>
   <output>
     <prop>/autopilot/settings/target-speed-kt</prop>
@@ -831,92 +831,32 @@
     <gain>1.0</gain>
   </filter>
 
-<!-- calculate derivate for heading needle NAV1 -->
-
-  <predict-simple>
-    <seconds>1</seconds>
-    <filter-gain>0</filter-gain>
+  <filter> <!-- calculate derivate for heading needle NAV1 -->
+    <type>derivative</type>
     <input>/instrumentation/nav[0]/heading-needle-deflection-norm</input>
-    <output>autopilot/internal/lookahead-1-sec-nav1-heading-needle</output>
-  </predict-simple>
-
-  <filter>
-    <type>gain</type>
-    <input>
-      <property>autopilot/internal/lookahead-1-sec-nav1-heading-needle</property>
-      <offset>
-        <property>/instrumentation/nav[0]/heading-needle-deflection-norm</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
     <output>autopilot/internal/nav1-heading-needle-rate</output>
-    <gain>1.0</gain>
+    <filter-time>1.0</filter-time>
   </filter>
 
-<!-- calculate derivate for heading needle NAV2 -->
-
-  <predict-simple>
-    <seconds>1</seconds>
-    <filter-gain>0</filter-gain>
+  <filter> <!-- calculate derivate for heading needle NAV2 -->
+    <type>derivative</type>
     <input>/instrumentation/nav[1]/heading-needle-deflection-norm</input>
-    <output>autopilot/internal/lookahead-1-sec-nav2-heading-needle</output>
-  </predict-simple>
-
-  <filter>
-    <type>gain</type>
-    <input>
-      <property>autopilot/internal/lookahead-1-sec-nav2-heading-needle</property>
-      <offset>
-        <property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
     <output>autopilot/internal/nav2-heading-needle-rate</output>
-    <gain>1.0</gain>
+    <filter-time>1.0</filter-time>
   </filter>
 
-<!-- calculate derivate for glideslope error NAV1 -->
-
-  <predict-simple>
-    <seconds>1</seconds>
-    <filter-gain>0</filter-gain>
+  <filter> <!-- calculate derivate for glideslope error NAV1 -->
+    <type>derivative</type>
     <input>instrumentation/nav[0]/gs-needle-deflection-norm</input>
-    <output>autopilot/internal/lookahead-1-sec-nav1-gs-needle</output>
-  </predict-simple>
-
-  <filter>
-    <type>gain</type>
-    <input>
-      <property>autopilot/internal/lookahead-1-sec-nav1-gs-needle</property>
-      <offset>
-        <property>instrumentation/nav[0]/gs-needle-deflection-norm</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
     <output>autopilot/internal/nav1-gs-rate</output>
-    <gain>1.0</gain>
+    <filter-time>1.0</filter-time>
   </filter>
 
-<!-- calculate derivate for glideslope error NAV2 -->
-
-  <predict-simple>
-    <seconds>1</seconds>
-    <filter-gain>0</filter-gain>
+  <filter> <!-- calculate derivate for glideslope error NAV1 -->
+    <type>derivative</type>
     <input>instrumentation/nav[1]/gs-needle-deflection-norm</input>
-    <output>autopilot/internal/lookahead-1-sec-nav2-gs-needle</output>
-  </predict-simple>
-
-  <filter>
-    <type>gain</type>
-    <input>
-      <property>autopilot/internal/lookahead-1-sec-nav2-gs-needle</property>
-      <offset>
-        <property>instrumentation/nav[1]/gs-needle-deflection-norm</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
     <output>autopilot/internal/nav2-gs-rate</output>
-    <gain>1.0</gain>
+    <filter-time>1.0</filter-time>
   </filter>
 
 <!-- calculate derivate for crosstrack error for LNAV and crosstarck-error in meters -->
@@ -937,38 +877,11 @@
     <gain>1852</gain>
   </filter>
 
-  <predict-simple>
-    <name>z-fms value in 1 second</name>
-    <debug type="bool">false</debug>
-    <enable>
-      <condition>
-        <property>/autopilot/route-manager/active</property>
-      </condition>
-    </enable>
-    <seconds>1</seconds>
-    <filter-gain>0</filter-gain>
-    <input>/autopilot/internal/fms-crosstrack-error-m</input>
-    <output>/autopilot/internal/lookahead-1-sec-fms-crosstrack-m</output>
-  </predict-simple>
-
   <filter>
-    <name>z-fms derivate</name>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>/autopilot/route-manager/active</property>
-      </condition>
-    </enable>
-    <type>gain</type>
-    <input>
-      <property>/autopilot/internal/lookahead-1-sec-fms-crosstrack-m</property>
-      <offset>
-        <property>/autopilot/internal/fms-crosstrack-error-m</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <type>derivative</type>
+    <input>/autopilot/internal/fms-crosstrack-error-m</input>
     <output>autopilot/internal/fms-crosstrack-rate-mps</output>
-    <gain>1.0</gain>
+    <filter-time>1.0</filter-time>
   </filter>
 
 <!-- calculate 15 sec period from WP change -->
@@ -1192,7 +1105,7 @@
        </less-than>
        <greater-than>
          <property>/position/altitude-agl-ft</property>
-         <value>6</value>
+         <value>806.5</value>
        </greater-than>
      </and>
    </input>
