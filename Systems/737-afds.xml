@@ -7,7 +7,6 @@
 
   <pi-simple-controller>
     <name>Roll rate comparator</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <and>
@@ -89,7 +88,6 @@
 
   <pi-simple-controller>
     <name>Pitch comparator</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/PITCH-ACTIVE</property>
@@ -138,8 +136,6 @@
 <filter>
   <name>Target Z acceleration calculator</name>
   <type>gain</type>
-  <gain>1</gain>
-  <debug>false</debug>
   <enable>
       <condition>
         <property>/autopilot/internal/PITCH-ACTIVE</property>
@@ -169,7 +165,6 @@
 
 <filter> <!-- Max authority calculation -->
   <type>gain</type>
-  <gain>1</gain>
   <input>
     <prop>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</prop>
     <scale>-0.0003623188</scale>
@@ -195,7 +190,6 @@
 
   <pi-simple-controller>
     <name>Acceleration comparator</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <and>
@@ -238,8 +232,6 @@
 <filter>
   <name>Elevator signal plus damper summer</name>
   <type>gain</type>
-  <gain>1</gain>
-  <debug>false</debug>
   <enable>
       <condition>
         <and>
@@ -267,7 +259,6 @@
 <!-- helper which calculates current acceleration -->
 <filter>
   <type>gain</type>
-  <gain>1</gain>
   <input>
     <expression>
       <product>
@@ -389,7 +380,6 @@
 
 <filter>
   <name>Stabilizer position sample and hold</name>
-  <debug>false</debug>
   <enable>
       <condition>
         <and>
@@ -438,7 +428,6 @@
 
   <pid-controller>
     <name>IAS Auto Throttle</name>
-    <debug>false</debug>
       <enable>
        <condition>
         <and>
@@ -471,7 +460,6 @@
 
 <filter> <!-- translate maximum N1 to target N1 -->
   <type>gain</type>
-  <gain>1</gain>
   <enable>
        <condition>
         <and>
@@ -490,14 +478,13 @@
 
 <filter> <!-- throttle setting from any mode (from TARGET N1) -->
   <type>gain</type>
-  <gain>1</gain>
   <enable>
-       <condition>
-        <and>
-          <property>/autopilot/internal/SPD</property>
-          <property>/autopilot/internal/THROTTLE-ACTIVE</property>
-        </and>
-      </condition>
+    <condition>
+      <and>
+        <property>/autopilot/internal/SPD</property>
+        <property>/autopilot/internal/THROTTLE-ACTIVE</property>
+      </and>
+    </condition>
   </enable>	
   <input> <!-- N1 range from 19.76 to 104 -->
     <expression>
@@ -579,7 +566,6 @@
 
 <filter>
   <type>gain</type>
-  <gain>1</gain>
   <enable>
     <condition>
       <property>/autopilot/internal/SPD-MACH</property>
@@ -609,7 +595,6 @@
 
   <pi-simple-controller>
     <name>Thrust comparator engine #1</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <equals>
@@ -642,7 +627,6 @@
 
   <pi-simple-controller>
     <name>Thrust comparator engine #2</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <equals>
@@ -690,19 +674,13 @@
 <!-- is VOR/LOC engaged and on course? for NAV1 -->
    <filter>
     <type>gain</type>
-    <input>
-      <property>/instrumentation/nav[0]/radials/target-radial-deg</property>
-      <offset>
-        <property>orientation/track-deg</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/instrumentation/nav[0]/radials/target-radial-deg</input>
+    <reference>/orientation/track-deg</reference>
     <output>/autopilot/internal/vorloc-track-delta[0]</output>
     <period>
       <min>-180</min>
       <max>180</max>
     </period>
-    <gain>1.0</gain>
   </filter>
 
  <logic>
@@ -733,19 +711,13 @@
 <!-- is VOR/LOC engaged and on course? for NAV2 -->
    <filter>
     <type>gain</type>
-    <input>
-      <property>/instrumentation/nav[1]/radials/target-radial-deg</property>
-      <offset>
-        <property>orientation/track-deg</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/instrumentation/nav[1]/radials/target-radial-deg</input>
+    <reference>/orientation/track-deg</reference>
     <output>/autopilot/internal/vorloc-track-delta[1]</output>
     <period>
       <min>-180</min>
       <max>180</max>
     </period>
-    <gain>1.0</gain>
   </filter>
 
  <logic>
@@ -803,32 +775,21 @@
 <filter>
   <type>gain</type>
   <gain>-1</gain>
-  <input>
-    <property>/autopilot/settings/maximum-bank-neg</property>
-  </input>
-  <output>
-    <prop>/autopilot/settings/maximum-bank</prop>
-  </output>
+  <input>/autopilot/settings/maximum-bank-neg</input>
+  <output>/autopilot/settings/maximum-bank</output>
 </filter>
 
 <!-- drift angle calculator -->
    <filter>
     <name>drift angle</name>
-    <debug>false</debug>
     <type>gain</type>
-    <input>
-      <property>/orientation/track-magnetic-deg</property>
-      <offset>
-        <property>orientation/heading-magnetic-deg</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/orientation/track-magnetic-deg</input>
+    <reference>/orientation/heading-magnetic-deg</reference>
     <output>autopilot/internal/drift-angle-deg</output>
     <period>
       <min>-180</min>
       <max>180</max>
     </period>
-    <gain>1.0</gain>
   </filter>
 
   <filter> <!-- calculate derivate for heading needle NAV1 -->
@@ -862,46 +823,24 @@
 <!-- calculate derivate for crosstrack error for LNAV and crosstarck-error in meters -->
 
   <filter>
-    <name>z derivate FMS</name>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>/autopilot/route-manager/active</property>
-      </condition>
-    </enable>
-    <type>gain</type>
-    <input>
-      <property>/instrumentation/gps/wp/wp[1]/course-error-nm</property>
-    </input>
-    <output>/autopilot/internal/fms-crosstrack-error-m</output>
-    <gain>1852</gain>
-  </filter>
-
-  <filter>
     <type>derivative</type>
-    <input>/autopilot/internal/fms-crosstrack-error-m</input>
+    <input>/instrumentation/gps/wp/wp[1]/course-error-nm</input>
     <output>autopilot/internal/fms-crosstrack-rate-mps</output>
-    <filter-time>1.0</filter-time>
+    <filter-time>1852.0</filter-time>
   </filter>
 
 <!-- calculate 15 sec period from WP change -->
 
   <filter>
     <name>15 sec period</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/route-manager/active</property>
       </condition>
     </enable>
     <type>gain</type>
-    <input>
-      <property>/autopilot/internal/wp-change-time</property>
-      <offset>
-        <property>/sim/time/elapsed-sec</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/autopilot/internal/wp-change-time</input>
+    <reference>/sim/time/elapsed-sec</reference>
     <output>/autopilot/internal/wp-change-period</output>
     <gain>-1</gain>
   </filter>
@@ -921,20 +860,14 @@
 
   <filter>
     <name>20 sec period from TOGA</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/TOGA</property>
       </condition>
     </enable>
     <type>gain</type>
-    <input>
-      <property>/autopilot/display/toga-mode-last-change</property>
-      <offset>
-        <property>/sim/time/elapsed-sec</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/autopilot/display/toga-mode-last-change</input>
+    <reference>/sim/time/elapsed-sec</reference>
     <output>/autopilot/internal/toga-period</output>
     <gain>-1</gain>
   </filter>
@@ -951,28 +884,11 @@
 
 <!-- calculate real vertical speed -->
 
-  <predict-simple>
-    <name>alt change in 60 second</name>
-    <debug type="bool">false</debug>
-    <seconds>60</seconds>
-    <filter-gain>0</filter-gain>
-    <input>/position/altitude-ft</input>
-    <output>/autopilot/internal/lookahead-60-sec-altitude-ft</output>
-  </predict-simple>
-
   <filter>
-    <name>VS fpm</name>
-    <debug>false</debug>
-    <type>gain</type>
-    <input>
-      <property>/autopilot/internal/lookahead-60-sec-altitude-ft</property>
-      <offset>
-        <property>/position/altitude-ft</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <type>derivative</type>
+    <input>/position/altitude-ft</input>
     <output>autopilot/internal/current-vertical-speed-fpm</output>
-    <gain>1.0</gain>
+    <filter-time>60.0</filter-time>
   </filter>
 
 <!-- Any of pitch mode active -->
@@ -1023,18 +939,15 @@
     </output>
   </filter>
 
- <logic>
-   <input>
-     <greater-than>
-       <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-       <property>/autopilot/settings/target-speed-kt-plus-15</property>
-     </greater-than>
-   </input>
-   <output>/autopilot/logic/v2-plus-20</output>
- </logic>
-
-  <logic>
-    <input>
+  <flipflop>
+    <type>RS</type> <!-- or SR -->
+    <S>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <property>/autopilot/settings/target-speed-kt-plus-15</property>
+      </greater-than>
+    </S>
+    <R>
       <and>
         <less-than>
           <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
@@ -1045,20 +958,9 @@
           <property>/autopilot/settings/target-speed-kt-plus-20</property>
         </less-than>
       </and>
-    </input>
-    <output>/autopilot/logic/v2-minus</output>
-  </logic>
-
- <flipflop>
-   <type>RS</type> <!-- or SR -->
-   <S>
-     <property>/autopilot/logic/v2-plus-20</property>
-   </S>
-   <R>
-     <property>/autopilot/logic/v2-minus</property>
-   </R>
-   <output>/autopilot/logic/toga-pitch</output>
- </flipflop>
+    </R>
+    <output>/autopilot/logic/toga-pitch</output>
+  </flipflop>
 
  <!-- RETARD logic at 27 feet -->
 
@@ -1204,13 +1106,8 @@
   <filter>
     <name>18 sec period after lift-off</name>
     <type>gain</type>
-    <input>
-      <property>/b737/sensors/lift-off-time</property>
-      <offset>
-        <property>/sim/time/elapsed-sec</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/b737/sensors/lift-off-time</input>
+    <reference>/sim/time/elapsed-sec</reference>
     <output>/autopilot/internal/lift-off-period</output>
     <gain>-1</gain>
   </filter>
@@ -1246,7 +1143,6 @@
 <!-- Translate flap retraction speed into target speed in GA mode -->
 <filter>
   <type>gain</type>
-  <gain>1</gain>
   <enable>
      <condition>
        <property>/autopilot/internal/GA</property>

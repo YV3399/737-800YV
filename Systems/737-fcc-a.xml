@@ -9,7 +9,6 @@
 
   <filter>
     <name>heading bug error computer/normalizer for HDG mode</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/LNAV-HDG</property>
@@ -32,7 +31,6 @@
 <!-- GA mode -->
    <filter>
     <name>heading bug error computer/normalizer for GA mode</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/GA-ROLL</property>
@@ -57,7 +55,6 @@
 <!-- VOR/LOC mode -->
   <filter>
     <name>nav1 heading error computer/normalizer</name>
-    <debug>false</debug>
     <type>gain</type>
     <input> <!-- this is for LOCALIZER CAPTURE -->
       <condition>
@@ -106,7 +103,6 @@
 
    <filter>
     <name>heading bug error computer/normalizer for VOR/LOC mode</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/LNAV-NAV</property>
@@ -152,7 +148,6 @@
 <!-- LNAV mode -->
   <filter>
     <name>fms heading error computer/normalizer</name>
-    <debug>false</debug>
     <type>gain</type>
     <enable>
       <condition>
@@ -167,8 +162,8 @@
             <value>-1</value>
           </product>
           <product>
-            <property>/autopilot/internal/fms-crosstrack-error-m</property>
-            <value>0.03</value>
+            <property>/instrumentation/gps/wp/wp[1]/course-error-nm</property>
+            <value>55.56</value>
           </product>
           <product>
             <property>/autopilot/internal/fms-crosstrack-rate-mps</property>
@@ -187,7 +182,6 @@
 
    <filter>
     <name>heading bug error computer/normalizer</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/LNAV</property>
@@ -236,7 +230,6 @@
 
   <pi-simple-controller>
     <name>Calculator for target bank in HDG mode</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <or>
@@ -266,7 +259,6 @@
 
   <pi-simple-controller>
     <name>Roll rate calculator</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <or>
@@ -344,7 +336,6 @@
 
    <filter>
     <type>gain</type>
-    <gain>1</gain>
     <input>
       <condition>
         <and>
@@ -375,7 +366,6 @@
 
  <filter>
   <name>VS translate</name>
-  <debug>false</debug>
   <enable>
    <condition>
     <not>
@@ -400,9 +390,7 @@
 
   <filter>
     <type>gain</type>
-    <gain>1</gain>
     <name>TOGA mode</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <and>
@@ -451,7 +439,6 @@
   <filter>
     <type>gain</type>
     <name>GA mode</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/GA</property>
@@ -497,9 +484,7 @@
 
   <filter>
     <type>gain</type>
-    <gain>1</gain>
     <name>LVLCHG mode</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/LVLCHG</property>
@@ -545,7 +530,6 @@
 
   <pi-simple-controller>
     <name>Altitude Acquire</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/VNAV-ALT-ACQ</property>
@@ -572,7 +556,6 @@
 
   <pi-simple-controller>
     <name>Altitude Hold</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/VNAV-ALT</property>
@@ -599,7 +582,6 @@
 
 <filter>
   <type>gain</type>
-  <gain>1</gain>
   <enable>
     <condition>
       <property>/autopilot/internal/VNAV-GS</property>
@@ -623,7 +605,6 @@
 
 <filter>
   <type>gain</type>
-  <gain>1</gain>
   <enable>
     <condition>
       <property>/autopilot/internal/VNAV-FLARE</property>
@@ -652,7 +633,6 @@
 
 <filter>
   <type>gain</type>
-  <gain>1</gain>
   <enable>
     <condition>
       <property>/autopilot/internal/VNAV-VS</property>
@@ -670,7 +650,6 @@
 
 <filter>
   <type>gain</type>
-  <gain>1</gain>
   <enable>
       <condition>
         <property>/autopilot/internal/PITCH-ACTIVE</property>
