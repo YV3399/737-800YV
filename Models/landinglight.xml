@@ -11,17 +11,17 @@
 	<factor>-25</factor>
 	<cursor>hand</cursor>
 	<action>
-		<binding>
+	<binding>
 			<command>property-toggle</command>
 			<property>controls/lighting/landing-lights</property>
 		</binding>
 		<binding>
-			<command>property-toggle</command>
-			<property>sim/rendering/als-secondary-lights/use-landing-light</property>
+			<command>nasal</command>
+			<script>setprop("sim/rendering/als-secondary-lights/use-landing-light",1);</script>
 		</binding>
 		<binding>
-			<command>property-toggle</command>
-			<property>sim/rendering/als-secondary-lights/use-alt-landing-light</property>
+			<command>nasal</command>
+			<script>setprop("sim/rendering/als-secondary-lights/use-alt-landing-light",1);</script>
 		</binding>
 	</action>
 	<!--<center>
