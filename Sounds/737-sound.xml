@@ -261,29 +261,20 @@
    </pitch>
   </wind>
 
-   <overspeed>
-	<name>overspeed</name>
-	<mode>looped</mode>
-	<path>Sounds/overspeed2.wav</path>
-	<condition>
-		<greater-than>
-		<property>velocities/airspeed-kt</property>
-		<value>340</value>
-		</greater-than>
-		<equals>
-		<property>sim/current-view/view-number</property>
-		<value>0</value>
-	      </equals>
-	</condition>
-		<volume>
-		<factor>1.0</factor>
-		</volume>
-		<pitch>
-		<factor>0.1</factor>
-		</pitch>
-		<reference-dist>1.0</reference-dist>
-		<max-dist>2.0</max-dist>
-</overspeed>
+	<overspeed>
+        <name>Overspeed warning</name>
+        <path>Aircraft/737-800/Sounds/overspeed.wav</path>
+        <mode>looped</mode>
+        <condition>
+            <greater-than>
+                <property>velocities/airspeed-kt</property>
+                <value>345</value>
+            </greater-than>
+        </condition>
+        <volume>
+            <factor>1.0</factor>
+        </volume>
+    </overspeed>
  
   <stall>
    <name>stall</name>
@@ -710,6 +701,24 @@
 			<reference-dist>20.0</reference-dist>
 			<max-dist>100.0</max-dist>
 		</gpws>
+		
+		<seatbelt>
+			<name>cabinalert</name>
+			<path>Aircraft/737-800/sounds/cabinalert.wav</path>
+			<mode>once</mode>
+			<condition>
+				<or>
+					<property>sim/sound/no-smoking-sign</property>
+					<property>sim/sound/seatbelt-sign</property>
+					
+					<not><property>sim/sound/no-smoking-sign</property></not>
+					<not><property>sim/sound/seatbelt-sign</property></not>
+				</or>
+			</condition>
+			<volume>
+				<property>sim/current-view/internal</property>
+			</volume>
+		</seatbelt>
 	
 	
 
