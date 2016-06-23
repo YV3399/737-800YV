@@ -69,16 +69,7 @@
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
-  <model>
-    <name>Winglet</name>
-    <path>Models/winglet.xml</path>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
-  </model>
+
   <model>
     <name>RightWing</name>
     <path>Models/RWing.xml</path>
@@ -114,16 +105,8 @@
     <path>Models\Airport\Pushback\Goldhofert.xml</path>
   </model>
   
-  <animation>
-  	<type>material</type>
-  		<object-name>lhwinglet.002</object-name>
-  		<object-name>rhwinglet.002</object-name>
-	   <object-name>lhwinglet.002</object-name>
-	   <object-name>rhwinglet.002</object-name>
-	   <property-base>sim/model/livery</property-base>
- 	   <texture-prop>texture</texture-prop>
-  	 <texture>737-800.png</texture>  
-   </animation>
+
+   
    
   <model>
 	<path>Aircraft/737-800/Models/lights/GreenLight.xml</path>

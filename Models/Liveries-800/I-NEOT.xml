@@ -5,7 +5,8 @@
     <model>
         <livery>                     
             <name type="string">Neos Air (Radio Italia)</name>
-            <texture>/Liveries-800/I-NEOT.png</texture>            
+            <texture>/Liveries-800/I-NEOT.png</texture>        
+			<newwinglets type="bool">true</newwinglets> 
         </livery>        
     </model>
 </sim>

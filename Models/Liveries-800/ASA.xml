@@ -5,7 +5,8 @@
     <model>
         <livery>                     
             <name type="string">Alaska Airlines</name>
-            <texture>Liveries-800/ASA.png</texture>            
+            <texture>Liveries-800/ASA.png</texture>
+			<newwinglets type="bool">true</newwinglets>             
         </livery>        
     </model>
 </sim>
