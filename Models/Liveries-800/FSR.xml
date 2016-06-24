@@ -5,8 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Flightgear Spanish Room</name>
-            <texture>Liveries-800/FSR.png</texture>   
-			<newwinglets type="bool">true</newwinglets> 
+            <texture>Liveries-800/FSR.png</texture>            
         </livery>        
     </model>
 </sim>

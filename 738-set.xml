@@ -141,6 +141,7 @@
 				<z-offset-m archive="y">9.02</z-offset-m>
 			</config>
 		</view>            
+
 	</sim>
 
 	<limits> <!-- based on EI-RUA aircraft data -->
@@ -250,7 +251,6 @@
 	</payload>
 
 </PropertyList>
-
 
 
 

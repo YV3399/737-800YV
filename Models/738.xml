@@ -331,7 +331,6 @@
     </offsets>
   </model>
 
-
 <!-- Fuel Truck -->
 
 <model>
@@ -432,8 +431,6 @@
 		<heading-deg>0</heading-deg>
 	</offsets>
 </model>
-
-
 
 <!-- Bus -->
 

@@ -156,6 +156,16 @@
               <script>aircraft.livery.dialog.toggle()</script>
             </binding>
           </item>
+		  <item>
+		      <label>Announcements</label>
+		      <binding>
+					<command>nasal</command>
+					<script>
+						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/737-800/Dialogs/announcements-dialog.xml");
+						mal.open();
+		       </script>
+		      </binding>
+          </item> 
           <item>
               <label>Show/Hide Yokes</label>
               <binding>
@@ -268,7 +278,7 @@
           <max type="double">6</max>
         </binding>
       </key>
-      
+
       <key n="107">
         <name>k</name>
         <desc>Increase spoiler lever position</desc>
@@ -354,7 +364,7 @@
       <target-altitude-mcp-ft type="double">3000</target-altitude-mcp-ft>
       <target-speed-kt type="double">100</target-speed-kt>
       <target-speed-kt-plus-20 type="double">120</target-speed-kt-plus-20>
-      <target-speed-mach type="double">.65</target-speed-mach>       
+      <target-speed-mach type="double">.65</target-speed-mach>
       <heading-bug-deg type="double">0</heading-bug-deg>
       <true-heading-deg type="double">0</true-heading-deg>
       <maximum-bank-limit type="double">30</maximum-bank-limit>
@@ -401,7 +411,7 @@
       <TOGA type="bool">false</TOGA>
       <GA type="bool">false</GA>
       <GA-ROLL type="bool">false</GA-ROLL>
-            
+
       <SPD type="bool">false</SPD>
       <SPD-SPEED type="bool">false</SPD-SPEED>
       <SPD-N1 type="bool">false</SPD-N1>
@@ -579,7 +589,6 @@
 		<file>Aircraft/737-800/Nasal/systems.nas</file>
     </boeing737>
 
-
     <autopilot737>
       <file>Aircraft/737-800/Nasal/autopilot.nas</file>
     </autopilot737>
@@ -601,27 +610,27 @@
     <adf>
       <volume-norm type="double">0.0</volume-norm>
     </adf>
-  
+
     <adf n="1">
       <volume-norm type="double">0.0</volume-norm>
     </adf>
 
     <comm>
       <volume type="double">0.7</volume>
-      <power-btn type="bool">1</power-btn>  
+      <power-btn type="bool">1</power-btn>
       <power-good type="bool">1</power-good>
     </comm>
-  
+
     <comm n="1">
       <volume type="double">0.7</volume>
-      <power-btn type="bool">1</power-btn>  
+      <power-btn type="bool">1</power-btn>
       <power-good type="bool">1</power-good>
     </comm>
 
     <nav>
       <volume type="double">0.0</volume>
     </nav>
-  
+
     <nav n="1">
       <volume type="double">0.0</volume>
     </nav>
@@ -644,7 +653,7 @@
       <nav-display type="int">0</nav-display>
       <nav-display n="1" type="int">0</nav-display>
     </nav-compass>
-      
+
 
     <flightdirector>
       <fd-left-on type="bool">0</fd-left-on>
@@ -711,7 +720,6 @@
                 <volume type="double"> 1.0 </volume>          <!-- Volume at reference distance -->
             </speaker>
         </mk-viii>
-	
 
     <wxradar>
       <serviceable>true</serviceable>

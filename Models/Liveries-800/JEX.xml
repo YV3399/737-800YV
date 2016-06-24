@@ -4,9 +4,8 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">Japan Air Express</name>
-            <texture>Liveries-800/JEX.png</texture>       
-			<newwinglets type="bool">false</newwinglets> 
+            <name type="string">Japan Express</name>
+            <texture>Liveries-800/JEX.png</texture>            
         </livery>        
     </model>
 </sim>

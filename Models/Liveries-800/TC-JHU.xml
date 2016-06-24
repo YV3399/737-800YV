@@ -5,8 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Turkish Airlines "Borussia Dortmund"</name>
-            <texture>Liveries-800/TC-JHU.png</texture>  
-			<newwinglets type="bool">false</newwinglets> 
+            <texture>Liveries-800/TC-JHU.png</texture>            
         </livery>        
     </model>
 </sim>

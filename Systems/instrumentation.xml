@@ -174,13 +174,13 @@ This file selects the instrumentation modules that should be available.
   <radar-altimeter>
     <name>radar-altimeter</name>
     <number>0</number>
-    <update-interval-sec>0.1</update-interval-sec>
+    <update-interval-sec>0.0</update-interval-sec>
   </radar-altimeter>
 
   <radar-altimeter>
     <name>radar-altimeter</name>
     <number>1</number>
-    <update-interval-sec>0.1</update-interval-sec>
+    <update-interval-sec>0.0</update-interval-sec>
   </radar-altimeter>
 
 </PropertyList>

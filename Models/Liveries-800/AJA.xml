@@ -5,8 +5,7 @@
     <model>
         <livery>                     
             <name type="string">AnadoluJet</name>
-            <texture>Liveries-800/AJA.png</texture>
-			<newwinglets type="bool">false</newwinglets>            
+            <texture>Liveries-800/AJA.png</texture>            
         </livery>        
     </model>
 </sim>

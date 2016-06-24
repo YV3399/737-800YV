@@ -5,8 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Ryanair (Santa Claus)</name>
-            <texture>/Liveries-800/RYR_santa.png</texture>  
-			<newwinglets type="bool">false</newwinglets> 
+            <texture>/Liveries-800/RYR_santa.png</texture>            
         </livery>        
     </model>
 </sim>

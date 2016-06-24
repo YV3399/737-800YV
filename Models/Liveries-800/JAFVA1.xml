@@ -5,8 +5,7 @@
     <model>
         <livery>                     
             <name type="string">JAFVA (Ver 1)</name>
-            <texture>Liveries-800/JAFVA1.png</texture>   
-			<newwinglets type="bool">true</newwinglets> 
+            <texture>Liveries-800/JAFVA1.png</texture>            
         </livery>        
     </model>
 </sim>

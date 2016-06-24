@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 
 <PropertyList>
- <!-- =============================================================== -->
- <!-- Roll Axis Modes                                                 -->
- <!-- =============================================================== -->
+  <!-- =============================================================== -->
+  <!-- Roll Axis Modes                                                 -->
+  <!-- =============================================================== -->
 
   <pi-simple-controller>
     <name>Roll rate comparator</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <and>
@@ -86,10 +85,8 @@
  <!-- Pitch Axis Modes                                                -->
  <!-- =============================================================== -->
 
-
   <pi-simple-controller>
     <name>Pitch comparator</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/PITCH-ACTIVE</property>
@@ -135,12 +132,10 @@
     </config>
   </pi-simple-controller>
 
-<filter>
-  <name>Target Z acceleration calculator</name>
-  <type>gain</type>
-  <gain>1</gain>
-  <debug>false</debug>
-  <enable>
+  <filter>
+    <name>Target Z acceleration calculator</name>
+    <type>gain</type>
+    <enable>
       <condition>
         <property>/autopilot/internal/PITCH-ACTIVE</property>
       </condition>
@@ -161,41 +156,40 @@
           <value>-1</value>
         </sum>
       </expression>
+
     </input>
-  <output>
-    <prop>/autopilot/settings/target-accel</prop>
-  </output>
-</filter>
+    <output>
+      <prop>/autopilot/settings/target-accel</prop>
+    </output>
+  </filter>
 
-<filter> <!-- Max authority calculation -->
-  <type>gain</type>
-  <gain>1</gain>
-  <input>
-    <prop>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</prop>
-    <scale>-0.0003623188</scale>
-    <offset>0.182357143</offset>
-  </input>
-  <output>
-    <prop>/autopilot/settings/max-authority-pos</prop>
-  </output>
-  <min>0.059</min>
-  <max>0.143</max>
-</filter>
+  <filter> <!-- Max authority calculation -->
+    <type>gain</type>
+    <input>
+      <prop>/instrumentation/airspeed-indicator[0]/indicated-speed-kt</prop>
+      <scale>-0.0003623188</scale>
+      <offset>0.182357143</offset>
+    </input>
+    <output>
+      <prop>/autopilot/settings/max-authority-pos</prop>
+    </output>
+    <min>0.059</min>
+    <max>0.143</max>
+  </filter>
 
-<filter> <!-- Max authority calculation negative -->
-  <type>gain</type>
-  <gain>-1</gain>
-  <input>
-    <prop>/autopilot/settings/max-authority-pos</prop>
-  </input>
-  <output>
-    <prop>/autopilot/settings/max-authority-neg</prop>
-  </output>
-</filter>
+  <filter> <!-- Max authority calculation negative -->
+    <type>gain</type>
+    <gain>-1</gain>
+    <input>
+      <prop>/autopilot/settings/max-authority-pos</prop>
+    </input>
+    <output>
+      <prop>/autopilot/settings/max-authority-neg</prop>
+    </output>
+  </filter>
 
   <pi-simple-controller>
     <name>Acceleration comparator</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <and>
@@ -224,23 +218,21 @@
     </config>
   </pi-simple-controller>
 
-<filter>
-  <type>gain</type>
-  <gain>0.08</gain>
-  <input>
-    <property>/orientation/pitch-rate-degps</property>
-  </input>
-  <output>
-    <prop>/autopilot/internal/elevator-damp</prop>
-  </output>
-</filter>
+  <filter>
+    <type>gain</type>
+    <gain>0.08</gain>
+    <input>
+      <property>/orientation/pitch-rate-degps</property>
+    </input>
+    <output>
+      <prop>/autopilot/internal/elevator-damp</prop>
+    </output>
+  </filter>
 
-<filter>
-  <name>Elevator signal plus damper summer</name>
-  <type>gain</type>
-  <gain>1</gain>
-  <debug>false</debug>
-  <enable>
+  <filter>
+    <name>Elevator signal plus damper summer</name>
+    <type>gain</type>
+    <enable>
       <condition>
         <and>
           <or>
@@ -259,86 +251,87 @@
         </sum>
       </expression>
     </input>
-  <output>
-    <prop>/controls/flight/elevator</prop>
-  </output>
-</filter>
+    <output>
+      <prop>/controls/flight/elevator</prop>
+    </output>
+  </filter>
 
-<!-- helper which calculates current acceleration -->
-<filter>
-  <type>gain</type>
-  <gain>1</gain>
-  <input>
-    <expression>
-      <product>
-        <sum>
-          <property>/accelerations/n-z-cg-fps_sec</property>
-          <value>1</value>
-        </sum>
-        <value>-1</value>
-      </product>
-    </expression>
-  </input>
-  <output>
-    <prop>/autopilot/settings/current-accel</prop>
-  </output>
-</filter>
+  <!-- helper which calculates current acceleration -->
+  <filter>
+    <type>gain</type>
+    <input>
+      <expression>
+        <product>
+          <sum>
+            <property>/accelerations/n-z-cg-fps_sec</property>
+            <value>1</value>
+          </sum>
+          <value>-1</value>
+        </product>
+      </expression>
+    </input>
+    <output>
+      <prop>/autopilot/settings/current-accel</prop>
+    </output>
+  </filter>
 
-<!--
-============================
-== STABILIZER Trim system ==
-============================
--->
-<!-- 10% of authority calculation -->
-<filter>
-  <type>gain</type>
-  <gain>0.30</gain>
-  <input>
-    <property>/autopilot/settings/max-authority-pos</property>
-  </input>
-  <output>
-    <prop>/autopilot/settings/max-authority-pos-ten-percent</prop>
-  </output>
-</filter>
+  <!--
+  ============================
+  == STABILIZER Trim system ==
+  ============================
+  -->
 
-<filter>
-  <type>gain</type>
-  <gain>0.30</gain>
-  <input>
-    <property>/autopilot/settings/max-authority-neg</property>
-  </input>
-  <output>
-    <prop>/autopilot/settings/max-authority-neg-ten-percent</prop>
-  </output>
-</filter>
+  <!-- 10% of authority calculation -->
 
-<!-- 2% of authority calculation -->
+  <filter>
+    <type>gain</type>
+    <gain>0.30</gain>
+    <input>
+      <property>/autopilot/settings/max-authority-pos</property>
+    </input>
+    <output>
+      <prop>/autopilot/settings/max-authority-pos-ten-percent</prop>
+    </output>
+  </filter>
 
-<filter>
-  <type>gain</type>
-  <gain>0.12</gain>
-  <input>
-    <property>/autopilot/settings/max-authority-pos</property>
-  </input>
-  <output>
-    <prop>/autopilot/settings/max-authority-pos-two-percent</prop>
-  </output>
-</filter>
+  <filter>
+    <type>gain</type>
+    <gain>0.30</gain>
+    <input>
+      <property>/autopilot/settings/max-authority-neg</property>
+    </input>
+    <output>
+      <prop>/autopilot/settings/max-authority-neg-ten-percent</prop>
+    </output>
+  </filter>
 
-<filter>
-  <type>gain</type>
-  <gain>0.12</gain>
-  <input>
-    <property>/autopilot/settings/max-authority-neg</property>
-  </input>
-  <output>
-    <prop>/autopilot/settings/max-authority-neg-two-percent</prop>
-  </output>
-</filter>
+  <!-- 2% of authority calculation -->
+
+  <filter>
+    <type>gain</type>
+    <gain>0.12</gain>
+    <input>
+      <property>/autopilot/settings/max-authority-pos</property>
+    </input>
+    <output>
+      <prop>/autopilot/settings/max-authority-pos-two-percent</prop>
+    </output>
+  </filter>
+
+  <filter>
+    <type>gain</type>
+    <gain>0.12</gain>
+    <input>
+      <property>/autopilot/settings/max-authority-neg</property>
+    </input>
+    <output>
+      <prop>/autopilot/settings/max-authority-neg-two-percent</prop>
+    </output>
+  </filter>
 
 
- <logic>
-  <enable>
+  <logic>
+    <enable>
       <condition>
         <and>
           <or>
@@ -348,31 +341,31 @@
           <property>/autopilot/internal/PITCH-ACTIVE</property>
         </and>
       </condition>
-  </enable>
-   <input>
-     <or>
-       <greater-than>
-         <property>/controls/flight/elevator</property>
-         <property>/autopilot/settings/max-authority-pos-ten-percent</property>
-       </greater-than>
-       <less-than>
-         <property>/controls/flight/elevator</property>
-         <property>/autopilot/settings/max-authority-neg-ten-percent</property>
-       </less-than>
-     </or>
-   </input>
-   <output>/b737/helpers/elevator-cmd-gr-10</output>
- </logic>
+    </enable>
+    <input>
+      <or>
+        <greater-than>
+          <property>/controls/flight/elevator</property>
+          <property>/autopilot/settings/max-authority-pos-ten-percent</property>
+        </greater-than>
+        <less-than>
+          <property>/controls/flight/elevator</property>
+          <property>/autopilot/settings/max-authority-neg-ten-percent</property>
+        </less-than>
+      </or>
+    </input>
+    <output>/b737/helpers/elevator-cmd-gr-10</output>
+  </logic>
 
- <filter>
-  <type>moving-average</type>
-  <samples>480</samples>
-  <input>/b737/helpers/elevator-cmd-gr-10</input>
-  <output>/b737/helpers/elevator-cmd-av-4</output> <!-- average for 4 seconds -->
- </filter>
+  <filter>
+    <type>moving-average</type>
+    <samples>480</samples>
+    <input>/b737/helpers/elevator-cmd-gr-10</input>
+    <output>/b737/helpers/elevator-cmd-av-4</output> <!-- average for 4 seconds -->
+  </filter>
 
- <logic>
-   <input>
+  <logic>
+    <input>
       <and>
         <greater-than>
           <property>/b737/helpers/elevator-cmd-av-4</property>
@@ -383,14 +376,13 @@
           <value>400</value>
         </greater-than>
       </and>
-   </input>
-   <output>/b737/helpers/trim-feel-3-4</output>
- </logic>
+    </input>
+    <output>/b737/helpers/trim-feel-3-4</output>
+  </logic>
 
-<filter>
-  <name>Stabilizer position sample and hold</name>
-  <debug>false</debug>
-  <enable>
+  <filter>
+    <name>Stabilizer position sample and hold</name>
+    <enable>
       <condition>
         <and>
           <or>
@@ -401,52 +393,51 @@
           <property>/autopilot/internal/stab-autotrim</property>
         </and>
       </condition>
-  </enable>
-  <type>gain</type>
-  <gain>1.0</gain>
-  <input>
-    <condition>
-     <and>
-      <property>/b737/helpers/trim-feel-3-4</property>
-      <greater-than>
-        <property>/controls/flight/elevator</property>
-        <property>/autopilot/settings/max-authority-pos-two-percent</property>
-      </greater-than>
-     </and>
-    </condition>
-    <value>0.05</value>
-  </input>
-  <input>
-    <condition>
-     <and>
-      <property>/b737/helpers/trim-feel-3-4</property>
-      <less-than>
-        <property>/controls/flight/elevator</property>
-        <property>/autopilot/settings/max-authority-neg-two-percent</property>
-      </less-than>
-     </and>
-    </condition>
-    <value>14.5</value>
-  </input>
-  <input>/fdm/jsbsim/fcs/stabilizer-pos-unit</input>
-  <output>/fdm/jsbsim/fcs/stabilizer/stab-target</output>
- </filter>
+    </enable>
+    <type>gain</type>
+    <gain>1.0</gain>
+    <input>
+      <condition>
+        <and>
+          <property>/b737/helpers/trim-feel-3-4</property>
+          <greater-than>
+            <property>/controls/flight/elevator</property>
+            <property>/autopilot/settings/max-authority-pos-two-percent</property>
+          </greater-than>
+        </and>
+      </condition>
+      <value>0.05</value>
+    </input>
+    <input>
+      <condition>
+        <and>
+          <property>/b737/helpers/trim-feel-3-4</property>
+          <less-than>
+            <property>/controls/flight/elevator</property>
+            <property>/autopilot/settings/max-authority-neg-two-percent</property>
+          </less-than>
+        </and>
+      </condition>
+      <value>14.5</value>
+    </input>
+    <input>/fdm/jsbsim/fcs/stabilizer-pos-unit</input>
+    <output>/fdm/jsbsim/fcs/stabilizer/stab-target</output>
+  </filter>
 
- <!-- =============================================================== -->
- <!-- Autothrottle                                                    -->
- <!-- =============================================================== -->
+  <!-- =============================================================== -->
+  <!-- Autothrottle                                                    -->
+  <!-- =============================================================== -->
 
   <pid-controller>
     <name>IAS Auto Throttle</name>
-    <debug>false</debug>
-      <enable>
-       <condition>
+    <enable>
+      <condition>
         <and>
           <property>/autopilot/internal/SPD</property>
           <property>/autopilot/internal/SPD-SPEED</property>
         </and>
       </condition>
-     </enable>	
+    </enable>	
     <input>
       <prop>/instrumentation/airspeed-indicator/indicated-speed-kt</prop>
     </input>
@@ -461,7 +452,7 @@
       <beta>1.0</beta>    <!-- input value weighing factor -->
       <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
       <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-                          <!-- unfiltered derivative error -->
+      <!-- unfiltered derivative error -->
       <Ti>10.0</Ti>       <!-- integrator time -->
       <Td>0.00001</Td>    <!-- derivator time -->
       <u_min>22.0</u_min>  <!-- minimum output clamp -->
@@ -469,30 +460,28 @@
     </config>
   </pid-controller>
 
-<filter> <!-- translate maximum N1 to target N1 -->
-  <type>gain</type>
-  <gain>1</gain>
-  <enable>
-       <condition>
+  <filter> <!-- translate maximum N1 to target N1 -->
+    <type>gain</type>
+    <enable>
+      <condition>
         <and>
           <property>/autopilot/internal/SPD</property>
           <property>/autopilot/internal/SPD-N1</property>
         </and>
       </condition>
-  </enable>	
-  <input>
-    <property>/autopilot/settings/max-n1</property>
-  </input>
-  <output>
-    <prop>/autopilot/internal/target-n1</prop>
-  </output>
-</filter>
+    </enable>	
+    <input>
+      <property>/autopilot/settings/max-n1</property>
+    </input>
+    <output>
+      <prop>/autopilot/internal/target-n1</prop>
+    </output>
+  </filter>
 
-<filter> <!-- throttle setting from any mode (from TARGET N1) -->
-  <type>gain</type>
-  <gain>1</gain>
-  <enable>
-       <condition>
+  <filter> <!-- throttle setting from any mode (from TARGET N1) -->
+    <type>gain</type>
+    <enable>
+      <condition>
         <and>
           <property>/autopilot/internal/SPD</property>
           <property>/autopilot/internal/THROTTLE-ACTIVE</property>
@@ -563,6 +552,11 @@
     <condition>
       <not>
         <and>
+          <property>/autopilot/internal/toga-20-sec</property>
+          <greater-than-equals>
+            <property>/autopilot/internal/at-throttle</property>
+            <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
+          </greater-than-equals>
           <property>/autopilot/internal/SPD</property>
           <property>/autopilot/internal/THROTTLE-ACTIVE</property>
         </and>
@@ -609,7 +603,6 @@
 
   <pi-simple-controller>
     <name>Thrust comparator engine #1</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <equals>
@@ -642,7 +635,6 @@
 
   <pi-simple-controller>
     <name>Thrust comparator engine #2</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <equals>
@@ -673,12 +665,12 @@
     </config>
   </pi-simple-controller>
 
- <!-- =============================================================== -->
- <!-- Just helpers                                                    -->
- <!-- =============================================================== -->
+  <!-- =============================================================== -->
+  <!-- Just helpers                                                    -->
+  <!-- =============================================================== -->
 
-<!-- air density correction factor -->
-   <filter>
+  <!-- air density correction factor -->
+  <filter>
     <type>gain</type>
     <input>
       <property>/environment/density-slugft3</property>
@@ -687,148 +679,125 @@
     <gain>420.716058732</gain>
   </filter>
 
-<!-- is VOR/LOC engaged and on course? for NAV1 -->
-   <filter>
+  <!-- is VOR/LOC engaged and on course? for NAV1 -->
+  <filter>
     <type>gain</type>
-    <input>
-      <property>/instrumentation/nav[0]/radials/target-radial-deg</property>
-      <offset>
-        <property>orientation/track-deg</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/instrumentation/nav[0]/radials/target-radial-deg</input>
+    <reference>/orientation/track-deg</reference>
     <output>/autopilot/internal/vorloc-track-delta[0]</output>
     <period>
       <min>-180</min>
       <max>180</max>
     </period>
-    <gain>1.0</gain>
   </filter>
 
- <logic>
-   <input>
-     <and>
-       <greater-than>
-         <property>/instrumentation/nav[0]/heading-needle-deflection-norm</property>
-         <value>-0.2</value>
-       </greater-than>
-       <less-than>
-         <property>/instrumentation/nav[0]/heading-needle-deflection-norm</property>
-         <value>0.2</value>
-       </less-than>
-       <greater-than>
-         <property>/autopilot/internal/vorloc-track-delta[0]</property>
-         <value>-5</value>
-       </greater-than>
-       <less-than>
-         <property>/autopilot/internal/vorloc-track-delta[0]</property>
-         <value>5</value>
-       </less-than>
-       <property>/autopilot/internal/LNAV-NAV</property>
-     </and>
-   </input>
-   <output>/autopilot/internal/VORLOC-NAV1-ONCOURSE</output>
- </logic>
-
-<!-- is VOR/LOC engaged and on course? for NAV2 -->
-   <filter>
-    <type>gain</type>
+  <logic>
     <input>
-      <property>/instrumentation/nav[1]/radials/target-radial-deg</property>
-      <offset>
-        <property>orientation/track-deg</property>
-        <scale>-1.0</scale>
-      </offset>
+      <and>
+        <greater-than>
+          <property>/instrumentation/nav[0]/heading-needle-deflection-norm</property>
+          <value>-0.2</value>
+        </greater-than>
+        <less-than>
+          <property>/instrumentation/nav[0]/heading-needle-deflection-norm</property>
+          <value>0.2</value>
+        </less-than>
+        <greater-than>
+          <property>/autopilot/internal/vorloc-track-delta[0]</property>
+          <value>-5</value>
+        </greater-than>
+        <less-than>
+          <property>/autopilot/internal/vorloc-track-delta[0]</property>
+          <value>5</value>
+        </less-than>
+        <property>/autopilot/internal/LNAV-NAV</property>
+      </and>
     </input>
+    <output>/autopilot/internal/VORLOC-NAV1-ONCOURSE</output>
+  </logic>
+
+  <!-- is VOR/LOC engaged and on course? for NAV2 -->
+  <filter>
+    <type>gain</type>
+    <input>/instrumentation/nav[1]/radials/target-radial-deg</input>
+    <reference>/orientation/track-deg</reference>
     <output>/autopilot/internal/vorloc-track-delta[1]</output>
     <period>
       <min>-180</min>
       <max>180</max>
     </period>
-    <gain>1.0</gain>
   </filter>
 
- <logic>
-   <input>
-     <and>
-       <greater-than>
-         <property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
-         <value>-0.2</value>
-       </greater-than>
-       <less-than>
-         <property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
-         <value>0.2</value>
-       </less-than>
-       <greater-than>
-         <property>/autopilot/internal/vorloc-track-delta[1]</property>
-         <value>-5</value>
-       </greater-than>
-       <less-than>
-         <property>/autopilot/internal/vorloc-track-delta[1]</property>
-         <value>5</value>
-       </less-than>
-       <property>/autopilot/internal/LNAV-NAV</property>
-     </and>
-   </input>
-   <output>/autopilot/internal/VORLOC-NAV2-ONCOURSE</output>
- </logic>
-
-<!-- helper which calculates negative and positive values for maximum bank for different modes -->
-<filter>
-  <type>gain</type>
-  <gain>-1</gain>
-  <input>
-    <condition>
-      <property>/autopilot/internal/VORLOC-NAV1-ONCOURSE</property>
-    </condition>
-    <value>8</value>
-  </input>
-  <input>
-    <condition>
-      <or>
-        <property>/autopilot/internal/LNAV</property>
-        <property>/autopilot/internal/LNAV-NAV</property>
-      </or>
-    </condition>
-    <value>30</value>
-  </input>
-  <input>
-    <property>/autopilot/settings/maximum-bank-limit</property>
-  </input>
-  <output>
-    <prop>/autopilot/settings/maximum-bank-neg</prop>
-  </output>
-</filter>
-
-<filter>
-  <type>gain</type>
-  <gain>-1</gain>
-  <input>
-    <property>/autopilot/settings/maximum-bank-neg</property>
-  </input>
-  <output>
-    <prop>/autopilot/settings/maximum-bank</prop>
-  </output>
-</filter>
-
-<!-- drift angle calculator -->
-   <filter>
-    <name>drift angle</name>
-    <debug>false</debug>
-    <type>gain</type>
+  <logic>
     <input>
-      <property>/orientation/track-magnetic-deg</property>
-      <offset>
-        <property>orientation/heading-magnetic-deg</property>
-        <scale>-1.0</scale>
-      </offset>
+      <and>
+        <greater-than>
+          <property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
+          <value>-0.2</value>
+        </greater-than>
+        <less-than>
+          <property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
+          <value>0.2</value>
+        </less-than>
+        <greater-than>
+          <property>/autopilot/internal/vorloc-track-delta[1]</property>
+          <value>-5</value>
+        </greater-than>
+        <less-than>
+          <property>/autopilot/internal/vorloc-track-delta[1]</property>
+          <value>5</value>
+        </less-than>
+        <property>/autopilot/internal/LNAV-NAV</property>
+      </and>
     </input>
+    <output>/autopilot/internal/VORLOC-NAV2-ONCOURSE</output>
+  </logic>
+
+  <!-- helper which calculates negative and positive values for maximum bank for different modes -->
+  <filter>
+    <type>gain</type>
+    <gain>-1</gain>
+    <input>
+      <condition>
+        <property>/autopilot/internal/VORLOC-NAV1-ONCOURSE</property>
+      </condition>
+      <value>8</value>
+    </input>
+    <input>
+      <condition>
+        <or>
+          <property>/autopilot/internal/LNAV</property>
+          <property>/autopilot/internal/LNAV-NAV</property>
+        </or>
+      </condition>
+      <value>30</value>
+    </input>
+    <input>
+      <property>/autopilot/settings/maximum-bank-limit</property>
+    </input>
+    <output>
+      <prop>/autopilot/settings/maximum-bank-neg</prop>
+    </output>
+  </filter>
+
+  <filter>
+    <type>gain</type>
+    <gain>-1</gain>
+    <input>/autopilot/settings/maximum-bank-neg</input>
+    <output>/autopilot/settings/maximum-bank</output>
+  </filter>
+
+  <!-- drift angle calculator -->
+  <filter>
+    <name>drift angle</name>
+    <type>gain</type>
+    <input>/orientation/track-magnetic-deg</input>
+    <reference>/orientation/heading-magnetic-deg</reference>
     <output>autopilot/internal/drift-angle-deg</output>
     <period>
       <min>-180</min>
       <max>180</max>
     </period>
-    <gain>1.0</gain>
   </filter>
 
   <filter> <!-- calculate derivate for heading needle NAV1 -->
@@ -859,7 +828,7 @@
     <filter-time>1.0</filter-time>
   </filter>
 
-<!-- calculate derivate for crosstrack error for LNAV and crosstarck-error in meters -->
+  <!-- calculate derivate for crosstrack error for LNAV and crosstarck-error in meters -->
 
   <filter>
     <name>z derivate FMS</name>
@@ -884,131 +853,102 @@
     <filter-time>1.0</filter-time>
   </filter>
 
-<!-- calculate 15 sec period from WP change -->
+  <!-- calculate 15 sec period from WP change -->
 
   <filter>
     <name>15 sec period</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/route-manager/active</property>
       </condition>
     </enable>
     <type>gain</type>
-    <input>
-      <property>/autopilot/internal/wp-change-time</property>
-      <offset>
-        <property>/sim/time/elapsed-sec</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/autopilot/internal/wp-change-time</input>
+    <reference>/sim/time/elapsed-sec</reference>
     <output>/autopilot/internal/wp-change-period</output>
     <gain>-1</gain>
   </filter>
 
- <logic>
-   <input>
-     <greater-than>
-       <property>/autopilot/internal/wp-change-period</property>
-       <property>/autopilot/internal/wp-change-check-period</property>
-     </greater-than>
-   </input>
-   <output>/autopilot/internal/wp-crosstrack-hold</output>
- </logic>
+  <logic>
+    <input>
+      <greater-than>
+        <property>/autopilot/internal/wp-change-period</property>
+        <property>/autopilot/internal/wp-change-check-period</property>
+      </greater-than>
+    </input>
+    <output>/autopilot/internal/wp-crosstrack-hold</output>
+  </logic>
 
 
-<!-- calculate 20 sec period from TOGA button -->
+  <!-- calculate 20 sec period from TOGA button -->
 
   <filter>
     <name>20 sec period from TOGA</name>
-    <debug>false</debug>
     <enable>
       <condition>
         <property>/autopilot/internal/TOGA</property>
       </condition>
     </enable>
     <type>gain</type>
-    <input>
-      <property>/autopilot/display/toga-mode-last-change</property>
-      <offset>
-        <property>/sim/time/elapsed-sec</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/autopilot/display/toga-mode-last-change</input>
+    <reference>/sim/time/elapsed-sec</reference>
     <output>/autopilot/internal/toga-period</output>
     <gain>-1</gain>
   </filter>
 
- <logic>
-   <input>
-     <less-than>
-       <property>/autopilot/internal/toga-period</property>
-       <value>20</value>
-     </less-than>
-   </input>
-   <output>/autopilot/internal/toga-20-sec</output>
- </logic>
+  <logic>
+    <input>
+      <less-than>
+        <property>/autopilot/internal/toga-period</property>
+        <value>20</value>
+      </less-than>
+    </input>
+    <output>/autopilot/internal/toga-20-sec</output>
+  </logic>
 
-<!-- calculate real vertical speed -->
-
-  <predict-simple>
-    <name>alt change in 60 second</name>
-    <debug type="bool">false</debug>
-    <seconds>60</seconds>
-    <filter-gain>0</filter-gain>
-    <input>/position/altitude-ft</input>
-    <output>/autopilot/internal/lookahead-60-sec-altitude-ft</output>
-  </predict-simple>
+  <!-- calculate real vertical speed -->
 
   <filter>
-    <name>VS fpm</name>
-    <debug>false</debug>
-    <type>gain</type>
-    <input>
-      <property>/autopilot/internal/lookahead-60-sec-altitude-ft</property>
-      <offset>
-        <property>/position/altitude-ft</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <type>derivative</type>
+    <input>/position/altitude-ft</input>
     <output>autopilot/internal/current-vertical-speed-fpm</output>
-    <gain>1.0</gain>
+    <filter-time>60.0</filter-time>
   </filter>
 
-<!-- Any of pitch mode active -->
+  <!-- Any of pitch mode active -->
 
- <logic>
-   <input>
-     <or>
-       <property>/autopilot/internal/VNAV-VS</property>
-       <property>/autopilot/internal/VNAV-GS</property>
-       <property>/autopilot/internal/VNAV-FLARE</property>
-       <property>/autopilot/internal/VNAV-ALT-ACQ</property>
-       <property>/autopilot/internal/VNAV-ALT</property>
-       <property>/autopilot/internal/LVLCHG</property>
-       <property>/autopilot/internal/TOGA</property>
-       <property>/autopilot/internal/GA</property>
-     </or>
-   </input>
-   <output>/autopilot/internal/PITCH-ACTIVE</output>
- </logic>
+  <logic>
+    <input>
+      <or>
+        <property>/autopilot/internal/VNAV-VS</property>
+        <property>/autopilot/internal/VNAV-GS</property>
+        <property>/autopilot/internal/VNAV-FLARE</property>
+        <property>/autopilot/internal/VNAV-ALT-ACQ</property>
+        <property>/autopilot/internal/VNAV-ALT</property>
+        <property>/autopilot/internal/LVLCHG</property>
+        <property>/autopilot/internal/TOGA</property>
+        <property>/autopilot/internal/GA</property>
+      </or>
+    </input>
+    <output>/autopilot/internal/PITCH-ACTIVE</output>
+  </logic>
 
-<!-- Any of throttle mode active -->
+  <!-- Any of throttle mode active -->
 
- <logic>
-   <input>
-     <or>
-       <property>/autopilot/internal/SPD-N1</property>
-       <property>/autopilot/internal/SPD-SPEED</property>
-       <property>/autopilot/internal/SPD-RETARD</property>
-       <property>/autopilot/internal/TOGA</property>
-       <property>/autopilot/internal/GA</property>
-     </or>
-   </input>
-   <output>/autopilot/internal/THROTTLE-ACTIVE</output>
- </logic>
+  <logic>
+    <input>
+      <or>
+        <property>/autopilot/internal/SPD-N1</property>
+        <property>/autopilot/internal/SPD-SPEED</property>
+        <property>/autopilot/internal/SPD-RETARD</property>
+        <property>/autopilot/internal/TOGA</property>
+        <property>/autopilot/internal/GA</property>
+      </or>
+    </input>
+    <output>/autopilot/internal/THROTTLE-ACTIVE</output>
+  </logic>
 
-<!-- Activation logic for pitch in TOGA -->
+  <!-- Activation logic for pitch in TOGA -->
 
   <filter>
     <type>gain</type>
@@ -1023,18 +963,15 @@
     </output>
   </filter>
 
- <logic>
-   <input>
-     <greater-than>
-       <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-       <property>/autopilot/settings/target-speed-kt-plus-15</property>
-     </greater-than>
-   </input>
-   <output>/autopilot/logic/v2-plus-20</output>
- </logic>
-
-  <logic>
-    <input>
+  <flipflop>
+    <type>RS</type> <!-- or SR -->
+    <S>
+      <greater-than>
+        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <property>/autopilot/settings/target-speed-kt-plus-15</property>
+      </greater-than>
+    </S>
+    <R>
       <and>
         <less-than>
           <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
@@ -1045,48 +982,37 @@
           <property>/autopilot/settings/target-speed-kt-plus-20</property>
         </less-than>
       </and>
-    </input>
-    <output>/autopilot/logic/v2-minus</output>
-  </logic>
+    </R>
+    <output>/autopilot/logic/toga-pitch</output>
+  </flipflop>
 
- <flipflop>
-   <type>RS</type> <!-- or SR -->
-   <S>
-     <property>/autopilot/logic/v2-plus-20</property>
-   </S>
-   <R>
-     <property>/autopilot/logic/v2-minus</property>
-   </R>
-   <output>/autopilot/logic/toga-pitch</output>
- </flipflop>
+  <!-- RETARD logic at 27 feet -->
 
- <!-- RETARD logic at 27 feet -->
-
- <logic>
+  <logic>
     <enable>
       <condition>
         <property>/autopilot/internal/SPD</property>
       </condition>
     </enable>
-   <input>
-     <and>
-       <property>/autopilot/internal/SPD-SPEED</property>
-       <less-than>
-         <property>/position/altitude-agl-ft</property>
-         <value>33.5</value>
-       </less-than>
-       <greater-than>
-         <property>/position/altitude-agl-ft</property>
-         <value>6</value>
-       </greater-than>
-     </and>
-   </input>
-   <output>/autopilot/logic/retard-27ft</output>
- </logic>
+    <input>
+      <and>
+        <property>/autopilot/internal/SPD-SPEED</property>
+        <less-than>
+          <property>/position/altitude-agl-ft</property>
+          <value>33.5</value>
+        </less-than>
+        <greater-than>
+          <property>/position/altitude-agl-ft</property>
+          <value>6</value>
+        </greater-than>
+      </and>
+    </input>
+    <output>/autopilot/logic/retard-27ft</output>
+  </logic>
 
- <!-- FLARE arm logic at 1500-800 feet -->
+  <!-- FLARE arm logic at 1500-800 feet -->
 
- <logic>
+  <logic>
     <enable>
       <condition>
         <and>
@@ -1123,25 +1049,25 @@
         </and>
       </condition>
     </enable>
-   <input>
-     <and>
-       <property>/autopilot/internal/VNAV-FLARE-armed</property>
-       <less-than>
-         <property>/position/altitude-agl-ft</property>
-         <value>56.5</value>
-       </less-than>
-       <greater-than>
-         <property>/position/altitude-agl-ft</property>
-         <value>6</value>
-       </greater-than>
-     </and>
-   </input>
-   <output>/autopilot/logic/flare-50ft</output>
- </logic>
+    <input>
+      <and>
+        <property>/autopilot/internal/VNAV-FLARE-armed</property>
+        <less-than>
+          <property>/position/altitude-agl-ft</property>
+          <value>56.5</value>
+        </less-than>
+        <greater-than>
+          <property>/position/altitude-agl-ft</property>
+          <value>6</value>
+        </greater-than>
+      </and>
+    </input>
+    <output>/autopilot/logic/flare-50ft</output>
+  </logic>
 
- <!-- AP disengage logic at 350 feet -->
+  <!-- AP disengage logic at 350 feet -->
 
- <logic>
+  <logic>
     <enable>
       <condition>
         <or>
@@ -1150,72 +1076,67 @@
         </or>
       </condition>
     </enable>
-   <input>
-     <and>
-       <not>
-         <or>
-           <property>/autopilot/internal/VNAV-FLARE-armed</property>
-           <property>/autopilot/internal/VNAV-FLARE</property>
-           <property>/autopilot/internal/GA</property>
-         </or>
-       </not>
-       <less-than>
-         <property>/position/altitude-agl-ft</property>
-         <value>356.5</value>
-       </less-than>
-       <greater-than>
-         <property>/position/altitude-agl-ft</property>
-         <value>0.1</value>
-       </greater-than>
-     </and>
-   </input>
-   <output>/autopilot/logic/ap-disengage-350ft</output>
- </logic>
+    <input>
+      <and>
+        <not>
+          <or>
+            <property>/autopilot/internal/VNAV-FLARE-armed</property>
+            <property>/autopilot/internal/VNAV-FLARE</property>
+            <property>/autopilot/internal/GA</property>
+          </or>
+        </not>
+        <less-than>
+          <property>/position/altitude-agl-ft</property>
+          <value>356.5</value>
+        </less-than>
+        <greater-than>
+          <property>/position/altitude-agl-ft</property>
+          <value>0.1</value>
+        </greater-than>
+      </and>
+    </input>
+    <output>/autopilot/logic/ap-disengage-350ft</output>
+  </logic>
 
- <!-- THR HLD announcement logic -->
+  <!-- THR HLD announcement logic -->
 
- <logic>
+  <logic>
     <enable>
       <condition>
         <property>/autopilot/internal/TOGA</property>
       </condition>
     </enable>
-   <input>
-     <and>
-       <equals>
-         <property>/autopilot/display/throttle-mode</property>
-         <value>N1</value>
-       </equals>
-       <greater-than>
-         <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-         <value>84</value>
-       </greater-than>
-       <less-than>
-         <property>/position/altitude-agl-ft</property>
-         <value>406.5</value>
-       </less-than>
-     </and>
-   </input>
-   <output>/autopilot/logic/thr-hld-84kts</output>
- </logic>
+    <input>
+      <and>
+        <equals>
+          <property>/autopilot/display/throttle-mode</property>
+          <value>N1</value>
+        </equals>
+        <greater-than>
+          <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+          <value>84</value>
+        </greater-than>
+        <less-than>
+          <property>/position/altitude-agl-ft</property>
+          <value>406.5</value>
+        </less-than>
+      </and>
+    </input>
+    <output>/autopilot/logic/thr-hld-84kts</output>
+  </logic>
 
- <!-- ARM after THR HLD at TOGA announcement logic -->
+  <!-- ARM after THR HLD at TOGA announcement logic -->
 
   <filter>
     <name>18 sec period after lift-off</name>
     <type>gain</type>
-    <input>
-      <property>/b737/sensors/lift-off-time</property>
-      <offset>
-        <property>/sim/time/elapsed-sec</property>
-        <scale>-1.0</scale>
-      </offset>
-    </input>
+    <input>/b737/sensors/lift-off-time</input>
+    <reference>/sim/time/elapsed-sec</reference>
     <output>/autopilot/internal/lift-off-period</output>
     <gain>-1</gain>
   </filter>
 
- <logic>
+  <logic>
     <enable>
       <condition>
         <and>
@@ -1228,39 +1149,38 @@
         </and>
       </condition>
     </enable>
-   <input>
-     <and>
-       <greater-than>
-         <property>/position/altitude-agl-ft</property>
-         <value>406.5</value>
-       </greater-than>
-       <greater-than>
-         <property>/autopilot/internal/lift-off-period</property>
-         <value>18</value>
-       </greater-than>
-     </and>
-   </input>
-   <output>/autopilot/logic/at-arm-toga</output>
- </logic>
+    <input>
+      <and>
+        <greater-than>
+          <property>/position/altitude-agl-ft</property>
+          <value>406.5</value>
+        </greater-than>
+        <greater-than>
+          <property>/autopilot/internal/lift-off-period</property>
+          <value>18</value>
+        </greater-than>
+      </and>
+    </input>
+    <output>/autopilot/logic/at-arm-toga</output>
+  </logic>
 
-<!-- Translate flap retraction speed into target speed in GA mode -->
-<filter>
-  <type>gain</type>
-  <gain>1</gain>
-  <enable>
-     <condition>
-       <property>/autopilot/internal/GA</property>
-     </condition>
-  </enable>	
-  <input>
-    <property>/instrumentation/fmc/va-addition</property>
-    <offset>
-      <property>/instrumentation/fmc/v-ref-40-rounded</property>
-    </offset>
-  </input>
-  <output>
-    <prop>/autopilot/settings/target-speed-kt</prop>
-  </output>
-</filter>
+  <!-- Translate flap retraction speed into target speed in GA mode -->
+  <filter>
+    <type>gain</type>
+    <enable>
+      <condition>
+        <property>/autopilot/internal/GA</property>
+      </condition>
+    </enable>	
+    <input>
+      <property>/instrumentation/fmc/va-addition</property>
+      <offset>
+        <property>/instrumentation/fmc/v-ref-40-rounded</property>
+      </offset>
+    </input>
+    <output>
+      <prop>/autopilot/settings/target-speed-kt</prop>
+    </output>
+  </filter>
 
 </PropertyList>
