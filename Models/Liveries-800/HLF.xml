@@ -5,7 +5,8 @@
     <model>
         <livery>                     
             <name type="string">Hapag-Lloyd-800</name>
-            <texture>/Liveries-800/HLF.png</texture>            
+            <texture>/Liveries-800/HLF.png</texture>  
+			<newwinglets type="bool">true</newwinglets> 
         </livery>        
     </model>
 </sim>

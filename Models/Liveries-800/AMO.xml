@@ -5,7 +5,8 @@
     <model>
         <livery>                     
             <name type="string">AeroMexico</name>
-            <texture>/Liveries-800/AMO.png</texture>            
+            <texture>/Liveries-800/AMO.png</texture> 
+			<newwinglets type="bool">true</newwinglets>			
         </livery>        
     </model>
 </sim>

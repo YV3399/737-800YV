@@ -4,8 +4,9 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">westjet magic</name>
-            <texture>Liveries-800/C-GWSZ.png</texture>            
+            <name type="string">westJet magic</name>
+            <texture>Liveries-800/C-GWSZ.png</texture>    
+			<newwinglets type="bool">true</newwinglets> 
         </livery>        
     </model>
 </sim>

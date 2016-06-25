@@ -7,12 +7,12 @@
         <type>gain</type>
         <gain>1.0</gain>
         <update-interval-secs type="double">0.1</update-interval-secs>
-        <input>
+        <input> 
             <expression>
               <sum>
                 <property>instrumentation/fmc/v-ref-40</property>
                 <table>
-                    <property>/fdm/jsbsim/fcs/flap-pos-norm</property>
+                    <property>/fdm/jsbsim/fcs/flap-pos-norm</property> 
                     <entry><ind>0</ind><dep>26</dep></entry>
                     <entry><ind>0.125</ind><dep>-6</dep></entry>
                     <entry><ind>0.375</ind><dep>-8</dep></entry>
@@ -55,13 +55,13 @@
         </input>
         <output>instrumentation/pfd/mmo-kt</output>
     </filter>
-
+    
     <filter>
         <name>VSI needle</name>
         <type>gain</type>
         <gain>1.0</gain>
         <update-interval-secs type="double">0.04</update-interval-secs>
-        <input>
+        <input> 
             <expression>
                 <table>
                     <property>velocities/vertical-speed-fps</property>
@@ -109,16 +109,16 @@
     <min>30</min>
     <max>450</max>
   </predict-simple>
-
+ 
     <filter>
         <name>VS autopilot</name>
         <type>gain</type>
         <gain>1</gain>
         <update-interval-secs type="double">0.1</update-interval-secs>
-        <input>
+        <input> 
             <expression>
                 <table>
-                    <property>/autopilot/settings/vertical-speed-fpm</property>
+                    <property>/autopilot/settings/vertical-speed-fpm</property> 
                     <entry><ind>-6000</ind><dep>-237</dep></entry>
                     <entry><ind>-2000</ind><dep>-183</dep></entry>
                     <entry><ind>-1000</ind><dep>-108</dep></entry>

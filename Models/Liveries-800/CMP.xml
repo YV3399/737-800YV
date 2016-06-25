@@ -5,7 +5,8 @@
     <model>
         <livery>                     
             <name type="string">Copa Airlines</name>
-            <texture>Liveries-800/CMP.png</texture>            
+            <texture>Liveries-800/CMP.png</texture>  
+			<newwinglets type="bool">true</newwinglets> 
         </livery>        
     </model>
 </sim>

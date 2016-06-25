@@ -3,7 +3,7 @@
 <fdm_config name="738" release="BETA" version="2.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
-
+    
     <fileheader>
         <author> Michael Soitanen </author>
         <filecreationdate> 2014-09-30 </filecreationdate>
@@ -54,7 +54,7 @@
             <z>   0 </z>
         </location>
 
-        <pointmass name="Cabin Zone 0A"> <!-- Business class (8 pax max) Row 1-2 -->
+        <pointmass name="Cabin Zone 0A"> <!-- Business class (8 pax max) Row 1-2 --> 
             <weight unit="LBS"> 1324 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 301.5 </x>
@@ -63,7 +63,7 @@
             </location>
         </pointmass>
 
-        <pointmass name="Cabin Zone 0B"> <!-- Tourist class (54 pax max) Row 10-19 -->
+        <pointmass name="Cabin Zone 0B"> <!-- Tourist class (54 pax max) Row 10-19 --> 
             <weight unit="LBS"> 1324 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 541 </x>
@@ -72,7 +72,7 @@
             </location>
         </pointmass>
 
-        <pointmass name="Cabin Zone 0C"> <!-- Economy class (96 pax max) Row 20-36 -->
+        <pointmass name="Cabin Zone 0C"> <!-- Economy class (96 pax max) Row 20-36 --> 
             <weight unit="LBS"> 1324 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 874 </x>
@@ -81,7 +81,7 @@
             </location>
         </pointmass>
 
-        <pointmass name="Cargo compartment 1A"> <!-- max 553 kg/1218 lbs -->
+        <pointmass name="Cargo compartment 1A"> <!-- max 553 kg/1218 lbs --> 
             <weight unit="LBS"> 500 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 284 </x>
@@ -91,7 +91,7 @@
         </pointmass>
 
 
-        <pointmass name="Cargo compartment 1B"> <!-- max 336 kg/741 lbs -->
+        <pointmass name="Cargo compartment 1B"> <!-- max 336 kg/741 lbs --> 
             <weight unit="LBS"> 200 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 334 </x>
@@ -100,7 +100,7 @@
             </location>
         </pointmass>
 
-        <pointmass name="Cargo compartment 2"> <!-- max 2670 kg/5887 lbs -->
+        <pointmass name="Cargo compartment 2"> <!-- max 2670 kg/5887 lbs --> 
             <weight unit="LBS"> 2500 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 464 </x>
@@ -109,7 +109,7 @@
             </location>
         </pointmass>
 
-        <pointmass name="Cargo compartment 3"> <!-- max 4086 kg/9008 lbs -->
+        <pointmass name="Cargo compartment 3"> <!-- max 4086 kg/9008 lbs --> 
             <weight unit="LBS"> 4000 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 932.5 </x>
@@ -118,7 +118,7 @@
             </location>
         </pointmass>
 
-        <pointmass name="Cargo compartment 4A"> <!-- max 362 kg/798 lbs -->
+        <pointmass name="Cargo compartment 4A"> <!-- max 362 kg/798 lbs --> 
             <weight unit="LBS"> 400 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 1097.5 </x>
@@ -127,7 +127,7 @@
             </location>
         </pointmass>
 
-        <pointmass name="Cargo compartment 4B"> <!-- max 402 kg/886 lbs -->
+        <pointmass name="Cargo compartment 4B"> <!-- max 402 kg/886 lbs --> 
             <weight unit="LBS"> 200 </weight>
             <location name="POINTMASS" unit="IN">
                 <x> 1175.5 </x>
@@ -1106,7 +1106,7 @@
         </channel>
 
         <channel name="Stabilizer">
-
+          
           <pure_gain name="fcs/stabilizer/trim-rate-per-tick">
             <input>fcs/stabilizer/trim-rate</input>
             <gain>simulation/dt</gain>
@@ -1953,25 +1953,24 @@
 </external_reactions>
 
 
-
-   <!-- <output name="B737_datalog.csv" rate="10" type="CSV">
-        <property> /instrumentation/airspeed-indicator/indicated-speed-kt </property>
-        <property> /velocities/groundspeed-kt </property>
-        <property> /accelerations/pilot/x-accel-fps_sec </property>
-        <property> /accelerations/pilot/y-accel-fps_sec </property>
-        <property> /accelerations/pilot/z-accel-fps_sec </property>
-        <property> /orientation/pitch-deg </property>
-        <property> /orientation/roll-deg </property>
-        <rates> OFF </rates>
-        <velocities> OFF </velocities>
-        <forces> OFF </forces>
-        <moments> OFF </moments>
-        <position> OFF </position>
-        <propulsion> OFF </propulsion>
+<!--
+    <output name="B737_datalog.csv" rate="20" type="CSV">
+        <property> aero/qbar-psf </property>
+        <property> attitude/phi-rad </property>
+        <property> position/h-sl-ft </property>
+        <property> velocities/vc-kts </property>
+        <property> fcs/throttle-cmd-norm </property>
+        <property> fcs/elevator-pos-norm </property>
+        <rates> ON </rates>
+        <velocities> ON </velocities>
+        <forces> ON </forces>
+        <moments> ON </moments>
+        <position> ON </position>
+        <propulsion> ON </propulsion>
         <aerosurfaces> OFF </aerosurfaces>
         <fcs> OFF </fcs>
-        <ground_reactions> OFF </ground_reactions>
-    </output>-->
-
+        <ground_reactions> ON </ground_reactions>
+    </output>
+-->
 </fdm_config>
 

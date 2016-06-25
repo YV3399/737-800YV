@@ -554,7 +554,7 @@ var canvas_PFD = {
 		
 		if (alt < 10000)
 			me["tenThousand"].show();
-		else
+		else 
 			me["tenThousand"].hide();
 		if (vSpd != nil) {
 			var vertSpd = vSpd*60;

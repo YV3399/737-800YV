@@ -5,7 +5,8 @@
     <model>
         <livery>                     
             <name type="string">Boeing Company</name>
-            <texture>Liveries/N737BX.png</texture>            
+            <texture>Liveries/N737BX.png</texture> 
+			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>
 </sim>
