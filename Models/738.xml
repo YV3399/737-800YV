@@ -276,16 +276,7 @@
 </model>
   
 
-<animation>
-        <type>select</type>
-        <object-name>cabinlighting</object-name>
-        <condition>
-                <greater-than>
-                    <property>sim/time/sun-angle-rad</property>
-                    <value>1.55</value>
-                </greater-than>
-        </condition>
-    </animation> 
+
  
 <model>
 	<name>right engine fire</name>
@@ -478,5 +469,53 @@
 		<z>0</z>
 	</axis>
 </animation>
+
+<!-- Registration fuselage upper back -->
+<model>
+	<name>registrationFuselageRightBack</name>
+  <path>Aircraft/737-800/Models/Registration/registration.xml</path>
+  <offsets>
+    <x-m>10.90</x-m>
+    <y-m>1.50</y-m>
+    <z-m>1.60</z-m>
+    <roll-deg>34</roll-deg>
+    <heading-deg>-1.0</heading-deg>
+  </offsets>
+  <overlay>
+    <params>
+      <size>0.5</size>
+      <alignment>reversed-xz-plane</alignment>
+    </params>
+  </overlay>
+</model>
+
+<model>
+	<name>registrationFuselageLeftBack</name>
+  <path>Aircraft/737-800/Models/Registration/registration.xml</path>
+  <offsets>
+    <x-m>10.90</x-m>
+    <y-m>-1.50</y-m>
+    <z-m> 1.60</z-m>
+    <roll-deg>34</roll-deg>
+    <heading-deg>181.0</heading-deg>
+  </offsets>
+  <overlay>
+    <params>
+      <size>0.5</size>
+      <alignment>reversed-xz-plane</alignment>
+    </params>
+  </overlay>
+</model>
+
+<!-- Services by PR-GEO -->
+
+  <model>
+    <path>Aircraft/737-800/Models/Services/Services.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model> 
 
 </PropertyList>

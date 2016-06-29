@@ -3,7 +3,35 @@
 <PropertyList>
 
  <fx>
-   <engine>
+   
+<engine>
+  <leftstartup>
+      <name>leftenginestart</name>
+      <path>/Aircraft/737-800/Sounds/engine-start.wav</path>
+      <mode>once</mode>
+      <condition>
+        <property>/controls/engines/engine[0]/starter</property>
+      </condition>
+      <volume>
+        <factor>0.75</factor>
+      </volume>
+    </leftstartup>
+ </engine>
+    <rightstartup>
+      <name>rightenginestart</name>
+      <path>/Aircraft/737-800/Sounds/engine-start.wav</path>
+      <mode>once</mode>
+      <condition>
+        <property>/controls/engines/engine[1]/starter</property>
+      </condition>
+      <volume>
+        <factor>0.75</factor>
+      </volume>
+    </rightstartup>
+
+
+
+<engine>
         <name>left engine</name>
         <path>Sounds/jet.wav</path>
         <mode>looped</mode>
@@ -33,7 +61,7 @@
 
     <engine>
         <name>left n1</name>
-        <path>Sounds/whine.wav</path>
+        <path>Aircraft/737-800/Sounds/whine.wav</path>
         <mode>looped</mode>
         <property>engines/engine[0]/n2</property>
         <pitch>
@@ -102,7 +130,7 @@
 
     <engine>
         <name>right n1</name>
-        <path>Sounds/whine.wav</path>
+        <path>Aircraft/737-800/Sounds/whine.wav</path>
         <mode>looped</mode>
         <property>engines/engine[1]/n2</property>
         <volume>
@@ -239,7 +267,7 @@
   <wind>
    <name>wind</name>
    <mode>looped</mode>
-   <path>Sounds/wind.wav</path>
+   <path> Aircraft/737-800/Sounds/wind.wav</path>
    <property>/velocities/airspeed-kt</property>
    <volume>
     <property>/position/altitude-ft</property>
@@ -720,7 +748,34 @@
 			</volume>
 		</seatbelt>
 	
-	
+	<avionics>
+			<name>avionics fan and noise</name>
+			<path>Aircraft/737-800/Sounds/avionics.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<property>sim/current-view/internal</property>
+				<greater-than>
+					<property>systems/electrical/outputs/efis</property>
+					<value>0</value>
+				</greater-than>
+			</condition>
+			<position>
+				<x>-17</x>
+				<y>0.01</y>
+				<z>-1.95</z>
+			</position>	
+			<volume>
+				<factor>0.2</factor>
+				<max>0.5</max>
+			</volume>
+			<reference-dist>1.2</reference-dist>
+			<max-dist>5</max-dist>
+		</avionics>
+
+
+
+
+
 
 </fx>
  
