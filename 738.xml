@@ -1848,7 +1848,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>metrics/cbarw-ft</property>
                     <property>aero/alpha-rad</property>
-                    <value>-0.6</value>
+                    <value>-2.4</value>
                 </product>
             </function>
             <function name="aero/coefficient/Cmde">

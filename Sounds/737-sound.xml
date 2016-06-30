@@ -267,7 +267,7 @@
   <wind>
    <name>wind</name>
    <mode>looped</mode>
-   <path> Aircraft/737-800/Sounds/wind.wav</path>
+   <path>Aircraft/737-800/Sounds/wind.wav</path>
    <property>/velocities/airspeed-kt</property>
    <volume>
     <property>/position/altitude-ft</property>
