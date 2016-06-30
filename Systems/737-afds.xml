@@ -620,86 +620,8 @@
   </filter>
 
   <!-- =============================================================== -->
-  <!-- Reverser calculator                                             -->
-  <!-- =============================================================== -->
-
-  <pi-simple-controller>
-    <name>Thrust comparator engine #1</name>
-    <enable>
-      <condition>
-        <equals>
-          <property>/engines/engine[0]/reverser-pos-norm</property>
-          <value>1</value>
-        </equals>
-      </condition>
-    </enable>	
-    <input>
-      <prop>/engines/engine[0]/thrust_lb</prop>
-      <offset>
-        <property>/fdm/jsbsim/aero/function/left-engine-reverse-drag</property>
-        <scale>-1</scale>
-      </offset>
-    </input>
-    <reference>
-      <prop>/engines/engine[0]/reverse-thrust-lbs</prop>
-      <scale>/b737/helpers/density-correction</scale>
-    </reference>
-    <output>
-      <prop>/fdm/jsbsim/propulsion/engine[0]/reverser-angle-rad</prop>
-    </output>
-    <config>
-      <Kp>-0.0</Kp>          <!-- proportional gain -->
-      <Ki>-0.003</Ki>          <!-- integral gain -->
-      <u_min>0</u_min> <!-- minimum output clamp -->
-      <u_max>3.14</u_max>   <!-- maximum output clamp -->
-    </config>
-  </pi-simple-controller>
-
-  <pi-simple-controller>
-    <name>Thrust comparator engine #2</name>
-    <enable>
-      <condition>
-        <equals>
-          <property>/engines/engine[1]/reverser-pos-norm</property>
-          <value>1</value>
-        </equals>
-      </condition>
-    </enable>	
-    <input>
-      <prop>/engines/engine[1]/thrust_lb</prop>
-      <offset>
-        <property>/fdm/jsbsim/aero/function/right-engine-reverse-drag</property>
-        <scale>-1</scale>
-      </offset>
-    </input>
-    <reference>
-      <prop>/engines/engine[1]/reverse-thrust-lbs</prop>
-      <scale>/b737/helpers/density-correction</scale>
-    </reference>
-    <output>
-      <prop>/fdm/jsbsim/propulsion/engine[1]/reverser-angle-rad</prop>
-    </output>
-    <config>
-      <Kp>-0.0</Kp>          <!-- proportional gain -->
-      <Ki>-0.003</Ki>          <!-- integral gain -->
-      <u_min>0</u_min> <!-- minimum output clamp -->
-      <u_max>3.14</u_max>   <!-- maximum output clamp -->
-    </config>
-  </pi-simple-controller>
-
-  <!-- =============================================================== -->
   <!-- Just helpers                                                    -->
   <!-- =============================================================== -->
-
-  <!-- air density correction factor -->
-  <filter>
-    <type>gain</type>
-    <input>
-      <property>/environment/density-slugft3</property>
-    </input>
-    <output>/b737/helpers/density-correction</output>
-    <gain>420.716058732</gain>
-  </filter>
 
   <!-- is VOR/LOC engaged and on course? for NAV1 -->
   <filter>

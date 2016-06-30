@@ -1258,49 +1258,133 @@
             </test>
           </switch>
 
-             <fcs_function name="fcs/throttle/throttle-cmd-norm[0]">
-                 <function>
-                     <product>
-                         <property>/autopilot/internal/servo-throttle[0]</property>
-             <value>1</value>
-                     </product>
-                 </function>
-               <output>fcs/throttle-cmd-norm[0]</output>
-             </fcs_function>
+          <switch name="fcs/throttle/max-reverse">
+            <default value="1"/>
+            <test value="0.742">
+              /engines/engine[0]/reverser-pos-norm GT 0.6
+              /engines/engine[1]/reverser-pos-norm GT 0.6
+            </test>
+            <test value="0.119">
+              /engines/engine[0]/reverser-pos-norm LE 0.6
+              /engines/engine[1]/reverser-pos-norm LE 0.6
+              /engines/engine[0]/reverser-pos-norm GT 0
+              /engines/engine[1]/reverser-pos-norm GT 0
+            </test>
+          </switch>
 
-  <summer name="fcs/throttle/throttle-pos-norm[0]">
-    <input>fcs/throttle/throttle-cmd-norm[0]</input>
-      <clipto>
-        <min>fcs/throttle/high-idle</min>
-        <max>1</max>
-      </clipto>
-    <output>fcs/throttle-pos-norm[0]</output>
-  </summer>
+            <fcs_function name="fcs/throttle/throttle-cmd-norm[0]">
+                <function>
+                    <product>
+                        <property>/autopilot/internal/servo-throttle[0]</property>
+                        <value>1</value>
+                    </product>
+                </function>
+                <output>fcs/throttle-cmd-norm[0]</output>
+            </fcs_function>
 
-             <fcs_function name="fcs/throttle/throttle-cmd-norm[1]">
-                 <function>
-                     <product>
-                         <property>/autopilot/internal/servo-throttle[1]</property>
-             <value>1</value>
-                     </product>
-                 </function>
-               <output>fcs/throttle-cmd-norm[1]</output>
-             </fcs_function>
+            <summer name="fcs/throttle/throttle-pos-norm[0]">
+                <input>fcs/throttle/throttle-cmd-norm[0]</input>
+                <clipto>
+                    <min>fcs/throttle/high-idle</min>
+                    <max>fcs/throttle/max-reverse</max>
+                </clipto>
+                <output>fcs/throttle-pos-norm[0]</output>
+            </summer>
 
-  <summer name="fcs/throttle/throttle-pos-norm[1]">
-    <input>fcs/throttle/throttle-cmd-norm[1]</input>
-      <clipto>
-        <min>fcs/throttle/high-idle</min>
-        <max>1</max>
-      </clipto>
-    <output>fcs/throttle-pos-norm[1]</output>
-  </summer>
+            <fcs_function name="fcs/throttle/throttle-cmd-norm[1]">
+                <function>
+                    <product>
+                        <property>/autopilot/internal/servo-throttle[1]</property>
+                        <value>1</value>
+                    </product>
+                </function>
+                <output>fcs/throttle-cmd-norm[1]</output>
+            </fcs_function>
+
+            <summer name="fcs/throttle/throttle-pos-norm[1]">
+                <input>fcs/throttle/throttle-cmd-norm[1]</input>
+                <clipto>
+                    <min>fcs/throttle/high-idle</min>
+                    <max>fcs/throttle/max-reverse</max>
+                </clipto>
+                <output>fcs/throttle-pos-norm[1]</output>
+            </summer>
+
+        </channel>
+
+        <channel name="reversers">
+
+            <fcs_function name="Reverser angle left">
+                <function>
+                    <description>Reverse thrust calculation</description>
+                    <product>
+                        <property>/engines/engine[0]/reverser-pos-norm</property>
+                        <table>
+                            <independentVar lookup="row">velocities/vtrue-kts</independentVar>
+                            <independentVar lookup="column">propulsion/engine[0]/n1</independentVar>
+                            <tableData>
+                                    19.76   82.3
+                                0   1.86    1.79
+                                50  2.39    1.87
+                                100 2.37    1.94
+                                150 1.84    1.99
+                            </tableData>
+                        </table>
+                    </product>
+                </function>
+                <output>propulsion/engine[0]/reverser-angle-rad</output>
+            </fcs_function>
+
+            <fcs_function name="Reverser angle right">
+                <function>
+                    <description>Reverse thrust calculation</description>
+                    <product>
+                        <property>/engines/engine[1]/reverser-pos-norm</property>
+                        <table>
+                            <independentVar lookup="row">velocities/vtrue-kts</independentVar>
+                            <independentVar lookup="column">propulsion/engine[1]/n1</independentVar>
+                            <tableData>
+                                    19.76   82.3
+                                0   1.86    1.79
+                                50  2.39    1.87
+                                100 2.37    1.94
+                                150 1.84    1.99
+                            </tableData>
+                        </table>
+                    </product>
+                </function>
+                <output>propulsion/engine[1]/reverser-angle-rad</output>
+            </fcs_function>
+
+            <fcs_function name="aero/function/left-engine-reverse-drag">
+                <function>
+                    <product>
+                        <property>aero/qbar-psf</property>
+                        <property>/engines/engine[0]/reverser-pos-norm</property>
+                        <value>27</value>
+                    </product>
+                </function>
+                <output>external_reactions/reverse-drag-left/magnitude</output>
+            </fcs_function>
+
+            <fcs_function name="aero/function/right-engine-reverse-drag">
+                <function>
+                    <product>
+                        <property>aero/qbar-psf</property>
+                        <property>/engines/engine[1]/reverser-pos-norm</property>
+                        <value>27</value>
+                    </product>
+                </function>
+                <output>external_reactions/reverse-drag-right/magnitude</output>
+            </fcs_function>
 
         </channel>
 
     </flight_control>
 
     <aerodynamics>
+
+        
 
         <function name="aero/function/kCDge">
             <description>Change_in_drag_due_to_ground_effect</description>
@@ -1942,20 +2026,46 @@
 
     <external_reactions>
 
- <force name="pushback" frame="BODY">
-  <location unit="IN">
-   <x>  -139 </x>
-   <y>    0.0 </y>
-   <z>  -71.0 </z>
-  </location>
-  <direction>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </direction>
- </force>
+        <force name="pushback" frame="BODY">
+            <location unit="IN">
+                <x>  -139 </x>
+                <y>    0.0 </y>
+                <z>  -71.0 </z>
+            </location>
+            <direction>
+                <x>1</x>
+                <y>0</y>
+                <z>0</z>
+            </direction>
+        </force>
 
-</external_reactions>
+        <force name="reverse-drag-left" frame="BODY">
+            <location unit="IN">
+                <x>  715.6  </x>
+                <y> -193.68 </y>
+                <z>  -52.38 </z>
+            </location>
+            <direction>
+                <x>   -1 </x>
+                <y>    0 </y>
+                <z>    0 </z>
+            </direction>
+        </force>
+
+        <force name="reverse-drag-right" frame="BODY">
+            <location unit="IN">
+                <x>  715.6  </x>
+                <y>  193.68 </y>
+                <z>  -52.38 </z>
+            </location>
+            <direction>
+                <x>   -1 </x>
+                <y>    0 </y>
+                <z>    0 </z>
+            </direction>
+        </force>
+
+    </external_reactions>
 
 
 

@@ -28,6 +28,7 @@ var canvas_upperEICAS = {
 		canvas.parsesvg(upperEICAS, "Aircraft/737-800/Models/Instruments/EICAS/upperEICAS.svg", {'font-mapper': font_mapper});
 		
 		var svg_keys = ["engine0N1","engine0N1Decimal","engine1N1","engine1N1Decimal",
+		"engine0rev","engine1rev",
 		"EGT_0","EGT_1","needleEGT_0","needleEGT_1","ff_0","ff_1",
 		"needleN1_0","needleN1_1","tat",
 		"tank1Thousand","tank1Decimal","tank2Thousand","tank2Decimal","tankCtrThousand","tankCtrDecimal",
@@ -55,6 +56,9 @@ var canvas_upperEICAS = {
 		var n1_0_dec = int(10*math.mod(n1_0,1));
 		var n1_1_int = int(n1_1);
 		var n1_1_dec = int(10*math.mod(n1_1,1));
+
+		var reverser_0 = getprop("/engines/engine[0]/reverser-pos-norm");
+		var reverser_1 = getprop("/engines/engine[1]/reverser-pos-norm");
 
 		me["engine0N1"].setText(sprintf("%s", n1_0_int));
 		me["engine0N1Decimal"].setText(sprintf("%s", n1_0_dec));
@@ -135,6 +139,27 @@ var canvas_upperEICAS = {
 		finishX = CtrX + math.cos(angle*D2R) * radius;
 		finishY = CtrY - math.sin(angle*D2R) * radius;
 		me["tankCtrLine"].setData([2, cmd],[startX, startY, radius, radius, 0, finishX, finishY]);
+
+		if (reverser_0 == 0) {
+			me["engine0rev"].hide();
+		} else {
+			me["engine0rev"].show();
+			if (reverser_0 < 1) {
+				me["engine0rev"].setColor(1,0.749,0);
+			} else {
+				me["engine0rev"].setColor(0,1,0);
+			}
+		}
+		if (reverser_1 == 0) {
+			me["engine1rev"].hide();
+		} else {
+			me["engine1rev"].show();
+			if (reverser_1 < 1) {
+				me["engine1rev"].setColor(1,0.749,0);
+			} else {
+				me["engine1rev"].setColor(0,1,0);
+			}
+		}
 
 		settimer(func me.update(), 0.04);
 	},

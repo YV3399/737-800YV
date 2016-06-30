@@ -65,9 +65,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="426.41968"
-     inkscape:cy="841.62313"
+     inkscape:zoom="1.4"
+     inkscape:cx="293.84472"
+     inkscape:cy="984.63734"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1031,5 +1031,31 @@
          id="tspan4326-6"
          x="541.43274"
          y="124.45483">.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:37.78290939px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="200.54066"
+       y="71.956398"
+       id="engine0rev"
+       sodipodi:linespacing="125%"
+       transform="scale(0.86028144,1.1624103)"
+       inkscape:label="#text4278"><tspan
+         sodipodi:role="line"
+         id="tspan4280"
+         x="200.54066"
+         y="71.956398">REV</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:37.78290939px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="533.67175"
+       y="71.95652"
+       id="engine1rev"
+       sodipodi:linespacing="125%"
+       transform="scale(0.86028144,1.1624103)"
+       inkscape:label="#text4278"><tspan
+         sodipodi:role="line"
+         id="tspan4280-7"
+         x="533.67175"
+         y="71.95652">REV</tspan></text>
   </g>
 </svg>

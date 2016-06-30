@@ -217,9 +217,11 @@
   <engines>
     <engine n="0">
       <running>true</running>
+	  <reverser-pos-norm type="double">0</reverser-pos-norm>
     </engine>
     <engine n="1">
       <running>true</running>
+	  <reverser-pos-norm type="double">0</reverser-pos-norm>
     </engine>
   </engines>
 
@@ -335,14 +337,116 @@
           </script>
         </binding>
       </key>
-	  <key n="127">
+	        <key n="127">
         <name>Delete</name>
-        <desc>Toggle Reversers</desc>
-        <binding> 
-          <command>nasal</command>
-         <script>
-            reversethrust.togglereverser();
-        </script>
+        <desc>Thrust reversers toggle</desc>
+        <binding>
+          <condition>
+            <and>
+              <less-than>
+                <property>/autopilot/internal/servo-throttle[0]</property>
+                <value>0.03</value>
+              </less-than>
+              <less-than>
+                <property>/autopilot/internal/servo-throttle[1]</property>
+                <value>0.03</value>
+              </less-than>
+              <or>
+                <less-than>
+                  <property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+                  <value>17.5</value>
+                </less-than>
+                <equals>
+                  <property>/b737/sensors/air-ground</property>
+                  <value>ground</value>
+                </equals>
+              </or>
+              <equals>
+                <property>/engines/engine[0]/reverser-pos-norm</property>
+                <value>0</value>
+              </equals>
+            </and>
+          </condition>
+          <command>property-interpolate</command>
+          <property>/engines/engine[0]/reverser-pos-norm</property>
+          <value>1</value>
+          <time>2</time>
+        </binding>
+        <binding>
+          <condition>
+            <and>
+              <less-than>
+                <property>/autopilot/internal/servo-throttle[0]</property>
+                <value>0.03</value>
+              </less-than>
+              <less-than>
+                <property>/autopilot/internal/servo-throttle[1]</property>
+                <value>0.03</value>
+              </less-than>
+              <equals>
+                <property>/engines/engine[0]/reverser-pos-norm</property>
+                <value>1</value>
+              </equals>
+            </and>
+          </condition>
+          <command>property-interpolate</command>
+          <property>/engines/engine[0]/reverser-pos-norm</property>
+          <value>0</value>
+          <time>3</time>
+        </binding>
+        <binding>
+          <condition>
+            <and>
+              <less-than>
+                <property>/autopilot/internal/servo-throttle[0]</property>
+                <value>0.03</value>
+              </less-than>
+              <less-than>
+                <property>/autopilot/internal/servo-throttle[1]</property>
+                <value>0.03</value>
+              </less-than>
+              <or>
+                <less-than>
+                  <property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+                  <value>17.5</value>
+                </less-than>
+                <equals>
+                  <property>/b737/sensors/air-ground</property>
+                  <value>ground</value>
+                </equals>
+              </or>
+              <equals>
+                <property>/engines/engine[1]/reverser-pos-norm</property>
+                <value>0</value>
+              </equals>
+            </and>
+          </condition>
+          <command>property-interpolate</command>
+          <property>/engines/engine[1]/reverser-pos-norm</property>
+          <value>1</value>
+          <time>2</time>
+        </binding>
+        <binding>
+          <condition>
+            <and>
+              <less-than>
+                <property>/autopilot/internal/servo-throttle[0]</property>
+                <value>0.03</value>
+              </less-than>
+              <less-than>
+                <property>/autopilot/internal/servo-throttle[1]</property>
+                <value>0.03</value>
+              </less-than>
+              <equals>
+                <property>/engines/engine[1]/reverser-pos-norm</property>
+                <value>1</value>
+              </equals>
+            </and>
+          </condition>
+          <command>property-interpolate</command>
+          <property>/engines/engine[1]/reverser-pos-norm</property>
+          <value>0</value>
+          <time>3</time>
         </binding>
       </key>
     </keyboard>

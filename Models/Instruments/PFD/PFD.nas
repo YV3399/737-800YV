@@ -135,7 +135,8 @@ var canvas_PFD = {
 		m["curSpdDig3"].set("clip", "rect(456, 1024, 539, 0)");
 		m["curSpdDig1"].set("clip", "rect(456, 1024, 539, 0)");
 		m["curSpdDig2"].set("clip", "rect(456, 1024, 539, 0)");
-		m["risingRwy"].set("clip", "rect(0, 693.673, 1024, 192.606)");
+		m["risingRwy"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
+		m["risingRwyPtr"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 
 		m.update_ap_modes();
 
@@ -479,11 +480,11 @@ var canvas_PFD = {
 					if(expanded) {
 						if (deflection > 0.3) deflection = 0.3;
 						if (deflection < -0.3) deflection = -0.3;
-						me["risingRwy"].setTranslation(deflection*600,-(200-radioAlt)*0.682);
+						me["risingRwy"].setTranslation(deflection*600,-(200-radioAlt)*0.98);
 					} else {
-						me["risingRwy"].setTranslation(deflection*180,-(200-radioAlt)*0.682);
+						me["risingRwy"].setTranslation(deflection*180,-(200-radioAlt)*0.98);
 					}
-					me["risingRwyPtr_scale"].setScale(1, ((200-radioAlt)*0.682)/11);
+					me["risingRwyPtr_scale"].setScale(1, ((200-radioAlt)*0.98+15)/15);
 				} else {
 					if(expanded) {
 						if (deflection > 0.3) deflection = 0.3;
@@ -554,7 +555,7 @@ var canvas_PFD = {
 		
 		if (alt < 10000)
 			me["tenThousand"].show();
-		else 
+		else
 			me["tenThousand"].hide();
 		if (vSpd != nil) {
 			var vertSpd = vSpd*60;
