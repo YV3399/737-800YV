@@ -98,7 +98,7 @@
 <!--Lights-->
 
 <model>
-	<path>Aircraft/737-800/Models/lights/GreenLight.xml</path>
+	<path>Aircraft/737-800/Models/lights/greennav.xml</path>
 	<name>Greenlight</name>     
 	<offsets>
 		<x-m> 3.62</x-m>
@@ -108,7 +108,7 @@
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/lights/RedLight.xml</path>
+	<path>Aircraft/737-800/Models/lights/rednav.xml</path>
 	<name>Redlight</name>     
 	<offsets>
 		<x-m> 3.62</x-m>
