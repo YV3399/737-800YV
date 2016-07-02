@@ -1,0 +1,23 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "shadow"
+loc 13.3265 -2.17189 0.844454
+texture "shadow.png"
+crease 45.000000
+numvert 4
+-20.8843 0 -16.3288
+19.7904 0 -16.1128
+19.7904 0 14.7266
+-20.8843 0 14.7266
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 0 1.19209e-007
+2 1 1.19209e-007
+1 1 1
+0 0 1
+kids 0

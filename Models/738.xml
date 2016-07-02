@@ -166,7 +166,10 @@
  </model>
 
 
-
+<model>
+	<path>Aircraft/737-800/Models/Effects/shadow/shadow.xml</path>
+	<name>Shadow</name>
+</model>
 
 <model>
 	<path>Aircraft/737-800/Models/lights/landinglight.xml</path>
