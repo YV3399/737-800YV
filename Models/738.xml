@@ -117,21 +117,21 @@
 	</offsets>
 </model>
    
-<model>
+<!--<model>
 	<path>Aircraft/737-800/Models/Lights/flash.xml</path>
 	<offsets>
 		<x-m>3.40</x-m>
 		<y-m>-17.03</y-m>
 		<z-m>1.16</z-m>
 	</offsets>
-</model>
+</model>-->
 
 <model>
 	<path>Aircraft/737-800/Models/lights/flash.xml</path>
 	<name>flashright</name>     
 	<offsets>
 		<x-m> 3.62</x-m>
-		<y-m>17.03</y-m>
+		<y-m>17.01</y-m>
 		<z-m> 1.06</z-m>        
 	</offsets>
 </model>
@@ -141,7 +141,7 @@
 	<name>flashleft</name>     
 	<offsets>
 		<x-m> 3.62</x-m>
-		<y-m>-17.03</y-m>
+		<y-m>-17.01</y-m>
 		<z-m> 1.06</z-m>     
 	</offsets>
 </model>
