@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Yokes -->
+
+<PropertyList>
+
+	<path>yoke.ac</path>
+
+	<!--<animation>
+		<name>Hide yokes</name>
+		<type>select</type>
+    <object-name>yoke</object-name>
+    <object-name>apdisengage</object-name>
+		<object-name>plane.down</object-name>
+		<object-name>plane.up</object-name>
+		<object-name>sup.001</object-name>
+		<object-name>switch.001</object-name>
+		<object-name>checklist</object-name>
+		<condition>
+			<property>sim/model/yokes</property>
+		</condition>
+	</animation>-->
+
+<animation>
+ <type>rotate</type>
+ <object-name>yoke</object-name>
+ <object-name>apdisengage</object-name>
+		<object-name>plane.down</object-name>
+		<object-name>plane.up</object-name>
+		<object-name>sup.001</object-name>
+		<object-name>switch.001</object-name>
+		<object-name>checklist</object-name>
+ <property>controls/flight/elevator</property>
+ <factor>15</factor>
+ <offset-deg>5</offset-deg>
+ <center>
+  <x-m>-0.11</x-m>
+  <y-m>0.0</y-m>
+  <z-m>-0.820</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>-1</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>yoke</object-name>
+ <object-name>apdisengage</object-name>
+		<object-name>plane.down</object-name>
+		<object-name>plane.up</object-name>
+		<object-name>sup.001</object-name>
+		<object-name>switch.001</object-name>
+		<object-name>checklist</object-name>
+ <property>controls/flight/aileron</property>
+ <factor>90</factor>
+ <center>
+  <x-m> 0.000</x-m>
+  <y-m>-0.000</y-m>
+  <z-m> 0.040</z-m>
+ </center>
+ <axis>
+  <x>-1.0</x>
+  <y>0.0</y>
+  <z>0.0</z>
+ </axis>
+</animation>
+
+ <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>apdisengage</object-name> 
+  <action>
+  <name>A/P Disengage</name>
+      <repeatable>false</repeatable>
+  <button>0</button>
+    <binding>
+   <command>nasal</command>
+        <script>
+	  autopilot737.apdsng_button_press();
+	</script>
+  </binding>
+ </action>
+ </animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>plane.up</object-name>
+		<visible>false</visible>
+     <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+        <command>property-adjust</command>
+        <property>/controls/flight/elevator-trim</property>
+        <step>-0.005</step>
+        <min>-1.0</min>
+        <max> 1.0</max>
+        <wrap>false</wrap>
+        </binding>
+				<binding>
+		      <command>property-assign</command>
+		      <property>/controls/special/yoke-switch2</property>
+		      <value type="double">-1.0</value>
+		    </binding>        
+		    <mod-up>
+		      <binding>
+				    <command>property-assign</command>
+				    <property>/controls/special/yoke-switch2</property>
+				    <value type="double">0.0</value>
+				  </binding>   
+        </mod-up>         
+	   </action>
+	</animation>	
+ 
+	<animation>
+		<type>pick</type>
+		<object-name>plane.down</object-name>
+		<visible>false</visible>
+     <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+        <command>property-adjust</command>
+        <property>/controls/flight/elevator-trim</property>
+        <step>0.005</step>
+        <min>-1.0</min>
+        <max> 1.0</max>
+        <wrap>false</wrap>
+        </binding>
+				<binding>
+		      <command>property-assign</command>
+		      <property>/controls/special/yoke-switch2</property>
+		      <value type="double">1.0</value>
+		    </binding>        
+		    <mod-up>
+		      <binding>
+				    <command>property-assign</command>
+				    <property>/controls/special/yoke-switch2</property>
+				    <value type="double">0.0</value>
+				  </binding>   
+        </mod-up>         
+    </action>
+	</animation>	
+
+	<!-- the STAB TRIM switches -->
+	<animation>
+		<type>rotate</type>
+		<object-name>switch.001</object-name>		
+     <property>/controls/special/yoke-switch2</property>
+		<interpolation>
+		  <entry><ind> 1.0</ind><dep> -10.0</dep></entry>
+		  <entry><ind> 0.0</ind><dep>   0.0</dep></entry>
+		  <entry><ind>-1.0</ind><dep>  10.0</dep></entry>
+		</interpolation>
+    <center>
+      <x-m>0.02</x-m>
+      <y-m>0</y-m>
+      <z-m>0.073</z-m>
+    </center>
+    <axis>   
+		  <y>1</y>
+    </axis>
+	
+	</animation>
+
+
+<!--  <animation>
+  <type>translate</type>
+	<property>/xadjust</property>
+	<axis><x>1</x></axis>
+</animation>
+	
+<animation>
+  <type>translate</type>
+	<property>/zadjust</property>
+	<axis><z>1</z></axis>
+</animation>  -->
+
+</PropertyList>
