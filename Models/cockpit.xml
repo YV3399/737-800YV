@@ -23,6 +23,26 @@
     </model>
 	
 	<model>
+		<name>seatcapt</name>
+		<path>Aircraft/737-800/Models/seats/cockpitseat.ac</path>
+		<offsets>
+			<x-m>1.25</x-m>
+			<y-m>-0.5390</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>seatfo</name>
+		<path>Aircraft/737-800/Models/seats/cockpitseat.ac</path>
+		<offsets>
+			<x-m>1.25</x-m>
+			<y-m>0.4950</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+
+	<model>
 		<name>yokecapt</name>
 		<path>Aircraft/737-800/Models/yoke/yoke.xml</path>
 		<offsets>
