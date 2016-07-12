@@ -10,7 +10,7 @@ kids 4
 OBJECT poly
 name "Xfuselage"
 loc 12.1202 0.854643 -2.28383
-texture "Emerdoor.png"
+texture "emerdoor.png"
 crease 45.000000
 numvert 16
 -15.3972 -0.296144 1.0764
@@ -83,7 +83,7 @@ kids 0
 OBJECT poly
 name "convexhull"
 loc -6.90779 0.303703 1.78416
-texture "Emerdoor.png"
+texture "emerdoor.png"
 crease 45.000000
 numvert 56
 3.44528 1.8294 -2.17302
@@ -565,7 +565,7 @@ kids 0
 OBJECT poly
 name "box"
 loc -2.60427 -1.42502 0.353918
-texture "Emerdoor.png"
+texture "emerdoor.png"
 crease 45.000000
 numvert 8
 -0.615083 1.60807 -1.51794
@@ -623,7 +623,7 @@ kids 0
 OBJECT poly
 name "box"
 loc -2.60812 -1.20219 0.282011
-texture "Emerdoor.png"
+texture "emerdoor.png"
 crease 45.000000
 numvert 12
 -0.602953 1.36717 -1.45621

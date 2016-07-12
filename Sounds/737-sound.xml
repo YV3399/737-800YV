@@ -29,11 +29,39 @@
       </volume>
     </rightstartup>
 
-
+<squeal>
+   <name>touch</name>
+   <path>Aircraft//737-800/Sounds/touch.wav</path>
+   <condition>
+    <or>
+     <property>/gear/gear[0]/wow</property>
+     <property>/gear/gear[1]/wow</property>
+     <property>/gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.05</factor>
+   </volume>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>1.2</offset>
+   </pitch>
+  </squeal>
 
 <engine>
         <name>left engine</name>
-        <path>Sounds/jet.wav</path>
+        <path>Aircraft/737-800/Sounds/jet.wav</path>
         <mode>looped</mode>
         <condition>
             <not>
@@ -58,6 +86,34 @@
         <reference-dist>200.0</reference-dist>
         <max-dist>500.0</max-dist>
     </engine>
+
+ <engine>
+        <name>right engine</name>
+     <path>Aircraft/737-800/Sounds/jet.wav</path>
+        <mode>looped</mode>
+        <condition>
+            <not>
+                <property>controls/engines/engine[1]/cutoff</property>
+            </not>
+        </condition>
+        <volume>
+            <property>/engines/engine[1]/thrust-lbs</property>
+            <factor><factor>0.15</factor></factor>
+            <min>0.0</min>
+            <max>1.0</max>
+        </volume>
+        <volume>
+            <property>sim/sound/volume</property>
+        </volume>
+        <position>
+            <x>0</x>
+            <y>-9.8</y>
+            <z>-3</z>
+        </position>
+        <reference-dist>200.0</reference-dist>
+        <max-dist>500.0</max-dist>
+    </engine>
+
 
     <engine>
         <name>left n1</name>
@@ -101,32 +157,6 @@
 		</volume>
 	</engine>
 	
-    <engine>
-        <name>right engine</name>
-        <path>Sounds/jet.wav</path>
-        <mode>looped</mode>
-        <condition>
-            <not>
-                <property>controls/engines/engine[1]/cutoff</property>
-            </not>
-        </condition>
-        <volume>
-            <property>/engines/engine[1]/thrust-lbs</property>
-            <factor><factor>0.15</factor></factor>
-            <min>0.0</min>
-            <max>1.0</max>
-        </volume>
-        <volume>
-            <property>sim/sound/volume</property>
-        </volume>
-        <position>
-            <x>0</x>
-            <y>-9.8</y>
-            <z>-3</z>
-        </position>
-        <reference-dist>200.0</reference-dist>
-        <max-dist>500.0</max-dist>
-    </engine>
 
     <engine>
         <name>right n1</name>
@@ -189,14 +219,19 @@
   </rumble>
   
   <flap>
-   <name>flaps</name>
-   <mode>in-transit</mode>
-   <path>Aircraft/737-800/Sounds/flaps.wav</path>
-   <property>/surface-positions/flap-pos-norm</property>
-   <volume>
-    <factor>0.45</factor>
+  <name>flaps</name>
+  <mode>in-transit</mode>
+  <path>Aircraft/737-800/Sounds/flaps.wav</path>
+  <property>/surface-positions/flap-pos-norm</property>
+  <volume>
+        <property>sim/current-view/z-offset-m</property>
+        <offset>1</offset>
+        <factor>0.4</factor>
+        <min>-1</min>
+        <max>0.6</max>
    </volume>
-  </flap>
+
+ </flap>
 
   <gear>
    <name>gear</name>

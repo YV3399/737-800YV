@@ -1,0 +1,287 @@
+<!-- 777-300
+George Luiz
+-->
+
+<PropertyList>
+
+  <!-- Chocks -->
+
+  <model>
+    <name>Chocks</name>
+    <path>Aircraft/737-300/Models/Services/Chocks/chocks.xml</path>
+    <condition>
+      <equals>
+        <property>controls/switches/chocks</property>
+        <value type="bool">true</value>
+      </equals>
+      <less-than>
+        <property>velocities/airspeed-kt</property>
+        <value>15</value>
+      </less-than>
+    </condition>
+    <offsets>
+      <x-m>0.00</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.00</z-m>
+    </offsets>
+  </model>
+
+<!-- Engine Safety Cones -->
+
+  <model>
+    <name>Cone</name>
+    <path>Aircraft/737-300/Models/Services/Safety-Cones/safety-cones.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/safety-cones</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Passenger Stairway (Front)-->
+
+  <model>
+    <name>Cone</name>
+    <path>Aircraft/737-300/Models/Services/Stairways/stairs.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/stairs1</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Passenger Stairway (Rear)-->
+
+  <model>
+    <name>Cone</name>
+    <path>Aircraft/737-300/Models/Services/Stairways/stairs2.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/stairs2</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Bus -->
+
+  <model>
+    <name>Bus</name>
+    <path>Aircraft/737-300/Models/Services/Bus/bus.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/bus</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Baggage (Front)-->
+
+  <model>
+    <name>Baggage</name>
+    <path>Aircraft/737-300/Models/Services/Baggage/baggage.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/baggage1</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Baggage (Front)-->
+
+  <model>
+    <name>baggage</name>
+    <path>Aircraft/737-300/Models/Services/Baggage/baggage2.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/baggage2</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Gpu -->
+
+  <model>
+    <name>Gpu</name>
+    <path>Aircraft/737-300/Models/Services/Gpu/gpu.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/gpu</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+      <pitch-deg>0</pitch-deg>
+      <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+
+<!-- Fuel truck -->
+
+  <model>
+    <name>Fuel truck</name>
+    <path>Aircraft/737-300/Models/Services/Fuel/fuel.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/Fuel</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+
+<!-- Catering Vehicle Front -->
+
+  <model>
+    <name>Cateringback Vehicle</name>
+    <path>Aircraft/737-300/Models/Services/Catering/catering.xml</path>
+    <condition>
+      <equals>
+        <property>controls/switches/catering1</property>
+        <value type="bool">true</value>
+      </equals>
+      <less-than>
+        <property>velocities/airspeed-kt</property>
+        <value>15</value>
+      </less-than>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Catering Vehicle Rear -->
+
+  <model>
+    <name>Cateringback Vehicle</name>
+    <path>Aircraft/737-300/Models/Services/Catering/catering2.xml</path>
+    <condition>
+      <equals>
+        <property>controls/switches/catering2</property>
+        <value type="bool">true</value>
+      </equals>
+      <less-than>
+        <property>velocities/airspeed-kt</property>
+        <value>15</value>
+      </less-than>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Car Service -->
+
+  <model>
+    <name>Car Service</name>
+    <path>Aircraft/737-300/Models/Services/Car/car.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/car_service</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Engine Protection -->
+
+  <model>
+    <name>Engine Protection</name>
+    <path>Aircraft/737-300/Models/Services/EngineProtection/Disc.xml</path>
+    <condition>
+      <equals>
+        <property>controls/switches/protection</property>
+        <value type="bool">true</value>
+      </equals>
+      <less-than>
+        <property>velocities/airspeed-kt</property>
+        <value>15</value>
+      </less-than>
+    </condition>
+    <offsets>
+      <x-m>0.00</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.00</z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
