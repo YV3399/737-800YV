@@ -6670,7 +6670,7 @@ refs 4
 96 0.275921 0.656126
 kids 0
 OBJECT poly
-name "fan"
+name "fan2"
 loc -2.2358277 -1.1048822 -4.8903360
 crease 30.0
 texture "737-800.png"
