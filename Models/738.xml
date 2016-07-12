@@ -271,7 +271,7 @@
 
 <model>
 	<name>emerdoor</name>
-	<path>Aircraft\737-800\Models\Effects\crashed\emerdoor.xml</path>
+	<path>Effects\crashed\emerdoor.xml</path>
 	<condition>
 		<equals>
             <property>sim/crashed</property>
