@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">United Airlines</name>
-            <texture>Liveries/UAL.png</texture>   
+            <texture>Liveries-800/UAL.png</texture>   
 			<newwinglets type="bool">true</newwinglets> 
         </livery>        
     </model>
