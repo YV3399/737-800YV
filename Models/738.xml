@@ -253,21 +253,31 @@
 	</offsets>
 </model>
 
-<model>
-	<name>left engine fire</name>
-	<path>Effects/enginefire.xml</path>
-	<condition>
-		<equals>
-			<property>sim/crashed</property>
-			<value type="bool">true</value>
-		</equals>
-	</condition>  
-	<offsets>
-		<x-m>6.6</x-m>
-		<y-m>-4.77</y-m>
-		<z-m>-1.4</z-m>
-	</offsets>
-</model>
+<!-- Engine fire -->
+    <model>
+        <name>Left engine fire</name>
+        <path>Aircraft/737-800/Models/Effects/enginefire.xml</path>
+        <condition>
+            <property>engines/engine[0]/on-fire</property>
+        </condition>
+        <offsets>
+            <x-m>6.6</x-m>
+            <y-m>-4.77</y-m>
+            <z-m>-1.4</z-m>
+        </offsets>
+    </model>
+    <model>
+        <name>Right engine fire</name>
+        <path>Aircraft/737-800/Models/Effects/enginefire.xml</path>
+        <condition>
+            <property>engines/engine[1]/on-fire</property>
+        </condition>
+        <offsets>
+            <x-m>6.6</x-m>
+            <y-m>4.77</y-m>
+            <z-m>-1.4</z-m>
+        </offsets>
+    </model>
 
 <model>
 	<name>emerdoor</name>
