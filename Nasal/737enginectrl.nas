@@ -20,8 +20,8 @@ var MAX_N2		= 102.5;
 #var pneu_psi		# Defined in pneumatic system
 var N1_MOTORING		= 10;
 var N2_MOTORING		= 20;
-var N1_IDLE		= 30;
-var N2_IDLE		= 60;
+var N1_IDLE		= 19.7;
+var N2_IDLE		= 50;
 var MOTORING_TRANS	= 10;						# Not sure about this one
 var IDLE_TRANS		= 20;						# Might be reasonable. Don't exceed 40
 var SHUTDOWN_TRANS	= 40;						# Worst-case, actual time will be much less

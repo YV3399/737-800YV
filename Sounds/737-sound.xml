@@ -129,9 +129,9 @@
         </pitch>
         <volume>
             <property>engines/engine[0]/n2</property>
-            <factor>0.1</factor>
+            <factor>0.2</factor>
             <min>0.0</min>
-            <max>0.6</max>
+            <max>0.9</max>
         </volume>
         <volume>
             <property>sim/sound/volume</property>
@@ -153,7 +153,7 @@
 		</condition>
 		<mode>looped</mode>
 		<volume>
-			<factor>0.1</factor>
+			<property>sim/sound/volume</property>
 		</volume>
 	</engine>
 	
@@ -165,9 +165,9 @@
         <property>engines/engine[1]/n2</property>
         <volume>
             <property>engines/engine[1]/n2</property>
-            <factor>0.1</factor>
+            <factor>0.2</factor>
             <min>0.0</min>
-            <max>0.6</max>
+            <max>0.9</max>
         </volume>
         <volume>
             <property>sim/sound/volume</property>
@@ -196,7 +196,7 @@
 		</condition>
 		<mode>looped</mode>
 		<volume>
-			<factor>0.1</factor>
+			<property>sim/sound/volume</property>
 		</volume>
   </engine>
   
