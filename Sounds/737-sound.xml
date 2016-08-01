@@ -75,7 +75,7 @@
 <engine>
 		<name>turbine0 l</name>
 		<mode>looped</mode>
-		<path>Aircraft/737-800/Sounds/turbine-seat.wav</path>
+		<path>Aircraft/737-800/Sounds/turbine-2.wav</path>
 		<property>engines/engine[0]/n1</property>
 		<condition>
 			<property>sim/current-view/internal</property>
