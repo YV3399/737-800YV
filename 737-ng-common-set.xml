@@ -693,9 +693,7 @@
 		<file>Aircraft/737-800/Nasal/liveries.nas</file>
 		<file>Aircraft/737-800/Nasal/systems.nas</file>
                 <file>Aircraft/737-800/Nasal/registration.nas</file>
-                <file>Aircraft/737-800/Nasal/Engine-Fire</file>
-                
-
+                <file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
     </boeing737>
 
 
