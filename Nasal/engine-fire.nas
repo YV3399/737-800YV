@@ -73,7 +73,7 @@ setlistener("sim/signals/fdm-initialized", func
  {
  fire_mgmt.init();
  if (getprop("/controls/fires/fire/on-fire") != 1)
- 	sysinfo.log_msg("[ENG] Engine 1 Check ..... OK", 0);
+ 	print("[ENG] Engine 1 Check ..... OK");
  if (getprop("/controls/fires/fire[1]/on-fire") != 1)
- sysinfo.log_msg("[ENG] Engine 2 Check ..... OK", 0);
+ print("[ENG] Engine 2 Check ..... OK");
  });
