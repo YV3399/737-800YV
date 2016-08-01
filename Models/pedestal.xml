@@ -28,7 +28,9 @@
             <z-m>0.725</z-m>
             <pitch-deg>299.5</pitch-deg>
         </offsets>
-
+        <overlay>
+            <texture>boeing_grey.png</texture>
+        </overlay>
     </model>
 
     <model>
