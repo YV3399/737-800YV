@@ -184,6 +184,17 @@
 					</script>
 				</binding>
 		  </item>
+		  <item>
+                <label>System Failures</label>
+					<binding>
+                            <command>nasal</command>
+                            <script>
+                             var failures = gui.Dialog.new("sim/gui/dialogs/failures/dialog", "Aircraft/737-800/Systems/failures-dlg.xml");
+                             failures.open();
+                            </script>
+                    </binding>
+            </item>
+
         </menu>
       </default>
     </menubar>
@@ -682,6 +693,7 @@
 		<file>Aircraft/737-800/Nasal/liveries.nas</file>
 		<file>Aircraft/737-800/Nasal/systems.nas</file>
                 <file>Aircraft/737-800/Nasal/registration.nas</file>
+                <file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
 
     </boeing737>
 
