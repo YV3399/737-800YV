@@ -18,11 +18,8 @@
 		<layout>table</layout>
 
 		<text>
-<<<<<<< HEAD
-		    <label>Request Fuel (max 26260 lbs)</label>
-=======
 		    <label>Request Fuel (max 46200 lbs)</label>
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
+
 		    <halign>right</halign>
 		    <row>0</row>
 		    <col>0</col>

@@ -29,10 +29,6 @@
       </volume>
     </rightstartup>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
 <engine>
 		<name>low l</name>
 		<mode>looped</mode>
@@ -74,7 +70,7 @@
 			<max>2</max>
 		</pitch>
 	</engine>
-<<<<<<< HEAD
+
 
 <engine>
 		<name>turbine0 l</name>
@@ -134,7 +130,6 @@
 			<factor>0.01</factor>
 		</pitch>
 	</engine>
-=======
 
 <engine>
 		<name>turbine0 l</name>
@@ -310,11 +305,7 @@
 			<factor>0.1</factor>
 		</volume>
 	</engine>
-	
-<<<<<<< HEAD
-    	
-=======
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
+
 	<engine>
 		<name>right-rev</name>
 		<path>Aircraft/737-800/Sounds/reverser.wav</path>
@@ -976,11 +967,7 @@
 			<max-dist>5</max-dist>
 		</avionics>
 
-<<<<<<< HEAD
 		<wow>
-=======
-                  <wow>
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
 			<name>wow 0</name>
 			<mode>once</mode>
 			<path>Aircraft/737-800/Sounds/wow.wav</path>
@@ -1053,10 +1040,6 @@
 				<offset>0</offset>
 			</volume>
 		</wow>
-<<<<<<< HEAD
-
-=======
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
 
 
 </fx>

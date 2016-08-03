@@ -184,12 +184,9 @@
 					</script>
 				</binding>
 		  </item>
-<<<<<<< HEAD
-		  
-			<item>
-=======
+
 		  <item>
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
+
                 <label>System Failures</label>
 					<binding>
                             <command>nasal</command>
@@ -199,10 +196,7 @@
                             </script>
                     </binding>
             </item>
-<<<<<<< HEAD
-=======
 
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
         </menu>
       </default>
     </menubar>
@@ -702,10 +696,7 @@
 		<file>Aircraft/737-800/Nasal/systems.nas</file>
                 <file>Aircraft/737-800/Nasal/registration.nas</file>
                 <file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
-<<<<<<< HEAD
-=======
 
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
     </boeing737>
 
 
