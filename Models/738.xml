@@ -253,6 +253,11 @@
 	</offsets>
 </model>
 
+<<<<<<< HEAD
+=======
+</model>
+
+>>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
 <model>
 	<name>emerdoor</name>
 	<path>Effects\crashed\emerdoor.xml</path>
@@ -268,9 +273,11 @@
 		<z-m>-0.8</z-m> 
 	</offsets>
 </model>
-
-
+<<<<<<< HEAD
+=======
+  
 <!-- Smoke and Fire -->
+>>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
 
 <model>
  <path>Aircraft/737-800/Models/Effects/fire.xml</path>
@@ -289,6 +296,40 @@
  </offsets>
 </model>
 
+<<<<<<< HEAD
+<!-- Smoke and Fire -->
+
+=======
+>>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
+<model>
+ <path>Aircraft/737-800/Models/Effects/fire.xml</path>
+ <condition>
+	<equals>
+<<<<<<< HEAD
+		<property>/controls/fires/fire/phase</property>
+		<value>fire</value>
+	</equals>
+ </condition>
+ <name>fire_1</name>
+ <offsets>
+  <x-m>-3.3</x-m>
+  <y-m>-4.74</y-m>
+=======
+		<property>/controls/fires/fire[1]/phase</property>
+		<value>fire</value>
+	</equals>
+ </condition>
+ <name>~fire_1</name>
+ <offsets>
+  <x-m>-3.3</x-m>
+  <y-m>4.74</y-m>
+>>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
+  <z-m>-1.4</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<<<<<<< HEAD
 <model>
  <path>Aircraft/737-800/Models/Effects/fire.xml</path>
  <condition>
@@ -310,6 +351,8 @@
 
 
   
+=======
+>>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
   <!-- CONTRAIL -->
 
   <!-- Particules OSG -->

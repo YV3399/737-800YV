@@ -17,4 +17,5 @@ var altAlertModeSwitch = func {
 }
 setlistener( "/b737/warnings/altitude-alert", altAlertModeSwitch, 0, 0);
 
+setprop("/controls/lighting/AFDSbrt","0");
 

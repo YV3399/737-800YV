@@ -46,5 +46,74 @@
             <texture>boeing_grey.png</texture>
         </overlay>
     </model>
+	
+	
+<!-- left / middle changes the knob by .1 -->
+<animation>
+  <type>pick</type>
+  <object-name>AFDSbrt</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/AFDSbrt</property>
+      <step>0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>AFDSbrt</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/AFDSbrt</property>
+      <step>-0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>
+
+<!-- scroll wheel changes the knob by .1 -->
+<animation>
+  <type>pick</type>
+  <object-name>AFDSbrt</object-name>
+  <action>
+    <button>3</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/AFDSbrt</property>
+      <step>0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>AFDSbrt</object-name>
+  <action>
+    <button>4</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/AFDSbrt</property>
+      <step>-0.1</step>
+      <min>0</min>
+      <max>1</max>
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>
 
 </PropertyList>
