@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<path>rednav.ac</path>
+
+	<!-- ANIMATIONS -->
+	<!-- On/off -->
+	<animation>
+		<name>On/off</name>
+		<type>select</type>
+		<object-name>Light</object-name>
+		<condition>
+			<property>controls/lighting/nav-lights</property>
+		</condition>
+	</animation>
+
+	<!-- Billboard animation -->
+	<animation>
+		<name>Billboard</name>
+		<type>billboard</type>
+		<object-name>Light</object-name>
+	</animation>
+	
+		          <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>Light</object-name>
+    </effect>
+
+</PropertyList>
