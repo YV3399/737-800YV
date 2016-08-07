@@ -25,8 +25,13 @@
 		<model>
 			<path>Models/738.xml</path>                     
 		</model>    
-                
-		<view>
+                <rating>
+			<FDM type="int">3</FDM>
+			<systems type="int">3</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">4</model>
+		</rating>
+			<view>
 			<internal archive="y">true</internal>
 			<config>
 				<!-- x/y/z == right/up/back --> 
