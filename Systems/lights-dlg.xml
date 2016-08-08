@@ -68,7 +68,34 @@
 			</binding>
 			<live>true</live>
 		</checkbox>
-
+              
+                <checkbox>
+				<halign>left</halign>
+				<label>Panel norm</label>
+				<property>/controls/lighting/panel-lights</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>/controls/lighting/panel-lights</property>
+				</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch</property>
+				</binding>
+			</checkbox>
+		
+			<text>
+				<label>Panel norm</label>
+			</text>
+			<slider>
+				<row>0</row>
+				<col>2</col>
+				<min>0.2</min>
+				<max>1.0</max>
+				<property>/controls/lighting/panel-norm</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</slider>
 		
 
 
