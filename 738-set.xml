@@ -31,16 +31,22 @@
 			<cockpit type="int">4</cockpit>
 			<model type="int">4</model>
 		</rating>
-			<view>
+			<view n="0">
+			<name>Pilot View</name>
+			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
-				<!-- x/y/z == right/up/back --> 
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<default-field-of-view-deg type="double">55</default-field-of-view-deg>
+				<pitch-offset-deg>-4</pitch-offset-deg>
+				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">-0.51</x-offset-m>
-				<y-offset-m archive="y">1.28</y-offset-m>
-				<z-offset-m archive="y">-17.18</z-offset-m>
-				<pitch-offset-deg archive="y">-8.0</pitch-offset-deg>
+				<y-offset-m archive="y">1.25</y-offset-m>
+				<z-offset-m archive="y">-16.98</z-offset-m>
 			</config>
 		</view>
+
 		<view n="108">
 			<name>CDU View</name>
 			<type>lookfrom</type>
@@ -150,10 +156,10 @@
 
 	<limits> <!-- based on EI-RUA aircraft data -->
 		<mass-and-balance>
-			<maximum-ramp-mass-lbs>173000</maximum-ramp-mass-lbs>
-			<maximum-takeoff-mass-lbs>172500</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>144000</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>136000</maximum-zero-fuel-mass-lbs>
+			<maximum-ramp-mass-lbs>174694</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>174198</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>146298.76</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>138296</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 		<max-flap-extension-speed>
 			<flaps>0.125</flaps>
