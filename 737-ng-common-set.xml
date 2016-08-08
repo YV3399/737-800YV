@@ -610,7 +610,7 @@
       <metrics>
         <aerorp-mac type="double">0.30</aerorp-mac>
         <lift type="double">0.0</lift>
-        <basic-moment type="double">-2.2</basic-moment>
+        <basic-moment type="double">-2.25</basic-moment>
       </metrics>
       <gear>
         <unit n="0">
@@ -834,8 +834,8 @@
 				</rs-232>
             </inputs>
             <speaker>                           <!-- Speaker Configuration -->
-                <max-dist type="double"> 200.0 </max-dist>        <!-- Max. distance where speaker is heard -->
-                <reference-dist type="double"> 2 </reference-dist> <!-- Distance to pilot -->
+                <max-dist type="double"> 2 </max-dist>        <!-- Max. distance where speaker is heard -->
+                <reference-dist type="double"> 1 </reference-dist> <!-- Distance to pilot -->
                 <volume type="double"> 1.0 </volume>          <!-- Volume at reference distance -->
             </speaker>
         </mk-viii>
