@@ -21,5 +21,10 @@
 		<type>billboard</type>
 		<object-name>Light</object-name>
 	</animation>
+	
+		          <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>Light</object-name>
+    </effect>
 
 </PropertyList>
