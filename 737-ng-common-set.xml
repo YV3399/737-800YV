@@ -699,7 +699,15 @@
 
     </boeing737>
 
-
+                <lighting>
+			<interior type="double">0</interior>
+			<cockpit type="bool">false</cockpit>
+			<cones type="bool">true</cones>
+			<dome-norm type="double">0</dome-norm>
+			<overhead-panel-norm type="double">0.8</overhead-panel-norm>
+			<main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
+		</lighting>
+		
     <autopilot737>
       <file>Aircraft/737-800/Nasal/autopilot.nas</file>
     </autopilot737>
