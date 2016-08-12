@@ -1,10 +1,28 @@
 <?xml version="1.0"?>
-
-
 <PropertyList>
    <path>vor.ac</path>
-   
-   
+  
+   <animation>
+<type>material</type> 
+<object-name>Frame</object-name>
+<emission>
+    <red>0.1</red>
+    <green>0.1</green>
+    <blue>0.1</blue>
+	    <factor-prop>/controls/lighting/panel-norm[0]</factor-prop>
+ </emission>
+</animation> 
+
+     <animation>
+	<type>material</type> 
+	<object-name>face</object-name>
+	<emission>
+    		<red>0.8</red>
+    		<green>0.8</green>
+    		<blue>0.8</blue>
+	    <factor-prop>/controls/lighting/panel-norm[0]</factor-prop>
+ 	</emission>
+</animation> 
    <animation>
      <type>rotate</type>   
      <object-name>Face</object-name> 
