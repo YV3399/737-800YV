@@ -21,46 +21,6 @@
             <pitch-deg>-15</pitch-deg>
         </offsets>
     </model>
-	
-	<model>
-		<name>seatcapt</name>
-		<path>Aircraft/737-800/Models/seats/cockpitseat.ac</path>
-		<offsets>
-			<x-m>1.25</x-m>
-			<y-m>-0.5390</y-m>
-			<z-m>0.0</z-m>
-		</offsets>
-	</model>
-	
-	<model>
-		<name>seatfo</name>
-		<path>Aircraft/737-800/Models/seats/cockpitseat.ac</path>
-		<offsets>
-			<x-m>1.25</x-m>
-			<y-m>0.4950</y-m>
-			<z-m>0.0</z-m>
-		</offsets>
-	</model>
-
-	<model>
-		<name>yokecapt</name>
-		<path>Aircraft/737-800/Models/yoke/yoke.xml</path>
-		<offsets>
-			<x-m>0.842</x-m>
-			<y-m>-0.5390</y-m>
-			<z-m>0.850</z-m>
-		</offsets>
-	</model>
-	
-	<model>
-		<name>yokefo</name>
-		<path>Aircraft/737-800/Models/yoke/yoke.xml</path>
-		<offsets>
-			<x-m>0.83</x-m>
-			<y-m>0.4950</y-m>
-			<z-m>0.855</z-m>
-		</offsets>
-	</model>
 
     <model>
      <name>captain-pedals</name>
@@ -1804,6 +1764,8 @@
     
   <animation>
       <type>select</type>
+      <object-name>yoke1</object-name>
+      <object-name>yoke1.001</object-name>
       <object-name>colum</object-name>
       <object-name>colum.002</object-name>
       <condition>
@@ -1813,10 +1775,13 @@
 
   <animation>
       <type>rotate</type>
+      <object-name>yoke1</object-name>
+      <object-name>yoke1.001</object-name>
       <object-name>colum</object-name>
       <object-name>colum.002</object-name>
       <property>controls/flight/elevator</property>
-      <factor>15</factor>
+      <factor>14</factor>
+      <!--<offset-deg>8</offset-deg> leave it 0, because of wrong geometry of cockpit and overlapping with PFD -->
       <center>
           <x-m>0.725</x-m>
           <y-m>0</y-m>
@@ -1829,13 +1794,337 @@
       </axis>
   </animation>
 
- 
+  <animation>
+      <type>rotate</type>
+      <object-name>yoke1</object-name>
+      <property>controls/flight/aileron</property>
+      <factor>87</factor>
+      <center>
+          <x-m>1.0</x-m>
+          <y-m>-0.535</y-m>
+          <z-m>0.908</z-m>
+      </center>
+      <axis>
+          <x>-1</x>
+          <y>0</y>
+          <z>0</z>
+      </axis>
+  </animation>
 
- 
+  <animation>
+      <type>rotate</type>
+      <object-name>yoke1.001</object-name>
+      <property>controls/flight/aileron</property>
+      <factor>87</factor>
+      <center>
+          <x-m>1.0</x-m>
+          <y-m>0.497</y-m>
+          <z-m>0.908</z-m>
+      </center>
+      <axis>
+          <x>-1</x>
+          <y>0</y>
+          <z>0</z>
+      </axis>
+  </animation>
+  <!--OHP-->
+   <animation>
+        <type>pick</type>
+        <object-name>APUswitch</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/APU/start</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>
+        <object-name>APUswitch</object-name>    
+      <property>controls/APU/start</property>
+      <factor>40</factor>
+      <center>
+          <x-m>0.59388</x-m>
+          <y-m>0</y-m>
+          <z-m>1.41642</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+  <!--No Smoking-->
+   <animation>
+        <type>pick</type>
+        <object-name>nosmoking</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/cabin/nosmoking</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>nosmoking</object-name>  
+            <property>/controls/cabin/nosmoking</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.8062</x-m>
+          <y-m>0</y-m>
+          <z-m>1.50979</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+  <!--Seatbelts-->
+   <animation>
+        <type>pick</type>
+        <object-name>fastenseatbelts</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/cabin/seatbelts</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>fastenseatbelts</object-name>  
+            <property>/controls/cabin/seatbelts</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.8062</x-m>
+          <y-m>0</y-m>
+          <z-m>1.50979</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+  <!--Light-->
+   <animation>
+        <type>pick</type>
+        <object-name>logolight</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/lighting/logo-lights</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>logolight</object-name>   
+            <property>/controls/lighting/logo-lights</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.61194</x-m>
+          <y-m>0</y-m>
+          <z-m>1.42405</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+   <animation>
+        <type>pick</type>
+        <object-name>strobelight</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/lighting/strobe</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>strobelight</object-name>  
+            <property>/controls/lighting/strobe</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.61194</x-m>
+          <y-m>0</y-m>
+          <z-m>1.42405</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+   <animation>
+        <type>pick</type>
+        <object-name>anticollight</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/lighting/anticol</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>anticollight</object-name>    
+            <property>/controls/lighting/anticol</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.61194</x-m>
+          <y-m>0</y-m>
+          <z-m>1.42405</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+   <animation>
+        <type>pick</type>
+        <object-name>winglight</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/lighting/wing</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>winglight</object-name>  
+            <property>/controls/lighting/wing</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.61194</x-m>
+          <y-m>0</y-m>
+          <z-m>1.42405</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+   <animation>
+        <type>pick</type>
+        <object-name>wheellight</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/lighting/wheel</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>wheellight</object-name>   
+            <property>/controls/lighting/wheel</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.61194</x-m>
+          <y-m>0</y-m>
+          <z-m>1.42405</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+   <animation>
+        <type>pick</type>
+        <object-name>fuelpumpL</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/engines/engine/fuel-pump</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>fuelpumpL</object-name>  
+            <property>/controls/engines/engine/fuel-pump</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.7236</x-m>
+          <y-m>0</y-m>
+          <z-m>1.47321</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+   <animation>
+        <type>pick</type>
+        <object-name>fuelpumpR</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/engines/engine[1]/fuel-pump</property>
+        </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>fuelpumpR</object-name>  
+            <property>/controls/engines/engine[1]/fuel-pump</property>
+      <factor>60</factor>
+      <center>
+          <x-m>0.7236</x-m>
+          <y-m>0</y-m>
+          <z-m>1.47321</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
   
      <model>
         <name>ldglightleftretr</name>
-        <path>landinglight.xml</path>
+        <path>landinglight.ac</path>
         <offsets>
             <x-m>0.6127471</x-m>
             <y-m>-0.2644771</y-m>
@@ -1845,7 +2134,7 @@
     </model>
 	<model>
         <name>ldglightrightretr</name>
-        <path>landinglight.xml</path>
+        <path>landinglight.ac</path>
         <offsets>
             <x-m>0.6127595</x-m>
             <y-m>-0.1857275</y-m>
@@ -1855,7 +2144,7 @@
     </model>
     <model>
         <name>ldglightleftwing</name>
-        <path>landinglight.xml</path>
+        <path>landinglight.ac</path>
         <offsets>
             <x-m>0.6121518</x-m>
             <y-m>-0.2147996</y-m>
@@ -1866,7 +2155,7 @@
   
     <model>
         <name>ldglightrightwing</name>
-        <path>landinglight.xml</path>
+        <path>landinglight.ac</path>
         <offsets>
             <x-m>0.6134001</x-m>
             <y-m>-0.2420656</y-m>
@@ -1874,9 +2163,6 @@
             <pitch-deg>125</pitch-deg>
         </offsets>
     </model>
-	
-
-      
 </PropertyList>
    
    
