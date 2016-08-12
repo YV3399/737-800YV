@@ -2,11 +2,11 @@
 
 <PropertyList>
 
-  <path>WhiteLight.ac</path>
+  <path>flash.ac</path>
 
   <animation>
     <type>noshadow</type>
-    <object-name>Light</object-name>
+    <object-name>flash</object-name>
   </animation>
 
   <animation>
@@ -16,21 +16,21 @@
 
   <animation>
     <type>billboard</type>
-    <object-name>Light</object-name>
+    <object-name>flash</object-name>
     <spherical type="bool">true</spherical>
   </animation>
 
   <animation>
     <type>select</type>
-    <object-name>Light</object-name>
+    <object-name>flash</object-name>
     <condition>
-      <property>/sim/model/lights/strobe/state</property>
+      <property>/sim/model/flashs/strobe/state</property>
     </condition>
   </animation>
 
   <animation>
     <type>dist-scale</type>
-    <object-name>Light</object-name>
+    <object-name>flash</object-name>
     <interpolation>
       <entry>
         <ind>0</ind>
