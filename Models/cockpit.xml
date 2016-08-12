@@ -1985,14 +1985,14 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/lighting/anticol</property>
+            <property>/controls/lighting/beacon</property>
         </binding>
       </action> 
     </animation> 
   <animation>
       <type>rotate</type>   
         <object-name>anticollight</object-name>    
-            <property>/controls/lighting/anticol</property>
+            <property>/controls/lighting/beacon</property>
       <factor>60</factor>
       <center>
           <x-m>0.61194</x-m>
@@ -2043,14 +2043,14 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/lighting/wheel</property>
+            <property>/controls/lighting/nav-light</property>
         </binding>
       </action> 
     </animation> 
   <animation>
       <type>rotate</type>   
         <object-name>wheellight</object-name>   
-            <property>/controls/lighting/wheel</property>
+            <property>/controls/lighting/nav-light</property>
       <factor>60</factor>
       <center>
           <x-m>0.61194</x-m>
@@ -2124,7 +2124,7 @@
   
      <model>
         <name>ldglightleftretr</name>
-        <path>landinglight.ac</path>
+        <path>landinglight.xml</path>
         <offsets>
             <x-m>0.6127471</x-m>
             <y-m>-0.2644771</y-m>
@@ -2134,7 +2134,7 @@
     </model>
 	<model>
         <name>ldglightrightretr</name>
-        <path>landinglight.ac</path>
+        <path>landinglight.xml</path>
         <offsets>
             <x-m>0.6127595</x-m>
             <y-m>-0.1857275</y-m>
@@ -2144,7 +2144,7 @@
     </model>
     <model>
         <name>ldglightleftwing</name>
-        <path>landinglight.ac</path>
+        <path>landinglight.xml</path>
         <offsets>
             <x-m>0.6121518</x-m>
             <y-m>-0.2147996</y-m>
@@ -2155,7 +2155,7 @@
   
     <model>
         <name>ldglightrightwing</name>
-        <path>landinglight.ac</path>
+        <path>landinglight.xml</path>
         <offsets>
             <x-m>0.6134001</x-m>
             <y-m>-0.2420656</y-m>
