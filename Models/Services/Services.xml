@@ -4,69 +4,6 @@ George Luiz
 
 <PropertyList>
 
-<!-- Passenger Stairway (Front)-->
-
-  <model>
-    <name>Cone</name>
-    <path>Aircraft/737-800/Models/Services/Stairways/stairs.xml</path>
-    <condition>
-      <and>
-        <property>controls/switches/stairs1</property>
-        <less-than>
-          <property>velocities/airspeed-kt</property>
-          <value>15</value>
-        </less-than>
-      </and>
-    </condition>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </offsets>
-  </model>
-
-<!-- Passenger Stairway (Rear)-->
-
-  <model>
-    <name>Cone</name>
-    <path>Aircraft/737-800/Models/Services/Stairways/stairs2.xml</path>
-    <condition>
-      <and>
-        <property>controls/switches/stairs2</property>
-        <less-than>
-          <property>velocities/airspeed-kt</property>
-          <value>15</value>
-        </less-than>
-      </and>
-    </condition>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </offsets>
-  </model>
-
-<!-- Bus -->
-
-  <model>
-    <name>Bus</name>
-    <path>Aircraft/737-800/Models/Services/Bus/bus.xml</path>
-    <condition>
-      <and>
-        <property>controls/switches/bus</property>
-        <less-than>
-          <property>velocities/airspeed-kt</property>
-          <value>15</value>
-        </less-than>
-      </and>
-    </condition>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </offsets>
-  </model>
-
 <!-- Baggage (Front)-->
 
   <model>
@@ -106,29 +43,6 @@ George Luiz
       <x-m>0</x-m>
       <y-m>0</y-m>
       <z-m>0</z-m>
-    </offsets>
-  </model>
-
-<!-- Gpu -->
-
-  <model>
-    <name>Gpu</name>
-    <path>Aircraft/737-800/Models/Services/Gpu/gpu.xml</path>
-    <condition>
-      <and>
-        <property>controls/switches/gpu</property>
-        <less-than>
-          <property>velocities/airspeed-kt</property>
-          <value>15</value>
-        </less-than>
-      </and>
-    </condition>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-      <pitch-deg>0</pitch-deg>
-      <heading-deg>0</heading-deg>
     </offsets>
   </model>
 
@@ -197,27 +111,5 @@ George Luiz
       <z-m>0</z-m>
     </offsets>
   </model>
-
-<!-- Car Service -->
-
-  <model>
-    <name>Car Service</name>
-    <path>Aircraft/737-800/Models/Services/Car/car.xml</path>
-    <condition>
-      <and>
-        <property>controls/switches/car_service</property>
-        <less-than>
-          <property>velocities/airspeed-kt</property>
-          <value>15</value>
-        </less-than>
-      </and>
-    </condition>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </offsets>
-  </model>
-
 
 </PropertyList>
