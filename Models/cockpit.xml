@@ -21,6 +21,45 @@
             <pitch-deg>-15</pitch-deg>
         </offsets>
     </model>
+	<model>
+		<name>seatcapt</name>
+		<path>Aircraft/737-800/Models/seats/cockpitseat.ac</path>
+		<offsets>
+			<x-m>1.25</x-m>
+			<y-m>-0.5390</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>seatfo</name>
+		<path>Aircraft/737-800/Models/seats/cockpitseat.ac</path>
+		<offsets>
+			<x-m>1.25</x-m>
+			<y-m>0.4950</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>yokecapt</name>
+		<path>Aircraft/737-800/Models/yoke/yoke.xml</path>
+		<offsets>
+			<x-m>0.842</x-m>
+			<y-m>-0.5390</y-m>
+			<z-m>0.850</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>yokefo</name>
+		<path>Aircraft/737-800/Models/yoke/yoke.xml</path>
+		<offsets>
+			<x-m>0.83</x-m>
+			<y-m>0.4950</y-m>
+			<z-m>0.855</z-m>
+		</offsets>
+	</model>
 
     <model>
      <name>captain-pedals</name>
