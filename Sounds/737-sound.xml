@@ -318,7 +318,7 @@
 		</volume>
   </engine>
 
-<engine>
+<!--engine>
 		<name>low l out</name>
 		<mode>looped</mode>
 		<path>Aircraft/737-800/Sounds/xlow.wav</path>
@@ -357,7 +357,7 @@
 			<factor>0.02</factor>
 			<max>2</max>
 		</pitch>
-	</engine>
+	</engine-->
 
   
   <rumble>
@@ -499,7 +499,7 @@
         </volume>
     </overspeed>
  
-  <stall>
+  <!--stall>
    <name>stall</name>
    <path>Aircraft/737-800/Sounds/stall.wav</path>
    <property>/sim/alarms/stall-warning</property>
@@ -507,7 +507,7 @@
     <property>/velocities/airspeed-kt</property>
     <min>30.0</min>
    </volume>
-  </stall>
+  </stall-->
 
   <!-- Altitude alert sound -->
 
