@@ -1,5 +1,5 @@
-<!-- 777-300
-George Luiz
+<!-- 737-800
+GabrielYV
 -->
 
 <PropertyList>
@@ -104,6 +104,27 @@ George Luiz
         <property>velocities/airspeed-kt</property>
         <value>15</value>
       </less-than>
+    </condition>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+  
+  <!-- Bus -->
+
+  <model>
+    <name>Bus</name>
+    <path>Aircraft/737-800/Models/Services/Bus/bus.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/bus</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>15</value>
+        </less-than>
+      </and>
     </condition>
     <offsets>
       <x-m>0</x-m>
