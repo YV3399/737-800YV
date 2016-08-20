@@ -5,7 +5,7 @@
     xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
     <fileheader>
-        <author> Michael Soitanen </author>
+        <author> Michael Soitanen And Gabriel Hernandez </author>
         <filecreationdate> 2014-09-30 </filecreationdate>
         <version>$Revison: 1.0 $</version>
         <description> Models a 737-800. </description>
@@ -141,7 +141,7 @@
     <ground_reactions>
         <contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NLG compression is 15.5 in -->
             <location unit="IN">
-                <x> 119 </x>
+                <x> 117 </x>
                 <y>   0 </y>
                 <z> -109.88 </z> <!-- BWL 109.88 -->
             </location>
@@ -748,7 +748,7 @@
             <aerosurface_scale name="Rudder Control">
                 <input>fcs/rudder-sum</input>
                 <range>
-                    <min>-0.55</min>
+                    <min>-0.57</min>
                     <max> 0.55</max>
                 </range>
                 <output>fcs/rudder-pos-rad</output>
@@ -757,7 +757,7 @@
             <aerosurface_scale name="Rudder Normalized">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                    <min>-0.55</min>
+                    <min>-0.57</min>
                     <max> 0.55</max>
                 </domain>
                 <range>
