@@ -141,9 +141,9 @@
     <ground_reactions>
         <contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NLG compression is 15.5 in -->
             <location unit="IN">
-                <x> 117 </x>
+                <x> 161 </x>
                 <y>   0 </y>
-                <z> -109.88 </z> <!-- BWL 109.88 -->
+                <z> -109.50 </z> <!-- BWL 110.55 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
@@ -217,7 +217,7 @@
             <location unit="IN">
                 <x>  775 </x>
                 <y> -112.5 </y>
-                <z>  -109.79 </z> <!-- BWL 98.31 -->
+                <z>  -109.95 </z> <!-- BWL 98.97 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
@@ -292,7 +292,7 @@
             <location unit="IN">
                 <x> 775 </x>
                 <y> 112.5 </y>
-                <z> -109.79 </z> <!-- BWL 98.31 -->
+                <z> -109.95 </z> <!-- BWL 98.97 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
