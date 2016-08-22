@@ -610,7 +610,7 @@
       <metrics>
         <aerorp-mac type="double">0.30</aerorp-mac>
         <lift type="double">0.0</lift>
-        <basic-moment type="double">-2.25</basic-moment>
+        <basic-moment type="double">-2.2</basic-moment>
       </metrics>
       <gear>
         <unit n="0">
