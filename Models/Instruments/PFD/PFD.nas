@@ -154,7 +154,7 @@ var canvas_PFD = {
 		var pitch = getprop("orientation/pitch-deg");
 		var path = getprop("orientation/path-deg");
 		var roll =  getprop("orientation/roll-deg");
-		var slipSkid = getprop("instrumentation/slip-skid-ball/indicated-slip-skid");
+		var slipSkid = getprop("accelerations/pilot/y-accel-fps_sec") / 32.17404855643;
 		var hdg =  getprop("orientation/heading-magnetic-deg");
 		var track = getprop("/orientation/track-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
@@ -205,18 +205,33 @@ var canvas_PFD = {
 		me.h_trans.setTranslation(0,pitch*11.4625);
 		me.h_rot.setRotation(-roll*D2R,me["horizon"].getCenter());
 		
-		me["slipSkid"].setTranslation(slipSkid*-8,0);
+		if (slipSkid > 0.1) slipSkid = 0.1;
+		if (slipSkid < -0.1) slipSkid = -0.1;
+		me["slipSkid"].setTranslation(slipSkid*-460,0);
 		me["bankPointer"].setRotation(-roll*D2R);
 		me["ladderLimiter"].setRotation(-roll*D2R);
 
 		if (math.abs(roll) < 35) {
 			me["bankPointerTriangle"].setColor(1,1,1);
 			me["bankPointerTriangle"].setColorFill(0,0.477,0.725,1);
-			me["slipSkid"].setColor(1,1,1);
+			if (math.abs(slipSkid) == 0.1) {
+				me["slipSkid"].setColor(1,1,1);
+				me["slipSkid"].setColorFill(1,1,1);
+			} else {
+				me["slipSkid"].setColor(1,1,1);
+				me["slipSkid"].setColorFill(0,0.477,0.725,1);
+			}
+			
 		} else {
 			me["bankPointerTriangle"].setColor(1,0.749,0);
 			me["bankPointerTriangle"].setColorFill(1,0.749,0,1);
-			me["slipSkid"].setColor(1,0.749,0);
+			if (math.abs(slipSkid) == 0.1) {
+				me["slipSkid"].setColor(1,0.749,0);
+				me["slipSkid"].setColorFill(1,0.749,0);
+			} else {
+				me["slipSkid"].setColor(1,0.749,0);
+				me["slipSkid"].setColorFill(0,0.477,0.725,1);
+			}
 		}
 		
 		var hdgDiff = geo.normdeg180(hdg - apHdg);
@@ -624,7 +639,11 @@ var canvas_PFD = {
 			if (ias == 45 and lookaheadSpd < 45) {
 				me["spdTrend_scale"].setScale(1, 0);
 			} else {
-				me["spdTrend_scale"].setScale(1, (lookaheadSpd-ias)/20);
+				if (math.abs(lookaheadSpd-ias) > 4.5 ) {
+					me["spdTrend_scale"].setScale(1, (lookaheadSpd-ias)/20);
+				} else {
+					me["spdTrend_scale"].setScale(1, 0);
+				}
 			}
 			
 		}

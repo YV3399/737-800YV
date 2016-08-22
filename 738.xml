@@ -5,7 +5,7 @@
     xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
     <fileheader>
-        <author> Michael Soitanen </author>
+        <author> Michael Soitanen And Gabriel Hernandez </author>
         <filecreationdate> 2014-09-30 </filecreationdate>
         <version>$Revison: 1.0 $</version>
         <description> Models a 737-800. </description>
@@ -143,7 +143,7 @@
             <location unit="IN">
                 <x> 161 </x>
                 <y>   0 </y>
-                <z> -101.53 </z> <!-- BWL 106.57 -->
+                <z> -109.50 </z> <!-- BWL 110.55 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
@@ -217,7 +217,7 @@
             <location unit="IN">
                 <x>  775 </x>
                 <y> -112.5 </y>
-                <z>  -109.79 </z> <!-- BWL 98.31 -->
+                <z>  -109.95 </z> <!-- BWL 98.97 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
@@ -292,7 +292,7 @@
             <location unit="IN">
                 <x> 775 </x>
                 <y> 112.5 </y>
-                <z> -109.79 </z> <!-- BWL 98.31 -->
+                <z> -109.95 </z> <!-- BWL 98.97 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
@@ -748,8 +748,8 @@
             <aerosurface_scale name="Rudder Control">
                 <input>fcs/rudder-sum</input>
                 <range>
-                    <min>-0.49</min>
-                    <max> 0.45</max>
+                    <min>-0.57</min>
+                    <max> 0.55</max>
                 </range>
                 <output>fcs/rudder-pos-rad</output>
             </aerosurface_scale>
@@ -757,8 +757,8 @@
             <aerosurface_scale name="Rudder Normalized">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                    <min>-0.49</min>
-                    <max> 0.45</max>
+                    <min>-0.57</min>
+                    <max> 0.55</max>
                 </domain>
                 <range>
                     <min>-1</min>

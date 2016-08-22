@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <PropertyList>
   <sim>
-    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (current development)</author>
+    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (current development), Gabriel Hernandez (Sounds and current development)</author>
     <status>early-production</status>
     <flight-model>jsb</flight-model>
 
     <systems>
-
+    	
       <electrical>
         <path>Aircraft/Generic/generic-electrical.xml</path>
       </electrical>
@@ -610,7 +610,7 @@
       <metrics>
         <aerorp-mac type="double">0.30</aerorp-mac>
         <lift type="double">0.0</lift>
-        <basic-moment type="double">-2.25</basic-moment>
+        <basic-moment type="double">-2.2</basic-moment>
       </metrics>
       <gear>
         <unit n="0">
@@ -806,41 +806,41 @@
     </altimeter>
 
    <mk-viii>  <!-- mk-viii configuration, see: http://wiki.flightgear.org/index.php/GPWS -->
-            <serviceable>true</serviceable>     <!-- EGPWS_ENABLE -->
-            <configuration-module>
-                 <category-3>   2 </category-3>  <!-- POSITION_INPUT_SELECT -->		
-				 <category-4>  13 </category-4>  <!-- ALTITUDE_CALLOUTS -->		
-				 <category-5>   0 </category-5>  <!-- AUDIO_MENU_SELECT -->		
-				 <category-6>   1 </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->		
-				 <category-7> 124 </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->		
-				 <category-8>   4 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT-->
-				 <category-9>   3 </category-9>  <!-- NAVIGATION_INPUT_SELECT -->		
-				 <category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->		
-				 <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->		
-				 <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
-            </configuration-module>
-            <voice>
+      <serviceable>true</serviceable>     <!-- EGPWS_ENABLE -->
+      <configuration-module>
+        <category-1>  255 </category-1>
+        <category-3>   2 </category-3>  <!-- POSITION_INPUT_SELECT -->		
+        <category-4>  13 </category-4>  <!-- ALTITUDE_CALLOUTS -->		
+        <category-5>   0 </category-5>  <!-- AUDIO_MENU_SELECT -->		
+        <category-6>   1 </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->		
+        <category-7> 124 </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->		
+        <category-8>   4 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT-->
+        <category-9>   3 </category-9>  <!-- NAVIGATION_INPUT_SELECT -->		
+        <category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->		
+        <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->		
+        <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
+      </configuration-module>
+      <voice>
                 <file-prefix type="string">Aircraft/737-800/Sounds/gpws/</file-prefix>
-            </voice>
-            <inputs>                            <!-- Module I/O -->
-                <arinc429>
-                    <decision-height-ncd> true </decision-height-ncd>
-                    <decision-height> 200 </decision-height>
-                </arinc429>
-				<rs-232>		
-					<present-status>		
-					<landing-flaps type="double">0.5</landing-flaps>		
-					</present-status>		
-				</rs-232>
-            </inputs>
-            <speaker>                           <!-- Speaker Configuration -->
-                <max-dist type="double"> 2 </max-dist>        <!-- Max. distance where speaker is heard -->
-                <reference-dist type="double"> 1 </reference-dist> <!-- Distance to pilot -->
-                <volume type="double"> 1.0 </volume>          <!-- Volume at reference distance -->
-            </speaker>
-        </mk-viii>
-	
-
+     </voice>
+<inputs>                            <!-- Module I/O -->
+        <arinc429>
+          <decision-height-ncd> true </decision-height-ncd>
+          <decision-height> 200 </decision-height>
+        </arinc429>
+        <rs-232>		
+          <present-status>		
+            <landing-flaps type="double">0.5</landing-flaps>		
+          </present-status>		
+        </rs-232>
+      </inputs>
+      <speaker>                           <!-- Speaker Configuration -->
+        <max-dist type="double"> 200.0 </max-dist>        <!-- Max. distance where speaker is heard -->
+        <reference-dist type="double"> 2 </reference-dist> <!-- Distance to pilot -->
+        <volume type="double"> 1.0 </volume>         <!-- Volume at reference distance -->
+      </speaker>
+    </mk-viii>
+    
     <wxradar>
       <serviceable>true</serviceable>
       <range type="int" archive="y">40</range>
