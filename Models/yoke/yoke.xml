@@ -6,7 +6,7 @@
 
 	<path>yoke.ac</path>
 
-	<!--<animation>
+	<animation>
 		<name>Hide yokes</name>
 		<type>select</type>
     <object-name>yoke</object-name>
@@ -17,9 +17,9 @@
 		<object-name>switch.001</object-name>
 		<object-name>checklist</object-name>
 		<condition>
-			<property>sim/model/yokes</property>
-		</condition>
-	</animation>-->
+          <property>sim/yokes-visible</property>
+      </condition>
+	</animation>
 
 <animation>
  <type>rotate</type>

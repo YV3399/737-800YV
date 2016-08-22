@@ -1801,21 +1801,18 @@
    	</axis>
  	</animation>  
     
-  <animation>
-      <type>select</type>
-      <object-name>yoke1</object-name>
-      <object-name>yoke1.001</object-name>
-      <object-name>colum</object-name>
-      <object-name>colum.002</object-name>
-      <condition>
+<animation>
+		<name>Hide yoke column</name>
+		<type>select</type>
+		<object-name>colum</object-name>
+		<object-name>colum.002</object-name>
+		<condition>
           <property>sim/yokes-visible</property>
       </condition>
-  </animation>
-
+	</animation>
+	
   <animation>
       <type>rotate</type>
-      <object-name>yoke1</object-name>
-      <object-name>yoke1.001</object-name>
       <object-name>colum</object-name>
       <object-name>colum.002</object-name>
       <property>controls/flight/elevator</property>
@@ -1833,39 +1830,7 @@
       </axis>
   </animation>
 
-  <animation>
-      <type>rotate</type>
-      <object-name>yoke1</object-name>
-      <property>controls/flight/aileron</property>
-      <factor>87</factor>
-      <center>
-          <x-m>1.0</x-m>
-          <y-m>-0.535</y-m>
-          <z-m>0.908</z-m>
-      </center>
-      <axis>
-          <x>-1</x>
-          <y>0</y>
-          <z>0</z>
-      </axis>
-  </animation>
 
-  <animation>
-      <type>rotate</type>
-      <object-name>yoke1.001</object-name>
-      <property>controls/flight/aileron</property>
-      <factor>87</factor>
-      <center>
-          <x-m>1.0</x-m>
-          <y-m>0.497</y-m>
-          <z-m>0.908</z-m>
-      </center>
-      <axis>
-          <x>-1</x>
-          <y>0</y>
-          <z>0</z>
-      </axis>
-  </animation>
   <!--OHP-->
    <animation>
         <type>pick</type>
