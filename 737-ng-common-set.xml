@@ -21,7 +21,7 @@
 
       <autopilot>
         <path>Aircraft/737-800/Systems/737-fcc-b.xml</path>
-      </autopilot>
+      </autopilot>-->
 
       <autopilot>
         <path>Aircraft/737-800/Systems/737_pfd.xml</path>
@@ -29,7 +29,7 @@
 
       <autopilot>
         <path>Aircraft/737-800/Systems/aircraft-systems-logic.xml</path>
-      </autopilot>-->
+      </autopilot>
 	  
 	  <autopilot>
 		<name>IT-AUTOFLIGHT</name>
