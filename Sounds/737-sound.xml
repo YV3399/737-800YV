@@ -926,7 +926,7 @@
 		
 		<seatbelt>
 			<name>cabinalert</name>
-			<path>Aircraft/737-800/sounds/cabinalert.wav</path>
+			<path>Aircraft/737-800/Sounds/cabinalert.wav</path>
 			<mode>once</mode>
 			<condition>
 				<or>
