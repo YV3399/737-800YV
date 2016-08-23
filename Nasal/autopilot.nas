@@ -169,33 +169,7 @@ var changeover_button_press = func {
 }
 
 ##########################################################################
-# SPEED knob behaviour
-var speed_increase = func {
-	if (getprop("/autopilot/internal/SPD-IAS")) {
-		var target_ias = getprop("/autopilot/settings/target-speed-kt");
-		target_ias = target_ias + 1;
-		if (target_ias > 330) target_ias = 330;
-		setprop("/autopilot/settings/target-speed-kt", target_ias);
-	} else {
-		var target_mach = getprop("/autopilot/settings/target-speed-mach");
-		target_mach = target_mach + 0.01;
-		if (target_mach > 0.85) target_mach = 0.85;
-		setprop("/autopilot/settings/target-speed-mach", target_mach);
-	}
-}
-var speed_decrease = func {
-	if (getprop("/autopilot/internal/SPD-IAS")) {
-		var target_ias = getprop("/autopilot/settings/target-speed-kt");
-		target_ias = target_ias - 1;
-		if (target_ias < 100) target_ias = 100;
-		setprop("/autopilot/settings/target-speed-kt", target_ias);
-	} else {
-		var target_mach = getprop("/autopilot/settings/target-speed-mach");
-		target_mach = target_mach - 0.01;
-		if (target_mach < 0.82) target_mach = 0.82;
-		setprop("/autopilot/settings/target-speed-mach", target_mach);
-	}
-}
+
 ##########################################################################
 # N1 button
 var n1_button_press = func {
