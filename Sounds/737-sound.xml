@@ -524,10 +524,10 @@
 
   <ap-disconnect>
     <name>AP Disconnect</name>
-    <mode>looped</mode>
+    <mode>once</mode>
     <path>Aircraft/737-800/Sounds/apdisco.wav</path>
     <condition>
-      <property>/b737/sound/apdisco</property>
+      <property>/it-autoflight/apoffsound</property>
     </condition>
     <volume>
       <factor>1</factor>

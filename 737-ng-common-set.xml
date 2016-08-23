@@ -718,9 +718,9 @@
 			<main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
 		</lighting>
 		
-    <!--<autopilot737>
+    <autopilot737>
       <file>Aircraft/737-800/Nasal/autopilot.nas</file>
-    </autopilot737>-->
+    </autopilot737>
 
     <nd>
       <file>Aircraft/737-800/Nasal/ND.nas</file>

@@ -463,23 +463,18 @@ var vorloc_button_press = func {
 ##########################################################################
 # CMDA button
 var cmda_button_press = func {
-	var cmdb  = getprop("/autopilot/internal/CMDB");
 	var ailerons = getprop("/controls/flight/aileron");
 	var elevator = getprop("/controls/flight/elevator");
-	var GS  = getprop("/autopilot/internal/VNAV-GS");
-	var GS_arm  = getprop("/autopilot/internal/VNAV-GS-armed");
 	var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
 	var nav1 = getprop("/instrumentation/nav[0]/frequencies/selected-mhz");
 	var nav2 = getprop("/instrumentation/nav[1]/frequencies/selected-mhz");
 
-	if (cmdb and (GS or GS_arm) and alt_agl > 800 and nav1 == nav2) {
-		setprop("/autopilot/internal/CMDA", 1);
+	if (alt_agl > 400) {
+		setprop("/it-autoflight/ap_mastersw", 1);
 	} elsif (ailerons < 0.15 and ailerons > -0.15 and elevator < 0.15 and elevator > -0.15) {
 		setprop("/autopilot/internal/elevator", elevator);
-		setprop("/autopilot/internal/CMDA", 1);
-		setprop("/autopilot/internal/CMDB", 0);
-		setprop("/autopilot/internal/FCC-B-master", 0);
-		setprop("/autopilot/internal/FCC-A-master", 1);
+		setprop("/it-autoflight/ap_mastersw", 1);
+	
 		if (getprop("/autopilot/internal/TOGA")) {
 			var mcp_speed = getprop("/autopilot/settings/target-speed-kt");
 			setprop("/autopilot/settings/target-speed-kt", mcp_speed + 20);
@@ -533,16 +528,11 @@ var cwsb_button_press = func {
 ##########################################################################
 # APDSNG button
 var apdsng_button_press = func {
-	if (getprop("/b737/sound/apdisco")) {
-		setprop("/b737/sound/apdisco", 0);
-	} else {
-		var cmda = getprop("/autopilot/internal/CMDA");
-		var cmdb = getprop("/autopilot/internal/CMDB");
-		if (cmda or cmdb) {
+		var apon = getprop("/it-autoflight/ap_mastersw");
+		
+		if (apon) {
 			ap_disengage();
-			settimer(func {setprop("/b737/sound/apdisco", 0);}, 3.7);
 		}
-	}
 }
 
 ##########################################################################
@@ -578,31 +568,7 @@ setlistener("/autopilot/logic/ap-disengage-350ft", apdsng, 0, 0);
 ##########################################################################
 # AUTOPILOT DISENGAGE FUNCTION
 var ap_disengage = func {
-	setprop("/autopilot/internal/CMDA", 0);
-	setprop("/autopilot/internal/CMDB", 0);
-	var fd_left = getprop("/instrumentation/flightdirector/fd-left-on");
-	var fd_right = getprop("/instrumentation/flightdirector/fd-right-on");
-	var added_fcc = getprop("/autopilot/internal/FCC-added");
-
-	if (added_fcc == "A") {
-		setprop("/autopilot/internal/FCC-added", "");
-		setprop("/autopilot/internal/FCC-A-master", 0);
-	} elsif (added_fcc == "B") {
-		setprop("/autopilot/internal/FCC-added", "");
-		setprop("/autopilot/internal/FCC-B-master", 0);
-	}
-
-	if (!fd_left and !fd_right) {
-		setprop("/autopilot/internal/FCC-A-master", 0);
-		setprop("/autopilot/internal/FCC-B-master", 0);
-	} elsif (fd_left and !fd_right) {
-		setprop("/autopilot/internal/FCC-A-master", 1);
-		setprop("/autopilot/internal/FCC-B-master", 0);
-	} elsif (!fd_left and fd_right) {
-		setprop("/autopilot/internal/FCC-A-master", 0);
-		setprop("/autopilot/internal/FCC-B-master", 1);
-	}
-
+	setprop("/it-autoflight/ap_mastersw", 0);
 	setprop("/b737/sound/apdisco", 1);
 }
 

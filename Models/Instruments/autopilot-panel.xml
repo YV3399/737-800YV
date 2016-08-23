@@ -95,7 +95,7 @@
          <animation>
    	<type>textranslate</type>
    	<object-name>CMD-A</object-name>
-	 <property>/autopilot/internal/CMDA</property>
+	 <property>/it-autoflight/ap_master</property>
    	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
@@ -857,11 +857,10 @@
    <button>0</button>
    <repeatable>false</repeatable>
     <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.apdsng_button_press();
-      </script>   
-    </binding>
+		<command>property-assign</command>
+		<property>it-autoflight/ap_mastersw</property>
+		<value>0</value>
+		</binding>
   </action>
       </animation>
 
