@@ -461,7 +461,7 @@
   <wind>
    <name>wind</name>
    <mode>looped</mode>
-   <path>Aircraft/737-800/Sounds/Wind.wav</path>
+   <path>Aircraft/737-800/Sounds/wind.wav</path>
    <property>/velocities/airspeed-kt</property>
    <volume>
     <property>/position/altitude-ft</property>
@@ -525,7 +525,7 @@
   <ap-disconnect>
     <name>AP Disconnect</name>
     <mode>looped</mode>
-    <path>Aircraft/737-800/Sounds/Apdisco.wav</path>
+    <path>Aircraft/737-800/Sounds/apdisco.wav</path>
     <condition>
       <property>/b737/sound/apdisco</property>
     </condition>
