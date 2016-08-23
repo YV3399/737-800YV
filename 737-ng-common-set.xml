@@ -11,7 +11,7 @@
         <path>Aircraft/Generic/generic-electrical.xml</path>
       </electrical>
 
-      <autopilot>
+      <!--<autopilot>
         <path>Aircraft/737-800/Systems/737-afds.xml</path>
       </autopilot>
 
@@ -29,7 +29,17 @@
 
       <autopilot>
         <path>Aircraft/737-800/Systems/aircraft-systems-logic.xml</path>
-      </autopilot>
+      </autopilot>-->
+	  
+	  <autopilot>
+		<name>IT-AUTOFLIGHT</name>
+		<path>Aircraft/737-800/Systems/it-autoflight.xml</path>
+	  </autopilot>
+	   
+	   <autopilot>
+		  <name>Autopilot helpers</name>
+		  <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+	   </autopilot>
 
       <path>Aircraft/737-800/Systems/systems.xml</path>
 
@@ -708,9 +718,9 @@
 			<main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
 		</lighting>
 		
-    <autopilot737>
+    <!--<autopilot737>
       <file>Aircraft/737-800/Nasal/autopilot.nas</file>
-    </autopilot737>
+    </autopilot737>-->
 
     <nd>
       <file>Aircraft/737-800/Nasal/ND.nas</file>
@@ -719,6 +729,10 @@
 	<reversethrust>
         <file>Aircraft/737-800/Nasal/reverse-thrust.nas</file>
     </reversethrust>
+	
+	<itaf>
+      <file>Aircraft/737-800/Nasal/it-autoflight.nas</file>
+	</itaf>
 
   </nasal>
 

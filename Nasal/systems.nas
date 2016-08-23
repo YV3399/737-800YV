@@ -19,3 +19,7 @@ setlistener( "/b737/warnings/altitude-alert", altAlertModeSwitch, 0, 0);
 
 setprop("/controls/lighting/AFDSbrt","0");
 
+setlistener("/sim/signals/fdm-initialized", func {
+  	itaf.ap_init();				
+	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800/Systems/autopilot-dlg.xml");
+});
