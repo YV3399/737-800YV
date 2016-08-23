@@ -139,7 +139,7 @@ var changeover_button_press = func {
 	var a = getprop("/fdm/jsbsim/atmosphere/a-fps");
 	var ias = getprop("/instrumentation/airspeed-indicator/indicated-speed-kt");
 	if ( ias == nil ) ias = 0.001;
-	if ( ias < 1 ) ias = 200;
+	if ( ias < 1 ) ias = 100;
 	var tas = getprop("/instrumentation/airspeed-indicator/true-speed-kt");
 	if ( tas == nil ) tas = 0.001;
 	if ( tas == 0 ) tas = 0.001;
@@ -149,7 +149,7 @@ var changeover_button_press = func {
 		var target_mach = math.round((target_ias * tas/ias) / ( a * 0.5924838012959), 0.01);
 		if (target_mach < 0.82) {}#target_mach = 0.82;
 		else {
-			if (target_mach > 0.895) target_mach = 0.85;
+			if (target_mach > 0.85) target_mach = 0.85;
 			
 			setprop("/autopilot/settings/target-speed-mach", target_mach);
 
@@ -160,7 +160,7 @@ var changeover_button_press = func {
 		var target_mach = getprop("/autopilot/settings/target-speed-mach");
 		var target_ias = math.round((target_mach * ias * a * 0.5924838012959) / tas, 1);
 		if (target_ias > 340) target_ias = 340;
-		if (target_ias < 330) target_ias = 330;
+		if (target_ias < 100) target_ias = 100;
 		setprop("/autopilot/settings/target-speed-kt", target_ias);
 
 		setprop("/autopilot/internal/SPD-MACH", 0);
@@ -187,7 +187,7 @@ var speed_decrease = func {
 	if (getprop("/autopilot/internal/SPD-IAS")) {
 		var target_ias = getprop("/autopilot/settings/target-speed-kt");
 		target_ias = target_ias - 1;
-		if (target_ias < 330) target_ias = 330;
+		if (target_ias < 100) target_ias = 100;
 		setprop("/autopilot/settings/target-speed-kt", target_ias);
 	} else {
 		var target_mach = getprop("/autopilot/settings/target-speed-mach");
