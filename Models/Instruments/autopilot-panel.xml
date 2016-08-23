@@ -339,7 +339,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>HDG.1</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property> 
+        <property>/it-autoflight/settings/heading-bug-deg</property> 
         <factor>0.1</factor>         
         <axis>
             <x>0</x>
@@ -351,7 +351,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>HDG.2</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>/it-autoflight/settings/heading-bug-deg</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -364,7 +364,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>HDG.3</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>/it-autoflight/settings/heading-bug-deg</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -1143,7 +1143,7 @@
     <animation>
         <type>knob</type>
         <object-name>HDG-SEL</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>/it-autoflight/settings/heading-bug-deg</property>
         <factor>-0.5</factor>
         <center>
             <x-m>0</x-m>
@@ -1158,7 +1158,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>/it-autoflight/settings/heading-bug-deg</property>
         <factor>1</factor>
         <min>0</min>
         <max>360</max>
