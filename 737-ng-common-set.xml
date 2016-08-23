@@ -35,11 +35,6 @@
 		<name>IT-AUTOFLIGHT</name>
 		<path>Aircraft/737-800/Systems/it-autoflight.xml</path>
 	  </autopilot>
-	   
-	   <autopilot>
-		  <name>Autopilot helpers</name>
-		  <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
-	   </autopilot>
 
       <path>Aircraft/737-800/Systems/systems.xml</path>
 

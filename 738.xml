@@ -1275,7 +1275,7 @@
             <fcs_function name="fcs/throttle/throttle-cmd-norm[0]">
                 <function>
                     <product>
-                        <property>/autopilot/internal/servo-throttle[0]</property>
+                        <property>/controls/engines/engine/throttle</property>
                         <value>1</value>
                     </product>
                 </function>
@@ -1294,7 +1294,7 @@
             <fcs_function name="fcs/throttle/throttle-cmd-norm[1]">
                 <function>
                     <product>
-                        <property>/autopilot/internal/servo-throttle[1]</property>
+                        <property>/controls/engines/engine[1]/throttle</property>
                         <value>1</value>
                     </product>
                 </function>
