@@ -364,7 +364,7 @@
    <mode>looped</mode>
    <path>Aircraft/737-800/Sounds/rumble.wav</path>
    <condition>
-    <a>
+    <or>
      <property>/fdm/jsbsim/gear/unit/wow</property>
      <property>/fdm/jsbsim/gear/unit[1]/wow</property>
      <property>/fdm/jsbsim/gear/unit[2]/wow</property>
