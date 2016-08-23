@@ -77,11 +77,10 @@
       <repeatable>false</repeatable>
   <button>0</button>
     <binding>
-   <command>nasal</command>
-        <script>
-	  autopilot737.apdsng_button_press();
-	</script>
-  </binding>
+		<command>property-assign</command>
+		<property>it-autoflight/ap_mastersw</property>
+		<value>0</value>
+		</binding>
  </action>
  </animation>
 

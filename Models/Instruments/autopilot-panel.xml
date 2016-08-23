@@ -107,7 +107,7 @@
          <animation>
     <type>textranslate</type>
     <object-name>CMD-B</object-name>
-   <property>/autopilot/internal/CMDB</property>
+   <property>/it-autoflight/ap_master</property>
     <factor>-0.125</factor>
     <axis>
       <x>0</x>
@@ -814,7 +814,7 @@
  </animation>
 
 
-     <animation>
+<animation>
         <type>pick</type>
         <object-name>CMD-A</object-name>
         <visible>1</visible>
@@ -825,7 +825,12 @@
     <binding>
       <command>nasal</command>
       <script>
-        autopilot737.cmda_button_press();
+		var ailerons = getprop("/controls/flight/aileron");
+		var elevator = getprop("/controls/flight/elevator");
+		var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
+        if (alt_agl > 400) {
+		setprop("/it-autoflight/ap_mastersw", 1);
+		}
       </script>   
     </binding>
   </action>
@@ -842,7 +847,13 @@
     <binding>
       <command>nasal</command>
       <script>
-        autopilot737.cmdb_button_press();
+		var ailerons = getprop("/controls/flight/aileron");
+		var elevator = getprop("/controls/flight/elevator");
+		var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
+        if (alt_agl > 400) {
+		setprop("/it-autoflight/ap_mastersw", 1);
+		}
+
       </script>   
     </binding>
   </action>
