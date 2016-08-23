@@ -825,7 +825,9 @@
     <binding>
       <command>nasal</command>
       <script>
-        autopilot737.cmda_button_press();
+        if (alt_agl > 400) {
+		setprop("/it-autoflight/ap_mastersw", 1);
+		}
       </script>   
     </binding>
   </action>
@@ -842,7 +844,9 @@
     <binding>
       <command>nasal</command>
       <script>
-        autopilot737.cmdb_button_press();
+        if (alt_agl > 400) {
+		setprop("/it-autoflight/ap_mastersw", 1);
+		}
       </script>   
     </binding>
   </action>
