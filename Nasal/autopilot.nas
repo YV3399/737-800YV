@@ -226,6 +226,15 @@ if (AT_arm) {
 	setprop("/autopilot/display/throttle-mode", "N1");
 }
 }
+
+var climb_check = func {
+	var phase = getprop("/instrumentation/fmc/phases/current-name");
+	var toga = getprop("/autopilot/internal/TOGA");
+	if ( phase == "Climb" and toga) {
+		n1_button_press();
+	}
+}
+setlistener("/instrumentation/fmc/phases/current-name", climb_check, 0, 0);
 ##########################################################################
 # SPEED button
 var speed_button_press = func {
