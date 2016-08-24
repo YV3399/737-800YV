@@ -118,6 +118,8 @@ setlistener("/it-autoflight/apvertset", func {
   } else if (vertset == 1) {
     var altinput = getprop("/it-autoflight/settings/target-altitude-ft");
 	setprop("/it-autoflight/settings/target-altitude-ft-actual", altinput);
+	var vsnow = int(getprop("/velocities/vertical-speed-fps")*0.6)*100;
+	setprop("/it-autoflight/settings/vertical-speed-fpm", vsnow);
 	setprop("/it-autoflight/app1", 0);
 	setprop("/it-autoflight/apvertmode", 1);
 	setprop("/it-autoflight/aphldtrk2", 0);
@@ -142,6 +144,17 @@ setlistener("/it-autoflight/apvertset", func {
 	setprop("/it-autoflight/apilsmode", 0);
 	flchtimer.start();
   }
+});
+
+setlistener("/it-autoflight/apthrmode", func {
+	var thrset = getprop("it-autoflight/apthrmode");
+	if (thrset == 0) {
+		var iasnow = int(getprop("/instrumentation/airspeed-indicator/indicated-speed-kt")+0.5);
+		setprop("/it-autoflight/settings/target-speed-kt", iasnow);
+	} else if (thrset == 1) {
+		var machnow = (int(1000*getprop("/velocities/mach")))*0.001;
+		setprop("/it-autoflight/settings/target-mach", machnow);
+	}
 });
 
 # Capture Logic
