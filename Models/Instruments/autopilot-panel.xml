@@ -300,7 +300,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.3</object-name>
-        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
+        <property>/it-autoflight/settings/target-altitude-ft</property> 
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -313,7 +313,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.4</object-name>
-        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
+        <property>/it-autoflight/settings/target-altitude-ft</property> 
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
@@ -326,7 +326,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.5</object-name>
-        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
+        <property>/it-autoflight/settings/target-altitude-ft</property> 
         <factor>0.00001</factor>
         <step>10000</step>
         <axis>
@@ -1170,7 +1170,7 @@
   <animation>
     <type>knob</type>
     <object-name>ALT-SEL</object-name>
-    <property>/autopilot/settings/target-altitude-mcp-ft</property>
+    <property>/it-autoflight/settings/target-altitude-ft</property>
     <factor>-0.1</factor>
     <center>
       <x-m>0</x-m>
@@ -1185,7 +1185,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/autopilot/settings/target-altitude-mcp-ft</property>
+        <property>/it-autoflight/settings/target-altitude-ft</property>
         <factor>100</factor>
         <min>0</min>
         <max>50000</max>                
