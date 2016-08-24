@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <state-machine>
+        <branch>/instrumentation/fmc/phases</branch>
+        <state>
+            <name>Preflight</name>
+        </state>
+        <state>
+            <name>Takeoff</name>
+        </state>
+        <state>
+            <name>Climb</name>
+        </state>
+        <state>
+            <name>Cruise</name>
+        </state>
+        <state>
+            <name>Descent</name>
+        </state>
+        <state>
+            <name>Approach</name>
+        </state>
+        <state>
+            <name>Flight_complete</name>
+        </state>
+        <transition>
+            <name>toga</name>
+            <source>Preflight</source>
+            <target>Takeoff</target>
+            <exclude-target type="bool">true</exclude-target>
+            <condition>
+                <property>/autopilot/internal/TOGA</property>
+            </condition>
+        </transition>
+        <transition>
+            <name>toga</name>
+            <source>Takeoff</source>
+            <target>Climb</target>
+            <exclude-target type="bool">true</exclude-target>
+            <condition>
+                <greater-than>
+                    <property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+                    <property>/instrumentation/fmc/takeoff/thr-red-alt-ft</property>
+                </greater-than>
+            </condition>
+        </transition>
+    </state-machine>
+
+</PropertyList>
