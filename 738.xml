@@ -541,7 +541,7 @@
                     </setting>
                     <setting>
                         <position>1</position>
-                        <time>0.829</time> <!-- from report about Norwegian Air LN-DYM. Rate is 50 deg/sec -->
+                        <time>0.852</time> <!-- from report about Norwegian Air LN-DYM. Rate is 50 deg/sec -->
                     </setting>
                 </traverse>
                 <output>fcs/pitch-trim-sum</output>
@@ -550,8 +550,8 @@
             <aerosurface_scale name="Elevator Control">
                 <input>fcs/pitch-trim-sum</input>
                 <range>
-                    <min>-0.336</min>
-                    <max> 0.3875</max>
+                    <min>-0.282</min>
+                    <max> 0.3000</max>
                 </range>
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>
@@ -736,7 +736,7 @@
                 </table>
             </scheduled_gain>
 
-            <summer name="Rudder Sum">
+            <summer name="Rudder Sum cmd">
                 <input>fcs/rudder-command-sum</input>
                 <input>fcs/yaw-damper-final</input>
                 <clipto>
@@ -745,11 +745,26 @@
                 </clipto>
             </summer>
 
-            <aerosurface_scale name="Rudder Control">
+            <kinematic name="Rudder Sum">
+                <input>fcs/rudder-sum-cmd</input>
+                <traverse>
+                    <setting>
+                        <position>-1</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>0.909</time> <!-- from reports about problems with jammed rudder -->
+                    </setting>
+                </traverse>
+                <output>fcs/rudder-sum</output>
+            </kinematic>
+
+           <aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
                 <input>fcs/rudder-sum</input>
                 <range>
-                    <min>-0.57</min>
-                    <max> 0.55</max>
+                    <min>-0.525</min>
+                    <max> 0.525</max>
                 </range>
                 <output>fcs/rudder-pos-rad</output>
             </aerosurface_scale>
@@ -757,8 +772,8 @@
             <aerosurface_scale name="Rudder Normalized">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                    <min>-0.57</min>
-                    <max> 0.55</max>
+                    <min>-0.525</min>
+                    <max> 0.525</max>
                 </domain>
                 <range>
                     <min>-1</min>
