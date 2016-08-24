@@ -75,10 +75,10 @@
         </axis>
     </animation>
 
-     <animation>
+     <!--<animation>
         <type>rotate</type>
         <object-name>at-arm</object-name>
-         <property>/autopilot/internal/SPD</property> 
+         <property>/it-autoflight/autothrarm</property> 
           <factor>-30.0</factor>         
         <center>
             <x-m>0.02</x-m>
@@ -90,7 +90,7 @@
             <y>1</y>
             <z>0</z>
         </axis>
-    </animation>   
+    </animation> -->  
 
          <animation>
    	<type>textranslate</type>
@@ -300,7 +300,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.3</object-name>
-        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
+        <property>/it-autoflight/settings/target-altitude-ft</property> 
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -313,7 +313,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.4</object-name>
-        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
+        <property>/it-autoflight/settings/target-altitude-ft</property> 
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
@@ -326,7 +326,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>ALT.5</object-name>
-        <property>/autopilot/settings/target-altitude-mcp-ft</property> 
+        <property>/it-autoflight/settings/target-altitude-ft</property> 
         <factor>0.00001</factor>
         <step>10000</step>
         <axis>
@@ -339,7 +339,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>HDG.1</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property> 
+        <property>/it-autoflight/settings/heading-bug-deg</property> 
         <factor>0.1</factor>         
         <axis>
             <x>0</x>
@@ -351,7 +351,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>HDG.2</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>/it-autoflight/settings/heading-bug-deg</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -364,7 +364,7 @@
      <animation>
         <type>textranslate</type>
         <object-name>HDG.3</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>/it-autoflight/settings/heading-bug-deg</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -677,7 +677,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>IAS.1</object-name>
-        <property>/autopilot/settings/target-speed-kt</property>
+        <property>/it-autoflight/settings/target-speed-kt</property>
 
         <factor>0.1</factor>
         <step>1</step>
@@ -691,7 +691,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>IAS.2</object-name>
-        <property>/autopilot/settings/target-speed-kt</property>
+        <property>/it-autoflight/settings/target-speed-kt</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -704,7 +704,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>IAS.3</object-name>
-        <property>/autopilot/settings/target-speed-kt</property>
+        <property>/it-autoflight/settings/target-speed-kt</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -875,7 +875,7 @@
   </action>
       </animation>
 
-      <animation>
+      <!--<animation>
         <type>pick</type>
         <object-name>at-arm</object-name>
         <visible>1</visible>
@@ -885,14 +885,14 @@
    <repeatable>false</repeatable> 
    <binding>
     <command>property-toggle</command>
-    <property>/autopilot/internal/SPD</property>
+    <property>/it-autoflight/autothrarm</property>
     <step>1</step>
     <min>0></min>
     <max>1</max>
     <wrap>true</wrap>
    </binding>
   </action>
-      </animation>
+      </animation>-->
 
         <animation>
   <type>pick</type>
@@ -1143,7 +1143,7 @@
     <animation>
         <type>knob</type>
         <object-name>HDG-SEL</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>/it-autoflight/settings/heading-bug-deg</property>
         <factor>-0.5</factor>
         <center>
             <x-m>0</x-m>
@@ -1158,7 +1158,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/autopilot/settings/heading-bug-deg</property>
+        <property>/it-autoflight/settings/heading-bug-deg</property>
         <factor>1</factor>
         <min>0</min>
         <max>360</max>
@@ -1170,7 +1170,7 @@
   <animation>
     <type>knob</type>
     <object-name>ALT-SEL</object-name>
-    <property>/autopilot/settings/target-altitude-mcp-ft</property>
+    <property>/it-autoflight/settings/target-altitude-ft</property>
     <factor>-0.1</factor>
     <center>
       <x-m>0</x-m>
@@ -1185,7 +1185,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/autopilot/settings/target-altitude-mcp-ft</property>
+        <property>/it-autoflight/settings/target-altitude-ft</property>
         <factor>100</factor>
         <min>0</min>
         <max>50000</max>                
@@ -1197,9 +1197,9 @@
 <!-- Speed knob control --> 
 
     <animation>
-        <type>knob</type>
+        <type>pick</type>
         <object-name>IAS-MACH</object-name>
-        <property>/autopilot/settings/speed-bug</property>
+        <property>/it-autoflight/settings/target-speed-kt</property>
         <factor>-5</factor>
       <center>
         <x-m>0.0</x-m>
@@ -1211,30 +1211,46 @@
         <y>0</y>
         <z>0</z>
       </axis>
-    <drag-scale>2</drag-scale>
-    <action>
+	  <action>
+		<button>0</button>
       <binding>
         <command>property-adjust</command>
-        <property>/autopilot/settings/speed-bug</property>
-        <factor>1</factor>
+        <property>/it-autoflight/settings/target-speed-kt</property>
+        <step>1</step>
+		<min>100</min>
+		<max>330</max>
       </binding>
     </action>
-    <increase>
+	    <action>
+		<button>1</button>
       <binding>
-        <command>nasal</command>
-        <script>
-         autopilot737.speed_increase();
-        </script>   
+        <command>property-adjust</command>
+        <property>/it-autoflight/settings/target-speed-kt</property>
+        <step>-1</step>
+		<min>100</min>
+		<max>330</max>
       </binding>
-    </increase>
-    <decrease>
+    </action>
+    <action>
+		<button>3</button>
       <binding>
-        <command>nasal</command>
-        <script>
-         autopilot737.speed_decrease();
-        </script>   
+        <command>property-adjust</command>
+        <property>/it-autoflight/settings/target-speed-kt</property>
+        <step>10</step>
+		<min>100</min>
+		<max>330</max>
       </binding>
-    </decrease>
+    </action>
+	    <action>
+		<button>4</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/it-autoflight/settings/target-speed-kt</property>
+        <step>-10</step>
+		<min>100</min>
+		<max>330</max>
+      </binding>
+    </action>
     </animation>
 
      <animation>

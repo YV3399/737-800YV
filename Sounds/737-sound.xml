@@ -364,11 +364,14 @@
    <mode>looped</mode>
    <path>Aircraft/737-800/Sounds/rumble.wav</path>
    <condition>
-    <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[1]/wow</property>
-     <property>/gear/gear[2]/wow</property>
-    </or>
+	<equals>
+     <property>/fdm/jsbsim/gear/wow</property>
+	 <value>1</value>
+	 </equals>
+	<greater-than>
+		<property>/velocities/groundspeed-kt</property>
+		<value>5</value>
+	</greater-than>
    </condition>
    <volume>
     <property>/velocities/airspeed-kt</property>

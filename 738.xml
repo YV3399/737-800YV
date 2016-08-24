@@ -541,7 +541,7 @@
                     </setting>
                     <setting>
                         <position>1</position>
-                        <time>0.929</time> <!-- from report about Norwegian Air LN-DYM. Rate is 50 deg/sec -->
+                        <time>0.850</time> <!-- from report about Norwegian Air LN-DYM. Rate is 50 deg/sec -->
                     </setting>
                 </traverse>
                 <output>fcs/pitch-trim-sum</output>
@@ -550,8 +550,8 @@
             <aerosurface_scale name="Elevator Control">
                 <input>fcs/pitch-trim-sum</input>
                 <range>
-                    <min>-0.216</min>
-                    <max> 0.2675</max>
+                    <min>-0.336</min>
+                    <max> 0.3875</max>
                 </range>
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>
@@ -690,8 +690,8 @@
             <aerosurface_scale name="Right aileron Normalized">
                 <input>fcs/right-aileron-pos-rad</input>
                 <domain>
-                    <min>-0.20</min>
-                    <max> 0.20</max>
+                    <min>-0.35</min>
+                    <max> 0.35</max>
                 </domain>
                 <range>
                     <min>-1</min>
