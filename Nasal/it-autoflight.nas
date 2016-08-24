@@ -21,7 +21,7 @@ var ap_init = func {
 	setprop("/it-autoflight/aplatset", 0);
 	setprop("/it-autoflight/apvertset", 0);
 	setprop("/it-autoflight/apthrset", 0);
-	setprop("/it-autoflight/settings/target-speed-kt", 100);
+	setprop("/it-autoflight/settings/target-speed-kt", 200);
 	setprop("/it-autoflight/settings/target-mach", 0.68);
 	setprop("/it-autoflight/settings/idlethr", 0);
 	setprop("/it-autoflight/settings/clbthr", 900);
