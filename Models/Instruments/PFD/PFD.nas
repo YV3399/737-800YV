@@ -161,7 +161,7 @@ var canvas_PFD = {
 		var air_ground = getprop("/b737/sensors/air-ground");
 		if (air_ground == "ground") var wow = 1;
 		else var wow = 0;
-		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
+		var apAlt = getprop("it-autoflight/settings/target-altitude-ft");
 		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
 		var apHdg = getprop("it-autoflight/settings/heading-bug-deg");
 		var metricMode = getprop("instrumentation/efis[0]/inputs/alt-meters");
@@ -974,7 +974,7 @@ var canvas_PFD = {
 		me["dhText"].setText(sprintf("%4.0f",dh));
 		me["selHdgText"].setText(sprintf("%03d",getprop("autopilot/settings/heading-bug-deg")));
 		if (getprop("/autopilot/internal/SPD-MACH")) {
-			me["speedText"].setText(sprintf(".%2.0f",getprop("/autopilot/settings/target-speed-mach")*100));
+			me["speedText"].setText(sprintf(".%2.0f",getprop("/it-autoflight/settings/target-mach")*100));
 		} else {
 			me["speedText"].setText(sprintf("%3.0f",apSpd));
 		}

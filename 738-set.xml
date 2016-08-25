@@ -159,6 +159,7 @@
 			<heading-bug-deg>360</heading-bug-deg>
 			<target-speed-kt>200</target-speed-kt>
 			<target-altitude-ft>10000</target-altitude-ft>
+			<target-mach>0.68</target-mach>
 		</settings>
 	</it-autoflight>
 
