@@ -162,8 +162,8 @@ var canvas_PFD = {
 		if (air_ground == "ground") var wow = 1;
 		else var wow = 0;
 		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
-		var apSpd = getprop("autopilot/settings/target-speed-kt");
-		var apHdg = getprop("autopilot/settings/heading-bug-deg");
+		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
+		var apHdg = getprop("it-autoflight/settings/heading-bug-deg");
 		var metricMode = getprop("instrumentation/efis[0]/inputs/alt-meters");
 		var baroStdSet = getprop("instrumentation/efis[0]/inputs/setting-std");
 		var baroPreSetShow = getprop("instrumentation/efis[0]/inputs/baro-previous-show");

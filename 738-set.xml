@@ -153,6 +153,14 @@
 			</config>
 		</view>            
 	</sim>
+	
+	<it-autoflight>
+		<settings>
+			<heading-bug-deg>360</heading-bug-deg>
+			<target-speed-kt>200</target-speed-kt>
+			<target-altitude-ft>10000</target-altitude-ft>
+		</settings>
+	</it-autoflight>
 
 	<limits> <!-- based on EI-RUA aircraft data -->
 		<mass-and-balance>
