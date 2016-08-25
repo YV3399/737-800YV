@@ -755,7 +755,7 @@
 					<setting>
 						<position>1</position>
 						<time>0.909</time> <!-- from jammed rudder reports -->
-					</settings>
+					</setting>
 				</traverse>
 				<output>fcs/rudder-sum</output>
 			</kinematic>
