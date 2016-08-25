@@ -736,7 +736,9 @@
                 </table>
             </scheduled_gain>
 
-            <summer name="Rudder Sum cmd">
+
+            <summer name="Rudder Sum Cmd">
+
                 <input>fcs/rudder-command-sum</input>
                 <input>fcs/yaw-damper-final</input>
                 <clipto>
@@ -763,17 +765,17 @@
            <aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
                 <input>fcs/rudder-sum</input>
                 <range>
-                    <min>-0.525</min>
-                    <max> 0.525</max>
-                </range>
-                <output>fcs/rudder-pos-rad</output>
-            </aerosurface_scale>
+                    <min>-0.523</min>
+                    <max> 0.523</max>
+				</range>
+				<output>fcs/rudder-pos-rad</output>
+			</aerosurface_scale>
 
             <aerosurface_scale name="Rudder Normalized">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                    <min>-0.525</min>
-                    <max> 0.525</max>
+                    <min>-0.523</min>
+                    <max> 0.523</max>
                 </domain>
                 <range>
                     <min>-1</min>

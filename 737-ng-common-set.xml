@@ -680,9 +680,9 @@
 
   <nasal>
 
-    <cdu>
-      <file>Aircraft/Instruments-3d/cdu/boeing.nas</file> <!-- old CDU-->
-    </cdu>
+    <Boeing>
+      <file>Aircraft/Instruments-3d/cdu2/boeing.nas</file> <!-- old CDU-->
+    </Boeing>
 
 	<boeing737>
 		<file>Aircraft/Generic/limits.nas</file>
@@ -882,6 +882,9 @@
          <thr-red-alt-ft type="int">800</thr-red-alt-ft>
        </takeoff>
       </derated-to>
+	  <takeoff>
+         <thr-red-alt-ft type="int">800</thr-red-alt-ft>
+       </takeoff>
     </fmc>
 
     <pfd>
