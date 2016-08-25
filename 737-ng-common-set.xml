@@ -682,9 +682,9 @@
 
   <nasal>
 
-    <cdu>
-      <file>Aircraft/Instruments-3d/cdu/boeing.nas</file> <!-- old CDU-->
-    </cdu>
+    <Boeing>
+      <file>Aircraft/Instruments-3d/cdu2/boeing.nas</file> <!-- old CDU-->
+    </Boeing>
 
 	<boeing737>
 		<file>Aircraft/Generic/limits.nas</file>
@@ -888,6 +888,9 @@
         <method-derate-20k type="bool">0</method-derate-20k>
         <runway-elevation-ft type="double">0</runway-elevation-ft>
       </derated-to>
+	  <takeoff>
+         <thr-red-alt-ft type="int">800</thr-red-alt-ft>
+       </takeoff>
     </fmc>
 
     <pfd>

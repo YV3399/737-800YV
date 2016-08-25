@@ -736,7 +736,7 @@
                 </table>
             </scheduled_gain>
 
-            <summer name="Rudder Sum">
+            <summer name="Rudder Sum Cmd">
                 <input>fcs/rudder-command-sum</input>
                 <input>fcs/yaw-damper-final</input>
                 <clipto>
@@ -744,12 +744,27 @@
                     <max> 1</max>
                 </clipto>
             </summer>
+			
+			<kinematic name="Rudder Sum">
+				<input>fcs/rudder-sum-cmd</input>
+				<traverse>
+					<setting>
+						<position>-1</position>
+						<time>0</time>
+					</setting>
+					<setting>
+						<position>1</position>
+						<time>0.909</time> <!-- from jammed rudder reports -->
+					</settings>
+				</traverse>
+				<output>fcs/rudder-sum</output>
+			</kinematic>
 
-            <aerosurface_scale name="Rudder Control">
+            <aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
                 <input>fcs/rudder-sum</input>
                 <range>
-                    <min>-0.57</min>
-                    <max> 0.55</max>
+                    <min>-0.523</min>
+                    <max> 0.523</max>
                 </range>
                 <output>fcs/rudder-pos-rad</output>
             </aerosurface_scale>
@@ -757,8 +772,8 @@
             <aerosurface_scale name="Rudder Normalized">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                    <min>-0.57</min>
-                    <max> 0.55</max>
+                    <min>-0.523</min>
+                    <max> 0.523</max>
                 </domain>
                 <range>
                     <min>-1</min>
