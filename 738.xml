@@ -747,6 +747,7 @@
                 </clipto>
             </summer>
 
+
             <kinematic name="Rudder Sum">
                 <input>fcs/rudder-sum-cmd</input>
                 <traverse>
@@ -762,7 +763,10 @@
                 <output>fcs/rudder-sum</output>
             </kinematic>
 
-           <aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
+	
+
+            <aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
+
                 <input>fcs/rudder-sum</input>
                 <range>
                     <min>-0.523</min>
