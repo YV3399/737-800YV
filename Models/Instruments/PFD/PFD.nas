@@ -790,7 +790,7 @@ var canvas_PFD = {
 		else var wow = 0;
 		var flaps = getprop("/controls/flight/flaps");
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
-		var apSpd = getprop("autopilot/settings/target-speed-kt");
+		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
 		var dh = getprop("instrumentation/mk-viii/inputs/arinc429/decision-height");
 		
 		var v1 = getprop("instrumentation/fmc/speeds/v1-kt") or 0;
@@ -972,7 +972,7 @@ var canvas_PFD = {
 			me["ilsId"].setText(sprintf("%s /%03d°",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
 		me["dhText"].setText(sprintf("%4.0f",dh));
-		me["selHdgText"].setText(sprintf("%03d",getprop("autopilot/settings/heading-bug-deg")));
+		me["selHdgText"].setText(sprintf("%03d",getprop("it-autoflight/settings/heading-bug-deg")));
 		if (getprop("/autopilot/internal/SPD-MACH")) {
 			me["speedText"].setText(sprintf(".%2.0f",getprop("/it-autoflight/settings/target-mach")*100));
 		} else {
