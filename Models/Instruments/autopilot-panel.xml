@@ -379,7 +379,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>VS.1</object-name>
-        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
 
         <factor>0.1</factor>
         <step>1</step>
@@ -393,7 +393,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>VS.2</object-name>
-        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
 
         <factor>0.01</factor>
         <step>10</step>
@@ -407,7 +407,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>VS.3</object-name>
-        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -420,7 +420,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>VS.4</object-name>
-        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
 
         <factor>0.0001</factor>
         <step>1000</step>
@@ -434,7 +434,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>VS.1neg</object-name>
-        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
 
         <factor>-0.1</factor>
         <step>1</step>
@@ -448,7 +448,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>VS.2neg</object-name>
-        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
 
         <factor>-0.01</factor>
         <step>10</step>
@@ -462,7 +462,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>VS.3neg</object-name>
-        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
         <bias>99.99</bias>
         <factor>-0.001</factor>
         <step>100</step>
@@ -476,7 +476,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>VS.4neg</object-name>
-        <property>/autopilot/settings/vertical-speed-fpm</property>
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
         <bias>999.99</bias>
         <factor>-0.0001</factor>
         <step>1000</step>
@@ -492,7 +492,7 @@
         <object-name>VS.5neg</object-name>
         <condition>
             <less-than>
-                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <property>/it-autoflight/settings/vertical-speed-fpm</property>
                 <value>0</value>
             </less-than>
         </condition>
@@ -510,7 +510,7 @@
         <object-name>VS.5</object-name>
         <condition>
             <greater-than-equal>
-                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <property>/it-autoflight/settings/vertical-speed-fpm</property>
                 <value>0</value>
             </greater-than-equal>
         </condition>
@@ -551,7 +551,7 @@
               <value>true</value>
             </equals>
             <less-than>
-                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <property>/it-autoflight/settings/vertical-speed-fpm</property>
                 <value>0</value>
             </less-than>
           </and>
@@ -568,7 +568,7 @@
             </equals>
             <not>
               <less-than>
-                  <property>/autopilot/settings/vertical-speed-fpm</property>
+                  <property>/it-autoflight/settings/vertical-speed-fpm</property>
                   <value>0</value>
               </less-than>
             </not>
@@ -585,7 +585,7 @@
                     <value>true</value>
                 </equals>
                 <greater-than>
-                    <property>/autopilot/settings/vertical-speed-fpm</property>
+                    <property>/it-autoflight/settings/vertical-speed-fpm</property>
                     <value>999</value>
                 </greater-than>
             </and>
@@ -601,7 +601,7 @@
                     <value>true</value>
                 </equals>
                 <less-than>
-                    <property>/autopilot/settings/vertical-speed-fpm</property>
+                    <property>/it-autoflight/settings/vertical-speed-fpm</property>
                     <value>-999</value>
                 </less-than>
             </and>
@@ -618,7 +618,7 @@
                         <div>
                             <log10>
                                 <max>
-                                    <property>/autopilot/settings/vertical-speed-fpm</property>
+                                    <property>/it-autoflight/settings/vertical-speed-fpm</property>
                                     <value>1</value>
                                 </max>
                             </log10>
@@ -651,7 +651,7 @@
                             <log10>
                                 <max>
                                     <abs>
-                                        <property>/autopilot/settings/vertical-speed-fpm</property>
+                                        <property>/it-autoflight/settings/vertical-speed-fpm</property>
                                     </abs>
                                     <value>1</value>
                                 </max>
@@ -753,7 +753,7 @@
    <repeatable>false</repeatable> 
    <binding>
     <command>property-toggle</command>
-    <property>/instrumentation/flightdirector/fd-left-on</property>
+    <property>/it-autoflight/fd_mastersw</property>
     <step>1</step>
     <min>0></min>
     <max>1</max>
@@ -765,7 +765,7 @@
  <animation>
    <type>rotate</type>
    <object-name>cap-fd</object-name>
-   <property>/instrumentation/flightdirector/fd-left-on</property>
+   <property>/it-autoflight/fd_mastersw</property>
    <factor>-30</factor>
    <offset-deg>0</offset-deg>
    <center>
@@ -789,7 +789,7 @@
    <repeatable>false</repeatable> 
    <binding>
     <command>property-toggle</command>
-    <property>/instrumentation/flightdirector/fd-right-on</property>
+    <property>/it-autoflight/fd_mastersw</property>
     <step>1</step>
     <min>0></min>
     <max>1</max>
@@ -801,7 +801,7 @@
  <animation>
    <type>rotate</type>
    <object-name>fo-fd</object-name>
-   <property>/instrumentation/flightdirector/fd-right-on</property>
+   <property>/it-autoflight/fd_mastersw</property>
    <factor>-30</factor>
    <offset-deg>30</offset-deg>
    <center>
@@ -825,8 +825,6 @@
     <binding>
       <command>nasal</command>
       <script>
-		var ailerons = getprop("/controls/flight/aileron");
-		var elevator = getprop("/controls/flight/elevator");
 		var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
         if (alt_agl > 400) {
 		setprop("/it-autoflight/ap_mastersw", 1);
@@ -847,8 +845,6 @@
     <binding>
       <command>nasal</command>
       <script>
-		var ailerons = getprop("/controls/flight/aileron");
-		var elevator = getprop("/controls/flight/elevator");
 		var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
         if (alt_agl > 400) {
 		setprop("/it-autoflight/ap_mastersw", 1);
@@ -983,13 +979,13 @@
   <type>knob</type>
   <visible>false</visible>
   <object-name>vswheel</object-name>
-  <action>
+	<action>
     <binding>
       <command>property-adjust</command>
-        <property>/autopilot/settings/vertical-speed-knob</property>
-        <factor>1</factor>
-        <min>-89</min>
-        <max>70</max>    
+        <property>/it-autoflight/settings/vertical-speed-fpm</property>
+        <factor>100</factor>
+        <min>-8900</min>
+        <max>7000</max>    
         <wrap>false</wrap>
     </binding>
   </action>
@@ -1077,10 +1073,8 @@
    <button>0</button>
    <repeatable>false</repeatable>
     <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.speed_button_press();
-      </script>   
+      <command>property-toggle</command>
+      <property>/it-autoflight/at_mastersw</property>   
     </binding>
   </action>
 
