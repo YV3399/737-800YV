@@ -170,229 +170,6 @@
     </period>
     <gain>1.0</gain>
   </filter>
-	
- <!-- =============================================================== -->
- <!-- Min and Max Pitch Computers                                     -->
- <!-- =============================================================== -->
-	
-	<pid-controller>
-		<name>Max Pitch</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<and>
-					<or>
-						<equals>        
-							<property>/it-autoflight/apvertmode</property>
-							<value>0</value>
-						</equals>
-						<equals>        
-							<property>/it-autoflight/apvertmode</property>
-							<value>1</value>
-						</equals>
-					</or>
-					<equals>        
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
-					<greater-than>
-						<property>/controls/engines/engine[0]/throttle</property>
-						<value>0.93</value>
-					</greater-than>
-				</and>
-			</condition>
-		</enable>
-		<input>
-			<property>/controls/engines/engine[0]/throttle</property>
-			<offset>-0.93</offset>
-			<scale>4</scale>
-		</input>
-		<reference>
-			<value>0.93</value>
-			<offset>-0.93</offset>
-			<scale>4</scale>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/max-pitch</property>
-		</output>
-		<config>
-			<Kp>-0.25</Kp>        
-			<beta>1.0</beta>       
-			<alpha>0.5</alpha>     
-			<gamma>0.0</gamma>     
-			
-			<Ti>100.0</Ti>          
-			<Td>0.000001</Td>       
-			<u_min>
-				<property>/it-autoflight/min-pitch</property>
-			</u_min>   
-			<u_max>
-				<property>/it-autoflight/max-pitch</property>
-			</u_max>   
-		</config>
-	</pid-controller>
-  
-	<pid-controller>
-		<name>Min Pitch</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<and>
-					<or>
-						<equals>        
-							<property>/it-autoflight/apvertmode</property>
-							<value>0</value>
-						</equals>
-						<equals>        
-							<property>/it-autoflight/apvertmode</property>
-							<value>1</value>
-						</equals>
-					</or>
-					<equals>        
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
-					<lesser-than>
-						<property>/controls/engines/engine[0]/throttle</property>
-						<value>0.93</value>
-					</lesser-than>
-				</and>
-			</condition>
-		</enable>
-		<reference>
-			<property>/controls/engines/engine[0]/throttle</property>
-			<offset>-0.03</offset>
-			<scale>4</scale>
-		</reference>
-		<input>
-			<value>0.03</value>
-			<offset>-0.03</offset>
-			<scale>4</scale>
-		</input>
-		<output>
-			<property>/it-autoflight/internal/min-pitch</property>
-		</output>
-		<config>
-			<Kp>-0.25</Kp>        
-			<beta>1.0</beta>       
-			<alpha>0.5</alpha>     
-			<gamma>0.0</gamma>     
-			<Ti>10.0</Ti>          
-			<Td>0.000001</Td>       
-			<u_min>
-				<property>/it-autoflight/min-pitch</property>
-			</u_min>   
-			<u_max>
-				<property>/it-autoflight/max-pitch</property>
-			</u_max>   
-		</config>
-	</pid-controller>
-  
-	<pid-controller>
-		<name>Max Pitch 2</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<and>
-					<or>
-						<equals>        
-							<property>/it-autoflight/apvertmode</property>
-							<value>0</value>
-						</equals>
-						<equals>        
-							<property>/it-autoflight/apvertmode</property>
-							<value>1</value>
-						</equals>
-					</or>
-					<equals>        
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
-					<lesser-equal>
-						<property>/controls/engines/engine[0]/throttle</property>
-						<offset>-0.93</offset>
-					</lesser-equal>
-				</and>
-			</condition>
-		</enable>
-		<input>
-			<property>/it-autoflight/internal/max-pitch</property>
-		</input>
-		<reference>
-			<property>/it-autoflight/max-pitch</property>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/max-pitch</property>
-		</output>
-		<config>
-			<Kp>-0.25</Kp>        
-			<beta>1.0</beta>       
-			<alpha>0.5</alpha>     
-			<gamma>0.0</gamma>     
-			
-			<Ti>100.0</Ti>          
-			<Td>0.000001</Td>       
-			<u_min>
-				<property>/it-autoflight/min-pitch</property>
-			</u_min>   
-			<u_max>
-				<property>/it-autoflight/max-pitch</property>
-			</u_max>   
-		</config>
-	</pid-controller>
-  
-	<pid-controller>
-		<name>Min Pitch 2</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<and>
-					<or>
-						<equals>        
-							<property>/it-autoflight/apvertmode</property>
-							<value>0</value>
-						</equals>
-						<equals>        
-							<property>/it-autoflight/apvertmode</property>
-							<value>1</value>
-						</equals>
-					</or>
-					<equals>        
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
-					<greater-equal>
-						<property>/controls/engines/engine[0]/throttle</property>
-						<value>0.03</value>
-					</greater-equal>
-				</and>
-			</condition>
-		</enable>
-		<input>
-			<property>/it-autoflight/internal/min-pitch</property>
-		</input>
-		<reference>
-			<property>/it-autoflight/min-pitch</property>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/min-pitch</property>
-		</output>
-		<config>
-			<Kp>-0.25</Kp>        
-			<beta>1.0</beta>       
-			<alpha>0.5</alpha>     
-			<gamma>0.0</gamma>     
-			
-			<Ti>100.0</Ti>          
-			<Td>0.000001</Td>       
-			<u_min>
-				<property>/it-autoflight/min-pitch</property>
-			</u_min>   
-			<u_max>
-				<property>/it-autoflight/max-pitch</property>
-			</u_max>   
-		</config>
-	</pid-controller>
 
  <!-- =============================================================== -->
  <!-- Lateral  Modes                                                  -->
@@ -441,9 +218,40 @@
 		</output>
 		<gain>0.5</gain>
 		<u_min>
+			<condition>
+				<equals>
+					<property>/it-autoflight/aplatmode</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/settings/bank-limit</property>
+			<scale>-1</scale>
+		</u_min>
+		<u_min>
+			<condition>
+				<equals>
+					<property>/it-autoflight/aplatmode</property>
+					<value>1</value>
+				</equals>
+			</condition>
 			<value>-30</value>
 		</u_min>
 		<u_max>
+			<condition>
+				<equals>
+					<property>/it-autoflight/aplatmode</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/settings/bank-limit</property>
+		</u_max>
+		<u_max>
+			<condition>
+				<equals>
+					<property>/it-autoflight/aplatmode</property>
+					<value>1</value>
+				</equals>
+			</condition>
 			<value>30</value>
 		</u_max>
 	</filter>

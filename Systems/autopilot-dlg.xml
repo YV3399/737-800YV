@@ -300,7 +300,7 @@
 			</button>
 			
 			<!--button>
-				<row>1</row>
+				<row>2</row>
 				<col>1</col>
 				<legend>ARM</legend>
 				<binding>
@@ -622,6 +622,50 @@
 			</button>
 			
 		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			<text>
+				<row>0</row>
+				<col>0</col>
+				<label>Bank Limit:  </label>
+			</text>
+			
+			<slider>
+				<row>0</row>
+				<col>0</col>
+				<halign>center</halign>
+				<pref-width>130</pref-width>
+				<property>/it-autoflight/settings/bank-limit</property>
+				<step>5</step>
+				<min>5</min>
+				<max>30</max>
+				<live type="bool">true</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</slider>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			<button>
+                <pref-width>40</pref-width>
+				<legend>AUTO</legend>
+				<binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/settings/bank-limit</property>
+				<value>30</value>
+				</binding>
+			</button>
+			
+			<text>
+				<row>0</row>
+				<col>0</col>
+				<halign>right</halign>
+				<label>5   10   15   20   25   30</label>
+			</text>
+		</group>
 
 		<group>
 			<layout>hbox</layout>
@@ -764,7 +808,7 @@
 				</binding>
 			</button>
 		</group>
-		
+
 		<group>
 			<layout>table</layout>
 			
@@ -845,42 +889,6 @@
 					<max>6000</max>
 					<step>1000</step>
 					<wrap>false</wrap>
-				</binding>
-			</button>
-		</group>
-
-		<group>
-			<layout>hbox</layout>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-
-			<hrule>
-				<stretch type="bool">true</stretch>
-			</hrule>
-			<text>
-				<label>AFDS</label>
-			</text>
-			<hrule>
-				<stretch type="bool">true</stretch>
-			</hrule>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			
-			<button>
-				<legend>AFDS MASTER OVRD OFF</legend>
-				<binding>
-				<command>property-assign</command>
-				<property>/it-autoflight/at_mastersw</property>
-				<value>0</value>
-				</binding>
-				<binding>
-				<command>property-assign</command>
-				<property>/it-autoflight/ap_mastersw</property>
-				<value>0</value>
 				</binding>
 			</button>
 		</group>

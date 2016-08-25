@@ -1,5 +1,5 @@
 # IT AUTOFLIGHT System Controller by Joshua Davidson (it0uchpods/411).
-# V3.0.0 Beta 8
+# V3.0.0 Beta 10
 
 print("IT-AUTOFLIGHT: Please Wait!");
 
@@ -18,9 +18,9 @@ var ap_init = func {
 	setprop("/it-autoflight/autothrarm", 0);
 	setprop("/it-autoflight/apthrmode", 0);
 	setprop("/it-autoflight/apthrmode2", 0);
-	setprop("/it-autoflight/aplatset", 0);
-	setprop("/it-autoflight/apvertset", 0);
-	setprop("/it-autoflight/apthrset", 0);
+	setprop("/it-autoflight/outputs/roll", 0);
+	setprop("/it-autoflight/outputs/pitch", 0);
+	setprop("/it-autoflight/outputs/thrust", 0);
 	setprop("/it-autoflight/settings/target-speed-kt", 200);
 	setprop("/it-autoflight/settings/target-mach", 0.68);
 	setprop("/it-autoflight/settings/idlethr", 0);
@@ -29,11 +29,13 @@ var ap_init = func {
 	setprop("/it-autoflight/settings/target-altitude-ft", 10000);
 	setprop("/it-autoflight/settings/target-altitude-ft-actual", 10000);
 	setprop("/it-autoflight/settings/vertical-speed-fpm", 0);
+	setprop("/it-autoflight/settings/bank-limit", 30);
 	setprop("/it-autoflight/min-pitch", -4);
 	setprop("/it-autoflight/max-pitch", 8);
 	setprop("/it-autoflight/internal/min-pitch", -4);
 	setprop("/it-autoflight/internal/max-pitch", 8);
 	setprop("/it-autoflight/settings/vertical-speed-fpm", 0);
+	setprop("/it-autoflight/aplatset", 0);
 	setprop("/it-autoflight/apvertset", 4);
 	update_arms();
 	print("IT-AUTOFLIGHT: Done!");
@@ -132,7 +134,15 @@ setlistener("/it-autoflight/apvertset", func {
 	setprop("/it-autoflight/app1", 1);
 	setprop("/it-autoflight/apilsmode", 1);
   } else if (vertset == 3) {
-	setprop("/it-autoflight/app1", 0);
+	var pitchdeg = getprop("/orientation/pitch-deg");
+	var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+	var alt = getprop("/it-autoflight/settings/target-altitude-ft-actual");
+    if (calt < alt) {
+      setprop("/it-autoflight/internal/max-pitch", pitchdeg);
+    } else if (calt > alt) {
+      setprop("/it-autoflight/internal/min-pitch", pitchdeg);
+    }
+	minmaxtimer.start();
 	setprop("/it-autoflight/apvertmode", 0);
 	setprop("/it-autoflight/aphldtrk2", 0);
   } else if (vertset == 4) {
@@ -201,6 +211,18 @@ var flchthrust = func {
   }
 }
 
+# Min and Max Pitch Reset
+var minmax = func {
+  var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+  var alt = getprop("/it-autoflight/settings/target-altitude-ft-actual");
+  var dif = calt - alt;
+  if (dif < 100 and dif > -100) {
+      setprop("/it-autoflight/internal/max-pitch", 8);
+      setprop("/it-autoflight/internal/min-pitch", -4);
+	  minmaxtimer.stop();
+  }
+}
+
 # Autothrottle arm
 setlistener("/it-autoflight/autothrarm", func {
   var atarm = getprop("/it-autoflight/autothrarm");
@@ -215,13 +237,14 @@ var atarmchk = func {
   var altpos = getprop("/position/gear-agl-ft");
   if (altpos >= 10) {
 	setprop("/it-autoflight/at_mastersw", 1);
-	setprop("/it-autoflight/autothrarm", 1);
+	setprop("/it-autoflight/autothrarm", 0);
   }
 }
 
 # Timers
 var altcaptt = maketimer(0.5, altcapt);
 var flchtimer = maketimer(0.5, flchthrust);
+var minmaxtimer = maketimer(0.5, minmax);
 var atarmt = maketimer(0.5, atarmchk);
 
 # For Canvas Nav Display.
