@@ -1951,35 +1951,41 @@
           <z>0</z>
       </axis>
   </animation>
-   <animation>
-        <type>pick</type>
-        <object-name>strobelight</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>        
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/lighting/strobe</property>
-        </binding>
-      </action> 
-    </animation> 
   <animation>
-      <type>rotate</type>   
-        <object-name>strobelight</object-name>  
-            <property>/controls/lighting/strobe</property>
-      <factor>60</factor>
-      <center>
-          <x-m>0.61194</x-m>
-          <y-m>0</y-m>
-          <z-m>1.42405</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
+    <type>pick</type>
+       <object-name>strobelight</object-name>         
+       <visible>1</visible>
+       <action>
+        <button>0</button>
+           <repeatable>true</repeatable>        
+           <binding>
+           <command>property-toggle</command>
+           <property>/controls/lighting/strobe</property>
+       </binding>
+           <binding>
+           <command>property-toggle</command>
+           <property>/controls/lighting/nav-lights</property>
+       </binding>
+     </action> 
+   </animation>
+
+<animation>
+    <type>rotate</type>   
+       <object-name>strobelight</object-name>  
+           <property>/controls/lighting/strobe</property>     
+     <factor>60</factor>
+     <center>
+         <x-m>0.61194</x-m>
+         <y-m>0</y-m>
+         <z-m>1.42405</z-m>
+     </center>
+     <axis>
+         <x>0</x>
+         <y>1</y>
+         <z>0</z>
+     </axis>
+ </animation>
+
    <animation>
         <type>pick</type>
         <object-name>anticollight</object-name>         
@@ -2047,14 +2053,14 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/lighting/nav-lights</property>
+            <property>/controls/lighting/wheel</property>
         </binding>
       </action> 
     </animation> 
   <animation>
       <type>rotate</type>   
         <object-name>wheellight</object-name>   
-            <property>/controls/lighting/nav-lights</property>
+            <property>/controls/lighting/wheel</property>
       <factor>60</factor>
       <center>
           <x-m>0.61194</x-m>
@@ -2168,6 +2174,3 @@
         </offsets>
     </model>
 </PropertyList>
-   
-   
-   
