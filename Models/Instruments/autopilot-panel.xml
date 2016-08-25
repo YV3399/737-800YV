@@ -60,7 +60,7 @@
      <animation>
         <type>rotate</type>
         <object-name>BANK</object-name>
-        <property>/controls/autoflight/bank-angle-select</property>          
+        <property>/it-autoflight/settings/bank-limit</property>          
           <factor>-5.8</factor> 
          <offset-deg>240</offset-deg>         
         <center>
@@ -1262,7 +1262,7 @@
             <repeatable>true</repeatable>           
        <binding>   
        <command>property-adjust</command>
-       <property>/controls/autoflight/bank-angle-select</property> 
+       <property>/it-autoflight/settings/bank-limit</property> 
        <step>5</step>
        <min>0</min>
        <max>30</max>                
@@ -1280,7 +1280,7 @@
             <repeatable>true</repeatable>           
        <binding>   
        <command>property-adjust</command>
-       <property>/controls/autoflight/bank-angle-select</property> 
+       <property>/it-autoflight/settings/bank-limit</property> 
        <step>-5</step>
        <min>0</min>
        <max>30</max>                
