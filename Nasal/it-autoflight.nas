@@ -62,13 +62,13 @@ setlistener("/it-autoflight/ap_mastersw2", func {
   var apmas = getprop("/it-autoflight/ap_mastersw2");
   if (apmas == 0) {
 	setprop("/it-autoflight/ap_master2", 0);
-	if (getprop("/it-autoflight/enableapoffsound") == 1) {
+	if (getprop("/it-autoflight/enableapoffsound2") == 1) {
 	  setprop("/it-autoflight/apoffsound2", 1);	
 	  setprop("/it-autoflight/enableapoffsound", 0);	  
 	}
   } else if (apmas == 1) {
 	setprop("/it-autoflight/ap_master2", 1);
-	setprop("/it-autoflight/enableapoffsound", 1);
+	setprop("/it-autoflight/enableapoffsound2", 1);
 	setprop("/it-autoflight/apoffsound2", 0);
   }
 });
