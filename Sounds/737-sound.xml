@@ -530,11 +530,21 @@
     <mode>once</mode>
     <path>Aircraft/737-800/Sounds/apdisco.wav</path>
     <condition>
-	<or>
 		<property>/it-autoflight/apoffsound</property>
+	</condition>
+    <volume>
+      <factor>1</factor>
+    </volume>
+  </ap-disconnect>
+  
+
+  <ap-disconnect>
+    <name>AP Disconnect 2</name>
+    <mode>once</mode>
+    <path>Aircraft/737-800/Sounds/apdisco.wav</path>
+    <condition>
 		<property>/it-autoflight/apoffsound2</property>
-	</or>
-</condition>
+	</condition>
     <volume>
       <factor>1</factor>
     </volume>

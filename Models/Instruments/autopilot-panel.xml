@@ -178,17 +178,6 @@
 	
 	<animation>
 		<type>select</type>
-		<object-name>HDG-HLD</object-name>
-		<condition>
-			<not>
-				<property>/it-autoflight/aplatmode</property>
-				<value>0</value>
-			</not>
-		</condition>
-	</animation>
-	
-	<animation>
-		<type>select</type>
 		<object-name>L-NAV2</object-name>
 		<condition>
 			<equals>
@@ -197,41 +186,50 @@
 			</equals>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>select</type>
-		<object-name>L-NAV</object-name>
+		<object-name>APP2</object-name>
 		<condition>
-			<not>
-				<property>/it-autoflight/aplatmode</property>
+			<or>
+			<equals>
+				<property>/it-autoflight/apvertmode</property>
+				<value>2</value>
+			</equals>
+			<equals>
+				<property>/it-autoflight/app1</property>
 				<value>1</value>
-			</not>
+			</equals>
+			</or>
 		</condition>
 	</animation>
 
-          <animation>
-   	<type>textranslate</type>
-   	 <object-name>APP</object-name>
-	 <property>/autopilot/internal/VNAV-GS-armed</property>        
-   	<factor>-0.125</factor>
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>
-
-         <animation>
-   	<type>textranslate</type>
-   	 <object-name>VOR-LOC</object-name>
-	 <property>/autopilot/internal/LNAV-NAV-light</property>        
-   	<factor>-0.125</factor>
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation> 
+	<animation>
+		<type>select</type>
+		<object-name>VOR-LOC2</object-name>
+		<condition>
+			<and>
+			<or>
+			<equals>
+				<property>/it-autoflight/aplatmode</property>
+				<value>2</value>
+			</equals>
+			<equals>
+				<property>/it-autoflight/loc1</property>
+				<value>1</value>
+			</equals>
+			</or>
+			<equals>
+				<property>/it-autoflight/app1</property>
+				<value>0</value>
+			</equals>
+			<equals>
+				<property>/it-autoflight/apvertmode</property>
+				<value>2</value>
+			</equals>
+			</and>
+		</condition>
+	</animation>
 
          <animation>
    	<type>textranslate</type>
@@ -1099,14 +1097,13 @@
         <object-name>APP</object-name>
         <visible>1</visible>
   <action>
-    <name>Toggle APP (G/S) Mode</name>
+    <name>Arm APPR</name>
    <button>0</button>
    <repeatable>false</repeatable>
     <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.app_button_press();
-      </script>   
+		<command>property-assign</command>
+		<property>/it-autoflight/apvertset</property>
+		<value>2</value>
     </binding>
   </action> 
     </animation>  
@@ -1116,14 +1113,13 @@
         <object-name>VOR-LOC</object-name>
         <visible>1</visible>
   <action>
-    <name>Toggle VOR/LOC Mode</name>
+    <name>Arm VOR/LOC</name>
    <button>0</button>
    <repeatable>false</repeatable>
     <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.vorloc_button_press();
-      </script>   
+		<command>property-assign</command>
+		<property>/it-autoflight/aplatset</property>
+		<value>2</value>
     </binding>
   </action> 
 
