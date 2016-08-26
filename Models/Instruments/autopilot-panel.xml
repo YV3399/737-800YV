@@ -581,8 +581,8 @@
         <condition>
           <and>
             <equals>
-              <property>/autopilot/internal/VNAV-VS</property>
-              <value>true</value>
+              <property>/it-autoflight/settings/apvertmode</property>
+              <value>1</value>
             </equals>
             <less-than>
                 <property>/it-autoflight/settings/vertical-speed-fpm</property>
@@ -597,8 +597,8 @@
         <condition>
           <and>
             <equals>
-              <property>/autopilot/internal/VNAV-VS</property>
-              <value>true</value>
+              <property>/it-autoflight/settings/apvertmode</property>
+              <value>1</value>
             </equals>
             <not>
               <less-than>
@@ -615,8 +615,8 @@
         <condition>
             <and>
                 <equals>
-                    <property>/autopilot/internal/VNAV-VS</property>
-                    <value>true</value>
+                   <property>/it-autoflight/settings/apvertmode</property>
+              <value>1</value>
                 </equals>
                 <greater-than>
                     <property>/it-autoflight/settings/vertical-speed-fpm</property>
@@ -631,8 +631,8 @@
         <condition>
             <and>
                 <equals>
-                    <property>/autopilot/internal/VNAV-VS</property>
-                    <value>true</value>
+                    <property>/it-autoflight/settings/apvertmode</property>
+              <value>1</value>
                 </equals>
                 <less-than>
                     <property>/it-autoflight/settings/vertical-speed-fpm</property>
