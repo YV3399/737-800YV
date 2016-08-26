@@ -530,8 +530,11 @@
     <mode>once</mode>
     <path>Aircraft/737-800/Sounds/apdisco.wav</path>
     <condition>
-      <property>/it-autoflight/apoffsound</property>
-    </condition>
+	<or>
+		<property>/it-autoflight/apoffsound</property>
+		<property>/it-autoflight/apoffsound2</property>
+	</or>
+</condition>
     <volume>
       <factor>1</factor>
     </volume>
