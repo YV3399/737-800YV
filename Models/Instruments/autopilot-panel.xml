@@ -119,7 +119,7 @@
     <animation>
     <type>textranslate</type>
     <object-name>L-NAV</object-name>
-   <property>/autopilot/internal/LNAV</property>
+   <property>/it-autoflight/aplatmode</property>
     <factor>-0.125</factor>
     <axis>
       <x>0</x>
@@ -154,7 +154,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>V/S</object-name>
-        <property>/autopilot/internal/VNAV-VS</property>
+		<property>/it-autoflight/apvertmode</property>
         <factor>-0.125</factor>
         <axis>
             <x>0</x>
@@ -166,7 +166,7 @@
          <animation>
    	<type>textranslate</type>
    	<object-name>HDG-HLD</object-name>
-	 <property>/autopilot/internal/LNAV-HDG</property>        
+	 <property>/it-autoflight/aplatmode</property>  
    	<factor>-0.125</factor>
    	<axis>
     	<x>0</x>
@@ -963,16 +963,14 @@
   <visible>true</visible>
   <object-name>V/S</object-name>
   <action>
-    <name>Toggle VS Mode</name>
-   <button>0</button>
-   <repeatable>false</repeatable>
-    <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.vs_button_press();
-      </script>   
-    </binding>
-  </action>
+     <button>0</button>
+	    <repeatable>true</repeatable>
+            <binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/apvertset</property>
+				<value>1</value>
+			</binding>
+   </action>
  </animation>
 
   <animation>
@@ -998,16 +996,14 @@
         <object-name>HDG-HLD</object-name>
         <visible>1</visible>
   <action>
-    <name>Toggle Heading Bug Mode</name>
-   <button>0</button>
-   <repeatable>false</repeatable>
-    <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.hdg_button_press();
-      </script>   
-    </binding>
-  </action>
+            <button>0</button>
+			<repeatable>true</repeatable>
+            <binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/aplatset</property>
+				<value>0</value>
+			</binding>
+        </action>
     </animation>
 
     <!-- LNAV button -->
