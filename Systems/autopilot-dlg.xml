@@ -33,23 +33,42 @@
 		<layout>hbox</layout>
 		<button>
 			<legend>A/T</legend>
+            <pref-width>35</pref-width>
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/at_mastersw</property>
 			</binding>
 		</button>
 		<button>
-			<legend>AP</legend>
+			<legend>AP1</legend>
+            <pref-width>35</pref-width>
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/ap_mastersw</property>
 			</binding>
 		</button>
 		<button>
-			<legend>FD</legend>
+			<legend>AP2</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>property-toggle</command>
+			<property>/it-autoflight/ap_mastersw2</property>
+			</binding>
+		</button>
+		<button>
+			<legend>FD1</legend>
+            <pref-width>35</pref-width>
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/fd_mastersw</property>
+			</binding>
+		</button>
+		<button>
+			<legend>FD2</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>property-toggle</command>
+			<property>/it-autoflight/fd_mastersw2</property>
 			</binding>
 		</button>
 	</group>
@@ -66,7 +85,7 @@
 			</visible>
 		</text>
 		<text>
-			<label>[AP]</label>
+			<label>[AP1]</label>
 			<visible>
 				<equals>
 					<property>/it-autoflight/ap_master</property>
@@ -75,10 +94,28 @@
 			</visible>
 		</text>
 		<text>
-			<label>[FD]</label>
+			<label>[AP2]</label>
+			<visible>
+				<equals>
+					<property>/it-autoflight/ap_master2</property>
+					<value>1</value>
+				</equals>
+			</visible>
+		</text>
+		<text>
+			<label>[FD1]</label>
 			<visible>
 				<equals>
 					<property>/it-autoflight/fd_master</property>
+					<value>1</value>
+				</equals>
+			</visible>
+		</text>
+		<text>
+			<label>[FD2]</label>
+			<visible>
+				<equals>
+					<property>/it-autoflight/fd_master2</property>
 					<value>1</value>
 				</equals>
 			</visible>

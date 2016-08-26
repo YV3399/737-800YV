@@ -5,7 +5,10 @@ print("IT-AUTOFLIGHT: Please Wait!");
 
 var ap_init = func {
 	setprop("/it-autoflight/ap_master", 0);
+	setprop("/it-autoflight/ap_master2", 0);
 	setprop("/it-autoflight/at_master", 0);
+	setprop("/it-autoflight/fd_master", 0);
+	setprop("/it-autoflight/fd_master2", 0);
 	setprop("/it-autoflight/loc1", 0);
 	setprop("/it-autoflight/app1", 0);
 	setprop("/it-autoflight/aplatmode", 0);
@@ -18,9 +21,6 @@ var ap_init = func {
 	setprop("/it-autoflight/autothrarm", 0);
 	setprop("/it-autoflight/apthrmode", 0);
 	setprop("/it-autoflight/apthrmode2", 0);
-	setprop("/it-autoflight/outputs/roll", 0);
-	setprop("/it-autoflight/outputs/pitch", 0);
-	setprop("/it-autoflight/outputs/thrust", 0);
 	setprop("/it-autoflight/settings/target-speed-kt", 200);
 	setprop("/it-autoflight/settings/target-mach", 0.68);
 	setprop("/it-autoflight/settings/idlethr", 0);
@@ -41,7 +41,7 @@ var ap_init = func {
 	print("IT-AUTOFLIGHT: Done!");
 }
 
-# AP Master System
+# AP 1 Master System
 setlistener("/it-autoflight/ap_mastersw", func {
   var apmas = getprop("/it-autoflight/ap_mastersw");
   if (apmas == 0) {
@@ -57,6 +57,22 @@ setlistener("/it-autoflight/ap_mastersw", func {
   }
 });
 
+# AP 2 Master System
+setlistener("/it-autoflight/ap_mastersw2", func {
+  var apmas = getprop("/it-autoflight/ap_mastersw2");
+  if (apmas == 0) {
+	setprop("/it-autoflight/ap_master2", 0);
+	if (getprop("/it-autoflight/enableapoffsound") == 1) {
+	  setprop("/it-autoflight/apoffsound2", 1);	
+	  setprop("/it-autoflight/enableapoffsound", 0);	  
+	}
+  } else if (apmas == 1) {
+	setprop("/it-autoflight/ap_master2", 1);
+	setprop("/it-autoflight/enableapoffsound", 1);
+	setprop("/it-autoflight/apoffsound2", 0);
+  }
+});
+
 # AT Master System
 setlistener("/it-autoflight/at_mastersw", func {
   var atmas = getprop("/it-autoflight/at_mastersw");
@@ -67,13 +83,23 @@ setlistener("/it-autoflight/at_mastersw", func {
   }
 });
 
-# Flight Director Master System
+# Flight Director 1 Master System
 setlistener("/it-autoflight/fd_mastersw", func {
   var fdmas = getprop("/it-autoflight/fd_mastersw");
   if (fdmas == 0) {
 	setprop("/it-autoflight/fd_master", 0);
   } else if (fdmas == 1) {
 	setprop("/it-autoflight/fd_master", 1);
+  }
+});
+
+# Flight Director 2 Master System
+setlistener("/it-autoflight/fd_mastersw2", func {
+  var fdmas = getprop("/it-autoflight/fd_mastersw2");
+  if (fdmas == 0) {
+	setprop("/it-autoflight/fd_master2", 0);
+  } else if (fdmas == 1) {
+	setprop("/it-autoflight/fd_master2", 1);
   }
 });
 
@@ -261,9 +287,8 @@ var update_arms = func {
 }
 
 var update_locarmelec = func {
-  var ap = getprop("/it-autoflight/ap_master");
   var loc1 = getprop("/it-autoflight/loc1");
-  if (loc1 & ap) {
+  if (loc1) {
   locarmcheck();
   } else {
   return 0;
@@ -271,9 +296,8 @@ var update_locarmelec = func {
 }
 
 var update_apparmelec = func {
-  var ap = getprop("/it-autoflight/ap_master");
   var app1 = getprop("/it-autoflight/app1");
-  if (app1 & ap) {
+  if (app1) {
   apparmcheck();
   } else {
   return 0;

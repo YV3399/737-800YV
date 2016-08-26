@@ -272,10 +272,16 @@
 							<value>1</value>
 						</equals>
 					</or>
-					<equals>
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
+					<or>
+						<equals>
+							<property>/it-autoflight/ap_master</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/ap_master2</property>
+							<value>1</value>
+						</equals>
+					</or>
 				</and>
 			</condition>
 		</enable>
@@ -345,10 +351,16 @@
 					<property>/it-autoflight/aplatmode</property>
 					<value>2</value>
 				</equals>
-				<equals>
-					<property>/it-autoflight/ap_master</property>
-					<value>1</value>
-				</equals>
+				<or>
+					<equals>
+						<property>/it-autoflight/ap_master</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/ap_master2</property>
+						<value>1</value>
+					</equals>
+				</or>
 			</and>
 		</condition>
     </enable>
@@ -380,10 +392,16 @@
 		<initialize-to>output</initialize-to>
 		<enable>
 			<condition>
-				<equals>
-					<property>/it-autoflight/ap_master</property>
-					<value>1</value>
-				</equals>
+				<or>
+					<equals>
+						<property>/it-autoflight/ap_master</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/ap_master2</property>
+						<value>1</value>
+					</equals>
+				</or>
 			</condition>
 		</enable>
 		<input>
@@ -614,10 +632,16 @@
 						<property>/it-autoflight/apvertmode</property>
 						<value>4</value>
 					</equals>
-					<equals>
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
+					<or>
+						<equals>
+							<property>/it-autoflight/ap_master</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/ap_master2</property>
+							<value>1</value>
+						</equals>
+					</or>
 				</and>
 			</condition>
 		</enable>
@@ -663,10 +687,16 @@
 							<value>2</value>
 						</equals>
 					</or>
-					<equals>
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
+					<or>
+						<equals>
+							<property>/it-autoflight/ap_master</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/ap_master2</property>
+							<value>1</value>
+						</equals>
+					</or>
 				</and>
 			</condition>
 		</enable>
@@ -698,10 +728,16 @@
 		<initialize-to>output</initialize-to>
 		<enable>
 			<condition>
-				<equals>
-					<property>/it-autoflight/ap_master</property>
-					<value>1</value>
-				</equals>
+				<or>
+					<equals>
+						<property>/it-autoflight/ap_master</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/ap_master2</property>
+						<value>1</value>
+					</equals>
+				</or>
 			</condition>
 		</enable>
 		<input>
@@ -722,10 +758,16 @@
 						<property>/controls/flight/elevator-cmd</property>
 						<value>0.05</value>
 					</greater-than>
-					<equals>
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
+					<or>
+						<equals>
+							<property>/it-autoflight/ap_master</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/ap_master2</property>
+							<value>1</value>
+						</equals>
+					</or>
 				</and>
 			</condition>
 		</enable>
@@ -760,10 +802,16 @@
 						<property>/controls/flight/elevator-cmd</property>
 						<value>-0.05</value>
 					</less-than>
-					<equals>
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
+					<or>
+						<equals>
+							<property>/it-autoflight/ap_master</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/ap_master2</property>
+							<value>1</value>
+						</equals>
+					</or>
 				</and>
 			</condition>
 		</enable>
@@ -796,10 +844,16 @@
 		<enable>
 			<condition>
 				<and>
-					<equals>
-						<property>/it-autoflight/ap_master</property>
-						<value>1</value>
-					</equals>
+					<or>
+						<equals>
+							<property>/it-autoflight/ap_master</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/ap_master2</property>
+							<value>1</value>
+						</equals>
+					</or>
 					<or>
 						<greater-than>
 							<property>/controls/flight/elevator-cmd</property>
@@ -1060,7 +1114,7 @@
 			<prop>/controls/engines/engine[7]/throttle</prop>
 		</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.35</max-rate-of-change>
+		<max-rate-of-change>0.40</max-rate-of-change>
 	</filter>
 
 </PropertyList>
