@@ -107,7 +107,7 @@
          <animation>
     <type>textranslate</type>
     <object-name>CMD-B</object-name>
-   <property>/it-autoflight/ap_master</property>
+   <property>/it-autoflight/ap_master2</property>
     <factor>-0.125</factor>
     <axis>
       <x>0</x>
@@ -860,7 +860,8 @@
       <command>nasal</command>
       <script>
 		var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
-        if (alt_agl > 400) {
+		var ap2 = getprop("/it-autoflight/ap_master2");
+        if (alt_agl > 400 and !ap2) {
 		setprop("/it-autoflight/ap_mastersw", 1);
 		}
       </script>   
@@ -880,7 +881,8 @@
       <command>nasal</command>
       <script>
 		var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
-        if (alt_agl > 400) {
+		var ap1 = getprop("/it-autoflight/ap_master");
+        if (alt_agl > 400 and !ap1) {
 		setprop("/it-autoflight/ap_mastersw2", 1);
 		}
 
