@@ -163,17 +163,51 @@
         </axis>
     </animation>
 
-         <animation>
-   	<type>textranslate</type>
-   	<object-name>HDG-HLD</object-name>
-	 <property>/it-autoflight/aplatmode</property>  
-   	<factor>-0.125</factor>
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>
+
+	
+	<animation>
+		<type>select</type>
+		<object-name>HDG-HLD2</object-name>
+		<condition>
+			<equals>
+				<property>/it-autoflight/aplatmode</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>HDG-HLD</object-name>
+		<condition>
+			<not>
+				<property>/it-autoflight/aplatmode</property>
+				<value>0</value>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>L-NAV2</object-name>
+		<condition>
+			<equals>
+				<property>/it-autoflight/aplatmode</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>L-NAV</object-name>
+		<condition>
+			<not>
+				<property>/it-autoflight/aplatmode</property>
+				<value>1</value>
+			</not>
+		</condition>
+	</animation>
 
           <animation>
    	<type>textranslate</type>
@@ -993,6 +1027,21 @@
 
      <animation>
         <type>pick</type>
+        <object-name>HDG-HLD2</object-name>
+        <visible>1</visible>
+  <action>
+            <button>0</button>
+			<repeatable>true</repeatable>
+            <binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/aplatset</property>
+				<value>0</value>
+			</binding>
+        </action>
+    </animation>
+	
+	 <animation>
+        <type>pick</type>
         <object-name>HDG-HLD</object-name>
         <visible>1</visible>
   <action>
@@ -1012,18 +1061,31 @@
   <type>pick</type>
   <visible>true</visible>
   <object-name>L-NAV</object-name>
-  <action>
-    <name>Toggle LNAV</name>
-   <button>0</button>
-   <repeatable>false</repeatable>
-    <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.lnav_button_press();
-      </script>   
-    </binding>
-  </action>
- </animation>
+        <action>
+            <button>0</button>
+	    <repeatable>true</repeatable>
+            <binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/aplatset</property>
+				<value>1</value>
+			</binding>
+        </action>
+		</animation>
+		
+	<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>L-NAV2</object-name>
+        <action>
+            <button>0</button>
+	    <repeatable>true</repeatable>
+            <binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/aplatset</property>
+				<value>1</value>
+			</binding>
+        </action>
+		</animation>
 
     <animation>
         <type>pick</type>
