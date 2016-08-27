@@ -10,6 +10,7 @@ OBJECT world
 kids 69
 OBJECT poly
 name "N1-2"
+loc 0.00024583 0 0
 texture "autopilot-pnl.png"
 crease 30.000000
 numvert 8
