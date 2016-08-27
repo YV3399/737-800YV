@@ -179,19 +179,19 @@
 		</max-flap-extension-speed>
 		<max-flap-extension-speed>
 			<flaps>0.625</flaps>
-			<speed>195</speed>
+			<speed>200</speed>
 		</max-flap-extension-speed>
 		<max-flap-extension-speed>
 			<flaps>0.750</flaps>
-			<speed>170</speed>
+			<speed>190</speed>
 		</max-flap-extension-speed>
 		<max-flap-extension-speed>
 			<flaps>0.875</flaps>
-			<speed>165</speed>
+			<speed>175</speed>
 		</max-flap-extension-speed>
 		<max-flap-extension-speed>
 			<flaps>1.000</flaps>
-			<speed>156</speed>
+			<speed>162</speed>
 		</max-flap-extension-speed>
 		<max-gear-extension-speed>270</max-gear-extension-speed>
 		<vne>340</vne>
