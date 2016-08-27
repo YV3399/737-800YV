@@ -128,17 +128,7 @@
     </axis>
   </animation>
 
-    <animation>
-        <type>textranslate</type>
-        <object-name>LVL-CHG.</object-name>
-        <property>/autopilot/internal/LVLCHG</property>
-        <factor>-0.125</factor>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
+  
        <animation>
    	<type>textranslate</type>
    	 <object-name>ALT-HLD</object-name>
@@ -204,6 +194,19 @@
 		</condition>
 	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>LVL-CHG2</object-name>
+		<condition>
+			<or>
+			<equals>
+				<property>/it-autoflight/apvertmode</property>
+				<value>4</value>
+			</equals>
+			</or>
+		</condition>
+	</animation>
+	
 	<animation>
 		<type>select</type>
 		<object-name>VOR-LOC2</object-name>
@@ -968,16 +971,15 @@
   <visible>true</visible>
   <object-name>LVL-CHG.</object-name>
   <action>
-    <name>Toggle LVLCHG</name>
+    <name>Toggle LVLCHG Mode</name>
    <button>0</button>
    <repeatable>false</repeatable>
     <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.lvlchg_button_press();
-      </script>   
+		<command>property-assign</command>
+		<property>/it-autoflight/apvertset</property>
+		<value>4</value>
     </binding>
-  </action>
+  </action> 
  </animation>
 
       <animation>
