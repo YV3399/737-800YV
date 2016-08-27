@@ -246,16 +246,16 @@
    	</axis>
  	</animation>
     <animation>
-        <type>textranslate</type>
-        <object-name>N1</object-name>
-        <property>/autopilot/internal/SPD-N1</property>
-        <factor>-0.125</factor>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
+        <type>select</type>
+        <object-name>N1-2</object-name>
+        <condition>
+			<equals>
+				<property>/it-autoflight/apthrmode2</property>
+				<value>2</value>
+			</equals>
+		</condition>
     </animation>
+	
     <animation>
         <type>textranslate</type>
         <object-name>CRS.1</object-name>
