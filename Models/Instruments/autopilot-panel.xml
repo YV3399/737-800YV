@@ -130,15 +130,14 @@
 
   
        <animation>
-   	<type>textranslate</type>
-   	 <object-name>ALT-HLD</object-name>
-	 <property>/autopilot/internal/VNAV-ALT-light</property>        
-   	<factor>-0.125</factor>
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
+   	<type>select</type>
+   	 <object-name>ALT-HLD2</object-name>
+	 <condition>
+		<equals>
+			<property>/it-autoflight/apvertset</property>
+			<value>0</value>
+		</equals>
+	</condition>
  	</animation>
 
     <animation>
@@ -991,13 +990,28 @@
    <button>0</button>
    <repeatable>false</repeatable>
     <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.althld_button_press();
-      </script>   
+      <command>property-assign</command>
+      <property>/it-autoflight/apvertset</property>
+	  <value>0</value>
     </binding>
   </action>
-     </animation>     
+     </animation>   
+
+<animation>
+        <type>pick</type>
+        <object-name>ALT-HLD2</object-name>
+        <visible>1</visible>
+  <action>
+    <name>Toggle ALT Mode</name>
+   <button>0</button>
+   <repeatable>false</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>/it-autoflight/apvertset</property>
+	  <value>0</value>
+    </binding>
+  </action>
+     </animation>     	 
 
       <animation>
   <type>pick</type>
