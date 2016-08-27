@@ -162,7 +162,6 @@ refs 4
 kids 0
 OBJECT poly
 name "HDG-HLD2"
-loc 0.000624279 0 0
 texture "autopilot-pnl.png"
 crease 30.000000
 numvert 8
