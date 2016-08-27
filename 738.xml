@@ -550,8 +550,8 @@
             <aerosurface_scale name="Elevator Control">
                 <input>fcs/pitch-trim-sum</input>
                 <range>
-                    <min>-0.195</min>
-                    <max> 0.3375</max>
+                    <min>-0.192</min>
+                    <max> 0.3320</max>
                 </range>
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>
@@ -677,8 +677,8 @@
            <aerosurface_scale name="Left aileron Normalized">
                 <input>fcs/left-aileron-pos-rad</input>
                 <domain>
-                    <min>-0.35</min>
-                    <max> 0.35</max>
+                    <min>-0.00</min>
+                    <max> 1.00</max>
                 </domain>
                 <range>
                     <min>-1</min>
@@ -690,8 +690,8 @@
             <aerosurface_scale name="Right aileron Normalized">
                 <input>fcs/right-aileron-pos-rad</input>
                 <domain>
-                    <min>-0.35</min>
-                    <max> 0.35</max>
+                    <min>-0.00</min>
+                    <max> 1.00</max>
                 </domain>
                 <range>
                     <min>-1</min>
@@ -1848,7 +1848,7 @@
                 <product>
                     <property>aero/coefficient/CLdlail</property>
                     <sum>
-                        <value>44.5</value>
+                        <value>45.5</value>
                         <quotient>
                             <property>inertia/cg-y-in</property>
                             <value>12</value>
@@ -1862,7 +1862,7 @@
                 <product>
                     <property>aero/coefficient/CLdrail</property>
                     <sum>
-                        <value>-44.5</value>
+                        <value>-45.5</value>
                         <quotient>
                             <property>inertia/cg-y-in</property>
                             <value>12</value>

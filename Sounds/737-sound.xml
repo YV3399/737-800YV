@@ -501,7 +501,7 @@
         </volume>
     </overspeed>
  
-  <stall>
+  <!--<stall>
    <name>stall</name>
    <path>Aircraft/737-800/Sounds/stall.wav</path>
    <property>/sim/alarms/stall-warning</property>
@@ -509,7 +509,7 @@
     <property>/velocities/airspeed-kt</property>
     <min>30.0</min>
    </volume>
-  </stall>
+  </stall>-->
 
   <!-- Altitude alert sound -->
 
@@ -563,6 +563,18 @@
       <factor>1</factor>
     </volume>
   </trimming>
+  
+  <stall>
+	<name>stall</name>
+	<mode>loop</mode>
+	<path>Aircraft/737-800/Sounds/stall.wav</path>
+	<condition>
+		<equals>
+            <property>/b737/sound/stall</property>
+            <value>1</value>
+        </equals>
+	</condition>
+   </stall>
   
   <!-- Services-->
 <engine>
