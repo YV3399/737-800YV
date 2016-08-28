@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
   <sim>
-    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (current development), Gabriel Hernandez (Sounds and current development)</author>
+    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (current development), Gabriel Hernandez (Sounds and current development), Joshua Davidson (Autoflight, Other)</author>
     <status>early-production</status>
     <flight-model>jsb</flight-model>
 
