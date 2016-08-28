@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 
-<!-- IT-AUTOFLIGHT -->
+<!-- IT-CUSTOM-AUTOFLIGHT -->
+<!-- WARNING!!! THIS XML FILE IS NOT DROP IN COMPATABLE. LINES 307, 308, 385, 386, 667, 668, 721, 722 -->
+<!-- WILL NEED TO BE PLACED INTO THE NEW it-autoflight.xml AND OVERWRITE IN ORDER TO FLY THE AIRCRAFT CORRECTLY. -->
+<!-- CONTACT it0uchpods IF YOU HAVE QUESTIONS. -->
 
 <PropertyList>
 
@@ -302,8 +305,8 @@
 			
 			<Ti>10</Ti>        	
 			<Td>0.00001</Td>     	
-			<u_min>-0.70</u_min> 	
-			<u_max>0.70</u_max>  	
+			<u_min>-0.40</u_min> 	
+			<u_max>0.40</u_max>  	
 		</config>
 	</pid-controller>
 
@@ -380,8 +383,8 @@
 	  <gamma>0.0</gamma>		
 	  <Ti>10</Ti>        	
 	  <Td>0.00001</Td>     	
-	  <u_min>-0.70</u_min> 	
-	  <u_max>0.70</u_max>  	
+	  <u_min>-0.40</u_min> 	
+	  <u_max>0.40</u_max>  	
     </config>
   </pid-controller>
   
@@ -662,8 +665,8 @@
 			
 			<Ti>10.0</Ti>        
 			<Td>0.00001</Td>    
-			<u_min>-0.25</u_min>
-			<u_max>0.25</u_max>
+			<u_min>-0.10</u_min>
+			<u_max>0.10</u_max>
 		</config>
 	</pid-controller>
 
@@ -716,8 +719,8 @@
 			<gamma>0.0</gamma>  
 			<Ti>10.0</Ti>       
 			<Td>0.0001</Td>    
-			<u_min>-0.25</u_min>
-			<u_max>0.25</u_max>
+			<u_min>-0.22</u_min>
+			<u_max>0.22</u_max>
 		</config>
 	</pid-controller>
 	
@@ -1088,7 +1091,7 @@
   </pid-controller>
   
 	<filter>
-		<name>IT-CONTROLLER: PITCH FILTER</name>
+		<name>IT-CONTROLLER: THRUST FILTER</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>

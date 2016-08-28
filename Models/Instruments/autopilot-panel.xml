@@ -233,25 +233,37 @@
 		</condition>
 	</animation>
 
-         <animation>
-   	<type>textranslate</type>
-   	 <object-name>SPEED</object-name>
-	 <property>/autopilot/internal/SPD-SPEED</property>
-   	<factor>-0.125</factor>
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>
+	<animation>
+        <type>select</type>
+        <object-name>SPEED-2</object-name>
+        <condition>
+			<and>
+			<equals>
+				<property>/it-autoflight/at_master</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>/it-autoflight/apthrmode2</property>
+				<value>0</value>
+			</equals>
+			</and>
+		</condition>
+    </animation>
+
     <animation>
         <type>select</type>
         <object-name>N1-2</object-name>
         <condition>
+			<and>
 			<equals>
-				<property>/it-autoflight/apthrmode2</property>
-				<value>2</value>
+				<property>/it-autoflight/at_master</property>
+				<value>1</value>
 			</equals>
+			<not-equals>
+				<property>/it-autoflight/apthrmode2</property>
+				<value>0</value>
+			</not-equals>
+			</and>
 		</condition>
     </animation>
 	
@@ -748,7 +760,31 @@
         </axis>
     </animation> 
 
+<animation>
+  <type>textranslate</type>
+  <object-name>MACH.1</object-name>
+  <property>/it-autoflight/settings/target-mach</property>
+  <factor>1.0</factor>
+  <step>0.1</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
+<animation>
+  <type>textranslate</type>
+  <object-name>MACH.01</object-name>
+  <property>/it-autoflight/settings/target-mach</property>
+  <factor>10</factor>
+  <step>.01</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
 
       <!--EFIS Animations-->
@@ -856,16 +892,10 @@
     <name>Toggle CMDA</name>
    <button>0</button>
    <repeatable>false</repeatable>
-    <binding>
-      <command>nasal</command>
-      <script>
-		var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
-		var ap2 = getprop("/it-autoflight/ap_master2");
-        if (alt_agl > 400 and !ap2) {
-		setprop("/it-autoflight/ap_mastersw", 1);
-		}
-      </script>   
-    </binding>
+		<binding>
+		<command>property-toggle</command>
+		<property>it-autoflight/ap_mastersw</property>
+		</binding>
   </action>
       </animation>
 
@@ -877,17 +907,10 @@
     <name>Toggle CMDB</name>
    <button>0</button>
    <repeatable>false</repeatable>
-    <binding>
-      <command>nasal</command>
-      <script>
-		var alt_agl = getprop("/position/altitude-agl-ft") - 6.5;
-		var ap1 = getprop("/it-autoflight/ap_master");
-        if (alt_agl > 400 and !ap1) {
-		setprop("/it-autoflight/ap_mastersw2", 1);
-		}
-
-      </script>   
-    </binding>
+		<binding>
+		<command>property-toggle</command>
+		<property>it-autoflight/ap_mastersw2</property>
+		</binding>
   </action>
       </animation>
 
@@ -939,12 +962,12 @@
     <name>CHANGEOVER button</name>
     <button>0</button>
     <repeatable>false</repeatable> 
-    <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.changeover_button_press();
-      </script>   
-    </binding>
+		<binding>
+		<command>property-cycle</command>
+		<property>it-autoflight/apthrmode</property>
+		<value>0</value>
+		<value>1</value>
+		</binding>
   </action>
  </animation>
 
@@ -957,10 +980,8 @@
    <button>0</button>
    <repeatable>false</repeatable>
     <binding>
-      <command>nasal</command>
-      <script>
-        autopilot737.n1_button_press();
-      </script>   
+      <command>property-toggle</command>
+      <property>/it-autoflight/at_mastersw</property>   
     </binding>
   </action>
  </animation>
@@ -1267,23 +1288,38 @@
 
 <!-- Speed knob control --> 
 
+<animation>
+	<type>select</type>
+	<object-name>IASknb</object-name>
+	<object-name>IAS.1</object-name>
+	<object-name>IAS.2</object-name>
+	<object-name>IAS.3</object-name>
+	<condition>
+		<equals>
+			<property>/it-autoflight/apthrmode</property>
+			<value>0</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>MACHknb</object-name>
+	<object-name>MACH.1</object-name>
+	<object-name>MACH.01</object-name>
+	<condition>
+		<equals>
+			<property>/it-autoflight/apthrmode</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
     <animation>
         <type>pick</type>
-        <object-name>IAS-MACH</object-name>
-        <property>/it-autoflight/settings/target-speed-kt</property>
-        <factor>-5</factor>
-      <center>
-        <x-m>0.0</x-m>
-        <y-m>-0.117</y-m>
-        <z-m>0.0157</z-m>
-      </center>
-      <axis>
-        <x>1</x>
-        <y>0</y>
-        <z>0</z>
-      </axis>
+        <object-name>IASknb</object-name>
 	  <action>
-		<button>0</button>
+		<button>3</button>
       <binding>
         <command>property-adjust</command>
         <property>/it-autoflight/settings/target-speed-kt</property>
@@ -1293,7 +1329,7 @@
       </binding>
     </action>
 	    <action>
-		<button>1</button>
+		<button>4</button>
       <binding>
         <command>property-adjust</command>
         <property>/it-autoflight/settings/target-speed-kt</property>
@@ -1303,7 +1339,7 @@
       </binding>
     </action>
     <action>
-		<button>3</button>
+		<button>0</button>
       <binding>
         <command>property-adjust</command>
         <property>/it-autoflight/settings/target-speed-kt</property>
@@ -1313,13 +1349,58 @@
       </binding>
     </action>
 	    <action>
-		<button>4</button>
+		<button>1</button>
       <binding>
         <command>property-adjust</command>
         <property>/it-autoflight/settings/target-speed-kt</property>
         <step>-10</step>
 		<min>100</min>
 		<max>330</max>
+      </binding>
+    </action>
+    </animation>
+	
+    <animation>
+        <type>pick</type>
+        <object-name>MACHknb</object-name>
+	  <action>
+		<button>3</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/it-autoflight/settings/target-mach</property>
+        <step>.01</step>
+		<min>0.2</min>
+		<max>330</max>
+      </binding>
+    </action>
+	    <action>
+		<button>4</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/it-autoflight/settings/target-mach</property>
+        <step>-.01</step>
+		<min>0.2</min>
+		<max>0.9</max>
+      </binding>
+    </action>
+    <action>
+		<button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/it-autoflight/settings/target-mach</property>
+        <step>.1</step>
+		<min>0.2</min>
+		<max>0.9</max>
+      </binding>
+    </action>
+	    <action>
+		<button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>/it-autoflight/settings/target-mach</property>
+        <step>-.1</step>
+		<min>0.2</min>
+		<max>0.9</max>
       </binding>
     </action>
     </animation>
@@ -1335,8 +1416,8 @@
        <command>property-adjust</command>
        <property>/it-autoflight/settings/bank-limit</property> 
        <step>5</step>
-       <min>0</min>
-       <max>30</max>                
+		<min>0.2</min>
+		<max>0.9</max>            
        <wrap>false</wrap>       
        </binding>
       </action> 

@@ -36,8 +36,8 @@
       </autopilot>
 	  
 	  <autopilot>
-		<name>IT-AUTOFLIGHT</name>
-		<path>Aircraft/737-800/Systems/it-autoflight.xml</path>
+		<name>IT-CUSTOM-AUTOFLIGHT</name> <!-- WARNING! XML NOT COMPATABLE WITH DROP IN UPGRADE! SEE it-autoflight.xml FOR DETAILS -->
+		<path>Aircraft/737-800/Systems/it-custom-autoflight.xml</path>
 	  </autopilot>
 
       <path>Aircraft/737-800/Systems/systems.xml</path>
