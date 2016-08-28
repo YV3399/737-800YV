@@ -736,7 +736,10 @@
                 </table>
             </scheduled_gain>
 
+
+
             <summer name="Rudder Sum Cmd">
+
                 <input>fcs/rudder-command-sum</input>
                 <input>fcs/yaw-damper-final</input>
                 <clipto>

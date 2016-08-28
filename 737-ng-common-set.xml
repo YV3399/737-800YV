@@ -28,6 +28,10 @@
       </autopilot>
 
       <autopilot>
+        <path>Aircraft/737-800/Systems/737_fmc_fg.xml</path>
+      </autopilot>
+
+      <autopilot>
         <path>Aircraft/737-800/Systems/aircraft-systems-logic.xml</path>
       </autopilot>
 	  
@@ -94,7 +98,6 @@
       </submodels>
     </ai>
 	
-			
     <submodels>
       <serviceable>true</serviceable>
       <path>submodels.xml</path>
@@ -733,8 +736,6 @@
 
   <instrumentation>
 
-
-
     <adf>
       <volume-norm type="double">0.0</volume-norm>
     </adf>
@@ -782,7 +783,6 @@
       <nav-display n="1" type="int">0</nav-display>
     </nav-compass>
       
-
     <flightdirector>
       <fd-left-on type="bool">0</fd-left-on>
       <fd-right-on type="bool">0</fd-right-on>
@@ -887,6 +887,9 @@
         <method-assumed type="bool">0</method-assumed>
         <method-derate-20k type="bool">0</method-derate-20k>
         <runway-elevation-ft type="double">0</runway-elevation-ft>
+        <takeoff>
+         <thr-red-alt-ft type="int">800</thr-red-alt-ft>
+       </takeoff>
       </derated-to>
 	  <takeoff>
          <thr-red-alt-ft type="int">800</thr-red-alt-ft>

@@ -1951,7 +1951,8 @@
           <z>0</z>
       </axis>
   </animation>
-   <animation>
+
+  <animation>
     <type>pick</type>
        <object-name>strobelight</object-name>         
        <visible>1</visible>
@@ -1985,7 +1986,7 @@
          <z>0</z>
      </axis>
  </animation>
-   
+
    <animation>
         <type>pick</type>
         <object-name>anticollight</object-name>         
