@@ -36,8 +36,8 @@
       </autopilot>
 	  
 	  <autopilot>
-		<name>IT-CUSTOM-AUTOFLIGHT</name> <!-- WARNING! XML NOT COMPATABLE WITH DROP IN UPGRADE! SEE it-autoflight.xml FOR DETAILS -->
-		<path>Aircraft/737-800/Systems/it-custom-autoflight.xml</path>
+		<name>IT-CUSTOM-AUTOFLIGHT</name>
+		<path>Aircraft/737-800/Systems/it-autoflight.xml</path>
 	  </autopilot>
 
       <path>Aircraft/737-800/Systems/systems.xml</path>
@@ -214,6 +214,25 @@
     <yokes-visible type="bool">1</yokes-visible>
 
   </sim>
+  
+  <it-autoflight>
+    <settings>
+	  <no-generics>1</no-generics>
+	  <roll>
+	    <umin>-0.40</umin>
+		<umax>0.40</umax>
+	  </roll>
+	  <pitch>
+	    <umin>-0.22</umin>
+		<umax>0.22</umax>
+	  </pitch>
+	  <flch>
+	    <umin>-0.10</umin>
+		<umax>0.10</umax>
+	  </flch>
+	</settings>
+  </it-autoflight>
+  
 
   <consumables>
     <fuel>

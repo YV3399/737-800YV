@@ -1,5 +1,5 @@
 # IT AUTOFLIGHT System Controller by Joshua Davidson (it0uchpods/411).
-# V3.0.0 Beta 10
+# V3.0.0 Beta 12
 
 print("IT-AUTOFLIGHT: Please Wait!");
 
