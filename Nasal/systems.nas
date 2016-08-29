@@ -28,9 +28,11 @@ setlistener("/sim/signals/fdm-initialized", func {
   	setprop("/it-autoflight/settings/target-speed-kt", 100);
 });
 
+setprop("/it-autoflight/settings/target-altitude-ft-actual", 10000);
+
 var stallSpeed = func {
 	var stallspeedget = getprop("instrumentation/weu/state/stall-speed"); # get stall speed set by 737_pfd.xml
-	setprop("/b737/warnings/stall", stallspeedget); # set this speed to a new property every 5 seconds
+	setprop("/b737/warnings/stall",stallspeedget); # set this speed to a new property every 5 seconds
 }
 
 var timerstall = maketimer(5, func(){
@@ -43,7 +45,6 @@ var timerstall = maketimer(5, func(){
 	if (alt_agl > 25 and curspd < getstallspd) { # if we are off the ground and if speed is less than stall speed
 		setprop("/b737/sound/stall",1); # turn on the stall sound
 		}
-	print("updating speed and checking for stall"); # just to check if code works
 });
 timerstall.start(); # begin the timer
 setprop("/b737/sound/stall",0);
