@@ -6,6 +6,7 @@
         <livery>                     
             <name type="string">GOL</name>
             <texture>/Liveries-800/GOL.png</texture>            
+			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>
 </sim>
