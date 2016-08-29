@@ -1067,7 +1067,41 @@
 				<offset>0</offset>
 			</volume>
 		</wow>
-
+<Rain>
+	    <name>Rain</name>
+	    <mode>looped</mode>
+	    <path>Aircraft/737-800/Sounds/xprecg4.wav</path>
+	    <condition>
+		    <and>
+			    <equals>
+				    <property>environment/rain/above_clouds</property>
+				    <value>0</value>
+			    </equals>
+			    <or>
+				    <greater-than>
+					    <property>environment/metar/rain-norm</property>
+					    <value>0.1</value>
+				    </greater-than>
+				    <greater-than>
+					    <property>environment/metar/snow-norm</property>
+					    <value>0.1</value>
+				    </greater-than>
+			    </or>
+        </and>
+	 </condition>
+	    <volume>
+		    <property>/environment/metar/rain-norm</property>
+		    <factor>2.50</factor>
+		    <offset>0.00</offset>
+		    <min>0.4</min>
+		<max>0.9</max>
+	    </volume>
+	    <pitch>
+		    <property>/velocities/airspeed-kt</property>
+		    <factor>0.001</factor>
+		    <offset>1.0</offset>
+            </pitch>
+      </Rain>
 
 </fx>
  
