@@ -1128,7 +1128,7 @@
                           
       <Ti>10.0</Ti>       
       <Td>0.00001</Td>    
-      <u_min>0.0</u_min>  
+      <u_min>0.005</u_min>  
       <u_max>0.2</u_max>  
     </config>
   </pid-controller>
@@ -1169,7 +1169,7 @@
       <Ti>10.0</Ti>       
       <Td>0.00001</Td>    
       <u_min>0.0</u_min>  
-      <u_max>0.96</u_max>  
+      <u_max>0.95</u_max>  
     </config>
   </pid-controller>
   
@@ -1200,7 +1200,24 @@
 			<prop>/controls/engines/engine[7]/throttle</prop>
 		</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.40</max-rate-of-change>
+		<max-rate-of-change>
+			<condition>
+				<equals>
+					<property>/it-autoflight/apthrmode2</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<value>0.40</value>
+		</max-rate-of-change>
+		<max-rate-of-change>
+			<condition>
+				<not-equals>
+					<property>/it-autoflight/apthrmode2</property>
+					<value>0</value>
+				</not-equals>
+			</condition>
+			<value>0.05</value>
+		</max-rate-of-change>
 	</filter>
 
 </PropertyList>
