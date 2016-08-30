@@ -1070,7 +1070,7 @@
 <Rain>
 	    <name>Rain</name>
 	    <mode>looped</mode>
-	    <path>Aircraft/737-800/Sounds/xprecg4.wav</path>
+	    <path>Aircraft/737-800/Sounds/rain.wav</path>
 	    <condition>
 		    <and>
 			    <equals>
