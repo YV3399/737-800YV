@@ -377,6 +377,24 @@
           </script>
         </binding>
       </key>
+	    <key n="267">
+                <name>F11</name>
+                <desc>Pop up autopilot dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>dialogs.ap_settings.toggle()</script>
+                </binding>
+            </key>
+            
+          <key n="268">
+                <name>F12</name>
+                <desc>Pop up radio dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>dialogs.Radio.toggle()</script>
+                </binding>
+            </key>    
+	 
 	        <key n="127">
         <name>Delete</name>
         <desc>Thrust reversers toggle</desc>
@@ -491,6 +509,28 @@
       </key>
     </keyboard>
   </input>
+
+ <multiplay>
+        <generic>
+            <int n="0" alias="/systems/electrical/outputs/strobe"/>
+            <int n="1" alias="/systems/electrical/outputs/beacon"/>
+            <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
+            <int n="3" alias="/systems/electrical/outputs/landing-light[0]"/>
+            <int n="4" alias="/systems/electrical/outputs/landing-light[1]"/>
+            <int n="5" alias="/systems/electrical/outputs/recog-lights"/>
+            <int n="6" alias="/systems/electrical/outputs/nav-lights"/>
+            <float  alias="/controls/cabin-door/position-norm"/>
+            <float  n="1" alias="/surface-positions/speedbrake-pos-norm"/>
+						<float  n="2" alias="/surface-positions/reverser-norm"/>
+			<!--  <string  alias="/sim/multiplay/callsign"/> -->
+        </generic>
+    </multiplay>
+
+                <switches>
+			<!-- Smoking is bad :P -->
+			<no-smoking-sign type="bool">true</no-smoking-sign>
+			<seatbelt-sign type="bool">false</seatbelt-sign>
+		</switches>
 
 <autopilot>
     <settings>
