@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
- 
+ <!-- New Sounds By Gabriel Hernandez -->
 <PropertyList>
 
  <fx>
@@ -1102,6 +1102,38 @@
 		    <offset>1.0</offset>
             </pitch>
       </Rain>
+<!-- Seatbelt/No smoking signs -->
+  <seatbelt>
+    <name>seatbelt sign</name>
+    <path>Aircraft/737-800/Sounds/cabinalert.wav</path>
+    <mode>once</mode>
+    <condition>
+      <property>sim/sound/seatbelt-sign</property>
+    </condition>
+    <volume>
+      <offset>1</offset>
+    </volume>
+    <position>
+      <x>0.00</x>
+      <y>0.00</y>
+      <z>0.00</z>
+    </position>
+    <reference-dist>10.0</reference-dist>
+    <max-dist>100.0</max-dist>
+  </seatbelt>
+  <nosmoke>
+    <name>no smoking sign</name>
+    <path>Aircraft/737-800/Sounds/cabinalert.wav</path>
+    <mode>once</mode>
+    <condition>
+      <property>sim/sound/no-smoking-sign</property>
+    </condition>
+    <volume>
+      <offset>1</offset>
+    </volume>
+    <reference-dist>10.0</reference-dist>
+    <max-dist>100.0</max-dist>
+  </nosmoke>
 
 </fx>
  
