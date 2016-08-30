@@ -44,3 +44,25 @@ var timerstall = maketimer(5, func(){
 timerstall.start(); # begin the timer
 setprop("/b737/sound/stall",0);
 
+## SOUNDS
+#########
+
+# seatbelt/no smoking sign triggers
+setlistener("controls/switches/seatbelt-sign", func
+ {
+ props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(1);
+
+ settimer(func
+  {
+  props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(0);
+  }, 2);
+ });
+setlistener("controls/switches/no-smoking-sign", func
+ {
+ props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(1);
+
+ settimer(func
+  {
+  props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(0);
+  }, 2);
+ });
