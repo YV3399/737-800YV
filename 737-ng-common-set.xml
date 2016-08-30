@@ -219,8 +219,9 @@
     <settings>
 	  <no-generics>1</no-generics>
 	  <roll>
-	    <umin>-0.40</umin>
-		<umax>0.40</umax>
+	    <umin>-0.35</umin>
+		<umax>0.35</umax>
+		<kp>0.10</kp>
 	  </roll>
 	  <pitch>
 	    <umin>-0.22</umin>
