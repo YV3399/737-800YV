@@ -1871,14 +1871,14 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/cabin/nosmoking</property>
+            <property>/controls/switches/no-smoking-sign</property>
         </binding>
       </action> 
     </animation> 
   <animation>
       <type>rotate</type>   
         <object-name>nosmoking</object-name>  
-            <property>/controls/cabin/nosmoking</property>
+            <property>/controls/switches/no-smoking-sign</property>
       <factor>60</factor>
       <center>
           <x-m>0.8062</x-m>
@@ -1901,14 +1901,14 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/cabin/seatbelts</property>
+            <property>/controls/switches/seatbelt-sign</property>
         </binding>
       </action> 
     </animation> 
   <animation>
       <type>rotate</type>   
         <object-name>fastenseatbelts</object-name>  
-            <property>/controls/cabin/seatbelts</property>
+            <property>/controls/switches/seatbelt-sign</property>
       <factor>60</factor>
       <center>
           <x-m>0.8062</x-m>
@@ -1921,6 +1921,7 @@
           <z>0</z>
       </axis>
   </animation>
+
   <!--Light-->
    <animation>
         <type>pick</type>
