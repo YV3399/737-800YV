@@ -378,23 +378,6 @@
           </script>
         </binding>
       </key>
-	    <key n="267">
-                <name>F11</name>
-                <desc>Pop up autopilot dialog</desc>
-                <binding>
-                    <command>nasal</command>
-                    <script>dialogs.ap_settings.toggle()</script>
-                </binding>
-            </key>
-            
-          <key n="268">
-                <name>F12</name>
-                <desc>Pop up radio dialog</desc>
-                <binding>
-                    <command>nasal</command>
-                    <script>dialogs.Radio.toggle()</script>
-                </binding>
-            </key>    
 	 
 	        <key n="127">
         <name>Delete</name>
