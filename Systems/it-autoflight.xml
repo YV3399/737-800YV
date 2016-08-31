@@ -719,7 +719,18 @@
 			<prop>/controls/flight/elevator-cmd</prop>
 		</output>
 		<config>
-			<Kp>-0.10</Kp>      
+			<Kp>
+				<condition>
+					<property>/it-autoflight/settings/no-generics</property>
+				</condition>
+				<property>/it-autoflight/settings/flch/kp</property>
+			</Kp>
+			<Kp>
+				<condition>
+					<not><property>/it-autoflight/settings/no-generics</property></not>
+				</condition>
+				<value>-0.10</value>
+			</Kp>  
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
@@ -796,7 +807,18 @@
 			<property>/controls/flight/elevator-cmd</property>
 		</output>
 		<config>
-			<Kp>-0.09</Kp>      
+			<Kp>
+				<condition>
+					<property>/it-autoflight/settings/no-generics</property>
+				</condition>
+				<property>/it-autoflight/settings/pitch/kp</property>
+			</Kp>
+			<Kp>
+				<condition>
+					<not><property>/it-autoflight/settings/no-generics</property></not>
+				</condition>
+				<value>-0.09</value>
+			</Kp>   
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  

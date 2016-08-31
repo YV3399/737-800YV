@@ -226,10 +226,12 @@
 	  <pitch>
 	    <umin>-0.22</umin>
 		<umax>0.22</umax>
+		<kp>-0.09</kp>
 	  </pitch>
 	  <flch>
 	    <umin>-0.10</umin>
 		<umax>0.10</umax>
+		<kp>-0.10</kp>
 	  </flch>
 	</settings>
   </it-autoflight>
