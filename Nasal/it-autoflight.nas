@@ -163,6 +163,7 @@ setlistener("/it-autoflight/apvertset", func {
 	var pitchdeg = getprop("/orientation/pitch-deg");
 	var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 	var alt = getprop("/it-autoflight/settings/target-altitude-ft-actual");
+	var dif = calt - alt;
     if (calt < alt) {
       setprop("/it-autoflight/internal/max-pitch", pitchdeg);
     } else if (calt > alt) {
@@ -172,15 +173,33 @@ setlistener("/it-autoflight/apvertset", func {
 	setprop("/it-autoflight/apvertmode", 0);
 	setprop("/it-autoflight/aphldtrk2", 0);
   } else if (vertset == 4) {
-    var altinput = getprop("/it-autoflight/settings/target-altitude-ft");
+	var altinput = getprop("/it-autoflight/settings/target-altitude-ft");
 	setprop("/it-autoflight/settings/target-altitude-ft-actual", altinput);
-	setprop("/it-autoflight/app1", 0);
-	setprop("/it-autoflight/apvertmode", 4);
-	setprop("/it-autoflight/aphldtrk2", 2);
-	setprop("/it-autoflight/apilsmode", 0);
-	flchtimer.start();
+    var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+    var alt = getprop("/it-autoflight/settings/target-altitude-ft-actual");
+	var dif = calt - alt;
+	if (dif < 550 and dif > -550) {
+	  alt_on();
+    } else {
+	  flch_on();
+	}
   }
 });
+var flch_on = func {
+  setprop("/it-autoflight/app1", 0);
+  setprop("/it-autoflight/apvertmode", 4);
+  setprop("/it-autoflight/aphldtrk2", 2);
+  setprop("/it-autoflight/apilsmode", 0);
+  flchtimer.start();
+}
+var alt_on = func {
+  setprop("/it-autoflight/app1", 0);
+  setprop("/it-autoflight/apvertmode", 0);
+  setprop("/it-autoflight/aphldtrk2", 0);
+  setprop("/it-autoflight/apilsmode", 0);
+  setprop("/it-autoflight/internal/max-pitch", 8);
+  setprop("/it-autoflight/internal/min-pitch", -4);
+}
 
 setlistener("/it-autoflight/apthrmode", func {
 	var thrset = getprop("it-autoflight/apthrmode");

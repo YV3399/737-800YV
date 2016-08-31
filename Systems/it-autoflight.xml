@@ -736,7 +736,7 @@
 				<condition>
 					<not><property>/it-autoflight/settings/no-generics</property></not>
 				</condition>
-				<value>-0.25</value>
+				<value>-0.30</value>
 			</u_min>
 			<u_max>
 				<condition>
@@ -748,7 +748,7 @@
 				<condition>
 					<not><property>/it-autoflight/settings/no-generics</property></not>
 				</condition>
-				<value>0.25</value>
+				<value>0.30</value>
 			</u_max>
 		</config>
 	</pid-controller>
@@ -812,7 +812,7 @@
 				<condition>
 					<not><property>/it-autoflight/settings/no-generics</property></not>
 				</condition>
-				<value>-0.25</value>
+				<value>-0.30</value>
 			</u_min>
 			<u_max>
 				<condition>
@@ -824,7 +824,7 @@
 				<condition>
 					<not><property>/it-autoflight/settings/no-generics</property></not>
 				</condition>
-				<value>0.25</value>
+				<value>0.30</value>
 			</u_max>
 		</config>
 	</pid-controller>
