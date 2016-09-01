@@ -116,4 +116,54 @@
   </action>
 </animation>
 
+<animation>
+        <type>pick</type>
+        <object-name>parkbrake_1</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+           <binding>
+    		<command>property-toggle</command>
+   		 <property>/controls/gear/brake-parking</property> 
+                  <min>0</min>
+    		 <max>1</max>    		  
+    		 <wrap>false</wrap>
+   	</binding>
+       </action>
+    </animation>                  
+
+<animation>
+  <type>pick</type>   
+  <object-name>parkbrake_0</object-name>
+   <property>/controls/gear/brake-parking</property> 
+    <factor>45</factor>    
+  <center>
+   <x-m>0.81</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.66</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>parkbrake_1</object-name>
+        <property>/controls/gear/brake-parking</property>
+        <factor>45</factor>
+        <center>
+            <x-m>0.81</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.66</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
 </PropertyList>
