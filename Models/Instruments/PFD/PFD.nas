@@ -591,9 +591,9 @@ var canvas_PFD = {
 					me["vertSpdDn"].hide();
 				}
 			}
-			if (getprop("/it-autoflight/settings/vertical-speed-fpm") != nil and getprop("/it-autoflight/apvertset")) {
+			if (getprop("/it-autoflight/apvertset") == 1) {
 				me["vsPointer"].show();
-				me["vsPointer"].setTranslation(0,-getprop("/it-autoflight/apvertset"));
+				me["vsPointer"].setTranslation(0,-getprop("/it-autoflight/settings/vertical-speed-fpm"));
 			} else {
 				me["vsPointer"].hide();
 			}

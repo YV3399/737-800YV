@@ -29,6 +29,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 });
 
 setprop("/it-autoflight/settings/target-altitude-ft-actual", 10000);
+setprop("/it-autoflight/settings/vertical-speed-fpm", 0);
 
 var timerstall = maketimer(5, func(){
 
