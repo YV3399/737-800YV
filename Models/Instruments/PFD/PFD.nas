@@ -289,17 +289,17 @@ var canvas_PFD = {
 		me["compassSNmbr6"].setText(sprintf("%0.0f", SNmbr6));
 			
 		# Flight director
-		if (getprop("/instrumentation/flightdirector/fd-left-on") == 1) {
-			if (getprop("/instrumentation/flightdirector/fd-left-bank") != nil) {
-				var fdRoll = (roll-getprop("/instrumentation/flightdirector/fd-left-bank"))*3;
+		if (getprop("/it-autoflight/fd_master") == 1) {
+			if (getprop("/it-autoflight/fd/roll-bar") != nil) {
+				var fdRoll = (roll-getprop("/it-autoflight/fd/roll-bar"))*3;
 				if (fdRoll > 200)
 					fdRoll = 200;
 				elsif (fdRoll < -200)
 					fdRoll = -200;
 				me["fdX"].setTranslation(-fdRoll,0);
 			}
-			if (getprop("/instrumentation/flightdirector/fd-left-pitch") != nil) {
-				var fdPitch = (pitch-getprop("/instrumentation/flightdirector/fd-left-pitch"))*11.4625;
+			if (getprop("/it-autoflight/fd/pitch-bar") != nil) {
+				var fdPitch = (pitch-getprop("/it-autoflight/fd/pitch-bar"))*11.4625;
 				if (fdPitch > 200)
 					fdPitch = 200;
 				elsif (fdPitch < -200)
