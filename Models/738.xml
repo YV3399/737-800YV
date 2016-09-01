@@ -80,17 +80,7 @@
     <texture-prop>texture</texture-prop>
   <texture>737-800.png</texture>  
    </animation>
-  
-  <effect>
-		<inherits-from>Aircraft/737-800/Models/Effects/logo-lights</inherits-from>
-		<object-name>rudder</object-name>
-		<object-name>vstab</object-name>
-		<object-name>vstable</object-name>
-		<object-name>rudder.001</object-name>
-	</effect>
-  
-  
-   
+ 
 <animation>
     <type>shader</type>
     <shader>chrome</shader>
@@ -102,13 +92,28 @@
     <object-name>vitreBD</object-name>
   </animation>
 
+<!-- Lights -->
+	<animation>
+		<name>Tail logo light illumination</name>
+		<type>material</type>
+		<object-name>rudder</object-name>
+		<object-name>vstab</object-name>
+		<object-name>vstable</object-name>
+		<emission>
+			<red>0.25</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+			<factor-prop>controls/lighting/logo-lights</factor-prop>
+		</emission>
+	</animation>
+	
 <!--Lights-->
 
 <model>
 	<path>Aircraft/737-800/Models/lights/greennav.xml</path>
 	<name>Greenlight</name>     
 	<offsets>
-		<x-m> 3.62</x-m>
+		<x-m> 3.61</x-m>
 		<y-m> 17.03</y-m>
 		<z-m> 1.06</z-m>       
 	</offsets>
@@ -118,7 +123,7 @@
 	<path>Aircraft/737-800/Models/lights/rednav.xml</path>
 	<name>Redlight</name>     
 	<offsets>
-		<x-m> 3.62</x-m>
+		<x-m> 3.61</x-m>
 		<y-m>-17.03</y-m>
 		<z-m> 1.06</z-m>        
 	</offsets>
@@ -137,7 +142,7 @@
 	<path>Aircraft/737-800/Models/lights/flash.xml</path>
 	<name>flashright</name>     
 	<offsets>
-		<x-m> 3.62</x-m>
+		<x-m> 3.63</x-m>
 		<y-m>17.01</y-m>
 		<z-m> 1.06</z-m>        
 	</offsets>
@@ -147,7 +152,7 @@
 	<path>Aircraft/737-800/Models/lights/flash.xml</path>
 	<name>flashleft</name>     
 	<offsets>
-		<x-m> 3.62</x-m>
+		<x-m> 3.63</x-m>
 		<y-m>-17.01</y-m>
 		<z-m> 1.06</z-m>     
 	</offsets>
@@ -166,7 +171,7 @@
 <model>	
   <path>Aircraft/737-800/Models/lights/strobe.xml</path>
   <offsets>
-   <x-m>18.62</x-m>
+   <x-m>18.63</x-m>
    <y-m>0.0</y-m>
    <z-m>2.06</z-m>
   </offsets>
@@ -193,7 +198,7 @@
 	<path>Aircraft/737-800/Models/lights/landinglight.xml</path>
 	<name>RightWingLandinglight</name>
 	<offsets>
-		<x-m>-4.83</x-m>
+		<x-m>-4.82</x-m>
 		<y-m>2.14</y-m>
 		<z-m>-0.51</z-m>        
 	</offsets>
@@ -205,7 +210,7 @@
 	<offsets>
 		<x-m>0.00</x-m>
 		<y-m>0.00</y-m>
-		<z-m>2.56</z-m>      
+		<z-m>2.57</z-m>      
 	</offsets>
 </model>
 
@@ -215,7 +220,7 @@
 	<offsets>
 		<x-m>0.0</x-m>
 		<y-m> 0.00</y-m>
-		<z-m>-1.41</z-m>      
+		<z-m>-1.42</z-m>      
 	</offsets>
 </model>   
   
@@ -238,7 +243,7 @@
 	<name>tyre-smoke-l</name>
 	<offsets>
 		<x-m>-4.83</x-m>
-		<y-m>-2.14</y-m>
+		<y-m>-2.12</y-m>
 		<z-m>-0.51</z-m>
 	</offsets>
 </model>
@@ -248,27 +253,11 @@
 	<name>tyre-smoke-r</name>
 	<offsets>
 		<x-m>-4.83</x-m>
-		<y-m>2.14</y-m>
+		<y-m>2.12</y-m>
 		<z-m>0.51</z-m>
 	</offsets>
 </model>
 
-<model>
-	<name>emerdoor</name>
-	<path>Effects\crashed\emerdoor.xml</path>
-	<condition>
-		<equals>
-            <property>sim/crashed</property>
-            <value type="bool">true</value>
-		</equals>
-	</condition>
-	<offsets> 
-		<x-m>2.5</x-m>
-		<y-m>-0.0</y-m>
-		<z-m>-0.8</z-m> 
-	</offsets>
-</model>
-  
 <!-- Smoke and Fire -->
 
 <model>
@@ -282,7 +271,7 @@
  <name>fire_1</name>
  <offsets>
   <x-m>-3.3</x-m>
-  <y-m>-4.74</y-m>
+  <y-m>-4.73</y-m>
   <z-m>-1.4</z-m>
   <heading-deg>0</heading-deg>
  </offsets>
@@ -299,7 +288,7 @@
  <name>~fire_1</name>
  <offsets>
   <x-m>-3.3</x-m>
-  <y-m>4.74</y-m>
+  <y-m>4.73</y-m>
   <z-m>-1.4</z-m>
   <heading-deg>0</heading-deg>
  </offsets>
@@ -312,7 +301,7 @@
     <path>Aircraft/737-800/Models/Effects/Contrail/contrail.xml</path>
     <offsets>
 		<x-m> 3.31076</x-m>
-		<y-m>-4.76332</y-m>
+		<y-m>-4.76322</y-m>
 		<z-m>-1.28782</z-m> 
       <roll-deg>    0 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
@@ -324,7 +313,7 @@
     <path>Aircraft/737-800/Models/Effects/Contrail/contrail.xml</path>
     <offsets>
 		<x-m> 3.31055</x-m>
-		<y-m> 4.7713</y-m>
+		<y-m> 4.7723</y-m>
 		<z-m>-1.28753</z-m> 
       <roll-deg>    0 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
@@ -340,7 +329,7 @@
 	<path>Aircraft/737-800/Models/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.xml</path>
 	<offsets>
 		<x-m>1.8</x-m>
-     	 	<y-m>11</y-m>
+     	 	<y-m>12</y-m>
      		 <z-m>1.81</z-m>
 	</offsets>
 	<condition>
@@ -434,8 +423,6 @@
 	</offsets>
 </model>
 
-
-
 <!-- Bus -->
 
 <model>
@@ -456,7 +443,6 @@
             <heading-deg>-270</heading-deg>
         </offsets>
 </model>
-
 
 <!-- reverser -->
  <animation>
