@@ -1134,7 +1134,68 @@
     <reference-dist>10.0</reference-dist>
     <max-dist>100.0</max-dist>
   </nosmoke>
-
+  
+  <eightyknots>
+        <name>eightyknots</name>
+        <mode>once</mode>
+        <type>avionics</type>
+        <path>Aircraft/737-800/Sounds/80kt.wav</path>
+        <condition>
+			<or>
+			<property>/gear/gear[0]/wow</property>
+			<property>/gear/gear[2]/wow</property>
+			</or>	
+			<greater-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>80</value>
+			</greater-than>
+			<less-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>88</value>
+			</less-than>			
+			</condition>	
+    </eightyknots>   
+	<veeone>
+        <name>vee-one</name>
+        <mode>once</mode>
+        <type>avionics</type>
+        <path>Aircraft/737-800/Sounds/v1.wav</path>
+        <condition>
+			<or>
+			<property>/gear/gear[0]/wow</property>
+			<property>/gear/gear[2]/wow</property>
+			</or>	
+			<greater-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>105</value>
+			</greater-than>
+			<less-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>113</value>
+			</less-than>			
+					</condition>	
+    </veeone>
+	<rotate>
+        <name>rotate</name>
+        <mode>once</mode>
+        <type>avionics</type>
+        <path>Aircraft/737-800/Sounds/vr.wav</path>
+        <condition>
+			<or>
+			<property>/gear/gear[0]/wow</property>
+			<property>/gear/gear[2]/wow</property>
+			</or>
+			<greater-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>137</value>
+			</greater-than>
+			<less-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>148</value>
+			</less-than>			
+		</condition>	
+    </rotate>	
+    
 </fx>
  
 </PropertyList>
