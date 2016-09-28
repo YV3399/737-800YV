@@ -16,6 +16,7 @@
 		<object-name>sup.001</object-name>
 		<object-name>switch.001</object-name>
 		<object-name>checklist</object-name>
+      <object-name>colum</object-name>
 		<condition>
           <property>sim/yokes-visible</property>
       </condition>
@@ -30,8 +31,9 @@
 		<object-name>sup.001</object-name>
 		<object-name>switch.001</object-name>
 		<object-name>checklist</object-name>
+      <object-name>colum</object-name>
  <property>controls/flight/elevator</property>
- <factor>15</factor>
+ <factor>7</factor>
  <offset-deg>5</offset-deg>
  <center>
   <x-m>-0.11</x-m>
@@ -55,7 +57,11 @@
 		<object-name>switch.001</object-name>
 		<object-name>checklist</object-name>
  <property>controls/flight/aileron</property>
- <factor>90</factor>
+<interpolation>
+<entry><ind>-1</ind><dep>-60</dep></entry>
+<entry><ind>0</ind><dep>0</dep></entry>
+<entry><ind>1</ind><dep>60</dep></entry>
+</interpolation>
  <center>
   <x-m> 0.000</x-m>
   <y-m>-0.000</y-m>
@@ -79,6 +85,11 @@
     <binding>
 		<command>property-assign</command>
 		<property>it-autoflight/ap_mastersw</property>
+		<value>0</value>
+		</binding>
+    <binding>
+		<command>property-assign</command>
+		<property>it-autoflight/ap_mastersw2</property>
 		<value>0</value>
 		</binding>
  </action>

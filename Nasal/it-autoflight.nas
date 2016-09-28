@@ -1,7 +1,10 @@
 # IT AUTOFLIGHT System Controller by Joshua Davidson (it0uchpods/411).
-# V3.0.0 Milestone 1.
+# V3.0.0 Milestone 2 Build 20
 
 print("IT-AUTOFLIGHT: Please Wait!");
+setprop("/it-autoflight/settings/retard-enable", 1);  # Do not change this here! See IT-AUTOFLIGHT's Help.txt
+setprop("/it-autoflight/settings/retard-ft", 50);     # Do not change this here! See IT-AUTOFLIGHT's Help.txt
+setprop("/it-autoflight/settings/land-flap", 0.6);    # Do not change this here! See IT-AUTOFLIGHT's Help.txt
 
 var ap_init = func {
 	setprop("/it-autoflight/ap_master", 0);
@@ -23,8 +26,6 @@ var ap_init = func {
 	setprop("/it-autoflight/apthrmode2", 0);
 	setprop("/it-autoflight/settings/target-speed-kt", 200);
 	setprop("/it-autoflight/settings/target-mach", 0.68);
-	setprop("/it-autoflight/settings/idlethr", 0);
-	setprop("/it-autoflight/settings/clbthr", 900);
 	setprop("/it-autoflight/settings/heading-bug-deg", 360);
 	setprop("/it-autoflight/settings/target-altitude-ft", 10000);
 	setprop("/it-autoflight/settings/target-altitude-ft-actual", 10000);
@@ -37,6 +38,7 @@ var ap_init = func {
 	setprop("/it-autoflight/settings/vertical-speed-fpm", 0);
 	setprop("/it-autoflight/aplatset", 0);
 	setprop("/it-autoflight/apvertset", 4);
+	setprop("/it-autoflight/retard", 0);
 	update_arms();
 	print("IT-AUTOFLIGHT: Done!");
 }
@@ -278,11 +280,54 @@ setlistener("/it-autoflight/autothrarm", func {
   }
 });
 
+# Retard
+setlistener("/controls/flight/flaps", func {
+  var flapc = getprop("/controls/flight/flaps");
+  var flapl = getprop("/it-autoflight/settings/land-flap");
+  if (flapc >= flapl) {
+	retardt.start();
+  } else {
+	retardt.stop();
+  }
+});
+
 var atarmchk = func {
-  var altpos = getprop("/position/gear-agl-ft");
-  if (altpos >= 10) {
+  var altpos = getprop("/position/altitude-agl-ft");
+  if (altpos >= 50) {
 	setprop("/it-autoflight/at_mastersw", 1);
 	setprop("/it-autoflight/autothrarm", 0);
+  }
+}
+
+var retardchk = func {
+  if (getprop("/it-autoflight/settings/retard-enable") == 1) {
+    var altpos = getprop("/position/altitude-agl-ft");
+    var retardalt = getprop("/it-autoflight/settings/retard-ft");
+    var aton = getprop("/it-autoflight/at_master");
+    if (altpos < retardalt) {
+	  if (aton == 1) {
+	    setprop("/it-autoflight/retard", 1);
+		atofft.start();
+	  } else {
+	    setprop("/it-autoflight/retard", 0);
+	  }
+    }
+  }
+}
+
+var atoffchk = func{
+  var altpos = getprop("/position/altitude-agl-ft");
+  if (altpos <= 15) {
+	setprop("/it-autoflight/at_mastersw", 0);
+	setprop("/controls/engines/engine[0]/throttle", 0);
+	setprop("/controls/engines/engine[1]/throttle", 0);
+	setprop("/controls/engines/engine[2]/throttle", 0);
+	setprop("/controls/engines/engine[3]/throttle", 0);
+	setprop("/controls/engines/engine[4]/throttle", 0);
+	setprop("/controls/engines/engine[5]/throttle", 0);
+	setprop("/controls/engines/engine[6]/throttle", 0);
+	setprop("/controls/engines/engine[7]/throttle", 0);
+	atofft.stop();
   }
 }
 
@@ -291,6 +336,8 @@ var altcaptt = maketimer(0.5, altcapt);
 var flchtimer = maketimer(0.5, flchthrust);
 var minmaxtimer = maketimer(0.5, minmax);
 var atarmt = maketimer(0.5, atarmchk);
+var retardt = maketimer(0.5, retardchk);
+var atofft = maketimer(0.5, atoffchk);
 
 # For Canvas Nav Display.
 setlistener("/it-autoflight/settings/heading-bug-deg", func {

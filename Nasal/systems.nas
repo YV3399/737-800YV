@@ -19,9 +19,12 @@ setlistener( "/b737/warnings/altitude-alert", altAlertModeSwitch, 0, 0);
 
 setprop("/controls/lighting/AFDSbrt","0");
 
-setlistener("/sim/signals/fdm-initialized", func {
-  	itaf.ap_init();				
+setlistener("/sim/signals/fdm-initialized", func {	
+  	itaf.ap_init();			
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800/Systems/autopilot-dlg.xml");
+	setprop("/it-autoflight/settings/retard-enable", 1);  # Enable or disable automatic autothrottle retard.
+	setprop("/it-autoflight/settings/retard-ft", 35);     # Add this to change the retard altitude, default is 50ft AGL.
+	setprop("/it-autoflight/settings/land-flap", 0.750);  # Define the landing flaps here. This is needed for autoland, and retard.
 });
 
 setlistener("/sim/signals/fdm-initialized", func {

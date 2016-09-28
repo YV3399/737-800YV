@@ -1167,11 +1167,11 @@
 			</or>	
 			<greater-than>
 				<property>/velocities/airspeed-kt</property>
-				<value>105</value>
+				<value>130</value>
 			</greater-than>
 			<less-than>
 				<property>/velocities/airspeed-kt</property>
-				<value>113</value>
+				<value>139</value>
 			</less-than>			
 					</condition>	
     </veeone>
