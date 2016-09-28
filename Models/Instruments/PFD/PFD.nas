@@ -159,8 +159,6 @@ var canvas_PFD = {
 		var track = getprop("/orientation/track-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
 		var air_ground = getprop("/b737/sensors/air-ground");
-		if (air_ground == "ground") var wow = 1;
-		else var wow = 0;
 		var apAlt = getprop("it-autoflight/settings/target-altitude-ft-actual");
 		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
 		var apHdg = getprop("it-autoflight/settings/heading-bug-deg");
@@ -786,8 +784,6 @@ var canvas_PFD = {
 	update_slow: func()
 	{
 		var air_ground = getprop("/b737/sensors/air-ground");
-		if ( air_ground == "ground") var wow = 1;
-		else var wow = 0;
 		var flaps = getprop("/controls/flight/flaps");
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
 		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
@@ -795,7 +791,7 @@ var canvas_PFD = {
 		
 		var v1 = getprop("instrumentation/fmc/speeds/v1-kt") or 0;
 		if (v1 > 0) {
-			if (wow) {
+			if (air_ground) {
 				me["v1"].show();
 				me["v1"].setTranslation(0,-getprop("instrumentation/fmc/speeds/v1-kt")*6.145425);
 				me["vr"].show();
@@ -949,7 +945,7 @@ var canvas_PFD = {
 		} else
 			me["touchdown"].hide();
 		
-		if(wow) {
+		if(air_ground) {
 			me["minSpdInd"].hide();
 			me["maxSpdInd"].hide();
 		} else {
