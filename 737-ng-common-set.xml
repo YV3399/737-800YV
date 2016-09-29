@@ -443,10 +443,7 @@
                   <property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
                   <value>17.5</value>
                 </less-than>
-                <equals>
-                  <property>/b737/sensors/air-ground</property>
-                  <value>ground</value>
-                </equals>
+                <property>/b737/sensors/air-ground</property>
               </or>
               <equals>
                 <property>/engines/engine[0]/reverser-pos-norm</property>
@@ -497,10 +494,7 @@
                   <property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
                   <value>17.5</value>
                 </less-than>
-                <equals>
-                  <property>/b737/sensors/air-ground</property>
-                  <value>ground</value>
-                </equals>
+                <property>/b737/sensors/air-ground</property>
               </or>
               <equals>
                 <property>/engines/engine[1]/reverser-pos-norm</property>
@@ -539,21 +533,39 @@
     </keyboard>
   </input>
 
- <multiplay>
-        <generic>
-            <int n="0" alias="/systems/electrical/outputs/strobe"/>
-            <int n="1" alias="/systems/electrical/outputs/beacon"/>
-            <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
-            <int n="3" alias="/systems/electrical/outputs/landing-light[0]"/>
-            <int n="4" alias="/systems/electrical/outputs/landing-light[1]"/>
-            <int n="5" alias="/systems/electrical/outputs/recog-lights"/>
-            <int n="6" alias="/systems/electrical/outputs/nav-lights"/>
-            <float  alias="/controls/cabin-door/position-norm"/>
-            <float  n="1" alias="/surface-positions/speedbrake-pos-norm"/>
-						<float  n="2" alias="/surface-positions/reverser-norm"/>
-			<!--  <string  alias="/sim/multiplay/callsign"/> -->
-        </generic>
-    </multiplay>
+	<buttons>
+       <speed type="bool">0</speed>
+       <speed-co type="bool">0</speed-co>
+       <cmda type="bool">0</cmda>
+       <cmdb type="bool">0</cmdb>
+       <n1 type="bool">0</n1>
+       <lvlchg type="bool">0</lvlchg>
+       <althld type="bool">0</althld>
+      <vs type="bool">0</vs>
+       <hdgsel type="bool">0</hdgsel>
+       <lnav type="bool">0</lnav>
+       <app type="bool">0</app>
+       <vorloc type="bool">0</vorloc>
+     </buttons>
+	
+<multiplay>
+    <generic>
+      <float n="0" alias="/engines/engine[0]/reverser-pos-norm"/>
+      <float n="1" alias="/engines/engine[1]/reverser-pos-norm"/>
+      <float n="2" alias="/controls/flight/aileron"/>
+      <float n="3" alias="/controls/flight/elevator"/>
+      <float n="4" alias="/controls/flight/elevator-trim"/>
+      <int n="0" alias="/systems/electrical/outputs/strobe"/>
+      <int n="1" alias="/systems/electrical/outputs/beacon"/>
+      <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
+      <int n="3" alias="/systems/electrical/outputs/landing-light[0]"/>
+      <int n="4" alias="/systems/electrical/outputs/landing-light[1]"/>
+      <int n="5" alias="/systems/electrical/outputs/recog-lights"/>
+      <int n="6" alias="/systems/electrical/outputs/nav-lights"/>
+      <float  alias="/controls/cabin-door/position-norm"/>
+      <float  n="1" alias="/surface-positions/speedbrake-pos-norm"/>
+    </generic>
+  </multiplay>
 
                 <switches>
 			<!-- Smoking is bad :P -->
@@ -681,8 +693,6 @@
 
   </controls>
 
-
-
   <fdm>
     <jsbsim>
       <fcs>
@@ -730,7 +740,7 @@
       </flight>
     </controls>
     <sensors>
-      <air-ground type="string">ground</air-ground>
+      <air-ground type="bool">1</air-ground>
       <main-gear-spin type="bool">false</main-gear-spin>
       <was-in-air type="bool">false</was-in-air>
       <lift-off-time type="double">0</lift-off-time>
