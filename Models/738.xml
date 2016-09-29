@@ -85,13 +85,10 @@
     <type>shader</type>
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>vitreAG</object-name>
-    <object-name>vitreAD</object-name>
-    <object-name>vitreBG</object-name>
-    <object-name>vitreBD</object-name>
+    <object-name>windowslh</object-name>
+    <object-name>windowsrh</object-name>
   </animation>
-
+	
 <!-- Lights -->
 	<animation>
 		<name>Tail logo light illumination</name>
@@ -107,13 +104,25 @@
 		</emission>
 	</animation>
 	
+	<animation>
+		<name>Winglet illumination</name>
+		<type>material</type>
+                <object-name>Winglet</object-name>
+ 		<emission>
+			<red>0.25</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+			<factor-prop>controls/lighting/wing</factor-prop>
+		</emission>
+	</animation>
+	
 <!--Lights-->
 
 <model>
 	<path>Aircraft/737-800/Models/lights/greennav.xml</path>
 	<name>Greenlight</name>     
 	<offsets>
-		<x-m> 3.61</x-m>
+		<x-m> 3.60</x-m>
 		<y-m> 17.03</y-m>
 		<z-m> 1.06</z-m>       
 	</offsets>
@@ -123,26 +132,17 @@
 	<path>Aircraft/737-800/Models/lights/rednav.xml</path>
 	<name>Redlight</name>     
 	<offsets>
-		<x-m> 3.61</x-m>
+		<x-m> 3.60</x-m>
 		<y-m>-17.03</y-m>
 		<z-m> 1.06</z-m>        
 	</offsets>
 </model>
    
-<!--<model>
-	<path>Aircraft/737-800/Models/Lights/flash.xml</path>
-	<offsets>
-		<x-m>3.40</x-m>
-		<y-m>-17.03</y-m>
-		<z-m>1.16</z-m>
-	</offsets>
-</model>-->
-
 <model>
 	<path>Aircraft/737-800/Models/lights/flash.xml</path>
 	<name>flashright</name>     
 	<offsets>
-		<x-m> 3.63</x-m>
+		<x-m> 3.64</x-m>
 		<y-m>17.01</y-m>
 		<z-m> 1.06</z-m>        
 	</offsets>
@@ -152,7 +152,7 @@
 	<path>Aircraft/737-800/Models/lights/flash.xml</path>
 	<name>flashleft</name>     
 	<offsets>
-		<x-m> 3.63</x-m>
+		<x-m> 3.64</x-m>
 		<y-m>-17.01</y-m>
 		<z-m> 1.06</z-m>     
 	</offsets>
@@ -162,7 +162,7 @@
 	<path>Aircraft/737-800/Models/lights/flash.xml</path>
 	<name>flashtail</name>     
 	<offsets>
-		<x-m> 18.62</x-m>
+		<x-m> 18.64</x-m>
 		<y-m>0.0</y-m>
 		<z-m> 2.06</z-m>     
 	</offsets>
