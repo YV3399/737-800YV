@@ -7,7 +7,7 @@ MATERIAL "ac3dmat1.018" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0.3 0.3 0.3  spec
 MATERIAL "Material.001" rgb 0.8 0.8 0.8  amb 0.5 0.5 0.5  emis 0 0 0  spec 1 1 1  shi 32  trans 0
 MATERIAL "Lettering" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0.7 0.7 0.55  spec 1 1 1  shi 12  trans 0
 OBJECT world
-kids 74
+kids 75
 OBJECT poly
 name "MACH.1"
 texture "digits2.png"
@@ -16865,4 +16865,25 @@ refs 4
 3 0 0
 2 0 0
 1 0 0
+kids 0
+OBJECT poly
+name "VS.ledminus"
+loc 0.0247103 0.0778781 -0.0870095
+data 10
+enginepane
+texture "digits2.png"
+crease 30.000002
+numvert 4
+0 -0.0300562 0.0213979
+0 -0.0300562 0.0153133
+0 -0.0348616 0.0213979
+0 -0.0348616 0.0153133
+numsurf 1
+SURF 0x0
+mat 3
+refs 4
+3 0.355534 0.130147
+1 0.355534 0.178562
+0 0.298288 0.178562
+2 0.298288 0.130147
 kids 0

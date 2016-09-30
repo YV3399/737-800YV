@@ -31,9 +31,33 @@ setlistener("/sim/signals/fdm-initialized", func {
   	setprop("/it-autoflight/settings/target-speed-kt", 100);
 });
 
-setprop("/it-autoflight/settings/target-altitude-ft-actual", 10000);
-setprop("/it-autoflight/settings/vertical-speed-fpm", 0);
+	setprop("/it-autoflight/ap_master", 0);
+	setprop("/it-autoflight/ap_master2", 0);
+	setprop("/it-autoflight/at_master", 0);
+	setprop("/it-autoflight/fd_master", 0);
+	setprop("/it-autoflight/fd_master2", 0);
+	setprop("/it-autoflight/settings/target-speed-kt", 100);
+	setprop("/it-autoflight/settings/target-mach", 0.68);
+	setprop("/it-autoflight/settings/heading-bug-deg", 360);
+	setprop("/it-autoflight/settings/target-altitude-ft", 10000);
+	setprop("/it-autoflight/settings/target-altitude-ft-actual", 10000);
+	setprop("/it-autoflight/settings/vertical-speed-fpm", 0);
+	setprop("/it-autoflight/settings/vertical-speed-fpm-reduced", 0);
+	setprop("/it-autoflight/loc1", 0);
+	setprop("/it-autoflight/app1", 0);
+	setprop("/it-autoflight/aplatmode", 0);
+	setprop("/it-autoflight/apvertmode", 3);
+	setprop("/it-autoflight/thr", 1);
+	setprop("/it-autoflight/idle", 0);
+	setprop("/it-autoflight/clb", 0);
+	setprop("/it-autoflight/autothrarm", 0);
+	setprop("/it-autoflight/apthrmode", 0);
+	setprop("/it-autoflight/apthrmode2", 0);
 
+setlistener("/it-autoflight/settings/vertical-speed-fpm", func {
+	setprop("/it-autoflight/settings/vertical-speed-fpm-reduced", getprop("/it-autoflight/settings/vertical-speed-fpm") / 100);
+});
+	
 var timerstall = maketimer(5, func(){
 
 	

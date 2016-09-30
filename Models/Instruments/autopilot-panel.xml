@@ -421,53 +421,108 @@
     </animation>
 
 
+<!-- VS-->
 
-    <animation>
+<animation>
+        <type>select</type>
+        <object-name>VS.ledminus</object-name>
+	<object-name>VS.1neg</object-name>
+	<object-name>VS.2neg</object-name>
+	<object-name>VS.3neg</object-name>
+	<object-name>VS.4neg</object-name>
+        <condition>
+            <less-than>
+                <property>it-autoflight/settings/vertical-speed-fpm</property>
+                <value>0</value>
+            </less-than>
+        </condition>
+    </animation>
+
+
+
+<animation>
         <type>textranslate</type>
-        <object-name>VS.1</object-name>
-        <property>/it-autoflight/settings/vertical-speed-fpm</property>
-
-        <factor>0.1</factor>
-        <step>1</step>
+        <object-name>VS.4neg</object-name>
+        <property>it-autoflight/settings/vertical-speed-fpm</property>
+        <factor>-0.0001</factor>
+	<bias>999</bias>
+        <step>1000</step>
         <axis>
             <x>0</x>
             <y>1</y>
             <z>0</z>
         </axis>
     </animation>
+   
 
-    <animation>
+  
+ <animation>
         <type>textranslate</type>
-        <object-name>VS.2</object-name>
-        <property>/it-autoflight/settings/vertical-speed-fpm</property>
-
-        <factor>0.01</factor>
-        <step>10</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>textranslate</type>
-        <object-name>VS.3</object-name>
-        <property>/it-autoflight/settings/vertical-speed-fpm</property>
+        <object-name>VS.3neg</object-name>
+        <property>it-autoflight/settings/vertical-speed-fpm</property>
+	 <!--bias>10</bias-->
         <factor>0.001</factor>
-        <step>100</step>
+        <step>-100</step>
         <axis>
             <x>0</x>
-            <y>1</y>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<animation>
+        <type>textranslate</type>
+        <object-name>VS.2neg</object-name>
+        <property>it-autoflight/settings/vertical-speed-fpm</property>
+	<!--bias>1</bias-->
+        <factor>0.01</factor>
+        <step>-10</step>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
             <z>0</z>
         </axis>
     </animation>
 
     <animation>
+        <type>textranslate</type>
+        <object-name>VS.1neg</object-name>
+        <property>it-autoflight/settings/vertical-speed-fpm</property>
+        <factor>0.1</factor>
+        <step>-1</step>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+  
+
+
+
+
+<animation>
+        <type>select</type>
+        <object-name>VS.1</object-name>
+        <object-name>VS.2</object-name>
+        <object-name>VS.3</object-name>
+        <object-name>VS.4</object-name>
+        <condition>
+            <greater-than-equals>
+                <property>it-autoflight/settings/vertical-speed-fpm</property>
+                <value>0</value>
+            </greater-than-equals>
+        </condition>
+    </animation>
+
+
+
+
+<animation>
         <type>textranslate</type>
         <object-name>VS.4</object-name>
-        <property>/it-autoflight/settings/vertical-speed-fpm</property>
-
+        <property>it-autoflight/settings/vertical-speed-fpm</property>
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
@@ -479,38 +534,9 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>VS.1neg</object-name>
-        <property>/it-autoflight/settings/vertical-speed-fpm</property>
-
-        <factor>-0.1</factor>
-        <step>1</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>textranslate</type>
-        <object-name>VS.2neg</object-name>
-        <property>/it-autoflight/settings/vertical-speed-fpm</property>
-
-        <factor>-0.01</factor>
-        <step>10</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>textranslate</type>
-        <object-name>VS.3neg</object-name>
-        <property>/it-autoflight/settings/vertical-speed-fpm</property>
-        <bias>99.99</bias>
-        <factor>-0.001</factor>
+        <object-name>VS.3</object-name>
+        <property>it-autoflight/settings/vertical-speed-fpm</property>
+        <factor>0.001</factor>
         <step>100</step>
         <axis>
             <x>0</x>
@@ -521,164 +547,10 @@
 
     <animation>
         <type>textranslate</type>
-        <object-name>VS.4neg</object-name>
-        <property>/it-autoflight/settings/vertical-speed-fpm</property>
-        <bias>999.99</bias>
-        <factor>-0.0001</factor>
-        <step>1000</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>textranslate</type>
-        <object-name>VS.5neg</object-name>
-        <condition>
-            <less-than>
-                <property>/it-autoflight/settings/vertical-speed-fpm</property>
-                <value>0</value>
-            </less-than>
-        </condition>
-        <bias>1</bias>
-        <factor>0.1</factor>
-        <step>1</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-    <animation>
-        <type>textranslate</type>
-        <object-name>VS.5</object-name>
-        <condition>
-            <greater-than-equal>
-                <property>/it-autoflight/settings/vertical-speed-fpm</property>
-                <value>0</value>
-            </greater-than-equal>
-        </condition>
-        <bias>2</bias>
-        <factor>0.1</factor>
-        <step>1</step>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <name>VSpos</name>
-        <object-name>VS.1</object-name>
         <object-name>VS.2</object-name>
-        <object-name>VS.3</object-name>
-        <object-name>VS.4</object-name>
-        <object-name>VS.5</object-name>
-    </animation>
-    <animation>
-        <name>VSneg</name>
-        <object-name>VS.1neg</object-name>
-        <object-name>VS.2neg</object-name>
-        <object-name>VS.3neg</object-name>
-        <object-name>VS.4neg</object-name>
-        <object-name>VS.5neg</object-name>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>VSneg</object-name>
-        <condition>
-          <and>
-            <equals>
-              <property>/it-autoflight/settings/apvertmode</property>
-              <value>1</value>
-            </equals>
-            <less-than>
-                <property>/it-autoflight/settings/vertical-speed-fpm</property>
-                <value>0</value>
-            </less-than>
-          </and>
-        </condition>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>VSpos</object-name>
-        <condition>
-          <and>
-            <equals>
-              <property>/it-autoflight/settings/apvertmode</property>
-              <value>1</value>
-            </equals>
-            <not>
-              <less-than>
-                  <property>/it-autoflight/settings/vertical-speed-fpm</property>
-                  <value>0</value>
-              </less-than>
-            </not>
-          </and>
-        </condition>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>VS.4</object-name>
-        <condition>
-            <and>
-                <equals>
-                   <property>/it-autoflight/settings/apvertmode</property>
-              <value>1</value>
-                </equals>
-                <greater-than>
-                    <property>/it-autoflight/settings/vertical-speed-fpm</property>
-                    <value>999</value>
-                </greater-than>
-            </and>
-        </condition>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>VS.4neg</object-name>
-        <condition>
-            <and>
-                <equals>
-                    <property>/it-autoflight/settings/apvertmode</property>
-              <value>1</value>
-                </equals>
-                <less-than>
-                    <property>/it-autoflight/settings/vertical-speed-fpm</property>
-                    <value>-999</value>
-                </less-than>
-            </and>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>VS.5</object-name>
-        <expression>
-            <sum>
-                <product>
-                    <floor>
-                        <div>
-                            <log10>
-                                <max>
-                                    <property>/it-autoflight/settings/vertical-speed-fpm</property>
-                                    <value>1</value>
-                                </max>
-                            </log10>
-                            <value>
-                                3
-                            </value>
-                        </div>
-                    </floor>
-                    <value>-0.0065</value>
-                </product>
-                <value>0.0065</value>
-            </sum>
-        </expression>
-
+        <property>it-autoflight/settings/vertical-speed-fpm</property>
+        <factor>0.01</factor>
+        <step>10</step>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -687,38 +559,18 @@
     </animation>
 
     <animation>
-        <type>translate</type>
-        <object-name>VS.5neg</object-name>
-        <expression>
-            <sum>
-                <product>
-                    <floor>
-                        <div>
-                            <log10>
-                                <max>
-                                    <abs>
-                                        <property>/it-autoflight/settings/vertical-speed-fpm</property>
-                                    </abs>
-                                    <value>1</value>
-                                </max>
-                            </log10>
-                            <value>
-                                3
-                            </value>
-                        </div>
-                    </floor>
-                    <value>-0.0065</value>
-                </product>
-                <value>0.0065</value>
-            </sum>
-        </expression>
-
+        <type>textranslate</type>
+        <object-name>VS.1</object-name>
+        <property>it-autoflight/settings/vertical-speed-fpm</property>
+        <factor>0.1</factor>
+        <step>1</step>
         <axis>
             <x>0</x>
             <y>1</y>
             <z>0</z>
         </axis>
     </animation>
+
 
     <animation>
         <type>textranslate</type>
