@@ -193,9 +193,11 @@
   <object-name>no1thrarm</object-name>
   <object-name>no1revarm</object-name> 
    <object-name>No1-knob</object-name>
-  <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
-  <factor>-48</factor>
-  <offset-deg>30</offset-deg>   
+  <property>/controls/engines/engine[0]/throttle</property>
+<interpolation>
+<entry><ind>0</ind><dep>40</dep></entry>
+<entry><ind>1</ind><dep>-10</dep></entry>
+</interpolation>
   <center>
    <x-m>0.68</x-m>
    <y-m>0.09</y-m>
@@ -233,9 +235,11 @@
   <object-name>no2thrarm</object-name>
   <object-name>no2revarm</object-name> 
    <object-name>No2-knob</object-name>
-  <property>/fdm/jsbsim/fcs/throttle-pos-norm[1]</property>
-  <factor>-48</factor>
-  <offset-deg>30</offset-deg>   
+  <property>/controls/engines/engine[1]/throttle</property>
+<interpolation>
+<entry><ind>0</ind><dep>40</dep></entry>
+<entry><ind>1</ind><dep>-10</dep></entry>
+</interpolation> 
   <center>
    <x-m>0.68</x-m>
    <y-m>-0.09</y-m>
@@ -299,8 +303,24 @@
   </axis>
  </animation>
 
-
-
+<!-- Disabled since I can't find the center coords -->
+	<!--animation>
+		<type>rotate</type>
+		<object-name>trimwheellh</object-name>   
+		<object-name>trimwheelrh</object-name>   
+		<property>/controls/flight/elevator-trim</property>
+		<factor>-10500</factor>
+		<center>
+			<x-m>0.68</x-m>
+			<y-m>0</y-m>
+			<z-m>0.65</z-m>
+		</center>
+		<axis>
+		  <x>0.0</x>
+		  <y>1.0</y>
+		  <z>0.0</z>
+		</axis>
+	</animation-->
 
 
   <animation>
@@ -772,10 +792,12 @@
       
      <animation>
         <type>pick</type>
-        <object-name>handle</object-name>         
+        <object-name>handle</object-name>
+		<object-name>flaparm</object-name>		
         <visible>1</visible>
         <action>
          <button>0</button>
+         <button>4</button>
             <repeatable>true</repeatable>
         <interval-sec>1.0</interval-sec>           
        <binding>
@@ -793,10 +815,12 @@
 
     <animation>
         <type>pick</type>
-        <object-name>handle</object-name>         
+        <object-name>handle</object-name>    
+		<object-name>flaparm</object-name>
         <visible>1</visible>
         <action>
          <button>1</button>
+         <button>3</button>
             <repeatable>true</repeatable>
         <interval-sec>1.0</interval-sec>           
        <binding>
@@ -811,109 +835,34 @@
   </mod-up> 
       </action> 
     </animation> 
-
-   <animation>
-        <type>pick</type>
-        <object-name>sbhandle</object-name>
-        <object-name>sbhandle</object-name>
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/controls/flight/speedbrake-lever</property>             
-       <step>1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-       <binding>
-         <condition>             
-                <equals>
-                   <property>/controls/flight/speedbrake-lever</property>
-                    <value type="int">1</value>
-                </equals>                
-         </condition> 
-         <command>property-assign</command>
-          <property>/controls/flight/autospeedbrakes-armed</property>
-          <value type="bool">true</value>
-          </binding> 
-          <binding>
-         <condition>             
-                <equals>
-                   <property>/controls/flight/speedbrake-lever</property>
-                    <value type="int">2</value>
-                </equals>                
-         </condition> 
-         <command>property-assign</command>
-          <property>/controls/flight/autospeedbrakes-armed</property>
-          <value type="bool">false</value>
-          </binding>
-          <binding>
-         <condition>             
-                <equals>
-                   <property>/controls/flight/speedbrake-lever</property>
-                    <value type="int">2</value>
-                </equals>                
-         </condition> 
-         <command>property-assign</command>
-          <property>/controls/flight/speedbrake</property>
-          <value type="double">1</value>
-          </binding>     
-      </action> 
-    </animation>
     
     <animation>
         <type>pick</type>
         <object-name>sbhandle</object-name>
-        <object-name>sbhandle</object-name>
+		<object-name>sbarm</object-name>
         <visible>1</visible>
-        <action>
-         <button>1</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-adjust</command>
-        <property>/controls/flight/speedbrake-lever</property>             
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding> 
-       <binding>
-         <condition>             
-                <equals>
-                   <property>/controls/flight/speedbrake-lever</property>
-                    <value type="int">1</value>
-                </equals>                
-         </condition> 
-         <command>property-assign</command>
-          <property>/controls/flight/autospeedbrakes-armed</property>
-          <value type="bool">true</value>
-          </binding> 
-          <binding>
-         <condition>             
-                <equals>
-                   <property>/controls/flight/speedbrake-lever</property>
-                    <value type="int">0</value>
-                </equals>                
-         </condition> 
-         <command>property-assign</command>
-          <property>/controls/flight/autospeedbrakes-armed</property>
-          <value type="bool">false</value>
-          </binding>
-           <binding>
-         <condition>             
-                <less-than>
-                   <property>/controls/flight/speedbrake-lever</property>
-                    <value type="int">2</value>
-                </less-than>                
-         </condition> 
-         <command>property-assign</command>
-          <property>/controls/flight/speedbrake</property>
-          <value type="double">0</value>
-          </binding>                  
-      </action> 
+		<action>
+			<button>0</button>
+			<button>4</button>
+			<binding>
+				<command>property-adjust</command>
+				<property>b737/controls/flight/spoilers-lever-pos</property>
+				<step type="double">1</step>
+				<min type="double">0</min>
+				<max type="double">6</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>3</button>
+			<binding>
+				<command>property-adjust</command>
+				<property>b737/controls/flight/spoilers-lever-pos</property>
+				<step type="double">-1</step>
+				<min type="double">0</min>
+				<max type="double">6</max>
+			</binding>
+		</action>
     </animation>  
     
      <animation>
