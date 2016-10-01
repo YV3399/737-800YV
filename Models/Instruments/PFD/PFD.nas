@@ -159,9 +159,9 @@ var canvas_PFD = {
 		var track = getprop("/orientation/track-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
 		var air_ground = getprop("/b737/sensors/air-ground");
-		var apAlt = getprop("autopilot/settings/target-altitude-mcp-ft");
-		var apSpd = getprop("autopilot/settings/target-speed-kt");
-		var apHdg = getprop("autopilot/settings/heading-bug-deg");
+		var apAlt = getprop("it-autoflight/settings/target-altitude-ft-actual");
+		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
+		var apHdg = getprop("it-autoflight/settings/heading-bug-deg");
 		var metricMode = getprop("instrumentation/efis[0]/inputs/alt-meters");
 		var baroStdSet = getprop("instrumentation/efis[0]/inputs/setting-std");
 		var baroPreSetShow = getprop("instrumentation/efis[0]/inputs/baro-previous-show");
@@ -287,17 +287,17 @@ var canvas_PFD = {
 		me["compassSNmbr6"].setText(sprintf("%0.0f", SNmbr6));
 			
 		# Flight director
-		if (getprop("/instrumentation/flightdirector/fd-left-on") == 1) {
-			if (getprop("/instrumentation/flightdirector/fd-left-bank") != nil) {
-				var fdRoll = (roll-getprop("/instrumentation/flightdirector/fd-left-bank"))*3;
+		if (getprop("/it-autoflight/fd_master") == 1) {
+			if (getprop("/it-autoflight/fd/roll-bar") != nil) {
+				var fdRoll = (roll-getprop("/it-autoflight/fd/roll-bar"))*3;
 				if (fdRoll > 200)
 					fdRoll = 200;
 				elsif (fdRoll < -200)
 					fdRoll = -200;
 				me["fdX"].setTranslation(-fdRoll,0);
 			}
-			if (getprop("/instrumentation/flightdirector/fd-left-pitch") != nil) {
-				var fdPitch = (pitch-getprop("/instrumentation/flightdirector/fd-left-pitch"))*11.4625;
+			if (getprop("/it-autoflight/fd/pitch-bar") != nil) {
+				var fdPitch = (pitch-getprop("/it-autoflight/fd/pitch-bar"))*11.4625;
 				if (fdPitch > 200)
 					fdPitch = 200;
 				elsif (fdPitch < -200)
@@ -589,9 +589,9 @@ var canvas_PFD = {
 					me["vertSpdDn"].hide();
 				}
 			}
-			if (getprop("instrumentation/pfd/target-vs") != nil and getprop("autopilot/internal/VNAV-VS")) {
+			if (getprop("/it-autoflight/apvertmode") == 1) {
 				me["vsPointer"].show();
-				me["vsPointer"].setTranslation(0,-getprop("instrumentation/pfd/target-vs"));
+				me["vsPointer"].setTranslation(getprop("/instrumentation/pfd/target-vs"));
 			} else {
 				me["vsPointer"].hide();
 			}
@@ -786,7 +786,7 @@ var canvas_PFD = {
 		var air_ground = getprop("/b737/sensors/air-ground");
 		var flaps = getprop("/controls/flight/flaps");
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
-		var apSpd = getprop("autopilot/settings/target-speed-kt");
+		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
 		var dh = getprop("instrumentation/mk-viii/inputs/arinc429/decision-height");
 		
 		var v1 = getprop("instrumentation/fmc/speeds/v1-kt") or 0;
@@ -968,9 +968,9 @@ var canvas_PFD = {
 			me["ilsId"].setText(sprintf("%s /%03d°",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
 		me["dhText"].setText(sprintf("%4.0f",dh));
-		me["selHdgText"].setText(sprintf("%03d",getprop("autopilot/settings/heading-bug-deg")));
-		if (getprop("/autopilot/internal/SPD-MACH")) {
-			me["speedText"].setText(sprintf(".%2.0f",getprop("/autopilot/settings/target-speed-mach")*100));
+		me["selHdgText"].setText(sprintf("%03d",getprop("it-autoflight/settings/heading-bug-deg")));
+		if (getprop("/it-autoflight/apthrmode")) {
+			me["speedText"].setText(sprintf(".%2.0f",getprop("/it-autoflight/settings/target-mach")*100));
 		} else {
 			me["speedText"].setText(sprintf("%3.0f",apSpd));
 		}
