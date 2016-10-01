@@ -262,6 +262,7 @@
 	    <umin>-0.30</umin>
 		<umax>0.30</umax>
 		<kp>0.04</kp>
+		<kp-vorloc>0.04</kp-vorloc>
 	  </roll>
 	  <pitch>
 	    <umin>-0.21</umin>
