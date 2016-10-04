@@ -7,9 +7,10 @@
 
     <systems>
     	
-      <electrical>
-        <path>Aircraft/Generic/generic-electrical.xml</path>
-      </electrical>
+	<!-- Disable the generic electrical system -->
+	<electrical>
+		<path></path>
+	</electrical>
 
       <!--<autopilot>
         <path>Aircraft/737-800/Systems/737-afds.xml</path>
@@ -159,10 +160,17 @@
           <label>737-800</label>
           <enabled type="bool">true</enabled>
           <item>
-            <label>Autostart</label>
+            <label>QuickStartup</label>
             <binding>
               <command>nasal</command>
               <script>boeing737.autostart()</script>
+            </binding>
+          </item>
+          <item>
+            <label>QuickShutdown</label>
+            <binding>
+              <command>nasal</command>
+              <script>boeing737.shutdown()</script>
             </binding>
           </item>
 		  <item>
@@ -254,6 +262,15 @@
     <yokes-visible type="bool">1</yokes-visible>
 
   </sim>
+  
+        <lighting>
+			<interior type="double">0</interior>
+			<cockpit type="bool">false</cockpit>
+			<cones type="bool">true</cones>
+			<dome-norm type="double">0</dome-norm>
+			<overhead-panel-norm type="double">0.8</overhead-panel-norm>
+			<main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
+		</lighting>
   
   <it-autoflight>
     <settings>
@@ -517,25 +534,6 @@
        <app type="bool">0</app>
        <vorloc type="bool">0</vorloc>
      </buttons>
-	
-<multiplay>
-    <generic>
-      <float n="0" alias="/engines/engine[0]/reverser-pos-norm"/>
-      <float n="1" alias="/engines/engine[1]/reverser-pos-norm"/>
-      <float n="2" alias="/controls/flight/aileron"/>
-      <float n="3" alias="/controls/flight/elevator"/>
-      <float n="4" alias="/controls/flight/elevator-trim"/>
-      <float n="5" alias="/controls/cabin-door/position-norm"/>
-      <float n="6" alias="/surface-positions/speedbrake-pos-norm"/>
-      <int n="0" alias="/systems/electrical/outputs/strobe"/>
-      <int n="1" alias="/systems/electrical/outputs/beacon"/>
-      <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
-      <int n="3" alias="/systems/electrical/outputs/landing-light[0]"/>
-      <int n="4" alias="/systems/electrical/outputs/landing-light[1]"/>
-      <int n="5" alias="/systems/electrical/outputs/recog-lights"/>
-      <int n="6" alias="/systems/electrical/outputs/nav-lights"/>
-    </generic>
-  </multiplay>
 
                 <switches>
 			<!-- Smoking is bad :P -->
@@ -731,6 +729,9 @@
   </b737>
 
   <systems>
+    <apu>
+	  <rpm type="string">0</rpm>
+	</apu>
     <pitot n="1">
       <serviceable type="bool">true</serviceable>
     </pitot>
@@ -770,19 +771,11 @@
 		<file>Aircraft/737-800/Nasal/ground-services.nas</file>      
 		<file>Aircraft/737-800/Nasal/liveries.nas</file>
 		<file>Aircraft/737-800/Nasal/systems.nas</file>
-                <file>Aircraft/737-800/Nasal/registration.nas</file>
-                <file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
-
+		<file>Aircraft/737-800/Nasal/registration.nas</file>
+		<file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
+		<file>Aircraft/737-800/Nasal/ITAF_PFD_mode-converter.nas</file>
+		<file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
     </boeing737>
-
-                <lighting>
-			<interior type="double">0</interior>
-			<cockpit type="bool">false</cockpit>
-			<cones type="bool">true</cones>
-			<dome-norm type="double">0</dome-norm>
-			<overhead-panel-norm type="double">0.8</overhead-panel-norm>
-			<main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
-		</lighting>
 		
     <!--<autopilot737>
       <file>Aircraft/737-800/Nasal/autopilot.nas</file>
@@ -898,7 +891,7 @@
         <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
       </configuration-module>
       <voice>
-                <file-prefix type="string">Aircraft/737-800/Sounds/gpws/</file-prefix>
+                <file-prefix type="string">Aircraft/737-800/Sounds/gpws</file-prefix>
      </voice>
 <inputs>                            <!-- Module I/O -->
         <arinc429>

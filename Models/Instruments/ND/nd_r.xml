@@ -4,6 +4,19 @@
 
 <path>nd_r.ac</path>
 
+	<!-- Power on/off -->
+	<animation>
+		<name>Power on/off</name>
+		<type>select</type>
+		<object-name>Off</object-name>
+		<condition>
+			<less-than>
+				<property>systems/electrical/bus/dcL</property>
+				<value>15</value>
+			</less-than>
+		</condition>
+	</animation>
+
 <animation>
 	<type>pick</type>
 	<object-name>ndScreenR</object-name>

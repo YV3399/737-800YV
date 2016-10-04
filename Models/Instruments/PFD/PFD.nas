@@ -1,6 +1,7 @@
 # ==============================================================================
-# Original Boeing 747-400 pfd by Gijs de Rooy
+# Original Boeing 747-400 PFD by Gijs de Rooy
 # Modified for 737-800 by Michael Soitanen
+# Modified for IT-AUTOFLIGHT by Joshua Davidson (it0uchpods/411)
 # ==============================================================================
 
 var roundToNearest = func(n, m) {
@@ -287,9 +288,11 @@ var canvas_PFD = {
 		me["compassSNmbr6"].setText(sprintf("%0.0f", SNmbr6));
 			
 		# Flight director
-		if (getprop("/it-autoflight/fd_master") == 1) {
+		var itaffd1x = getprop("/it-autoflight/fd_master");
+		var itaffd2x = getprop("/it-autoflight/fd_master2");
+		if (itaffd1x or itaffd2x) {
 			if (getprop("/it-autoflight/fd/roll-bar") != nil) {
-				var fdRoll = (roll-getprop("/it-autoflight/fd/roll-bar"))*3;
+				var fdRoll = (roll-getprop("/it-autoflight/fd/roll-bar"))*0.5;
 				if (fdRoll > 200)
 					fdRoll = 200;
 				elsif (fdRoll < -200)
@@ -297,7 +300,7 @@ var canvas_PFD = {
 				me["fdX"].setTranslation(-fdRoll,0);
 			}
 			if (getprop("/it-autoflight/fd/pitch-bar") != nil) {
-				var fdPitch = (pitch-getprop("/it-autoflight/fd/pitch-bar"))*11.4625;
+				var fdPitch = (pitch-getprop("/it-autoflight/fd/pitch-bar"))*5.5;
 				if (fdPitch > 200)
 					fdPitch = 200;
 				elsif (fdPitch < -200)
@@ -589,12 +592,6 @@ var canvas_PFD = {
 					me["vertSpdDn"].hide();
 				}
 			}
-			if (getprop("/it-autoflight/apvertmode") == 1) {
-				me["vsPointer"].show();
-				me["vsPointer"].setTranslation(getprop("/instrumentation/pfd/target-vs"));
-			} else {
-				me["vsPointer"].hide();
-			}
 		}
 		radioAlt = radioAlt - 7.5;
 		if (radioAlt < 2500) {
@@ -714,6 +711,12 @@ var canvas_PFD = {
 	},
 	update_ap_modes: func()
 	{
+		# Define ITAF stuff
+		var itafat = getprop("/it-autoflight/at_master");
+		var itafap1 = getprop("/it-autoflight/ap_master");
+		var itafap2 = getprop("/it-autoflight/ap_master2");
+		var itaffd1 = getprop("/it-autoflight/fd_master");
+		var itaffd2 = getprop("/it-autoflight/fd_master2");
 		# Modes
 		var afds = getprop("/autopilot/display/afds-mode[0]");
 		if (afds == "SINGLE CH") {
@@ -763,6 +766,24 @@ var canvas_PFD = {
 			me["spdModeChange"].show();
 		} else {
 			me["spdModeChange"].hide();
+		}
+		
+		if (itafap1 or itafap2 or itaffd1 or itaffd2) {
+			me["rollMode"].show();
+			me["rollArmMode"].show();
+			me["pitchMode"].show();
+			me["pitchArmMode"].show();
+		} else {
+			me["rollMode"].hide();
+			me["rollArmMode"].hide();
+			me["pitchMode"].hide();
+			me["pitchArmMode"].hide();
+		}
+		
+		if (itafat) {
+			me["atMode"].show();
+		} else {
+			me["atMode"].hide();
 		}
 
 		var rollChange = getprop("/autopilot/display/roll-mode-rectangle");

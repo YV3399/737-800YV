@@ -3,6 +3,26 @@
 <PropertyList>
 
  <path>autopilot-panel.ac</path>
+
+ 	<!-- Power on/off -->
+	<animation>
+		<name>Power on/off</name>
+		<type>select</type>
+		<object-name>Off</object-name>
+		<condition>
+			<and>
+			<less-than>
+				<property>systems/electrical/bus/dcL</property>
+				<value>15</value>
+			</less-than>
+			<less-than>
+				<property>systems/electrical/bus/dcR</property>
+				<value>15</value>
+			</less-than>
+			</and>
+		</condition>
+	</animation>
+ 
     <model>
         <name>efis-control-panel-left</name>
         <path>efis-control-panel-left.xml</path>
@@ -91,66 +111,75 @@
             <z>0</z>
         </axis>
     </animation> -->  
-
-         <animation>
-   	<type>textranslate</type>
-   	<object-name>CMD-A</object-name>
-	 <property>/it-autoflight/ap_master</property>
-   	<factor>-0.125</factor>
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
+  
+       <animation>
+   	<type>select</type>
+   	 <object-name>CMD-A2</object-name>
+	 <condition>
+			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
+		<equals>
+			<property>/it-autoflight/ap_master</property>
+			<value>1</value>
+		</equals>
+		</and>
+	</condition>
  	</animation>
-
-         <animation>
-    <type>textranslate</type>
-    <object-name>CMD-B</object-name>
-   <property>/it-autoflight/ap_master2</property>
-    <factor>-0.125</factor>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-       <z>0</z>
-    </axis>
-  </animation>
-
-    <animation>
-    <type>textranslate</type>
-    <object-name>L-NAV</object-name>
-   <property>/it-autoflight/aplatmode</property>
-    <factor>-0.125</factor>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-       <z>0</z>
-    </axis>
-  </animation>
+	
+       <animation>
+   	<type>select</type>
+   	 <object-name>CMD-B2</object-name>
+	 <condition>
+			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
+		<equals>
+			<property>/it-autoflight/ap_master2</property>
+			<value>1</value>
+		</equals>
+		</and>
+	</condition>
+ 	</animation>
 
   
        <animation>
    	<type>select</type>
    	 <object-name>ALT-HLD2</object-name>
 	 <condition>
+			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
 		<equals>
-			<property>/it-autoflight/apvertset</property>
+			<property>/it-autoflight/apvertmode</property>
 			<value>0</value>
 		</equals>
+		</and>
 	</condition>
  	</animation>
-
-    <animation>
-        <type>textranslate</type>
-        <object-name>V/S</object-name>
-		<property>/it-autoflight/apvertmode</property>
-        <factor>-0.125</factor>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
+	
+       <animation>
+   	<type>select</type>
+   	 <object-name>V/S2</object-name>
+	 <condition>
+			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
+		<equals>
+			<property>/it-autoflight/apvertmode</property>
+			<value>1</value>
+		</equals>
+		</and>
+	</condition>
+ 	</animation>
 
 
 	
@@ -158,10 +187,16 @@
 		<type>select</type>
 		<object-name>HDG-HLD2</object-name>
 		<condition>
+			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
 			<equals>
 				<property>/it-autoflight/aplatmode</property>
 				<value>0</value>
 			</equals>
+			</and>
 		</condition>
 	</animation>
 	
@@ -169,10 +204,16 @@
 		<type>select</type>
 		<object-name>L-NAV2</object-name>
 		<condition>
+			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
 			<equals>
 				<property>/it-autoflight/aplatmode</property>
 				<value>1</value>
 			</equals>
+			</and>
 		</condition>
 	</animation>
 
@@ -180,6 +221,11 @@
 		<type>select</type>
 		<object-name>APP2</object-name>
 		<condition>
+			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
 			<or>
 			<equals>
 				<property>/it-autoflight/apvertmode</property>
@@ -190,6 +236,7 @@
 				<value>1</value>
 			</equals>
 			</or>
+			</and>
 		</condition>
 	</animation>
 
@@ -197,12 +244,18 @@
 		<type>select</type>
 		<object-name>LVL-CHG2</object-name>
 		<condition>
+			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
 			<or>
 			<equals>
 				<property>/it-autoflight/apvertmode</property>
 				<value>4</value>
 			</equals>
 			</or>
+			</and>
 		</condition>
 	</animation>
 	
@@ -229,6 +282,10 @@
 				<property>/it-autoflight/apvertmode</property>
 				<value>2</value>
 			</equals>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
 			</and>
 		</condition>
 	</animation>
@@ -238,14 +295,18 @@
         <object-name>SPEED-2</object-name>
         <condition>
 			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
 			<equals>
 				<property>/it-autoflight/at_master</property>
 				<value>1</value>
 			</equals>
-			<equals>
+			<not-equals>
 				<property>/it-autoflight/apthrmode2</property>
-				<value>0</value>
-			</equals>
+				<value>2</value>
+			</not-equals>
 			</and>
 		</condition>
     </animation>
@@ -255,14 +316,18 @@
         <object-name>N1-2</object-name>
         <condition>
 			<and>
+			<greater-than-equals>
+				<property>/systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</greater-than-equals>
 			<equals>
 				<property>/it-autoflight/at_master</property>
 				<value>1</value>
 			</equals>
-			<not-equals>
+			<equals>
 				<property>/it-autoflight/apthrmode2</property>
-				<value>0</value>
-			</not-equals>
+				<value>2</value>
+			</equals>
 			</and>
 		</condition>
     </animation>
@@ -864,7 +929,7 @@
    <repeatable>false</repeatable>
     <binding>
       <command>property-assign</command>
-      <property>/it-autoflight/apvertset</property>
+		<property>/it-autoflight/apvertset</property>
 	  <value>0</value>
     </binding>
   </action>
@@ -880,7 +945,7 @@
    <repeatable>false</repeatable>
     <binding>
       <command>property-assign</command>
-      <property>/it-autoflight/apvertset</property>
+		<property>/it-autoflight/apvertset</property>
 	  <value>0</value>
     </binding>
   </action>
@@ -895,7 +960,7 @@
 	    <repeatable>true</repeatable>
             <binding>
 				<command>property-assign</command>
-				<property>/it-autoflight/apvertset</property>
+		<property>/it-autoflight/apvertset</property>
 				<value>1</value>
 			</binding>
    </action>

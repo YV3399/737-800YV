@@ -92,8 +92,35 @@
 		<property>it-autoflight/ap_mastersw2</property>
 		<value>0</value>
 		</binding>
+    <binding>
+        <command>property-assign</command>
+        <property>/controls/flight/apoff</property>
+        <value>1</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command>property-assign</command>
+            <property>/controls/flight/apoff</property>
+            <value>0</value>
+        </binding>
+    </mod-up>
  </action>
  </animation>
+ 
+<animation>
+  <type>translate</type>
+  <object-name>apdisengage</object-name>
+  <property>controls/flight/apoff</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>0.000</dep></entry>
+    <entry><ind>1</ind><dep>0.003</dep></entry>
+  </interpolation>
+  <axis>
+    <x>0</x>
+    <y>-1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
 	<animation>
 		<type>pick</type>
