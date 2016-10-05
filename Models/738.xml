@@ -22,7 +22,6 @@
     </offsets>
   </model>
   
-
   <nasal n="0">
     <load>
       var liveries = getprop("/sim/liveries-path");
@@ -120,11 +119,6 @@
     </offsets>
   </model>
   
-
-
-
-
-
 <model n="110">
     <name>Pushback</name>
     <path>Models\Airport\Pushback\Goldhofert.xml</path>
@@ -247,15 +241,7 @@
     <texture-prop>texture</texture-prop>
   <texture>737-800.png</texture>  
    </animation>
- 
-<animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>windowslh</object-name>
-    <object-name>windowsrh</object-name>
-  </animation>
-	
+ 	
 <!-- Lights -->
 	<animation>
 		<name>Tail logo light illumination</name>
@@ -425,7 +411,7 @@
 	</offsets>
 </model>
 
-<!-- Smoke and Fire -->
+<!-- Engine Fire -->
 
 <model>
  <path>Aircraft/737-800/Models/Effects/fire.xml</path>
@@ -480,14 +466,13 @@
     <path>Aircraft/737-800/Models/Effects/Contrail/contrail.xml</path>
     <offsets>
 		<x-m> 3.31055</x-m>
-		<y-m> 4.7723</y-m>
+		<y-m> 4.7713</y-m>
 		<z-m>-1.28753</z-m> 
       <roll-deg>    0 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
-
 
 <!-- Fuel Truck -->
 
@@ -537,7 +522,6 @@
 		<heading-deg>160</heading-deg>
 	</offsets>
 </model>
-
 
 <!-- Baggage Truck -->
 
