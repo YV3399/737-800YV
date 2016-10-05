@@ -176,7 +176,7 @@
  <!-- =============================================================== -->
  
 	<filter>
-		<name>IT-TARGET ROLL CONTROLLER</name>
+		<name>TARGET ROLL CONTROLLER</name>
 		<debug>false</debug>
 		<type>gain</type>
 		<enable>
@@ -341,7 +341,7 @@
 
 	
 	<pid-controller>
-		<name>VOR/LOC Stage 1</name>
+		<name>VORLOC TRK</name>
 		<debug>false</debug>
 		<enable>
 			<condition>
@@ -373,7 +373,7 @@
 	</pid-controller>
 
 	<pid-controller>
-		<name>VOR/LOC Stage 2</name>
+		<name>IT-CONTROLLER: VORLOC</name>
 		<debug>false</debug>
 		<enable>
 			<condition>
@@ -409,7 +409,7 @@
 				<condition>
 					<property>/it-autoflight/settings/no-generics</property>
 				</condition>
-				<property>/it-autoflight/settings/roll/kp</property>
+				<property>/it-autoflight/settings/roll/kp-vorloc</property>
 			</Kp>
 			<Kp>
 				<condition>
@@ -1015,6 +1015,48 @@
 		<type>noise-spike</type>
 		<max-rate-of-change>0.01</max-rate-of-change>
 	</filter>
+	
+ <!-- =============================================================== -->
+ <!-- Rudder Control                                                  -->
+ <!-- =============================================================== -->
+	
+	<pid-controller>
+		<name>IT-CONTROLLER: RUDDER ZERO</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<or>
+					<equals>
+						<property>/it-autoflight/ap_master</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/ap_master2</property>
+						<value>1</value>
+					</equals>
+				</or>
+			</condition>
+		</enable>
+		<input>
+			<value>0</value>
+		</input>
+		<reference>
+			<value>0</value>
+		</reference>
+		<output>
+			<property>/controls/flight/rudder</property>
+		</output>
+		<config>
+			<Kp>1</Kp>
+			<beta>1.0</beta>	
+			<alpha>0.1</alpha>	
+			<gamma>0.0</gamma>	
+			<Ti>10</Ti>        	
+			<Td>0.00001</Td>     	
+			<u_min>-0.1</u_min>
+			<u_max>0.1</u_max>
+		</config>
+	</pid-controller>
 	
  <!-- =============================================================== -->
  <!-- Flight Director                                                 -->
