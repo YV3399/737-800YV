@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
- <!-- New Sounds By Gabriel Hernandez -->
-<PropertyList>
+ 
+<!-- New Sounds By Gabriel Hernandez -->
 
+<PropertyList>
  <fx>
-   
+	 
 <engine>
   <leftstartup>
       <name>leftenginestart</name>
@@ -29,7 +30,7 @@
       </volume>
     </rightstartup>
 
-<engine>
+             <engine>
 		<name>low l</name>
 		<mode>looped</mode>
 		<path>Aircraft/737-800/Sounds/low.wav</path>
@@ -71,8 +72,7 @@
 		</pitch>
 	</engine>
 
-
-<engine>
+         <engine>
 		<name>turbine0 l</name>
 		<mode>looped</mode>
 		<path>Aircraft/737-800/Sounds/turbine-2.wav</path>
@@ -97,99 +97,101 @@
 		</volume>
 		<pitch>
 			<property>engines/engine[0]/n1</property>
-			<offset>0</offset>
-			<factor>0.01</factor>
-		</pitch>
-	</engine>
-	<engine>
-		<name>turbine0 r</name>
-		<mode>looped</mode>
-		<path>Aircraft/737-800/Sounds/turbine-2.wav</path>
-		<property>engines/engine[1]/n1</property>
-		<condition>
-			<property>sim/current-view/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>0</value>
-			</less-than>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-11</value>
-			</greater-than>
-		</condition>
-		<volume>
-			<property>engines/engine[1]/n1</property>
-			<factor>0.06</factor>
-			<offset>-3.0</offset>
-			<min>3.0</min>
-			<max>6.0</max>
-		</volume>
-		<pitch>
-			<property>engines/engine[1]/n1</property>
-			<offset>0</offset>
-			<factor>0.01</factor>
-		</pitch>
-	</engine>
-
-<engine>
-		<name>turbine0 l</name>
-		<mode>looped</mode>
-		<path>Aircraft/737-800/Sounds/turbine-2.wav</path>
-		<property>engines/engine[0]/n1</property>
-		<condition>
-			<property>sim/current-view/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>0</value>
-			</less-than>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-11</value>
-			</greater-than>
-		</condition>
-		<volume>
-			<property>engines/engine[0]/n1</property>
-			<factor>0.06</factor>
-			<offset>-3.0</offset>
-			<min>3.0</min>
-			<max>6.0</max>
-		</volume>
-		<pitch>
-			<property>engines/engine[0]/n1</property>
-			<offset>0</offset>
-			<factor>0.01</factor>
-		</pitch>
-	</engine>
-	<engine>
-		<name>turbine0 r</name>
-		<mode>looped</mode>
-		<path>Aircraft/737-800/Sounds/turbine-2.wav</path>
-		<property>engines/engine[1]/n1</property>
-		<condition>
-			<property>sim/current-view/internal</property>
-			<less-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>0</value>
-			</less-than>
-			<greater-than>
-				<property>sim/current-view/z-offset-m</property>
-				<value>-11</value>
-			</greater-than>
-		</condition>
-		<volume>
-			<property>engines/engine[1]/n1</property>
-			<factor>0.06</factor>
-			<offset>-3.0</offset>
-			<min>3.0</min>
-			<max>6.0</max>
-		</volume>
-		<pitch>
-			<property>engines/engine[1]/n1</property>
 			<offset>0</offset>
 			<factor>0.01</factor>
 		</pitch>
 	</engine>
 	
+	  <engine>
+		<name>turbine0 r</name>
+		<mode>looped</mode>
+		<path>Aircraft/737-800/Sounds/turbine-2.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<less-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>0</value>
+			</less-than>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>-11</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.06</factor>
+			<offset>-3.0</offset>
+			<min>3.0</min>
+			<max>6.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+
+             <engine>
+		<name>turbine0 l</name>
+		<mode>looped</mode>
+		<path>Aircraft/737-800/Sounds/turbine-2.wav</path>
+		<property>engines/engine[0]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<less-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>0</value>
+			</less-than>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>-11</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[0]/n1</property>
+			<factor>0.06</factor>
+			<offset>-3.0</offset>
+			<min>3.0</min>
+			<max>6.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[0]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	
+	   <engine>
+		<name>turbine0 r</name>
+		<mode>looped</mode>
+		<path>Aircraft/737-800/Sounds/turbine-2.wav</path>
+		<property>engines/engine[1]/n1</property>
+		<condition>
+			<property>sim/current-view/internal</property>
+			<less-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>0</value>
+			</less-than>
+			<greater-than>
+				<property>sim/current-view/z-offset-m</property>
+				<value>-11</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<property>engines/engine[1]/n1</property>
+			<factor>0.06</factor>
+			<offset>-3.0</offset>
+			<min>3.0</min>
+			<max>6.0</max>
+		</volume>
+		<pitch>
+			<property>engines/engine[1]/n1</property>
+			<offset>0</offset>
+			<factor>0.01</factor>
+		</pitch>
+	</engine>
+	 
 	<engine>
 		<name>turbine1 l</name>
 		<mode>looped</mode>
@@ -215,7 +217,8 @@
 			<factor>0.01</factor>
 		</pitch>
 	</engine>
-	<engine>
+	
+	  <engine>
 		<name>turbine1 r</name>
 		<mode>looped</mode>
 		<path>Aircraft/737-800/Sounds/turbine.wav</path>
@@ -268,7 +271,8 @@
 			<factor>0.01</factor>
 		</pitch>
 	</engine>
-	<engine>
+	
+	  <engine>
 		<name>turbine1 r</name>
 		<mode>looped</mode>
 		<path>Aircraft/737-800/Sounds/turbine.wav</path>
@@ -318,7 +322,7 @@
 		</volume>
   </engine>
 
-<engine>
+        <engine>
 		<name>low l out</name>
 		<mode>looped</mode>
 		<path>Aircraft/737-800/Sounds/xlow.wav</path>
@@ -338,7 +342,8 @@
 			<max>2</max>
 		</pitch>
 	</engine>
-	<engine>
+	
+	  <engine>
 		<name>low r out</name>
 		<mode>looped</mode>
 		<path>Aircraft/737-800/Sounds/xlow.wav</path>
@@ -392,7 +397,6 @@
         <min>-1</min>
         <max>0.6</max>
    </volume>
-
  </flap>
 
   <gear>
@@ -417,50 +421,7 @@
     </equals>
    </condition>
   </gear>
-  <!-- 
-  <gear>
-   <name>gear-horn</name>
-   <path>Sounds/gear-hrn.wav</path>
-   <mode>looped</mode>
-   <condition>
-    <equals>
-     <property>/gear/gear[0]/position-norm</property>
-     <value>0</value>
-     </equals>
-     </condition>      
-  </gear>
-  -->
-
-  <squeal>
-   <name>squeal</name>
-   <path>Sounds/squeal.wav</path>
-   <condition>
-    <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[1]/wow</property>
-     <property>/gear/gear[2]/wow</property>
-    </or>
-   </condition>
-   <volume>
-    <property>/velocities/speed-down-fps</property>
-    <factor>0.05</factor>
-   </volume>
-   <volume>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.01</factor>
-   </volume>
-   <volume>
-    <internal>dt_stop</internal>
-    <factor>0.05</factor>
-    <max>1.0</max>
-   </volume>
-   <pitch>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.0025</factor>
-    <offset>1.2</offset>
-   </pitch>
-  </squeal>
-
+  
   <wind>
    <name>wind</name>
    <mode>looped</mode>
@@ -501,16 +462,6 @@
         </volume>
     </overspeed>
  
-  <!--<stall>
-   <name>stall</name>
-   <path>Aircraft/737-800/Sounds/stall.wav</path>
-   <property>/sim/alarms/stall-warning</property>
-   <volume>
-    <property>/velocities/airspeed-kt</property>
-    <min>30.0</min>
-   </volume>
-  </stall>-->
-
   <!-- Altitude alert sound -->
 
   <altAlert>
@@ -530,21 +481,20 @@
     <mode>once</mode>
     <path>Aircraft/737-800/Sounds/apdisco.wav</path>
     <condition>
-		<property>/it-autoflight/apoffsound</property>
-	</condition>
+	<property>/it-autoflight/apoffsound</property>
+    </condition>
     <volume>
       <factor>1</factor>
     </volume>
   </ap-disconnect>
   
-
   <ap-disconnect>
     <name>AP Disconnect 2</name>
     <mode>once</mode>
     <path>Aircraft/737-800/Sounds/apdisco.wav</path>
     <condition>
-		<property>/it-autoflight/apoffsound2</property>
-	</condition>
+	<property>/it-autoflight/apoffsound2</property>
+    </condition>
     <volume>
       <factor>1</factor>
     </volume>
@@ -603,7 +553,7 @@
         <max-dist>50.0</max-dist>
     </engine>
 
-  <engine>
+   <engine>
 	<name>fuel truck pump clean</name>
 	<path>/Aircraft/737-800/Sounds/electricalengine.wav</path>
 	<mode>looped</mode>
@@ -629,8 +579,7 @@
         <max-dist>50.0</max-dist>
     </engine>
 
-
-<engine>
+     <engine>
 	<name>de ice truck operation</name>
 	<path>/Aircraft/737-800/Sounds/electricalengine.wav</path>
 	<mode>looped</mode>
@@ -656,7 +605,7 @@
         <max-dist>50.0</max-dist>
     </engine>
 
-     <announcement>
+                 <announcement>
 			<name>welcome</name>
 			<path>Aircraft/737-800/Sounds/announce/welcome.wav</path>
 			<mode>once</mode>
@@ -900,33 +849,27 @@
 			<max-dist>100.0</max-dist>
 		</announcement>
 		
-		<gpws>
-			<name>apprmin</name>
-			<path>Aircraft/737-800/Sounds/gpws/approaching-minimums.wav</path>
-			<mode>once</mode>
-			<condition>
-				<and>
-					<equals>
-						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
-						<value>310</value>
-					</equals>
-					<less-than>
-						<property>/velocities/vertical-speed-fps</property>
-						<value>-2</value>
-					</less-than>
-				</and>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</gpws>
+	 <appr_mins>
+        <name>appr_mins</name>
+        <mode>once</mode>
+        <type>avionics</type>		
+        <path>Aircraft/737-800/Sounds/approaching-minimums.wav</path>
+        <condition>
+			<less-than>
+				<property>/position/altitude-agl-ft</property>
+				<value>380</value>
+			</less-than>
+			<greater-than>
+				<property>/position/altitude-agl-ft</property>
+				<value>300</value>
+			</greater-than>			
+			<less-than>
+				<property>/velocities/vertical-speed-fps</property>
+				<value>0</value>
+			</less-than>
+		</condition>
+          </appr_mins>
+	   
 		<gpws>
 			<name>2500</name>
 			<path>Aircraft/737-800/Sounds/gpws/altitude-2500.wav</path>
@@ -970,7 +913,7 @@
 			</volume>
 		</seatbelt>
 	
-	<avionics>
+	     <avionics>
 			<name>avionics fan and noise</name>
 			<path>avionics.wav</path>
 			<mode>looped</mode>
@@ -1067,7 +1010,7 @@
 				<offset>0</offset>
 			</volume>
 		</wow>
-<Rain>
+         <Rain>
 	    <name>Rain</name>
 	    <mode>looped</mode>
 	    <path>Aircraft/737-800/Sounds/rain.wav</path>
@@ -1102,8 +1045,10 @@
 		    <offset>1.0</offset>
             </pitch>
       </Rain>
-<!-- Seatbelt/No smoking signs -->
-  <seatbelt>
+	  
+   <!-- Seatbelt/No smoking signs -->
+	 
+    <seatbelt>
     <name>seatbelt sign</name>
     <path>Aircraft/737-800/Sounds/cabinalert.wav</path>
     <mode>once</mode>
@@ -1121,7 +1066,8 @@
     <reference-dist>10.0</reference-dist>
     <max-dist>100.0</max-dist>
   </seatbelt>
-  <nosmoke>
+  
+   <nosmoke>
     <name>no smoking sign</name>
     <path>Aircraft/737-800/Sounds/cabinalert.wav</path>
     <mode>once</mode>
@@ -1167,11 +1113,11 @@
 			</or>	
 			<greater-than>
 				<property>/velocities/airspeed-kt</property>
-				<value>130</value>
+				<value>140</value>
 			</greater-than>
 			<less-than>
 				<property>/velocities/airspeed-kt</property>
-				<value>139</value>
+				<value>148</value>
 			</less-than>			
 					</condition>	
     </veeone>
@@ -1187,15 +1133,15 @@
 			</or>
 			<greater-than>
 				<property>/velocities/airspeed-kt</property>
-				<value>137</value>
+				<value>150</value>
 			</greater-than>
 			<less-than>
 				<property>/velocities/airspeed-kt</property>
-				<value>148</value>
+				<value>160</value>
 			</less-than>			
 		</condition>	
     </rotate>	
     
 </fx>
- 
+	
 </PropertyList>
