@@ -133,7 +133,7 @@
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>-1</heading-offset-deg>
 				<x-offset-m archive="y">0.49</x-offset-m>
-				<y-offset-m archive="y">1.18</y-offset-m>
+				<y-offset-m archive="y">1.20</y-offset-m>
 				<z-offset-m archive="y">-17.18</z-offset-m>
 			</config>   
 		</view>
@@ -270,7 +270,3 @@
 	</payload>
 
 </PropertyList>
-
-
-
-

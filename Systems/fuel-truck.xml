@@ -18,7 +18,7 @@
 		<layout>table</layout>
 
 		<text>
-		    <label>Request Fuel (max 46200 lbs)</label>
+		    <label>Request Fuel</label>
 
 		    <halign>right</halign>
 		    <row>0</row>

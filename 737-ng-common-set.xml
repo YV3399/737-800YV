@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
   <sim>
-    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (current development), Gabriel Hernandez (Sounds and current development), Joshua Davidson (Autoflight, Other)</author>
+    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (current development), Gabriel Hernandez (Sounds, Effects, Texture and current development), Joshua Davidson (Autoflight, Other)</author>
     <status>early-production</status>
     <flight-model>jsb</flight-model>
 
@@ -99,39 +99,25 @@
     </flaps>
 
 <multiplay>
-      <chat_display>1</chat_display>
-      <generic> 
-        <int   n="0"  type="int"> 0</int>                                          <!-- 0 immat -->
-        <int   n="1"  type="int"> 0</int>                                          <!-- 1 immat -->
-        <int   n="2"  type="int"> 0</int>                                          <!-- 2 immat -->
-        <int   n="3"  type="int"> 0</int>                                          <!-- 3 immat -->
-        <int   n="4"  type="int"> 0</int>                                          <!-- 4 immat -->
-        <int   n="5"  type="int"> 0</int>                                          <!-- 5 immat -->
-        <int   n="6"  type="bool">1</int>                                          <!-- 6 smoke/bomb/torpedo -->
-        <int   n="7"  type="int"> 0</int>                                          <!-- 7 color -->
-        <int   n="8"  alias="/systems/electrical/outputs/nav-lights">0</int>         <!-- 8 nav-lights -->
-        <int   n="9"  alias="/sim/model/lights/beacon/state">false</int>             <!-- 9 strobe-lights -->
-        <float n="0"  alias="/sim/model/door-positions/crew/position-norm"/>
-        <float n="1"  alias="/sim/model/door-positions/passenger/position-norm"/>
-        <float n="2"  alias="/position/gear-agl-m">0</float>                       <!-- altitude for MP shadow -->
-        <float n="3"  alias="/position/altitude-ft">0</float>                      <!-- altitude for Smoke/Trail -->
-        <float n="4"  alias="/sim/model/door-positions/leftbagage/position-norm"/>
-        <float n="5"  alias="/sim/model/door-positions/rightbagage/position-norm"/>
-        <float n="6"  alias="/engines/engine[0]/rpm"/>
-        <float n="7"  alias="/engines/engine[0]/cranking"/>
-        <float n="8"  alias="/engines/engine[1]/rpm"/>
-        <float n="9"  alias="/engines/engine[1]/cranking"/>
-        <float n="10" alias="/gear/gear[0]/wow/"/>
-        <float n="11" alias="/gear/gear[1]/wow/"/>
-        <float n="12" alias="/gear/gear[2]/wow/"/>
-        <float n="13" alias="/gear/gear[0]/rollspeed-ms"/>
-        <float n="14" alias="/gear/gear[1]/rollspeed-ms"/>
-        <float n="15" alias="/gear/gear[2]/rollspeed-ms"/>
-        <!-- For Bombable -->
-        <int type="int" n="10" alias="controls/armament/trigger">0</int>
-        <string n="9" type="string" />
-      </generic>
-    </multiplay>
+			<generic>
+				<int n="0" alias="/systems/electrical/outputs/strobe"/>
+				<int n="1" alias="/systems/electrical/outputs/beacon"/>
+				<int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
+				<int n="3" alias="/systems/electrical/outputs/logo-lights"/>
+				<int n="4" alias="/systems/electrical/outputs/landing-light[0]"/>
+				<int n="5" alias="/systems/electrical/outputs/landing-light[1]"/>
+				<int n="6" alias="/systems/electrical/outputs/landing-light[2]"/>
+				<int n="7" alias="/systems/electrical/outputs/nav-lights"/>
+				<float n="0" alias="/gear/gear[0]/compression-m"/>
+				<float n="1" alias="/gear/gear[1]/compression-m"/>
+				<float n="2" alias="/gear/gear[2]/compression-m"/>
+				<float n="3" alias="/gear/gear[1]/compression-m"/>
+				<float n="4" alias="/gear/gear[2]/compression-m"/>
+				<float n="5" alias="/surface-positions/speedbrake-norm"/>
+				<float n="6" alias="/surface-positions/reverser-norm"/>
+				<string alias="/sim/multiplay/callsign"/>
+			</generic>
+		</multiplay>
     
     <ai>
       <submodels>
@@ -263,13 +249,13 @@
 
   </sim>
   
-        <lighting>
+                    <lighting>
 			<interior type="double">0</interior>
 			<cockpit type="bool">false</cockpit>
 			<cones type="bool">true</cones>
 			<dome-norm type="double">0</dome-norm>
-			<overhead-panel-norm type="double">0.8</overhead-panel-norm>
-			<main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
+			<overhead-panel-norm type="double">1.0</overhead-panel-norm>
+			<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
 		</lighting>
   
   <it-autoflight>
@@ -536,7 +522,6 @@
      </buttons>
 
                 <switches>
-			<!-- Smoking is bad :P -->
 			<no-smoking-sign type="bool">true</no-smoking-sign>
 			<seatbelt-sign type="bool">false</seatbelt-sign>
 		</switches>
@@ -777,10 +762,6 @@
 		<file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
     </boeing737>
 		
-    <!--<autopilot737>
-      <file>Aircraft/737-800/Nasal/autopilot.nas</file>
-    </autopilot737>-->
-
     <nd>
       <file>Aircraft/737-800/Nasal/ND.nas</file>
     </nd>
@@ -891,7 +872,7 @@
         <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
       </configuration-module>
       <voice>
-                <file-prefix type="string">Aircraft/737-800/Sounds/gpws</file-prefix>
+                <file-prefix type="string">Aircraft/737-800/Sounds/GPWS</file-prefix>
      </voice>
 <inputs>                            <!-- Module I/O -->
         <arinc429>
@@ -959,7 +940,7 @@
 
     <pfd>
       <display-mach type="bool">false</display-mach>
-      <overspeed-kt type="double">340</overspeed-kt>
+      <overspeed-kt type="double">350</overspeed-kt>
     </pfd>
 
   <radar-altimeter n="0">
