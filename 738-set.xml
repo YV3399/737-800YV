@@ -63,7 +63,7 @@
 			</config>
 		</view>
 		<view n="109">
-			<name>Right View (Economy) </name>
+			<name>Right View</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
@@ -78,7 +78,7 @@
 			</config>
 		</view>
 		<view n="110">
-			<name>Left Wing (Economy)</name>
+			<name>Left Wing</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
@@ -93,7 +93,7 @@
 			</config>
 		</view>
        	<view n="111">
-			<name> Engine Left (Economy)</name>
+			<name> Engine Left </name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
@@ -108,7 +108,7 @@
 			</config>   
 		</view>
 			<view n="112">
-			<name> Engine Right (Economy)</name>
+			<name> Engine Right </name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>

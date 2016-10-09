@@ -64,7 +64,7 @@
     <allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
     <model>
       <pushback>
-        <kp type="double">100</kp>
+        <kp type="double">1000</kp>
         <ki type="double">25</ki>
         <kd type="double">0</kd>
         <position-norm type="double">0</position-norm>
@@ -249,14 +249,14 @@
 
   </sim>
   
-                    <lighting>
-			<interior type="double">0</interior>
-			<cockpit type="bool">false</cockpit>
-			<cones type="bool">true</cones>
-			<dome-norm type="double">0</dome-norm>
-			<overhead-panel-norm type="double">1.0</overhead-panel-norm>
-			<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
-		</lighting>
+              <lighting>
+		<interior type="double">0</interior>
+		<cockpit type="bool">false</cockpit>
+		<cones type="bool">true</cones>
+		<dome-norm type="double">0</dome-norm>
+		<overhead-panel-norm type="double">1.0</overhead-panel-norm>
+		<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
+	      </lighting>
   
   <it-autoflight>
     <settings>
@@ -760,6 +760,7 @@
 		<file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
 		<file>Aircraft/737-800/Nasal/ITAF_PFD_mode-converter.nas</file>
 		<file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
+                <file>Aircraft/737-800/Nasal/limits.nas</file>    
     </boeing737>
 		
     <nd>
