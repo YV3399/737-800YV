@@ -446,8 +446,8 @@
 				</condition>
 				<value>0.50</value>
 			</u_max>
-    </config>
-  </pid-controller>
+		</config>
+	</pid-controller>
   
 	<filter>
 		<name>IT-CONTROLLER: ROLL FILTER</name>
@@ -473,7 +473,7 @@
 		</input>
 		<output>/controls/flight/aileron</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.4</max-rate-of-change>
+		<max-rate-of-change>0.8</max-rate-of-change>
 	</filter>
 
  <!-- =============================================================== -->
@@ -547,10 +547,10 @@
 			<Ti>10.0</Ti>
 			<Td>0.0001</Td>
 			<min>
-				<property>/it-autoflight/internal/min-pitch</property>
+				<value>-10</value>
 			</min>
 			<max>
-				<property>/it-autoflight/internal/max-pitch</property>
+				<value>30</value>
 			</max>
 		</config>
 	</pi-simple-controller>
@@ -683,7 +683,7 @@
                         <property>/instrumentation/altimeter/indicated-altitude-ft</property>
                     </greater-than>
                 </condition>
-                <value>20.0</value>
+                <value>25.0</value>
             </u_max>
             <u_max>
                 <condition>
