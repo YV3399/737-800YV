@@ -244,7 +244,6 @@
 		</pitch>
          </engine>    	
 
->>>>>>> b2bc5cdf990958bcc6cd14471612fd09c0f8cd21
 	
 	<engine>
 		<name>turbine1 l</name>
@@ -410,43 +409,7 @@
     <factor>-0.001</factor>
    </pitch>
   </gear>
-
-  <gear>
-   <name>gear-lock</name>
-   <path>Sounds/gear-lck.wav</path>
-   <condition>
-    <equals>
-     <property>/gear/gear[0]/position-norm</property>
-     <value>0</value>
-    </equals>
-   </condition>
-  </gear>
   
-  <wind>
-   <name>wind</name>
-   <mode>looped</mode>
-   <path>Aircraft/737-800/Sounds/wind.wav</path>
-   <property>/velocities/airspeed-kt</property>
-   <volume>
-    <property>/position/altitude-ft</property>
-    <factor>-0.000015</factor>
-    <offset>1.0</offset>
-    <min>0.1</min>
-    <max>1.0</max>
-   </volume>
-   <volume>
-     <property>/velocities/airspeed-kt</property>
-     <factor>0.0015</factor>
-     <min>0.03</min>
-     <max>0.25</max>
-   </volume>
-   <pitch>
-    <property>/velocities/airspeed-kt</property>
-    <factor>0.01</factor>
-    <offset>1.25</offset>
-   </pitch>
-  </wind>
-
 	<overspeed>
         <name>Overspeed warning</name>
         <path>Aircraft/737-800/Sounds/overspeed.wav</path>
@@ -913,30 +876,7 @@
 			</volume>
 		</seatbelt>
 	
-	     <avionics>
-			<name>avionics fan and noise</name>
-			<path>avionics.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<property>sim/current-view/internal</property>
-				<greater-than>
-					<property>systems/electrical/outputs/efis</property>
-					<value>0</value>
-				</greater-than>
-			</condition>
-			<position>
-				<x>-17</x>
-				<y>0.01</y>
-				<z>-1.95</z>
-			</position>	
-			<volume>
-				<factor>0.2</factor>
-				<max>0.5</max>
-			</volume>
-			<reference-dist>1.2</reference-dist>
-			<max-dist>5</max-dist>
-		</avionics>
-
+	    
 		<wow>
 			<name>wow 0</name>
 			<mode>once</mode>
@@ -1010,41 +950,31 @@
 				<offset>0</offset>
 			</volume>
 		</wow>
-         <Rain>
-	    <name>Rain</name>
-	    <mode>looped</mode>
-	    <path>Aircraft/737-800/Sounds/rain.wav</path>
-	    <condition>
-		    <and>
-			    <equals>
-				    <property>environment/rain/above_clouds</property>
-				    <value>0</value>
-			    </equals>
-			    <or>
-				    <greater-than>
-					    <property>environment/metar/rain-norm</property>
-					    <value>0.1</value>
-				    </greater-than>
-				    <greater-than>
-					    <property>environment/metar/snow-norm</property>
-					    <value>0.1</value>
-				    </greater-than>
-			    </or>
-        </and>
-	 </condition>
-	    <volume>
-		    <property>/environment/metar/rain-norm</property>
-		    <factor>2.50</factor>
-		    <offset>0.00</offset>
-		    <min>0.4</min>
-		<max>0.9</max>
-	    </volume>
-	    <pitch>
-		    <property>/velocities/airspeed-kt</property>
-		    <factor>0.001</factor>
-		    <offset>1.0</offset>
-            </pitch>
-      </Rain>
+
+       <rain>
+      <name>rain</name>
+      <mode>looped</mode>
+      <path>Aircraft/737-800/Sounds/rain.wav</path>
+      <condition>
+        <greater-than>
+          <property>/environment/rain-norm</property>
+          <value>0.2</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <property>/environment/rain-norm</property>
+        <factor>1.00</factor>
+        <offset>0.00</offset>
+        <min>0.4</min>
+        <max>0.9</max>
+      </volume>
+      <pitch>
+        <property>/velocities/airspeed-kt</property>
+        <factor>0.001</factor>
+        <offset>1.0</offset>
+      </pitch>
+    </rain>
+
 	  
    <!-- Seatbelt/No smoking signs -->
 	 
@@ -1142,6 +1072,48 @@
 		</condition>	
     </rotate>	
     
+<avionics>
+			<name>avionics</name>
+			<path>Aircraft/737-800/Sounds/avionics.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<property>sim/current-view/internal</property>
+				<greater-than>
+					<property>systems/electrical/outputs/efis</property>
+					<value>0</value>
+				</greater-than>
+			</condition>
+			<position>
+				<x>-17</x>
+				<y>0.01</y>
+				<z>-1.95</z>
+			</position>	
+			<volume>
+				<factor>0.2</factor>
+				<max>0.5</max>
+			</volume>
+			<reference-dist>1.2</reference-dist>
+			<max-dist>5</max-dist>
+		</avionics>
+
+           <click>
+        <name>click1</name>
+        <path>Sounds/click.wav</path>
+        <condition>
+            <property>sim/sound/click</property>
+        </condition>
+    </click>
+
+    <click>
+        <name>click2</name>
+        <path>Sounds/click.wav</path>
+        <condition>
+            <not>
+                <property>sim/sound/click</property>
+            </not>
+        </condition>
+    </click>
+
 </fx>
 	
 </PropertyList>

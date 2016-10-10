@@ -57,7 +57,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>controls/lighting/AFDSbrt</property>
+      <property>controls/lighting/panel-norm[0]</property>
       <step>0.1</step>
       <min>0</min>
       <max>1</max>
@@ -73,7 +73,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>controls/lighting/AFDSbrt</property>
+      <property>controls/lighting/panel-norm[0]</property>
       <step>-0.1</step>
       <min>0</min>
       <max>1</max>
@@ -91,7 +91,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>controls/lighting/AFDSbrt</property>
+      <property>controls/lighting/panel-norm[0]</property>
       <step>0.1</step>
       <min>0</min>
       <max>1</max>
@@ -107,7 +107,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>controls/lighting/AFDSbrt</property>
+      <property>controls/lighting/panel-norm[0]</property>
       <step>-0.1</step>
       <min>0</min>
       <max>1</max>

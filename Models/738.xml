@@ -244,7 +244,7 @@
  	
 <!-- Lights -->
 	<animation>
-		<name>Tail logo light illumination</name>
+		<name>logo light illumination</name>
 		<type>material</type>
 		<object-name>rudder</object-name>
 		<object-name>vstab</object-name>
@@ -329,12 +329,6 @@
    <z-m>2.06</z-m>
   </offsets>
  </model>
-
-
-<model>
-	<path>Aircraft/737-800/Models/Effects/shadow/shadow.xml</path>
-	<name>Shadow</name>
-</model>
 
 <model>
 	<path>Aircraft/737-800/Models/lights/landinglight.xml</path>
