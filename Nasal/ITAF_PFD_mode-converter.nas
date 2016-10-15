@@ -63,16 +63,16 @@ setlistener("/it-autoflight/apvertmode", func {
 setlistener("/it-autoflight/loc1", func {
   var loc1 = getprop("/it-autoflight/loc1");
   if (loc1) {
-    setprop("/autopilot/display/pitch-mode-armed", "LOC");
+    setprop("/autopilot/display/roll-mode-armed", "LOC");
   } else {
-    setprop("/autopilot/display/pitch-mode-armed", " ");
+    setprop("/autopilot/display/roll-mode-armed", " ");
   }
 });
 
 # Arm G/S
 setlistener("/it-autoflight/app1", func {
-  var loc1 = getprop("/it-autoflight/app1");
-  if (loc1) {
+  var app1 = getprop("/it-autoflight/app1");
+  if (app1) {
     setprop("/autopilot/display/pitch-mode-armed", "G/S");
   } else {
     setprop("/autopilot/display/pitch-mode-armed", " ");
