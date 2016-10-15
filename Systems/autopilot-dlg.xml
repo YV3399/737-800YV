@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- IT-AUTOFLIGHT Configuration Dialog -->
+<!-- IT-AUTOFLIGHT Autoflight Control Dialog -->
 
 
 <PropertyList>
 
 	<name>autopilot</name>
 	<layout>vbox</layout>
-    <pref-width>230</pref-width>
+    <pref-width>260</pref-width>
 
     <group>
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label>IT-AUTOFLIGHT</label>
+            <label>IT-AUTOFLIGHT V3.0.0 Beta</label>
         </text>
         <button>
             <halign>right</halign>
@@ -53,6 +53,20 @@
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/ap_mastersw2</property>
+			</binding>
+		</button>
+		<button>
+			<legend>CWS</legend>
+            <pref-width>35</pref-width>
+			<enable>
+				<equals>
+					<property>/it-autoflight/settings/CWS-allowed</property>
+					<value>IAMANOCTALYESIAM</value>
+				</equals>
+			</enable>
+			<binding>
+			<command>property-toggle</command>
+			<property>/it-autoflight/unused/cws_mastersw</property>
 			</binding>
 		</button>
 		<button>
@@ -103,6 +117,15 @@
 			</visible>
 		</text>
 		<text>
+			<label>[CWS]</label>
+			<visible>
+				<equals>
+					<property>/it-autoflight/unused/cws_master</property>
+					<value>1</value>
+				</equals>
+			</visible>
+		</text>
+		<text>
 			<label>[FD1]</label>
 			<visible>
 				<equals>
@@ -132,7 +155,7 @@
 				<stretch type="bool">true</stretch>
 			</hrule>
 			<text>
-				<label>Mode Indicators</label>
+				<label>Flight Modes</label>
 			</text>
 			<hrule>
 				<stretch type="bool">true</stretch>
@@ -141,165 +164,36 @@
 		
 		<group>
 			<layout>hbox</layout>
-
 			<text>
-				<label>SPD</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apthrmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>999999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtthrmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>MACH</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apthrmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>99999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtarmmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>THR</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apthrmode2</property>
-						<value>0</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>99999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtlatmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>IDLE</label>
-				<visible>
-					<or>
-						<equals>
-							<property>/it-autoflight/apthrmode2</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/retard</property>
-							<value>1</value>
-						</equals>
-					</or>
-				</visible>
-			</text>
-			
-			<text>
-				<label>CLB</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apthrmode2</property>
-						<value>2</value>
-					</equals>
-				</visible>
-			</text>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			<text>
-				<label>HDG</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/aplatmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>LNAV</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/aplatmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>        </label>
-			</text>
-			<text>
-				<label>LOC</label>
-				<visible>
-					<or>
-					<equals>
-						<property>/it-autoflight/loc1</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/aplatmode</property>
-						<value>2</value>
-					</equals>
-					</or>
-				</visible>
-			</text>
-			<text>
-				<label>ARM</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/loc1</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			<text>
-				<label>HLD</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apvertmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>FLCH</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apvertmode</property>
-						<value>4</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>VS</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apvertmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>G/S</label>
-				<visible>
-					<or>
-					<equals>
-						<property>/it-autoflight/apvertmode</property>
-						<value>2</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/app1</property>
-						<value>1</value>
-					</equals>
-					</or>
-				</visible>
-			</text>
-			<text>
-				<label>ARM</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/app1</property>
-						<value>1</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>99999999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtvertmode</property>
+				<live>1</live>
 			</text>
 		</group>
 
@@ -343,12 +237,20 @@
 			</button>
 			
 			<button>
-				<row>2</row>
+				<row>0</row>
 				<col>1</col>
-				<legend>ARM</legend>
+				<legend>TOGA</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/unused/toga</property>
+						<value>IAMANOCTALYESIAM</value>
+					</equals>
+				</enable>
 				<binding>
-				<command>property-toggle</command>
-				<property>/it-autoflight/autothrarm</property>
+				<command>property-cycle</command>
+				<property>/it-autoflight/toga</property>
+				<value>0</value>
+				<value>1</value>
 				</binding>
 			</button>
 		</group>
@@ -368,6 +270,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/settings/target-speed-kt</property>
@@ -383,6 +291,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/settings/target-speed-kt</property>
@@ -399,6 +313,12 @@
                 <pref-width>40</pref-width>
 				<property>/it-autoflight/settings/target-speed-kt</property>
 				<live type="bool">true</live>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -410,6 +330,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/settings/target-speed-kt</property>
@@ -426,6 +352,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>0</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/settings/target-speed-kt</property>
@@ -453,6 +385,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/settings/target-mach</property>
@@ -468,6 +406,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/settings/target-mach</property>
@@ -484,6 +428,12 @@
                 <pref-width>40</pref-width>
 				<property>/it-autoflight/settings/target-mach</property>
 				<live type="bool">true</live>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -495,6 +445,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/settings/target-mach</property>
@@ -511,6 +467,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/apthrmode</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/settings/target-mach</property>
@@ -541,7 +503,7 @@
 			<layout>hbox</layout>
 			
 			<button>
-                <pref-width>40</pref-width>
+                <pref-width>50</pref-width>
 				<legend>HLD</legend>
 				<binding>
 				<command>property-assign</command>
@@ -551,7 +513,7 @@
 			</button>
 		
 			<button>
-                <pref-width>40</pref-width>
+                <pref-width>50</pref-width>
 				<legend>SEL</legend>
 				<binding>
 				<command>property-assign</command>
@@ -561,7 +523,7 @@
 			</button>
 			
 			<button>
-                <pref-width>40</pref-width>
+                <pref-width>50</pref-width>
 				<legend>LNAV</legend>
 				<binding>
 				<command>property-assign</command>
@@ -671,7 +633,7 @@
 			<text>
 				<row>0</row>
 				<col>0</col>
-				<label>Bank Limit:  </label>
+				<label>Bank Limit Select:</label>
 			</text>
 			
 			<slider>
@@ -693,7 +655,7 @@
 		<group>
 			<layout>hbox</layout>
 			<button>
-                <pref-width>40</pref-width>
+                <pref-width>70</pref-width>
 				<legend>AUTO</legend>
 				<binding>
 				<command>property-assign</command>
@@ -758,8 +720,24 @@
 			</button>
 			
 			<button>
-                <pref-width>65</pref-width>
-				<legend>APPR</legend>
+                <pref-width>40</pref-width>
+				<legend>VNAV</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/settings/disabled-button</property>
+						<value>IAMANOCTALYESIAM</value>
+					</equals>
+				</enable>
+				<binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/unused/vnav</property>
+				<value>1</value>
+				</binding>
+			</button>
+			
+			<button>
+                <pref-width>55</pref-width>
+				<legend>ILS</legend>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/apvertset</property>
