@@ -264,7 +264,7 @@
 	  <roll>
 	    <umin>-0.30</umin>
 		<umax>0.30</umax>
-		<kp>0.04</kp>
+		<kp>0.08</kp>
 		<kp-vorloc>0.04</kp-vorloc>
 	  </roll>
 	  <pitch>
@@ -527,75 +527,6 @@
 		</switches>
 
 <autopilot>
-    <settings>
-      <vertical-speed-knob type="int">0</vertical-speed-knob>
-      <target-altitude-mcp-ft type="double">3000</target-altitude-mcp-ft>
-      <target-speed-kt type="double">100</target-speed-kt>
-      <target-speed-kt-plus-20 type="double">120</target-speed-kt-plus-20>
-      <target-speed-mach type="double">.65</target-speed-mach>       
-      <heading-bug-deg type="double">0</heading-bug-deg>
-      <true-heading-deg type="double">0</true-heading-deg>
-      <maximum-bank-limit type="double">30</maximum-bank-limit>
-      <min-lvlchg-vs type="double">-7800</min-lvlchg-vs>
-      <max-lvlchg-vs type="double">6000</max-lvlchg-vs>
-      <max-n1 type="double">95</max-n1>
-      <to-n1 type="double">106</to-n1>
-      <ga-n1 type="double">95</ga-n1>
-      <reduced-ga-n1-delta type="double">10</reduced-ga-n1-delta>
-      <alt-acq-target-alt type="double">0</alt-acq-target-alt>
-      <alt-hold-delta type="double">0</alt-hold-delta>
-
-      <fcca-target-roll-rate type="double">0</fcca-target-roll-rate>
-      <fcca-target-bank type="double">0</fcca-target-bank>
-      <fcca-target-pitch-deg type="double">0</fcca-target-pitch-deg>
-
-      <fccb-target-roll-rate type="double">0</fccb-target-roll-rate>
-      <fccb-target-bank type="double">0</fccb-target-bank>
-      <fccb-target-pitch-deg type="double">0</fccb-target-pitch-deg>
-   </settings>
-
-    <internal>
-      <CMDA type="bool">false</CMDA>
-      <CMDB type="bool">false</CMDB>
-      <ATArm type="bool">false</ATArm>
-      <IAS-SEL type="bool">true</IAS-SEL>
-      <LNAV type="bool">false</LNAV>
-      <LNAV-NAV type="bool">false</LNAV-NAV>
-      <LNAV-NAV-armed type="bool">false</LNAV-NAV-armed>
-      <LNAV-HDG type="bool">false</LNAV-HDG>
-
-      <VNAV type="bool">false</VNAV>
-      <VNAV-VS type="bool">false</VNAV-VS>
-      <VNAV-VS-armed type="bool">false</VNAV-VS-armed>
-      <VNAV-ALT type="bool">false</VNAV-ALT>
-      <VNAV-ALT-ACQ type="bool">false</VNAV-ALT-ACQ>
-      <VNAV-ALT-light type="bool">false</VNAV-ALT-light>
-      <VNAV-GS type="bool">false</VNAV-GS>
-      <VNAV-GS-armed type="bool">false</VNAV-GS-armed>
-      <VNAV-FLARE type="bool">false</VNAV-FLARE>
-      <VNAV-FLARE-armed type="bool">false</VNAV-FLARE-armed>
-
-      <LVLCHG type="bool">false</LVLCHG>
-      <TOGA type="bool">false</TOGA>
-      <GA type="bool">false</GA>
-      <GA-ROLL type="bool">false</GA-ROLL>
-            
-      <SPD type="bool">false</SPD>
-      <SPD-SPEED type="bool">false</SPD-SPEED>
-      <SPD-N1 type="bool">false</SPD-N1>
-      <SPD-RETARD type="bool">false</SPD-RETARD>
-      <SPD-IAS type="bool">true</SPD-IAS>
-      <SPD-MACH type="bool">false</SPD-MACH>
-
-      <FCC-A-master type="bool">false</FCC-A-master>
-      <FCC-B-master type="bool">false</FCC-B-master>
-      <FCC-added type="string"></FCC-added>
-
-      <wp-change-check-period type="double">10</wp-change-check-period>
-
-      <stab-autotrim type="bool">1</stab-autotrim>
-      <elevator type="double">0</elevator>
-    </internal>
 
     <display>
       <roll-mode type="string"></roll-mode>
@@ -760,7 +691,7 @@
 		<file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
 		<file>Aircraft/737-800/Nasal/ITAF_PFD_mode-converter.nas</file>
 		<file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
-                <file>Aircraft/737-800/Nasal/limits.nas</file>    
+		<file>Aircraft/737-800/Nasal/limits.nas</file>    
     </boeing737>
 		
     <nd>
@@ -878,7 +809,7 @@
 <inputs>                            <!-- Module I/O -->
         <arinc429>
           <decision-height-ncd> true </decision-height-ncd>
-          <decision-height> 200 </decision-height>
+          <decision-height> 250 </decision-height>
         </arinc429>
         <rs-232>		
           <present-status>		

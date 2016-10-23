@@ -153,15 +153,6 @@
 			</config>
 		</view>            
 	</sim>
-	
-	<it-autoflight>
-		<settings>
-			<heading-bug-deg>360</heading-bug-deg>
-			<target-speed-kt>200</target-speed-kt>
-			<target-altitude-ft>10000</target-altitude-ft>
-			<target-mach>0.68</target-mach>
-		</settings>
-	</it-autoflight>
 
 	<limits> <!-- based on EI-RUA aircraft data -->
 		<mass-and-balance>
@@ -202,7 +193,7 @@
 			<flaps>1.000</flaps>
 			<speed>158</speed>
 		</max-flap-extension-speed>
-		<max-gear-extension-speed>270</max-gear-extension-speed>
+		<max-gear-extension-speed>236</max-gear-extension-speed>
 		<vne>340</vne>
 		<max-positive-g>2.5</max-positive-g> 
 	</limits>

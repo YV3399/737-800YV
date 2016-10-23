@@ -56,13 +56,15 @@ setlistener("/it-autoflight/apvertmode", func {
 	setprop("/autopilot/display/pitch-mode", "G/S");
   } else if (latset == 4) {
 	setprop("/autopilot/display/pitch-mode", "MCP SPD");
+  } else if (latset == 6) {
+	setprop("/autopilot/display/pitch-mode", "FLARE");
   }
 });
 
 # Arm LOC
 setlistener("/it-autoflight/loc-armed", func {
-  var loc-armed = getprop("/it-autoflight/loc-armed");
-  if (loc-armed) {
+  var loca = getprop("/it-autoflight/loc-armed");
+  if (loca) {
     setprop("/autopilot/display/roll-mode-armed", "LOC");
   } else {
     setprop("/autopilot/display/roll-mode-armed", " ");
@@ -71,8 +73,8 @@ setlistener("/it-autoflight/loc-armed", func {
 
 # Arm G/S
 setlistener("/it-autoflight/appr-armed", func {
-  var appr-armed = getprop("/it-autoflight/appr-armed");
-  if (appr-armed) {
+  var appa = getprop("/it-autoflight/appr-armed");
+  if (appa) {
     setprop("/autopilot/display/pitch-mode-armed", "G/S");
   } else {
     setprop("/autopilot/display/pitch-mode-armed", " ");

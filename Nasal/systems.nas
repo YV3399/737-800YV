@@ -26,6 +26,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 	setprop("/it-autoflight/settings/retard-enable", 1);  # Enable or disable automatic autothrottle retard.
 	setprop("/it-autoflight/settings/retard-ft", 35);     # Add this to change the retard altitude, default is 50ft AGL.
 	setprop("/it-autoflight/settings/land-flap", 0.750);  # Define the landing flaps here. This is needed for autoland, and retard.
+	setprop("/it-autoflight/settings/land-enable", 0);    # Enable or disable automatic landing.
 });
 
 setlistener("/sim/signals/fdm-initialized", func {
@@ -95,3 +96,15 @@ setlistener("controls/switches/no-smoking-sign", func
   props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(0);
   }, 2);
  });
+
+var aglgears = func {
+    var agl = getprop("/position/altitude-agl-ft") or 0;
+    var aglft = agl - 8.004;  # is the position from the Boeing 737 above ground
+    var aglm = aglft * 0.3048;
+    setprop("/position/gear-agl-ft", aglft);
+    setprop("/position/gear-agl-m", aglm);
+
+    settimer(aglgears, 0.01);
+}
+
+aglgears();

@@ -811,32 +811,6 @@
 			<reference-dist>20.0</reference-dist>
 			<max-dist>100.0</max-dist>
 		</announcement>
-	
-	   
-		<gpws>
-			<name>2500</name>
-			<path>Aircraft/737-800/Sounds/gpws/altitude-2500.wav</path>
-			<mode>once</mode>
-			<condition>
-				<and>
-					<greater-than>
-						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
-						<value>2400</value>
-					</greater-than>
-						<property>/b737/warnings/gpws/ft2500</property>
-				</and>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</gpws>
 		
 		<seatbelt>
 			<name>cabinalert</name>
@@ -1011,46 +985,6 @@
 			</less-than>			
 			</condition>	
     </eightyknots>   
-	<veeone>
-        <name>vee-one</name>
-        <mode>once</mode>
-        <type>avionics</type>
-        <path>Aircraft/737-800/Sounds/v1.wav</path>
-        <condition>
-			<or>
-			<property>/gear/gear[0]/wow</property>
-			<property>/gear/gear[2]/wow</property>
-			</or>	
-			<greater-than>
-				<property>/velocities/airspeed-kt</property>
-				<value>140</value>
-			</greater-than>
-			<less-than>
-				<property>/velocities/airspeed-kt</property>
-				<value>148</value>
-			</less-than>			
-					</condition>	
-    </veeone>
-	<rotate>
-        <name>rotate</name>
-        <mode>once</mode>
-        <type>avionics</type>
-        <path>Aircraft/737-800/Sounds/vr.wav</path>
-        <condition>
-			<or>
-			<property>/gear/gear[0]/wow</property>
-			<property>/gear/gear[2]/wow</property>
-			</or>
-			<greater-than>
-				<property>/velocities/airspeed-kt</property>
-				<value>150</value>
-			</greater-than>
-			<less-than>
-				<property>/velocities/airspeed-kt</property>
-				<value>160</value>
-			</less-than>			
-		</condition>	
-    </rotate>	
     
 <avionics>
 			<name>avionics</name>

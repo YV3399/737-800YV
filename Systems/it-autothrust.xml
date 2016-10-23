@@ -85,11 +85,11 @@
     </enable>
     <input>
       <property>/velocities/mach</property>
-	  <scale>500.0</scale>
+	  <scale>1000.0</scale>
     </input>
     <reference>
       <property>/it-autoflight/settings/target-mach</property>
-	  <scale>500.0</scale>
+	  <scale>1000.0</scale>
     </reference>
     <output>
       <property>/controls/flight/throttle-cmd</property>

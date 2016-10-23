@@ -625,7 +625,49 @@
 					<wrap>true</wrap>
 				</binding>
 			</button>
-			
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			<text>
+				<label>Mode:</label>
+			</text>
+			<text>
+				<label>[MAG]</label>
+				<visible>
+					<equals>
+						<property>/it-autoflight/settings/use-true-hdg-error</property>
+						<value>0</value>
+					</equals>
+				</visible>
+			</text>
+			<text>
+				<label>[TRU]</label>
+				<visible>
+					<equals>
+						<property>/it-autoflight/settings/use-true-hdg-error</property>
+						<value>1</value>
+					</equals>
+				</visible>
+			</text>
+			<button>
+                <pref-width>60</pref-width>
+				<legend>Magnetic</legend>
+				<binding>
+					<command>property-assign</command>
+					<property>/it-autoflight/settings/use-true-hdg-error</property>
+					<value>0</value>
+				</binding>
+			</button>
+			<button>
+                <pref-width>45</pref-width>
+				<legend>True</legend>
+				<binding>
+					<command>property-assign</command>
+					<property>/it-autoflight/settings/use-true-hdg-error</property>
+					<value>1</value>
+				</binding>
+			</button>
 		</group>
 		
 		<group>
