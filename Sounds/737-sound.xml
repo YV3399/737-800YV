@@ -5,10 +5,9 @@
 <PropertyList>
  <fx>
 	 
-<engine>
   <leftstartup>
       <name>leftenginestart</name>
-      <path>/Aircraft/737-800/Sounds/engine-start.wav</path>
+      <path>Aircraft/737-800/Sounds/start.wav</path>
       <mode>once</mode>
       <condition>
         <property>/controls/engines/engine[0]/starter</property>
@@ -17,10 +16,9 @@
         <factor>0.75</factor>
       </volume>
     </leftstartup>
- </engine>
     <rightstartup>
       <name>rightenginestart</name>
-      <path>/Aircraft/737-800/Sounds/engine-start.wav</path>
+      <path>Aircraft/737-800/Sounds/start.wav</path>
       <mode>once</mode>
       <condition>
         <property>/controls/engines/engine[1]/starter</property>
@@ -363,7 +361,7 @@
 		</pitch>
 	</engine>
 	
-  <rumble>
+ <rumble>
    <name>rumble</name>
    <mode>looped</mode>
    <path>Aircraft/737-800/Sounds/rumble.wav</path>
@@ -487,10 +485,10 @@
             <value>1</value>
         </equals>
 	</condition>
-   </stall>
+   </stall>-->
   
   <!-- Services-->
-<engine>
+<fuelpump>
 	<name>fuel truck pump transfer</name>
 	<path>/Aircraft/737-800/Sounds/electricalengine.wav</path>
 	<mode>looped</mode>
@@ -514,9 +512,9 @@
         </position>
         <reference-dist>60.0</reference-dist>
         <max-dist>50.0</max-dist>
-    </engine>
+    </fuelpump>
 
-   <engine>
+   <fueltruck>
 	<name>fuel truck pump clean</name>
 	<path>/Aircraft/737-800/Sounds/electricalengine.wav</path>
 	<mode>looped</mode>
@@ -540,9 +538,9 @@
         </position>
         <reference-dist>60.0</reference-dist>
         <max-dist>50.0</max-dist>
-    </engine>
+    </fueltruck>
 
-     <engine>
+    <deice>
 	<name>de ice truck operation</name>
 	<path>/Aircraft/737-800/Sounds/electricalengine.wav</path>
 	<mode>looped</mode>
@@ -566,9 +564,9 @@
         </position>
         <reference-dist>60.0</reference-dist>
         <max-dist>50.0</max-dist>
-    </engine>
+    </deice>
 
-                 <announcement>
+        <announcement>
 			<name>welcome</name>
 			<path>Aircraft/737-800/Sounds/announce/welcome.wav</path>
 			<mode>once</mode>
