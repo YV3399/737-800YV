@@ -675,7 +675,6 @@
     </Boeing>
 
 	<boeing737>
-		<file>Aircraft/Generic/limits.nas</file>
 		<file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
 		<file>Aircraft/737-800/Models/Instruments/EICAS/upperEICAS.nas</file>
 		<file>Aircraft/737-800/Nasal/autostart.nas</file>
@@ -788,7 +787,7 @@
       <serviceable type="bool">true</serviceable>
     </altimeter>
 
-   <mk-viii>  <!-- mk-viii configuration, see: http://wiki.flightgear.org/index.php/GPWS -->
+      <mk-viii>  <!-- mk-viii configuration, see: http://wiki.flightgear.org/index.php/GPWS -->
       <serviceable>true</serviceable>     <!-- EGPWS_ENABLE -->
       <configuration-module>
         <category-1>  255 </category-1>
@@ -803,9 +802,6 @@
         <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->		
         <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
       </configuration-module>
-      <voice>
-                <file-prefix type="string">Aircraft/737-800/Sounds/GPWS</file-prefix>
-     </voice>
 <inputs>                            <!-- Module I/O -->
         <arinc429>
           <decision-height-ncd> true </decision-height-ncd>
@@ -823,6 +819,7 @@
         <volume type="double"> 1.0 </volume>         <!-- Volume at reference distance -->
       </speaker>
     </mk-viii>
+
     
     <wxradar>
       <serviceable>true</serviceable>

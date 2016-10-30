@@ -95,26 +95,6 @@
         </offsets>
     </model>
 
-
-
-
-
-
-
-       <!--
-      <model>
-        <name>EFB</name>
-        <path>Models/Instruments/EFB/EFB.xml</path>
-        <offsets>
-            <x-m>-6.900</x-m>
-            <y-m>-0.126</y-m>
-            <z-m>0.78</z-m>
-            <pitch-deg>0</pitch-deg>
-        </offsets>
-      </model>
-      -->   
-
-
   <!--
   <animation>
   <type>rotate</type>   
