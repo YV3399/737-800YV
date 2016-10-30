@@ -7,7 +7,7 @@
 	 
   <leftstartup>
       <name>leftenginestart</name>
-      <path>Aircraft/737-800/Sounds/engine-start.wav</path>
+      <path>Aircraft/737-800/Sounds/start.wav</path>
       <mode>once</mode>
       <condition>
         <property>/controls/engines/engine[0]/starter</property>
@@ -16,10 +16,9 @@
         <factor>0.75</factor>
       </volume>
     </leftstartup>
-
     <rightstartup>
       <name>rightenginestart</name>
-      <path>Aircraft/737-800/Sounds/engine-start.wav</path>
+      <path>Aircraft/737-800/Sounds/start.wav</path>
       <mode>once</mode>
       <condition>
         <property>/controls/engines/engine[1]/starter</property>
@@ -964,6 +963,26 @@
     <max-dist>100.0</max-dist>
   </nosmoke>
   
+  <eightyknots>
+        <name>eightyknots</name>
+        <mode>once</mode>
+        <type>avionics</type>
+        <path>Aircraft/737-800/Sounds/80kt.wav</path>
+        <condition>
+			<or>
+			<property>/gear/gear[0]/wow</property>
+			<property>/gear/gear[2]/wow</property>
+			</or>	
+			<greater-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>80</value>
+			</greater-than>
+			<less-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>88</value>
+			</less-than>			
+			</condition>	
+    </eightyknots>   
     
 <avionics>
 			<name>avionics</name>
@@ -989,350 +1008,23 @@
 			<max-dist>5</max-dist>
 		</avionics>
 
-           <switch>
-        <name>click on</name>
-        <mode>once</mode>
-        <path>Aircraft/737-800/Sounds/click.wav</path>
+           <click>
+        <name>click1</name>
+        <path>Sounds/click.wav</path>
         <condition>
-            <property>/sim/sound/switch</property>
+            <property>sim/sound/click</property>
         </condition>
-        <volume>
-            <factor>0.45</factor>
-        </volume>
-        <position>
-            <x>-23</x>
-            <y>0</y>
-            <z>1</z>
-        </position>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>2.0</max-dist>
-    </switch>
+    </click>
 
-    <switch>
-        <name>click off</name>
-        <mode>once</mode>
-        <path>Aircraft/737-800/Sounds/click.wav</path>
+    <click>
+        <name>click2</name>
+        <path>Sounds/click.wav</path>
         <condition>
             <not>
-                <property>/sim/sound/switch</property>
+                <property>sim/sound/click</property>
             </not>
         </condition>
-        <volume>
-            <factor>0.45</factor>
-        </volume>
-        <position>
-            <x>-23</x>
-            <y>0</y>
-            <z>1</z>
-        </position>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>2.0</max-dist>
-    </switch>
-
-<gpws>
-			<name>2500</name>
-			<path>Aircraft/737-800/Sounds/gpws/altitude-2500.wav</path>
-			<mode>once</mode>
-			<condition>
-				<and>
-					<greater-than>
-						<property>/instrumentation/radar-altimeter/radar-altitude-ft</property>
-						<value>2400</value>
-					</greater-than>
-						<property>/b737/warnings/gpws/ft2500</property>
-				</and>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</gpws>
-
-<gpws>
-        <name>appr_mins</name>
-        <mode>once</mode>
-        <type>avionics</type>		
-        <path>Aircraft/737-800/Sounds/approaching-minimums.wav</path>
-        <condition>
-			<less-than>
-				<property>/position/altitude-agl-ft</property>
-				<value>380</value>
-			</less-than>
-			<greater-than>
-				<property>/position/altitude-agl-ft</property>
-				<value>300</value>
-			</greater-than>			
-			<less-than>
-				<property>/velocities/vertical-speed-fps</property>
-				<value>0</value>
-			</less-than>
-		</condition>
-          </gpws>
-
-<!-- Crashed -->
-
-<crash>
-  <name>intense ground contact</name>
-  <mode>once</mode>
-  <path>Sounds/crash.wav</path>
-  <property>sim/crashed</property>
-  <volume>
-    <factor>1</factor>
-  </volume>
-  <pitch>
-    <factor>1.5</factor>
-  </pitch>
-</crash>
-
-<!-- Cockpit GPWS -->
-
-        <!--altitude1>
-            <name>alt-10</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-10.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>10</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude1>
-
-        <altitude2>
-            <name>alt-20</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-20.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>20</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude2>
-
-        <altitude3>
-            <name>alt-30</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-30.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>30</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude3>
-
-        <altitude4>
-            <name>alt-40</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-40.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>40</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude4>
-
-        <altitude5>
-            <name>alt-50</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-50.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>50</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude5>
-
-        <altitude6>
-            <name>alt-100</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-100.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>100</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude6>
-
-        <altitude7>
-            <name>alt-200</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-200.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>200</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude7>
-
-        <altitude8>
-            <name>alt-300</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-300.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>300</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude8>
-
-        <altitude9>
-            <name>alt-400</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-400.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>400</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude9>
-
-        <altitude10>
-            <name>alt-500</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-500.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>500</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude10>
-
-        <altitude11>
-            <name>alt-1000</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>2.0</max-dist>
-            <mode>once</mode>
-            <path>Aircraft/737-800/Sounds/gpws/altitude-1000.wav</path>
-            <condition>
-				<less-than-equals>
-                    		<property>position/altitude-agl-ft</property>
-                    		<value>1000</value>
-                  	</less-than-equals>
-            </condition>
-            <volume>
-                <property>sim/sound/Evolume</property>
-            </volume>
-            <position>
-                <x>-5</x>
-                <y>0</y>
-                <z>0</z>
-            </position>
-        </altitude11-->
+    </click>
 
 </fx>
 	
