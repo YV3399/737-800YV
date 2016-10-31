@@ -1092,7 +1092,7 @@
 
 <!-- Cockpit GPWS -->
 
-        <!--altitude1>
+        <altitude1>
             <name>alt-10</name>
             <reference-dist>1.0</reference-dist>
             <max-dist>2.0</max-dist>
@@ -1332,7 +1332,7 @@
                 <y>0</y>
                 <z>0</z>
             </position>
-        </altitude11-->
+        </altitude11>
 
 </fx>
 	
