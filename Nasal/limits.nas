@@ -1,4 +1,4 @@
-# $Id: limits.nas,v 1.0 2016 Gabriel Hernandez $
+# $Id: limits.nas,v 1.6 Gabriel Hernandez(YV3399) $
 #
 # Nasal script to print errors to the screen when aircraft exceed design limits:
 #  - extending flaps above maximum flap extension speed(s)
@@ -40,7 +40,7 @@ var checkFlaps = func(n) {
 
         if ((flaps != nil)        and
             (speed != nil)        and
-            (flapsetting >= flaps) and
+            (flapsetting > flaps) and
             (airspeed > speed)       )
         {
           ltext = "Flaps extended above maximum flap extension speed!";
@@ -120,18 +120,8 @@ var checkGandVNE = func {
     msg = "Airspeed exceeds Vne!";
   }
 
-	# Now check Ceiling
-  var altitude = getprop("instrumentation/altimeter/indicated-altitude-ft");
-  var ceiling      = getprop("limits/max-altitude");
-
-  if ((altitude != nil) and (ceiling != nil) and (altitude > ceiling))
-  {
-    msg = "Altitude exceeds service ceiling!";
-  }
   if (msg != "")
   {
-
-
     # If we have a message, display it, but don't bother checking for
     # any other errors for 10 seconds. Otherwise we're likely to get
     # repeated messages.
@@ -145,3 +135,4 @@ var checkGandVNE = func {
 }
 
 checkGandVNE();
+
