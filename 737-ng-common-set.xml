@@ -802,7 +802,10 @@
         <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->		
         <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
       </configuration-module>
-<inputs>                            <!-- Module I/O -->
+      <voice>		
+		<file-prefix type="string">Aircraft/737-800/Sounds/GPWS</file-prefix>		
+      </voice>
+		<inputs>                            <!-- Module I/O -->
         <arinc429>
           <decision-height-ncd> true </decision-height-ncd>
           <decision-height> 250 </decision-height>
