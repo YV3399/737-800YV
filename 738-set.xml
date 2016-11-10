@@ -92,7 +92,7 @@
 				<z-offset-m archive="y">5.02</z-offset-m>
 			</config>
 		</view>
-       	<view n="111">
+          	<view n="111">
 			<name> Engine Left </name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -106,7 +106,7 @@
 				<y-offset-m archive="y">1.2</y-offset-m>
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
-		</view>
+		   </view>
 			<view n="112">
 			<name> Engine Right </name>
 			<type>lookfrom</type>
@@ -121,8 +121,8 @@
 				<y-offset-m archive="y">1.2</y-offset-m>
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
-		</view>
-		<view n="113">
+		  </view>
+		  <view n="113">
 			<name> Copilot</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -136,8 +136,8 @@
 				<y-offset-m archive="y">1.20</y-offset-m>
 				<z-offset-m archive="y">-17.18</z-offset-m>
 			</config>   
-		</view>
-		<view n="114">
+		  </view>
+		  <view n="114">
 			<name> Wing </name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -151,7 +151,7 @@
 				<y-offset-m archive="y">1.2</y-offset-m>
 				<z-offset-m archive="y">9.02</z-offset-m>
 			</config>
-		</view>            
+		   </view>            
 	</sim>
 
 	<limits> <!-- based on EI-RUA aircraft data -->
@@ -193,7 +193,7 @@
 			<flaps>1.000</flaps>
 			<speed>158</speed>
 		</max-flap-extension-speed>
-		<max-gear-extension-speed>236</max-gear-extension-speed>
+		<max-gear-extension-speed>235</max-gear-extension-speed>
 		<vne>340</vne>
 		<max-positive-g>2.5</max-positive-g> 
 	</limits>
