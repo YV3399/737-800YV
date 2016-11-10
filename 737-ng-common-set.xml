@@ -98,7 +98,7 @@
       <!-- flaps 40 -->
     </flaps>
 
-<multiplay>
+                  <multiplay>
 			<generic>
 				<int n="0" alias="/systems/electrical/outputs/strobe"/>
 				<int n="1" alias="/systems/electrical/outputs/beacon"/>
@@ -190,21 +190,21 @@
 						mal.open();
 		       </script>
 		      </binding>
-          </item> 
-          <item>
-            <label>Select Livery</label>
-            <binding>
-              <command>nasal</command>
-              <script>aircraft.livery.dialog.toggle()</script>
-            </binding>
-          </item>
-          <item>
+                   </item> 
+                  <item>
+                     <label>Select Livery</label>
+                    <binding>
+                    <command>nasal</command>
+                   <script>aircraft.livery.dialog.toggle()</script>
+                  </binding>
+                 </item>
+              <item>
               <label>Show/Hide Yokes</label>
               <binding>
                   <command>property-toggle</command>
                   <property>sim/yokes-visible</property>
               </binding>
-          </item>
+            </item>
           <item>
             <label>Tiller steering</label>
             <binding>
@@ -221,14 +221,13 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800/Systems/lights-dlg.xml");
-						lights.open();
+				 var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800/Systems/lights-dlg.xml");
+					lights.open();
 					</script>
 				</binding>
 		  </item>
 
 		  <item>
-
                 <label>System Failures</label>
 					<binding>
                             <command>nasal</command>
@@ -644,7 +643,7 @@
     </warnings>
   </b737>
 
-  <systems>
+    <systems>
     <apu>
 	  <rpm type="string">0</rpm>
 	</apu>
@@ -668,7 +667,7 @@
     </static>
   </systems>
 
-  <nasal>
+     <nasal>
 
     <Boeing>
       <file>Aircraft/Instruments-3d/cdu/boeing.nas</file> <!-- old CDU-->
@@ -872,7 +871,7 @@
 
     <pfd>
       <display-mach type="bool">false</display-mach>
-      <overspeed-kt type="double">350</overspeed-kt>
+      <overspeed-kt type="double">345</overspeed-kt>
     </pfd>
 
   <radar-altimeter n="0">
