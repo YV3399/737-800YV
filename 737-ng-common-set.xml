@@ -253,8 +253,20 @@
 		<cockpit type="bool">false</cockpit>
 		<cones type="bool">true</cones>
 		<dome-norm type="double">0</dome-norm>
-		<overhead-panel-norm type="double">1.0</overhead-panel-norm>
-		<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
+		<overhead-panel-norm type="double">2.0</overhead-panel-norm>
+		<main-panel-pedestal-norm type="double">2.0</main-panel-pedestal-norm>
+		<instruments-norm type="double">0.2</instruments-norm>
+		<landing-lights type="bool">0</landing-lights>
+		<landing-lights type="bool">0</landing-lights>
+		<landing-lights type="bool">0</landing-lights>
+		<logo-lights type="bool">0</logo-lights>
+		<beacon type="bool">0</beacon>
+		<strobe type="bool">0</strobe>
+		<nav-lights type="bool">0</nav-lights>
+	        <cabin-lights type="bool">0</cabin-lights>
+		<wing-lights type="bool">0</wing-lights>
+		<taxi-lights type="bool">0</taxi-lights>
+		<instrument-lights type="bool">0</instrument-lights>
 	      </lighting>
   
   <it-autoflight>
@@ -286,12 +298,15 @@
   <consumables>
     <fuel>
       <tank n="0">
+          <name>Tank Left</name>
         <level-lbs archive="y">8630</level-lbs>
       </tank>
-      <tank n="1">
+      <tank n="1"> 
+         <name>Tank Right</name>
         <level-lbs archive="y">8630</level-lbs>
       </tank>
       <tank n="2">
+        <name>Center</name>
         <level-lbs archive="y">9000</level-lbs>
       </tank>
       <tank n="3">
@@ -802,9 +817,9 @@
         <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
       </configuration-module>
       <voice>		
-		<file-prefix type="string">Aircraft/737-800/Sounds/GPWS</file-prefix>		
+	<file-prefix type="string">Aircraft/737-800/Sounds/gpws/</file-prefix>		
       </voice>
-		<inputs>                            <!-- Module I/O -->
+        <inputs>                            <!-- Module I/O -->
         <arinc429>
           <decision-height-ncd> true </decision-height-ncd>
           <decision-height> 250 </decision-height>
@@ -822,7 +837,6 @@
       </speaker>
     </mk-viii>
 
-    
     <wxradar>
       <serviceable>true</serviceable>
       <range type="int" archive="y">40</range>
