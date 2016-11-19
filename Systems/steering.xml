@@ -13,7 +13,7 @@
          
     <pure_gain name="fcs/steering/steer-cmd-norm">
       <input>fcs/steer-cmd-norm</input>
-      <gain>0.0705</gain>
+      <gain>1.00</gain>
     </pure_gain>  
 
     <summer name="fcs/steering/steer-cmd-norm-final">

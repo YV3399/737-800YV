@@ -96,56 +96,6 @@
 					<command>dialog-apply</command>
 				</binding>
 			</slider>
-		
-
-
-<!--		<checkbox>
-			<label>Flight deck lights</label>
-			<property>controls/lighting/cockpit</property>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<live>true</live>
-		</checkbox>
-
-		<text>
-			<label>Cabin lighting</label>
-		</text>
-
-		<slider>
-			<width>200</width>
-			<property>controls/lighting/interior</property>
-			<step>0.05</step>
-			<min>0</min>
-			<max>1</max>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-		</slider>
-
-		<text>
-			<label>Panel lighting</label>
-		</text>
-
-		<slider>
-			<width>200</width>
-			<property>controls/lighting/panel-norm</property>
-			<step>0.05</step>
-			<min>0</min>
-			<max>1</max>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-		</slider>-->
-
-		<!--checkbox>
-			<label>3D light cones</label>
-			<property>controls/lighting/cones</property>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<live>true</live>
-		</checkbox-->
 	</group>
 
 	<hrule />
