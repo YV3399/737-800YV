@@ -272,11 +272,11 @@ var flchthrust = func {
     if (calt < alt) {
 	  setprop("/it-autoflight/apthrmode2", 2);
 	  setprop("/it-autoflight/txtthrmode", "PITCH");
-	    setprop("/it-autoflight/txtvertmode", "CLB THR");
+	  setprop("/it-autoflight/txtvertmode", "CLB THR");
     } else if (calt > alt) {
       setprop("/it-autoflight/apthrmode2", 1);
 	  setprop("/it-autoflight/txtthrmode", "PITCH");
-	    setprop("/it-autoflight/txtvertmode", "IDLE DES");
+	  setprop("/it-autoflight/txtvertmode", "IDLE DES");
     } else {
 	  setprop("/it-autoflight/apthrmode2", 0);
 	  setprop("/it-autoflight/txtthrmode", "THRUST");
