@@ -65,10 +65,12 @@
   <effect>
       <inherits-from>Effects/glass</inherits-from>
       <object-name>windows.int</object-name>
+      <object-name>rearwindows.int</object-name>
   </effect>
   <effect>
       <inherits-from>Effects/model-transparent</inherits-from>
       <object-name>windows.ext</object-name>
+      <object-name>rearwindows.ext</object-name>
   </effect>
   <model n="100">
     <name>Cockpit</name>
