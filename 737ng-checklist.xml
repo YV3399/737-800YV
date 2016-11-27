@@ -81,6 +81,31 @@
       <name>Engine start lever</name>
       <value>IDLE</value>
     </item>
+    <!-- Custom -->
+    <item>
+      <name>Battery Switch</name>
+      <value>ON</value>
+    </item>
+    <item>
+      <name>APU Switch</name>
+      <value>ON</value>
+    </item>
+    <item>
+      <name>APU GEN - R L</name>
+      <value>ON</value>
+    </item>
+    <item>
+      <name>Fuel Pumps - ALL 6 Pumps</name>
+      <value>ON</value>
+    </item>
+    <item>
+      <name>Start 1 or 2 engines</name>
+      <value>START</value>
+    </item>
+    <item>
+      <name>Cutoff Fuel</name>
+      <value>ON</value>
+    </item>
   </checklist>
   <checklist>
     <title>Before Taxi</title>

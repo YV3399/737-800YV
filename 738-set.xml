@@ -2,8 +2,8 @@
 <PropertyList include="737-ng-common-set.xml">
 
 	<sim>
-		<description>Boeing 737-800</description>
-	    <liveries-path type="string">Models/Liveries-800</liveries-path>
+		<description>Boeing 737-800 NG</description>
+	    <liveries-path type="string">Models/Liveries</liveries-path>
         
 		<aero>738</aero>
     <startup>
@@ -194,7 +194,7 @@
 			<speed>158</speed>
 		</max-flap-extension-speed>
 		<max-gear-extension-speed>235</max-gear-extension-speed>
-		<vne>340</vne>
+		<vne>335</vne>
 		<max-positive-g>2.5</max-positive-g> 
 	</limits>
 

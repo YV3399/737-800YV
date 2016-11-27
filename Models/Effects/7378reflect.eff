@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+    <name>7378reflect</name>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+		<parameters>
+	    <rain-enabled type="int">2</rain-enabled>
+			<normalmap-enabled type="int">1</normalmap-enabled>
+			<normalmap-dds type="int">0</normalmap-dds>
+			<texture n="2">
+				<image>Aircraft/737-800/Models/Effects/normalmap.png</image>
+		                     <filter>linear-mipmap-linear</filter>
+				<wrap-s>repeat</wrap-s>
+				<wrap-t>repeat</wrap-t>
+				<internal-format>normalized</internal-format>
+			</texture>
+						<!-- Light Map -->
+		<lightmap-enabled type="int">1</lightmap-enabled>
+		<lightmap-multi type="int">1</lightmap-multi>
+		<lightmap-factor type="float" n="0"><use>/systems/electrical/outputs/beacon-itensity</use></lightmap-factor>
+		<lightmap-color type="vec3d" n="0">1.0 0.1 0.0 </lightmap-color>
+		<lightmap-factor type="float" n="1"><use>systems/electrical/outputs/logo-lights-itensity</use></lightmap-factor>
+		<lightmap-color type="vec3d" n="1">1.0 1.0 1.0</lightmap-color>
+		<lightmap-factor type="float" n="2"><use>/systems/electrical/outputs/landing-light-intensity</use></lightmap-factor>
+		<lightmap-color type="vec3d" n="2">1.0 1.0 1.0</lightmap-color>
+		<lightmap-factor type="float" n="3"><use>/systems/electrical/outputs/wing-lights-itensity</use></lightmap-factor>
+		<lightmap-color type="vec3d" n="3">1.0 1.0 1.0</lightmap-color>
+		<texture n="3">
+			<image>Aircraft/737-800/Models/Effects/LM.png</image>
+			<filter>linear-mipmap-linear</filter>
+			<wrap-s>clamp</wrap-s>
+			<wrap-t>clamp</wrap-t>
+			<internal-format>normalized</internal-format>
+		</texture>
+			<reflection-enabled type="int">1</reflection-enabled>
+			<reflect-map-enabled type="int">1</reflect-map-enabled>
+			<reflection-correction type="float"><use>/sim/rendering/refl_correction</use></reflection-correction>
+			<reflection-fresnel-factor type="float"><use>/sim/rendering/fresnel-factor</use></reflection-fresnel-factor>
+			<reflection-type type="int"><use>/sim/rendering/refl-type</use></reflection-type>
+			<reflection-dynamic type="int">1</reflection-dynamic>
+			<texture n="4">
+				<image>Aircraft/737-800/Models/Effects/greymap.png</image>
+			         <filter>linear-mipmap-linear</filter>
+				<wrap-s>clamp</wrap-s>
+				<wrap-t>clamp</wrap-t>
+				<internal-format>normalized</internal-format>
+			</texture>
+			<texture n="5">
+				<type>cubemap</type>
+            <images>
+                <positive-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/1.png</positive-x>
+                <negative-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/4.png</negative-x>
+                <positive-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/2.png</positive-y>
+                <negative-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/3.png</negative-y>
+                <positive-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/6.png</positive-z>
+                <negative-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/5.png</negative-z>
+            </images>
+			</texture>
+			<reflection-fresnel type="float">0.0</reflection-fresnel>
+			<reflection-rainbow type="float">0.0</reflection-rainbow>
+			<reflection-noise type="float">0.0</reflection-noise>
+			<ambient-correction type="float">0.1</ambient-correction>
+                		<dirt-enabled type="int">0</dirt-enabled>
+			<dirt-color type="vec3d">1.0 1.0 1.0</dirt-color>
+			<dirt-factor type="float">0.5</dirt-factor>
+		</parameters>
+<!-- ####################
+### NORMALMAP INCLUDE ###
+######################### -->
+		<generate>
+			<tangent type="int">6</tangent>
+			<binormal type="int">7</binormal>
+		</generate>
+		
+		<technique n="4">
+			<pass>
+				<program>
+					<attribute>
+						<name>tangent</name>
+						<index>6</index>
+					</attribute>
+					<attribute>
+						<name>binormal</name>
+						<index>7</index>
+					</attribute>
+				</program>
+			</pass>
+		</technique>
+
+		<technique n="7">
+			<pass>
+				<program>
+					<attribute>
+						<name>tangent</name>
+						<index>6</index>
+					</attribute>
+					<attribute>
+						<name>binormal</name>
+						<index>7</index>
+					</attribute>
+				</program>
+			</pass>
+		</technique>
+		<technique n="9">
+		  <pass>
+			<program>
+			  <attribute>
+				<name>tangent</name>
+				<index>6</index>
+			  </attribute>
+			  <attribute>
+				<name>binormal</name>
+				<index>7</index>
+			  </attribute>
+			</program>
+		  </pass>
+		</technique>
+<!-- ########################
+### END NORMALMAP INCLUDE ###
+############################# -->
+</PropertyList>

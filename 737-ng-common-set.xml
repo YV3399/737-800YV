@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
   <sim>
-    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (current development), Gabriel Hernandez (Sounds, Effects, Texture and current development), Joshua Davidson (Autoflight, Other)</author>
+    <author>Gabriel Hernandez (Sounds, Effects, Textures, FDM, Animations etc), Joshua Davidson (Autoflight, Other),Jonathan Redpath(Textures, Liveries, Fixes, Other), RenanMsV(Animations, Textures Etc) </author>
     <status>early-production</status>
     <flight-model>jsb</flight-model>
 
@@ -45,6 +45,11 @@
 		<name>IT-AUTOTHRUST</name>
 		<path>Aircraft/737-800/Systems/it-autothrust.xml</path>
 	  </autopilot>
+ 
+           <lights>
+		<name>als-lights</name>
+		<path>Aircraft/737-800/Systems/als-lights</path>
+	  </lights>
 
       <path>Aircraft/737-800/Systems/systems.xml</path>
 
@@ -132,7 +137,7 @@
 
     <menubar>
       <default>
-        <menu n="5">
+        <!--menu n="5">
           <item n="10">
             <label>Pushback</label>
             <name>pushback</name>
@@ -141,7 +146,7 @@
               <dialog-name>pushback</dialog-name>
             </binding>
           </item>
-        </menu>
+        </menu-->
         <menu n="100">
           <label>737-800</label>
           <enabled type="bool">true</enabled>
@@ -159,7 +164,7 @@
               <script>boeing737.shutdown()</script>
             </binding>
           </item>
-		  <item>
+		  <!--item>
 			<label>Fuel Truck Controls</label>
 			<name>fuel</name>
 			<binding>
@@ -169,14 +174,14 @@
 					fuel.open();
 				</script>
 			</binding>
-		  </item>
+		  </item-->
           <item>
 			<name>gs</name>
 			<label>Ground Services</label>
 			<binding>
 				<command>nasal</command>
 				<script>
-					var gs = gui.Dialog.new("sim/gui/dialogs/gs/dialog", "Aircraft/737-800/Systems/ground-services-dlg.xml");
+					var gs = gui.Dialog.new("sim/gui/dialogs/gs/dialog", "Aircraft/737-800/Dialogs/ground-services-dlg.xml");
 					gs.open();
 				</script>
 			</binding>
@@ -237,7 +242,16 @@
                             </script>
                     </binding>
             </item>
-
+        <item>
+			<label>About</label>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 	var about = gui.Dialog.new("sim/gui/dialogs/about/dialog", "Aircraft/737-800/Dialogs/about-dlg.xml");
+						about.open();
+					</script>
+				</binding>
+		</item>    
         </menu>
       </default>
     </menubar>
@@ -253,20 +267,8 @@
 		<cockpit type="bool">false</cockpit>
 		<cones type="bool">true</cones>
 		<dome-norm type="double">0</dome-norm>
-		<overhead-panel-norm type="double">2.0</overhead-panel-norm>
-		<main-panel-pedestal-norm type="double">2.0</main-panel-pedestal-norm>
-		<instruments-norm type="double">0.2</instruments-norm>
-		<landing-lights type="bool">0</landing-lights>
-		<landing-lights type="bool">0</landing-lights>
-		<landing-lights type="bool">0</landing-lights>
-		<logo-lights type="bool">0</logo-lights>
-		<beacon type="bool">0</beacon>
-		<strobe type="bool">0</strobe>
-		<nav-lights type="bool">0</nav-lights>
-	        <cabin-lights type="bool">0</cabin-lights>
-		<wing-lights type="bool">0</wing-lights>
-		<taxi-lights type="bool">0</taxi-lights>
-		<instrument-lights type="bool">0</instrument-lights>
+		<overhead-panel-norm type="double">1.0</overhead-panel-norm>
+		<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
 	      </lighting>
   
   <it-autoflight>
@@ -301,12 +303,12 @@
           <name>Tank Left</name>
         <level-lbs archive="y">8630</level-lbs>
       </tank>
-      <tank n="1"> 
-         <name>Tank Right</name>
+      <tank n="1">
+          <name>Tank Right</name>
         <level-lbs archive="y">8630</level-lbs>
       </tank>
       <tank n="2">
-        <name>Center</name>
+          <name>Tank center</name>
         <level-lbs archive="y">9000</level-lbs>
       </tank>
       <tank n="3">
@@ -320,11 +322,11 @@
 
   <engines>
     <engine n="0">
-      <running>true</running>
+      <running>false</running>
 	  <reverser-pos-norm type="double">0</reverser-pos-norm>
     </engine>
     <engine n="1">
-      <running>true</running>
+      <running>false</running>
 	  <reverser-pos-norm type="double">0</reverser-pos-norm>
     </engine>
   </engines>
@@ -704,7 +706,7 @@
 		<file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
 		<file>Aircraft/737-800/Nasal/ITAF_PFD_mode-converter.nas</file>
 		<file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
-		<file>Aircraft/737-800/Nasal/limits.nas</file>    
+		<file>Aircraft/737-800/Nasal/limits.nas</file> 
     </boeing737>
 		
     <nd>
@@ -817,9 +819,9 @@
         <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
       </configuration-module>
       <voice>		
-	<file-prefix type="string">Aircraft/737-800/Sounds/gpws/</file-prefix>
+		<file-prefix type="string">Aircraft/737-800/Sounds/gpws/</file-prefix>		
       </voice>
-        <inputs>                            <!-- Module I/O -->
+		<inputs>                            <!-- Module I/O -->
         <arinc429>
           <decision-height-ncd> true </decision-height-ncd>
           <decision-height> 250 </decision-height>
@@ -837,6 +839,7 @@
       </speaker>
     </mk-viii>
 
+    
     <wxradar>
       <serviceable>true</serviceable>
       <range type="int" archive="y">40</range>

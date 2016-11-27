@@ -78,4 +78,12 @@
   </axis>
  </animation>
 
+       <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>chrome.png</texture>
+          <object-name>lhstab</object-name>  
+          <object-name>rhstab</object-name>
+    </animation>
+
 </PropertyList>

@@ -14,7 +14,7 @@ GabrielYV
         <property>controls/switches/baggage1</property>
         <less-than>
           <property>velocities/airspeed-kt</property>
-          <value>15</value>
+          <value>2</value>
         </less-than>
       </and>
     </condition>
@@ -35,7 +35,7 @@ GabrielYV
         <property>controls/switches/baggage2</property>
         <less-than>
           <property>velocities/airspeed-kt</property>
-          <value>15</value>
+          <value>2</value>
         </less-than>
       </and>
     </condition>
@@ -56,7 +56,7 @@ GabrielYV
         <property>controls/switches/Fuel</property>
         <less-than>
           <property>velocities/airspeed-kt</property>
-          <value>15</value>
+          <value>2</value>
         </less-than>
       </and>
     </condition>
@@ -80,11 +80,11 @@ GabrielYV
       </equals>
       <less-than>
         <property>velocities/airspeed-kt</property>
-        <value>15</value>
+        <value>2</value>
       </less-than>
     </condition>
     <offsets>
-      <x-m>0</x-m>
+      <x-m>-10.5</x-m>
       <y-m>0</y-m>
       <z-m>0</z-m>
     </offsets>
@@ -102,7 +102,7 @@ GabrielYV
       </equals>
       <less-than>
         <property>velocities/airspeed-kt</property>
-        <value>15</value>
+        <value>2</value>
       </less-than>
     </condition>
     <offsets>
@@ -122,12 +122,54 @@ GabrielYV
         <property>controls/switches/bus</property>
         <less-than>
           <property>velocities/airspeed-kt</property>
-          <value>15</value>
+          <value>2</value>
         </less-than>
       </and>
     </condition>
     <offsets>
       <x-m>0</x-m>
+      <y-m>-10</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+  <!-- Passenger Stairway (Front)-->
+
+  <model>
+    <name>Cone</name>
+    <path>Aircraft/737-800/Models/Services/Stairways/stairs.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/stairs1</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>2</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>-11</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+<!-- Passenger Stairway (Rear)-->
+
+  <model>
+    <name>Cone</name>
+    <path>Aircraft/737-800/Models/Services/Stairways/stairs2.xml</path>
+    <condition>
+      <and>
+        <property>controls/switches/stairs2</property>
+        <less-than>
+          <property>velocities/airspeed-kt</property>
+          <value>2</value>
+        </less-than>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>-5.5</x-m>
       <y-m>0</y-m>
       <z-m>0</z-m>
     </offsets>

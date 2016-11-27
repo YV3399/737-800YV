@@ -3,7 +3,7 @@
 
 <PropertyList>
     <name>Chart text</name>
-    <background>Aircraft/737-300/Models/Instruments/EFB/transparent-bg.png</background>
+    <background>Aircraft/737-800/Models/Instruments/EFB/transparent-bg.png</background>
     <w-base>512</w-base>
     <h-base>684</h-base>
 

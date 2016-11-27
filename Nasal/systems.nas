@@ -97,6 +97,17 @@ setlistener("controls/switches/no-smoking-sign", func
   }, 2);
  });
 
+setlistener("controls/switches/switch",
+	func {
+		if(!getprop("controls/switches/switch")) return;
+ 		settimer(
+ 			func {
+  				props.globals.getNode("controls/switches/switch").setBoolValue(0);
+ 			}
+ 		, 0.1);
+ 	}
+ );
+
 var aglgears = func {
     var agl = getprop("/position/altitude-agl-ft") or 0;
     var aglft = agl - 8.004;  # is the position from the Boeing 737 above ground

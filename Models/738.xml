@@ -32,7 +32,7 @@
    </unload>
   </nasal>
   
-  <animation n="0">
+    <animation n="0">
     <type>material</type>
     <object-name>fuselage</object-name>
     <object-name>doorLF</object-name>
@@ -62,7 +62,8 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
   </animation>
-  <effect>
+  
+ <effect>
       <inherits-from>Effects/glass</inherits-from>
       <object-name>windows.int</object-name>
       <object-name>rearwindows.int</object-name>
@@ -72,6 +73,40 @@
       <object-name>windows.ext</object-name>
       <object-name>rearwindows.ext</object-name>
   </effect>
+  
+<!--shader-->
+<effect>
+    <inherits-from>Aircraft/737-800/Models/Effects/7378reflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>doorLF</object-name>
+    <object-name>EexitLF</object-name>
+    <object-name>EexitLR</object-name>
+    <object-name>doorLR</object-name>
+    <object-name>doorRR</object-name>
+    <object-name>EexitRF</object-name>
+    <object-name>EexitRR</object-name>
+    <object-name>doorRF</object-name>
+    <object-name>cargodoorF</object-name>
+    <object-name>cargodoorR</object-name>
+    <object-name>lhfairing</object-name>
+    <object-name>geardoor</object-name>
+    <object-name>engnose.001</object-name>
+    <object-name>lreverserib_1</object-name>
+    <object-name>rhngdoor</object-name>
+    <object-name>lhngdoor</object-name>
+    <object-name>rhwtobfairing</object-name>
+    <object-name>geardoorrh</object-name>
+    <object-name>No2engfancase</object-name>
+    <object-name>No2reverser_1</object-name>
+    <object-name>RightWing</object-name>
+   <object-name>rudder.001</object-name>
+    <object-name>vstab</object-name>
+     <object-name>vstable</object-name>
+     <object-name>Leftwing</object-name>
+      <object-name>lhstab</object-name>
+    <object-name>rhstab</object-name>
+        </effect>
+
   <model n="100">
     <name>Cockpit</name>
     <path>Models/cockpit.xml</path>
@@ -280,7 +315,7 @@
 	
 <!--Lights-->
 
-<model>
+ <model>
 	<path>Aircraft/737-800/Models/lights/greennav.xml</path>
 	<name>Greenlight</name>     
 	<offsets>
@@ -299,6 +334,7 @@
 		<z-m> 1.06</z-m>        
 	</offsets>
 </model>
+
    
 <model>
 	<path>Aircraft/737-800/Models/lights/flash.xml</path>
@@ -577,8 +613,6 @@
 	</offsets>
 </model>
 
-<!-- Bus -->
-
 <model>
 <name>Bus</name>
  <path>Aircraft/737-800/Models/Services/Bus/bus.xml</path>
@@ -592,7 +626,7 @@
 <offsets>
             <x-m>6</x-m>
             <y-m>-10</y-m>
-            <z-m>-2.5</z-m>
+            <z-m>-0.2</z-m>
             <pitch-deg>-1</pitch-deg>
             <heading-deg>-270</heading-deg>
         </offsets>
@@ -658,6 +692,26 @@
   </overlay>
 </model>
 
+<animation>
+  <type>material</type>
+  <object-name>cube</object-name>
+   <object-name>cube.010</object-name>
+   <object-name>plane.004</object-name>
+   <object-name>floor</object-name>
+   <object-name>Ihsidepanel.002</object-name>
+   <object-name>rhsidepanel.000</object-name>
+   <object-name>rhsidepanel.002</object-name>
+   <object-name>silla</object-name>
+   <object-name>Circle.178</object-name>
+    <emission>
+    <red>0.9</red>
+    <green>0.75</green>
+    <blue>0.6</blue>
+    <factor-prop>/controls/lighting/flood-light</factor-prop>	
+  </emission>
+ </animation>
+
+
 <!-- Services by PR-GEO -->
 
   <model>
@@ -668,5 +722,6 @@
       <z-m>0</z-m>
     </offsets>
   </model> 
+
 
 </PropertyList>

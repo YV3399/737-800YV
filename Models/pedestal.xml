@@ -32,6 +32,16 @@
             <texture>boeing_grey.png</texture>
         </overlay>
     </model>
+    <model>
+        <name>TRIM</name>
+        <path>Models/trim.xml</path>
+        <offsets>
+            <x-m>1</x-m>
+            <y-m>-1.021</y-m>
+            <z-m>0.738</z-m>
+            <pitch-deg>299.5</pitch-deg>
+        </offsets>
+    </model>
 
     <model>
         <name>CDU2</name>
@@ -47,73 +57,44 @@
         </overlay>
     </model>
 	
-	
-<!-- left / middle changes the knob by .1 -->
 <animation>
-  <type>pick</type>
+  <type>knob</type>
   <object-name>AFDSbrt</object-name>
-  <action>
-    <button>0</button>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>property-adjust</command>
-      <property>controls/lighting/panel-norm[0]</property>
-      <step>0.1</step>
-      <min>0</min>
-      <max>1</max>
-      <wrap>false</wrap>
-    </binding>
-  </action>
-</animation>
-<animation>
-  <type>pick</type>
-  <object-name>AFDSbrt</object-name>
-  <action>
-    <button>1</button>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>property-adjust</command>
-      <property>controls/lighting/panel-norm[0]</property>
-      <step>-0.1</step>
-      <min>0</min>
-      <max>1</max>
-      <wrap>false</wrap>
-    </binding>
-  </action>
-</animation>
+  <property>/controls/lighting/panel-norm</property>
+  <factor>250</factor>
+  <center>
+    <x-m>0.37235</x-m>
+    <y-m>-0.32026</y-m>
+    <z-m>0.73127</z-m>
+  </center>
+  <axis>
+    <x>-0.5</x><y></y><z>-1</z>
+  </axis>
 
-<!-- scroll wheel changes the knob by .1 -->
-<animation>
-  <type>pick</type>
-  <object-name>AFDSbrt</object-name>
   <action>
-    <button>3</button>
-    <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>controls/lighting/panel-norm[0]</property>
-      <step>0.1</step>
+      <property>/controls/lighting/panel-norm</property>
+      <factor>0.05</factor>
       <min>0</min>
-      <max>1</max>
+      <max>1</max>                
       <wrap>false</wrap>
     </binding>
   </action>
-</animation>
-<animation>
-  <type>pick</type>
-  <object-name>AFDSbrt</object-name>
-  <action>
-    <button>4</button>
-    <repeatable>true</repeatable>
+  <shift-action>
     <binding>
       <command>property-adjust</command>
-      <property>controls/lighting/panel-norm[0]</property>
-      <step>-0.1</step>
+      <property>/controls/lighting/panel-norm</property>
+      <factor>0.1</factor>
       <min>0</min>
-      <max>1</max>
+      <max>1</max>                
       <wrap>false</wrap>
     </binding>
-  </action>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
 </animation>
 
 <animation>
@@ -165,5 +146,22 @@
             <z>0.0</z>
         </axis>
     </animation>
-
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>trimwheellh</object-name>   
+    <object-name>trimwheelrh</object-name>   
+    <property>/controls/flight/elevator-trim</property>
+    <factor>-10500</factor>
+    <center>
+      <x-m>0.68</x-m>
+      <y-m>0.073</y-m>
+      <z-m>0.66073</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
 </PropertyList>

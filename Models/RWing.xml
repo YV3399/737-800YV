@@ -739,4 +739,23 @@
   </axis>
  </animation>
 
+<animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>chrome.png</texture>
+          <object-name>slat5</object-name>  
+          <object-name>slat6</object-name>
+          <object-name>slat7</object-name>
+          <object-name>slat8</object-name>
+          <object-name>iblerh</object-name>
+    </animation>
+
+
+<!--shader-->
+     <effect>
+    <inherits-from>Aircraft/737-800/Models/Effects/7378reflect</inherits-from>
+    <object-name>rhwtobfairing</object-name>
+       </effect>
+
+
 </PropertyList>

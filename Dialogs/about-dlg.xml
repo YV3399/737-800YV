@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name>about_dialog</name>
+  <layout>vbox</layout>
+  <draggable>true</draggable>
+  <resizable>false</resizable>
+
+  <text>
+  	<label>About</label>
+  </text>
+
+  <hrule/>
+  <text>
+  	<label> 737-800 by Gabriel Hernandez </label>
+  	<label>  v 0.3 </label>
+  </text>
+  <text>
+  	<label> Version 0.3 </label>
+  </text>
+  <hrule/>
+
+ <group>
+    <layout>hbox</layout>
+    <empty><stretch>true</stretch></empty>
+
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+
+    <empty><stretch>true</stretch></empty>
+  </group> 
+
+</PropertyList>

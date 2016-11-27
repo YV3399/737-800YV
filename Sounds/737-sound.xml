@@ -1035,26 +1035,27 @@
 			<max-dist>5</max-dist>
 		</avionics>
 
-           <switch>
+        <switch>
         <name>click on</name>
         <mode>once</mode>
         <path>Aircraft/737-800/Sounds/click.wav</path>
         <condition>
-            <property>/sim/sound/switch</property>
+            <property>/controls/switches/switch</property>
         </condition>
         <volume>
             <factor>0.45</factor>
         </volume>
-        <position>
+        </switch>
+        <!--position>
             <x>-23</x>
             <y>0</y>
             <z>1</z>
         </position>
         <reference-dist>1.0</reference-dist>
-        <max-dist>2.0</max-dist>
-    </switch>
+        <max-dist>2.0</max-dist-->
+    
 
-    <switch>
+    <!--switch>
         <name>click off</name>
         <mode>once</mode>
         <path>Aircraft/737-800/Sounds/click.wav</path>
@@ -1073,7 +1074,7 @@
         </position>
         <reference-dist>1.0</reference-dist>
         <max-dist>2.0</max-dist>
-    </switch>
+    </switch-->
 
 <!-- Crashed -->
 

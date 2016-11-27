@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+    <name>menu</name>
+    <w-base>512</w-base>
+    <h-base>684</h-base>
+
+    <layers>
+        <layer>
+            <name>menu</name>
+            <emissive>true</emissive>
+            <w>512</w>
+            <h>684</h>
+            <texture>
+                <path>Aircraft/737-800/Models/Instruments/EFB/EFBmanual5.png</path>
+                <x1>0.0</x1>
+                <y1>0.0</y1>
+                <x2>1.0</x2>
+                <y2>1.0</y2>
+            </texture>		
+        </layer>
+	</layers>
+	
+</PropertyList>
