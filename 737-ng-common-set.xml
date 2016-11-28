@@ -300,15 +300,15 @@
   <consumables>
     <fuel>
       <tank n="0">
-          <name>Tank Left</name>
+          <name>Left Main Tank</name>
         <level-lbs archive="y">8630</level-lbs>
       </tank>
       <tank n="1">
-          <name>Tank Right</name>
+          <name>Right Main Tank</name>
         <level-lbs archive="y">8630</level-lbs>
       </tank>
       <tank n="2">
-          <name>Tank center</name>
+          <name>Center Tank</name>
         <level-lbs archive="y">9000</level-lbs>
       </tank>
       <tank n="3">
