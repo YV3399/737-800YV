@@ -6,7 +6,7 @@
 	<layout>vbox</layout>
 
 	<text>
-		<label>Ground Services 737-800</label>
+		<label>Ground Services</label>
 	</text>
 
 	<hrule />
@@ -116,19 +116,6 @@
 					fuel.open();
 				</script>
 			</binding>
-	</button>
-
-	<hrule />
-
-	<text>
-		<label>Fuel</label>
-	</text>
-	<button>
-		<legend>Start Truck Pushback</legend>
-			<binding>
-              <command>dialog-show</command>
-              <dialog-name>pushback</dialog-name>
-            </binding>
 	</button>
 	
 	<hrule />

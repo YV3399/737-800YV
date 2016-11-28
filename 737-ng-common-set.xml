@@ -137,16 +137,6 @@
 
     <menubar>
       <default>
-        <!--menu n="5">
-          <item n="10">
-            <label>Pushback</label>
-            <name>pushback</name>
-            <binding>
-              <command>dialog-show</command>
-              <dialog-name>pushback</dialog-name>
-            </binding>
-          </item>
-        </menu-->
         <menu n="100">
           <label>737-800</label>
           <enabled type="bool">true</enabled>
@@ -175,6 +165,14 @@
 				</script>
 			</binding>
 		  </item-->
+		   <item n="10">
+            <label>Pushback</label>
+            <name>pushback</name>
+            <binding>
+              <command>dialog-show</command>
+              <dialog-name>pushback</dialog-name>
+            </binding>
+          </item>
           <item>
 			<name>gs</name>
 			<label>Ground Services</label>
