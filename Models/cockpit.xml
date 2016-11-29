@@ -2914,7 +2914,28 @@
     <type>pick</type>
     <object-name>Cross_Feed</object-name>         
     <visible>1</visible>
+	<binding>
+		<command>property-toggle</command>
+		<property>/controls/fuel/crossfeed</property>
+	</binding>
   </animation>
+  
+  <!--<animation>
+      <type>rotate</type>   
+        <object-name>Cross_Feed</object-name>  
+            <property>/controls/fuel/crossfeed</property>
+      <factor>1</factor>
+      <center>
+          <x-m>0.7236</x-m>
+          <y-m>2.84</y-m>
+          <z-m>0.59</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>-->
 
   <animation>
     <type>pick</type>
