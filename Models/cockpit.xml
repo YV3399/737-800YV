@@ -2009,7 +2009,7 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/engines/engine/fuel-pump</property>
+            <property>/controls/fuel/tank[2]/pump-left</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -2020,7 +2020,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>fuelpumpL</object-name>  
-            <property>/controls/engines/engine/fuel-pump</property>
+            <property>/controls/fuel/tank[2]/pump-left</property>
       <factor>30</factor>
       <center>
           <x-m>0.7236</x-m>
@@ -2042,7 +2042,7 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/engines/engine[1]/fuel-pump</property>
+            <property>/controls/fuel/tank[2]/pump-right</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -2053,7 +2053,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>fuelpumpR</object-name>  
-            <property>/controls/engines/engine[1]/fuel-pump</property>
+            <property>/controls/fuel/tank[2]/pump-right</property>
       <factor>30</factor>
       <center>
           <x-m>0.7236</x-m>
@@ -2066,10 +2066,6 @@
           <z>0</z>
       </axis>
   </animation>
-
-  <!-- Renan Custom Objects Anims-->
-
-  <!-- Fuel Pumps -->
   <animation>
     <type>pick</type>
     <object-name>FuelPumpAFTL</object-name>         
@@ -2125,7 +2121,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>FuelPumpFWDL</object-name>  
-            <property>/controls/fuel/tank[2]/pump-left</property>
+            <property>/controls/fuel/tank[0]/pump-fwd</property>
       <factor>30</factor>
       <center>
           <x-m>0.675</x-m>
@@ -2147,7 +2143,7 @@
       <repeatable>true</repeatable>        
       <binding>
         <command>property-toggle</command>
-        <property>/controls/fuel/tank[2]/pump-left</property>
+        <property>/controls/fuel/tank[1]/pump-fwd</property>
       </binding>
       <binding>
           <command>nasal</command>
