@@ -193,7 +193,8 @@
 			<flaps>1.000</flaps>
 			<speed>158</speed>
 		</max-flap-extension-speed>
-		<max-gear-extension-speed>235</max-gear-extension-speed>
+		<max-gear-extension-speed>270</max-gear-extension-speed>
+		<max-gear-retraction-speed>235</max-gear-retraction-speed>
 		<vne>340</vne>
 		<max-positive-g>2.5</max-positive-g> 
 	</limits>
