@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<path>strobe.ac</path>
+
+	<!-- EXTRA MODELS -->
+	<!-- 3d light cone
+	<model>
+		<name>Cone</name>
+		<path>light-cone.xml</path>
+		<offsets>
+		<pitch-deg>-8</pitch-deg>
+		</offsets>
+	</model> -->
+
+	<!-- ANIMATIONS -->
+	<!-- On/off -->
+	<animation>
+		<name>On/off</name>
+		<type>select</type>
+		<object-name>Light</object-name>
+		<object-name>Cone</object-name>
+		<condition>
+			<property>controls/lighting/landing-lights</property>
+		</condition>
+	</animation>
+
+	<!-- Rotate and scale the light -->
+	<animation>
+		<name>Rotate light</name>
+		<type>rotate</type>
+		<object-name>Light</object-name>
+		<offset-deg>120</offset-deg>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Scale light</name>
+		<type>scale</type>
+		<object-name>Light</object-name>
+		<x-offset>0.5</x-offset>
+		<y-offset>0.5</y-offset>
+		<z-offset>0.5</z-offset>
+	</animation>
+
+</PropertyList>
