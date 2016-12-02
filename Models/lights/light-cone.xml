@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>light-cone.ac</path>
+
+	<effect>
+		<inherits-from>Effects/light-cone</inherits-from>
+		<object-name>Cone</object-name>
+	</effect>
+
+</PropertyList>

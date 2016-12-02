@@ -62,7 +62,17 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
   </animation>
-  
+
+  <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>glass_shader.png</texture>
+        <object-name>windows.int</object-name>
+        <object-name>rearwindows.int</object-name>
+	<object-name>windows.ext</object-name>
+      <object-name>rearwindows.ext</object-name>
+   </animation>
+
  <effect>
       <inherits-from>Effects/glass</inherits-from>
       <object-name>windows.int</object-name>
@@ -74,8 +84,8 @@
       <object-name>rearwindows.ext</object-name>
   </effect>
   
-<!--shader-->
-<effect>
+  <!--shader-->
+   <effect>
     <inherits-from>Aircraft/737-800/Models/Effects/7378reflect</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>doorLF</object-name>
@@ -105,7 +115,7 @@
      <object-name>Leftwing</object-name>
       <object-name>lhstab</object-name>
     <object-name>rhstab</object-name>
-        </effect>
+   </effect>
 
   <model n="100">
     <name>Cockpit</name>
@@ -163,7 +173,7 @@
     </offsets>
   </model>
   
-<model n="110">
+  <model n="110">
     <name>Pushback</name>
     <path>Models\Airport\Pushback\Goldhofert.xml</path>
   </model>
@@ -319,9 +329,9 @@
 	<path>Aircraft/737-800/Models/lights/greennav.xml</path>
 	<name>Greenlight</name>     
 	<offsets>
-		<x-m> 3.60</x-m>
-		<y-m> 17.03</y-m>
-		<z-m> 1.06</z-m>       
+		<x-m>3.60</x-m>
+		<y-m>17.03</y-m>
+		<z-m>1.06</z-m>       
 	</offsets>
 </model>
 
@@ -329,74 +339,64 @@
 	<path>Aircraft/737-800/Models/lights/rednav.xml</path>
 	<name>Redlight</name>     
 	<offsets>
-		<x-m> 3.60</x-m>
+		<x-m>3.60</x-m>
 		<y-m>-17.03</y-m>
-		<z-m> 1.06</z-m>        
+		<z-m>1.06</z-m>        
 	</offsets>
 </model>
 
    
 <model>
-	<path>Aircraft/737-800/Models/lights/flash.xml</path>
-	<name>flashright</name>     
+	<path>Aircraft/737-800/Models/lights/strobe.xml</path>
+	<name>strobe-right</name>     
 	<offsets>
-		<x-m> 3.64</x-m>
+		<x-m>3.64</x-m>
 		<y-m>17.01</y-m>
-		<z-m> 1.06</z-m>        
+		<z-m>1.06</z-m>        
 	</offsets>
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/lights/flash.xml</path>
-	<name>flashleft</name>     
+	<path>Aircraft/737-800/Models/lights/strobe.xml</path>
+	<name>strobe-left</name>     
 	<offsets>
-		<x-m> 3.64</x-m>
+		<x-m>3.64</x-m>
 		<y-m>-17.01</y-m>
-		<z-m> 1.06</z-m>     
+		<z-m>1.06</z-m>     
 	</offsets>
 </model>
 
-<model>
-	<path>Aircraft/737-800/Models/lights/flash.xml</path>
-	<name>flashtail</name>     
-	<offsets>
-		<x-m> 18.64</x-m>
-		<y-m>0.0</y-m>
-		<z-m> 2.06</z-m>     
-	</offsets>
-</model>
+    <model>	
+     <path>Aircraft/737-800/Models/lights/strobe.xml</path>
+     <offsets>
+       <x-m>18.63</x-m>
+       <y-m>0.0</y-m>
+       <z-m>2.06</z-m>
+      </offsets>
+    </model>
 
-<model>	
-  <path>Aircraft/737-800/Models/lights/strobe.xml</path>
-  <offsets>
-   <x-m>18.63</x-m>
-   <y-m>0.0</y-m>
-   <z-m>2.06</z-m>
-  </offsets>
- </model>
-
-<model>
-	<path>Aircraft/737-800/Models/lights/landinglight.xml</path>
+    <model>
+	<path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
 	<name>LeftWingLandinglight</name>
   
 	<offsets>
-		<x-m>-4.83</x-m>
+		<x-m>-4.98</x-m>
 		<y-m>-2.14</y-m>
 		<z-m>-0.51</z-m>      
 	</offsets>
-</model>
+     </model>
 
-<model>
-	<path>Aircraft/737-800/Models/lights/landinglight.xml</path>
+       <model>
+	<path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
 	<name>RightWingLandinglight</name>
 	<offsets>
-		<x-m>-4.82</x-m>
+		<x-m>-4.98</x-m>
 		<y-m>2.14</y-m>
 		<z-m>-0.51</z-m>        
 	</offsets>
-</model>
+       </model>
 
-<model>
+     <model>
 	<path>Aircraft/737-800/Models/lights/beacon.xml</path>
 	<name>Beaconlight.top</name>     
 	<offsets>
@@ -404,9 +404,9 @@
 		<y-m>0.00</y-m>
 		<z-m>2.57</z-m>      
 	</offsets>
-</model>
+     </model>
 
-<model>
+      <model>
 	<path>Aircraft/737-800/Models/lights/beacon.xml</path>
 	<name>Beaconlight.bottom</name>     
 	<offsets>
@@ -414,12 +414,12 @@
 		<y-m> 0.00</y-m>
 		<z-m>-1.42</z-m>      
 	</offsets>
-</model>   
+      </model>   
   
 
 <!-- Tyre Smoke -->
 
-<model>
+     <model>
 	<path>Aircraft/737-800/Models/Effects/tyre-smoke-nose.xml</path>
 	<name>tyre-smoke-n</name>
 	<offsets>
@@ -427,10 +427,10 @@
 		<y-m>0.0</y-m>
 		<z-m>-5.50</z-m>
 	</offsets>
-</model>
+    </model>
 
 
-<model>
+    <model>
 	<path>Aircraft/737-800/Models/Effects/tyre-smoke-left.xml</path>
 	<name>tyre-smoke-l</name>
 	<offsets>
@@ -438,9 +438,9 @@
 		<y-m>-2.12</y-m>
 		<z-m>-0.51</z-m>
 	</offsets>
-</model>
+    </model>
 
-<model>
+     <model>
 	<path>Aircraft/737-800/Models/Effects/tyre-smoke-right.xml</path>
 	<name>tyre-smoke-r</name>
 	<offsets>
@@ -448,7 +448,7 @@
 		<y-m>2.12</y-m>
 		<z-m>0.51</z-m>
 	</offsets>
-</model>
+    </model>
 
 <!-- Engine Fire -->
 
@@ -515,13 +515,13 @@
 
 <!-- Fuel Truck -->
 
-<model>
+    <model>
 	<name>fuel-truck</name>
-	<path>Aircraft/737-800/Models/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.xml</path>
+   <path>Aircraft/737-800/Models/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.xml</path>
 	<offsets>
 		<x-m>1.8</x-m>
      	 	<y-m>12</y-m>
-     		 <z-m>1.81</z-m>
+     		<z-m>1.81</z-m>
 	</offsets>
 	<condition>
 		<and>
@@ -535,11 +535,11 @@
 		</equals>
 		</and>
 	</condition>
-</model>
+    </model>
 
 <!-- De-icing Truck -->
 
-<model>
+     <model>
 	<name>de-ice-truck</name>
 	<path>Aircraft/737-800/Models/Services/De-Icing/volvo_deicing_truck.xml</path>
 	<condition>
@@ -560,11 +560,11 @@
 		<z-m>-2.48</z-m>
 		<heading-deg>160</heading-deg>
 	</offsets>
-</model>
+     </model>
 
 <!-- Baggage Truck -->
 
-<model>
+    <model>
 	<name>baggage-truck</name>
 	<path>Aircraft/737-800/Models/Services/Baggage/cargo_ramp.xml</path>
 	<condition>
@@ -585,12 +585,11 @@
 		<z-m>0.95</z-m>
 		<heading-deg>0</heading-deg>
 	</offsets>
-
-</model>
+    </model>
 
 <!-- External Power -->
 
-<model>
+     <model>
 	<name>ext-pwr</name>
 	<path>Aircraft/737-800/Models/Services/External-Power/ext-pwr-box.ac</path>
 	<condition>
@@ -611,26 +610,26 @@
 		<z-m>2.16</z-m>
 		<heading-deg>0</heading-deg>
 	</offsets>
-</model>
+    </model>
 
-<model>
-<name>Bus</name>
- <path>Aircraft/737-800/Models/Services/Bus/bus.xml</path>
- <condition>
-  <property>controls/switches/bus</property>
+  <model>
+   <name>Bus</name>
+   <path>Aircraft/737-800/Models/Services/Bus/bus.xml</path>
+   <condition>
+   <property>controls/switches/bus</property>
             <less-than>
                 <property>velocities/groundspeed-kt</property>
                 <value>1</value>
             </less-than>
- </condition>
-<offsets>
+   </condition>
+    <offsets>
             <x-m>6</x-m>
             <y-m>-10</y-m>
             <z-m>-0.2</z-m>
             <pitch-deg>-1</pitch-deg>
             <heading-deg>-270</heading-deg>
         </offsets>
-</model>
+    </model>
 
 <!-- reverser -->
  <animation>
@@ -656,7 +655,7 @@
 </animation>
 
 <!-- Registration fuselage upper back -->
-<model>
+   <model>
 	<name>registrationFuselageRightBack</name>
   <path>Aircraft/737-800/Models/Registration/registration.xml</path>
   <offsets>
@@ -674,7 +673,7 @@
   </overlay>
 </model>
 
-<model>
+   <model>
 	<name>registrationFuselageLeftBack</name>
   <path>Aircraft/737-800/Models/Registration/registration.xml</path>
   <offsets>
@@ -690,19 +689,11 @@
       <alignment>reversed-xz-plane</alignment>
     </params>
   </overlay>
-</model>
+   </model>
 
-<animation>
+  <animation>
   <type>material</type>
-  <object-name>cube</object-name>
-   <object-name>cube.010</object-name>
-   <object-name>plane.004</object-name>
-   <object-name>floor</object-name>
-   <object-name>Ihsidepanel.002</object-name>
-   <object-name>rhsidepanel.000</object-name>
-   <object-name>rhsidepanel.002</object-name>
-   <object-name>silla</object-name>
-   <object-name>Circle.178</object-name>
+     <object-name>floor</object-name>
     <emission>
     <red>0.9</red>
     <green>0.75</green>
@@ -710,7 +701,6 @@
     <factor-prop>/controls/lighting/flood-light</factor-prop>	
   </emission>
  </animation>
-
 
 <!-- Services by PR-GEO -->
 

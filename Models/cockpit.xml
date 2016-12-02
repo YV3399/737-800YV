@@ -282,26 +282,6 @@
   </axis>
  </animation>
 
-<!-- Disabled since I can't find the center coords -->
-	<!--animation>
-		<type>rotate</type>
-		<object-name>trimwheellh</object-name>   
-		<object-name>trimwheelrh</object-name>   
-		<property>/controls/flight/elevator-trim</property>
-		<factor>-10500</factor>
-		<center>
-			<x-m>0.68</x-m>
-			<y-m>0</y-m>
-			<z-m>0.65</z-m>
-		</center>
-		<axis>
-		  <x>0.0</x>
-		  <y>1.0</y>
-		  <z>0.0</z>
-		</axis>
-	</animation-->
-
-
   <animation>
   <type>rotate</type>   
   <object-name>parkbrake_0</object-name>
@@ -335,9 +315,8 @@
             <z>0.0</z>
         </axis>
     </animation>
+ 
  <!--
- 
- 
  <animation>
   <type>rotate</type>    
   <object-name>no2revarm</object-name> 
@@ -2009,7 +1988,7 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/fuel/tank[2]/pump-left</property>
+            <property>/controls/engines/engine/fuel-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -2020,7 +1999,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>fuelpumpL</object-name>  
-            <property>/controls/fuel/tank[2]/pump-left</property>
+            <property>/controls/engines/engine/fuel-pump</property>
       <factor>30</factor>
       <center>
           <x-m>0.7236</x-m>
@@ -2042,7 +2021,7 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/fuel/tank[2]/pump-right</property>
+            <property>/controls/engines/engine[1]/fuel-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -2053,7 +2032,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>fuelpumpR</object-name>  
-            <property>/controls/fuel/tank[2]/pump-right</property>
+            <property>/controls/engines/engine[1]/fuel-pump</property>
       <factor>30</factor>
       <center>
           <x-m>0.7236</x-m>
@@ -2066,6 +2045,10 @@
           <z>0</z>
       </axis>
   </animation>
+
+  <!-- Renan Custom Objects Anims-->
+
+  <!-- Fuel Pumps -->
   <animation>
     <type>pick</type>
     <object-name>FuelPumpAFTL</object-name>         
@@ -2914,28 +2897,7 @@
     <type>pick</type>
     <object-name>Cross_Feed</object-name>         
     <visible>1</visible>
-	<binding>
-		<command>property-toggle</command>
-		<property>/controls/fuel/crossfeed</property>
-	</binding>
   </animation>
-  
-  <!--<animation>
-      <type>rotate</type>   
-        <object-name>Cross_Feed</object-name>  
-            <property>/controls/fuel/crossfeed</property>
-      <factor>1</factor>
-      <center>
-          <x-m>0.7236</x-m>
-          <y-m>2.84</y-m>
-          <z-m>0.59</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>-->
 
   <animation>
     <type>pick</type>
@@ -3032,10 +2994,25 @@
     <object-name>seatfo</object-name>
     <object-name>seatcapt</object-name>
     <object-name>cockpitdoor</object-name>
+    <object-name>BACKGROUNDcpt</object-name>
+     <object-name>AFDSbrt</object-name>
+     <object-name>parkbrake_1</object-name>
+     <object-name>no3quad.002</object-name>
     <emission>
     <red>0.1</red>
     <green>0.1</green>
     <blue>0.1</blue>
+    <factor-prop>controls/lighting/panel-light</factor-prop>	
+  </emission>
+ </animation>
+
+ <animation>
+  <type>material</type>
+    <object-name>TillerL</object-name>
+    <emission>
+    <red>3.1</red>
+    <green>3.1</green>
+    <blue>3.1</blue>
     <factor-prop>controls/lighting/panel-light</factor-prop>	
   </emission>
  </animation>
@@ -3338,6 +3315,38 @@
         </decrease>
     </animation>
 
+    <animation>
+      <type>pick</type>
+      <visible>true</visible>
+      <object-name>Cross_Feed</object-name>
+      <action>
+       <button>0</button>
+       <repeatable>true</repeatable> 
+       <binding>
+        <command>property-toggle</command>
+        <property>/controls/fuel/crossfeed</property>
+       </binding>
+       <binding>
+          <command>nasal</command>
+        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+      </binding>
+      </action>
+    </animation>
+    <animation>
+      <type>rotate</type>   
+        <object-name>Cross_Feed</object-name>  
+            <property>/controls/fuel/crossfeed</property>
+      <factor>90</factor>
+      <center>
+          <x-m>0.77407</x-m>
+          <y-m>-0.26409</y-m>
+          <z-m>1.49283</z-m>
+      </center>
+      <axis>
+          <x>-.45</x><y>0</y><z>1</z>
+      </axis>
+    </animation>
+
      <model>
         <name>ldglightleftretr</name>
         <path>landinglight.xml</path>
@@ -3379,7 +3388,7 @@
             <pitch-deg>125</pitch-deg>
         </offsets>
     </model>
-  <!--
+  <!-- 
   <model>
     <name>EFB</name>
     <path>Aircraft/737-800/Models/Instruments/EFB/EFB.xml</path>
@@ -3404,13 +3413,5 @@
       <z-m>0.4582</z-m> 
     </offsets>
   </model>
-   -->  
-
+   -->
 </PropertyList>
-
-
-<!-- 
-
-<property>/controls/air/trim-air</property> 
-
--->
