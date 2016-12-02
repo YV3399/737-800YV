@@ -683,7 +683,7 @@
   </systems>
 
      <nasal>
-
+	
     <Boeing>
       <file>Aircraft/Instruments-3d/cdu/boeing.nas</file> <!-- old CDU-->
     </Boeing>

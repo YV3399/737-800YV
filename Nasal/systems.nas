@@ -119,3 +119,22 @@ var aglgears = func {
 }
 
 aglgears();
+
+##########  Fuel System ##########
+setlistener("/sim/signals/fdm-initialized", func {
+print("Fuel Nasal Controls: Initializing, please wait");
+});
+
+var fuelsys = func {
+
+    var pump_left = getprop("/controls/fuel/tank[2]/pump-left");
+    var pump_right = getprop("/controls/fuel/tank[2]/pump-right");
+
+    if (!pump_left and !pump_right) {
+        setprop("consumables/fuel/tank[2]/selected", 0);
+    } else {
+       setprop("consumables/fuel/tank[2]/selected", 1);
+       boeing737.fuelsys();
+    }
+}
+
