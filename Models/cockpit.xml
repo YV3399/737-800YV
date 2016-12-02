@@ -1977,6 +1977,105 @@
           <z>0</z>
       </axis>
   </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>RNYTurnOffL</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/lighting/Taxi</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+      </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>RNYTurnOffL</object-name>  
+            <property>/controls/lighting/Taxi</property>
+      <factor>30</factor>
+      <center>
+          <x-m>0.61599</x-m>
+          <y-m>-0.16057</y-m>
+          <z-m>1.42277</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>RNYTurnOffR</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/lighting/Taxi-1</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+      </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>RNYTurnOffR</object-name>  
+            <property>/controls/lighting/Taxi-1</property>
+      <factor>30</factor>
+      <center>
+          <x-m>0.61621</x-m>
+          <y-m>-0.13567</y-m>
+          <z-m>1.42178</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>TaxiLight</object-name>         
+        <visible>1</visible>
+        <action>
+         <button>0</button>
+            <repeatable>true</repeatable>        
+            <binding>
+            <command>property-toggle</command>
+            <property>/controls/lighting/Taxi-light</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+      </binding>
+      </action> 
+    </animation> 
+  <animation>
+      <type>rotate</type>   
+        <object-name>TaxiLight</object-name>  
+            <property>/controls/lighting/Taxi-light</property>
+      <factor>30</factor>
+      <center>
+          <x-m>0.61611</x-m>
+          <y-m>-0.11030</y-m>
+          <z-m>1.42155</z-m>
+      </center>
+      <axis>
+          <x>0</x>
+          <y>1</y>
+          <z>0</z>
+      </axis>
+  </animation>
 
   <!-- Fuel Pumps -->
    <animation>
@@ -3186,7 +3285,6 @@
       </axis>
   </animation>
 
-  
   <animation>
         <type>rotate</type>
         <object-name>Circle.242</object-name>
