@@ -1988,7 +1988,7 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/engines/engine/fuel-pump</property>
+            <property>/controls/fuel/tank[2]/pump-left</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1999,7 +1999,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>fuelpumpL</object-name>  
-            <property>/controls/engines/engine/fuel-pump</property>
+            <property>/controls/fuel/tank[2]/pump-left</property>
       <factor>30</factor>
       <center>
           <x-m>0.7236</x-m>
@@ -2021,7 +2021,7 @@
             <repeatable>true</repeatable>        
             <binding>
             <command>property-toggle</command>
-            <property>/controls/engines/engine[1]/fuel-pump</property>
+            <property>/controls/fuel/tank[2]/pump-right</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -2032,7 +2032,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>fuelpumpR</object-name>  
-            <property>/controls/engines/engine[1]/fuel-pump</property>
+            <property>/controls/fuel/tank[2]/pump-right</property>
       <factor>30</factor>
       <center>
           <x-m>0.7236</x-m>
