@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
   <sim>
-    <author>David Culp (FDM), Syd Adams(glass instruments), Innis Cunningham (3D and Panel), Michael Soitanen (Canvas Instruments, FDM) Gabriel Hernandez (Sounds, Effects, Textures, FDM, Animations etc), Joshua Davidson (Autoflight, Other), Jonathan Redpath (Textures, Liveries, Fixes, Other), RenanMsV (Animations, Textures Etc)</author>
+    <author>Gabriel Hernandez (Sounds, Effects, Textures, FDM, Animations etc), Joshua Davidson (Autoflight, Other), Jonathan Redpath (Textures, Liveries, Fixes, Other), RenanMsV (Animations, Textures Etc)</author>
     <status>early-production</status>
     <flight-model>jsb</flight-model>
 
@@ -105,14 +105,14 @@
 
                   <multiplay>
 			<generic>
-				<int n="0" alias="/systems/electrical/outputs/strobe"/>
-				<int n="1" alias="/systems/electrical/outputs/beacon"/>
-				<int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
-				<int n="3" alias="/systems/electrical/outputs/logo-lights"/>
-				<int n="4" alias="/systems/electrical/outputs/landing-light[0]"/>
-				<int n="5" alias="/systems/electrical/outputs/landing-light[1]"/>
-				<int n="6" alias="/systems/electrical/outputs/landing-light[2]"/>
-				<int n="7" alias="/systems/electrical/outputs/nav-lights"/>
+			<int n="0" alias="/systems/electrical/outputs/strobe"/>
+			<int n="1" alias="/systems/electrical/outputs/beacon"/>
+			<int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
+			<int n="3" alias="/systems/electrical/outputs/logo-lights"/>
+			<int n="4" alias="/systems/electrical/outputs/landing-light[0]"/>
+			<int n="5" alias="/systems/electrical/outputs/landing-light[1]"/>
+			<int n="6" alias="/systems/electrical/outputs/landing-light[2]"/>
+			<int n="7" alias="/systems/electrical/outputs/nav-lights"/>
 				<float n="0" alias="/gear/gear[0]/compression-m"/>
 				<float n="1" alias="/gear/gear[1]/compression-m"/>
 				<float n="2" alias="/gear/gear[2]/compression-m"/>
@@ -154,18 +154,7 @@
               <script>boeing737.shutdown()</script>
             </binding>
           </item>
-		  <!--item>
-			<label>Fuel Truck Controls</label>
-			<name>fuel</name>
-			<binding>
-				<command>nasal</command>
-				<script>
-					var fuel = gui.Dialog.new("sim/gui/dialogs/fuel/dialog", "Aircraft/737-800/Systems/fuel-truck.xml");
-					fuel.open();
-				</script>
-			</binding>
-		  </item-->
-		   <item n="10">
+	<item n="10">
             <label>Pushback</label>
             <name>pushback</name>
             <binding>
@@ -240,7 +229,7 @@
                             </script>
                     </binding>
             </item>
-        <item>
+           <item>
 			<label>About</label>
 				<binding>
 					<command>nasal</command>
@@ -265,8 +254,8 @@
 		<cockpit type="bool">false</cockpit>
 		<cones type="bool">true</cones>
 		<dome-norm type="double">0</dome-norm>
-		<overhead-panel-norm type="double">1.0</overhead-panel-norm>
-		<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
+		<overhead-panel-norm type="double">2.0</overhead-panel-norm>
+		<main-panel-pedestal-norm type="double">2.0</main-panel-pedestal-norm>
 	      </lighting>
   
   <it-autoflight>
@@ -813,7 +802,7 @@
         <category-8>   4 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT-->
         <category-9>   3 </category-9>  <!-- NAVIGATION_INPUT_SELECT -->		
         <category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->		
-        <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->		
+        <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
         <category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
       </configuration-module>
       <voice>		
@@ -822,7 +811,7 @@
 		<inputs>                            <!-- Module I/O -->
         <arinc429>
           <decision-height-ncd> true </decision-height-ncd>
-          <decision-height> 250 </decision-height>
+          <decision-height> 200 </decision-height>
         </arinc429>
         <rs-232>		
           <present-status>		
