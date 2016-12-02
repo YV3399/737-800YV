@@ -21,3 +21,12 @@ setprop("/controls/lighting/nav-lights",0);
 print("lighting OK");
 
 });
+
+if (getprop("controls/lighting/landing-lights")) {
+setprop("sim/rendering/als-secondary-lights/use-landing-light",1);
+setprop("sim/rendering/als-secondary-lights/use-alt-landing-light",1);
+} else {
+setprop("sim/rendering/als-secondary-lights/use-landing-light",0);
+setprop("sim/rendering/als-secondary-lights/use-alt-landing-light",0);
+}
+
