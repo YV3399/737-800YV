@@ -62,27 +62,6 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
   </animation>
-
-  <animation>
-        <type>shader</type>
-        <shader>chrome</shader>
-        <texture>glass_shader.png</texture>
-        <object-name>windows.int</object-name>
-        <object-name>rearwindows.int</object-name>
-	<object-name>windows.ext</object-name>
-      <object-name>rearwindows.ext</object-name>
-   </animation>
-
- <effect>
-      <inherits-from>Effects/glass</inherits-from>
-      <object-name>windows.int</object-name>
-      <object-name>rearwindows.int</object-name>
-  </effect>
-  <effect>
-      <inherits-from>Effects/model-transparent</inherits-from>
-      <object-name>windows.ext</object-name>
-      <object-name>rearwindows.ext</object-name>
-  </effect>
   
   <!--shader-->
    <effect>
@@ -117,6 +96,17 @@
     <object-name>rhstab</object-name>
    </effect>
 
+  <effect>
+      <inherits-from>Effects/glass</inherits-from>
+      <object-name>windows.int</object-name>
+      <object-name>rearwindows.int</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Effects/model-transparent</inherits-from>
+      <object-name>windows.ext</object-name>
+      <object-name>rearwindows.ext</object-name>
+  </effect>
+   
   <model n="100">
     <name>Cockpit</name>
     <path>Models/cockpit.xml</path>

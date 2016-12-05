@@ -23,7 +23,11 @@
     </startup>
      
 		<model>
-			<path>Models/738.xml</path>                     
+			<path>Models/738.xml</path>       
+			<livery>
+				<file>N737BX</file>
+				<newwinglets type="bool">false</newwinglets>   
+			</livery>
 		</model>    
                 <rating>
 			<FDM type="int">3</FDM>

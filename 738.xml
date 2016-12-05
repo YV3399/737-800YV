@@ -5,7 +5,7 @@
     xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
     <fileheader>
-        <author> Michael Soitanen And Gabriel Hernandez </author>
+        <author> Michael Soitanen (Change by legoboyvdlp, YV3389, and it0uchpods)</author>
         <filecreationdate> 2014-09-30 </filecreationdate>
         <version>$Revison: 1.0 $</version>
         <description> Models a 737-800. </description>

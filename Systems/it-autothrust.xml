@@ -16,19 +16,19 @@
 	  <condition>
 		<and>
 		  <equals>
-			<property>/it-autoflight/apthrmode</property>
+			<property>/it-autoflight/input/kts-mach</property>
 			<value>0</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/apthrmode2</property>
+			<property>/it-autoflight/output/thr-mode</property>
 			<value>0</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/at_master</property>
+			<property>/it-autoflight/output/athr</property>
 			<value>1</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/retard</property>
+			<property>/it-autoflight/output/retard</property>
 			<value>0</value>
 		  </equals>
 		</and>
@@ -38,7 +38,7 @@
       <property>/velocities/airspeed-kt</property>
     </input>
     <reference>
-      <property>/it-autoflight/settings/target-speed-kt</property>
+      <property>/it-autoflight/input/spd-kts</property>
     </reference>
     <output>
       <property>/controls/flight/throttle-cmd</property>
@@ -48,7 +48,6 @@
       <beta>1.0</beta>    
       <alpha>0.1</alpha>  
       <gamma>0.0</gamma>  
-                          
       <Ti>10.0</Ti>       
       <Td>0.00001</Td>    
       <u_min>0.0</u_min>  
@@ -65,19 +64,19 @@
 	  <condition>
 		<and>
 		  <equals>
-			<property>/it-autoflight/apthrmode</property>
+			<property>/it-autoflight/input/kts-mach</property>
 			<value>1</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/apthrmode2</property>
+			<property>/it-autoflight/output/thr-mode</property>
 			<value>0</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/at_master</property>
+			<property>/it-autoflight/output/athr</property>
 			<value>1</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/retard</property>
+			<property>/it-autoflight/output/retard</property>
 			<value>0</value>
 		  </equals>
 		</and>
@@ -88,7 +87,7 @@
 	  <scale>1000.0</scale>
     </input>
     <reference>
-      <property>/it-autoflight/settings/target-mach</property>
+      <property>/it-autoflight/input/spd-mach</property>
 	  <scale>1000.0</scale>
     </reference>
     <output>
@@ -99,7 +98,6 @@
       <beta>1.0</beta>    
       <alpha>0.1</alpha>  
       <gamma>0.0</gamma>  
-                          
       <Ti>10.0</Ti>       
       <Td>0.00001</Td>    
       <u_min>0.0</u_min>  
@@ -115,15 +113,15 @@
 	  <condition>
 		<and>
 		  <equals>
-			<property>/it-autoflight/apthrmode2</property>
+			<property>/it-autoflight/output/thr-mode</property>
 			<value>1</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/at_master</property>
+			<property>/it-autoflight/output/athr</property>
 			<value>1</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/retard</property>
+			<property>/it-autoflight/output/retard</property>
 			<value>0</value>
 		  </equals>
 		</and>
@@ -143,7 +141,6 @@
       <beta>1.0</beta>    
       <alpha>0.1</alpha>  
       <gamma>0.0</gamma>  
-                          
       <Ti>10.0</Ti>       
       <Td>0.00001</Td>    
       <u_min>0.08</u_min>  
@@ -159,15 +156,15 @@
 	  <condition>
 		<and>
 		  <equals>
-			<property>/it-autoflight/apthrmode2</property>
+			<property>/it-autoflight/output/thr-mode</property>
 			<value>2</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/at_master</property>
+			<property>/it-autoflight/output/athr</property>
 			<value>1</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/retard</property>
+			<property>/it-autoflight/output/retard</property>
 			<value>0</value>
 		  </equals>
 		</and>
@@ -187,7 +184,6 @@
       <beta>1.0</beta>    
       <alpha>0.1</alpha>  
       <gamma>0.0</gamma>  
-                          
       <Ti>10.0</Ti>       
       <Td>0.00001</Td>    
       <u_min>0.0</u_min>  
@@ -203,11 +199,11 @@
 	  <condition>
 		<and>
 		  <equals>
-			<property>/it-autoflight/at_master</property>
+			<property>/it-autoflight/output/athr</property>
 			<value>1</value>
 		  </equals>
 		  <equals>
-			<property>/it-autoflight/retard</property>
+			<property>/it-autoflight/output/retard</property>
 			<value>1</value>
 		  </equals>
 		</and>
@@ -227,7 +223,6 @@
       <beta>1.0</beta>    
       <alpha>0.1</alpha>  
       <gamma>0.0</gamma>  
-                          
       <Ti>10.0</Ti>       
       <Td>0.00001</Td>    
       <u_min>0.005</u_min>  
@@ -243,7 +238,7 @@
 		<enable>
 			<condition>
 				<equals>
-					<property>/it-autoflight/at_master</property>
+					<property>/it-autoflight/output/athr</property>
 					<value>1</value>
 				</equals>
 			</condition>
@@ -266,11 +261,11 @@
 			<condition>
 				<and>
 					<equals>
-						<property>/it-autoflight/apthrmode2</property>
+						<property>/it-autoflight/output/thr-mode</property>
 						<value>0</value>
 					</equals>
 					<equals>
-						<property>/it-autoflight/retard</property>
+						<property>/it-autoflight/output/retard</property>
 						<value>0</value>
 					</equals>
 				</and>
@@ -281,11 +276,11 @@
 			<condition>
 				<and>
 					<not-equals>
-						<property>/it-autoflight/apthrmode2</property>
+						<property>/it-autoflight/output/thr-mode</property>
 						<value>0</value>
 					</not-equals>
 					<equals>
-						<property>/it-autoflight/retard</property>
+						<property>/it-autoflight/output/retard</property>
 						<value>0</value>
 					</equals>
 				</and>
@@ -295,7 +290,7 @@
 		<max-rate-of-change>
 			<condition>
 				<equals>
-					<property>/it-autoflight/retard</property>
+					<property>/it-autoflight/output/retard</property>
 					<value>1</value>
 				</equals>
 			</condition>

@@ -5,25 +5,25 @@
 
 # Speed or Mach?
 var speedmach = func {
-  if (getprop("/it-autoflight/apvertmode") == 4) {
+  if (getprop("/it-autoflight/output/vert") == 4) {
     # Do nothing because it's in FLCH mode.
   } else {
-    if (getprop("/it-autoflight/apthrmode") == 0) {
+    if (getprop("/it-autoflight/input/kts-mach") == 0) {
       setprop("/autopilot/display/throttle-mode", "SPEED");
-    } else if (getprop("/it-autoflight/apthrmode") == 1) {
+    } else if (getprop("/it-autoflight/input/kts-mach") == 1) {
       setprop("/autopilot/display/throttle-mode", "MACH");
     }
   }
 }
 
 # Update Speed or Mach
-setlistener("/it-autoflight/apthrmode", func {
+setlistener("/it-autoflight/input/kts-mach", func {
   speedmach();
 });
 
 # Master Thrust
-setlistener("/it-autoflight/apthrmode2", func {
-  var latset = getprop("/it-autoflight/apthrmode2");
+setlistener("/it-autoflight/output/thr-mode", func {
+  var latset = getprop("/it-autoflight/output/thr-mode");
   if (latset == 0) {
 	speedmach();
   } else if (latset == 1) {
@@ -34,36 +34,46 @@ setlistener("/it-autoflight/apthrmode2", func {
 });
 
 # Master Lateral
-setlistener("/it-autoflight/aplatmode", func {
-  var latset = getprop("/it-autoflight/aplatmode");
-  if (latset == 0) {
+setlistener("/it-autoflight/mode/lat", func {
+  var lat = getprop("/it-autoflight/mode/lat");
+  if (lat == "HDG") {
 	setprop("/autopilot/display/roll-mode", "HDG");
-  } else if (latset == 1) {
+  } else if (lat == "LNAV") {
 	setprop("/autopilot/display/roll-mode", "LNAV");
-  } else if (latset == 2) {
+  } else if (lat == "LOC") {
 	setprop("/autopilot/display/roll-mode", "LOC");
+  } else if (lat == "ALGN") {
+	setprop("/autopilot/display/roll-mode", "ALIGN");
   }
 });
 
 # Master Vertical
-setlistener("/it-autoflight/apvertmode", func {
-  var latset = getprop("/it-autoflight/apvertmode");
-  if (latset == 0) {
-	setprop("/autopilot/display/pitch-mode", "HOLD");
-  } else if (latset == 1) {
+setlistener("/it-autoflight/mode/vert", func {
+  var vert = getprop("/it-autoflight/mode/vert");
+  if (vert == "ALT HLD") {
+	setprop("/autopilot/display/pitch-mode", "ALT HLD");
+  } else if (vert == "ALT CAP") {
+	setprop("/autopilot/display/pitch-mode", "ALT CAP");
+  } else if (vert == "V/S") {
 	setprop("/autopilot/display/pitch-mode", "V/S");
-  } else if (latset == 2) {
+  } else if (vert == "G/S") {
 	setprop("/autopilot/display/pitch-mode", "G/S");
-  } else if (latset == 4) {
+  } else if (vert == "SPD CLB") {
 	setprop("/autopilot/display/pitch-mode", "MCP SPD");
-  } else if (latset == 6) {
+  } else if (vert == "SPD DES") {
+	setprop("/autopilot/display/pitch-mode", "MCP SPD");
+  } else if (vert == "LAND 3") {
+	setprop("/autopilot/display/pitch-mode", "LAND 3");
+    setprop("/autopilot/display/pitch-mode-armed", "FLARE");
+  } else if (vert == "FLARE") {
 	setprop("/autopilot/display/pitch-mode", "FLARE");
+    setprop("/autopilot/display/pitch-mode-armed", " ");
   }
 });
 
 # Arm LOC
-setlistener("/it-autoflight/loc-armed", func {
-  var loca = getprop("/it-autoflight/loc-armed");
+setlistener("/it-autoflight/output/loc-armed", func {
+  var loca = getprop("/it-autoflight/output/loc-armed");
   if (loca) {
     setprop("/autopilot/display/roll-mode-armed", "LOC");
   } else {
@@ -72,8 +82,8 @@ setlistener("/it-autoflight/loc-armed", func {
 });
 
 # Arm G/S
-setlistener("/it-autoflight/appr-armed", func {
-  var appa = getprop("/it-autoflight/appr-armed");
+setlistener("/it-autoflight/output/appr-armed", func {
+  var appa = getprop("/it-autoflight/output/appr-armed");
   if (appa) {
     setprop("/autopilot/display/pitch-mode-armed", "G/S");
   } else {
@@ -83,10 +93,10 @@ setlistener("/it-autoflight/appr-armed", func {
 
 # AP or FD
 var apfd = func {
-  var ap1 = getprop("/it-autoflight/ap_master");
-  var ap2 = getprop("/it-autoflight/ap_master2");
-  var fd1 = getprop("/it-autoflight/fd_master");
-  var fd2 = getprop("/it-autoflight/fd_master2");
+  var ap1 = getprop("/it-autoflight/output/ap1");
+  var ap2 = getprop("/it-autoflight/output/ap2");
+  var fd1 = getprop("/it-autoflight/output/fd1");
+  var fd2 = getprop("/it-autoflight/output/fd2");
   if (ap1 or ap2) {
     setprop("/autopilot/display/afds-mode[0]", "AP");
   } else if (fd1 or fd2) {
@@ -97,16 +107,16 @@ var apfd = func {
 }
 
 # Update AP or FD
-setlistener("/it-autoflight/ap_master", func {
+setlistener("/it-autoflight/output/ap1", func {
   apfd();
 });
-setlistener("/it-autoflight/ap_master2", func {
+setlistener("/it-autoflight/output/ap2", func {
   apfd();
 });
-setlistener("/it-autoflight/fd_master", func {
+setlistener("/it-autoflight/output/fd1", func {
   apfd();
 });
-setlistener("/it-autoflight/fd_master2", func {
+setlistener("/it-autoflight/output/fd2", func {
   apfd();
 });
 

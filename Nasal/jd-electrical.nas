@@ -74,7 +74,7 @@ var elec_init = func {
 
 var master_elec = func {
 	var battery_on = getprop("/controls/electric/battery-switch");   # Define all the stuff I need
-	var extpwr_on = getprop("/controls/switches/cart");
+	var extpwr_on = getprop("/services/ext-pwr/enable");
 	var extL = getprop("/controls/electrical/ext/Lsw");
 	var extR = getprop("/controls/electrical/ext/Rsw");
 	var emerpwr_on = getprop("/controls/electrical/emerpwr");

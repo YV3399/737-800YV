@@ -23,41 +23,45 @@ setlistener("/sim/signals/fdm-initialized", func {
 	elec_init();
   	itaf.ap_init();			
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800/Systems/autopilot-dlg.xml");
-	setprop("/it-autoflight/settings/retard-enable", 1);  # Enable or disable automatic autothrottle retard.
-	setprop("/it-autoflight/settings/retard-ft", 35);     # Add this to change the retard altitude, default is 50ft AGL.
-	setprop("/it-autoflight/settings/land-flap", 0.750);  # Define the landing flaps here. This is needed for autoland, and retard.
-	setprop("/it-autoflight/settings/land-enable", 0);    # Enable or disable automatic landing.
+	setprop("/it-autoflight/settings/retard-enable", 1);   # Enable or disable automatic autothrottle retard.
+	setprop("/it-autoflight/settings/retard-ft", 35);      # Add this to change the retard altitude.
+	setprop("/it-autoflight/settings/land-flap", 0.750);   # Define the landing flaps here. This is needed for autoland, and retard.
+	setprop("/it-autoflight/settings/land-enable", 0);     # Enable or disable automatic landing.
+	setprop("/it-autoflight/autoland/flare-altitude", 40); # Altitude when the flare mode starts in an autoland.
 });
 
 setlistener("/sim/signals/fdm-initialized", func {
-  	setprop("/it-autoflight/settings/target-speed-kt", 100);
+  	setprop("/it-autoflight/input/spd-kts", 100);
 });
 
-	setprop("/it-autoflight/ap_master", 0);
-	setprop("/it-autoflight/ap_master2", 0);
-	setprop("/it-autoflight/at_master", 0);
-	setprop("/it-autoflight/fd_master", 0);
-	setprop("/it-autoflight/fd_master2", 0);
-	setprop("/it-autoflight/settings/target-speed-kt", 100);
-	setprop("/it-autoflight/settings/target-mach", 0.68);
-	setprop("/it-autoflight/settings/heading-bug-deg", 360);
-	setprop("/it-autoflight/settings/target-altitude-ft", 10000);
-	setprop("/it-autoflight/settings/target-altitude-ft-actual", 10000);
-	setprop("/it-autoflight/settings/vertical-speed-fpm", 0);
-	setprop("/it-autoflight/settings/vertical-speed-fpm-reduced", 0);
-	setprop("/it-autoflight/loc1", 0);
-	setprop("/it-autoflight/app1", 0);
-	setprop("/it-autoflight/aplatmode", 0);
-	setprop("/it-autoflight/apvertmode", 3);
-	setprop("/it-autoflight/thr", 1);
-	setprop("/it-autoflight/idle", 0);
-	setprop("/it-autoflight/clb", 0);
-	setprop("/it-autoflight/autothrarm", 0);
-	setprop("/it-autoflight/apthrmode", 0);
-	setprop("/it-autoflight/apthrmode2", 0);
+	setprop("/it-autoflight/input/kts-mach", 0);
+	setprop("/it-autoflight/input/ap1", 0);
+	setprop("/it-autoflight/input/ap2", 0);
+	setprop("/it-autoflight/input/athr", 0);
+	setprop("/it-autoflight/input/fd1", 0);
+	setprop("/it-autoflight/input/fd2", 0);
+	setprop("/it-autoflight/input/spd-kts", 200);
+	setprop("/it-autoflight/input/spd-mach", 0.68);
+	setprop("/it-autoflight/input/hdg", 360);
+	setprop("/it-autoflight/input/alt", 10000);
+	setprop("/it-autoflight/input/vs", 0);
+	setprop("/it-autoflight/input/lat", 0);
+	setprop("/it-autoflight/input/vert", 4);
+	setprop("/it-autoflight/input/bank-limit", 30);
+	setprop("/it-autoflight/input/trk", 0);
+	setprop("/it-autoflight/output/ap1", 0);
+	setprop("/it-autoflight/output/ap2", 0);
+	setprop("/it-autoflight/output/at", 0);
+	setprop("/it-autoflight/output/fd1", 0);
+	setprop("/it-autoflight/output/fd2", 0);
+	setprop("/it-autoflight/output/loc-armed", 0);
+	setprop("/it-autoflight/output/appr-armed", 0);
+	setprop("/it-autoflight/output/thr-mode", 0);
+	setprop("/it-autoflight/output/retard", 0);
+	setprop("/it-autoflight/internal/alt", 10000);
 
-setlistener("/it-autoflight/settings/vertical-speed-fpm", func {
-	setprop("/it-autoflight/settings/vertical-speed-fpm-reduced", getprop("/it-autoflight/settings/vertical-speed-fpm") / 100);
+setlistener("/it-autoflight/input/vs", func {
+	setprop("/it-autoflight/input/vs-reduced", getprop("/it-autoflight/input/vs") / 100);
 });
 	
 var timerstall = maketimer(5, func(){
@@ -119,22 +123,4 @@ var aglgears = func {
 }
 
 aglgears();
-
-##########  Fuel System ##########
-setlistener("/sim/signals/fdm-initialized", func {
-print("Fuel Nasal Controls: Initializing, please wait");
-});
-
-var fuelsys = func {
-
-    var pump_left = getprop("/controls/fuel/tank[2]/pump-left");
-    var pump_right = getprop("/controls/fuel/tank[2]/pump-right");
-
-    if (!pump_left and !pump_right) {
-        setprop("consumables/fuel/tank[2]/selected", 0);
-    } else {
-       setprop("consumables/fuel/tank[2]/selected", 1);
-       boeing737.fuelsys();
-    }
-}
 

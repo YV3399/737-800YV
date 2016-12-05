@@ -160,9 +160,9 @@ var canvas_PFD = {
 		var track = getprop("/orientation/track-magnetic-deg");
 		var vSpd = getprop("/velocities/vertical-speed-fps");
 		var air_ground = getprop("/b737/sensors/air-ground");
-		var apAlt = getprop("it-autoflight/settings/target-altitude-ft-actual");
-		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
-		var apHdg = getprop("it-autoflight/settings/heading-bug-deg");
+		var apAlt = getprop("/it-autoflight/internal/alt");
+		var apSpd = getprop("/it-autoflight/input/spd-kts");
+		var apHdg = getprop("/it-autoflight/input/hdg");
 		var metricMode = getprop("instrumentation/efis[0]/inputs/alt-meters");
 		var baroStdSet = getprop("instrumentation/efis[0]/inputs/setting-std");
 		var baroPreSetShow = getprop("instrumentation/efis[0]/inputs/baro-previous-show");
@@ -288,8 +288,8 @@ var canvas_PFD = {
 		me["compassSNmbr6"].setText(sprintf("%0.0f", SNmbr6));
 			
 		# Flight director
-		var itaffd1x = getprop("/it-autoflight/fd_master");
-		var itaffd2x = getprop("/it-autoflight/fd_master2");
+		var itaffd1x = getprop("/it-autoflight/output/fd1");
+		var itaffd2x = getprop("/it-autoflight/output/fd2");
 		if (itaffd1x or itaffd2x) {
 			if (getprop("/it-autoflight/fd/roll-bar") != nil) {
 				var fdRoll = (roll-getprop("/it-autoflight/fd/roll-bar"))*1.1;
@@ -712,11 +712,11 @@ var canvas_PFD = {
 	update_ap_modes: func()
 	{
 		# Define ITAF stuff
-		var itafat = getprop("/it-autoflight/at_master");
-		var itafap1 = getprop("/it-autoflight/ap_master");
-		var itafap2 = getprop("/it-autoflight/ap_master2");
-		var itaffd1 = getprop("/it-autoflight/fd_master");
-		var itaffd2 = getprop("/it-autoflight/fd_master2");
+		var itafat = getprop("/it-autoflight/output/athr");
+		var itafap1 = getprop("/it-autoflight/output/ap1");
+		var itafap2 = getprop("/it-autoflight/output/ap2");
+		var itaffd1 = getprop("/it-autoflight/output/fd1");
+		var itaffd2 = getprop("/it-autoflight/output/fd2");
 		# Modes
 		var afds = getprop("/autopilot/display/afds-mode[0]");
 		if (afds == "SINGLE CH") {
@@ -807,7 +807,7 @@ var canvas_PFD = {
 		var air_ground = getprop("/b737/sensors/air-ground");
 		var flaps = getprop("/controls/flight/flaps");
 		var alt = getprop("instrumentation/altimeter/indicated-altitude-ft");
-		var apSpd = getprop("it-autoflight/settings/target-speed-kt");
+		var apSpd = getprop("/it-autoflight/input/spd-kts");
 		var dh = getprop("instrumentation/mk-viii/inputs/arinc429/decision-height");
 		
 		var v1 = getprop("instrumentation/fmc/speeds/v1-kt") or 0;
@@ -989,9 +989,9 @@ var canvas_PFD = {
 			me["ilsId"].setText(sprintf("%s /%03d°",navId,getprop("instrumentation/nav/radials/selected-deg")));
 		}
 		me["dhText"].setText(sprintf("%4.0f",dh));
-		me["selHdgText"].setText(sprintf("%03d",getprop("it-autoflight/settings/heading-bug-deg")));
-		if (getprop("/it-autoflight/apthrmode")) {
-			me["speedText"].setText(sprintf(".%2.0f",getprop("/it-autoflight/settings/target-mach")*100));
+		me["selHdgText"].setText(sprintf("%03d",getprop("/it-autoflight/input/hdg")));
+		if (getprop("/it-autoflight/input/kts-mach")) {
+			me["speedText"].setText(sprintf(".%2.0f",getprop("/it-autoflight/input/spd-mach")*100));
 		} else {
 			me["speedText"].setText(sprintf("%3.0f",apSpd));
 		}
