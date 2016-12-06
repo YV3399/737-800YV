@@ -1716,7 +1716,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+            <repeatable type="bool">false</repeatable>   
             <binding>
             <command>property-toggle</command>
             <property>/controls/APU/start</property>
@@ -1750,7 +1750,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+            <repeatable type="bool">false</repeatable>       
             <binding>
             <command>property-toggle</command>
             <property>/controls/switches/no-smoking-sign</property>
@@ -1780,7 +1780,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+            <repeatable type="bool">false</repeatable>     
             <binding>
             <command>property-toggle</command>
             <property>/controls/switches/seatbelt-sign</property>
@@ -1811,7 +1811,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+            <repeatable type="bool">false</repeatable> 
             <binding>
             <command>property-toggle</command>
             <property>/controls/lighting/logo-lights</property>
@@ -1845,7 +1845,7 @@
        <visible>1</visible>
        <action>
         <button>0</button>
-           <repeatable>true</repeatable>        
+           <repeatable type="bool">false</repeatable>        
            <binding>
            <command>property-toggle</command>
            <property>/controls/lighting/strobe</property>
@@ -1884,7 +1884,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+           <repeatable type="bool">false</repeatable>        
             <binding>
             <command>property-toggle</command>
             <property>/controls/lighting/beacon</property>
@@ -1917,7 +1917,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+            <repeatable type="bool">false</repeatable>        
             <binding>
             <command>property-toggle</command>
             <property>/controls/lighting/wing</property>
@@ -1950,7 +1950,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+            <repeatable type="bool">false</repeatable>
             <binding>
             <command>property-toggle</command>
             <property>/controls/lighting/wheel</property>
@@ -1985,7 +1985,7 @@
          <button>0</button>
             <repeatable>true</repeatable>        
             <binding>
-            <command>property-toggle</command>
+            <repeatable type="bool">false</repeatable>
             <property>/controls/lighting/Taxi</property>
         </binding>
         <binding>
@@ -2016,7 +2016,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+          <repeatable type="bool">false</repeatable>   
             <binding>
             <command>property-toggle</command>
             <property>/controls/lighting/Taxi-1</property>
@@ -2049,7 +2049,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+            <repeatable type="bool">false</repeatable>
             <binding>
             <command>property-toggle</command>
             <property>/controls/lighting/Taxi-light</property>
@@ -2084,7 +2084,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+            <repeatable type="bool">false</repeatable>
             <binding>
             <command>property-toggle</command>
             <property>/controls/fuel/tank[2]/pump-left</property>
@@ -2117,7 +2117,7 @@
         <visible>1</visible>
         <action>
          <button>0</button>
-            <repeatable>true</repeatable>        
+           <repeatable type="bool">false</repeatable>       
             <binding>
             <command>property-toggle</command>
             <property>/controls/fuel/tank[2]/pump-right</property>
@@ -2154,7 +2154,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>        
       <binding>
         <command>property-toggle</command>
         <property>/controls/fuel/tank[0]/pump-aft</property>
@@ -2189,7 +2189,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>        
       <binding>
         <command>property-toggle</command>
         <property>/controls/fuel/tank[0]/pump-fwd</property>
@@ -2222,7 +2222,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>      
       <binding>
         <command>property-toggle</command>
         <property>/controls/fuel/tank[1]/pump-fwd</property>
@@ -2255,7 +2255,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>     
       <binding>
         <command>property-toggle</command>
         <property>/controls/fuel/tank[1]/pump-aft</property>
@@ -2291,7 +2291,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>     
       <binding>
         <command>property-toggle</command>
         <property>/controls/electric/battery-switch</property>
@@ -2370,7 +2370,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>
       <binding>
         <command>property-toggle</command>
         <property>/controls/electric/apugen1</property>
@@ -2403,7 +2403,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable> 
       <binding>
         <command>property-toggle</command>
         <property>/controls/electric/apugen1</property>
@@ -2436,7 +2436,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>      
       <binding>
         <command>property-toggle</command>
         <property>/controls/electric/APU-generator</property>
@@ -2469,7 +2469,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>
       <binding>
         <command>property-toggle</command>
         <property>/controls/electric/APU-generator</property>
@@ -2503,7 +2503,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>     
       <binding>
           <command>property-toggle</command>
           <property>/controls/electric/external-power</property>
@@ -2516,8 +2516,6 @@
           <command>nasal</command>
         <script>
           if(getprop("services/ext-pwr/enable") == 0) screen.log.write("No External Power Enabled",1,0,0);
-          
-
         </script>
       </binding>
     </action> 
@@ -2547,7 +2545,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>      
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/anti-ice/window-heat</property>
@@ -2580,7 +2578,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>   
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/anti-ice/window-heat</property>
@@ -2613,7 +2611,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>  
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/anti-ice/window-heat</property>
@@ -2646,7 +2644,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>  
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/anti-ice/window-heat</property>
@@ -2679,7 +2677,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>      
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/anti-ice/window-heat</property>
@@ -2715,7 +2713,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>   
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/anti-ice/wing-heat</property>
@@ -2748,7 +2746,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>  
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/anti-ice/engine/carb-heat</property>
@@ -2785,7 +2783,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>        
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/anti-ice/engine[1]/carb-heat</property>
@@ -2825,7 +2823,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>    
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/hydraulic/system/engine-pump</property>
@@ -2859,7 +2857,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+     <repeatable type="bool">false</repeatable>   
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/hydraulic/system/engine-pump</property>
@@ -2893,7 +2891,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/hydraulic/system/electric-pump</property>
@@ -2927,7 +2925,7 @@
     <visible>1</visible>
     <action>
       <button>0</button>
-      <repeatable>true</repeatable>        
+      <repeatable type="bool">false</repeatable>        
       <binding>
       		<command>property-toggle</command>
         	<property>/controls/hydraulic/system/electric-pump</property>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>pedestal.ac</path>
-    <!--animation>
+    <animation>
         <type>select</type>
         <object-name>EICAS2</object-name>
         <condition>
@@ -18,7 +18,7 @@
             <z-m>0.738</z-m>
             <pitch-deg>299.5</pitch-deg>
         </offsets>
-    </model-->
+    </model>
     <model>
         <name>CDU1</name>
         <path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
