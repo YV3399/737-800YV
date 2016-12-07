@@ -1977,7 +1977,7 @@
           <z>0</z>
       </axis>
   </animation>
-  <animation>
+    <animation>
         <type>pick</type>
         <object-name>RNYTurnOffL</object-name>         
         <visible>1</visible>
@@ -1986,7 +1986,7 @@
             <repeatable>true</repeatable>        
             <binding>
             <repeatable type="bool">false</repeatable>
-            <property>/controls/lighting/Taxi</property>
+            <property>/controls/lighting/RB-light</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1997,7 +1997,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>RNYTurnOffL</object-name>  
-            <property>/controls/lighting/Taxi</property>
+            <property>/controls/lighting/RB-light</property>
       <factor>30</factor>
       <center>
           <x-m>0.61599</x-m>
@@ -2019,7 +2019,7 @@
           <repeatable type="bool">false</repeatable>   
             <binding>
             <command>property-toggle</command>
-            <property>/controls/lighting/Taxi-1</property>
+            <property>/controls/lighting/RB-light</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -2030,7 +2030,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>RNYTurnOffR</object-name>  
-            <property>/controls/lighting/Taxi-1</property>
+            <property>/controls/lighting/RB-light</property>
       <factor>30</factor>
       <center>
           <x-m>0.61621</x-m>
@@ -2144,8 +2144,6 @@
           <z>0</z>
       </axis>
   </animation>
-
-  <!-- Renan Custom Objects Anims-->
 
   <!-- Fuel Pumps -->
   <animation>

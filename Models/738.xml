@@ -286,7 +286,7 @@
   <texture>737-800.png</texture>  
    </animation>
  	
-<!-- Lights -->
+<!-- Lights Logo And Winglet -->
 	<animation>
 		<name>logo light illumination</name>
 		<type>material</type>
@@ -365,12 +365,15 @@
       </offsets>
     </model>
 
+    <!--Landing Light-->
+   
+   
     <model>
 	<path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
 	<name>LeftWingLandinglight</name>
   
 	<offsets>
-		<x-m>-4.98</x-m>
+		<x-m>-4.90</x-m>
 		<y-m>-2.14</y-m>
 		<z-m>-0.51</z-m>      
 	</offsets>
@@ -383,6 +386,41 @@
 		<x-m>-4.98</x-m>
 		<y-m>2.14</y-m>
 		<z-m>-0.51</z-m>        
+	</offsets>
+       </model>
+       
+       <!--Taxi Light-->
+       
+      <model>
+	<path>Aircraft/737-800/Models/lights/TaxiLight.xml</path>
+	<name>TaxiLight</name>
+	<offsets>
+		<x-m>-15.78</x-m>
+		<y-m>0.00</y-m>
+		<z-m>-1.60</z-m>      
+	</offsets>
+     </model>
+
+<!--Retractable-landinglight -->
+
+     <model>
+	<path>Aircraft/737-800/Models/lights/Retractable-landinglight.xml</path>
+	<name>LeftRBlight</name>
+  
+	<offsets>
+		<x-m>-7.10</x-m>
+		<y-m>-1.00</y-m>
+		<z-m>-1.30</z-m>      
+	</offsets>
+     </model>
+
+       <model>
+	<path>Aircraft/737-800/Models/lights/Retractable-landinglight.xml</path>
+	<name>RightWRBlight</name>V
+	<offsets>
+		<x-m>-7.10</x-m>
+		<y-m>1.00</y-m>
+		<z-m>-1.30</z-m>        
 	</offsets>
        </model>
 

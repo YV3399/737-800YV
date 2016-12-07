@@ -1053,30 +1053,8 @@
         </position>
         <reference-dist>1.0</reference-dist>
         <max-dist>2.0</max-dist-->
-    
 
-    <!--switch>
-        <name>click off</name>
-        <mode>once</mode>
-        <path>Aircraft/737-800/Sounds/click.wav</path>
-        <condition>
-            <not>
-                <property>/sim/sound/switch</property>
-            </not>
-        </condition>
-        <volume>
-            <factor>0.45</factor>
-        </volume>
-        <position>
-            <x>-23</x>
-            <y>0</y>
-            <z>1</z>
-        </position>
-        <reference-dist>1.0</reference-dist>
-        <max-dist>2.0</max-dist>
-    </switch-->
-
-<!-- Crashed -->
+    <!-- Crashed -->
 
 <crash>
   <name>intense ground contact</name>

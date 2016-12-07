@@ -42,7 +42,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">55</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">55</default-field-of-view-deg>
 				<pitch-offset-deg>-4</pitch-offset-deg>
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">-0.51</x-offset-m>
@@ -58,7 +58,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">41</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">41</default-field-of-view-deg>
 				<pitch-offset-deg>-70</pitch-offset-deg>
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">-0.15</x-offset-m>
@@ -73,7 +73,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">58</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">58</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>-70</heading-offset-deg>
 				<x-offset-m archive="y">1.75</x-offset-m>
@@ -88,7 +88,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">58</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">58</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>70</heading-offset-deg>
 				<x-offset-m archive="y">-1.83</x-offset-m>
@@ -103,7 +103,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">62</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">62</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>130</heading-offset-deg>
 				<x-offset-m archive="y">-1.83</x-offset-m>
@@ -118,7 +118,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">62</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">62</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>-130</heading-offset-deg>
 				<x-offset-m archive="y">1.83</x-offset-m>
@@ -133,7 +133,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">68</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">68</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>-1</heading-offset-deg>
 				<x-offset-m archive="y">0.49</x-offset-m>
@@ -148,7 +148,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">58</default-field-of-view-deg>
+		<default-field-of-view-deg type="double">58</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>70</heading-offset-deg>
 				<x-offset-m archive="y">-1.83</x-offset-m>

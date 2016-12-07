@@ -103,13 +103,10 @@ tyresmoke();
 
 #============================ Rain ===================================
 aircraft.rain.init();
-
 var rain = func {
-	aircraft.rain.update();
-	settimer(rain, 0);
+aircraft.rain.update();
+settimer(rain, 0);
 }
-
 # == fire it up ===
 rain()
-
 # end 

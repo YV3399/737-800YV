@@ -107,12 +107,10 @@
 			<generic>
 			<int n="0" alias="/systems/electrical/outputs/strobe"/>
 			<int n="1" alias="/systems/electrical/outputs/beacon"/>
-			<int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
+			<int n="2" alias="/systems/electrical/outputs/taxi-light"/>
 			<int n="3" alias="/systems/electrical/outputs/logo-lights"/>
-			<int n="4" alias="/systems/electrical/outputs/landing-light[0]"/>
-			<int n="5" alias="/systems/electrical/outputs/landing-light[1]"/>
-			<int n="6" alias="/systems/electrical/outputs/landing-light[2]"/>
-			<int n="7" alias="/systems/electrical/outputs/nav-lights"/>
+			<int n="4" alias="/systems/electrical/outputs/landing-lights"/>
+			<int n="5" alias="/systems/electrical/outputs/nav-lights"/>
 				<float n="0" alias="/gear/gear[0]/compression-m"/>
 				<float n="1" alias="/gear/gear[1]/compression-m"/>
 				<float n="2" alias="/gear/gear[2]/compression-m"/>
@@ -163,23 +161,23 @@
             </binding>
           </item>
           <item>
-			<name>gs</name>
-			<label>Ground Services</label>
-			<binding>
-				<command>nasal</command>
-				<script>
-					var gs = gui.Dialog.new("sim/gui/dialogs/gs/dialog", "Aircraft/737-800/Dialogs/ground-services-dlg.xml");
-					gs.open();
-				</script>
+		<name>gs</name>
+		<label>Ground Services</label>
+		<binding>
+                <command>nasal</command>
+                    <script>
+                        var gs = gui.Dialog.new("sim/gui/dialogs/gs/dialog", "Aircraft/737-800/Dialogs/ground-services-dlg.xml");
+                        gs.open();
+                    </script>
 			</binding>
 		  </item>
 		  <item>
 		      <label>Announcements</label>
 		      <binding>
-					<command>nasal</command>
-					<script>
-						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/737-800/Dialogs/announcements-dialog.xml");
-						mal.open();
+                        <command>nasal</command>
+                        <script>
+                            var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/737-800/Dialogs/announcements-dialog.xml");
+                            mal.open();
 		       </script>
 		      </binding>
                    </item> 
@@ -210,33 +208,33 @@
 		  <item>
 			<name>lights</name>
 			<label>Lights</label>
-				<binding>
-					<command>nasal</command>
-					<script>
-				 var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800/Systems/lights-dlg.xml");
+                         <binding>
+                    <command>nasal</command>
+                        <script>
+                             var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800/Systems/lights-dlg.xml");
 					lights.open();
-					</script>
-				</binding>
+                        </script>
+                        </binding>
 		  </item>
 
 		  <item>
                 <label>System Failures</label>
-					<binding>
+                    <binding>
                             <command>nasal</command>
                             <script>
                              var failures = gui.Dialog.new("sim/gui/dialogs/failures/dialog", "Aircraft/737-800/Systems/failures-dlg.xml");
                              failures.open();
                             </script>
-                    </binding>
+                   </binding>
             </item>
            <item>
 			<label>About</label>
 				<binding>
-					<command>nasal</command>
-					<script>
-					 	var about = gui.Dialog.new("sim/gui/dialogs/about/dialog", "Aircraft/737-800/Dialogs/about-dlg.xml");
-						about.open();
-					</script>
+                                <command>nasal</command>
+                                   <script>
+                                    var about = gui.Dialog.new("sim/gui/dialogs/about/dialog", "Aircraft/737-800/Dialogs/about-dlg.xml");
+                                        about.open();
+                                    </script>
 				</binding>
 		</item>    
         </menu>
@@ -254,8 +252,8 @@
 		<cockpit type="bool">false</cockpit>
 		<cones type="bool">true</cones>
 		<dome-norm type="double">0</dome-norm>
-		<overhead-panel-norm type="double">2.0</overhead-panel-norm>
-		<main-panel-pedestal-norm type="double">2.0</main-panel-pedestal-norm>
+		<overhead-panel-norm type="double">1.0</overhead-panel-norm>
+		<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
 	      </lighting>
   
 <it-autoflight>
@@ -296,7 +294,6 @@
 	</config>
 </it-autoflight>
   
-
   <consumables>
     <fuel>
       <tank n="0">
@@ -413,7 +410,7 @@
         </binding>
       </key>
 	 
-	        <key n="127">
+        <key n="127">
         <name>Delete</name>
         <desc>Thrust reversers toggle</desc>
         <binding>
