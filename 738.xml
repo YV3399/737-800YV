@@ -601,9 +601,9 @@
                     <table>
                         <independentVar>fcs/roll-trim-sum</independentVar>
                         <tableData>
-                            -1              0.2705260341
-                            0               0.0181999444
-                            1               -0.3577924967
+                            -1              0.0.27053 <!-- 0.2705260341 -->
+                            0               0.0181999444 <!-- 0.0181999444 -->
+                            1               -0.0.35780 <!-- -0.3577924967 -->
                         </tableData>
                     </table>
                 </function>
