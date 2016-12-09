@@ -46,11 +46,7 @@
 		<path>Aircraft/737-800/Systems/it-autothrust.xml</path>
 	  </autopilot>
  
-           <lights>
-		<name>als-lights</name>
-		<path>Aircraft/737-800/Systems/als-lights</path>
-	  </lights>
-
+    
       <path>Aircraft/737-800/Systems/systems.xml</path>
 
       <property-rule n="101">
