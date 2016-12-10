@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-   <path>cockpit.ac</path>
+ <path>cockpit.ac</path>
 
      <!--<animation>
         <type>select</type>
@@ -9,90 +9,90 @@
         <condition>
             <property>sim/current-view/internal</property>
         </condition>
-    </animation>    -->
-    <model>
+      </animation>    -->
+      <model>
         <name>flightdesk</name>
         <path>flightdesk.xml</path>
         <offsets>
-            <x-m>0.430</x-m>
-            <y-m>0.00</y-m>
-            <z-m>0.91</z-m>
-            <pitch-deg>-15</pitch-deg>
+          <x-m>0.430</x-m>
+          <y-m>0.00</y-m>
+          <z-m>0.91</z-m>
+          <pitch-deg>-15</pitch-deg>
         </offsets>
-    </model>
-	<model>
-		<name>seatcapt</name>
-		<path>Aircraft/737-800/Models/seats/cockpitseat.ac</path>
-		<offsets>
-			<x-m>1.25</x-m>
-			<y-m>-0.5390</y-m>
-			<z-m>0.0</z-m>
-		</offsets>
-	</model>
-	
-	<model>
-		<name>seatfo</name>
-		<path>Aircraft/737-800/Models/seats/cockpitseat.ac</path>
-		<offsets>
-			<x-m>1.25</x-m>
-			<y-m>0.4950</y-m>
-			<z-m>0.0</z-m>
-		</offsets>
-	</model>
+      </model>
+      <model>
+        <name>seatcapt</name>
+        <path>Aircraft/737-800/Models/seats/cockpitseat.xml</path>
+        <offsets>
+         <x-m>1.25</x-m>
+         <y-m>-0.5390</y-m>
+         <z-m>0.0</z-m>
+       </offsets>
+     </model>
 
-	<model>
-		<name>yokecapt</name>
-		<path>Aircraft/737-800/Models/yoke/yoke.xml</path>
-		<offsets>
-			<x-m>0.842</x-m>
-			<y-m>-0.5390</y-m>
-			<z-m>0.850</z-m>
-		</offsets>
-	</model>
-	
-	<model>
-		<name>yokefo</name>
-		<path>Aircraft/737-800/Models/yoke/yoke.xml</path>
-		<offsets>
-			<x-m>0.83</x-m>
-			<y-m>0.4950</y-m>
-			<z-m>0.855</z-m>
-		</offsets>
-	</model>
-
-    <model>
-     <name>captain-pedals</name>
-     <path>pedals.xml</path>
-     <offsets>
-      <x-m>0.430</x-m>
-      <y-m>-0.53</y-m>
-      <z-m>0.315</z-m>
-      <pitch-deg>0</pitch-deg>
+     <model>
+      <name>seatfo</name>
+      <path>Aircraft/737-800/Models/seats/cockpitseat2.xml</path>
+      <offsets>
+       <x-m>1.25</x-m>
+       <y-m>0.4950</y-m>
+       <z-m>0.0</z-m>
      </offsets>
-    </model>
+   </model>
 
-    <model>
-     <name>fo-pedals</name>
-     <path>pedals.xml</path>
-     <offsets>
-      <x-m>0.430</x-m>
-      <y-m>0.48</y-m>
-      <z-m>0.315</z-m>
-      <pitch-deg>0</pitch-deg>
-     </offsets>
-    </model>
-
+   <model>
+    <name>yokecapt</name>
+    <path>Aircraft/737-800/Models/yoke/yoke.xml</path>
+    <offsets>
+     <x-m>0.842</x-m>
+     <y-m>-0.5390</y-m>
+     <z-m>0.850</z-m>
+   </offsets>
+ </model>
 
  <model>
-        <name>pedestal</name>
-        <path>pedestal.xml</path>
-        <offsets>
-            <x-m>0.1150</x-m>
-            <y-m>0.0</y-m>
-            <z-m>-0.075</z-m>
-            <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
+  <name>yokefo</name>
+  <path>Aircraft/737-800/Models/yoke/yoke.xml</path>
+  <offsets>
+   <x-m>0.83</x-m>
+   <y-m>0.4950</y-m>
+   <z-m>0.855</z-m>
+ </offsets>
+</model>
+
+<model>
+ <name>captain-pedals</name>
+ <path>pedals.xml</path>
+ <offsets>
+  <x-m>0.430</x-m>
+  <y-m>-0.53</y-m>
+  <z-m>0.315</z-m>
+  <pitch-deg>0</pitch-deg>
+</offsets>
+</model>
+
+<model>
+ <name>fo-pedals</name>
+ <path>pedals.xml</path>
+ <offsets>
+  <x-m>0.430</x-m>
+  <y-m>0.48</y-m>
+  <z-m>0.315</z-m>
+  <pitch-deg>0</pitch-deg>
+</offsets>
+</model>
+
+
+<model>
+  <name>pedestal</name>
+  <path>pedestal.xml</path>
+  <offsets>
+    <x-m>0.1150</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-0.075</z-m>
+    <pitch-deg>0</pitch-deg>
+  </offsets>
+</model>
 
   <!--
   <animation>
@@ -128,26 +128,26 @@
    <z>-0.7</z>
   </axis>
  </animation>  
-  -->
- <animation>
+-->
+<animation>
   <type>rotate</type>   
   <object-name>cutoffNo1</object-name>  
-   <property>/controls/engines/engine[0]/cutoff</property> 
-   <offset-deg>-25</offset-deg>     
+  <property>/controls/engines/engine[0]/cutoff</property> 
+  <offset-deg>-25</offset-deg>     
   <factor>25</factor>      
   <center>
     <x-m>0.68</x-m>
-   <y-m>0.09</y-m>
-   <z-m>0.65</z-m>
+    <y-m>0.09</y-m>
+    <z-m>0.65</z-m>
   </center>
   <axis>
    <x>-0.0</x>
    <y>1</y>
    <z>0.0</z>
-  </axis>
- </animation>
+ </axis>
+</animation>
 
-  <animation>
+<animation>
   <type>rotate</type>   
   <object-name>cutoffNo2</object-name>  
   <property>/controls/engines/engine[1]/cutoff</property>
@@ -155,39 +155,39 @@
   <factor>25</factor>      
   <center>
     <x-m>0.68</x-m>
-   <y-m>0.09</y-m>
-   <z-m>0.65</z-m>
+    <y-m>0.09</y-m>
+    <z-m>0.65</z-m>
   </center>
   <axis>
    <x>-0.0</x>
    <y>1</y>
    <z>0.0</z>
-  </axis>
- </animation>    
-   
-  <animation>
+ </axis>
+</animation>    
+
+<animation>
   <type>rotate</type>   
   <object-name>quadone</object-name> 
   <object-name>boxone</object-name> 
   <object-name>no1thrarm</object-name>
   <object-name>no1revarm</object-name> 
-   <object-name>No1-knob</object-name>
+  <object-name>No1-knob</object-name>
   <property>/controls/engines/engine[0]/throttle</property>
-<interpolation>
-<entry><ind>0</ind><dep>40</dep></entry>
-<entry><ind>1</ind><dep>-10</dep></entry>
-</interpolation>
+  <interpolation>
+    <entry><ind>0</ind><dep>40</dep></entry>
+    <entry><ind>1</ind><dep>-10</dep></entry>
+  </interpolation>
   <center>
    <x-m>0.68</x-m>
    <y-m>0.09</y-m>
    <z-m>0.65</z-m>
-  </center>
-  <axis>
+ </center>
+ <axis>
    <x>-0.0</x>
    <y>1</y>
    <z>0.0</z>
-  </axis>
- </animation>
+ </axis>
+</animation>
  <!--
  <animation>
   <type>rotate</type>    
@@ -206,116 +206,116 @@
    <z>0.0</z>
   </axis>
  </animation>
- -->
-  <animation>
+-->
+<animation>
   <type>rotate</type>   
   <object-name>quadtwo</object-name> 
   <object-name>boxtwo</object-name> 
   <object-name>no2thrarm</object-name>
   <object-name>no2revarm</object-name> 
-   <object-name>No2-knob</object-name>
+  <object-name>No2-knob</object-name>
   <property>/controls/engines/engine[1]/throttle</property>
-<interpolation>
-<entry><ind>0</ind><dep>40</dep></entry>
-<entry><ind>1</ind><dep>-10</dep></entry>
-</interpolation> 
+  <interpolation>
+    <entry><ind>0</ind><dep>40</dep></entry>
+    <entry><ind>1</ind><dep>-10</dep></entry>
+  </interpolation> 
   <center>
    <x-m>0.68</x-m>
    <y-m>-0.09</y-m>
    <z-m>0.65</z-m>
-  </center>
-  <axis>
+ </center>
+ <axis>
    <x>-0.0</x>
    <y>1</y>
    <z>0.0</z>
-  </axis>
- </animation>
+ </axis>
+</animation>
 
-  <animation>
+<animation>
   <type>rotate</type>
   <object-name>flaparm</object-name>
   <object-name>handle</object-name>
-   <property>/controls/flight/flaps</property>
-     <interpolation>
-      <entry><ind>  0.000</ind><dep> 0.0</dep></entry>
-      <entry><ind>  0.125</ind><dep> 8.0</dep></entry>
-      <entry><ind>  0.250</ind><dep> 16.0</dep></entry>
-      <entry><ind>  0.375</ind><dep> 24.0</dep></entry>
-      <entry><ind>  0.500</ind><dep> 32.0</dep></entry>
-      <entry><ind>  0.625</ind><dep> 40.0</dep></entry>
-      <entry><ind>  0.750</ind><dep> 48.0</dep></entry>
-      <entry><ind>  0.875</ind><dep> 56.0</dep></entry>
-      <entry><ind>  1.000</ind><dep> 64.0</dep></entry>
-     </interpolation>   
+  <property>/controls/flight/flaps</property>
+  <interpolation>
+    <entry><ind>  0.000</ind><dep> 0.0</dep></entry>
+    <entry><ind>  0.125</ind><dep> 8.0</dep></entry>
+    <entry><ind>  0.250</ind><dep> 16.0</dep></entry>
+    <entry><ind>  0.375</ind><dep> 24.0</dep></entry>
+    <entry><ind>  0.500</ind><dep> 32.0</dep></entry>
+    <entry><ind>  0.625</ind><dep> 40.0</dep></entry>
+    <entry><ind>  0.750</ind><dep> 48.0</dep></entry>
+    <entry><ind>  0.875</ind><dep> 56.0</dep></entry>
+    <entry><ind>  1.000</ind><dep> 64.0</dep></entry>
+  </interpolation>   
   <center>
    <x-m>0.68</x-m>
    <y-m>-0.09</y-m>
    <z-m>0.65</z-m>
-  </center>
-  <axis>
+ </center>
+ <axis>
    <x>0</x>
    <y>1</y>
    <z>0</z>
-  </axis>
- </animation>
+ </axis>
+</animation>
 
-  <animation>
+<animation>
   <type>rotate</type>   
   <object-name>sbhandle</object-name> 
   <object-name>sbarm</object-name>   
-   <property>/b737/controls/flight/spoilers-lever-pos</property> 
+  <property>/b737/controls/flight/spoilers-lever-pos</property> 
   <interpolation>
-      <entry><ind>  0.0</ind><dep>0.0</dep></entry>
-      <entry><ind>  1.0</ind><dep>4.0</dep></entry>
-      <entry><ind>  5.0</ind><dep>40</dep></entry>
-      <entry><ind>  6.0</ind><dep>50.0</dep></entry>       
-     </interpolation>  
+    <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+    <entry><ind>  1.0</ind><dep>4.0</dep></entry>
+    <entry><ind>  5.0</ind><dep>40</dep></entry>
+    <entry><ind>  6.0</ind><dep>50.0</dep></entry>       
+  </interpolation>  
   <center>
    <x-m>0.68</x-m>
    <y-m>-0.011</y-m>
    <z-m>0.65</z-m>
-  </center>
-  <axis>
+ </center>
+ <axis>
    <x>-0.0</x>
    <y>1</y>
    <z>0.0</z>
-  </axis>
- </animation>
+ </axis>
+</animation>
 
-  <animation>
+<animation>
   <type>rotate</type>   
   <object-name>parkbrake_0</object-name>
-   <property>/controls/gear/brake-parking</property> 
-    <factor>45</factor>    
+  <property>/controls/gear/brake-parking</property> 
+  <factor>45</factor>    
   <center>
    <x-m>0.81</x-m>
    <y-m>0.0</y-m>
    <z-m>0.66</z-m>
-  </center>
-  <axis>
+ </center>
+ <axis>
    <x>0.0</x>
    <y>1.0</y>
    <z>0.0</z>
-  </axis>
- </animation>
+ </axis>
+</animation>
 
-    <animation>
-        <type>rotate</type>
-        <object-name>parkbrake_1</object-name>
-        <property>/controls/gear/brake-parking</property>
-        <factor>45</factor>
-        <center>
-            <x-m>0.81</x-m>
-            <y-m>0.0</y-m>
-            <z-m>0.66</z-m>
-        </center>
-        <axis>
-            <x>0.0</x>
-            <y>1.0</y>
-            <z>0.0</z>
-        </axis>
-    </animation>
- 
+<animation>
+  <type>rotate</type>
+  <object-name>parkbrake_1</object-name>
+  <property>/controls/gear/brake-parking</property>
+  <factor>45</factor>
+  <center>
+    <x-m>0.81</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.66</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
  <!--
  <animation>
   <type>rotate</type>    
@@ -353,1631 +353,1631 @@
    <z>0.0</z>
   </axis>
  </animation>
-  -->
+-->
 
-     <!--centre console--> 
-
-     <animation>
-       <type>textranslate</type>
-   	 <object-name>sby1</object-name>
-	<property>/instrumentation/nav/frequencies/standby-mhz</property> 
-        <factor>10.0</factor>
-        <step>0.01</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>    
- 
-     <animation>
-       <type>textranslate</type>
-   	 <object-name>sby2</object-name>
-	<property>/instrumentation/nav/frequencies/standby-mhz</property> 
-        <factor>1.0</factor>
-        <step>0.1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>sby3</object-name>
-	<property>/instrumentation/nav/frequencies/standby-mhz</property> 
-        <factor>0.1</factor>
-        <step>1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>sby4</object-name>
-	<property>/instrumentation/nav/frequencies/standby-mhz</property> 
-        <factor>0.01</factor>
-        <step>10</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>    
-
-       <animation>
-       <type>textranslate</type>
-   	 <object-name>navB</object-name>
-	<property>/instrumentation/nav/frequencies/selected-mhz</property> 
-        <factor>1.0</factor>
-        <step>0.1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>navC</object-name>
-	<property>/instrumentation/nav/frequencies/selected-mhz</property> 
-        <factor>0.1</factor>
-        <step>1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>navD</object-name>
-	<property>/instrumentation/nav/frequencies/selected-mhz</property> 
-        <factor>0.01</factor>
-        <step>10</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-         <animation>
-       <type>textranslate</type>
-   	 <object-name>sby1A</object-name>
-	<property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
-        <factor>10.0</factor>
-        <step>0.01</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>    
- 
-     <animation>
-       <type>textranslate</type>
-   	 <object-name>sby1B</object-name>
-	<property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
-        <factor>1.0</factor>
-        <step>0.1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>sby1C</object-name>
-	<property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
-        <factor>0.1</factor>
-        <step>1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>sby1D</object-name>
-	<property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
-        <factor>0.01</factor>
-        <step>10</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>    
-
-       <animation>
-       <type>textranslate</type>
-   	 <object-name>nav1B</object-name>
-	<property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
-        <factor>1.0</factor>
-        <step>0.1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>nav1C</object-name>
-	<property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
-        <factor>0.1</factor>
-        <step>1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>nav1D</object-name>
-	<property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
-        <factor>0.01</factor>
-        <step>10</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>
-
-        <animation>
-       <type>textranslate</type>
-   	 <object-name>commA1</object-name>
-	<property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
-        <factor>10.0</factor>
-        <step>0.01</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>    
- 
-     <animation>
-       <type>textranslate</type>
-   	 <object-name>commA2</object-name>
-	<property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
-        <factor>1.0</factor>
-        <step>0.1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>commA3</object-name>
-	<property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
-        <factor>0.1</factor>
-        <step>1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>commA4</object-name>
-	<property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
-        <factor>0.01</factor>
-        <step>10</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-       <animation>
-       <type>textranslate</type>
-   	 <object-name>commB1</object-name>
-	<property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
-        <factor>10.0</factor>
-        <step>0.01</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>    
- 
-     <animation>
-       <type>textranslate</type>
-   	 <object-name>commB2</object-name>
-	<property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
-        <factor>1.0</factor>
-        <step>0.1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>commB3</object-name>
-	<property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
-        <factor>0.1</factor>
-        <step>1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>commB4</object-name>
-	<property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
-        <factor>0.01</factor>
-        <step>10</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>
-
-        <animation>
-       <type>textranslate</type>
-   	 <object-name>comm1A1</object-name>
-	<property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
-        <factor>10.0</factor>
-        <step>0.01</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>    
- 
-     <animation>
-       <type>textranslate</type>
-   	 <object-name>comm1A2</object-name>
-	<property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
-        <factor>1.0</factor>
-        <step>0.1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>comm1A3</object-name>
-	<property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
-        <factor>0.1</factor>
-        <step>1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>comm1A4</object-name>
-	<property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
-        <factor>0.01</factor>
-        <step>10</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>     
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>comm1B1</object-name>
-	<property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
-        <factor>10.0</factor>
-        <step>0.01</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>    
- 
-     <animation>
-       <type>textranslate</type>
-   	 <object-name>comm1B2</object-name>
-	<property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
-        <factor>1.0</factor>
-        <step>0.1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>comm1B3</object-name>
-	<property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
-        <factor>0.1</factor>
-        <step>1</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>   
-
-      <animation>
-       <type>textranslate</type>
-   	 <object-name>comm1B4</object-name>
-	<property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
-        <factor>0.01</factor>
-        <step>10</step>        
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>     
- 
-      
-     <animation>
-        <type>pick</type>
-        <object-name>handle</object-name>
-		<object-name>flaparm</object-name>		
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-         <button>4</button>
-            <repeatable>true</repeatable>
-        <interval-sec>1.0</interval-sec>           
-       <binding>
-   <command>nasal</command>
-   <script>controls.flapsDown(1)</script>
-  </binding>
-  <mod-up>
-   <binding>
-    <command>nasal</command>
-    <script>controls.flapsDown(0)</script>
-   </binding>
-  </mod-up>
-      </action> 
-    </animation> 
-
-    <animation>
-        <type>pick</type>
-        <object-name>handle</object-name>    
-		<object-name>flaparm</object-name>
-        <visible>1</visible>
-        <action>
-         <button>1</button>
-         <button>3</button>
-            <repeatable>true</repeatable>
-        <interval-sec>1.0</interval-sec>           
-       <binding>
-   <command>nasal</command>
-   <script>controls.flapsDown(-1)</script>
-  </binding>
-  <mod-up>
-   <binding>
-    <command>nasal</command>
-    <script>controls.flapsDown(0)</script>
-   </binding>
-  </mod-up> 
-      </action> 
-    </animation> 
-    
-    <animation>
-        <type>pick</type>
-        <object-name>sbhandle</object-name>
-		<object-name>sbarm</object-name>
-        <visible>1</visible>
-		<action>
-			<button>0</button>
-			<button>4</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>b737/controls/flight/spoilers-lever-pos</property>
-				<step type="double">1</step>
-				<min type="double">0</min>
-				<max type="double">6</max>
-			</binding>
-		</action>
-		<action>
-			<button>1</button>
-			<button>3</button>
-			<binding>
-				<command>property-adjust</command>
-				<property>b737/controls/flight/spoilers-lever-pos</property>
-				<step type="double">-1</step>
-				<min type="double">0</min>
-				<max type="double">6</max>
-			</binding>
-		</action>
-    </animation>  
-    
-     <animation>
-        <type>pick</type>
-        <object-name>autobrake</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>
-        <interval-sec>1.0</interval-sec>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/controls/gear/autobrakes</property>        
-       <step>1</step>
-       <min>-1</min>
-       <max>4</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation> 
-
-    <animation>
-        <type>pick</type>
-        <object-name>autobrake</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>1</button>
-            <repeatable>true</repeatable>
-        <interval-sec>1.0</interval-sec>           
-       <binding>   
-       <command>property-adjust</command>
-       <property>/controls/gear/autobrakes</property>        
-       <step>-1</step>
-       <min>-1</min>
-       <max>4</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation> 
-
-    <animation>
-        <type>pick</type>
-        <object-name>cutoffNo1</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/engines/engine[0]/cutoff</property>        
-       <value type="bool">false</value>      
-       <step>1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/electric/engine[0]/generator</property>       
-       <value type="bool">true</value>      
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>cutoffNo1</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>1</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/engines/engine[0]/cutoff</property>       
-       <value type="bool">true</value>      
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/electric/engine[0]/generator</property>       
-       <value type="bool">false</value>      
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation> 
-
-      <animation>
-        <type>pick</type>
-        <object-name>cutoffNo2</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/engines/engine[1]/cutoff</property>        
-       <value type="bool">false</value>      
-       <step>1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/electric/engine[1]/generator</property>       
-       <value type="bool">true</value>      
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>cutoffNo2</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>1</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/engines/engine[1]/cutoff</property>       
-       <value type="bool">true</value>      
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/electric/engine[1]/generator</property>       
-       <value type="bool">false</value>      
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>engNo1start</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/engines/engine[0]/starter</property>       
-       <value type="bool">true</value>      
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>engNo2start</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable>true</repeatable>           
-       <binding>   
-       <command>property-assign</command>
-       <property>/controls/engines/engine[1]/starter</property>       
-       <value type="bool">true</value>      
-       <step>-1</step>
-       <min>0</min>
-       <max>3</max>                
-       <wrap>false</wrap>       
-       </binding>
-      </action> 
-    </animation> 
-
-     <!--Radio Section--> 
-
-      <animation>
-        <type>pick</type>
-        <object-name>VOR1</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/nav/frequencies/standby-mhz</property>
-                <step>0.05</step>
-    		<min>108</min>
-   		<max>117.95</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>VOR1</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/nav/frequencies/standby-mhz</property>
-                <step>-0.05</step>
-    		<min>108</min>
-   		<max>117.95</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>VOR1A</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/nav/frequencies/standby-mhz</property>
-                <step>1</step>
-    		<min>108</min>
-   		<max>117.95</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>VOR1A</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/nav/frequencies/standby-mhz</property>
-                <step>-1</step>
-    		<min>108</min>
-   		<max>117.95</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>TFRA</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-    <command>property-swap</command>
-    <property>/instrumentation/nav/frequencies/selected-mhz</property>
-    <property>/instrumentation/nav/frequencies/standby-mhz</property>
-   </binding>   
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>VOR2</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-                <step>0.05</step>
-    		<min>108</min>
-   		<max>117.95</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>VOR2</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-                <step>-0.05</step>
-    		<min>108</min>
-   		<max>117.95</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>VOR2A</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-                <step>1</step>
-    		<min>108</min>
-   		<max>117.95</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>VOR2A</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-                <step>-1</step>
-    		<min>108</min>
-   		<max>117.95</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>TFRB</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-    <command>property-swap</command>
-    <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
-    <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
-   </binding>   
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>comm</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-               <step>0.05</step>
-   		 <min>118.000</min>
-    		<max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>comm</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-               <step>-0.05</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>commA</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-                <step>1</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>commA</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
-                <step>-1</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>commsby</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
-               <step>0.05</step>
-   		 <min>118.000</min>
-    		<max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>commsby</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
-               <step>-0.05</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>commsbyA</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
-                <step>1</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>comm1</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-               <step>0.05</step>
-   		 <min>118.000</min>
-    		<max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>comm1</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-               <step>-0.05</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>comm1A</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-                <step>1</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-
-     <animation>
-        <type>pick</type>
-        <object-name>comm1A</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
-                <step>-1</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>commsby1</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-               <step>0.05</step>
-   		 <min>118.000</min>
-    		<max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-     <animation>
-        <type>pick</type>
-        <object-name>commsby1</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-               <step>-0.05</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-     <animation>
-        <type>pick</type>
-        <object-name>commsby1A</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-                <step>1</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation> 
-
-
-     <animation>
-        <type>pick</type>
-        <object-name>commsby1A</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <binding>
-            <command>property-adjust</command>
-            <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
-                <step>-1</step>
-    		<min>118.000</min>
-   		 <max>136.000</max>
-    		<resolution>0.01</resolution>
-    		<wrap>true</wrap>   
-         </binding>    
-        </action>
-    </animation>
-
-
-    <animation>
-        <type>pick</type>
-        <object-name>ADF1</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-           <binding>
-    		<command>property-adjust</command>
-   		 <property>/instrumentation/adf/frequencies/selected-khz</property>      
-    		 <step>1</step>
-   		 <min>100.000</min>
-    		 <max>500.000</max>
-    		 <resolution>0.01</resolution>
-    		 <wrap>true</wrap>
-   	</binding>
-       </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>ADF1</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-           <binding>
-    		<command>property-adjust</command>
-   		 <property>/instrumentation/adf/frequencies/selected-khz</property>      
-    		 <step>-1</step>
-   		 <min>100.000</min>
-    		 <max>500.000</max>
-    		 <resolution>0.025</resolution>
-    		 <wrap>true</wrap>
-   	</binding>
-       </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>lghandle</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-           <binding>
-    		<command>property-assign</command>
-   		 <property>/controls/gear/gear-down</property>  
-                  <value type="bool">false</value>      
-    		 <step>1</step>
-   		 <min>0</min>
-    		 <max>1</max>    		  
-    		 <wrap>false</wrap>
-   	</binding>
-       </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>lghandle</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-           <binding>
-    		<command>property-assign</command>
-   		 <property>/controls/gear/gear-down</property> 
-                 <value type="bool">true</value>       
-    		 <step>-1</step>
-   		 <min>0</min>
-    		 <max>1</max>    		  
-    		 <wrap>false</wrap>
-   	</binding>
-       </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>parkbrake</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-           <binding>
-    		<command>property-toggle</command>
-   		 <property>/controls/gear/brake-parking</property> 
-                  <min>0</min>
-    		 <max>1</max>    		  
-    		 <wrap>false</wrap>
-   	</binding>
-       </action>
-    </animation>                                          
-
-     <animation>
-   	<type>textranslate</type>
-   	 <object-name>LGDN</object-name>
-	 <property>gear/gear[1]/position-norm</property>       
-   	<interpolation>
-    <entry>
-      <ind>0.0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>0.999</ind>
-      <dep>0.0</dep>
-    </entry>  
-    <entry>
-      <ind>1.0</ind>
-      <dep>0.034</dep>
-    </entry>   
-     </interpolation> 
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>         
-
-        <animation>
-   	<type>textranslate</type>
-   	 <object-name>RGDN</object-name>	        
-   	 <property>gear/gear[2]/position-norm</property>       
-   	<interpolation>
-    <entry>
-      <ind>0.0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>0.999</ind>
-      <dep>0.0</dep>
-    </entry>  
-    <entry>
-      <ind>1.0</ind>
-      <dep>0.034</dep>
-    </entry>   
-     </interpolation> 
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation> 
-
-        <animation>
-   	<type>textranslate</type>
-   	 <object-name>NGDN</object-name>	        
-   	 <property>gear/gear[0]/position-norm</property>       
-   	<interpolation>
-    <entry>
-      <ind>0.0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>0.999</ind>
-      <dep>0.0</dep>
-    </entry>  
-    <entry>
-      <ind>1.0</ind>
-      <dep>0.034</dep>
-    </entry>   
-     </interpolation> 
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation> 
-          
-        <animation>
-   	<type>textranslate</type>
-   	 <object-name>LGND</object-name>
-	<property>gear/gear[2]/position-norm</property>        
-   	<interpolation>
-    <entry>
-      <ind>0.0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>0.001</ind>
-      <dep>-0.034</dep>
-    </entry> 
-    <entry>
-      <ind>0.999</ind>
-      <dep>-0.034</dep>
-    </entry>  
-    <entry>
-      <ind>1.0</ind>
-      <dep>0.0</dep>
-    </entry>   
-     </interpolation> 
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-        <animation>
-   	<type>textranslate</type>
-   	 <object-name>RGND</object-name>         
-	<property>gear/gear[2]/position-norm</property>       
-   	<interpolation>
-    <entry>
-      <ind>0.0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>0.001</ind>
-      <dep>-0.034</dep>
-    </entry> 
-    <entry>
-      <ind>0.999</ind>
-      <dep>-0.034</dep>
-    </entry>  
-    <entry>
-      <ind>1.0</ind>
-      <dep>0.0</dep>
-    </entry>   
-     </interpolation> 
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-       <animation>
-   	<type>textranslate</type>
-   	 <object-name>NGND</object-name>         
-	<property>gear/gear[0]/position-norm</property>       
-   	<interpolation>
-    <entry>
-      <ind>0.0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>0.001</ind>
-      <dep>-0.034</dep>
-    </entry> 
-    <entry>
-      <ind>0.999</ind>
-      <dep>-0.034</dep>
-    </entry>  
-    <entry>
-      <ind>1.0</ind>
-      <dep>0.0</dep>
-    </entry>   
-     </interpolation> 
-   	<axis>
-    	<x>0</x>
-     	<y>1</y>
-    	 <z>0</z>
-   	</axis>
- 	</animation>  
-
-
-  <!--OHP-->
-   <animation>
-        <type>pick</type>
-        <object-name>APUswitch</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable type="bool">false</repeatable>   
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/APU/start</property>
-        </binding>
-        <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>
-        <object-name>APUswitch</object-name>    
-      <property>controls/APU/start</property>
-      <factor>40</factor>
-      <center>
-          <x-m>0.60346</x-m>
-          <y-m>0</y-m>
-          <z-m>1.41779</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-  <!--No Smoking-->
-   <animation>
-        <type>pick</type>
-        <object-name>nosmoking</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable type="bool">false</repeatable>       
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/switches/no-smoking-sign</property>
-        </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>   
-        <object-name>nosmoking</object-name>  
-            <property>/controls/switches/no-smoking-sign</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.8062</x-m>
-          <y-m>0</y-m>
-          <z-m>1.50979</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-  <!--Seatbelts-->
-   <animation>
-        <type>pick</type>
-        <object-name>fastenseatbelts</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable type="bool">false</repeatable>     
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/switches/seatbelt-sign</property>
-        </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>   
-        <object-name>fastenseatbelts</object-name>  
-            <property>/controls/switches/seatbelt-sign</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.8062</x-m>
-          <y-m>0</y-m>
-          <z-m>1.50979</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-
-  <!--Light-->
-   <animation>
-        <type>pick</type>
-        <object-name>logolight</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable type="bool">false</repeatable> 
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/lighting/logo-lights</property>
-        </binding>
-        <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>   
-        <object-name>logolight</object-name>   
-            <property>/controls/lighting/logo-lights</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.61194</x-m>
-          <y-m>0</y-m>
-          <z-m>1.42405</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-       <object-name>strobelight</object-name>         
-       <visible>1</visible>
-       <action>
-        <button>0</button>
-           <repeatable type="bool">false</repeatable>        
-           <binding>
-           <command>property-toggle</command>
-           <property>/controls/lighting/strobe</property>
-       </binding>
-           <binding>
-           <command>property-toggle</command>
-           <property>/controls/lighting/nav-lights</property>
-       </binding>
-       <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-     </action> 
-   </animation>
+<!--centre console--> 
 
 <animation>
-    <type>rotate</type>   
-       <object-name>strobelight</object-name>  
-           <property>/controls/lighting/strobe</property>     
-     <factor>30</factor>
-     <center>
-         <x-m>0.61194</x-m>
-         <y-m>0</y-m>
-         <z-m>1.42405</z-m>
-     </center>
-     <axis>
-         <x>0</x>
-         <y>1</y>
-         <z>0</z>
-     </axis>
- </animation>
+ <type>textranslate</type>
+ <object-name>sby1</object-name>
+ <property>/instrumentation/nav/frequencies/standby-mhz</property> 
+ <factor>10.0</factor>
+ <step>0.01</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>    
 
-   <animation>
-        <type>pick</type>
-        <object-name>anticollight</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-           <repeatable type="bool">false</repeatable>        
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/lighting/beacon</property>
-        </binding>
-        <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>   
-        <object-name>anticollight</object-name>    
-            <property>/controls/lighting/beacon</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.61194</x-m>
-          <y-m>0</y-m>
-          <z-m>1.42405</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-   <animation>
-        <type>pick</type>
-        <object-name>winglight</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable type="bool">false</repeatable>        
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/lighting/wing</property>
-        </binding>
-        <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>   
-        <object-name>winglight</object-name>  
-            <property>/controls/lighting/wing</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.61194</x-m>
-          <y-m>0</y-m>
-          <z-m>1.42405</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-   <animation>
-        <type>pick</type>
-        <object-name>wheellight</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable type="bool">false</repeatable>
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/lighting/wheel</property>
-        </binding>
-        <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>   
-        <object-name>wheellight</object-name>   
-            <property>/controls/lighting/wheel</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.61194</x-m>
-          <y-m>0</y-m>
-          <z-m>1.42405</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-    <animation>
+<animation>
+ <type>textranslate</type>
+ <object-name>sby2</object-name>
+ <property>/instrumentation/nav/frequencies/standby-mhz</property> 
+ <factor>1.0</factor>
+ <step>0.1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>sby3</object-name>
+ <property>/instrumentation/nav/frequencies/standby-mhz</property> 
+ <factor>0.1</factor>
+ <step>1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>sby4</object-name>
+ <property>/instrumentation/nav/frequencies/standby-mhz</property> 
+ <factor>0.01</factor>
+ <step>10</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>    
+
+<animation>
+ <type>textranslate</type>
+ <object-name>navB</object-name>
+ <property>/instrumentation/nav/frequencies/selected-mhz</property> 
+ <factor>1.0</factor>
+ <step>0.1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>navC</object-name>
+ <property>/instrumentation/nav/frequencies/selected-mhz</property> 
+ <factor>0.1</factor>
+ <step>1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>navD</object-name>
+ <property>/instrumentation/nav/frequencies/selected-mhz</property> 
+ <factor>0.01</factor>
+ <step>10</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>sby1A</object-name>
+ <property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
+ <factor>10.0</factor>
+ <step>0.01</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>    
+
+<animation>
+ <type>textranslate</type>
+ <object-name>sby1B</object-name>
+ <property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
+ <factor>1.0</factor>
+ <step>0.1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>sby1C</object-name>
+ <property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
+ <factor>0.1</factor>
+ <step>1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>sby1D</object-name>
+ <property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
+ <factor>0.01</factor>
+ <step>10</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>    
+
+<animation>
+ <type>textranslate</type>
+ <object-name>nav1B</object-name>
+ <property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
+ <factor>1.0</factor>
+ <step>0.1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>nav1C</object-name>
+ <property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
+ <factor>0.1</factor>
+ <step>1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>nav1D</object-name>
+ <property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
+ <factor>0.01</factor>
+ <step>10</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>textranslate</type>
+ <object-name>commA1</object-name>
+ <property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
+ <factor>10.0</factor>
+ <step>0.01</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>    
+
+<animation>
+ <type>textranslate</type>
+ <object-name>commA2</object-name>
+ <property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
+ <factor>1.0</factor>
+ <step>0.1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>commA3</object-name>
+ <property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
+ <factor>0.1</factor>
+ <step>1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>commA4</object-name>
+ <property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
+ <factor>0.01</factor>
+ <step>10</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>commB1</object-name>
+ <property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
+ <factor>10.0</factor>
+ <step>0.01</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>    
+
+<animation>
+ <type>textranslate</type>
+ <object-name>commB2</object-name>
+ <property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
+ <factor>1.0</factor>
+ <step>0.1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>commB3</object-name>
+ <property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
+ <factor>0.1</factor>
+ <step>1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>commB4</object-name>
+ <property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
+ <factor>0.01</factor>
+ <step>10</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>textranslate</type>
+ <object-name>comm1A1</object-name>
+ <property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
+ <factor>10.0</factor>
+ <step>0.01</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>    
+
+<animation>
+ <type>textranslate</type>
+ <object-name>comm1A2</object-name>
+ <property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
+ <factor>1.0</factor>
+ <step>0.1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>comm1A3</object-name>
+ <property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
+ <factor>0.1</factor>
+ <step>1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>comm1A4</object-name>
+ <property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
+ <factor>0.01</factor>
+ <step>10</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>     
+
+<animation>
+ <type>textranslate</type>
+ <object-name>comm1B1</object-name>
+ <property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
+ <factor>10.0</factor>
+ <step>0.01</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>    
+
+<animation>
+ <type>textranslate</type>
+ <object-name>comm1B2</object-name>
+ <property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
+ <factor>1.0</factor>
+ <step>0.1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+ <type>textranslate</type>
+ <object-name>comm1B3</object-name>
+ <property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
+ <factor>0.1</factor>
+ <step>1</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>   
+
+<animation>
+ <type>textranslate</type>
+ <object-name>comm1B4</object-name>
+ <property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
+ <factor>0.01</factor>
+ <step>10</step>        
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>     
+
+
+<animation>
+  <type>pick</type>
+  <object-name>handle</object-name>
+  <object-name>flaparm</object-name>		
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <button>4</button>
+   <repeatable>true</repeatable>
+   <interval-sec>1.0</interval-sec>           
+   <binding>
+     <command>nasal</command>
+     <script>controls.flapsDown(1)</script>
+   </binding>
+   <mod-up>
+     <binding>
+      <command>nasal</command>
+      <script>controls.flapsDown(0)</script>
+    </binding>
+  </mod-up>
+</action> 
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>handle</object-name>    
+  <object-name>flaparm</object-name>
+  <visible>1</visible>
+  <action>
+   <button>1</button>
+   <button>3</button>
+   <repeatable>true</repeatable>
+   <interval-sec>1.0</interval-sec>           
+   <binding>
+     <command>nasal</command>
+     <script>controls.flapsDown(-1)</script>
+   </binding>
+   <mod-up>
+     <binding>
+      <command>nasal</command>
+      <script>controls.flapsDown(0)</script>
+    </binding>
+  </mod-up> 
+</action> 
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>sbhandle</object-name>
+  <object-name>sbarm</object-name>
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <button>4</button>
+   <binding>
+    <command>property-adjust</command>
+    <property>b737/controls/flight/spoilers-lever-pos</property>
+    <step type="double">1</step>
+    <min type="double">0</min>
+    <max type="double">6</max>
+  </binding>
+</action>
+<action>
+ <button>1</button>
+ <button>3</button>
+ <binding>
+  <command>property-adjust</command>
+  <property>b737/controls/flight/spoilers-lever-pos</property>
+  <step type="double">-1</step>
+  <min type="double">0</min>
+  <max type="double">6</max>
+</binding>
+</action>
+</animation>  
+
+<animation>
+  <type>pick</type>
+  <object-name>autobrake</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable>
+   <interval-sec>1.0</interval-sec>           
+   <binding>   
+     <command>property-adjust</command>
+     <property>/controls/gear/autobrakes</property>        
+     <step>1</step>
+     <min>-1</min>
+     <max>4</max>                
+     <wrap>false</wrap>       
+   </binding>
+ </action> 
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>autobrake</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>1</button>
+   <repeatable>true</repeatable>
+   <interval-sec>1.0</interval-sec>           
+   <binding>   
+     <command>property-adjust</command>
+     <property>/controls/gear/autobrakes</property>        
+     <step>-1</step>
+     <min>-1</min>
+     <max>4</max>                
+     <wrap>false</wrap>       
+   </binding>
+ </action> 
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>cutoffNo1</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable>           
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/engines/engine[0]/cutoff</property>        
+     <value type="bool">false</value>      
+     <step>1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/electric/engine[0]/generator</property>       
+     <value type="bool">true</value>      
+     <step>-1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+ </action> 
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>cutoffNo1</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>1</button>
+   <repeatable>true</repeatable>           
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/engines/engine[0]/cutoff</property>       
+     <value type="bool">true</value>      
+     <step>-1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/electric/engine[0]/generator</property>       
+     <value type="bool">false</value>      
+     <step>-1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+ </action> 
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>cutoffNo2</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable>           
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/engines/engine[1]/cutoff</property>        
+     <value type="bool">false</value>      
+     <step>1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/electric/engine[1]/generator</property>       
+     <value type="bool">true</value>      
+     <step>-1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+ </action> 
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>cutoffNo2</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>1</button>
+   <repeatable>true</repeatable>           
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/engines/engine[1]/cutoff</property>       
+     <value type="bool">true</value>      
+     <step>-1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/electric/engine[1]/generator</property>       
+     <value type="bool">false</value>      
+     <step>-1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+ </action> 
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>engNo1start</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable>           
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/engines/engine[0]/starter</property>       
+     <value type="bool">true</value>      
+     <step>-1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+ </action> 
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>engNo2start</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable>           
+   <binding>   
+     <command>property-assign</command>
+     <property>/controls/engines/engine[1]/starter</property>       
+     <value type="bool">true</value>      
+     <step>-1</step>
+     <min>0</min>
+     <max>3</max>                
+     <wrap>false</wrap>       
+   </binding>
+ </action> 
+</animation> 
+
+<!--Radio Section--> 
+
+<animation>
+  <type>pick</type>
+  <object-name>VOR1</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <step>0.05</step>
+      <min>108</min>
+      <max>117.95</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>VOR1</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <step>-0.05</step>
+      <min>108</min>
+      <max>117.95</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>VOR1A</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <step>1</step>
+      <min>108</min>
+      <max>117.95</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>VOR1A</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <step>-1</step>
+      <min>108</min>
+      <max>117.95</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>TFRA</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-swap</command>
+      <property>/instrumentation/nav/frequencies/selected-mhz</property>
+      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+    </binding>   
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>VOR2</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <step>0.05</step>
+      <min>108</min>
+      <max>117.95</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>VOR2</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <step>-0.05</step>
+      <min>108</min>
+      <max>117.95</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>VOR2A</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <step>1</step>
+      <min>108</min>
+      <max>117.95</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>VOR2A</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <step>-1</step>
+      <min>108</min>
+      <max>117.95</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>TFRB</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-swap</command>
+      <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+    </binding>   
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>comm</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <step>0.05</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>comm</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <step>-0.05</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>commA</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <step>1</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>commA</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <step>-1</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>commsby</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+      <step>0.05</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>commsby</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+      <step>-0.05</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>commsbyA</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+      <step>1</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>comm1</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+      <step>0.05</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>comm1</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+      <step>-0.05</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>comm1A</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+      <step>1</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+
+<animation>
+  <type>pick</type>
+  <object-name>comm1A</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+      <step>-1</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>commsby1</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+      <step>0.05</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+<animation>
+  <type>pick</type>
+  <object-name>commsby1</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+      <step>-0.05</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>commsby1A</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+      <step>1</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation> 
+
+
+<animation>
+  <type>pick</type>
+  <object-name>commsby1A</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+      <step>-1</step>
+      <min>118.000</min>
+      <max>136.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>   
+    </binding>    
+  </action>
+</animation>
+
+
+<animation>
+  <type>pick</type>
+  <object-name>ADF1</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/adf/frequencies/selected-khz</property>      
+      <step>1</step>
+      <min>100.000</min>
+      <max>500.000</max>
+      <resolution>0.01</resolution>
+      <wrap>true</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>ADF1</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/instrumentation/adf/frequencies/selected-khz</property>      
+      <step>-1</step>
+      <min>100.000</min>
+      <max>500.000</max>
+      <resolution>0.025</resolution>
+      <wrap>true</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>lghandle</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/gear/gear-down</property>  
+      <value type="bool">false</value>      
+      <step>1</step>
+      <min>0</min>
+      <max>1</max>    		  
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>lghandle</object-name>
+  <action>
+    <button>1</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/gear/gear-down</property> 
+      <value type="bool">true</value>       
+      <step>-1</step>
+      <min>0</min>
+      <max>1</max>    		  
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>parkbrake</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/gear/brake-parking</property> 
+      <min>0</min>
+      <max>1</max>    		  
+      <wrap>false</wrap>
+    </binding>
+  </action>
+</animation>                                          
+
+<animation>
+  <type>textranslate</type>
+  <object-name>LGDN</object-name>
+  <property>gear/gear[1]/position-norm</property>       
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.999</ind>
+      <dep>0.0</dep>
+    </entry>  
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.034</dep>
+    </entry>   
+  </interpolation> 
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>         
+
+<animation>
+  <type>textranslate</type>
+  <object-name>RGDN</object-name>	        
+  <property>gear/gear[2]/position-norm</property>       
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.999</ind>
+      <dep>0.0</dep>
+    </entry>  
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.034</dep>
+    </entry>   
+  </interpolation> 
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation> 
+
+<animation>
+  <type>textranslate</type>
+  <object-name>NGDN</object-name>	        
+  <property>gear/gear[0]/position-norm</property>       
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.999</ind>
+      <dep>0.0</dep>
+    </entry>  
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.034</dep>
+    </entry>   
+  </interpolation> 
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation> 
+
+<animation>
+  <type>textranslate</type>
+  <object-name>LGND</object-name>
+  <property>gear/gear[2]/position-norm</property>        
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.001</ind>
+      <dep>-0.034</dep>
+    </entry> 
+    <entry>
+      <ind>0.999</ind>
+      <dep>-0.034</dep>
+    </entry>  
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>   
+  </interpolation> 
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+  <type>textranslate</type>
+  <object-name>RGND</object-name>         
+  <property>gear/gear[2]/position-norm</property>       
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.001</ind>
+      <dep>-0.034</dep>
+    </entry> 
+    <entry>
+      <ind>0.999</ind>
+      <dep>-0.034</dep>
+    </entry>  
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>   
+  </interpolation> 
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+<animation>
+  <type>textranslate</type>
+  <object-name>NGND</object-name>         
+  <property>gear/gear[0]/position-norm</property>       
+  <interpolation>
+    <entry>
+      <ind>0.0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>0.001</ind>
+      <dep>-0.034</dep>
+    </entry> 
+    <entry>
+      <ind>0.999</ind>
+      <dep>-0.034</dep>
+    </entry>  
+    <entry>
+      <ind>1.0</ind>
+      <dep>0.0</dep>
+    </entry>   
+  </interpolation> 
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>  
+
+
+<!--OHP-->
+<animation>
+  <type>pick</type>
+  <object-name>APUswitch</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable>   
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/APU/start</property>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>APUswitch</object-name>    
+  <property>controls/APU/start</property>
+  <factor>40</factor>
+  <center>
+    <x-m>0.60346</x-m>
+    <y-m>0</y-m>
+    <z-m>1.41779</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<!--No Smoking-->
+<animation>
+  <type>pick</type>
+  <object-name>nosmoking</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable>       
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/switches/no-smoking-sign</property>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>   
+  <object-name>nosmoking</object-name>  
+  <property>/controls/switches/no-smoking-sign</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.8062</x-m>
+    <y-m>0</y-m>
+    <z-m>1.50979</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<!--Seatbelts-->
+<animation>
+  <type>pick</type>
+  <object-name>fastenseatbelts</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable>     
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/switches/seatbelt-sign</property>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>   
+  <object-name>fastenseatbelts</object-name>  
+  <property>/controls/switches/seatbelt-sign</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.8062</x-m>
+    <y-m>0</y-m>
+    <z-m>1.50979</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!--Light-->
+<animation>
+  <type>pick</type>
+  <object-name>logolight</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable> 
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/lighting/logo-lights</property>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>   
+  <object-name>logolight</object-name>   
+  <property>/controls/lighting/logo-lights</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.61194</x-m>
+    <y-m>0</y-m>
+    <z-m>1.42405</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>strobelight</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable type="bool">false</repeatable>        
+    <binding>
+     <command>property-toggle</command>
+     <property>/controls/lighting/strobe</property>
+   </binding>
+   <binding>
+     <command>property-toggle</command>
+     <property>/controls/lighting/nav-lights</property>
+   </binding>
+   <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation>
+
+<animation>
+  <type>rotate</type>   
+  <object-name>strobelight</object-name>  
+  <property>/controls/lighting/strobe</property>     
+  <factor>30</factor>
+  <center>
+   <x-m>0.61194</x-m>
+   <y-m>0</y-m>
+   <z-m>1.42405</z-m>
+ </center>
+ <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>anticollight</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable>        
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/lighting/beacon</property>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>   
+  <object-name>anticollight</object-name>    
+  <property>/controls/lighting/beacon</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.61194</x-m>
+    <y-m>0</y-m>
+    <z-m>1.42405</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>winglight</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable>        
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/lighting/wing</property>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>   
+  <object-name>winglight</object-name>  
+  <property>/controls/lighting/wing</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.61194</x-m>
+    <y-m>0</y-m>
+    <z-m>1.42405</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>wheellight</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable>
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/lighting/wheel</property>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>   
+  <object-name>wheellight</object-name>   
+  <property>/controls/lighting/wheel</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.61194</x-m>
+    <y-m>0</y-m>
+    <z-m>1.42405</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+ <animation>
         <type>pick</type>
         <object-name>RNYTurnOffL</object-name>         
         <visible>1</visible>
@@ -2077,256 +2077,256 @@
       </axis>
   </animation>
 
-  <!-- Fuel Pumps -->
-   <animation>
-        <type>pick</type>
-        <object-name>fuelpumpL</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-            <repeatable type="bool">false</repeatable>
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/fuel/tank[2]/pump-left</property>
-        </binding>
-        <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>   
-        <object-name>fuelpumpL</object-name>  
-            <property>/controls/fuel/tank[2]/pump-left</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.7236</x-m>
-          <y-m>0</y-m>
-          <z-m>1.47321</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-   <animation>
-        <type>pick</type>
-        <object-name>fuelpumpR</object-name>         
-        <visible>1</visible>
-        <action>
-         <button>0</button>
-           <repeatable type="bool">false</repeatable>       
-            <binding>
-            <command>property-toggle</command>
-            <property>/controls/fuel/tank[2]/pump-right</property>
-        </binding>
-        <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      </action> 
-    </animation> 
-  <animation>
-      <type>rotate</type>   
-        <object-name>fuelpumpR</object-name>  
-            <property>/controls/fuel/tank[2]/pump-right</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.7236</x-m>
-          <y-m>0</y-m>
-          <z-m>1.47321</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
+<!-- Fuel Pumps -->
+<animation>
+  <type>pick</type>
+  <object-name>fuelpumpL</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable>
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/fuel/tank[2]/pump-left</property>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>   
+  <object-name>fuelpumpL</object-name>  
+  <property>/controls/fuel/tank[2]/pump-left</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.7236</x-m>
+    <y-m>0</y-m>
+    <z-m>1.47321</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>fuelpumpR</object-name>         
+  <visible>1</visible>
+  <action>
+   <button>0</button>
+   <repeatable type="bool">false</repeatable>       
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/fuel/tank[2]/pump-right</property>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation> 
+<animation>
+  <type>rotate</type>   
+  <object-name>fuelpumpR</object-name>  
+  <property>/controls/fuel/tank[2]/pump-right</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.7236</x-m>
+    <y-m>0</y-m>
+    <z-m>1.47321</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
-  <!-- Fuel Pumps -->
-  <animation>
-    <type>pick</type>
-    <object-name>FuelPumpAFTL</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>        
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/fuel/tank[0]/pump-aft</property>
-      </binding>
-      <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>FuelPumpAFTL</object-name>  
-            <property>/controls/fuel/tank[0]/pump-aft</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.675</x-m>
-          <y-m>0</y-m>
-          <z-m>1.45</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation> 
+<!-- Fuel Pumps -->
+<animation>
+  <type>pick</type>
+  <object-name>FuelPumpAFTL</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable type="bool">false</repeatable>        
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/fuel/tank[0]/pump-aft</property>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+    </binding>
+  </action> 
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>FuelPumpAFTL</object-name>  
+  <property>/controls/fuel/tank[0]/pump-aft</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.675</x-m>
+    <y-m>0</y-m>
+    <z-m>1.45</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation> 
 
 
-  <animation>
-    <type>pick</type>
-    <object-name>FuelPumpFWDL</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>        
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/fuel/tank[0]/pump-fwd</property>
-      </binding>
-      <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>FuelPumpFWDL</object-name>  
-            <property>/controls/fuel/tank[0]/pump-fwd</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.675</x-m>
-          <y-m>0</y-m>
-          <z-m>1.45</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-  <animation>
-    <type>pick</type>
-    <object-name>FuelPumpFWDR</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>      
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/fuel/tank[1]/pump-fwd</property>
-      </binding>
-      <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>FuelPumpFWDR</object-name>  
-            <property>/controls/fuel/tank[1]/pump-fwd</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.675</x-m>
-          <y-m>0</y-m>
-          <z-m>1.45</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-  <animation>
-    <type>pick</type>
-    <object-name>FuelPumpAFTR</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>     
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/fuel/tank[1]/pump-aft</property>
-      </binding>
-      <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>FuelPumpAFTR</object-name>  
-            <property>/controls/fuel/tank[1]/pump-aft</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.675</x-m>
-          <y-m>0</y-m>
-          <z-m>1.45</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
+<animation>
+  <type>pick</type>
+  <object-name>FuelPumpFWDL</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable type="bool">false</repeatable>        
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/fuel/tank[0]/pump-fwd</property>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+    </binding>
+  </action> 
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>FuelPumpFWDL</object-name>  
+  <property>/controls/fuel/tank[0]/pump-fwd</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.675</x-m>
+    <y-m>0</y-m>
+    <z-m>1.45</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>FuelPumpFWDR</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable type="bool">false</repeatable>      
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/fuel/tank[1]/pump-fwd</property>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+    </binding>
+  </action> 
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>FuelPumpFWDR</object-name>  
+  <property>/controls/fuel/tank[1]/pump-fwd</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.675</x-m>
+    <y-m>0</y-m>
+    <z-m>1.45</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>FuelPumpAFTR</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable type="bool">false</repeatable>     
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/fuel/tank[1]/pump-aft</property>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+    </binding>
+  </action> 
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>FuelPumpAFTR</object-name>  
+  <property>/controls/fuel/tank[1]/pump-aft</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.675</x-m>
+    <y-m>0</y-m>
+    <z-m>1.45</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
-  <!-- Battery Switch -->
+<!-- Battery Switch -->
 
-  <animation>
-    <type>pick</type>
-    <object-name>BatterySwitch</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>     
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/electric/battery-switch</property>
-        <command>nasal</command>
-      </binding>
-      <binding>
-      	<command>nasal</command>
-      	<script>
-          if(getprop("/controls/electric/battery-switch") == 0) screen.log.write("Battery Master Switch OFF",1,0,0); 
-          else 
-          screen.log.write("Battery Master Switch ON",0,1,0);
-        </script>
-      </binding>
-      <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>BatterySwitch</object-name>  
-            <property>/controls/electric/battery-switch</property>
-      <factor>30</factor>
-      <center>
-          <x-m>1</x-m>
-          <y-m>0</y-m>
-          <z-m>1.595</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
+<animation>
+  <type>pick</type>
+  <object-name>BatterySwitch</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable type="bool">false</repeatable>     
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/electric/battery-switch</property>
+      <command>nasal</command>
+    </binding>
+    <binding>
+     <command>nasal</command>
+     <script>
+      if(getprop("/controls/electric/battery-switch") == 0) screen.log.write("Battery Master Switch OFF",1,0,0); 
+      else 
+      screen.log.write("Battery Master Switch ON",0,1,0);
+    </script>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action> 
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>BatterySwitch</object-name>  
+  <property>/controls/electric/battery-switch</property>
+  <factor>30</factor>
+  <center>
+    <x-m>1</x-m>
+    <y-m>0</y-m>
+    <z-m>1.595</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
-  <!-- Apu Gen -->
+<!-- Apu Gen -->
   <!--animation>
     <type>pick</type>
     <object-name>ApuGen</object-name>         
@@ -2360,658 +2360,658 @@
           <y>0</y>
           <z>0</z>
       </axis>
-  </animation-->
+    </animation-->
 
-  <animation>
-    <type>pick</type>
-    <object-name>ApuGen1</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/electric/apugen1</property>
-      </binding>
-      <binding>
+    <animation>
+      <type>pick</type>
+      <object-name>ApuGen1</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/electric/apugen1</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>ApuGen1</object-name>  
-            <property>/controls/electric/apugen1</property>
+      <object-name>ApuGen1</object-name>  
+      <property>/controls/electric/apugen1</property>
       <factor>30</factor>
       <center>
-          <x-m>0.73</x-m>
-          <y-m>0</y-m>
-          <z-m>1.475</z-m>
+        <x-m>0.73</x-m>
+        <y-m>0</y-m>
+        <z-m>1.475</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
-  <animation>
-    <type>pick</type>
-    <object-name>ApuGen2</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable> 
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/electric/apugen1</property>
-      </binding>
-      <binding>
+    </animation>
+    <animation>
+      <type>pick</type>
+      <object-name>ApuGen2</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable> 
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/electric/apugen1</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>ApuGen2</object-name>  
-            <property>/controls/electric/apugen1</property>
+      <object-name>ApuGen2</object-name>  
+      <property>/controls/electric/apugen1</property>
       <factor>30</factor>
       <center>
-          <x-m>0.73</x-m>
-          <y-m>0</y-m>
-          <z-m>1.475</z-m>
+        <x-m>0.73</x-m>
+        <y-m>0</y-m>
+        <z-m>1.475</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
-  <animation>
-    <type>pick</type>
-    <object-name>ApuGenL</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>      
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/electric/APU-generator</property>
-      </binding>
-      <binding>
+    </animation>
+    <animation>
+      <type>pick</type>
+      <object-name>ApuGenL</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>      
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/electric/APU-generator</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>ApuGenL</object-name>  
-            <property>/controls/electric/APU-generator</property>
+      <object-name>ApuGenL</object-name>  
+      <property>/controls/electric/APU-generator</property>
       <factor>30</factor>
       <center>
-          <x-m>0.73</x-m>
-          <y-m>0</y-m>
-          <z-m>1.475</z-m>
+        <x-m>0.73</x-m>
+        <y-m>0</y-m>
+        <z-m>1.475</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
-  <animation>
-    <type>pick</type>
-    <object-name>ApuGenR</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/electric/APU-generator</property>
-      </binding>
-      <binding>
+    </animation>
+    <animation>
+      <type>pick</type>
+      <object-name>ApuGenR</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/electric/APU-generator</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>ApuGenR</object-name>  
-            <property>/controls/electric/APU-generator</property>
+      <object-name>ApuGenR</object-name>  
+      <property>/controls/electric/APU-generator</property>
       <factor>30</factor>
       <center>
-          <x-m>0.73</x-m>
-          <y-m>0</y-m>
-          <z-m>1.475</z-m>
+        <x-m>0.73</x-m>
+        <y-m>0</y-m>
+        <z-m>1.475</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
+    </animation>
 
-  <animation>
-    <type>pick</type>
-    <object-name>GroundPWR</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>     
-      <binding>
+    <animation>
+      <type>pick</type>
+      <object-name>GroundPWR</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>     
+        <binding>
           <command>property-toggle</command>
           <property>/controls/electric/external-power</property>
-      </binding>
-      <binding>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      <binding>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>
-          if(getprop("services/ext-pwr/enable") == 0) screen.log.write("No External Power Enabled",1,0,0);
-        </script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>
+            if(getprop("services/ext-pwr/enable") == 0) screen.log.write("No External Power Enabled",1,0,0);
+          </script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>GroundPWR</object-name>  
-            <property>/controls/electric/external-power</property>
+      <object-name>GroundPWR</object-name>  
+      <property>/controls/electric/external-power</property>
       <factor>30</factor>
       <center>
-          <x-m>0.81842</x-m>
-          <y-m>0</y-m>
-          <z-m>1.51261</z-m>
+        <x-m>0.81842</x-m>
+        <y-m>0</y-m>
+        <z-m>1.51261</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
+    </animation>
 
-<!--Window Heat-->
+    <!--Window Heat-->
 
-<animation>
-    <type>pick</type>
-    <object-name>WindowHeatLSide</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>      
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/window-heat</property>
-      </binding>
-      <binding>
+    <animation>
+      <type>pick</type>
+      <object-name>WindowHeatLSide</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>      
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>WindowHeatLSide</object-name>  
-            <property>/controls/anti-ice/window-heat</property>
+      <object-name>WindowHeatLSide</object-name>  
+      <property>/controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
-          <x-m>1.14064</x-m>
-          <y-m>0</y-m>
-          <z-m>1.65214</z-m>
+        <x-m>1.14064</x-m>
+        <y-m>0</y-m>
+        <z-m>1.65214</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
-  <animation>
-    <type>pick</type>
-    <object-name>WindowHeatLFWD</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>   
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/window-heat</property>
-      </binding>
-      <binding>
+    </animation>
+    <animation>
+      <type>pick</type>
+      <object-name>WindowHeatLFWD</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>   
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>WindowHeatLFWD</object-name>  
-            <property>/controls/anti-ice/window-heat</property>
+      <object-name>WindowHeatLFWD</object-name>  
+      <property>/controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
-          <x-m>1.14064</x-m>
-          <y-m>0</y-m>
-          <z-m>1.65214</z-m>
+        <x-m>1.14064</x-m>
+        <y-m>0</y-m>
+        <z-m>1.65214</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation> 
-  <animation>
-    <type>pick</type>
-    <object-name>WindowHeatRSide</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>  
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/window-heat</property>
-      </binding>
-      <binding>
+    </animation> 
+    <animation>
+      <type>pick</type>
+      <object-name>WindowHeatRSide</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>  
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>WindowHeatRSide</object-name>  
-            <property>/controls/anti-ice/window-heat</property>
+      <object-name>WindowHeatRSide</object-name>  
+      <property>/controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
-          <x-m>1.14064</x-m>
-          <y-m>0</y-m>
-          <z-m>1.65214</z-m>
+        <x-m>1.14064</x-m>
+        <y-m>0</y-m>
+        <z-m>1.65214</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation> 
-  <animation>
-    <type>pick</type>
-    <object-name>WindowHeatRFWD</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>  
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/window-heat</property>
-      </binding>
-      <binding>
+    </animation> 
+    <animation>
+      <type>pick</type>
+      <object-name>WindowHeatRFWD</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>  
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>WindowHeatRFWD</object-name>  
-            <property>/controls/anti-ice/window-heat</property>
+      <object-name>WindowHeatRFWD</object-name>  
+      <property>/controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
-          <x-m>1.14064</x-m>
-          <y-m>0</y-m>
-          <z-m>1.65214</z-m>
+        <x-m>1.14064</x-m>
+        <y-m>0</y-m>
+        <z-m>1.65214</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation> 
-  <animation>
-    <type>pick</type>
-    <object-name>WindowHeatOVHT</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>      
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/window-heat</property>
-      </binding>
-      <binding>
+    </animation> 
+    <animation>
+      <type>pick</type>
+      <object-name>WindowHeatOVHT</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>      
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>WindowHeatOVHT</object-name>  
-            <property>/controls/anti-ice/window-heat</property>
+      <object-name>WindowHeatOVHT</object-name>  
+      <property>/controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
-          <x-m>1.14064</x-m>
-          <y-m>0</y-m>
-          <z-m>1.65214</z-m>
+        <x-m>1.14064</x-m>
+        <y-m>0</y-m>
+        <z-m>1.65214</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation> 
+    </animation> 
 
-<!-- Ant Ice -->
+    <!-- Ant Ice -->
 
-   <animation>
-    <type>pick</type>
-    <object-name>WingAntiIce</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>   
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/wing-heat</property>
-      </binding>
-      <binding>
+    <animation>
+      <type>pick</type>
+      <object-name>WingAntiIce</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>   
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/wing-heat</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>WingAntiIce</object-name>  
-            <property>/controls/anti-ice/wing-heat</property>
+      <object-name>WingAntiIce</object-name>  
+      <property>/controls/anti-ice/wing-heat</property>
       <factor>30</factor>
       <center>
-          <x-m>0.99628</x-m>
-          <y-m>0</y-m>
-          <z-m>1.59188</z-m>
+        <x-m>0.99628</x-m>
+        <y-m>0</y-m>
+        <z-m>1.59188</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
-  <animation>
-    <type>pick</type>
-    <object-name>EngAntiIce1</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>  
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/engine/carb-heat</property>
-      </binding>
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/engine/inlet-heat</property>
-      </binding>
-      <binding>
+    </animation>
+    <animation>
+      <type>pick</type>
+      <object-name>EngAntiIce1</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>  
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/engine/carb-heat</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/engine/inlet-heat</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>EngAntiIce1</object-name>  
-            <property>/controls/anti-ice/engine/carb-heat</property>
+      <object-name>EngAntiIce1</object-name>  
+      <property>/controls/anti-ice/engine/carb-heat</property>
       <factor>30</factor>
       <center>
-          <x-m>0.99628</x-m>
-          <y-m>0</y-m>
-          <z-m>1.59188</z-m>
+        <x-m>0.99628</x-m>
+        <y-m>0</y-m>
+        <z-m>1.59188</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation> 
-  <animation>
-    <type>pick</type>
-    <object-name>EngAntiIce2</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>        
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/engine[1]/carb-heat</property>
-      </binding>
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/anti-ice/engine[1]/inlet-heat</property>
-      </binding>
-      <binding>
+    </animation> 
+    <animation>
+      <type>pick</type>
+      <object-name>EngAntiIce2</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>        
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/engine[1]/carb-heat</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/engine[1]/inlet-heat</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>EngAntiIce2</object-name>  
-            <property>/controls/anti-ice/engine[1]/carb-heat</property>
+      <object-name>EngAntiIce2</object-name>  
+      <property>/controls/anti-ice/engine[1]/carb-heat</property>
       <factor>30</factor>
       <center>
-          <x-m>0.99628</x-m>
-          <y-m>0</y-m>
-          <z-m>1.59188</z-m>
+        <x-m>0.99628</x-m>
+        <y-m>0</y-m>
+        <z-m>1.59188</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
+    </animation>
 
-<!-- Eletric Hyd Pumps -->
+    <!-- Eletric Hyd Pumps -->
 
-  <animation>
-    <type>pick</type>
-    <object-name>HYDPumpEngL</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>    
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/hydraulic/system/engine-pump</property>
-      </binding>
-      <binding>
+    <animation>
+      <type>pick</type>
+      <object-name>HYDPumpEngL</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>    
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/hydraulic/system/engine-pump</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>HYDPumpEngL</object-name>  
-            <property>/controls/hydraulic/system/engine-pump</property>
+      <object-name>HYDPumpEngL</object-name>  
+      <property>/controls/hydraulic/system/engine-pump</property>
       <factor>30</factor>
       <center>
-          <x-m>0.90673</x-m>
-          <y-m>0</y-m>
-          <z-m>1.5535</z-m>
+        <x-m>0.90673</x-m>
+        <y-m>0</y-m>
+        <z-m>1.5535</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation> 
- 
- <animation>
-    <type>pick</type>
-    <object-name>HYDPumpEngR</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-     <repeatable type="bool">false</repeatable>   
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/hydraulic/system/engine-pump</property>
-      </binding>
-      <binding>
+    </animation> 
+
+    <animation>
+      <type>pick</type>
+      <object-name>HYDPumpEngR</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>   
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/hydraulic/system/engine-pump</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>HYDPumpEngR</object-name>  
-            <property>/controls/hydraulic/system/engine-pump</property>
+      <object-name>HYDPumpEngR</object-name>  
+      <property>/controls/hydraulic/system/engine-pump</property>
       <factor>30</factor>
       <center>
-          <x-m>0.90673</x-m>
-          <y-m>0</y-m>
-          <z-m>1.5535</z-m>
+        <x-m>0.90673</x-m>
+        <y-m>0</y-m>
+        <z-m>1.5535</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation> 
+    </animation> 
 
-   <animation>
-    <type>pick</type>
-    <object-name>HYDPumpEletrR</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/hydraulic/system/electric-pump</property>
-      </binding>
-      <binding>
+    <animation>
+      <type>pick</type>
+      <object-name>HYDPumpEletrR</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/hydraulic/system/electric-pump</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>HYDPumpEletrR</object-name>  
-            <property>/controls/hydraulic/system/electric-pump</property>
+      <object-name>HYDPumpEletrR</object-name>  
+      <property>/controls/hydraulic/system/electric-pump</property>
       <factor>30</factor>
       <center>
-          <x-m>0.90673</x-m>
-          <y-m>0</y-m>
-          <z-m>1.5535</z-m>
+        <x-m>0.90673</x-m>
+        <y-m>0</y-m>
+        <z-m>1.5535</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation> 
+    </animation> 
 
-   <animation>
-    <type>pick</type>
-    <object-name>HYDPumpEletrL</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable type="bool">false</repeatable>        
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/hydraulic/system/electric-pump</property>
-      </binding>
-      <binding>
-      		<command>nasal</command>
-   			<script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>  
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>HYDPumpEletrL</object-name>  
-            <property>/controls/hydraulic/system/electric-pump</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.90673</x-m>
-          <y-m>0</y-m>
-          <z-m>1.5535</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation> 
-
-
-  <!-- Air -->   
-
-  <animation>
-    <type>pick</type>
-    <object-name>TrimAir</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>        
-      <binding>
-      		<command>property-toggle</command>
-        	<property>/controls/air/trim-air</property>
-      </binding>
-      <binding>
+    <animation>
+      <type>pick</type>
+      <object-name>HYDPumpEletrL</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>        
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/hydraulic/system/electric-pump</property>
+        </binding>
+        <binding>
           <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>  
+      </action> 
+    </animation>
+    <animation>
       <type>rotate</type>   
-        <object-name>TrimAir</object-name>  
-            <property>/controls/air/trim-air</property>
+      <object-name>HYDPumpEletrL</object-name>  
+      <property>/controls/hydraulic/system/electric-pump</property>
       <factor>30</factor>
       <center>
-          <x-m>1.09427</x-m>
-          <y-m>0</y-m>
-          <z-m>1.63021</z-m>
+        <x-m>0.90673</x-m>
+        <y-m>0</y-m>
+        <z-m>1.5535</z-m>
       </center>
       <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
       </axis>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>Cross_Feed</object-name>         
-    <visible>1</visible>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>TillerL</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var st = gui.Dialog.new("sim/gui/dialogs/tiller/dialog", "Aircraft/737-800/Dialogs/tiller-steering.xml");
-          st.open();
-        </script>
-      </binding>
-    </action>
-  </animation>
+    </animation> 
 
 
-  <animation>
+    <!-- Air -->   
+
+    <animation>
+      <type>pick</type>
+      <object-name>TrimAir</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable>true</repeatable>        
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/air/trim-air</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>TrimAir</object-name>  
+      <property>/controls/air/trim-air</property>
+      <factor>30</factor>
+      <center>
+        <x-m>1.09427</x-m>
+        <y-m>0</y-m>
+        <z-m>1.63021</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>Cross_Feed</object-name>         
+      <visible>1</visible>
+    </animation>
+
+    <animation>
+      <type>pick</type>
+      <object-name>TillerL</object-name>
+      <action>
+        <button>0</button>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var st = gui.Dialog.new("sim/gui/dialogs/tiller/dialog", "Aircraft/737-800/Dialogs/tiller-steering.xml");
+            st.open();
+          </script>
+        </binding>
+      </action>
+    </animation>
+
+
+  <!--animation>
   <type>pick</type>
   <visible>true</visible>
   <object-name>cockpitdoor</object-name>
@@ -3038,450 +3038,479 @@
    <axis>
      <z>1</z>
    </axis>
- </animation>
+ </animation-->
 
- <!-- Ilummination -->
+ <animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>cockpitdoor</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.cockpitdoortoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>cockpitdoor</object-name>
+  <property>/controls/doors/cockpitdoor/position-norm</property>
+  <factor>90</factor> <!-- The rotation in degrees -->
+  <center>
+   <x-m>3.11757</x-m>
+   <y-m>0.36314</y-m>
+   <z-m>1.11284</z-m>
+ </center>
+ <axis>
+   <z>1</z>
+ </axis>
+</animation>
 
-  <!-- Panel Bright -->
+<!-- Ilummination -->
 
-  <animation>
-        <type>knob</type>
-        <object-name>PanelBright</object-name>
-        <property>/controls/lighting/panel-light</property>
-        <factor>125</factor>
-        <center>
-            <x-m>1.02887</x-m>
-            <y-m>-0.01245</y-m>
-            <z-m>1.60701</z-m>
-        </center>
-        <axis>
-            <x>-.45</x><y>0</y><z>1</z>
-        </axis>
-        
-        <action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/lighting/panel-light</property>
-                <factor>0.05</factor>
-                <min>0</min>
-                <max>2</max>                
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <shift-action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/lighting/panel-light</property>
-                <factor>0.1</factor>
-                <min>0</min>
-                <max>2</max>                
-                <wrap>false</wrap>
-            </binding>
-        </shift-action>
-        <increase>
-        </increase>
-        <decrease>
-        </decrease>
-    </animation>
+<!-- Panel Bright -->
+
+<animation>
+  <type>knob</type>
+  <object-name>PanelBright</object-name>
+  <property>/controls/lighting/panel-light</property>
+  <factor>125</factor>
+  <center>
+    <x-m>1.02887</x-m>
+    <y-m>-0.01245</y-m>
+    <z-m>1.60701</z-m>
+  </center>
+  <axis>
+    <x>-.45</x><y>0</y><z>1</z>
+  </axis>
+
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/panel-light</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <shift-action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/panel-light</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
+</animation>
 
 <animation>
   <type>material</type>
-    <object-name>seatfo</object-name>
-    <object-name>seatcapt</object-name>
-    <object-name>cockpitdoor</object-name>
-    <object-name>BACKGROUNDcpt</object-name>
-     <object-name>AFDSbrt</object-name>
-     <object-name>parkbrake_1</object-name>
-     <object-name>no3quad.002</object-name>
-    <emission>
+  <object-name>seatfo</object-name>
+  <object-name>seatcapt</object-name>
+  <object-name>cockpitdoor</object-name>
+  <object-name>BACKGROUNDcpt</object-name>
+  <object-name>AFDSbrt</object-name>
+  <object-name>parkbrake_1</object-name>
+  <emission>
     <red>0.1</red>
     <green>0.1</green>
     <blue>0.1</blue>
     <factor-prop>controls/lighting/panel-light</factor-prop>	
   </emission>
- </animation>
+</animation>
 
- <animation>
+<animation>
   <type>material</type>
-    <object-name>TillerL</object-name>
-    <emission>
+  <object-name>TillerL</object-name>
+  <emission>
     <red>3.1</red>
     <green>3.1</green>
     <blue>3.1</blue>
     <factor-prop>controls/lighting/panel-light</factor-prop>	
   </emission>
- </animation>
+</animation>
 
-  <!-- Circuit Breakers Bright -->
+<!-- Circuit Breakers Bright -->
 
-   <animation>
-        <type>knob</type>
-        <object-name>CircuitBreakersBright</object-name>
-        <property>/controls/lighting/circuitbrakers-light</property>
-        <factor>125</factor>
-        <center>
-            <x-m>1.0818</x-m>
-            <y-m>-0.01226</y-m>
-            <z-m>1.6302</z-m>
-        </center>
-        <axis>
-            <x>-.45</x><y>0</y><z>1</z>
-        </axis>
-        
-        <action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/lighting/circuitbrakers-light</property>
-                <factor>0.05</factor>
-                <min>0</min>
-                <max>2</max>                
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <shift-action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/lighting/circuitbrakers-light</property>
-                <factor>0.1</factor>
-                <min>0</min>
-                <max>2</max>                
-                <wrap>false</wrap>
-            </binding>
-        </shift-action>
-        <increase>
-        </increase>
-        <decrease>
-        </decrease>
-    </animation>
+<animation>
+  <type>knob</type>
+  <object-name>CircuitBreakersBright</object-name>
+  <property>/controls/lighting/circuitbrakers-light</property>
+  <factor>125</factor>
+  <center>
+    <x-m>1.0818</x-m>
+    <y-m>-0.01226</y-m>
+    <z-m>1.6302</z-m>
+  </center>
+  <axis>
+    <x>-.45</x><y>0</y><z>1</z>
+  </axis>
+
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/circuitbrakers-light</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <shift-action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/circuitbrakers-light</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
+</animation>
 
 
- <!-- Pedestal -->
-  <!-- Eng 1 Fire -->
- <animation>
-    <type>pick</type>
-    <object-name>Circle.169</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>        
-      <binding>
-          <command>nasal</command>
-        <script>
-          if(!getprop("/controls/fires/fire/on-fire")) return;
-          props.globals.getNode("controls/switches/switch").setBoolValue(1);
-          props.globals.getNode("controls/switches/fire/engine[0]/on-fire").setBoolValue(1);
-          setprop("/controls/fires/fire/phase", "no-fire");
-          setprop("/controls/fires/fire/on-fire", 0);
-          setprop("/controls/fires/fire/burn-time", 0);
-          settimer(
-            func {
-                props.globals.getNode("controls/switches/fire/engine[0]/on-fire").setBoolValue(0);
-            }
-          , 1);
-        </script>
-      </binding>
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>Circle.169</object-name>  
-            <property>/controls/switches/fire/engine[0]/on-fire</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.87797</x-m>
-          <y-m>-0.09724</y-m>
-          <z-m>0.62533</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-    <!-- Apu Fire -->
-    <animation>
-    <type>pick</type>
-    <object-name>Circle.170</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-          <command>nasal</command>
-        <script>
-          if(!getprop("controls/fires/apu/on-fire")) return;
-          props.globals.getNode("controls/switches/switch").setBoolValue(1);
-          props.globals.getNode("controls/switches/fire/apu/on-fire").setBoolValue(1);
-          settimer(
-            func {
-                props.globals.getNode("controls/switches/fire/apu/on-fire").setBoolValue(0);
-            }
-          , 1);
-        </script>
-      </binding>  
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>Circle.170</object-name>  
-            <property>/controls/switches/fire/apu/on-fire</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.87699</x-m>
-          <y-m>-0.02388</y-m>
-          <z-m>0.62825</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
-  
-    <!-- Eng 2 Fire -->
-    <animation>
-    <type>pick</type>
-    <object-name>Circle.171</object-name>         
-    <visible>1</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-          <command>nasal</command>
-        <script>
-          if(!getprop("controls/fires/fire[1]/on-fire")) return;
-          props.globals.getNode("controls/switches/switch").setBoolValue(1);
-          props.globals.getNode("controls/switches/fire/engine[1]/on-fire").setBoolValue(1);
-          setprop("/controls/fires/fire[1]/phase", "no-fire");
-          setprop("/controls/fires/fire[1]/on-fire", 0);
-          setprop("/controls/fires/fire[1]/burn-time", 0);
-          settimer(
-            func {
-                props.globals.getNode("controls/switches/fire/engine[1]/on-fire").setBoolValue(0);
-            }
-          , 1);
-        </script>
-      </binding>  
-    </action> 
-  </animation>
-  <animation>
-      <type>rotate</type>   
-        <object-name>Circle.171</object-name>  
-            <property>/controls/switches/fire/engine[1]/on-fire</property>
-      <factor>30</factor>
-      <center>
-          <x-m>0.87789</x-m>
-          <y-m>0.05651</y-m>
-          <z-m>0.62564</z-m>
-      </center>
-      <axis>
-          <x>0</x>
-          <y>1</y>
-          <z>0</z>
-      </axis>
-  </animation>
+<!-- Pedestal -->
+<!-- Eng 1 Fire -->
+<animation>
+  <type>pick</type>
+  <object-name>Circle.169</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>        
+    <binding>
+      <command>nasal</command>
+      <script>
+        if(!getprop("/controls/fires/fire/on-fire")) return;
+        props.globals.getNode("controls/switches/switch").setBoolValue(1);
+        props.globals.getNode("controls/switches/fire/engine[0]/on-fire").setBoolValue(1);
+        setprop("/controls/fires/fire/phase", "no-fire");
+        setprop("/controls/fires/fire/on-fire", 0);
+        setprop("/controls/fires/fire/burn-time", 0);
+        settimer(
+        func {
+        props.globals.getNode("controls/switches/fire/engine[0]/on-fire").setBoolValue(0);
+        }
+        , 1);
+      </script>
+    </binding>
+  </action> 
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>Circle.169</object-name>  
+  <property>/controls/switches/fire/engine[0]/on-fire</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.87797</x-m>
+    <y-m>-0.09724</y-m>
+    <z-m>0.62533</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<!-- Apu Fire -->
+<animation>
+  <type>pick</type>
+  <object-name>Circle.170</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        if(!getprop("controls/fires/apu/on-fire")) return;
+        props.globals.getNode("controls/switches/switch").setBoolValue(1);
+        props.globals.getNode("controls/switches/fire/apu/on-fire").setBoolValue(1);
+        settimer(
+        func {
+        props.globals.getNode("controls/switches/fire/apu/on-fire").setBoolValue(0);
+        }
+        , 1);
+      </script>
+    </binding>  
+  </action> 
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>Circle.170</object-name>  
+  <property>/controls/switches/fire/apu/on-fire</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.87699</x-m>
+    <y-m>-0.02388</y-m>
+    <z-m>0.62825</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
-  <animation>
-        <type>rotate</type>
-        <object-name>Circle.242</object-name>
-        <property>controls/flight/rudder-trim</property>
-        <factor>90</factor>
-        <center>
-            <x-m>1.34933</x-m>
-            <y-m>0.00717</y-m>
-            <z-m>0.6275</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>0</y>
-            <z>-1</z>
-        </axis>
-    </animation>
+<!-- Eng 2 Fire -->
+<animation>
+  <type>pick</type>
+  <object-name>Circle.171</object-name>         
+  <visible>1</visible>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>
+        if(!getprop("controls/fires/fire[1]/on-fire")) return;
+        props.globals.getNode("controls/switches/switch").setBoolValue(1);
+        props.globals.getNode("controls/switches/fire/engine[1]/on-fire").setBoolValue(1);
+        setprop("/controls/fires/fire[1]/phase", "no-fire");
+        setprop("/controls/fires/fire[1]/on-fire", 0);
+        setprop("/controls/fires/fire[1]/burn-time", 0);
+        settimer(
+        func {
+        props.globals.getNode("controls/switches/fire/engine[1]/on-fire").setBoolValue(0);
+        }
+        , 1);
+      </script>
+    </binding>  
+  </action> 
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>Circle.171</object-name>  
+  <property>/controls/switches/fire/engine[1]/on-fire</property>
+  <factor>30</factor>
+  <center>
+    <x-m>0.87789</x-m>
+    <y-m>0.05651</y-m>
+    <z-m>0.62564</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
 
-    <animation>
-        <type>pick</type>
-        <object-name>Circle.242</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.1</interval-sec>
-             <binding>
-             <command>property-adjust</command>
-            <property>controls/flight/rudder-trim</property>
-            <step>0.01</step>
-            <min>-0.2</min>
-            <max>0.2</max>
-            <wrap>0</wrap>
-            </binding>
-        </action>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.1</interval-sec>
-             <binding>
-             <command>property-adjust</command>
-            <property>controls/flight/rudder-trim</property>
-            <step>-0.01</step>
-            <min>-0.2</min>
-            <max>0.2</max>
-            <wrap>0</wrap>
-            </binding>
-        </action>
-    </animation>
+<animation>
+  <type>rotate</type>
+  <object-name>Circle.242</object-name>
+  <property>controls/flight/rudder-trim</property>
+  <factor>90</factor>
+  <center>
+    <x-m>1.34933</x-m>
+    <y-m>0.00717</y-m>
+    <z-m>0.6275</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>0</y>
+    <z>-1</z>
+  </axis>
+</animation>
 
-    <animation>
-        <type>knob</type>
-        <object-name>autobrake.007</object-name>
-        <property>/controls/lighting/panel-light</property>
-        <factor>125</factor>
-        <center>
-            <x-m>1.35544</x-m>
-            <y-m>-0.14926</y-m>
-            <z-m>0.63349</z-m>
-        </center>
-        <axis>
-            <x>0</x><y>0</y><z>-1</z>
-        </axis>
-        
-        <action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/lighting/panel-light</property>
-                <factor>0.05</factor>
-                <min>0</min>
-                <max>2</max>                
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <shift-action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/lighting/floor</property>
-                <factor>0.1</factor>
-                <min>0</min>
-                <max>2</max>                
-                <wrap>false</wrap>
-            </binding>
-        </shift-action>
-        <increase>
-        </increase>
-        <decrease>
-        </decrease>
-    </animation>
+<animation>
+  <type>pick</type>
+  <object-name>Circle.242</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <interval-sec>0.1</interval-sec>
+    <binding>
+     <command>property-adjust</command>
+     <property>controls/flight/rudder-trim</property>
+     <step>0.01</step>
+     <min>-0.2</min>
+     <max>0.2</max>
+     <wrap>0</wrap>
+   </binding>
+ </action>
+ <action>
+  <button>1</button>
+  <repeatable>true</repeatable>
+  <interval-sec>0.1</interval-sec>
+  <binding>
+   <command>property-adjust</command>
+   <property>controls/flight/rudder-trim</property>
+   <step>-0.01</step>
+   <min>-0.2</min>
+   <max>0.2</max>
+   <wrap>0</wrap>
+ </binding>
+</action>
+</animation>
 
-    <animation>
-        <type>knob</type>
-        <object-name>autobrake.008</object-name>
-        <property>/controls/lighting/flood-light</property>
-        <factor>125</factor>
-        <center>
-            <x-m>1.3558</x-m>
-            <y-m>-0.21205</y-m>
-            <z-m>0.63339</z-m>
-        </center>
-        <axis>
-            <x>0</x><y>0</y><z>-1</z>
-        </axis>
-        
-        <action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/lighting/flood-light</property>
-                <factor>0.05</factor>
-                <min>0</min>
-                <max>2</max>                
-                <wrap>false</wrap>
-            </binding>
-        </action>
-        <shift-action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/lighting/flood-light</property>
-                <factor>0.1</factor>
-                <min>0</min>
-                <max>2</max>                
-                <wrap>false</wrap>
-            </binding>
-        </shift-action>
-        <increase>
-        </increase>
-        <decrease>
-        </decrease>
-    </animation>
+<animation>
+  <type>knob</type>
+  <object-name>autobrake.007</object-name>
+  <property>/controls/lighting/panel-light</property>
+  <factor>125</factor>
+  <center>
+    <x-m>1.35544</x-m>
+    <y-m>-0.14926</y-m>
+    <z-m>0.63349</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
 
-    <animation>
-      <type>pick</type>
-      <visible>true</visible>
-      <object-name>Cross_Feed</object-name>
-      <action>
-       <button>0</button>
-       <repeatable>true</repeatable> 
-       <binding>
-        <command>property-toggle</command>
-        <property>/controls/fuel/crossfeed</property>
-       </binding>
-       <binding>
-          <command>nasal</command>
-        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
-      </binding>
-      </action>
-    </animation>
-    <animation>
-      <type>rotate</type>   
-        <object-name>Cross_Feed</object-name>  
-            <property>/controls/fuel/crossfeed</property>
-      <factor>90</factor>
-      <center>
-          <x-m>0.77407</x-m>
-          <y-m>-0.26409</y-m>
-          <z-m>1.49283</z-m>
-      </center>
-      <axis>
-          <x>-.45</x><y>0</y><z>1</z>
-      </axis>
-    </animation>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/panel-light</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <shift-action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/floor</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
+</animation>
 
-     <model>
-        <name>ldglightleftretr</name>
-        <path>landinglight.xml</path>
-        <offsets>
-            <x-m>0.6127471</x-m>
-            <y-m>-0.2644771</y-m>
-            <z-m>1.42400</z-m>
-            <pitch-deg>125</pitch-deg>
-        </offsets>
-    </model>
-	<model>
-        <name>ldglightrightretr</name>
-        <path>landinglight.xml</path>
-        <offsets>
-            <x-m>0.6127595</x-m>
-            <y-m>-0.1857275</y-m>
-            <z-m>1.42400</z-m>
-            <pitch-deg>125</pitch-deg>
-        </offsets>
-    </model>
-    <model>
-        <name>ldglightleftwing</name>
-        <path>landinglight.xml</path>
-        <offsets>
-            <x-m>0.6121518</x-m>
-            <y-m>-0.2147996</y-m>
-            <z-m>1.42400</z-m>
-            <pitch-deg>125</pitch-deg>
-        </offsets>
-    </model>
-  
-    <model>
-        <name>ldglightrightwing</name>
-        <path>landinglight.xml</path>
-        <offsets>
-            <x-m>0.6134001</x-m>
-            <y-m>-0.2420656</y-m>
-            <z-m>1.42400</z-m>
-            <pitch-deg>125</pitch-deg>
-        </offsets>
-    </model>
+<animation>
+  <type>knob</type>
+  <object-name>autobrake.008</object-name>
+  <property>/controls/lighting/flood-light</property>
+  <factor>125</factor>
+  <center>
+    <x-m>1.3558</x-m>
+    <y-m>-0.21205</y-m>
+    <z-m>0.63339</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/flood-light</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <shift-action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/flood-light</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>Cross_Feed</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding>
+    <command>property-toggle</command>
+    <property>/controls/fuel/crossfeed</property>
+  </binding>
+  <binding>
+    <command>nasal</command>
+    <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>rotate</type>   
+  <object-name>Cross_Feed</object-name>  
+  <property>/controls/fuel/crossfeed</property>
+  <factor>90</factor>
+  <center>
+    <x-m>0.77407</x-m>
+    <y-m>-0.26409</y-m>
+    <z-m>1.49283</z-m>
+  </center>
+  <axis>
+    <x>-.45</x><y>0</y><z>1</z>
+  </axis>
+</animation>
+
+<model>
+  <name>ldglightleftretr</name>
+  <path>landinglight.xml</path>
+  <offsets>
+    <x-m>0.6127471</x-m>
+    <y-m>-0.2644771</y-m>
+    <z-m>1.42400</z-m>
+    <pitch-deg>125</pitch-deg>
+  </offsets>
+</model>
+<model>
+  <name>ldglightrightretr</name>
+  <path>landinglight.xml</path>
+  <offsets>
+    <x-m>0.6127595</x-m>
+    <y-m>-0.1857275</y-m>
+    <z-m>1.42400</z-m>
+    <pitch-deg>125</pitch-deg>
+  </offsets>
+</model>
+<model>
+  <name>ldglightleftwing</name>
+  <path>landinglight.xml</path>
+  <offsets>
+    <x-m>0.6121518</x-m>
+    <y-m>-0.2147996</y-m>
+    <z-m>1.42400</z-m>
+    <pitch-deg>125</pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <name>ldglightrightwing</name>
+  <path>landinglight.xml</path>
+  <offsets>
+    <x-m>0.6134001</x-m>
+    <y-m>-0.2420656</y-m>
+    <z-m>1.42400</z-m>
+    <pitch-deg>125</pitch-deg>
+  </offsets>
+</model>
   <!-- 
   <model>
     <name>EFB</name>
@@ -3507,5 +3536,5 @@
       <z-m>0.4582</z-m> 
     </offsets>
   </model>
-   -->
+-->
 </PropertyList>

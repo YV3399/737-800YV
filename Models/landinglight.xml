@@ -15,6 +15,10 @@
 			<command>property-toggle</command>
 			<property>controls/lighting/landing-lights</property>
 		</binding>
+		<binding>
+          <command>nasal</command>
+        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+      </binding>
 	</action>
 	<!--<center>
 		<x-m>0.285</x-m><z-m>-0.014</z-m>

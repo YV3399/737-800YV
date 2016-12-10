@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<path>cockpitseat.ac</path>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>SeatHand</object-name>
+    <action>
+     <button>0</button>
+     <repeatable>true</repeatable> 
+     <binding>
+      <command>property-toggle</command>
+      <property>/controls/switches/cockpitseat-hand</property>
+    </binding>
+    <binding>
+      <command>nasal</command>
+      <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>SeatHand</object-name>
+
+ <property>/controls/switches/cockpitseat-hand</property>
+ <factor>90</factor>
+ <center>
+  <x-m>0.25995</x-m>
+  <y-m>0.27388</y-m>
+  <z-m>0.59021</z-m>
+</center>
+<axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+</axis>
+</animation>
+
+<!-- sleep seat -->
+
+<animation>
+  <type>knob</type>
+  <object-name>Rotate</object-name>
+  <property>/controls/switches/cockpitseat-hand-rot</property>
+  <factor>360</factor>
+  <center>
+    <x-m>0.22375</x-m>
+    <y-m>0.27247</y-m>
+    <z-m>0.53064</z-m>
+  </center>
+  <axis>
+    <y>1</y>
+  </axis>
+
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/cockpitseat-hand-rot</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <shift-action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/switches/cockpitseat-hand-rot</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+    </binding>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>SeatBack</object-name>
+ <object-name>SeatP.001</object-name>
+ <property>/controls/switches/cockpitseat-hand-rot</property>
+ <factor>60</factor>
+ <center>
+  <x-m>0.22911</x-m>
+  <y-m>0.03587</y-m>
+  <z-m>0.41567</z-m>
+</center>
+<axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+</axis>
+</animation>
+
+</PropertyList>

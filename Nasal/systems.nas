@@ -111,6 +111,17 @@ setlistener("controls/switches/switch",
  		, 0.1);
  	}
  );
+ setlistener("controls/doors/cockpitdoor/sound",
+	func {
+		if(!getprop("controls/doors/cockpitdoor/sound")) return;
+ 		settimer(
+ 			func {
+  				props.globals.getNode("controls/doors/cockpitdoor/sound").setBoolValue(0);
+ 			}
+ 		, 3);
+ 	}
+ );
+
 
 var aglgears = func {
     var agl = getprop("/position/altitude-agl-ft") or 0;

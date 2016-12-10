@@ -699,7 +699,8 @@
 		<file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
 		<file>Aircraft/737-800/Nasal/ITAF_PFD_mode-converter.nas</file>
 		<file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
-		<file>Aircraft/737-800/Nasal/limits.nas</file> 
+		<file>Aircraft/737-800/Nasal/limits.nas</file>
+    <file>Aircraft/737-800/Nasal/doors.nas</file> 
     </boeing737>
 		
     <nd>
