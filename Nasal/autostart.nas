@@ -82,13 +82,12 @@ var inAirStart = func {
         setprop("/it-autoflight/fd_master", 1);
         setprop("/it-autoflight/fd_master2", 1);
         var speed = boeing737.roundToNearest(getprop("sim/presets/airspeed-kt"), 1);
-        setprop("/it-autoflight/settings/target-speed-kt", speed);
-        setprop("/it-autoflight/settings/heading-bug-deg", boeing737.roundToNearest(getprop("orientation/heading-magnetic-deg"), 1));
-        setprop("/it-autoflight/settings/target-altitude-ft", boeing737.roundToNearest(getprop("sim/presets/altitude-ft"), 100));
-        setprop("/it-autoflight/at_master", 1);
-        setprop("/it-autoflight/aplatset", 0);
-        settimer(func {setprop("/it-autoflight/apvertset", 4);}, 5);
-        settimer(func {setprop("/it-autoflight/ap_master", 1);}, 5.2);
+        setprop("/it-autoflight/input/spd-kts", speed);
+        setprop("/it-autoflight/input/hdg", boeing737.roundToNearest(getprop("orientation/heading-magnetic-deg"), 1));
+        setprop("/it-autoflight/input/alt", boeing737.roundToNearest(getprop("sim/presets/altitude-ft"), 100));
+		setprop("/it-autoflight/input/kts-mach", 0);
+		setprop("/it-autoflight/input/lat", 0);
+		setprop("/it-autoflight/input/vert", 4);
 
         # set ILS frequency
         var cur_runway = getprop("sim/presets/runway");
