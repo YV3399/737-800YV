@@ -6,8 +6,8 @@ setlistener("/sim/signals/fdm-initialized", func {
 print("Lighting System: Initializing, please wait");
 
 
-var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0,3, ], "/controls/lighting/beacon" );
-var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0,3, ], "/controls/lighting/strobe" );
+var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0,2, ], "/controls/lighting/beacon" );
+var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0,2, ], "/controls/lighting/strobe" );
 
 strobe_switch = props.globals.getNode("controls/switches/strobe", 1);
 beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
