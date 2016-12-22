@@ -1,4 +1,4 @@
-#Doors By RenanMsV and YV3399
+#Doors By RenanMsV and Gabriel Hernande(YV3399)
 
 # cockpit
 var cockpitdoor = aircraft.door.new("/controls/doors/cockpitdoor/", 3);

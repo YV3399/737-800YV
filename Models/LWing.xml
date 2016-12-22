@@ -752,10 +752,4 @@
         <object-name>ible</object-name>
     </animation> 
 
-<!--shader-->
-    <effect>
-    <inherits-from>Aircraft/737-800/Models/Effects/7378reflect</inherits-from>
-     <object-name>lhfairing</object-name>
-      </effect>
-
 </PropertyList>

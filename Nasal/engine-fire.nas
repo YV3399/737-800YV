@@ -1,3 +1,5 @@
+#Systems Engine Fire By Gabriel Hernande(YV3399)
+
 var fire_mgmt = {
 	init : func { 
         me.UPDATE_INTERVAL = 1; 

@@ -49,7 +49,6 @@
     <object-name>geardoor</object-name>
     <object-name>engnose.001</object-name>
     <object-name>lreverserib_1</object-name>
-    <!--object-name>fan</object-name-->
     <object-name>rhngdoor</object-name>
     <object-name>lhngdoor</object-name>
     <object-name>rhwtobfairing</object-name>
@@ -63,7 +62,6 @@
     <texture-prop>texture</texture-prop>
   </animation>
   
- 
   <effect>
     <inherits-from>Effects/glass</inherits-from>
     <object-name>windows.int</object-name>
@@ -344,7 +342,6 @@
 
 <!--Landing Light-->
 
-
 <model>
   <path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
   <name>LeftWingLandinglight</name>
@@ -421,7 +418,6 @@
   </offsets>
 </model>   
 
-
 <!-- Tyre Smoke -->
 
 <model>
@@ -433,7 +429,6 @@
     <z-m>-5.50</z-m>
   </offsets>
 </model>
-
 
 <model>
   <path>Aircraft/737-800/Models/Effects/tyre-smoke-left.xml</path>
