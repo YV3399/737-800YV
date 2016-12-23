@@ -10,7 +10,22 @@
         <input> 
             <expression>
               <sum>
-                <property>instrumentation/fmc/v-ref-40</property>
+                <table>
+                 <product>
+                    <property>/fdm/jsbsim/inertia/weight-lbs</property>
+                        <property>accelerations/pilot-g</property>
+                    </product>
+                    <entry><ind>88183</ind><dep>108</dep></entry>
+                    <entry><ind>99206</ind><dep>115</dep></entry>
+                    <entry><ind>110229</ind><dep>122</dep></entry>
+                    <entry><ind>121252</ind><dep>128</dep></entry>
+                    <entry><ind>132275</ind><dep>135</dep></entry>
+                    <entry><ind>143298</ind><dep>141</dep></entry>
+                    <entry><ind>154321</ind><dep>146</dep></entry>
+                    <entry><ind>165344</ind><dep>151</dep></entry>
+                    <entry><ind>176367</ind><dep>155</dep></entry>
+                    <entry><ind>187390</ind><dep>160</dep></entry>
+                </table>
                 <table>
                     <property>/fdm/jsbsim/fcs/flap-pos-norm</property> 
                     <entry><ind>0</ind><dep>26</dep></entry>
