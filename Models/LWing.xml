@@ -723,7 +723,8 @@
   <!--Engine Fan-->
  <animation>
   <type>spin</type>
- <object-name>fan</object-name>      
+ <object-name>fan</object-name>
+ <object-name>fan_1</object-name>       
   <property>engines/engine[0]/n1</property>
   <factor>-5</factor>    
   <center>

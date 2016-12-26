@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+  <!-- Passenger Seats -->
+
+  <model>
+   <name>1A</name>
+   <path>Aircraft/737-800/Models/seats/passengers/738PassengerSeats.ac</path>
+ </model> 
+
+
+</PropertyList>

@@ -49,7 +49,7 @@
     <object-name>geardoor</object-name>
     <object-name>engnose.001</object-name>
     <object-name>lreverserib_1</object-name>
-    <object-name>fan</object-name>
+    <!--object-name>fan</object-name-->
     <object-name>rhngdoor</object-name>
     <object-name>lhngdoor</object-name>
     <object-name>rhwtobfairing</object-name>
@@ -110,6 +110,10 @@
   <model n="100">
     <name>Cockpit</name>
     <path>Models/cockpit.xml</path>
+  </model>
+  <model>
+    <name>passengersseats</name>
+    <path>Aircraft\737-800\Models\seats\passengers\passenger-seating.xml</path>
   </model>
   <model>
     <name>LeftWing</name>
@@ -316,47 +320,47 @@
 <!--Lights-->
 
 <model>
-	<path>Aircraft/737-800/Models/lights/greennav.xml</path>
-	<name>Greenlight</name>     
-	<offsets>
-		<x-m>3.60</x-m>
-		<y-m>17.03</y-m>
-		<z-m>1.06</z-m>       
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/greennav.xml</path>
+  <name>Greenlight</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/lights/rednav.xml</path>
-	<name>Redlight</name>     
-	<offsets>
-		<x-m>3.60</x-m>
-		<y-m>-17.03</y-m>
-		<z-m>1.06</z-m>        
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/rednav.xml</path>
+  <name>Redlight</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>-17.03</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
 </model>
 
 
 <model>
-	<path>Aircraft/737-800/Models/lights/strobe.xml</path>
-	<name>strobe-right</name>     
-	<offsets>
-		<x-m>3.64</x-m>
-		<y-m>17.01</y-m>
-		<z-m>1.06</z-m>        
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/strobe.xml</path>
+  <name>strobe-right</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/lights/strobe.xml</path>
-	<name>strobe-left</name>     
-	<offsets>
-		<x-m>3.64</x-m>
-		<y-m>-17.01</y-m>
-		<z-m>1.06</z-m>     
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/strobe.xml</path>
+  <name>strobe-left</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>-17.01</y-m>
+    <z-m>1.06</z-m>     
+  </offsets>
 </model>
 
-<model>	
+<model> 
  <path>Aircraft/737-800/Models/lights/strobe.xml</path>
  <offsets>
    <x-m>18.63</x-m>
@@ -369,113 +373,113 @@
 
 
 <model>
-	<path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
-	<name>LeftWingLandinglight</name>
+  <path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
+  <name>LeftWingLandinglight</name>
 
-	<offsets>
-		<x-m>-4.90</x-m>
-		<y-m>-2.14</y-m>
-		<z-m>-0.51</z-m>      
-	</offsets>
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>-2.14</y-m>
+    <z-m>-0.51</z-m>      
+  </offsets>
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
-	<name>RightWingLandinglight</name>
-	<offsets>
-		<x-m>-4.98</x-m>
-		<y-m>2.14</y-m>
-		<z-m>-0.51</z-m>        
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
+  <name>RightWingLandinglight</name>
+  <offsets>
+    <x-m>-4.98</x-m>
+    <y-m>2.14</y-m>
+    <z-m>-0.51</z-m>        
+  </offsets>
 </model>
 
 <!--Taxi Light-->
 
 <model>
-	<path>Aircraft/737-800/Models/lights/TaxiLight.xml</path>
-	<name>TaxiLight</name>
-	<offsets>
-		<x-m>-15.78</x-m>
-		<y-m>0.00</y-m>
-		<z-m>-1.60</z-m>      
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/TaxiLight.xml</path>
+  <name>TaxiLight</name>
+  <offsets>
+    <x-m>-15.78</x-m>
+    <y-m>0.00</y-m>
+    <z-m>-1.60</z-m>      
+  </offsets>
 </model>
 
 <!--Retractable-landinglight -->
 
 <model>
-	<path>Aircraft/737-800/Models/lights/Retractable-landinglight.xml</path>
-	<name>LeftRBlight</name>
+  <path>Aircraft/737-800/Models/lights/Retractable-landinglight.xml</path>
+  <name>LeftRBlight</name>
 
-	<offsets>
-		<x-m>-7.10</x-m>
-		<y-m>-1.00</y-m>
-		<z-m>-1.30</z-m>      
-	</offsets>
+  <offsets>
+    <x-m>-7.10</x-m>
+    <y-m>-1.00</y-m>
+    <z-m>-1.30</z-m>      
+  </offsets>
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/lights/Retractable-landinglight.xml</path>
-	<name>RightWRBlight</name>V
-	<offsets>
-		<x-m>-7.10</x-m>
-		<y-m>1.00</y-m>
-		<z-m>-1.30</z-m>        
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/Retractable-landinglight.xml</path>
+  <name>RightWRBlight</name>V
+  <offsets>
+    <x-m>-7.10</x-m>
+    <y-m>1.00</y-m>
+    <z-m>-1.30</z-m>        
+  </offsets>
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/lights/beacon.xml</path>
-	<name>Beaconlight.top</name>     
-	<offsets>
-		<x-m>0.00</x-m>
-		<y-m>0.00</y-m>
-		<z-m>2.57</z-m>      
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/beacon.xml</path>
+  <name>Beaconlight.top</name>     
+  <offsets>
+    <x-m>0.00</x-m>
+    <y-m>0.00</y-m>
+    <z-m>2.57</z-m>      
+  </offsets>
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/lights/beacon.xml</path>
-	<name>Beaconlight.bottom</name>     
-	<offsets>
-		<x-m>0.0</x-m>
-		<y-m> 0.00</y-m>
-		<z-m>-1.42</z-m>      
-	</offsets>
+  <path>Aircraft/737-800/Models/lights/beacon.xml</path>
+  <name>Beaconlight.bottom</name>     
+  <offsets>
+    <x-m>0.0</x-m>
+    <y-m> 0.00</y-m>
+    <z-m>-1.42</z-m>      
+  </offsets>
 </model>   
 
 
 <!-- Tyre Smoke -->
 
 <model>
-	<path>Aircraft/737-800/Models/Effects/tyre-smoke-nose.xml</path>
-	<name>tyre-smoke-n</name>
-	<offsets>
-		<x-m>-18.00</x-m>
-		<y-m>0.0</y-m>
-		<z-m>-5.50</z-m>
-	</offsets>
+  <path>Aircraft/737-800/Models/Effects/tyre-smoke-nose.xml</path>
+  <name>tyre-smoke-n</name>
+  <offsets>
+    <x-m>-18.00</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-5.50</z-m>
+  </offsets>
 </model>
 
 
 <model>
-	<path>Aircraft/737-800/Models/Effects/tyre-smoke-left.xml</path>
-	<name>tyre-smoke-l</name>
-	<offsets>
-		<x-m>-4.83</x-m>
-		<y-m>-2.12</y-m>
-		<z-m>-0.51</z-m>
-	</offsets>
+  <path>Aircraft/737-800/Models/Effects/tyre-smoke-left.xml</path>
+  <name>tyre-smoke-l</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>-2.12</y-m>
+    <z-m>-0.51</z-m>
+  </offsets>
 </model>
 
 <model>
-	<path>Aircraft/737-800/Models/Effects/tyre-smoke-right.xml</path>
-	<name>tyre-smoke-r</name>
-	<offsets>
-		<x-m>-4.83</x-m>
-		<y-m>2.12</y-m>
-		<z-m>0.51</z-m>
-	</offsets>
+  <path>Aircraft/737-800/Models/Effects/tyre-smoke-right.xml</path>
+  <name>tyre-smoke-r</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>2.12</y-m>
+    <z-m>0.51</z-m>
+  </offsets>
 </model>
 
 <!-- Engine Fire -->
@@ -544,39 +548,39 @@
 <!-- Fuel Truck -->
 
 <model>
-	<name>fuel-truck</name>
- <path>Aircraft/737-800/Models/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.xml</path>
- <offsets>
-  <x-m>1.8</x-m>
-  <y-m>12</y-m>
-  <z-m>1.81</z-m>
-</offsets>
-<condition>
-  <and>
-    <less-than>	
-      <property>/velocities/groundspeed-kt</property>
-      <value>1</value>
-    </less-than>
-    <equals>
-     <property>/services/fuel-truck/enable</property>
-     <value>1</value>
-   </equals>
- </and>
-</condition>
+  <name>fuel-truck</name>
+  <path>Aircraft/737-800/Models/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.xml</path>
+  <offsets>
+    <x-m>1.8</x-m>
+    <y-m>12</y-m>
+    <z-m>1.81</z-m>
+  </offsets>
+  <condition>
+    <and>
+      <less-than> 
+        <property>/velocities/groundspeed-kt</property>
+        <value>1</value>
+      </less-than>
+      <equals>
+       <property>/services/fuel-truck/enable</property>
+       <value>1</value>
+     </equals>
+   </and>
+ </condition>
 </model>
 
 <!-- De-icing Truck -->
 
 <model>
-	<name>de-ice-truck</name>
-	<path>Aircraft/737-800/Models/Services/De-Icing/volvo_deicing_truck.xml</path>
-	<condition>
-		<and>		
+  <name>de-ice-truck</name>
+  <path>Aircraft/737-800/Models/Services/De-Icing/volvo_deicing_truck.xml</path>
+  <condition>
+    <and>   
       <equals>
        <property>/services/deicing_truck/enable</property>
        <value>1</value>
      </equals>
-     <less-than>	
+     <less-than>  
       <property>/velocities/groundspeed-kt</property>
       <value>1</value>
     </less-than>
@@ -593,15 +597,15 @@
 <!-- Baggage Truck -->
 
 <model>
-	<name>baggage-truck</name>
-	<path>Aircraft/737-800/Models/Services/Baggage/cargo_ramp.xml</path>
-	<condition>
-		<and>
+  <name>baggage-truck</name>
+  <path>Aircraft/737-800/Models/Services/Baggage/cargo_ramp.xml</path>
+  <condition>
+    <and>
       <equals>
        <property>/services/baggage/enable</property>
        <value>1</value>
      </equals>
-     <less-than>	
+     <less-than>  
       <property>/velocities/groundspeed-kt</property>
       <value>1</value>
     </less-than>
@@ -618,15 +622,15 @@
 <!-- External Power -->
 
 <model>
-	<name>ext-pwr</name>
-	<path>Aircraft/737-800/Models/Services/External-Power/ext-pwr-box.ac</path>
-	<condition>
-		<and>
+  <name>ext-pwr</name>
+  <path>Aircraft/737-800/Models/Services/External-Power/ext-pwr-box.ac</path>
+  <condition>
+    <and>
       <equals>
        <property>/services/ext-pwr/enable</property>
        <value>1</value>
      </equals>
-     <less-than>	
+     <less-than>  
       <property>/velocities/groundspeed-kt</property>
       <value>1</value>
     </less-than>
@@ -684,7 +688,7 @@
 
 <!-- Registration fuselage upper back -->
 <model>
-	<name>registrationFuselageRightBack</name>
+  <name>registrationFuselageRightBack</name>
   <path>Aircraft/737-800/Models/Registration/registration.xml</path>
   <offsets>
     <x-m>10.90</x-m>
@@ -702,7 +706,7 @@
 </model>
 
 <model>
-	<name>registrationFuselageLeftBack</name>
+  <name>registrationFuselageLeftBack</name>
   <path>Aircraft/737-800/Models/Registration/registration.xml</path>
   <offsets>
     <x-m>10.90</x-m>
@@ -726,7 +730,7 @@
     <red>0.9</red>
     <green>0.75</green>
     <blue>0.6</blue>
-    <factor-prop>/controls/lighting/flood-light</factor-prop>	
+    <factor-prop>/controls/lighting/flood-light</factor-prop> 
   </emission>
 </animation>
 
@@ -1149,6 +1153,5 @@
    <z>0</z>
  </axis>
 </animation>
-
 
 </PropertyList>

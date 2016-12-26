@@ -1064,7 +1064,7 @@
         <crash>
         	<name>intense ground contact</name>
         	<mode>once</mode>
-        	<path>Sounds/crash.wav</path>
+        	<path>Aircraft/737-800/Sounds/crash.wav</path>
         	<property>sim/crashed</property>
         	<volume>
         		<factor>1</factor>
@@ -1074,6 +1074,61 @@
         	</pitch>
         </crash>
 
+<eightyknots>
+        <name>eightyknots</name>
+        <mode>once</mode>
+        <type>avionics</type>
+        <path>Aircraft/737-800/Sounds/80kt.wav</path>
+        <condition>
+			<or>
+			<property>/gear/gear[0]/wow</property>
+			<property>/gear/gear[2]/wow</property>
+			</or>	
+			<greater-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>80</value>
+			</greater-than>
+			<less-than>
+				<property>/velocities/airspeed-kt</property>
+				<value>88</value>
+			</less-than>			
+			</condition>	
+    </eightyknots>   
+
+
+   <wind>
+        <name>wind</name>
+        <mode>looped</mode>
+        <path>Aircraft/737-800/Sounds/Wind.wav</path>
+        <property>/velocities/airspeed-kt</property>
+        <volume>
+            <property>/position/altitude-ft</property>
+            <factor>-0.000015</factor>
+            <offset>1.0</offset>
+            <min>0.1</min>
+            <max>1.0</max>
+        </volume>
+        <volume>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.0015</factor>
+            <min>0.03</min>
+            <max>0.25</max>
+        </volume>
+        <pitch>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.01</factor>
+            <offset>1.25</offset>
+        </pitch>
+        <position>
+            <x>-24</x>
+            <y>0</y>
+            <z>0.86</z>
+        </position>
+        <reference-dist>1.0</reference-dist>
+        <max-dist>2.0</max-dist>
+    </wind>
+
     </fx>
     
 </PropertyList>
+

@@ -724,7 +724,8 @@
  <!--Engine Fan-->
  <animation>
   <type>spin</type>
- <object-name>fan2</object-name>      
+ <object-name>fan</object-name>
+ <object-name>fan_1</object-name>     
   <property>engines/engine[1]/n1</property>
   <factor>-5</factor>    
   <center>
@@ -750,12 +751,5 @@
           <object-name>iblerh</object-name>
     </animation>
 
-
-<!--shader-->
-     <effect>
-    <inherits-from>Aircraft/737-800/Models/Effects/7378reflect</inherits-from>
-    <object-name>rhwtobfairing</object-name>
-       </effect>
-
-
 </PropertyList>
+

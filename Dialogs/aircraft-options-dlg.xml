@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>aircraft_opcs_dialog</name>
+	<layout>vbox</layout>
+	<draggable>true</draggable>
+	<resizable>false</resizable>
+
+	<text>
+		<label>Aircraft Options</label>
+	</text>
+	<hrule/>
+
+	<checkbox>
+		<halign>left</halign>
+		<label>Increase FPS ( Disables decoration objects)</label>
+		<live>true</live>
+		<property>controls/switches/increase-fps</property>
+		<binding>
+			<command>property-toggle</command>
+			<property>controls/switches/increase-fps</property>
+		</binding>
+	</checkbox>
+	<hrule/>
+
+	<group>
+		<layout>hbox</layout>
+		<empty><stretch>true</stretch></empty>
+
+		<button>
+			<legend>Close</legend>
+			<default>true</default>
+			<key>Esc</key>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+
+		<empty><stretch>true</stretch></empty>
+	</group> 
+
+</PropertyList>
