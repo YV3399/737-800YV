@@ -63,39 +63,7 @@
     <texture-prop>texture</texture-prop>
   </animation>
   
-  <!--shader-->
-  <effect>
-    <inherits-from>Aircraft/737-800/Models/Effects/7378reflect</inherits-from>
-    <object-name>fuselage</object-name>
-    <object-name>doorLF</object-name>
-    <object-name>EexitLF</object-name>
-    <object-name>EexitLR</object-name>
-    <object-name>doorLR</object-name>
-    <object-name>doorRR</object-name>
-    <object-name>EexitRF</object-name>
-    <object-name>EexitRR</object-name>
-    <object-name>doorRF</object-name>
-    <object-name>cargodoorF</object-name>
-    <object-name>cargodoorR</object-name>
-    <object-name>lhfairing</object-name>
-    <object-name>geardoor</object-name>
-    <object-name>engnose.001</object-name>
-    <object-name>lreverserib_1</object-name>
-    <object-name>rhngdoor</object-name>
-    <object-name>lhngdoor</object-name>
-    <object-name>rhwtobfairing</object-name>
-    <object-name>geardoorrh</object-name>
-    <object-name>No2engfancase</object-name>
-    <object-name>No2reverser_1</object-name>
-    <object-name>RightWing</object-name>
-    <object-name>rudder.001</object-name>
-    <object-name>vstab</object-name>
-    <object-name>vstable</object-name>
-    <object-name>Leftwing</object-name>
-    <object-name>lhstab</object-name>
-    <object-name>rhstab</object-name>
-  </effect>
-
+ 
   <effect>
     <inherits-from>Effects/glass</inherits-from>
     <object-name>windows.int</object-name>
@@ -114,6 +82,11 @@
   <model>
     <name>passengersseats</name>
     <path>Aircraft\737-800\Models\seats\passengers\passenger-seating.xml</path>
+    <condition>
+      <not>
+        <property>controls/switches/increase-fps</property>
+      </not>
+    </condition>
   </model>
   <model>
     <name>LeftWing</name>
