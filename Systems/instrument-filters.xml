@@ -95,8 +95,8 @@
 
 <filter n="100101">
   <name>Median left fd roll pos</name>
-  <type>moving-average</type>
-  <samples>120</samples>
+  <type>exponential</type>
+  <filter-time>0.2</filter-time>
   <input>/instrumentation/flightdirector/fd-left-bank-nf</input>
   <output>/instrumentation/flightdirector/fd-left-bank-f</output>
 </filter>
@@ -143,8 +143,8 @@
 
 <filter n="100111">
   <name>Median right fd roll pos</name>
-  <type>moving-average</type>
-  <samples>120</samples>
+ <type>exponential</type>
+  <filter-time>0.2</filter-time>
   <input>/instrumentation/flightdirector/fd-right-bank-nf</input>
   <output>/instrumentation/flightdirector/fd-right-bank-f</output>
 </filter>
@@ -192,8 +192,8 @@
 
 <filter n="10013">
   <name>Median left fd pitch pos</name>
-  <type>moving-average</type>
-  <samples>120</samples>
+  <type>exponential</type>
+  <filter-time>0.2</filter-time>
   <input>/instrumentation/flightdirector/fd-left-pitch-nf</input>
   <output>/instrumentation/flightdirector/fd-left-pitch-f</output>
 </filter>
@@ -240,9 +240,9 @@
 
 <filter n="10016">
   <name>Median right fd pitch pos</name>
-  <type>moving-average</type>
-  <samples>120</samples>
-  <input>/instrumentation/flightdirector/fd-right-pitch-nf</input>
+   <type>exponential</type>
+  <filter-time>0.2</filter-time>
+    <input>/instrumentation/flightdirector/fd-right-pitch-nf</input>
   <output>/instrumentation/flightdirector/fd-right-pitch-f</output>
 </filter>
 

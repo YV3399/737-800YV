@@ -103,10 +103,10 @@
 			<generic>
 			<int n="0" alias="/systems/electrical/outputs/strobe"/>
 			<int n="1" alias="/systems/electrical/outputs/beacon"/>
-			<int n="2" alias="/systems/electrical/outputs/taxi-light"/>
-			<int n="3" alias="/systems/electrical/outputs/logo-lights"/>
-			<int n="4" alias="/systems/electrical/outputs/landing-lights"/>
-			<int n="5" alias="/systems/electrical/outputs/nav-lights"/>
+			<int n="2" alias="/controls/lighting/taxi-light"/>
+			<int n="3" alias="/controls/lighting/logo-lights"/>
+			<int n="4" alias="/controls/lighting/landing-lights"/>
+			<int n="5" alias="/controls/lighting/nav-lights"/>
 				<float n="0" alias="/gear/gear[0]/compression-m"/>
 				<float n="1" alias="/gear/gear[1]/compression-m"/>
 				<float n="2" alias="/gear/gear[2]/compression-m"/>
@@ -245,6 +245,7 @@
   
               <lighting>
 		<interior type="double">0</interior>
+                <panel-norm>0.2</panel-norm>
 		<cockpit type="bool">false</cockpit>
 		<cones type="bool">true</cones>
 		<dome-norm type="double">0</dome-norm>
