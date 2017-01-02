@@ -520,8 +520,8 @@
 <model>
   <path>Aircraft/737-800/Models/Effects/Contrail/contrail.xml</path>
   <offsets>
-    <x-m> 3.31076</x-m>
-    <y-m>-4.76322</y-m>
+    <x-m>3.3</x-m>
+    <y-m>-4.7632</y-m>
     <z-m>-1.28782</z-m> 
     <roll-deg>    0 </roll-deg>
     <pitch-deg>   0 </pitch-deg>
@@ -532,8 +532,8 @@
 <model>
   <path>Aircraft/737-800/Models/Effects/Contrail/contrail.xml</path>
   <offsets>
-    <x-m> 3.31055</x-m>
-    <y-m> 4.7713</y-m>
+    <x-m>3.3</x-m>
+    <y-m>4.7713</y-m>
     <z-m>-1.28753</z-m> 
     <roll-deg>    0 </roll-deg>
     <pitch-deg>   0 </pitch-deg>
@@ -740,8 +740,6 @@
     <z-m>0</z-m>
   </offsets>
 </model> 
-
-
 
 <!-- by RenanMsV -->
 <!-- Left front door -->
