@@ -219,6 +219,14 @@
 						<property>/it-autoflight/output/lat</property>
 						<value>1</value>
 					</equals>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>5</value>
+					</equals>
 				</or>
 			</condition>
 		</enable>
@@ -236,7 +244,9 @@
 				</and>
 			</condition>
 			<property>/it-autoflight/internal/heading-bug-error-deg</property>
-			<scale>6.3</scale>
+			<scale>
+				<property>/it-autoflight/config/cmd/roll-scale</property>
+			</scale>
 		</input>
 		<input>
 			<condition>
@@ -252,7 +262,9 @@
 				</and>
 			</condition>
 			<property>/it-autoflight/internal/true-heading-error-deg</property>
-			<scale>6.3</scale>
+			<scale>
+				<property>/it-autoflight/config/cmd/roll-scale</property>
+			</scale>
 		</input>
 		<input>
 			<condition>
@@ -262,7 +274,24 @@
 				</equals>
 			</condition>
 			<property>/it-autoflight/internal/lnav-hdg-error-deg</property>
-			<scale>6.3</scale>
+			<scale>
+				<property>/it-autoflight/config/cmd/roll-scale</property>
+			</scale>
+		</input>
+		<input>
+			<condition>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>5</value>
+					</equals>
+				</or>
+			</condition>
+			<value>0</value>
 		</input>
 		<output>
 			<property>/it-autoflight/internal/target-roll-deg</property>
@@ -308,67 +337,6 @@
 	</filter>
 	
 	<pid-controller>
-		<name>IT-CONTROLLER: ROLL</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<and>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>0</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>1</value>
-						</equals>
-					</or>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/ap1</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/ap2</property>
-							<value>1</value>
-						</equals>
-					</or>
-				</and>
-			</condition>
-		</enable>
-		<input>
-			<property>/orientation/roll-deg</property>
-		</input>
-		<reference>
-			<property>/it-autoflight/internal/target-roll-deg</property>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/aileron-cmd</property>
-		</output>
-		<config>
-			<Kp>
-				<property>/it-autoflight/config/roll/kp</property>
-			</Kp>
-			<beta>1.0</beta>	
-			<alpha>0.1</alpha>	
-			<gamma>0.0</gamma>	
-			<Ti>
-				<property>/it-autoflight/config/roll/ti</property>
-			</Ti>    
-			<Td>
-				<property>/it-autoflight/config/roll/td</property>
-			</Td>    	
-			<u_min>
-				<property>/it-autoflight/config/roll/umin</property>
-			</u_min>
-			<u_max>
-				<property>/it-autoflight/config/roll/umax</property>
-			</u_max>
-		</config>
-	</pid-controller>
-
-	
-	<pid-controller>
 		<name>VORLOC TRK</name>
 		<debug>false</debug>
 		<enable>
@@ -389,38 +357,34 @@
 			<property>/it-autoflight/internal/target-roll-deg</property>
 		</output>
 		<config>
-			<Kp>-5.0</Kp>        
-			<beta>1.0</beta>     
-			<alpha>1.0</alpha>   
-			<gamma>0.0</gamma>   
-			<Ti>10.0</Ti>        
-			<Td>0.00001</Td>     
-			<u_min>-30.0</u_min> 
-			<u_max>30.0</u_max>  
+			<Kp>
+				<property>/it-autoflight/config/cmd/vorloc</property>
+			</Kp>
+			<beta>1.0</beta>	
+			<alpha>0.1</alpha>	
+			<gamma>0.0</gamma>		
+			<Ti>10.0</Ti>      
+			<Td>0.00001</Td>   	
+			<u_min>-30</u_min>
+			<u_max>30</u_max>
 		</config>
 	</pid-controller>
-
+	
 	<pid-controller>
-		<name>IT-CONTROLLER: VORLOC</name>
+		<name>IT-CONTROLLER: ROLL</name>
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<and>
+				<or>
 					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>2</value>
+						<property>/it-autoflight/output/ap1</property>
+						<value>1</value>
 					</equals>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/ap1</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/ap2</property>
-							<value>1</value>
-						</equals>
-					</or>
-				</and>
+					<equals>
+						<property>/it-autoflight/output/ap2</property>
+						<value>1</value>
+					</equals>
+				</or>
 			</condition>
 		</enable>
 		<input>
@@ -434,17 +398,41 @@
 		</output>
 		<config>
 			<Kp>
-				<property>/it-autoflight/config/vorloc/kp</property>
+				<condition>
+					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>2</value>
+					</not-equals>
+				</condition>
+				<property>/it-autoflight/config/roll/kp</property>
+			</Kp>
+			<Kp>
+				<condition>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>2</value>
+					</equals>
+				</condition>
+				<property>/it-autoflight/config/roll/kp-vloc</property>
+			</Kp>
+			<Kp>
+				<condition>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>4</value>
+					</equals>
+				</condition>
+				<property>/it-autoflight/config/autoland/kp-roll</property>
 			</Kp>
 			<beta>1.0</beta>	
 			<alpha>0.1</alpha>	
-			<gamma>0.0</gamma>		
+			<gamma>0.0</gamma>	
 			<Ti>
-				<property>/it-autoflight/config/vorloc/ti</property>
-			</Ti>      
+				<property>/it-autoflight/config/roll/ti</property>
+			</Ti>    
 			<Td>
-				<property>/it-autoflight/config/vorloc/td</property>
-			</Td>   	
+				<property>/it-autoflight/config/roll/td</property>
+			</Td>    	
 			<u_min>
 				<property>/it-autoflight/config/roll/umin</property>
 			</u_min>
@@ -453,9 +441,9 @@
 			</u_max>
 		</config>
 	</pid-controller>
-  
+	
 	<filter>
-		<name>IT-CONTROLLER: ROLL FILTER</name>
+		<name>IT-CONTROLLER: ROLL CMD</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
@@ -478,7 +466,7 @@
 		</input>
 		<output>/controls/flight/aileron</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.8</max-rate-of-change>
+		<max-rate-of-change>0.9</max-rate-of-change>
 	</filter>
 
  <!-- =============================================================== -->
@@ -506,7 +494,9 @@
 			<property>/it-autoflight/internal/target-pitch-deg</property>
 		</output>
 		<config>
-			<Kp>0.025</Kp>        
+			<Kp>
+				<property>/it-autoflight/config/cmd/alt</property>
+			</Kp>      
 			<beta>1.0</beta>       
 			<alpha>0.5</alpha>     
 			<gamma>0.0</gamma>     
@@ -543,7 +533,9 @@
 			<property>/it-autoflight/internal/target-pitch-deg</property>
 		</output>
 		<config>
-			<Kp>0.07</Kp>
+			<Kp>
+				<property>/it-autoflight/config/cmd/vs</property>
+			</Kp>
 			<beta>1.0</beta>
 			<alpha>0.1</alpha>
 			<gamma>0.0</gamma>
@@ -570,11 +562,11 @@
 			</condition>
 		</enable>
 		<input>
-			<prop>/it-autoflight/internal/vert-speed-fpm</prop>
+			<property>/it-autoflight/internal/vert-speed-fpm</property>
 			<scale>0.2</scale>
 		</input>
 		<reference>
-			<prop>/it-autoflight/autoland/target-vs</prop>
+			<property>/it-autoflight/autoland/target-vs</property>
 			<scale>0.2</scale>
 		</reference>
 		<output>
@@ -621,14 +613,14 @@
 		</output>
 		<config>
 			<Kp>
-				<property>/it-autoflight/config/gs/kp</property>
+				<property>/it-autoflight/config/cmd/gs</property>
 			</Kp>       
 			<beta>1.0</beta>       
 			<alpha>0.5</alpha>     
 			<gamma>0.0</gamma>			
 			<Ti>10.0</Ti>
 			<Td>0.0001</Td>
-			<u_min>-10</u_min>
+			<u_min>-5</u_min>
 			<u_max>7</u_max>
 		</config>
 	</pid-controller>
@@ -638,10 +630,16 @@
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>4</value>
-				</equals>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</equals>
+				</or>
 			</condition>
 		</enable>
 		<input>
@@ -686,11 +684,12 @@
 			<property>/it-autoflight/internal/target-pitch-deg</property>
 		</output>
 		<config>
-			<Kp>-0.30</Kp>       
+			<Kp>
+				<property>/it-autoflight/config/cmd/flch</property>
+			</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
-			
 			<Ti>10.0</Ti>        
 			<Td>0.00001</Td>    
             <u_min>
@@ -709,7 +708,7 @@
                         <property>/instrumentation/altimeter/indicated-altitude-ft</property>
                     </less-than>
                 </condition>
-                <value>-15.0</value>
+                <value>-7.0</value>
             </u_min>
             <u_max>
                 <condition>
@@ -733,101 +732,42 @@
 	</pid-controller>
 
 	<pid-controller>
-		<name>IT-CONTROLLER: FLCH</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<and>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>4</value>
-					</equals>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/ap1</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/ap2</property>
-							<value>1</value>
-						</equals>
-					</or>
-				</and>
-			</condition>
-		</enable>
-		<input>
-			<property>/orientation/pitch-deg</property>
-		</input>
-		<reference>
-			<property>/it-autoflight/internal/target-pitch-deg</property>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/elevator-cmd</property>
-		</output>
-		<config>
-			<Kp>
-				<property>/it-autoflight/config/flch/kp</property>
-			</Kp>
-			<beta>1.0</beta>    
-			<alpha>0.1</alpha>  
-			<gamma>0.0</gamma>  
-			<Ti>
-				<property>/it-autoflight/config/flch/ti</property>
-			</Ti>       
-			<Td>
-				<property>/it-autoflight/config/flch/td</property>
-			</Td>   
-			<u_min>
-				<property>/it-autoflight/config/flch/umin</property>
-			</u_min>
-			<u_max>
-				<property>/it-autoflight/config/flch/umax</property>
-			</u_max>
-		</config>
-	</pid-controller>
-
-	<pid-controller>
 		<name>IT-CONTROLLER: PITCH</name>
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<and>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>0</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>2</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>6</value>
-						</equals>
-					</or>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/ap1</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/ap2</property>
-							<value>1</value>
-						</equals>
-					</or>
-				</and>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/ap1</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/ap2</property>
+						<value>1</value>
+					</equals>
+				</or>
 			</condition>
 		</enable>
 		<input>
 			<property>/orientation/pitch-deg</property>
 		</input>
 		<reference>
+			<condition>
+				<not-equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>7</value>
+				</not-equals>
+			</condition>
 			<property>/it-autoflight/internal/target-pitch-deg</property>
+		</reference>
+		<reference>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>7</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/settings/toga-pitch</property>
 		</reference>
 		<output>
 			<property>/it-autoflight/internal/elevator-cmd</property>
@@ -855,7 +795,7 @@
 	</pid-controller>
 	
 	<filter>
-		<name>IT-CONTROLLER: PITCH FILTER</name>
+		<name>IT-CONTROLLER: PITCH CMD</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
@@ -878,8 +818,235 @@
 		</input>
 		<output>/controls/flight/elevator</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.15</max-rate-of-change>
+		<max-rate-of-change>0.3</max-rate-of-change>
 	</filter>
+	
+ <!-- =============================================================== -->
+ <!-- Rudder Control                                                  -->
+ <!-- =============================================================== -->
+	
+	<pi-simple-controller>
+		<name>RUDDER VORLOC TRK</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/lat</property>
+					<value>4</value>
+				</equals>
+			</condition>
+		</enable>
+		<input>
+			<property>/it-autoflight/internal/nav1-heading-error-deg</property>
+		</input>
+		<reference>
+			<value>0</value>
+		</reference>
+		<output>/it-autoflight/internal/rudder-cmd</output>
+		<config>
+			<Kp>
+				<property>/it-autoflight/config/autoland/kp-rudder</property>
+			</Kp>
+			<Ki>0</Ki>
+		</config>
+		<min>-0.25</min>
+		<max>0.25</max>
+	</pi-simple-controller>
+	
+	<filter>
+		<name>IT-CONTROLLER: RUDDER CMD</name>
+		<debug>false</debug>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<enable>
+			<condition>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/ap1</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/ap2</property>
+						<value>1</value>
+					</equals>
+				</or>
+			</condition>
+		</enable>
+		<input>
+			<condition>
+				<not-equals>
+					<property>/it-autoflight/output/lat</property>
+					<value>4</value>
+				</not-equals>
+			</condition>
+			<value>0</value>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/lat</property>
+					<value>4</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/rudder-cmd</property>
+		</input>
+		<output>/controls/flight/rudder</output>
+		<type>noise-spike</type>
+		<max-rate-of-change>0.20</max-rate-of-change>
+	</filter>
+	
+ <!-- =============================================================== -->
+ <!-- Control Wheel Steering                                          -->
+ <!-- =============================================================== -->
+	
+	<pid-controller>
+		<name>IT-CONTROLLER: CWS ROLL</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<and>
+					<equals>
+						<property>/it-autoflight/internal/cwsr</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/cws</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<property>/orientation/roll-deg</property>
+		</input>
+		<reference>
+			<property>/it-autoflight/internal/cws-roll-deg</property>
+		</reference>
+		<output>
+			<property>/it-autoflight/internal/cws-ail-cmd</property>
+		</output>
+		<config>
+			<Kp>
+				<property>/it-autoflight/config/roll/kp</property>
+			</Kp>
+			<beta>1.0</beta>	
+			<alpha>0.1</alpha>	
+			<gamma>0.0</gamma>	
+			<Ti>
+				<property>/it-autoflight/config/roll/ti</property>
+			</Ti>    
+			<Td>
+				<property>/it-autoflight/config/roll/td</property>
+			</Td>    	
+			<u_min>-1.0</u_min>
+			<u_max>1.0</u_max>
+		</config>
+	</pid-controller>
+	
+	<filter>
+		<name>IT-CONTROLLER: CWS ROLL CMD</name>
+		<debug>false</debug>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<enable>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/cws</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</enable>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/internal/cwsr</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/cws-ail-cmd</property>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/internal/cwsr</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<value>0</value>
+		</input>
+		<output>/controls/flight/aileron-trim</output>
+		<type>noise-spike</type>
+		<max-rate-of-change>0.9</max-rate-of-change>
+	</filter>
+	
+	<pid-controller>
+		<name>IT-CONTROLLER: CWS PITCH</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<and>
+					<equals>
+						<property>/it-autoflight/internal/cwsp</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/cws</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<property>/orientation/pitch-deg</property>
+		</input>
+		<reference>
+			<property>/it-autoflight/internal/cws-pitch-deg</property>
+		</reference>
+		<output>
+			<property>/it-autoflight/internal/cws-elv-cmd</property>
+		</output>
+		<config>
+			<Kp>
+				<property>/it-autoflight/config/pitch/kp-cws</property>
+			</Kp>
+			<beta>1.0</beta>    
+			<alpha>0.1</alpha>  
+			<gamma>0.0</gamma>  
+			<Ti>
+				<property>/it-autoflight/config/pitch/ti</property>
+			</Ti>      
+			<Td>
+				<property>/it-autoflight/config/pitch/td</property>
+			</Td>   
+			<u_min>-1.0</u_min>
+			<u_max>1.0</u_max>
+		</config>
+	</pid-controller>
+	
+	<filter>
+		<name>IT-CONTROLLER: CWS PITCH CMD</name>
+		<debug>false</debug>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<enable>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/cws</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</enable>
+		<input>
+			<property>/it-autoflight/internal/cws-elv-cmd</property>
+		</input>
+		<output>/controls/flight/elevator-trim</output>
+		<type>noise-spike</type>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ <!-- =============================================================== -->
+ <!-- Autotrim                                                        -->
+ <!-- =============================================================== -->
 	
 	<pid-controller>
 		<name>AP PITCH HELPER PLUS</name>
@@ -970,7 +1137,7 @@
 	</pid-controller>
 		
 	<filter>
-		<name>IT-CONTROLLER: PITCH TRIM FILTER</name>
+		<name>IT-CONTROLLER: PITCH TRIM CMD</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
@@ -1009,48 +1176,6 @@
 	</filter>
 	
  <!-- =============================================================== -->
- <!-- Rudder Control                                                  -->
- <!-- =============================================================== -->
-	
-	<pid-controller>
-		<name>IT-CONTROLLER: RUDDER ZERO</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<or>
-					<equals>
-						<property>/it-autoflight/output/ap1</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/ap2</property>
-						<value>1</value>
-					</equals>
-				</or>
-			</condition>
-		</enable>
-		<input>
-			<value>/controls/flight/rudder</value>
-		</input>
-		<reference>
-			<value>0</value>
-		</reference>
-		<output>
-			<property>/controls/flight/rudder</property>
-		</output>
-		<config>
-			<Kp>5</Kp>
-			<beta>1.0</beta>	
-			<alpha>0.1</alpha>	
-			<gamma>0.0</gamma>	
-			<Ti>10</Ti>        	
-			<Td>0.00001</Td>     	
-			<u_min>-0.1</u_min>
-			<u_max>0.1</u_max>
-		</config>
-	</pid-controller>
-	
- <!-- =============================================================== -->
  <!-- Flight Director                                                 -->
  <!-- =============================================================== -->
 	
@@ -1077,9 +1202,29 @@
 		<type>gain</type>
 		<gain>1.0</gain>
 		<input>
+			<condition>
+				<not-equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>7</value>
+				</not-equals>
+			</condition>
 			<expression>
 				<dif>
 					<property>/it-autoflight/internal/target-pitch-deg</property>
+					<property>/orientation/pitch-deg</property>
+				</dif>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>7</value>
+				</equals>
+			</condition>
+			<expression>
+				<dif>
+					<property>/it-autoflight/settings/toga-pitch</property>
 					<property>/orientation/pitch-deg</property>
 				</dif>
 			</expression>

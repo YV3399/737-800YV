@@ -443,7 +443,7 @@
 			<mode>once</mode>
 			<path>Aircraft/737-800/Sounds/apdisco.wav</path>
 			<condition>
-				<property>/it-autoflight/apoffsound</property>
+				<property>/it-autoflight/sound/apoffsound</property>
 			</condition>
 			<volume>
 				<factor>1</factor>
@@ -455,7 +455,7 @@
 			<mode>once</mode>
 			<path>Aircraft/737-800/Sounds/apdisco.wav</path>
 			<condition>
-				<property>/it-autoflight/apoffsound2</property>
+				<property>/it-autoflight/sound/apoffsound2</property>
 			</condition>
 			<volume>
 				<factor>1</factor>

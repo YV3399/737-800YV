@@ -44,6 +44,8 @@ setlistener("/it-autoflight/mode/lat", func {
 	setprop("/autopilot/display/roll-mode", "LOC");
   } else if (lat == "ALGN") {
 	setprop("/autopilot/display/roll-mode", "ALIGN");
+  } else if (lat == "T/O") {
+	setprop("/autopilot/display/roll-mode", "T/O");
   }
 });
 
@@ -62,11 +64,19 @@ setlistener("/it-autoflight/mode/vert", func {
 	setprop("/autopilot/display/pitch-mode", "MCP SPD");
   } else if (vert == "SPD DES") {
 	setprop("/autopilot/display/pitch-mode", "MCP SPD");
+  } else if (vert == "FPA") {
+	setprop("/autopilot/display/pitch-mode", "FPA");
   } else if (vert == "LAND 3") {
 	setprop("/autopilot/display/pitch-mode", "LAND 3");
     setprop("/autopilot/display/pitch-mode-armed", "FLARE");
   } else if (vert == "FLARE") {
 	setprop("/autopilot/display/pitch-mode", "FLARE");
+    setprop("/autopilot/display/pitch-mode-armed", " ");
+  } else if (vert == "T/O CLB") {
+	setprop("/autopilot/display/pitch-mode", "T/O");
+    setprop("/autopilot/display/pitch-mode-armed", " ");
+  } else if (vert == "G/A CLB") {
+	setprop("/autopilot/display/pitch-mode", "G/A");
     setprop("/autopilot/display/pitch-mode-armed", " ");
   }
 });

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- IT-AUTOFLIGHT Autoflight Control Dialog -->
+<!-- IT-AUTOFLIGHT Autopilot Control Dialog -->
 
 
 <PropertyList>
@@ -13,7 +13,7 @@
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label>IT-AUTOFLIGHT V3.0.0 Beta</label>
+            <label>IT-AUTOFLIGHT System</label>
         </text>
         <button>
             <halign>right</halign>
@@ -56,17 +56,17 @@
 			</binding>
 		</button>
 		<button>
-			<legend>CWS</legend>
-            <pref-width>35</pref-width>
 			<enable>
 				<equals>
-					<property>/it-autoflight/settings/CWS-allowed</property>
-					<value>blahblahblahblah</value>
+					<property>/it-autoflight/settings/enable-cws</property>
+					<value>1</value>
 				</equals>
 			</enable>
+			<legend>CWS</legend>
+            <pref-width>35</pref-width>
 			<binding>
 			<command>property-toggle</command>
-			<property>/it-autoflight/unused/input/cws</property>
+			<property>/it-autoflight/input/cws</property>
 			</binding>
 		</button>
 		<button>
@@ -120,7 +120,7 @@
 			<label>[CWS]</label>
 			<visible>
 				<equals>
-					<property>/it-autoflight/unused/output/cws</property>
+					<property>/it-autoflight/output/cws</property>
 					<value>1</value>
 				</equals>
 			</visible>
@@ -240,16 +240,9 @@
 				<row>0</row>
 				<col>1</col>
 				<legend>TOGA</legend>
-				<enable>
-					<equals>
-						<property>/it-autoflight/unused/toga</property>
-						<value>blahblahblahblah</value>
-					</equals>
-				</enable>
 				<binding>
-				<command>property-cycle</command>
-				<property>/it-autoflight/toga</property>
-				<value>0</value>
+				<command>property-assign</command>
+				<property>/it-autoflight/input/toga</property>
 				<value>1</value>
 				</binding>
 			</button>
@@ -763,7 +756,7 @@
 			
 			<button>
                 <pref-width>40</pref-width>
-				<legend>VNAV</legend>
+				<legend>FPA</legend>
 				<enable>
 					<equals>
 						<property>/it-autoflight/settings/disabled-button</property>
@@ -772,8 +765,8 @@
 				</enable>
 				<binding>
 				<command>property-assign</command>
-				<property>/it-autoflight/unused/vnav</property>
-				<value>1</value>
+				<property>/it-autoflight/input/vert</property>
+				<value>5</value>
 				</binding>
 			</button>
 			

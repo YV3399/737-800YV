@@ -1548,7 +1548,7 @@
 
 <animation>
   <type>textranslate</type>
-  <object-name>LGDN</object-name>
+  <object-name>LGND</object-name>
   <property>gear/gear[1]/position-norm</property>       
   <interpolation>
     <entry>
@@ -1573,7 +1573,7 @@
 
 <animation>
   <type>textranslate</type>
-  <object-name>RGDN</object-name>	        
+  <object-name>RGND</object-name>	        
   <property>gear/gear[2]/position-norm</property>       
   <interpolation>
     <entry>
@@ -1598,7 +1598,7 @@
 
 <animation>
   <type>textranslate</type>
-  <object-name>NGDN</object-name>	        
+  <object-name>NGND</object-name>	        
   <property>gear/gear[0]/position-norm</property>       
   <interpolation>
     <entry>
@@ -1623,7 +1623,7 @@
 
 <animation>
   <type>textranslate</type>
-  <object-name>LGND</object-name>
+  <object-name>LGDN</object-name>
   <property>gear/gear[2]/position-norm</property>        
   <interpolation>
     <entry>
@@ -1652,7 +1652,7 @@
 
 <animation>
   <type>textranslate</type>
-  <object-name>RGND</object-name>         
+  <object-name>RGDN</object-name>         
   <property>gear/gear[2]/position-norm</property>       
   <interpolation>
     <entry>
@@ -1681,7 +1681,7 @@
 
 <animation>
   <type>textranslate</type>
-  <object-name>NGND</object-name>         
+  <object-name>NGDN</object-name>         
   <property>gear/gear[0]/position-norm</property>       
   <interpolation>
     <entry>

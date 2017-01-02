@@ -23,11 +23,6 @@ setlistener("/sim/signals/fdm-initialized", func {
 	elec_init();
   	itaf.ap_init();			
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800/Systems/autopilot-dlg.xml");
-	setprop("/it-autoflight/settings/retard-enable", 1);   # Enable or disable automatic autothrottle retard.
-	setprop("/it-autoflight/settings/retard-ft", 35);      # Add this to change the retard altitude.
-	setprop("/it-autoflight/settings/land-flap", 0.750);   # Define the landing flaps here. This is needed for autoland, and retard.
-	setprop("/it-autoflight/settings/land-enable", 0);     # Enable or disable automatic landing.
-	setprop("/it-autoflight/autoland/flare-altitude", 40); # Altitude when the flare mode starts in an autoland.
 });
 
 setlistener("/sim/signals/fdm-initialized", func {

@@ -251,43 +251,48 @@
 		<overhead-panel-norm type="double">1.0</overhead-panel-norm>
 		<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
 	      </lighting>
-  
+
 <it-autoflight>
 	<config>
-		<no-generics>1</no-generics>
 		<roll>
 			<umin>-0.40</umin>
 			<umax>0.40</umax>
-			<kp>0.09</kp>
+			<kp>0.07</kp>
+			<kp-vloc>0.09</kp-vloc>
 			<ti>10.0</ti>
 			<td>0.00001</td>
+			<kp-cws>0.07</kp-cws>
 		</roll>
-		<vorloc>
-			<kp>0.04</kp>
-			<ti>10.0</ti>
-			<td>0.00001</td>
-		</vorloc>
 		<pitch>
 			<umin>-0.21</umin>
 			<umax>0.21</umax>
 			<kp>-0.10</kp>
 			<ti>10.0</ti>
 			<td>0.0001</td>
+			<kp-cws>-0.06</kp-cws>
 		</pitch>
-		<flch>
-			<umin>-0.10</umin>
-			<umax>0.10</umax>
-			<kp>-0.10</kp>
-			<ti>10.0</ti>
-			<td>0.00001</td>
-		</flch>
-		<gs>
-			<kp>0.10</kp>
-		</gs>
+		<cmd>
+			<roll-scale>4</roll-scale>
+			<vorloc>-3.0</vorloc>
+			<alt>0.03</alt>
+			<vs>0.07</vs>
+			<flch>-0.30</flch>
+			<gs>0.11</gs>
+		</cmd>
 		<autoland>
-			<kp-pitch>0.01</kp-pitch>
+			<kp-roll>0.10</kp-roll>
+			<kp-pitch>0.015</kp-pitch>
+			<kp-rudder>-0.2</kp-rudder>
 		</autoland>
 	</config>
+	<settings>
+		<flare-altitude>40</flare-altitude>
+		<land-enable>1</land-enable>
+		<land-flap>0.750</land-flap>
+		<retard-ft>35</retard-ft>
+		<retard-enable>1</retard-enable>
+		<toga-pitch>15</toga-pitch>
+	</settings>
 </it-autoflight>
   
   <consumables>
@@ -806,7 +811,7 @@
         <category-5>   0 </category-5>  <!-- AUDIO_MENU_SELECT -->		
         <category-6>   1 </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->		
         <category-7> 124 </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->		
-        <category-8>   4 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT-->
+        <category-8>   3 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT-->
         <category-9>   3 </category-9>  <!-- NAVIGATION_INPUT_SELECT -->		
         <category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->		
         <category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->

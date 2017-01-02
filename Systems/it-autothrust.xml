@@ -231,7 +231,7 @@
   </pid-controller>
   
 	<filter>
-		<name>IT-CONTROLLER: THRUST FILTER</name>
+		<name>IT-CONTROLLER: THRUST CMD</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
@@ -285,7 +285,7 @@
 					</equals>
 				</and>
 			</condition>
-			<value>0.05</value>
+			<value>0.20</value>
 		</max-rate-of-change>
 		<max-rate-of-change>
 			<condition>
