@@ -283,7 +283,7 @@
 		<autoland>
 			<kp-roll>0.10</kp-roll>
 			<kp-pitch>0.015</kp-pitch>
-			<kp-rudder>-0.2</kp-rudder>
+			<kp-rudder>-0.1</kp-rudder>
 		</autoland>
 	</config>
 	<settings>
