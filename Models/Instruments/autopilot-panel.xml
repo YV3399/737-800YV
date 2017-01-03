@@ -1328,13 +1328,14 @@
         <visible>1</visible>
         <action>
          <button>0</button>
+         <button>3</button>
             <repeatable>true</repeatable>           
        <binding>   
        <command>property-adjust</command>
-       <property>/it-autoflight/settings/bank-limit</property> 
+       <property>/it-autoflight/input/bank-limit</property> 
        <step>5</step>
-		<min>0.2</min>
-		<max>0.9</max>            
+		<min>10</min>
+		<max>30</max>            
        <wrap>false</wrap>       
        </binding>
       </action> 
@@ -1346,12 +1347,13 @@
         <visible>1</visible>
         <action>
          <button>1</button>
+         <button>4</button>
             <repeatable>true</repeatable>           
        <binding>   
        <command>property-adjust</command>
-       <property>/it-autoflight/settings/bank-limit</property> 
+       <property>/it-autoflight/input/bank-limit</property> 
        <step>-5</step>
-       <min>0</min>
+       <min>10</min>
        <max>30</max>                
        <wrap>false</wrap>       
        </binding>
