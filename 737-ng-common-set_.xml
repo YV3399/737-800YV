@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
   <sim>
-    <author>Gabriel Hernandez (Sounds, Effects, Textures, FDM, Animations etc), Joshua Davidson (Autoflight, FDM, Systems, Other), Jonathan Redpath (Textures, Liveries, Fixes, Other), RenanMsV (Animations, Textures Etc)</author>
+    <author>Gabriel Hernandez (Sounds, Liveries, Effects, Textures, FDM, Animations etc), Joshua Davidson (Autoflight, FDM, Systems, Other), Jonathan Redpath (Textures, Liveries, Fixes, Other), RenanMsV (Animations, Textures Etc)</author>
     <status>early-production</status>
     <flight-model>jsb</flight-model>
 
