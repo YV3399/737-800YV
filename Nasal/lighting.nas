@@ -1,5 +1,5 @@
 # 737-800 
-#By GabrielYV and Legoboyvdlp
+#By Gabriel Hernandez(YV3399) and Legoboyvdlp
 
 
 setlistener("/sim/signals/fdm-initialized", func {
