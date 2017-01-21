@@ -137,6 +137,31 @@ var spoilers_control = func {
   }
 }
 
+controls.gearDown = func(v) {
+    if(getprop("controls/gear/gear-lock")) return;
+    if (v < 0) {
+        if(!getprop("gear/gear[1]/wow"))setprop("/controls/gear/gear-down", 0);
+    } elsif (v > 0) {
+      setprop("/controls/gear/gear-down", 1);
+    }
+}
+
+var check_gear = func {
+    if(getprop("controls/gear/gear-down")){
+        setprop("gear/alarm",0);
+        return;
+    }
+    var gd=0;
+    flp=getprop("controls/flight/flaps");
+    if(flp==0.5){
+        if(N1[0]<85 or N1[1]<85)
+        gd=getprop("gear/alarm-enabled");
+    }
+    if(flp>0.5)gd=1;
+    setprop("gear/alarm",gd);
+}
+
+
 setlistener( "/b737/controls/flight/spoilers-lever-pos", spoilers_control, 0, 0 );
 
 var landing_check = func{
