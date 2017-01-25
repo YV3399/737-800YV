@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Cathay Pacific Airways (Fictional) </name>
+            <texture>Liveries-800/CPA.png</texture>      
+			<newwinglets type="bool">true</newwinglets> 
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
