@@ -3,10 +3,7 @@
 
   <!-- Passenger Seats -->
 
-  <model>
-   <name>1A</name>
-   <path>Aircraft/737-800/Models/seats/passengers/738PassengerSeats.ac</path>
- </model> 
+   <path>738PassengerSeats.ac</path>
 
 
 </PropertyList>
