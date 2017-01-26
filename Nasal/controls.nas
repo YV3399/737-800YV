@@ -141,6 +141,15 @@ var spoilers_control = func {
   }
 }
 
+controls.gearDown = func(v) {
+    if(getprop("controls/gear/gear-lock")) return;
+    if (v < 0) {
+        if(!getprop("gear/gear[1]/wow"))setprop("/controls/gear/gear-down", 0);
+    } elsif (v > 0) {
+      setprop("/controls/gear/gear-down", 1);
+    }
+}
+
 setlistener( "/b737/controls/flight/spoilers-lever-pos", spoilers_control, 0, 0 );
 
 setlistener("/controls/flight/autospeedbrake-cmd", func {
