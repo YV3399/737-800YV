@@ -9,7 +9,6 @@ kids 2
 OBJECT poly
 name "lhwinglet.001"
 loc 2.5545 -1.59483 -9.29586
-texture "/Users/MacBook/Desktop/Captura de pantalla 2016-12-26 a las 0.41.04.png"
 crease 30.000000
 numvert 70
 1.72975 2.75952 -7.6526
@@ -486,7 +485,6 @@ kids 0
 OBJECT poly
 name "rhwinglet.001"
 loc 2.17168 -0.516705 9.31822
-texture "/Users/MacBook/Desktop/Captura de pantalla 2016-12-26 a las 0.41.04.png"
 crease 30.000000
 numvert 70
 2.17328 1.70557 7.84456

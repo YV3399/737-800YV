@@ -32789,7 +32789,6 @@ name "cabin_1"
 loc -10.3352 10.289 -22.5101
 data 8
 Mesh.222
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300/Models/Cockpit/interior.png"
 crease 45.000000
 numvert 192
 11.0617 -8.89417 21.9066

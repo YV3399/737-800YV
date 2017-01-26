@@ -15,7 +15,7 @@ kids 1332
 OBJECT poly
 name "vol-vhf1"
 loc 1.10395 0.63131 -0.0825997
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -361,7 +361,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10397 0.63131 -0.100233
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -707,7 +707,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.104 0.63131 -0.118178
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -1053,7 +1053,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10386 0.63131 -0.136346
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -1399,7 +1399,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10417 0.63131 -0.154048
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -1745,7 +1745,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10348 0.630952 -0.172058
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -2091,7 +2091,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07918 0.630952 -0.179899
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -2437,7 +2437,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07918 0.631108 -0.164932
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -2783,7 +2783,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07918 0.631382 -0.149963
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -3129,7 +3129,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07918 0.631203 -0.135078
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -3475,7 +3475,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07918 0.631141 -0.119656
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -3821,7 +3821,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07879 0.631193 -0.104945
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -4167,7 +4167,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07918 0.63091 -0.0896085
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -4513,7 +4513,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07918 0.631087 -0.0745953
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -4859,7 +4859,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.13036 0.628204 -0.168573
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00288868 0.00034821 -0.00135362
@@ -4976,7 +4976,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.13111 0.627748 -0.168373
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000859261 0.00870025 5.99027e-05
@@ -5481,7 +5481,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.1309 0.627419 -0.0995786
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000859261 0.00870025 5.99027e-05
@@ -5986,7 +5986,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.13031 0.628476 -0.0995402
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00288868 0.00034821 -0.00135362
@@ -6392,7 +6392,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.1309 0.627419 -0.0995786
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000839829 -1.95503e-05 0.000832975
@@ -6897,7 +6897,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.13031 0.628476 -0.0995402
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00258613 -0.0012114 0.00180662
@@ -7014,7 +7014,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.13106 0.628206 -0.0808672
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000859261 0.00870025 5.99027e-05
@@ -7519,7 +7519,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.13047 0.628565 -0.0809769
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00288868 0.00034821 -0.00135362
@@ -7636,7 +7636,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.3564 0.629717 -0.094829
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000977159 0.00571394 5.99027e-05
@@ -8141,7 +8141,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.35529 0.629084 -0.0949436
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00288868 0.00034821 -0.00135362
@@ -8258,7 +8258,7 @@ kids 0
 OBJECT poly
 name "StabTrimSwitchCover"
 loc 1.33937 0.628292 -0.0887745
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 50
 0.000869632 0.00732183 -0.0119403
@@ -8526,7 +8526,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.1322 0.628978 0.208796
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000839949 -1.95503e-05 0.000832975
@@ -9031,7 +9031,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.13145 0.628736 0.208676
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00258613 -0.0012114 0.00180662
@@ -9148,7 +9148,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.13233 0.628978 0.139342
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000859261 0.00870025 5.99027e-05
@@ -9653,7 +9653,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.13158 0.628736 0.139221
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00288868 0.00034821 -0.00135362
@@ -9770,7 +9770,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.11889 0.629223 0.0835434
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000839829 -1.95503e-05 0.000832975
@@ -10275,7 +10275,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.11814 0.628981 0.0834233
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00258613 -0.0012114 0.00180662
@@ -10392,7 +10392,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitch"
 loc 1.08691 0.62886 0.0833713
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 65
 -0.000859261 0.00870025 5.99027e-05
@@ -10897,7 +10897,7 @@ kids 0
 OBJECT poly
 name "xpdrAltSrcSwitchBase"
 loc 1.08616 0.628617 0.0832511
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/lamp_knob_gray.png"
+texture "lamp_knob_gray.png"
 crease 45.000000
 numvert 31
 0.00288868 0.00034821 -0.00135362
@@ -11014,7 +11014,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10475 0.631087 0.135589
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -11360,7 +11360,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10475 0.630911 0.153453
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -11706,7 +11706,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10475 0.630941 0.171714
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -12052,7 +12052,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10475 0.630987 0.189547
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -12398,7 +12398,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10475 0.630892 0.207991
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -12744,7 +12744,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.10475 0.631093 0.225967
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -13090,7 +13090,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07989 0.631085 0.128093
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -13436,7 +13436,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.07974 0.631244 0.143581
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -13782,7 +13782,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.08039 0.631185 0.158656
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -14128,7 +14128,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.08016 0.631338 0.173539
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -14474,7 +14474,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.08027 0.631201 0.188782
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -14820,7 +14820,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.08042 0.631347 0.204111
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -15166,7 +15166,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.08064 0.632115 0.218737
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 0.00339901 5.36442e-07
@@ -15512,7 +15512,7 @@ kids 0
 OBJECT poly
 name "vol-vhf1"
 loc 1.08006 0.631544 0.233493
-texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-300-CHT/Models/Flightdeck/radio/vol.png"
+texture "vol.png"
 crease 45.000000
 numvert 34
 -0.004269 -0.00339901 5.36442e-07
@@ -68772,7 +68772,7 @@ refs 4
 kids 0
 OBJECT poly
 name "radiopanel.002"
-texture "/Users/MacBook/Downloads/pedestal .png"
+texture "pedestal.png"
 crease 30.000000
 numvert 26
 0.342677 0.790979 0.280388

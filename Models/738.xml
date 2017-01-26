@@ -77,7 +77,8 @@
     <name>Cockpit</name>
     <path>Models/cockpit.xml</path>
   </model>
-  <model>
+  <!-- This file is missing!!!! -it0uchpods -->
+  <!--model>
     <name>passengersseats</name>
     <path>Aircraft\737-800\Models\seats\passengers\passenger-seating.xml</path>
     <condition>
@@ -85,7 +86,7 @@
         <property>controls/switches/increase-fps</property>
       </not>
     </condition>
-  </model>
+  </model-->
   <model>
     <name>LeftWing</name>
     <path>Models/LWing.xml</path>

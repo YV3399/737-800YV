@@ -18742,7 +18742,7 @@ name "Plane"
 loc -0.02 -0.0136537 0.02
 data 10
 Plane.mesh
-texture "/Users/MacBook/Downloads/pedestal .png"
+texture "pedestal.png"
 crease 35.000000
 numvert 36
 0 -0.175 0.1925
@@ -18989,7 +18989,7 @@ name "Plane.001"
 loc -0.02 -0.0147379 -0.455
 data 14
 Plane.001.mesh
-texture "/Users/MacBook/Downloads/pedestal .png"
+texture "pedestal.png"
 crease 35.000000
 numvert 8
 0 -0.175 -0.2825
@@ -19045,7 +19045,7 @@ name "Plane.003"
 loc -0.017 -0.0147379 0.495
 data 14
 Plane.003.mesh
-texture "/Users/MacBook/Downloads/pedestal .png"
+texture "pedestal.png"
 crease 35.000000
 numvert 20
 0 0.175 -0.2825

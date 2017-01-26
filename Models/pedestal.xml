@@ -32,7 +32,9 @@
             <texture>boeing_grey.png</texture>
         </overlay>
     </model>
-    <model>
+	
+	<!-- This file is missing!!!! -it0uchpods -->
+    <!--model> 
         <name>TRIM</name>
         <path>Models/trim.xml</path>
         <offsets>
@@ -41,7 +43,7 @@
             <z-m>0.738</z-m>
             <pitch-deg>299.5</pitch-deg>
         </offsets>
-    </model>
+    </model-->
 
     <model>
         <name>CDU2</name>

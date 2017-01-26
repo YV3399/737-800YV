@@ -130,3 +130,8 @@ var aglgears = func {
 
 aglgears();
 
+setlistener("/it-autoflight/output/athr", func {
+	if (getprop("/it-autoflight/output/athr") == 1) {
+		setprop("/it-autoflight/custom/athr-armed", 1);
+	}
+});

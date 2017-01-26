@@ -1,5 +1,5 @@
 # IT AUTOFLIGHT System Controller by Joshua Davidson (it0uchpods/411).
-# V3.0.0 Build 112
+# V3.0.0 Build 115
 # This program is 100% GPL!
 
 print("IT-AUTOFLIGHT: Please Wait!");
@@ -59,6 +59,7 @@ setlistener("/it-autoflight/input/ap1", func {
 	}
   } else if (apmas == 1) {
 	setprop("/controls/flight/rudder", 0);
+	setprop("/it-autoflight/input/cws", 0);
 	setprop("/it-autoflight/output/ap1", 1);
 	setprop("/it-autoflight/sound/enableapoffsound", 1);
 	setprop("/it-autoflight/sound/apoffsound", 0);
@@ -77,6 +78,7 @@ setlistener("/it-autoflight/input/ap2", func {
 	}
   } else if (apmas == 1) {
 	setprop("/controls/flight/rudder", 0);
+	setprop("/it-autoflight/input/cws", 0);
 	setprop("/it-autoflight/output/ap2", 1);
 	setprop("/it-autoflight/sound/enableapoffsound2", 1);
 	setprop("/it-autoflight/sound/apoffsound2", 0);
@@ -97,12 +99,8 @@ setlistener("/it-autoflight/input/athr", func {
 setlistener("/it-autoflight/input/cws", func {
   var cwsmas = getprop("/it-autoflight/input/cws");
   if (cwsmas == 1) {
-	setprop("/it-autoflight/sound/enableapoffsound", 1);
-	setprop("/it-autoflight/sound/apoffsound", 0);		  
-	setprop("/it-autoflight/sound/enableapoffsound2", 1);
-	setprop("/it-autoflight/sound/apoffsound2", 0);
-	setprop("/it-autoflight/output/ap1", 0);
-	setprop("/it-autoflight/output/ap2", 0);
+	setprop("/it-autoflight/input/ap1", 0);
+	setprop("/it-autoflight/input/ap2", 0);
 	setprop("/it-autoflight/internal/cws-roll-deg", getprop("/orientation/roll-deg"));
 	setprop("/it-autoflight/internal/cws-pitch-deg", getprop("/orientation/pitch-deg"));
 	cwsrollt.start();

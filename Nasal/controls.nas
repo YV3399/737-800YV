@@ -79,12 +79,16 @@ var spoilers_control = func {
 
   if (lever_pos == 0) {
     setprop( "/controls/flight/speedbrake", 0.00 );
+    setprop( "/controls/flight/spoilers", 0 );
+	setprop( "/controls/flight/autospeedbrake", 0 );
     if (getprop("/sim/messages/copilot") == "Spoilers DOWN!") { } else {
     if (getprop("sim/co-pilot")) setprop ("/sim/messages/copilot", "Spoilers DOWN!");}
     setprop("b737/sound/spoiler-auto", 0);
   }
   if (lever_pos == 1) {
     setprop( "/controls/flight/speedbrake", 0.00 );
+    setprop( "/controls/flight/spoilers", 0 );
+	setprop( "/controls/flight/autospeedbrake", 1 );
     if (getprop("/sim/messages/copilot") == "Spoilers ARMED!") { } else {
     if (getprop("sim/co-pilot")) setprop ("/sim/messages/copilot", "Spoilers ARMED!");}
   }
@@ -137,32 +141,13 @@ var spoilers_control = func {
   }
 }
 
-controls.gearDown = func(v) {
-    if(getprop("controls/gear/gear-lock")) return;
-    if (v < 0) {
-        if(!getprop("gear/gear[1]/wow"))setprop("/controls/gear/gear-down", 0);
-    } elsif (v > 0) {
-      setprop("/controls/gear/gear-down", 1);
-    }
-}
-
-var check_gear = func {
-    if(getprop("controls/gear/gear-down")){
-        setprop("gear/alarm",0);
-        return;
-    }
-    var gd=0;
-    flp=getprop("controls/flight/flaps");
-    if(flp==0.5){
-        if(N1[0]<85 or N1[1]<85)
-        gd=getprop("gear/alarm-enabled");
-    }
-    if(flp>0.5)gd=1;
-    setprop("gear/alarm",gd);
-}
-
-
 setlistener( "/b737/controls/flight/spoilers-lever-pos", spoilers_control, 0, 0 );
+
+setlistener("/controls/flight/autospeedbrake-cmd", func {
+	if (getprop("/controls/flight/autospeedbrake-cmd") == 1) {
+		setprop("/b737/controls/flight/spoilers-lever-pos", 6);
+	}
+});
 
 var landing_check = func{
 	var air_ground = getprop("/b737/sensors/air-ground");
@@ -175,7 +160,7 @@ var landing_check = func{
 	var ab_pos = getprop("/controls/gear/autobrakes");
 	var ab_used = getprop("/fdm/jsbsim/fcs/autobrake/autobrake-used");
 
-	if ((air_ground or spin_up) and was_ia and throttle_1 < 0.05 and throttle_2 < 0.05 and !landing) { #normal landing
+	if ((air_ground == "ground" or spin_up) and was_ia and throttle_1 < 0.05 and throttle_2 < 0.05 and !landing) { #normal landing
 		if (lever_pos == 1) {
 			setprop("b737/controls/flight/spoilers-lever-pos", 6);
 			setprop("b737/sound/spoiler-auto", 1);
@@ -184,7 +169,7 @@ var landing_check = func{
 		setprop("/b737/sensors/landing-time", getprop("/fdm/jsbsim/sim-time-sec"));
 		settimer(func {setprop("/autopilot/internal/SPD", 0);},2);
 		setprop("/b737/sensors/landing", 1);
-	} elsif (air_ground and !was_ia and spin_up and getprop("/controls/engines/engine[0]/throttle") < 0.05 and getprop("/controls/engines/engine[1]/throttle") < 0.05 and ab_pos == -1) { #Rejected take-off
+	} elsif (air_ground == "ground" and !was_ia and spin_up and getprop("/controls/engines/engine[0]/throttle") < 0.05 and getprop("/controls/engines/engine[1]/throttle") < 0.05 and ab_pos == -1) { #Rejected take-off
 		var GROUNDSPEED = getprop("/velocities/uBody-fps") * 0.593;
 		setprop("/autopilot/internal/SPD", 0);
 		if (lever_pos == 0) {

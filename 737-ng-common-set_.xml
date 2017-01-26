@@ -12,18 +12,6 @@
       <path></path>
     </electrical>
 
-      <!--<autopilot>
-        <path>Aircraft/737-800/Systems/737-afds.xml</path>
-      </autopilot>
-
-      <autopilot>
-        <path>Aircraft/737-800/Systems/737-fcc-a.xml</path>
-      </autopilot>
-
-      <autopilot>
-        <path>Aircraft/737-800/Systems/737-fcc-b.xml</path>
-      </autopilot>-->
-
       <autopilot>
         <path>Aircraft/737-800/Systems/737_pfd.xml</path>
       </autopilot>
@@ -41,11 +29,18 @@
         <path>Aircraft/737-800/Systems/it-autoflight.xml</path>
       </autopilot>
 
+	  <!-- Uses a custom N1 based autothrottle -->
       <autopilot>
-        <name>IT-AUTOTHRUST</name>
-        <path>Aircraft/737-800/Systems/it-autothrust.xml</path>
+        <path>Aircraft/737-800/Systems/custom-autothrust.xml</path>
+      </autopilot>
+	  
+      <autopilot>
+        <path>Aircraft/737-800/Systems/autospeedbrake.xml</path>
       </autopilot>
 
+		<autopilot>
+			<path>Systems/fl2070_sound.xml</path>
+		</autopilot>
 
       <path>Aircraft/737-800/Systems/systems.xml</path>
 
@@ -304,6 +299,7 @@
 		</autoland>
 	</config>
 	<settings>
+		<enable-cws>0</enable-cws>
 		<flare-altitude>40</flare-altitude>
 		<land-enable>1</land-enable>
 		<land-flap>0.750</land-flap>
@@ -311,21 +307,24 @@
 		<retard-enable>1</retard-enable>
 		<toga-pitch>15</toga-pitch>
 	</settings>
+	<custom>
+		<athr-armed>0</athr-armed>
+	</custom>
 </it-autoflight>
 
 <consumables>
   <fuel>
     <tank n="0">
       <name>Left Main Tank</name>
-      <level-lbs archive="y">8630</level-lbs>
+      <level-lbs archive="y">6165</level-lbs>
     </tank>
     <tank n="1">
       <name>Right Main Tank</name>
-      <level-lbs archive="y">8630</level-lbs>
+      <level-lbs archive="y">6165</level-lbs>
     </tank>
     <tank n="2">
       <name>Center Tank</name>
-      <level-lbs archive="y">9000</level-lbs>
+      <level-lbs archive="y">0000</level-lbs>
     </tank>
     <tank n="3">
       <hidden type="bool">1</hidden>
@@ -373,6 +372,27 @@
         <max type="double">6</max>
       </binding>
     </key>
+	
+	<key n="2">
+		<name>Ctrl-b</name>
+		<desc>Cycle speedbrake setting</desc>
+		<binding>
+			<command>property-assign</command>
+			<property>/controls/flight/autospeedbrake</property>
+			<value>0</value>
+		</binding>
+		<binding>
+			<command>property-cycle</command>
+			<property>/b737/controls/flight/spoilers-lever-pos</property>
+			<value>0</value>
+			<value>1</value>
+			<value>2</value>
+			<value>3</value>
+			<value>4</value>
+			<value>5</value>
+			<value>6</value>
+		</binding>
+	</key>
 
     <key n="113">
       <name>q</name>
@@ -585,6 +605,10 @@
 </autopilot>
 
 <controls>
+  <engines n="0">
+	<kp>0.01</kp>
+	<kp-spd>0.30</kp-spd>
+  </engines>
 
   <gear>
     <autobrakes type="int">0</autobrakes>
@@ -737,6 +761,10 @@
   <itaf>
     <file>Aircraft/737-800/Nasal/it-autoflight.nas</file>
   </itaf>
+  
+  <thrust>
+    <file>Aircraft/737-800/Nasal/thrust.nas</file>
+  </thrust>
 
 </nasal>
 

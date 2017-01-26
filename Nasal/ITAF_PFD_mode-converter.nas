@@ -1,6 +1,5 @@
 # This file converts the IT-AUTOFLIGHT Mode numbers, and converts them into text strings needed for the Canvas PFD. 
 # I have also modified the PFD, so that this works correctly. I will update this file as I update IT-AUTOFLIGHT, if needed.
-# I will add the ARM switch and functions later.
 # Joshua Davidson (it0uchpods/411)
 
 # Speed or Mach?
@@ -105,10 +104,13 @@ setlistener("/it-autoflight/output/appr-armed", func {
 var apfd = func {
   var ap1 = getprop("/it-autoflight/output/ap1");
   var ap2 = getprop("/it-autoflight/output/ap2");
+  var cws = getprop("/it-autoflight/output/cws");
   var fd1 = getprop("/it-autoflight/output/fd1");
   var fd2 = getprop("/it-autoflight/output/fd2");
   if (ap1 or ap2) {
-    setprop("/autopilot/display/afds-mode[0]", "AP");
+    setprop("/autopilot/display/afds-mode[0]", "CMD");
+  } else if (cws) {
+    setprop("/autopilot/display/afds-mode[0]", "CWS");
   } else if (fd1 or fd2) {
     setprop("/autopilot/display/afds-mode[0]", "FD");
   } else {
@@ -121,6 +123,9 @@ setlistener("/it-autoflight/output/ap1", func {
   apfd();
 });
 setlistener("/it-autoflight/output/ap2", func {
+  apfd();
+});
+setlistener("/it-autoflight/output/cws", func {
   apfd();
 });
 setlistener("/it-autoflight/output/fd1", func {

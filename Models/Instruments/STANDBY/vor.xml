@@ -15,7 +15,7 @@
 
      <animation>
 	<type>material</type> 
-	<object-name>face</object-name>
+	<object-name>Face</object-name>
 	<emission>
     		<red>0.8</red>
     		<green>0.8</green>

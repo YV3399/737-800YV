@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Boeing 737 speedbrake/ground spoiler configuration -->
+
+<PropertyList>
+
+    <flipflop>
+        <name>Auto Speedbrake Engage logic</name>
+        <debug>false</debug>
+        <type>RS</type>
+        <enable>
+            <condition>
+				<and>
+					<equals>
+						<property>/controls/flight/autospeedbrake</property>
+						<value>1</value>
+					</equals>
+					<less-than>
+						<property>/controls/engines/engine[0]/reverser</property>
+						<value>0.01</value>
+					</less-than>
+					<less-than>
+						<property>/controls/engines/engine[1]/reverser</property>
+						<value>0.01</value>
+					</less-than>
+				</and>
+            </condition>
+        </enable>
+        <S>
+				<and>
+                    <less-than>
+                        <property>/controls/engines/engine/throttle</property>
+                        <value>0.15</value>
+                    </less-than>
+                    <less-than>
+                        <property>/controls/engines/engine[1]/throttle</property>
+                        <value>0.15</value>
+                    </less-than>
+                    <property>/gear/gear[1]/wow</property>
+                    <property>/gear/gear[2]/wow</property>
+                    <greater-than>
+                        <property>/velocities/groundspeed-kt</property>
+                        <value>60</value>
+                    </greater-than>
+				</and>
+        </S>
+        <R>
+				<or>
+                    <greater-than>
+                        <property>/controls/engines/engine/throttle</property>
+                        <value>0.16</value>
+                    </greater-than>
+                    <greater-than>
+                        <property>/controls/engines/engine[1]/throttle</property>
+                        <value>0.16</value>
+                    </greater-than>
+				</or>
+        </R>
+        <output>
+			<property>/controls/flight/autospeedbrake-cmd</property>
+		</output>	
+    </flipflop>
+
+</PropertyList>
