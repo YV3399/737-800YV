@@ -635,10 +635,6 @@
 						<property>/it-autoflight/output/vert</property>
 						<value>4</value>
 					</equals>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>7</value>
-					</equals>
 				</or>
 			</condition>
 		</enable>
