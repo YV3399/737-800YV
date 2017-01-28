@@ -730,9 +730,11 @@
     <red>0.9</red>
     <green>0.75</green>
     <blue>0.6</blue>
-    <factor-prop>/controls/lighting/flood-light</factor-prop> 
-  </emission>
-</animation>
+    </emission>
+     <condition>
+    <property>systems/electrical/on</property>
+    </condition>
+  </animation>
 
 <!-- Services by PR-GEO -->
 
