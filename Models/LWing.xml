@@ -739,6 +739,28 @@
   </axis>
  </animation>
 
+ <animation>
+  <type>translate</type>
+  <object-name>No2reverser_1</object-name>
+  <object-name>lreverserib_1</object-name>
+  <property>engines/engine/reverser-pos-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1</ind>
+      <dep>0.3</dep>
+    </entry>
+  </interpolation>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
 <animation>
         <type>shader</type>
         <shader>chrome</shader>

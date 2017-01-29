@@ -663,8 +663,8 @@
 </offsets>
 </model>
 
-<!-- reverser -->
-<animation>
+<!-- reverser - Transferred to xml wing -->
+<!--animation>
   <type>translate</type>
   <object-name>No2reverser_1</object-name>
   <object-name>lreverserib_1</object-name>
@@ -684,7 +684,7 @@
     <y>0</y>
     <z>0</z>
   </axis>
-</animation>
+</animation-->
 
 <!-- Registration fuselage upper back -->
 <model>
@@ -730,11 +730,9 @@
     <red>0.9</red>
     <green>0.75</green>
     <blue>0.6</blue>
-    </emission>
-     <condition>
-    <property>systems/electrical/on</property>
-    </condition>
-  </animation>
+    <factor-prop>/controls/lighting/flood-light</factor-prop> 
+  </emission>
+</animation>
 
 <!-- Services by PR-GEO -->
 
