@@ -109,7 +109,7 @@
 
     <model>
         <name>STANDBY-AH</name>
-        <path>Models/Instruments/STANDBY/att-ball.xml</path>
+        <path>Models/Instruments/STANDBY/stby-ai.xml</path>
         <offsets>
             <x-m>-0.045</x-m>
             <y-m>-0.156</y-m>

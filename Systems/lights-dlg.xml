@@ -70,6 +70,24 @@
 		</checkbox>
               
                 <checkbox>
+			<label>Logo Lights</label>
+			<property>controls/lighting/logo-lights</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+
+                <checkbox>
+			<label>Winglets Lights</label>
+			<property>controls/lighting/wing</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
+
+                <checkbox>
 				<halign>left</halign>
 				<label>Panel norm</label>
 				<property>/controls/lighting/panel-lights</property>

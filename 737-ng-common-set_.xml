@@ -455,6 +455,7 @@
       <binding>
         <condition>
           <and>
+            <property>/sim/input/selected/engine[0]</property>
             <less-than>
               <property>/autopilot/internal/servo-throttle[0]</property>
               <value>0.03</value>
@@ -506,6 +507,7 @@
       <binding>
         <condition>
           <and>
+            <property>/sim/input/selected/engine[1]</property>
             <less-than>
               <property>/autopilot/internal/servo-throttle[0]</property>
               <value>0.03</value>

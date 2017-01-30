@@ -663,8 +663,8 @@
 </offsets>
 </model>
 
-<!-- reverser -->
-<animation>
+<!-- reverser - Transferred to xml wing -->
+<!--animation>
   <type>translate</type>
   <object-name>No2reverser_1</object-name>
   <object-name>lreverserib_1</object-name>
@@ -684,7 +684,7 @@
     <y>0</y>
     <z>0</z>
   </axis>
-</animation>
+</animation-->
 
 <!-- Registration fuselage upper back -->
 <model>

@@ -166,4 +166,22 @@
       <z>0.0</z>
     </axis>
   </animation>
+
+<animation>
+  <type>material</type>
+  <object-name>sbhandle</object-name>
+  <object-name>handle</object-name>
+   <object-name>No1-knob</object-name>
+  <object-name>No2-knob</object-name>
+   <object-name>no1revarm</object-name>
+  <object-name>no2revarm</object-name>
+  <emission>
+    <red>0.1</red>
+    <green>0.1</green>
+    <blue>0.1</blue>
+    <factor-prop>/controls/lighting/panel-norm</factor-prop> 
+  </emission>
+</animation>
+
+
 </PropertyList>
