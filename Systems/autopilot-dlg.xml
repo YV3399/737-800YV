@@ -757,12 +757,6 @@
 			<button>
                 <pref-width>40</pref-width>
 				<legend>FPA</legend>
-				<enable>
-					<equals>
-						<property>/it-autoflight/settings/disabled-button</property>
-						<value>blahblahblahblah</value>
-					</equals>
-				</enable>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/input/vert</property>
@@ -787,7 +781,7 @@
 			<text>
 				<row>0</row>
 				<col>0</col>
-				<label>ALT:</label>
+				<label>ALT: </label>
 			</text>
 			
 			<button>
@@ -871,7 +865,7 @@
 			<text>
 				<row>0</row>
 				<col>0</col>
-				<label>V/S:</label>
+				<label>V/S: </label>
 			</text>
 			
 			<button>
@@ -944,6 +938,90 @@
 					<min>-6000</min>
 					<max>6000</max>
 					<step>1000</step>
+					<wrap>false</wrap>
+				</binding>
+			</button>
+		</group>
+		
+		<group>
+			<layout>table</layout>
+			
+			<text>
+				<row>0</row>
+				<col>0</col>
+				<label>FPA:</label>
+			</text>
+			
+			<button>
+				<row>0</row>
+				<col>1</col>
+                <pref-width>25</pref-width>
+                <pref-height>25</pref-height>
+				<legend>&lt;&lt;</legend>
+				<binding>
+					<command>property-adjust</command>
+					<property>/it-autoflight/input/fpa</property>
+					<min>-9.9</min>
+					<max>9.9</max>
+					<step>-1</step>
+					<wrap>false</wrap>
+				</binding>
+			</button>
+			<button>
+				<row>0</row>
+				<col>2</col>
+                <pref-width>25</pref-width>
+                <pref-height>25</pref-height>
+				<legend>&lt;</legend>
+				<binding>
+					<command>property-adjust</command>
+					<property>/it-autoflight/input/fpa</property>
+					<min>-9.9</min>
+					<max>9.9</max>
+					<step>-0.1</step>
+					<wrap>false</wrap>
+				</binding>
+			</button>
+
+			<input>
+				<row>0</row>
+				<col>3</col>
+                <pref-width>55</pref-width>
+				<property>/it-autoflight/input/fpa</property>
+				<live type="bool">true</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</input>
+			
+			<button>
+				<row>0</row>
+				<col>4</col>
+                <pref-width>25</pref-width>
+                <pref-height>25</pref-height>
+				<legend>&gt;</legend>
+				<binding>
+					<command>property-adjust</command>
+					<property>/it-autoflight/input/fpa</property>
+					<min>-9.9</min>
+					<max>9.9</max>
+					<step>0.1</step>
+					<wrap>false</wrap>
+				</binding>
+			</button>
+			<button>
+				<row>0</row>
+				<col>5</col>
+				<halign>left</halign>
+                <pref-width>25</pref-width>
+                <pref-height>25</pref-height>
+				<legend>&gt;&gt;</legend>
+				<binding>
+					<command>property-adjust</command>
+					<property>/it-autoflight/input/fpa</property>
+					<min>-9.9</min>
+					<max>9.9</max>
+					<step>1</step>
 					<wrap>false</wrap>
 				</binding>
 			</button>
