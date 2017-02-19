@@ -370,6 +370,7 @@ var alt_on = func {
 	setprop("/it-autoflight/mode/vert", "ALT CAP");
 	setprop("/it-autoflight/internal/max-pitch", 8);
 	setprop("/it-autoflight/internal/min-pitch", -8);
+	minmaxtimer.start();
 }
 
 var fpa_calc = func {
