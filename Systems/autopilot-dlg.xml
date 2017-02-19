@@ -622,45 +622,40 @@
 		
 		<group>
 			<layout>hbox</layout>
-			<text>
-				<label>Mode:</label>
-			</text>
-			<text>
-				<label>[MAG]</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/input/trk</property>
-						<value>0</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>[TRK]</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/input/trk</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			<button>
-                <pref-width>60</pref-width>
-				<legend>Magnetic</legend>
+
+			<checkbox>
+				<label>True HDG</label>
+				<property>/it-autoflight/input/trk</property>
 				<binding>
-					<command>property-assign</command>
-					<property>/it-autoflight/input/trk</property>
-					<value>0</value>
+					<command>dialog-apply</command>
 				</binding>
-			</button>
-			<button>
-                <pref-width>45</pref-width>
-				<legend>Track</legend>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<label>Use NAV2</label>
+				<property>/it-autoflight/settings/use-nav2-radio</property>
+				<enable>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>2</value>
+					</not-equals>
+				</enable>
 				<binding>
-					<command>property-assign</command>
-					<property>/it-autoflight/input/trk</property>
-					<value>1</value>
+					<command>dialog-apply</command>
 				</binding>
-			</button>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<label>B/C</label>
+				<property>/it-autoflight/settings/use-backcourse</property>
+				<enable>
+					<property>/it-autoflight/settings/extra/unused-button</property>
+				</enable>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
 		</group>
 		
 		<group>

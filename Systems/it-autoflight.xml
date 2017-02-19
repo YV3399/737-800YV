@@ -98,17 +98,36 @@
   </filter>
 
   <filter>
-    <name>NAV1 ERROR DEG</name>
+    <name>NAV ERROR DEG</name>
     <debug>false</debug>
     <type>gain</type>
     <input>
+	  <condition>
+		<equals>
+		  <property>/it-autoflight/settings/use-nav2-radio</property>
+		  <value>0</value>
+		</equals>
+	  </condition>
       <property>/instrumentation/nav[0]/radials/target-auto-hdg-deg</property>
       <offset>
         <property>/orientation/heading-deg</property>
         <scale>-1.0</scale>
       </offset>
     </input>
-    <output>/it-autoflight/internal/nav1-heading-error-deg</output>
+    <input>
+	  <condition>
+		<equals>
+		  <property>/it-autoflight/settings/use-nav2-radio</property>
+		  <value>1</value>
+		</equals>
+	  </condition>
+      <property>/instrumentation/nav[1]/radials/target-auto-hdg-deg</property>
+      <offset>
+        <property>/orientation/heading-deg</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>/it-autoflight/internal/nav-heading-error-deg</output>
     <period>
       <min>-180</min>
       <max>180</max>
@@ -117,23 +136,58 @@
   </filter>
 
   <filter>
-    <name>NAV1 COURSE ERROR</name>
+    <name>NAV COURSE ERROR</name>
     <debug>false</debug>
     <type>gain</type>
     <input>
+	  <condition>
+		<equals>
+		  <property>/it-autoflight/settings/use-nav2-radio</property>
+		  <value>0</value>
+		</equals>
+	  </condition>
       <property>/instrumentation/nav[0]/radials/selected-deg</property>
       <offset>
         <property>/orientation/heading-magnetic-deg</property>
         <scale>-1.0</scale>
       </offset>
     </input>
-    <output>/it-autoflight/internal/nav1-course-error</output>
+    <input>
+	  <condition>
+		<equals>
+		  <property>/it-autoflight/settings/use-nav2-radio</property>
+		  <value>1</value>
+		</equals>
+	  </condition>
+      <property>/instrumentation/nav[1]/radials/selected-deg</property>
+      <offset>
+        <property>/orientation/heading-magnetic-deg</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>/it-autoflight/internal/nav-course-error</output>
     <period>
       <min>-180</min>
       <max>180</max>
     </period>
     <gain>1.0</gain>
   </filter>
+  
+  <!--filter>
+    <name>NAV BC ERROR DEG</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <input>
+	  <expression>
+	    <sum>
+	      <property>/it-autoflight/internal/nav-heading-error-deg</property>
+		  <value>180</value>
+		</sum>
+	  </expression>
+	</input>
+    <output>/it-autoflight/internal/nav-bc-heading-error-deg</output>
+    <gain>1.0</gain>
+  </filter-->
 
   <filter>
     <name>INTERNAL VERTICAL SPEED COMPUTER</name>
@@ -347,7 +401,22 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/it-autoflight/internal/nav1-heading-error-deg</property>
+			<condition>
+				<equals>
+					<property>/it-autoflight/settings/use-backcourse</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/nav-heading-error-deg</property>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/settings/use-backcourse</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/nav-bc-heading-error-deg</property>
 		</input>
 		<reference>
 			<value>0.0</value>
@@ -656,7 +725,22 @@
 			<property>/velocities/vertical-speed-fps</property>
 		</input>
 		<reference>
+			<condition>
+				<equals>
+					<property>/it-autoflight/settings/use-nav2-radio</property>
+					<value>0</value>
+				</equals>
+			</condition>
 			<property>/instrumentation/nav[0]/gs-rate-of-climb</property>
+		</reference>
+		<reference>
+			<condition>
+				<equals>
+					<property>/it-autoflight/settings/use-nav2-radio</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/nav[1]/gs-rate-of-climb</property>
 		</reference>
 		<output>
 			<property>/it-autoflight/internal/target-pitch-deg</property>
