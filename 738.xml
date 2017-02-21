@@ -1,142 +1,144 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
+
 <fdm_config name="738" release="BETA" version="2.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
-    <fileheader>
-        <author> Michael Soitanen (Change by legoboyvdlp, YV3399, and it0uchpods)</author>
-        <filecreationdate> 2014-09-30 </filecreationdate>
-        <version>$Revison: 1.0 $</version>
-        <description> Models a 737-800. </description>
-    </fileheader>
+	<fileheader>
+		<author> Michael Soitanen (Change by legoboyvdlp, YV3399, and it0uchpods)</author>
+		<filecreationdate> 2014-09-30 </filecreationdate>
+		<version>$Revison: 1.0 $</version>
+		<description> Models a 737-800. </description>
+	</fileheader>
 
-<!--
-	base datum - nose of aircraft. BWL at this point 208.1 in. Source - structure diagrams.
--->
+	<!--
+		base datum - nose of aircraft. BWL at this point 208.1 in. Source - structure diagrams.
+	-->
 
-    <metrics>
-        <wingarea unit="FT2"> 1341.00 </wingarea> <!-- value from simulator data. Checked -->
-        <wingspan unit="IN">  1350.81 </wingspan> <!-- value from simulator data. Checked -->
-        <chord unit="IN">      155.81 </chord> <!-- value from simulator data. Checked -->
-        <htailarea unit="FT2"> 352.80 </htailarea> <!-- value from simulator data. Checked -->
-        <htailarm unit="IN">   696.72 </htailarm> <!-- value from simulator data. Checked -->
-        <vtailarea unit="FT2"> 284.60 </vtailarea> <!-- value from simulator data. Checked -->
-        <vtailarm unit="IN">   642.83 </vtailarm> <!-- value from simulator data. Checked -->
-        <location name="AERORP" unit="IN">
-            <x>  734 </x> <!-- 25% MAC -->
-            <y>    0 </y>
-            <z>-6.71 </z> <!-- BWL 201.39 -->
-        </location>
-        <location name="EYEPOINT" unit="IN">
-            <x>  98 </x>
-            <y> -20 </y>
-            <z>  56.18 </z>
-        </location>
-        <location name="VRP" unit="M">
-            <x> 19.8099 </x>
-            <y> 0 </y>
-            <z> 0.0785 </z>
-        </location>
-    </metrics>
+	<metrics>
+		<wingarea unit="FT2"> 1341.00 </wingarea> <!-- value from simulator data. Checked -->
+		<wingspan unit="IN">  1350.81 </wingspan> <!-- value from simulator data. Checked -->
+		<chord unit="IN">      155.81 </chord> <!-- value from simulator data. Checked -->
+		<htailarea unit="FT2"> 352.80 </htailarea> <!-- value from simulator data. Checked -->
+		<htailarm unit="IN">   696.72 </htailarm> <!-- value from simulator data. Checked -->
+		<vtailarea unit="FT2"> 284.60 </vtailarea> <!-- value from simulator data. Checked -->
+		<vtailarm unit="IN">   642.83 </vtailarm> <!-- value from simulator data. Checked -->
+		<location name="AERORP" unit="IN">
+			<x>  759 </x> <!-- 25% MAC -->
+			<y>    0 </y>
+			<z>-6.71 </z> <!-- BWL 201.39 -->
+		</location>
+		<location name="EYEPOINT" unit="IN">
+			<x>  98 </x>
+			<y> -20 </y>
+			<z>  56.18 </z>
+		</location>
+		<location name="VRP" unit="M">
+			<x> 19.8099 </x>
+			<y> 0 </y>
+			<z> 0.0785 </z>
+		</location>
+	</metrics>
 
-    <mass_balance> <!-- MOIs based on reverse engineering of FFS certification tests -->
-        <ixx unit="SLUG*FT2">    445000 </ixx>
-        <iyy unit="SLUG*FT2"> 2.141e+06 </iyy>
-        <izz unit="SLUG*FT2"> 2.588e+06 </izz>
-        <ixy unit="SLUG*FT2">         0 </ixy>
-        <ixz unit="SLUG*FT2">    110000 </ixz>
-        <iyz unit="SLUG*FT2">         0 </iyz>
-        <emptywt unit="LBS">      97060 </emptywt> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
-        <location name="CG" unit="IN">
-            <x> 729.56 </x> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
-            <y>   0 </y>
-            <z>   0 </z>
-        </location>
+	<mass_balance> <!-- MOIs based on reverse engineering of FFS certification tests -->
+		<ixx unit="SLUG*FT2">    445000 </ixx>
+		<iyy unit="SLUG*FT2"> 2.141e+06 </iyy>
+		<izz unit="SLUG*FT2"> 2.588e+06 </izz>
+		<ixy unit="SLUG*FT2">         0 </ixy>
+		<ixz unit="SLUG*FT2">    110000 </ixz>
+		<iyz unit="SLUG*FT2">         0 </iyz>
+		<emptywt unit="LBS">      97060 </emptywt> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
 
-        <pointmass name="Cabin Zone 0A"> <!-- Business class (8 pax max) Row 1-2 -->
-            <weight unit="LBS"> 1324 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 301.5 </x>
-                <y> 0 </y>
-                <z> 27.5 </z>
-            </location>
-        </pointmass>
+		<location name="CG" unit="IN">
+			<!--x> 729.56 </x --> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
+			<x> 739 </x> <!-- chenged to make her less ass-heavy. The CG from Soitanen included an empty plane and roulfy 1400 lbs on the max leverage points -->
+			<y>   0 </y>
+			<z> -6.71 </z>
+		</location>
 
-        <pointmass name="Cabin Zone 0B"> <!-- Tourist class (54 pax max) Row 10-19 -->
-            <weight unit="LBS"> 1324 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 541 </x>
-                <y> 0 </y>
-                <z> 27.5 </z>
-            </location>
-        </pointmass>
+		<pointmass name="Cabin Zone 0A"> <!-- Business class (8 pax max) Row 1-2 -->
+			<weight unit="LBS"> 1324 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 301.5 </x>
+				<y> 0 </y>
+				<z> 27.5 </z>
+			</location>
+		</pointmass>
 
-        <pointmass name="Cabin Zone 0C"> <!-- Economy class (96 pax max) Row 20-36 -->
-            <weight unit="LBS"> 1324 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 874 </x>
-                <y> 0 </y>
-                <z> 27.5 </z>
-            </location>
-        </pointmass>
+		<pointmass name="Cabin Zone 0B"> <!-- Tourist class (54 pax max) Row 10-19 -->
+			<weight unit="LBS"> 1324 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 541 </x>
+				<y> 0 </y>
+				<z> 27.5 </z>
+			</location>
+		</pointmass>
 
-        <pointmass name="Cargo compartment 1A"> <!-- max 553 kg/1218 lbs -->
-            <weight unit="LBS"> 500 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 284 </x>
-                <y> 0 </y>
-                <z> -30 </z>
-            </location>
-        </pointmass>
+		<pointmass name="Cabin Zone 0C"> <!-- Economy class (96 pax max) Row 20-36 -->
+			<weight unit="LBS"> 1324 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 874 </x>
+				<y> 0 </y>
+				<z> 27.5 </z>
+			</location>
+		</pointmass>
 
+		<pointmass name="Cargo compartment 1A"> <!-- max 553 kg/1218 lbs -->
+			<weight unit="LBS"> 500 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 284 </x>
+				<y> 0 </y>
+				<z> -30 </z>
+			</location>
+		</pointmass>
 
-        <pointmass name="Cargo compartment 1B"> <!-- max 336 kg/741 lbs -->
-            <weight unit="LBS"> 200 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 334 </x>
-                <y> 0 </y>
-                <z> -30 </z>
-            </location>
-        </pointmass>
+		<pointmass name="Cargo compartment 1B"> <!-- max 336 kg/741 lbs -->
+			<weight unit="LBS"> 200 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 334 </x>
+				<y> 0 </y>
+				<z> -30 </z>
+			</location>
+		</pointmass>
 
-        <pointmass name="Cargo compartment 2"> <!-- max 2670 kg/5887 lbs -->
-            <weight unit="LBS"> 2500 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 464 </x>
-                <y> 0 </y>
-                <z> -30 </z>
-            </location>
-        </pointmass>
+		<pointmass name="Cargo compartment 2"> <!-- max 2670 kg/5887 lbs -->
+			<weight unit="LBS"> 2500 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 464 </x>
+				<y> 0 </y>
+				<z> -30 </z>
+			</location>
+		</pointmass>
 
-        <pointmass name="Cargo compartment 3"> <!-- max 4086 kg/9008 lbs -->
-            <weight unit="LBS"> 4000 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 932.5 </x>
-                <y> 0 </y>
-                <z> -30 </z>
-            </location>
-        </pointmass>
+		<pointmass name="Cargo compartment 3"> <!-- max 4086 kg/9008 lbs -->
+			<weight unit="LBS"> 4000 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 932.5 </x>
+				<y> 0 </y>
+				<z> -30 </z>
+			</location>
+		</pointmass>
 
-        <pointmass name="Cargo compartment 4A"> <!-- max 362 kg/798 lbs -->
-            <weight unit="LBS"> 400 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 1097.5 </x>
-                <y> 0 </y>
-                <z> -30 </z>
-            </location>
-        </pointmass>
+		<pointmass name="Cargo compartment 4A"> <!-- max 362 kg/798 lbs -->
+			<weight unit="LBS"> 400 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 1097.5 </x>
+				<y> 0 </y>
+				<z> -30 </z>
+			</location>
+		</pointmass>
 
-        <pointmass name="Cargo compartment 4B"> <!-- max 402 kg/886 lbs -->
-            <weight unit="LBS"> 200 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 1175.5 </x>
-                <y> 0 </y>
-                <z> -30 </z>
-            </location>
-        </pointmass>
+		<pointmass name="Cargo compartment 4B"> <!-- max 402 kg/886 lbs -->
+			<weight unit="LBS"> 200 </weight>
+			<location name="POINTMASS" unit="IN">
+				<x> 1175.5 </x>
+				<y> 0 </y>
+				<z> -30 </z>
+			</location>
+		</pointmass>
 
-    </mass_balance>
+	</mass_balance>
 
     <ground_reactions>
         <contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NLG compression is 15.5 in -->
@@ -412,9 +414,9 @@
             <feed>3</feed>
             <thruster file="direct">
                 <location unit="IN">
-                    <x>  715.6 </x> <!-- value from simulator data -->
+                    <x>  727.6 </x> <!-- value from simulator data -->
                     <y> -193.68 </y> <!-- value from simulator data -->
-                    <z>  -52.38 </z> <!-- BWL 155.72 -->
+                    <z>  -50.38 </z> <!-- BWL 155.72 -->
                 </location>
                 <orient unit="DEG">
                     <roll>  0 </roll>
@@ -423,11 +425,12 @@
                 </orient>
             </thruster>
         </engine>
+
         <engine file="CFM56">
             <location unit="IN">
                 <x> 715.6 </x> <!-- value from simulator data -->
                 <y> 193.68 </y> <!-- value from simulator data -->
-                <z>  -52.38 </z> <!-- BWL 155.72 -->
+                <z>  -50.38 </z> <!-- BWL 155.72 -->
             </location>
             <orient unit="DEG">
                 <roll>  0 </roll>
@@ -437,7 +440,7 @@
             <feed>4</feed>
             <thruster file="direct">
                 <location unit="IN">
-                    <x> 715.6 </x> <!-- value from simulator data -->
+                    <x> 727.6 </x> <!-- value from simulator data -->
                     <y> 193.68 </y> <!-- value from simulator data -->
                     <z>  -52.38 </z> <!-- BWL 155.72 -->
                 </location>
