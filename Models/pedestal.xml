@@ -179,8 +179,10 @@
     <red>0.1</red>
     <green>0.1</green>
     <blue>0.1</blue>
-    <factor-prop>/controls/lighting/panel-norm</factor-prop> 
   </emission>
+ <condition>
+       <property>systems/electrical/on</property>
+    </condition>
 </animation>
 
 

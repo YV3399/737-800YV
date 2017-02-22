@@ -723,6 +723,7 @@
   </overlay>
 </model>
 
+
 <animation>
   <type>material</type>
   <object-name>floor</object-name>
@@ -730,11 +731,15 @@
     <red>0.9</red>
     <green>0.75</green>
     <blue>0.6</blue>
-    <factor-prop>/controls/lighting/flood-light</factor-prop> 
-  </emission>
-</animation>
+    </emission>
+     <condition>
+       <property>systems/electrical/on</property>
+    </condition>
+   </animation>
 
-<!-- Services by PR-GEO -->
+
+
+<!-- Services by Gabriel Hernandez(YV399) -->
 
 <model>
   <path>Aircraft/737-800/Models/Services/Services.xml</path>
@@ -745,7 +750,7 @@
   </offsets>
 </model> 
 
-<!-- by RenanMsV -->
+<!-- by RenanMsV and Gabriel Hernandez(YV3399) -->
 <!-- Left front door -->
 
 <animation>
