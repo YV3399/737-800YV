@@ -84,12 +84,12 @@
   <button>0</button>
     <binding>
 		<command>property-assign</command>
-		<property>it-autoflight/ap_mastersw</property>
+		<property>/it-autoflight/input/ap1</property>
 		<value>0</value>
 		</binding>
     <binding>
 		<command>property-assign</command>
-		<property>it-autoflight/ap_mastersw2</property>
+		<property>/it-autoflight/input/ap2</property>
 		<value>0</value>
 		</binding>
     <binding>

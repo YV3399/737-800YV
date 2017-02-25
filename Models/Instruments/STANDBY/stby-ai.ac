@@ -3,8 +3,29 @@ MATERIAL "DefaultWhite.004" rgb 1 1 1  amb 1 1 1  emis 1 1 1  spec 0.5 0.5 0.5  
 MATERIAL "Material.003" rgb 1 0.7878 0.0208  amb 0.5 0.5 0.5  emis 0.4313 0.4313 0.4313  spec 1 1 1  shi 32  trans 0
 MATERIAL "Lights" rgb 1 1 1  amb 1 1 1  emis 1 1 1  spec 0 0 0  shi 0  trans 0
 MATERIAL "Flat" rgb 0.8 0.8 0.8  amb 0.8 0.8 0.8  emis 0.1 0.1 0.1  spec 0 0 0  shi 0  trans 0
+MATERIAL "black" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 0  trans 0
 OBJECT world
-kids 6
+kids 7
+OBJECT poly
+name "Off"
+loc 0.0307388 0.00024771 -0.00285828
+data 9
+Power.off
+crease 30.000002
+numvert 4
+0 0.0400677 -0.0362924
+0 -0.0326174 -0.0362924
+0 -0.0326174 0.0404369
+0 0.0400677 0.0404369
+numsurf 1
+SURF 0x20
+mat 4
+refs 4
+0 0 0
+3 0 0
+2 0 0
+1 0 0
+kids 0
 OBJECT poly
 name "Plane.028"
 loc 0.0279653 0.00224193 -0.000756148
@@ -1615,7 +1636,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Bank-Bug"
-loc 0 0.00224193 8.28104e-05
+loc 0 0.00224193 8.28104e-005
 texture "ati.png"
 crease 30.000000
 numvert 6
@@ -1648,7 +1669,7 @@ refs 3
 kids 0
 OBJECT poly
 name "LevelBug"
-loc 0 0.00224193 8.28104e-05
+loc 0 0.00431434 -0.000895819
 crease 30.000000
 numvert 32
 0.029377 -0.002307 0.0138144
