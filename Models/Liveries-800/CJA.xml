@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">CanJet Airlines</name>
-            <texture>Liveries-800/CJA-800.png</texture>            
+            <texture>Liveries-800/CJA.png</texture>            
         </livery>        
     </model>
 </sim>
