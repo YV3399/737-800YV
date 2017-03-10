@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
- <!-- Author : Laurent Basset, mail: lolalilo [at] gmail [dot] com -->
+ 
 <PropertyList>
 <sim>
     <model>
         <livery>                     
-            <name type="string">Turkish Airlines</name>
-            <texture>Liveries-800/THY-800.png</texture> 
+            <name type="string">Aerolineas Argentinas</name>
+            <texture>Liveries-800/ARG.png</texture>  
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>
