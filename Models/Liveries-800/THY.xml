@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ <!-- Author : Laurent Basset, mail: lolalilo [at] gmail [dot] com -->
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Turkish Airlines</name>
+            <texture>Liveries-800/THY.png</texture> 
+			<newwinglets type="bool">false</newwinglets> 
+        </livery>        
+    </model>
+</sim>
+</PropertyList>

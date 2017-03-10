@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">TUIfly</name>
-            <texture>/Liveries-800/TUI-800.png</texture> 
+            <texture>/Liveries-800/TUI.png</texture> 
 			<newwinglets type="bool">true</newwinglets> 
         </livery>        
     </model>
