@@ -290,7 +290,7 @@
 			<alt>0.03</alt>
 			<vs>0.07</vs>
 			<fpa>0.30</fpa>
-			<flch>-0.35</flch>
+			<flch>-4.0</flch>
 			<gs>0.11</gs>
 		</cmd>
 		<autoland>
@@ -613,6 +613,9 @@
   <engines n="0">
 	<kp>0.01</kp>
 	<kp-spd>0.30</kp-spd>
+	<n1-roc-thr>20</n1-roc-thr>
+	<n1-roc-pitch>5</n1-roc-pitch>
+	<n1-roc-retard>20</n1-roc-retard>
   </engines>
 
   <gear>

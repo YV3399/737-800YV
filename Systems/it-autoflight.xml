@@ -258,7 +258,7 @@
  <!-- =============================================================== -->
  
 	<filter>
-		<name>TARGET ROLL CONTROLLER</name>
+		<name>ROLL CONTROLLER</name>
 		<debug>false</debug>
 		<type>gain</type>
 		<enable>
@@ -352,10 +352,10 @@
 		<gain>0.5</gain>
 		<u_min>
 			<condition>
-				<equals>
+				<not-equals>
 					<property>/it-autoflight/output/lat</property>
-					<value>0</value>
-				</equals>
+					<value>1</value>
+				</not-equals>
 			</condition>
 			<property>/it-autoflight/input/bank-limit</property>
 			<scale>-1</scale>
@@ -371,10 +371,10 @@
 		</u_min>
 		<u_max>
 			<condition>
-				<equals>
+				<not-equals>
 					<property>/it-autoflight/output/lat</property>
-					<value>0</value>
-				</equals>
+					<value>1</value>
+				</not-equals>
 			</condition>
 			<property>/it-autoflight/input/bank-limit</property>
 		</u_max>
@@ -446,9 +446,9 @@
 		<input>
 			<property>/it-autoflight/internal/target-roll-deg</property>
 		</input>
-		<output>/it-autoflight/internal/roll-deg-cmd</output>
+		<output>/it-autoflight/internal/target-roll</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>10</max-rate-of-change>
+		<max-rate-of-change>15</max-rate-of-change>
 	</filter>
 	
 	<pid-controller>
@@ -472,7 +472,7 @@
 			<property>/orientation/roll-deg</property>
 		</input>
 		<reference>
-			<property>/it-autoflight/internal/roll-deg-cmd</property>
+			<property>/it-autoflight/internal/target-roll</property>
 		</reference>
 		<output>
 			<property>/it-autoflight/internal/aileron-cmd</property>
@@ -547,7 +547,7 @@
 		</input>
 		<output>/controls/flight/aileron</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.8</max-rate-of-change>
+		<max-rate-of-change>0.9</max-rate-of-change>
 	</filter>
 
  <!-- =============================================================== -->
@@ -559,17 +559,44 @@
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>0</value>
-				</equals>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>0</value>
+					</equals>
+					<and>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>8</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/prof-vert</property>
+							<value>0</value>
+						</equals>
+					</and>
+				</or>
 			</condition>
 		</enable>
 		<input>
 			<property>/it-autoflight/internal/altitude-5-sec-ahead</property>
 		</input>
 		<reference>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>0</value>
+				</equals>
+			</condition>
 			<property>/it-autoflight/internal/alt</property>
+		</reference>
+		<reference>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>8</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/prof-alt</property>
 		</reference>
 		<output>
 			<property>/it-autoflight/internal/target-pitch-deg</property>
@@ -588,45 +615,6 @@
 			</u_min>
 			<u_max>
 				<property>/it-autoflight/internal/max-pitch</property>
-			</u_max>
-		</config>
-	</pid-controller>
-	
-	<pid-controller>
-		<name>VERTICAL SPEED HOLD</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>1</value>
-				</equals>
-			</condition>
-		</enable>
-		<input>
-			<property>/velocities/vertical-speed-fps</property>
-		</input>
-		<reference>
-			<property>/it-autoflight/input/vs</property>
-			<scale>0.01666666</scale>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/target-pitch-deg</property>
-		</output>
-		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/vs</property>
-			</Kp>
-			<beta>1.0</beta>
-			<alpha>0.1</alpha>
-			<gamma>0.0</gamma>
-			<Ti>5.0</Ti>
-			<Td>0.00001</Td>
-			<u_min>
-				<value>-10</value>
-			</u_min>
-			<u_max>
-				<value>30</value>
 			</u_max>
 		</config>
 	</pid-controller>
@@ -769,6 +757,16 @@
 						<property>/it-autoflight/output/vert</property>
 						<value>4</value>
 					</equals>
+					<and>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>8</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/prof-vert</property>
+							<value>4</value>
+						</equals>
+					</and>
 				</or>
 			</condition>
 		</enable>
@@ -811,7 +809,7 @@
 			<scale>1000.0</scale>
 		</reference>
 		<output>
-			<property>/it-autoflight/internal/target-pitch-deg</property>
+			<property>/it-autoflight/internal/target-fps</property>
 		</output>
 		<config>
 			<Kp>
@@ -829,7 +827,7 @@
                         <property>/instrumentation/altimeter/indicated-altitude-ft</property>
                     </greater-than>
                 </condition>
-                <value>2</value>
+                <value>1.6</value>
             </u_min>
             <u_min>
                 <condition>
@@ -838,7 +836,7 @@
                         <property>/instrumentation/altimeter/indicated-altitude-ft</property>
                     </less-than>
                 </condition>
-                <value>-7.0</value>
+                <value>-100</value>
             </u_min>
             <u_max>
                 <condition>
@@ -847,7 +845,7 @@
                         <property>/instrumentation/altimeter/indicated-altitude-ft</property>
                     </greater-than>
                 </condition>
-                <value>25.0</value>
+                <value>133</value>
             </u_max>
             <u_max>
                 <condition>
@@ -856,7 +854,7 @@
                         <property>/instrumentation/altimeter/indicated-altitude-ft</property>
                     </less-than>
                 </condition>
-                <value>0.0</value>
+                <value>-1.6</value>
             </u_max>
 		</config>
 	</pid-controller>
@@ -866,12 +864,10 @@
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<or>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>7</value>
-					</equals>
-				</or>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>7</value>
+				</equals>
 			</condition>
 		</enable>
 		<input>
@@ -896,7 +892,7 @@
 			<property>/it-autoflight/input/spd-kts</property>
 		</reference>
 		<output>
-			<property>/it-autoflight/internal/target-pitch-deg</property>
+			<property>/it-autoflight/internal/target-fps</property>
 		</output>
 		<config>
 			<Kp>
@@ -908,13 +904,143 @@
 			<Ti>10.0</Ti>        
 			<Td>0.00001</Td>    
             <u_min>
-                <value>2</value>
+                <value>1.6</value>
             </u_min>
             <u_max>
-                <value>25.0</value>
+                <value>133</value>
             </u_max>
 		</config>
 	</pid-controller>
+	
+	<pid-controller>
+		<name>VERTICAL SPEED HOLD</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</equals>
+					<and>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>8</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/prof-vert</property>
+							<value>1</value>
+						</equals>
+					</and>
+				</or>
+			</condition>
+		</enable>
+		<input>
+			<property>/velocities/vertical-speed-fps</property>
+		</input>
+		<reference>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/input/vs</property>
+			<scale>0.01666666</scale>
+		</reference>
+		<reference>
+			<condition>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</equals>
+				</or>
+			</condition>
+			<property>/it-autoflight/internal/target-fps</property>
+		</reference>
+		<reference>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>8</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/prof-fpm</property>
+			<scale>-0.01666666</scale>
+		</reference>
+		<output>
+			<property>/it-autoflight/internal/target-pitch-deg</property>
+		</output>
+		<config>
+			<Kp>
+				<property>/it-autoflight/config/cmd/vs</property>
+			</Kp>
+			<beta>1.0</beta>
+			<alpha>0.1</alpha>
+			<gamma>0.0</gamma>
+			<Ti>5.0</Ti>
+			<Td>0.00001</Td>
+			<u_min>
+				<value>-10</value>
+			</u_min>
+			<u_max>
+				<value>25</value>
+			</u_max>
+		</config>
+	</pid-controller>
+	
+	<!--pid-controller>
+		<name>FPS HOLD</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</equals>
+				</or>
+			</condition>
+		</enable>
+		<input>
+			<property>/velocities/vertical-speed-fps</property>
+		</input>
+		<reference>
+			<property>/it-autoflight/internal/target-fps</property>
+		</reference>
+		<output>
+			<property>/it-autoflight/internal/target-pitch-deg</property>
+		</output>
+		<config>
+			<Kp>
+				<property>/it-autoflight/config/cmd/fps</property>
+			</Kp>
+			<beta>1.0</beta>
+			<alpha>0.1</alpha>
+			<gamma>0.0</gamma>
+			<Ti>5.0</Ti>
+			<Td>0.00001</Td>
+			<u_min>-10</u_min>
+			<u_max>25</u_max>
+		</config>
+	</pid-controller-->
 	
 	<filter>
 		<name>IT-CONTROLLER: TARGET PITCH CMD</name>
@@ -924,7 +1050,7 @@
 		<input>
 			<property>/it-autoflight/internal/target-pitch-deg</property>
 		</input>
-		<output>/it-autoflight/internal/pitch-deg-cmd</output>
+		<output>/it-autoflight/internal/target-pitch</output>
 		<type>noise-spike</type>
 		<max-rate-of-change>10</max-rate-of-change>
 	</filter>
@@ -950,7 +1076,7 @@
 			<property>/orientation/pitch-deg</property>
 		</input>
 		<reference>
-			<property>/it-autoflight/internal/pitch-deg-cmd</property>
+			<property>/it-autoflight/internal/target-pitch</property>
 		</reference>
 		<output>
 			<property>/it-autoflight/internal/elevator-cmd</property>
@@ -1001,7 +1127,7 @@
 		</input>
 		<output>/controls/flight/elevator</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.3</max-rate-of-change>
+		<max-rate-of-change>0.4</max-rate-of-change>
 	</filter>
 	
  <!-- =============================================================== -->
@@ -1370,7 +1496,7 @@
 		<input>
 			<expression>
 				<dif>
-					<property>/it-autoflight/internal/roll-deg-cmd</property>
+					<property>/it-autoflight/internal/target-roll</property>
 					<property>/orientation/roll-deg</property>
 				</dif>
 			</expression>
@@ -1387,7 +1513,7 @@
 		<input>
 			<expression>
 				<dif>
-					<property>/it-autoflight/internal/pitch-deg-cmd</property>
+					<property>/it-autoflight/internal/target-pitch</property>
 					<property>/orientation/pitch-deg</property>
 				</dif>
 			</expression>

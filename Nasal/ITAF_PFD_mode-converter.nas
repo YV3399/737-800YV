@@ -8,9 +8,9 @@ var speedmach = func {
     # Do nothing because it's in FLCH mode.
   } else {
     if (getprop("/it-autoflight/input/kts-mach") == 0) {
-      setprop("/autopilot/display/throttle-mode", "SPEED");
+      setprop("/autopilot/display/throttle-mode", "MCP SPD");
     } else if (getprop("/it-autoflight/input/kts-mach") == 1) {
-      setprop("/autopilot/display/throttle-mode", "MACH");
+      setprop("/autopilot/display/throttle-mode", "MCP SPD");
     }
   }
 }
@@ -26,9 +26,9 @@ setlistener("/it-autoflight/output/thr-mode", func {
   if (latset == 0) {
 	speedmach();
   } else if (latset == 1) {
-	setprop("/autopilot/display/throttle-mode", "IDLE");
+	setprop("/autopilot/display/throttle-mode", "RETARD");
   } else if (latset == 2) {
-	setprop("/autopilot/display/throttle-mode", "THR CLB");
+	setprop("/autopilot/display/throttle-mode", "N1");
   }
 });
 
@@ -54,7 +54,7 @@ setlistener("/it-autoflight/mode/vert", func {
   if (vert == "ALT HLD") {
 	setprop("/autopilot/display/pitch-mode", "ALT HLD");
   } else if (vert == "ALT CAP") {
-	setprop("/autopilot/display/pitch-mode", "ALT CAP");
+	setprop("/autopilot/display/pitch-mode", "ALT ACQ");
   } else if (vert == "V/S") {
 	setprop("/autopilot/display/pitch-mode", "V/S");
   } else if (vert == "G/S") {
