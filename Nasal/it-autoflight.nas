@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 155
+# V3.0.0 Build 156
 # This program is 100% GPL!
 
 print("IT-AUTOFLIGHT: Please Wait!");
@@ -481,9 +481,16 @@ setlistener("/it-autoflight/mode/vert", func {
 	var vertm = getprop("/it-autoflight/mode/vert");
 	if (vertm == "T/O CLB") {
 		reduct.start();
-		latarmt.start();
 	} else {
 		reduct.stop();
+	}
+});
+
+setlistener("/it-autoflight/mode/lat", func {
+	var vertm = getprop("/it-autoflight/mode/lat");
+	if (vertm == "T/O") {
+		latarmt.start();
+	} else {
 		latarmt.stop();
 	}
 });
