@@ -201,7 +201,7 @@
   <predict-simple>
     <name>IAS 5 SECOND PREDICTOR</name>
     <debug>false</debug>
-    <input>/velocities/airspeed-kt</input>
+    <input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
     <output>/it-autoflight/internal/lookahead-5-sec-airspeed-kt</output>
     <seconds>5.0</seconds>
     <filter-gain>0.0</filter-gain>
@@ -210,7 +210,7 @@
   <predict-simple>
     <name>IAS 10 SECOND PREDICTOR</name>
     <debug>false</debug>
-    <input>/velocities/airspeed-kt</input>
+    <input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
     <output>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</output>
     <seconds>10.0</seconds>
     <filter-gain>0.0</filter-gain>
@@ -219,7 +219,7 @@
   <predict-simple>
     <name>MACH 10 SECOND PREDICTOR</name>
     <debug>false</debug>
-    <input>/velocities/mach</input>
+    <input>/instrumentation/airspeed-indicator/indicated-mach</input>
     <output>/it-autoflight/internal/lookahead-10-sec-mach</output>
     <seconds>10.0</seconds>
     <filter-gain>0.0</filter-gain>

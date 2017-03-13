@@ -35,7 +35,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/velocities/airspeed-kt</property>
+			<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
 		</input>
 		<reference>
 			<property>/it-autoflight/input/spd-kts</property>
@@ -83,7 +83,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/velocities/mach</property>
+			<property>/instrumentation/airspeed-indicator/indicated-mach</property>
 			<scale>1000.0</scale>
 		</input>
 		<reference>
