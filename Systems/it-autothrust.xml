@@ -145,7 +145,24 @@
 			<gamma>0.0</gamma>  
 			<Ti>10.0</Ti>       
 			<Td>0.00001</Td>    
-			<u_min>0.08</u_min>  
+			<u_min>
+				<condition>
+					<equals>
+						<property>/it-autoflight/output/retard</property>
+						<value>0</value>
+					</equals>
+				</condition>
+				<value>0.08</value>
+			</u_min>  
+			<u_min>
+				<condition>
+					<equals>
+						<property>/it-autoflight/output/retard</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<value>0</value>
+			</u_min>
 			<u_max>0.2</u_max>  
 		</config>
 	</pid-controller>
