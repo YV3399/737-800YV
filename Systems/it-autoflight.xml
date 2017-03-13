@@ -845,7 +845,7 @@
                         <property>/instrumentation/altimeter/indicated-altitude-ft</property>
                     </greater-than>
                 </condition>
-                <value>133</value>
+                <value>166</value>
             </u_max>
             <u_max>
                 <condition>
@@ -907,7 +907,7 @@
                 <value>1.6</value>
             </u_min>
             <u_max>
-                <value>133</value>
+                <value>166</value>
             </u_max>
 		</config>
 	</pid-controller>
