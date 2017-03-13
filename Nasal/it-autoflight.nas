@@ -190,6 +190,7 @@ var lateral = func {
 	} else if (latset == 2) {
 		setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
 		setprop("/instrumentation/nav[1]/signal-quality-norm", 0);
+		setprop("/it-autoflight/output/loc-armed", 1);
 		setprop("/it-autoflight/mode/arm", "LOC");
 	} else if (latset == 3) {
 		alandt.stop();
