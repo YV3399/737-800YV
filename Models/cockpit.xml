@@ -3385,7 +3385,7 @@
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel-light</property>
+      <property>/controls/lighting/panel-norm</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>2</max>                
@@ -3547,4 +3547,14 @@
     </offsets>
   </model>
 -->
+<effect>
+  <inherits-from>Effects/lightmap</inherits-from>
+  <parameters>
+    <texture n="1">
+      <image>Aircraft/737-800/Models/Effects/LightMap/OH-PANEL_lightMap.png</image>
+    </texture>
+    <factor><use>/controls/lighting/panel-norm</use></factor>
+  </parameters>
+  <object-name>Plane.004</object-name>
+</effect>
 </PropertyList>
