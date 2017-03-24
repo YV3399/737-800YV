@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 156
+# V3.0.0 Build 165
 # This program is 100% GPL!
 
 print("IT-AUTOFLIGHT: Please Wait!");
@@ -46,10 +46,12 @@ var ap_init = func {
 	setprop("/it-autoflight/internal/alt", 10000);
 	setprop("/it-autoflight/internal/prof-alt", 10000);
 	setprop("/it-autoflight/internal/prof-wp-alt", 10000);
+	setprop("/it-autoflight/internal/prof-mode", "XX");
 	setprop("/it-autoflight/internal/cwsr", 0);
 	setprop("/it-autoflight/internal/cwsp", 0);
 	setprop("/it-autoflight/internal/fpa", 0);
 	setprop("/it-autoflight/internal/prof-fpm", 0);
+	setprop("/it-autoflight/internal/top-of-des-nm", 0);
 	setprop("/it-autoflight/autoland/target-vs", "-650");
 	setprop("/it-autoflight/mode/thr", "PITCH");
 	setprop("/it-autoflight/mode/arm", "HDG");
@@ -186,6 +188,8 @@ var lateral = func {
 			setprop("/it-autoflight/output/lat", 1);
 			setprop("/it-autoflight/mode/lat", "LNAV");
 			setprop("/it-autoflight/mode/arm", " ");
+		} else {
+			gui.popupTip("Please make sure you have a route set, and that it is Activated!");
 		}
 	} else if (latset == 2) {
 		setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
@@ -222,6 +226,8 @@ var lat_arm = func {
 		if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
 			setprop("/it-autoflight/input/lat-arm", 1);
 			setprop("/it-autoflight/mode/arm", "LNV");
+		} else {
+			gui.popupTip("Please make sure you have a route set, and that it is Activated!");
 		}
 	} else if (latset == 3) {
 		var hdgnow = int(getprop("/orientation/heading-magnetic-deg")+0.5);
@@ -379,6 +385,8 @@ var vertical = func {
 				setprop("/it-autoflight/mode/arm", " ");
 			}
 			prof_maint.start();
+		} else {
+			gui.popupTip("Please make sure you have a route set, and that it is Activated!");
 		}
 	}
 }
@@ -389,6 +397,8 @@ var vert_arm = func {
 		if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
 			setprop("/it-autoflight/input/prof-arm", 1);
 			setprop("/it-autoflight/mode/prof", "ARMED");
+		} else {
+			gui.popupTip("Please make sure you have a route set, and that it is Activated!");
 		}
 	} else {
 		setprop("/it-autoflight/input/prof-arm", 0);
@@ -782,29 +792,43 @@ var aland1 = func {
 }
 
 # Autoland Stage 2 Logic (Rollout)
+# Not yet working, planned.
 
 # VNAV Profile Mode
 var prof_main = func {
-	var altinput = getprop("/it-autoflight/input/alt");
-	setprop("/it-autoflight/internal/alt", altinput);
-	var wp_curr = getprop("/autopilot/route-manager/current-wp");
-	var vnav_alt_wp = getprop("/autopilot/route-manager/route/wp",wp_curr,"altitude-ft");
-	if (getprop("/it-autoflight/internal/prof-wp-alt") == vnav_alt_wp) {
-		# Do nothing at the moment
+	if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
+		var altinput = getprop("/it-autoflight/input/alt");
+		setprop("/it-autoflight/internal/alt", altinput);
+		var wp_curr = getprop("/autopilot/route-manager/current-wp");
+		var vnav_alt_wp = getprop("/autopilot/route-manager/route/wp",wp_curr,"altitude-ft");
+		if (getprop("/it-autoflight/internal/prof-wp-alt") == vnav_alt_wp) {
+			# Do nothing
+		} else {
+			setprop("/it-autoflight/internal/prof-wp-alt", vnav_alt_wp);
+		}
+		vnav_alt_selector();
 	} else {
-		setprop("/it-autoflight/internal/prof-wp-alt", vnav_alt_wp);
+		setprop("/it-autoflight/input/vert", 4);
 	}
-	vnav_alt_selector();
-	if (getprop("/it-autoflight/mode/prof") == "VNAV CAP") {
-		# Do nothing
-	} else {
-		prof_run();
-	}
-	
 }
 
-setlistener("/it-autoflight/internal/prof-alt", func {
-	if (getprop("/it-autoflight/output/vert") == 8 and getprop("/it-autoflight/mode/prof") == "VNAV CAP") {
+setlistener("/it-autoflight/input/alt", func {
+	if (getprop("/it-autoflight/output/vert") == 8) {
+		vnav_alt_selector();
+		prof_run();
+	}
+});
+
+setlistener("/it-autoflight/internal/prof-wp-alt", func {
+	if (getprop("/it-autoflight/output/vert") == 8) {
+		vnav_alt_selector();
+		prof_run();
+	}
+});
+
+setlistener("/autopilot/route-manager/current-wp", func {
+	if (getprop("/it-autoflight/output/vert") == 8) {
+		vnav_alt_selector();
 		prof_run();
 	}
 });
@@ -812,49 +836,87 @@ setlistener("/it-autoflight/internal/prof-alt", func {
 var prof_run = func {
 	if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
 		var wp_curr = getprop("/autopilot/route-manager/current-wp");
+		var wptnum = getprop("/autopilot/route-manager/current-wp");
 		var vnav_alt_wp = getprop("/autopilot/route-manager/route/wp",wp_curr,"altitude-ft");
-		if (vnav_alt_wp > 100) {
-			var vsnow = getprop("/it-autoflight/internal/vert-speed-fpm");
-			if ((vsnow >= 0 and vsnow < 500) or (vsnow < 0 and vsnow > -500)) {
-				setprop("/it-autoflight/internal/captvs", 100);
-				setprop("/it-autoflight/internal/captvsneg", -100);
-			} else  if ((vsnow >= 500 and vsnow < 1000) or (vsnow < -500 and vsnow > -1000)) {
-				setprop("/it-autoflight/internal/captvs", 150);
-				setprop("/it-autoflight/internal/captvsneg", -150);
-			} else  if ((vsnow >= 1000 and vsnow < 1500) or (vsnow < -1000 and vsnow > -1500)) {
-				setprop("/it-autoflight/internal/captvs", 200);
-				setprop("/it-autoflight/internal/captvsneg", -200);
-			} else  if ((vsnow >= 1500 and vsnow < 2000) or (vsnow < -1500 and vsnow > -2000)) {
-				setprop("/it-autoflight/internal/captvs", 300);
-				setprop("/it-autoflight/internal/captvsneg", -300);
-			} else  if ((vsnow >= 2000 and vsnow < 3000) or (vsnow < -2000 and vsnow > -3000)) {
-				setprop("/it-autoflight/internal/captvs", 450);
-				setprop("/it-autoflight/internal/captvsneg", -450);
-			} else  if ((vsnow >= 3000 and vsnow < 4000) or (vsnow < -3000 and vsnow > -4000)) {
-				setprop("/it-autoflight/internal/captvs", 650);
-				setprop("/it-autoflight/internal/captvsneg", -650);
-			} else  if ((vsnow >= 4000 and vsnow < 5000) or (vsnow < -4000 and vsnow > -5000)) {
-				setprop("/it-autoflight/internal/captvs", 1000);
-				setprop("/it-autoflight/internal/captvsneg", -1000);
-			} else  if ((vsnow >= 5000) or (vsnow < -5000)) {
-				setprop("/it-autoflight/internal/captvs", 1250);
-				setprop("/it-autoflight/internal/captvsneg", -1250);
+		if ((wptnum - 1) < getprop("/autopilot/route-manager/route/num")) {
+			var vnav_alt_wp_prev = getprop("/autopilot/route-manager/route/wp",wp_curr - 1,"altitude-ft");
+			if (vnav_alt_wp_prev > vnav_alt_wp) {
+				vnav_des_todt.start();
+				setprop("/it-autoflight/internal/prof-mode", "DES");
+			} else if (vnav_alt_wp_prev == vnav_alt_wp) {
+				vnav_des_todt.stop();
+				setprop("/it-autoflight/internal/top-of-des-nm", 0);
+				setprop("/it-autoflight/internal/prof-mode", "XX");
+			} else if (vnav_alt_wp_prev <= vnav_alt_wp) {
+				vnav_des_todt.stop();
+				setprop("/it-autoflight/internal/top-of-des-nm", 0);
+				setprop("/it-autoflight/internal/prof-mode", "CLB");
 			}
-			var captvs = getprop("/it-autoflight/internal/captvs");
-			var captvsneg = getprop("/it-autoflight/internal/captvsneg");
-			var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
-			var valt = getprop("/it-autoflight/internal/prof-alt");
-			var vdif = calt - valt;
-			if ((vdif < captvs and vdif > captvsneg) and (vdif > 100 or vdif < -100)) {
-				vnav_alt_sel();
-			} else if (vdif > captvs or vdif < captvsneg) {
-				vnav_flch_sel();
+		} else {
+			vnav_des_todt.stop();
+			setprop("/it-autoflight/internal/top-of-des-nm", 0);
+		}
+		if (vnav_alt_wp > 100) {
+			if (getprop("/it-autoflight/internal/prof-mode") == "CLB") {
+				var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+				var valt = getprop("/it-autoflight/internal/prof-alt");
+				var vdif = calt - valt;
+				if (vdif > 550 or vdif < -550) {
+					prof_clb();
+				} else {
+					vnav_alt_sel();
+				}
+			} else if (getprop("/it-autoflight/internal/prof-mode") == "DES") {
+				var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+				var valt = getprop("/it-autoflight/internal/prof-alt");
+				var vdif = calt - valt;
+				if (vdif > 550 or vdif < -550) {
+					prof_des_spd();
+				} else {
+					vnav_alt_sel();
+				}
+			} else if (getprop("/it-autoflight/internal/prof-mode") == "XX") {
+				# Do nothing for now
 			}
 		} else {
 			setprop("/it-autoflight/input/vert", 4);
 		}
 	} else {
 		setprop("/it-autoflight/input/vert", 4);
+	}
+}
+
+# VNAV Top of Descent
+var vnav_des_tod = func {
+	if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
+		var wp_curr = getprop("/autopilot/route-manager/current-wp");
+		var vnav_alt_wp = getprop("/autopilot/route-manager/route/wp",wp_curr,"altitude-ft");
+		var alt_curr = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+		var dist = getprop("/autopilot/route-manager/wp/dist");
+		var vdist = dist - 1;
+		var alttl = abs(alt_curr - vnav_alt_wp);
+		setprop("/it-autoflight/internal/top-of-des-nm", (alttl / 1000) * 3);
+		if (vdist < getprop("/it-autoflight/internal/top-of-des-nm")) {
+			vnav_des_todt.stop();
+			var salt = getprop("/it-autoflight/internal/alt");
+			var valt = getprop("/it-autoflight/internal/prof-wp-alt");
+			var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+			var sdif = abs(calt - salt);
+			var vdif = abs(calt - valt);
+			if (sdif <= vdif) {
+				setprop("/it-autoflight/internal/prof-alt", getprop("/it-autoflight/internal/alt"));
+			} else if (sdif > vdif) {
+				setprop("/it-autoflight/internal/prof-alt", getprop("/it-autoflight/internal/prof-wp-alt"));
+			}
+			var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+			var valt = getprop("/it-autoflight/internal/prof-alt");
+			var vdif = calt - valt;
+			if (vdif > 550 or vdif < -550) {
+				prof_des_spd();
+			} else {
+				vnav_alt_sel();
+			}
+		}
 	}
 }
 
@@ -865,41 +927,34 @@ var vnav_alt_selector = func {
 	var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 	var sdif = abs(calt - salt);
 	var vdif = abs(calt - valt);
-	if (sdif <= vdif) {
-		setprop("/it-autoflight/internal/prof-alt", getprop("/it-autoflight/internal/alt"));
-	} else if (sdif > vdif) {
-		setprop("/it-autoflight/internal/prof-alt", getprop("/it-autoflight/internal/prof-wp-alt"));
+	if (getprop("/it-autoflight/internal/prof-mode") == "CLB") {
+		if (sdif <= vdif) {
+			setprop("/it-autoflight/internal/prof-alt", getprop("/it-autoflight/internal/alt"));
+		} else if (sdif > vdif) {
+			setprop("/it-autoflight/internal/prof-alt", getprop("/it-autoflight/internal/prof-wp-alt"));
+		}
+	} else if (getprop("/it-autoflight/internal/prof-mode") == "DES") {
+		var dist = getprop("/autopilot/route-manager/wp/dist");
+		var vdist = dist - 1;
+		if (vdist < getprop("/it-autoflight/internal/top-of-des-nm")) {
+			if (sdif <= vdif) {
+				setprop("/it-autoflight/internal/prof-alt", getprop("/it-autoflight/internal/alt"));
+			} else if (sdif > vdif) {
+				setprop("/it-autoflight/internal/prof-alt", getprop("/it-autoflight/internal/prof-wp-alt"));
+			}
+		}
 	}
 }
 
 # VNAV Selector
 var vnav_alt_sel = func {
-	if (getprop("/it-autoflight/output/prof-vert") == 0) {
-		return 0;
-	} else {
-		setprop("/it-autoflight/internal/max-pitch", 8);
-		setprop("/it-autoflight/internal/min-pitch", -5);
-		setprop("/it-autoflight/output/thr-mode", 0);
-		setprop("/it-autoflight/output/prof-vert", 0);
-		setprop("/it-autoflight/mode/thr", "THRUST");
-		setprop("/it-autoflight/mode/prof", "VNAV CAP");
-		vnav_minmaxt.start();
-	}
-}
-var vnav_flch_sel = func {
-	if (getprop("/it-autoflight/internal/prof-alt") > getprop("/instrumentation/altimeter/indicated-altitude-ft")) {
-		if (getprop("/it-autoflight/mode/prof") == "SPD CLB") {
-			# Do nothing because VNAV is already following SPD CLB
-		} else {
-			prof_clb();
-		}
-	} else if (getprop("/it-autoflight/internal/prof-alt") < getprop("/instrumentation/altimeter/indicated-altitude-ft")) {
-		if (getprop("/it-autoflight/mode/prof") == "SPD DES") {
-			# Do nothing because VNAV is already following SPD DES
-		} else {
-			prof_des();
-		}
-	}
+	setprop("/it-autoflight/internal/max-pitch", 8);
+	setprop("/it-autoflight/internal/min-pitch", -5);
+	setprop("/it-autoflight/output/thr-mode", 0);
+	setprop("/it-autoflight/output/prof-vert", 0);
+	setprop("/it-autoflight/mode/thr", "THRUST");
+	setprop("/it-autoflight/mode/prof", "VNAV CAP");
+	vnav_minmaxt.start();
 }
 
 # VNAV Climb
@@ -908,17 +963,25 @@ var prof_clb = func {
 	setprop("/it-autoflight/output/thr-mode", 2);
 	setprop("/it-autoflight/mode/thr", " PITCH");
 	setprop("/it-autoflight/output/prof-vert", 4);
-	setprop("/it-autoflight/mode/prof", "SPD CLB");
+	setprop("/it-autoflight/mode/prof", "VNAV SPD");
 	vnav_altcaptt.start();
 }
 
 # VNAV Descent
-var prof_des = func {
+var prof_des_spd = func {
+	vnav_des_fpmt.stop();
+	setprop("/it-autoflight/output/thr-mode", 1);
+	setprop("/it-autoflight/mode/thr", " PITCH");
+	setprop("/it-autoflight/output/prof-vert", 4);
+	setprop("/it-autoflight/mode/prof", "VNAV SPD");
+	vnav_altcaptt.start();
+}
+var prof_des_pth = func {
 	vnav_des_fpmt.start();
 	setprop("/it-autoflight/output/thr-mode", 0);
 	setprop("/it-autoflight/mode/thr", "THRUST");
 	setprop("/it-autoflight/output/prof-vert", 1);
-	setprop("/it-autoflight/mode/prof", "PROF DES");
+	setprop("/it-autoflight/mode/prof", "VNAV PTH");
 	vnav_altcaptt.start();
 }
 var vnav_des_fpm = func {
@@ -1030,6 +1093,10 @@ setlistener("/it-autoflight/input/hdg", func {
 	setprop("/autopilot/settings/heading-bug-deg", getprop("/it-autoflight/input/hdg"));
 });
 
+setlistener("/it-autoflight/internal/alt", func {
+	setprop("/autopilot/settings/target-altitude-ft", getprop("/it-autoflight/internal/alt"));
+});
+
 # Timers
 var altcaptt = maketimer(0.5, altcapt);
 var thrustmodet = maketimer(0.5, thrustmode);
@@ -1044,7 +1111,8 @@ var reduct = maketimer(0.5, toga_reduc);
 var latarmt = maketimer(0.5, latarms);
 var fpa_calct = maketimer(0.1, fpa_calc);
 var lnavwptt = maketimer(1, lnavwpt);
-var prof_maint = maketimer(1, prof_main);
+var prof_maint = maketimer(0.5, prof_main);
 var vnav_altcaptt = maketimer(0.5, vnav_altcapt);
 var vnav_minmaxt = maketimer(0.5, vnav_minmax);
 var vnav_des_fpmt = maketimer(0.5, vnav_des_fpm);
+var vnav_des_todt = maketimer(0.5, vnav_des_tod);
