@@ -270,22 +270,23 @@
 		<roll>
 			<umin>-0.40</umin>
 			<umax>0.40</umax>
-			<kp>0.07</kp>
+			<kp>0.06</kp>
 			<kp-vloc>0.09</kp-vloc>
 			<ti>10.0</ti>
 			<td>0.00001</td>
 			<kp-cws>0.07</kp-cws>
 		</roll>
 		<pitch>
-			<umin>-0.21</umin>
-			<umax>0.21</umax>
+			<umin>-0.30</umin>
+			<umax>0.30</umax>
 			<kp>-0.10</kp>
 			<ti>10.0</ti>
 			<td>0.0001</td>
 			<kp-cws>-0.06</kp-cws>
 		</pitch>
 		<cmd>
-			<roll-scale>4</roll-scale>
+			<roll-kp>-1.9</roll-kp>
+			<roll-scale>1.5</roll-scale>
 			<vorloc>-3.0</vorloc>
 			<alt>0.03</alt>
 			<vs>0.10</vs>

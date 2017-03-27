@@ -250,10 +250,9 @@
  <!-- Lateral  Modes                                                  -->
  <!-- =============================================================== -->
  
-	<filter>
-		<name>ROLL CONTROLLER</name>
+	<pi-simple-controller>
+		<name>ROLL CONTROLLER: HDG/LNAV</name>
 		<debug>false</debug>
-		<type>gain</type>
 		<enable>
 			<condition>
 				<or>
@@ -264,14 +263,6 @@
 					<equals>
 						<property>/it-autoflight/output/lat</property>
 						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>4</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>5</value>
 					</equals>
 				</or>
 			</condition>
@@ -324,63 +315,56 @@
 				<property>/it-autoflight/config/cmd/roll-scale</property>
 			</scale>
 		</input>
-		<input>
-			<condition>
-				<or>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>4</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>5</value>
-					</equals>
-				</or>
-			</condition>
+		<reference>
 			<value>0</value>
-		</input>
+		</reference>
 		<output>
 			<property>/it-autoflight/internal/target-roll-deg</property>
 		</output>
-		<gain>0.5</gain>
-		<u_min>
-			<condition>
-				<not-equals>
-					<property>/it-autoflight/output/lat</property>
-					<value>1</value>
-				</not-equals>
-			</condition>
-			<property>/it-autoflight/input/bank-limit</property>
-			<scale>-1</scale>
-		</u_min>
-		<u_min>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/lat</property>
-					<value>1</value>
-				</equals>
-			</condition>
-			<value>-25</value>
-		</u_min>
-		<u_max>
-			<condition>
-				<not-equals>
-					<property>/it-autoflight/output/lat</property>
-					<value>1</value>
-				</not-equals>
-			</condition>
-			<property>/it-autoflight/input/bank-limit</property>
-		</u_max>
-		<u_max>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/lat</property>
-					<value>1</value>
-				</equals>
-			</condition>
-			<value>25</value>
-		</u_max>
-	</filter>
+		<config>
+			<Kp>
+				<property>/it-autoflight/config/cmd/roll-kp</property>
+			</Kp>
+			<Ki>0.0</Ki>
+			<min>
+				<condition>
+					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>1</value>
+					</not-equals>
+				</condition>
+				<property>/it-autoflight/input/bank-limit</property>
+				<scale>-1</scale>
+			</min>
+			<min>
+				<condition>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<value>-25</value>
+			</min>
+			<max>
+				<condition>
+					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>1</value>
+					</not-equals>
+				</condition>
+				<property>/it-autoflight/input/bank-limit</property>
+			</max>
+			<max>
+				<condition>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<value>25</value>
+			</max>
+		</config>
+	</pi-simple-controller>
 	
 	<pid-controller>
 		<name>VORLOC TRK</name>
@@ -465,7 +449,38 @@
 			<property>/orientation/roll-deg</property>
 		</input>
 		<reference>
+			<condition>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>2</value>
+					</equals>
+				</or>
+			</condition>
 			<property>/it-autoflight/internal/target-roll</property>
+		</reference>
+		<reference>
+			<condition>
+				<or>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>5</value>
+					</equals>
+				</or>
+			</condition>
+			<value>0</value>
 		</reference>
 		<output>
 			<property>/it-autoflight/internal/aileron-cmd</property>
