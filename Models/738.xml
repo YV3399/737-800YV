@@ -72,6 +72,33 @@
     <object-name>windows.ext</object-name>
     <object-name>rearwindows.ext</object-name>
   </effect>
+  <effect>
+    <inherits-from>Effects/model</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>doorLF</object-name>
+    <object-name>EexitLF</object-name>
+    <object-name>EexitLR</object-name>
+    <object-name>doorLR</object-name>
+    <object-name>doorRR</object-name>
+    <object-name>EexitRF</object-name>
+    <object-name>EexitRR</object-name>
+    <object-name>doorRF</object-name>
+    <object-name>cargodoorF</object-name>
+    <object-name>cargodoorR</object-name>
+    <object-name>lhfairing</object-name>
+    <object-name>geardoor</object-name>
+    <object-name>engnose.001</object-name>
+    <object-name>lreverserib_1</object-name>
+    <object-name>rhngdoor</object-name>
+    <object-name>lhngdoor</object-name>
+    <object-name>rhwtobfairing</object-name>
+    <object-name>geardoorrh</object-name>
+    <object-name>No2engfancase</object-name>
+    <object-name>No2reverser_1</object-name>
+    <object-name>fan2</object-name>
+    <object-name>vstab</object-name>
+    <object-name>rudder</object-name>
+  </effect>
 
   <model n="100">
     <name>Cockpit</name>
@@ -146,7 +173,7 @@
   <!-- normal -->
   <model>
     <name>Winglet</name>
-    <path>Aircraft/737-800/Models/winglet.xml</path>
+    <path>winglet.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -157,7 +184,7 @@
   <!-- split smictar -->
   <model>
     <name>Winglet</name>
-    <path>Models/winglet2.xml</path>
+    <path>winglet2.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
