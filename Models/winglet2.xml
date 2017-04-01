@@ -5,6 +5,13 @@
  <path>winglet2.ac</path> 
 
  
+  <effect>
+    <inherits-from>Effects/model</inherits-from>
+    <object-name>lhwinglet.001</object-name>
+    <object-name>rhwinglet.001</object-name>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
+</effect>
 
 </PropertyList>
 
