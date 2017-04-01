@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 165
+# V3.0.0 Build 167
 # This program is 100% GPL!
 
 print("IT-AUTOFLIGHT: Please Wait!");
@@ -192,10 +192,14 @@ var lateral = func {
 			gui.popupTip("Please make sure you have a route set, and that it is Activated!");
 		}
 	} else if (latset == 2) {
-		setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
-		setprop("/instrumentation/nav[1]/signal-quality-norm", 0);
-		setprop("/it-autoflight/output/loc-armed", 1);
-		setprop("/it-autoflight/mode/arm", "LOC");
+		if (getprop("/it-autoflight/output/lat") == 2) {
+			# Do nothing because VOR/LOC is active
+		} else {
+			setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
+			setprop("/instrumentation/nav[1]/signal-quality-norm", 0);
+			setprop("/it-autoflight/output/loc-armed", 1);
+			setprop("/it-autoflight/mode/arm", "LOC");
+		}
 	} else if (latset == 3) {
 		alandt.stop();
 		alandt1.stop();
@@ -283,17 +287,21 @@ var vertical = func {
 		thrustmode();
 	} else if (vertset == 2) {
 		if (getprop("/it-autoflight/output/lat") == 2) {
-			# Do nothing because VORLOC is active
+			# Do nothing because VOR/LOC is active
 		} else {
 			setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
 			setprop("/instrumentation/nav[1]/signal-quality-norm", 0);
 			setprop("/it-autoflight/output/loc-armed", 1);
 		}
-		setprop("/instrumentation/nav[0]/gs-rate-of-climb", 0);
-		setprop("/instrumentation/nav[1]/gs-rate-of-climb", 0);
-		setprop("/it-autoflight/output/appr-armed", 1);
-		setprop("/it-autoflight/mode/arm", "ILS");
-		setprop("/it-autoflight/autoland/target-vs", "-650");
+		if ((getprop("/it-autoflight/output/vert") == 2) or (getprop("/it-autoflight/output/vert") == 6)) {
+			# Do nothing because G/S or LAND 3 or FLARE is active
+		} else {
+			setprop("/instrumentation/nav[0]/gs-rate-of-climb", 0);
+			setprop("/instrumentation/nav[1]/gs-rate-of-climb", 0);
+			setprop("/it-autoflight/output/appr-armed", 1);
+			setprop("/it-autoflight/mode/arm", "ILS");
+			setprop("/it-autoflight/autoland/target-vs", "-650");
+		}
 	} else if (vertset == 3) {
 		alandt.stop();
 		alandt1.stop();
@@ -480,6 +488,7 @@ var togasel = func {
 		setprop("/it-autoflight/input/spd-kts", iasnow);
 		setprop("/it-autoflight/input/kts-mach", 0);
 		setprop("/it-autoflight/mode/vert", "G/A CLB");
+		setprop("/it-autoflight/input/lat", 3);
 	} else {
 		setprop("/it-autoflight/input/lat", 5);
 		setprop("/it-autoflight/mode/lat", "T/O");
