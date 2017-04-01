@@ -774,4 +774,34 @@
         <object-name>ible</object-name>
     </animation> 
 
+  <effect>
+    <inherits-from>Effects/model</inherits-from>
+    <object-name>winginbd</object-name>
+    <object-name>obwing</object-name><!--
+    <object-name>oble</object-name>-->
+    <object-name>lhfairing</object-name>
+    <object-name>panel1upper</object-name>
+    <object-name>panelupperob</object-name>
+    <object-name>lowerpanel</object-name>
+    <object-name>lowerpanel1</object-name>
+    <object-name>flapI/B</object-name>
+    <object-name>flapO/B</object-name>
+    <object-name>aftflapI/B</object-name>
+    <object-name>aftflapO/B</object-name>
+    <object-name>spoiler1</object-name>
+    <object-name>spoiler2</object-name>
+    <object-name>spoiler3</object-name>
+    <object-name>spoiler4</object-name>
+    <object-name>spoiler5</object-name>
+    <object-name>spoiler6</object-name>
+    <object-name>lhaileron</object-name>
+    <object-name>ailerontablh</object-name>
+    <object-name>fairing1</object-name>
+    <object-name>fairing2</object-name>
+    <object-name>fairing2.001</object-name>
+    
+    <object-name>engnose.001</object-name>
+    <object-name>lreverserib_1</object-name>
+</effect>
+  
 </PropertyList>

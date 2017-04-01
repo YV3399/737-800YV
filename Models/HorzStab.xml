@@ -84,6 +84,15 @@
         <texture>chrome.png</texture>
           <object-name>lhstab</object-name>  
           <object-name>rhstab</object-name>
-    </animation>
+    </animation><!--
 
+  <effect>
+    <inherits-from>Effects/model</inherits-from>
+  <object-name>lhelevator</object-name>
+  <object-name>lhelevatortab</object-name>
+  <object-name>rhelevator</object-name>
+  <object-name>rhelevatortab</object-name>
+  <object-name>lhstab</object-name>
+  <object-name>rhstab</object-name>
+</effect>-->
 </PropertyList>

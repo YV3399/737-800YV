@@ -773,5 +773,35 @@
           <object-name>iblerh</object-name>
     </animation>
 
+  <effect>
+    <inherits-from>Effects/model</inherits-from>
+    <object-name>winginbd.001</object-name>
+    <object-name>obwing.001</object-name><!--
+    <object-name>rhoble</object-name>-->
+    <object-name>rhwtobfairing</object-name>
+    <object-name>rhpanel1upper</object-name>
+    <object-name>panelupperob.001</object-name>
+    <object-name>rhlowerpanel</object-name>
+    <object-name>lowerpanel1.001</object-name>
+    <object-name>rhflapI/B</object-name>
+    <object-name>rhflapO/B</object-name>
+    <object-name>rhaftflapI/B</object-name>
+    <object-name>rhaftflapO/B</object-name>
+    <object-name>spoiler7</object-name>
+    <object-name>spoiler8</object-name>
+    <object-name>spoiler9</object-name>
+    <object-name>spoiler10</object-name>
+    <object-name>spoiler11</object-name>
+    <object-name>spoiler12</object-name>
+    <object-name>rhaileron</object-name>
+    <object-name>ailerontabrh</object-name>
+    <object-name>fairing4</object-name>
+    <object-name>fairing5</object-name>
+    <object-name>fairing6</object-name>
+    
+    <object-name>engnose.001</object-name>
+    <object-name>lreverserib_1</object-name><!--
+    <object-name>fwdpylon.001</object-name>-->
+</effect>
 </PropertyList>
 

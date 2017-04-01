@@ -5,6 +5,10 @@
  <path>winglet.ac</path> 
 
  
+  <effect>
+    <inherits-from>Effects/model</inherits-from>
+    <object-name>WingletL</object-name>
+</effect>
 
 </PropertyList>
 
