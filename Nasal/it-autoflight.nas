@@ -475,6 +475,7 @@ var latarms = func {
 setlistener("/it-autoflight/input/toga", func {
 	if (getprop("/it-autoflight/input/toga") == 1) {
 		setprop("/it-autoflight/input/vert", 7);
+		vertical();
 		setprop("/it-autoflight/output/loc-armed", 0);
 		setprop("/it-autoflight/output/appr-armed", 0);
 		setprop("/it-autoflight/input/toga", 0);
