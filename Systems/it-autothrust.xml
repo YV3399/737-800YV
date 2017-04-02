@@ -224,7 +224,6 @@
 			</condition>
 		</enable>
 		<input>
-			
 			<property>/controls/flight/throttle-cmd</property>
 		</input>
 		<output>

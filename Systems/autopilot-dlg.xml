@@ -698,9 +698,11 @@
                 <pref-width>70</pref-width>
 				<legend>AUTO</legend>
 				<binding>
-				<command>property-assign</command>
-				<property>/it-autoflight/input/bank-limit</property>
-				<value>30</value>
+				<command>nasal</command>
+				<script>
+				var dbl = getprop("/it-autoflight/settings/default-bank-limit");
+				setprop("/it-autoflight/input/bank-limit", dbl);
+				</script>
 				</binding>
 			</button>
 			

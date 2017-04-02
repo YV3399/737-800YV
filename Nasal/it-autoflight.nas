@@ -21,7 +21,7 @@ var ap_init = func {
 	setprop("/it-autoflight/input/lat-arm", 0);
 	setprop("/it-autoflight/input/vert", 7);
 	setprop("/it-autoflight/input/prof-arm", 0);
-	setprop("/it-autoflight/input/bank-limit", 30);
+	setprop("/it-autoflight/input/bank-limit", getprop("/it-autoflight/settings/default-bank-limit"));
 	setprop("/it-autoflight/input/trk", 0);
 	setprop("/it-autoflight/input/toga", 0);
 	setprop("/it-autoflight/output/ap1", 0);
