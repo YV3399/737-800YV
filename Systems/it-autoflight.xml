@@ -9,11 +9,11 @@
  <!-- =============================================================== -->
 
 	<predict-simple>
-		<name>ALTITUDE 5 SECONDS AHEAD</name>
+		<name>ALTITUDE 7 SECONDS AHEAD</name>
 		<debug>false</debug>
 		<input>/instrumentation/altimeter/indicated-altitude-ft</input>
-		<output>/it-autoflight/internal/altitude-5-sec-ahead</output>
-		<seconds>5.0</seconds>
+		<output>/it-autoflight/internal/altitude-7-sec-ahead</output>
+		<seconds>7.0</seconds>
 		<filter-gain>0.1</filter-gain>
 	</predict-simple>
 
@@ -215,6 +215,15 @@
 		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
 		<output>/it-autoflight/internal/lookahead-10-sec-mach</output>
 		<seconds>10.0</seconds>
+		<filter-gain>0.0</filter-gain>
+	</predict-simple>
+	
+	<predict-simple>
+		<name>MACH 15 SECOND PREDICTOR</name>
+		<debug>false</debug>
+		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
+		<output>/it-autoflight/internal/lookahead-15-sec-mach</output>
+		<seconds>15.0</seconds>
 		<filter-gain>0.0</filter-gain>
 	</predict-simple>
 
@@ -586,7 +595,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/it-autoflight/internal/altitude-5-sec-ahead</property>
+			<property>/it-autoflight/internal/altitude-7-sec-ahead</property>
 		</input>
 		<reference>
 			<condition>
@@ -788,7 +797,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-mach</property>
+			<property>/it-autoflight/internal/lookahead-15-sec-mach</property>
 			<scale>500.0</scale>
 		</input>
 		<reference>
@@ -941,7 +950,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-mach</property>
+			<property>/it-autoflight/internal/lookahead-15-sec-mach</property>
 			<scale>500.0</scale>
 		</input>
 		<reference>
