@@ -23,7 +23,7 @@
  </animation>
 
  <effect>
-  <inherits-from>Effects/model</inherits-from>
+  <inherits-from>Effects/lightmap</inherits-from>
   <parameters>
     <texture n="1">
       <image>Aircraft/737-800/Models/Effects/LightMap/logolight_lightmap.png</image>

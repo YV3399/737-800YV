@@ -3521,32 +3521,7 @@
     <pitch-deg>125</pitch-deg>
   </offsets>
 </model>
-  <!-- 
-  <model>
-    <name>EFB</name>
-    <path>Aircraft/737-800/Models/Instruments/EFB/EFB.xml</path>
-    <offsets>
-      <roll-deg>-45.0</roll-deg>
-      <pitch-deg>-65.0</pitch-deg>
-      <heading-deg>0.0</heading-deg> 
-      <x-m>1.07787</x-m>
-      <y-m>-1.01744</y-m>
-      <z-m>0.4582</z-m> 
-    </offsets>
-  </model>
-  <model>
-    <name>EFB2</name>
-    <path>Aircraft/737-800/Models/Instruments/EFB/EFB.xml</path>
-    <offsets>
-      <roll-deg>45.0</roll-deg>
-      <pitch-deg>-65.0</pitch-deg>
-      <heading-deg>0.0</heading-deg> 
-      <x-m>1.07787</x-m>
-      <y-m>1.0</y-m>
-      <z-m>0.4582</z-m> 
-    </offsets>
-  </model>
--->
+
 <effect>
   <inherits-from>Effects/lightmap</inherits-from>
   <parameters>
@@ -3557,4 +3532,5 @@
   </parameters>
   <object-name>Plane.004</object-name>
 </effect>
+
 </PropertyList>
