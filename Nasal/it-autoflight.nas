@@ -329,7 +329,7 @@ var vertical = func {
 		var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 		var alt = getprop("/it-autoflight/internal/alt");
 		var dif = calt - alt;
-		if (dif < 550 and dif > -550) {
+		if (dif < 250 and dif > -250) {
 			alt_on();
 		} else {
 			flch_on();
@@ -377,7 +377,7 @@ var vertical = func {
 		prof_sys_stop();
 		thrustmodet.start();
 	} else if (vertset == 8) {
-		if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
+		if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1 and getprop("/it-autoflight/internal/prof-wp-alt") >= 100) {
 			alandt.stop();
 			alandt1.stop();
 			setprop("/it-autoflight/output/appr-armed", 0);
@@ -394,7 +394,7 @@ var vertical = func {
 			}
 			prof_maint.start();
 		} else {
-			gui.popupTip("Please make sure you have a route set, and that it is Activated!");
+			gui.popupTip("Please make sure you have a route, and waypoints with altitude restrictions set, and that the route is Activated!");
 		}
 	}
 }
@@ -402,11 +402,11 @@ var vertical = func {
 var vert_arm = func {
 	var vertset = getprop("/it-autoflight/input/vert");
 	if (vertset == 8) {
-		if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
+		if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1 and getprop("/it-autoflight/internal/prof-wp-alt") >= 100) {
 			setprop("/it-autoflight/input/prof-arm", 1);
 			setprop("/it-autoflight/mode/prof", "ARMED");
 		} else {
-			gui.popupTip("Please make sure you have a route set, and that it is Activated!");
+			gui.popupTip("Please make sure you have a route, and waypoints with altitude restrictions set, and that the route is Activated!");
 		}
 	} else {
 		setprop("/it-autoflight/input/prof-arm", 0);
@@ -492,6 +492,7 @@ var togasel = func {
 		setprop("/it-autoflight/input/lat", 3);
 	} else {
 		setprop("/it-autoflight/input/lat", 5);
+		lateral();
 		setprop("/it-autoflight/mode/lat", "T/O");
 		setprop("/it-autoflight/mode/vert", "T/O CLB");
 	}
@@ -817,6 +818,9 @@ var prof_main = func {
 			setprop("/it-autoflight/internal/prof-wp-alt", vnav_alt_wp);
 		}
 		vnav_alt_selector();
+		if (getprop("/it-autoflight/internal/prof-wp-alt") < 100) {
+			setprop("/it-autoflight/input/vert", 4);
+		}
 	} else {
 		setprop("/it-autoflight/input/vert", 4);
 	}
@@ -859,28 +863,44 @@ var prof_run = func {
 		var vnav_alt_wp = getprop("/autopilot/route-manager/route/wp",wp_curr,"altitude-ft");
 		if ((wptnum - 1) < getprop("/autopilot/route-manager/route/num")) {
 			var vnav_alt_wp_prev = getprop("/autopilot/route-manager/route/wp",wp_curr - 1,"altitude-ft");
-			if (vnav_alt_wp_prev > vnav_alt_wp) {
-				vnav_des_todt.start();
-				setprop("/it-autoflight/internal/prof-mode", "DES");
-			} else if (vnav_alt_wp_prev == vnav_alt_wp) {
-				vnav_des_todt.stop();
-				setprop("/it-autoflight/internal/top-of-des-nm", 0);
-				setprop("/it-autoflight/internal/prof-mode", "XX");
-			} else if (vnav_alt_wp_prev <= vnav_alt_wp) {
-				vnav_des_todt.stop();
-				setprop("/it-autoflight/internal/top-of-des-nm", 0);
-				setprop("/it-autoflight/internal/prof-mode", "CLB");
+			var altcurr = getprop("/instrumentation/altimeter/indicated-altitude-ft");
+			if (vnav_alt_wp_prev >= 100) {
+				if (vnav_alt_wp_prev > vnav_alt_wp) {
+					vnav_des_todt.start();
+					setprop("/it-autoflight/internal/prof-mode", "DES");
+				} else if (vnav_alt_wp_prev == vnav_alt_wp) {
+					vnav_des_todt.stop();
+					setprop("/it-autoflight/internal/top-of-des-nm", 0);
+					setprop("/it-autoflight/internal/prof-mode", "XX");
+				} else if (vnav_alt_wp_prev <= vnav_alt_wp) {
+					vnav_des_todt.stop();
+					setprop("/it-autoflight/internal/top-of-des-nm", 0);
+					setprop("/it-autoflight/internal/prof-mode", "CLB");
+				}
+			} else if (vnav_alt_wp_prev < 100) {
+				if (altcurr > vnav_alt_wp) {
+					vnav_des_todt.start();
+					setprop("/it-autoflight/internal/prof-mode", "DES");
+				} else if (altcurr == vnav_alt_wp) {
+					vnav_des_todt.stop();
+					setprop("/it-autoflight/internal/top-of-des-nm", 0);
+					setprop("/it-autoflight/internal/prof-mode", "XX");
+				} else if (altcurr <= vnav_alt_wp) {
+					vnav_des_todt.stop();
+					setprop("/it-autoflight/internal/top-of-des-nm", 0);
+					setprop("/it-autoflight/internal/prof-mode", "CLB");
+				}
 			}
 		} else {
 			vnav_des_todt.stop();
 			setprop("/it-autoflight/internal/top-of-des-nm", 0);
 		}
-		if (vnav_alt_wp > 100) {
+		if (vnav_alt_wp >= 100) {
 			if (getprop("/it-autoflight/internal/prof-mode") == "CLB") {
 				var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 				var valt = getprop("/it-autoflight/internal/prof-alt");
 				var vdif = calt - valt;
-				if (vdif > 550 or vdif < -550) {
+				if (vdif > 250 or vdif < -250) {
 					prof_clb();
 				} else {
 					vnav_alt_sel();
@@ -889,7 +909,7 @@ var prof_run = func {
 				var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 				var valt = getprop("/it-autoflight/internal/prof-alt");
 				var vdif = calt - valt;
-				if (vdif > 550 or vdif < -550) {
+				if (vdif > 250 or vdif < -250) {
 					prof_des_spd();
 				} else {
 					vnav_alt_sel();
