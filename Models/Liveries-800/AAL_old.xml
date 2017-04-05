@@ -4,8 +4,9 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">American Airlines (old livery)</name>
-            <texture>/Liveries/AAL_old.png</texture>            
+            <name type="string">American Airlines (old)</name>
+            <texture>/Liveries-800/AAL_old.png</texture>       
+			<newwinglets type="bool">false</newwinglets>            
         </livery>        
     </model>
 </sim>
