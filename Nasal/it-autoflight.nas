@@ -309,7 +309,7 @@ var vertical = func {
 		var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 		var alt = getprop("/it-autoflight/internal/alt");
 		var dif = calt - alt;
-		var pitchdeg = getprop("/orientation/pitch-deg");
+		var pitchdeg = getprop("/it-autoflight/internal/target-pitch");
 		if (calt < alt) {
 			setprop("/it-autoflight/internal/max-pitch", pitchdeg);
 		} else if (calt > alt) {
