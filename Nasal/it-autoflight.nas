@@ -60,7 +60,7 @@ var ap_init = func {
 	setprop("/it-autoflight/mode/prof", "NONE");
 	setprop("/it-autoflight/input/spd-kts", 200);
 	setprop("/it-autoflight/input/spd-mach", 0.68);
-	update_arms();
+	update_armst.start();
 	thrustmode();
 	print("IT-AUTOFLIGHT: Done!");
 }
@@ -693,7 +693,6 @@ var atoffchk = func{
 var update_arms = func {
 	update_locarmelec();
 	update_apparmelec();
-	settimer(update_arms, 0.5);
 }
 
 var update_locarmelec = func {
@@ -1137,6 +1136,7 @@ setlistener("/it-autoflight/internal/alt", func {
 });
 
 # Timers
+var update_armst = maketimer(0.5, update_arms);
 var altcaptt = maketimer(0.5, altcapt);
 var thrustmodet = maketimer(0.5, thrustmode);
 var minmaxtimer = maketimer(0.5, minmax);
