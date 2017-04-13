@@ -441,20 +441,16 @@
 		</input>
 		<reference>
 			<condition>
-				<or>
-					<equals>
+				<and>
+					<not-equals>
 						<property>/it-autoflight/output/lat</property>
-						<value>0</value>
-					</equals>
-					<equals>
+						<value>4</value>
+					</not-equals>
+					<not-equals>
 						<property>/it-autoflight/output/lat</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>2</value>
-					</equals>
-				</or>
+						<value>5</value>
+					</not-equals>
+				</and>
 			</condition>
 			<property>/it-autoflight/internal/target-roll</property>
 		</reference>
@@ -479,10 +475,16 @@
 		<config>
 			<Kp>
 				<condition>
-					<not-equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>2</value>
-					</not-equals>
+					<and>
+						<not-equals>
+							<property>/it-autoflight/output/lat</property>
+							<value>2</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/lat</property>
+							<value>4</value>
+						</not-equals>
+					</and>
 				</condition>
 				<property>/it-autoflight/config/roll/kp</property>
 			</Kp>
@@ -1571,20 +1573,16 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<or>
-					<equals>
+				<and>
+					<not-equals>
 						<property>/it-autoflight/output/lat</property>
-						<value>0</value>
-					</equals>
-					<equals>
+						<value>4</value>
+					</not-equals>
+					<not-equals>
 						<property>/it-autoflight/output/lat</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>2</value>
-					</equals>
-				</or>
+						<value>5</value>
+					</not-equals>
+				</and>
 			</condition>
 			<expression>
 				<dif>
