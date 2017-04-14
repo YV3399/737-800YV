@@ -65,7 +65,7 @@ setlistener("/it-autoflight/mode/vert", func {
 		setprop("/autopilot/display/pitch-mode", "MCP SPD");
 	} else if (vert == "FPA") {
 		setprop("/autopilot/display/pitch-mode", "FPA");
-	} else if (vert == "LAND 3") {
+	} else if (vert == "LAND") {
 		setprop("/autopilot/display/pitch-mode", "LAND 3");
 		setprop("/autopilot/display/pitch-mode-armed", "FLARE");
 	} else if (vert == "FLARE") {

@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 169
+# V3.0.0 Build 171
 # This program is 100% GPL!
 
 print("IT-AUTOFLIGHT: Please Wait!");
@@ -58,7 +58,7 @@ var ap_init = func {
 	setprop("/it-autoflight/mode/lat", "T/O");
 	setprop("/it-autoflight/mode/vert", "T/O CLB");
 	setprop("/it-autoflight/mode/prof", "NONE");
-	setprop("/it-autoflight/input/spd-kts", 200);
+	setprop("/it-autoflight/input/spd-kts", 250);
 	setprop("/it-autoflight/input/spd-mach", 0.68);
 	update_armst.start();
 	thrustmode();
@@ -294,7 +294,7 @@ var vertical = func {
 			setprop("/it-autoflight/output/loc-armed", 1);
 		}
 		if ((getprop("/it-autoflight/output/vert") == 2) or (getprop("/it-autoflight/output/vert") == 6)) {
-			# Do nothing because G/S or LAND 3 or FLARE is active
+			# Do nothing because G/S or LAND or FLARE is active
 		} else {
 			setprop("/instrumentation/nav[0]/gs-rate-of-climb", 0);
 			setprop("/instrumentation/nav[1]/gs-rate-of-climb", 0);
@@ -359,7 +359,7 @@ var vertical = func {
 		thrustmode();
 	} else if (vertset == 6) {
 		setprop("/it-autoflight/output/vert", 6);
-		setprop("/it-autoflight/mode/vert", "LAND 3");
+		setprop("/it-autoflight/mode/vert", "LAND");
 		setprop("/it-autoflight/mode/arm", " ");
 		thrustmode();
 		alandt.stop();
@@ -749,6 +749,7 @@ var apparmcheck = func {
 }
 
 var make_appr_active = func {
+	prof_sys_stop();
 	setprop("/it-autoflight/output/appr-armed", 0);
 	setprop("/it-autoflight/output/vert", 2);
 	setprop("/it-autoflight/mode/vert", "G/S");

@@ -123,8 +123,6 @@ var master_elec = func {
 	# Left DC bus yes?
 	if (extpwr_on and extL) {
 		setprop("/systems/electrical/bus/dcL", 28);
-	} else if (emerpwr_on) {
-		setprop("/systems/electrical/bus/dcL", 28);
 	} else if (rpmapu >= 99 and apuL) {
 		setprop("/systems/electrical/bus/dcL", 28);
 	} else if (rpmL >= 15 and engL) {
@@ -150,8 +148,6 @@ var master_elec = func {
 	
 	# Left AC bus yes?
 	if (extpwr_on and extL) {
-		setprop("/systems/electrical/bus/acL", 115);
-	} else if (emerpwr_on) {
 		setprop("/systems/electrical/bus/acL", 115);
 	} else if (rpmapu >= 99 and apuL) {
 		setprop("/systems/electrical/bus/acL", 115);
