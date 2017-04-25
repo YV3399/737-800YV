@@ -586,8 +586,13 @@ var altcapt = func {
 	var alt = getprop("/it-autoflight/internal/alt");
 	var dif = calt - alt;
 	if (dif < getprop("/it-autoflight/internal/captvs") and dif > getprop("/it-autoflight/internal/captvsneg")) {
-		setprop("/it-autoflight/input/vert", 3);
-		setprop("/it-autoflight/output/thr-mode", 0);
+		if (vsnow > 0 and dif < 0) {
+			setprop("/it-autoflight/input/vert", 3);
+			setprop("/it-autoflight/output/thr-mode", 0);
+		} else if (vsnow < 0 and dif > 0) {
+			setprop("/it-autoflight/input/vert", 3);
+			setprop("/it-autoflight/output/thr-mode", 0);
+		}
 	}
 	var altinput = getprop("/it-autoflight/input/alt");
 	setprop("/it-autoflight/internal/alt", altinput);
