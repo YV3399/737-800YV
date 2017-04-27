@@ -9,11 +9,11 @@
  <!-- =============================================================== -->
 
 	<predict-simple>
-		<name>ALTITUDE 7 SECONDS AHEAD</name>
+		<name>ALTITUDE 5 SECONDS AHEAD</name>
 		<debug>false</debug>
 		<input>/instrumentation/altimeter/indicated-altitude-ft</input>
-		<output>/it-autoflight/internal/altitude-7-sec-ahead</output>
-		<seconds>7.0</seconds>
+		<output>/it-autoflight/internal/altitude-5-sec-ahead</output>
+		<seconds>5.0</seconds>
 		<filter-gain>0.1</filter-gain>
 	</predict-simple>
 
@@ -25,15 +25,41 @@
 		<filter-gain>0.1</filter-gain>
 	</predict-simple>
 	
-	<filter>
-		<name>VOR/LOC HEADING ERROR FILTER</name>
+	<predict-simple>
+		<name>IAS 5 SECOND PREDICTOR</name>
 		<debug>false</debug>
-		<type>noise-spike</type>
-		<input>/it-autoflight/internal/nav1-error-5-sec-ahead</input>
-		<output>/it-autoflight/internal/nav1-heading-error-deg-filtered</output>
-		<max-rate-of-change>90.0</max-rate-of-change>
-	</filter>
+		<input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
+		<output>/it-autoflight/internal/lookahead-5-sec-airspeed-kt</output>
+		<seconds>5.0</seconds>
+		<filter-gain>0.0</filter-gain>
+	</predict-simple>
+
+	<predict-simple>
+		<name>IAS 10 SECOND PREDICTOR</name>
+		<debug>false</debug>
+		<input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
+		<output>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</output>
+		<seconds>10.0</seconds>
+		<filter-gain>0.0</filter-gain>
+	</predict-simple>
 	
+	<predict-simple>
+		<name>MACH 5 SECOND PREDICTOR</name>
+		<debug>false</debug>
+		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
+		<output>/it-autoflight/internal/lookahead-5-sec-mach</output>
+		<seconds>5.0</seconds>
+		<filter-gain>0.0</filter-gain>
+	</predict-simple>
+
+	<predict-simple>
+		<name>MACH 10 SECOND PREDICTOR</name>
+		<debug>false</debug>
+		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
+		<output>/it-autoflight/internal/lookahead-10-sec-mach</output>
+		<seconds>10.0</seconds>
+		<filter-gain>0.0</filter-gain>
+	</predict-simple>
   
  <!-- =============================================================== -->
  <!-- Autopilot Helpers                                               -->
@@ -172,6 +198,15 @@
 		</period>
 		<gain>1.0</gain>
 	</filter>
+	
+	<filter>
+		<name>VOR/LOC HEADING ERROR FILTER</name>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/it-autoflight/internal/nav1-error-5-sec-ahead</input>
+		<output>/it-autoflight/internal/nav1-heading-error-deg-filtered</output>
+		<max-rate-of-change>90.0</max-rate-of-change>
+	</filter>
 
 	<filter>
 		<name>INTERNAL VERTICAL SPEED COMPUTER</name>
@@ -179,35 +214,8 @@
 		<type>gain</type>
 		<input>/velocities/vertical-speed-fps</input>
 		<output>/it-autoflight/internal/vert-speed-fpm</output>
-		<gain>60.0</gain>
+		<gain>55</gain>
 	</filter>
-
-	<predict-simple>
-		<name>IAS 5 SECOND PREDICTOR</name>
-		<debug>false</debug>
-		<input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
-		<output>/it-autoflight/internal/lookahead-5-sec-airspeed-kt</output>
-		<seconds>5.0</seconds>
-		<filter-gain>0.0</filter-gain>
-	</predict-simple>
-
-	<predict-simple>
-		<name>IAS 10 SECOND PREDICTOR</name>
-		<debug>false</debug>
-		<input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
-		<output>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</output>
-		<seconds>10.0</seconds>
-		<filter-gain>0.0</filter-gain>
-	</predict-simple>
-
-	<predict-simple>
-		<name>MACH 10 SECOND PREDICTOR</name>
-		<debug>false</debug>
-		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
-		<output>/it-autoflight/internal/lookahead-10-sec-mach</output>
-		<seconds>10.0</seconds>
-		<filter-gain>0.0</filter-gain>
-	</predict-simple>
 
 	<filter>
 		<name>STATIC PRESSURE COMPUTER</name>
@@ -579,7 +587,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/it-autoflight/internal/altitude-7-sec-ahead</property>
+			<property>/it-autoflight/internal/altitude-5-sec-ahead</property>
 		</input>
 		<reference>
 			<condition>
@@ -609,8 +617,8 @@
 			<beta>1.0</beta>       
 			<alpha>0.5</alpha>     
 			<gamma>0.0</gamma>     
-			<Ti>10.0</Ti>
-			<Td>0.0001</Td>
+			<Ti>5.0</Ti>
+			<Td>0.00001</Td>
 			<u_min>
 				<property>/it-autoflight/internal/min-pitch</property>
 			</u_min>
@@ -683,13 +691,8 @@
 		<config>
 			<Kp>
 				<property>/it-autoflight/config/autoland/kp-pitch</property>
-			</Kp> 
+			</Kp>
 			<Ki>0.010</Ki>
-			<beta>1.0</beta>       
-			<alpha>0.5</alpha>     
-			<gamma>0.0</gamma>     
-			<Ti>10.0</Ti>
-			<Td>0.0001</Td>
 			<min>
 				<value>0</value>
 			</min>
@@ -813,8 +816,8 @@
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
-			<Ti>10.0</Ti>        
-			<Td>0.00001</Td>    
+			<Ti>5.0</Ti>        
+			<Td>0.0001</Td>    
             <u_min>
                 <condition>
                     <greater-than>
@@ -896,8 +899,8 @@
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
-			<Ti>10.0</Ti>        
-			<Td>0.00001</Td>    
+			<Ti>5.0</Ti>        
+			<Td>0.0001</Td>    
             <u_min>
                 <value>1.6</value>
             </u_min>
@@ -966,8 +969,8 @@
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
-			<Ti>10.0</Ti>        
-			<Td>0.00001</Td>    
+			<Ti>5.0</Ti>        
+			<Td>0.0001</Td>    
             <u_min>
                 <condition>
                     <greater-than>
@@ -1045,7 +1048,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+			<property>/it-autoflight/internal/vert-speed-fpm</property>
 			<scale>0.01666666</scale>
 		</input>
 		<reference>
@@ -1097,7 +1100,7 @@
 				</and>
 			</condition>
 			<property>/it-autoflight/internal/prof-fpm</property>
-			<scale>-0.01666666</scale>
+			<scale>0.01666666</scale>
 		</reference>
 		<output>
 			<property>/it-autoflight/internal/target-pitch-deg</property>
@@ -1109,13 +1112,13 @@
 			<beta>1.0</beta>
 			<alpha>0.1</alpha>
 			<gamma>0.0</gamma>
-			<Ti>5.0</Ti>
+			<Ti>1.0</Ti>
 			<Td>0.00001</Td>
 			<u_min>
 				<value>-10</value>
 			</u_min>
 			<u_max>
-				<value>25</value>
+				<value>30</value>
 			</u_max>
 		</config>
 	</pid-controller>
