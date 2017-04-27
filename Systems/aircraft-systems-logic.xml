@@ -213,5 +213,36 @@
     <output>/b737/warnings/gpws/ft2500</output>
   </flipflop>
 
+   <!-- AIR-GROUND system -->
+
+   <logic>
+    <name>air-ground switch</name> <!-- outputs 1 if plane is on ground -->
+    <input>
+      <or>
+        <property>/gear/gear[1]/wow</property>
+        <property>/gear/gear[2]/wow</property>
+      </or>
+    </input>
+    <output>/b737/sensors/air-ground</output>
+  </logic>
+
+  <!-- wheel spin detection system -->
+
+  <logic>
+    <name>main wheel spin</name> <!-- outputs 1 if one of main wheels are spinnig faster than 60 kts -->
+     <input>
+      <or>
+        <greater-than>
+          <property>/fdm/jsbsim/gear/unit[1]/wheel-speed-fps</property>
+          <value>101.3</value>
+        </greater-than>
+        <greater-than>
+          <property>/fdm/jsbsim/gear/unit[2]/wheel-speed-fps</property>
+          <value>101.3</value>
+        </greater-than>
+      </or>
+    </input>
+    <output>/b737/sensors/main-gear-spin</output>
+  </logic>
   
 </PropertyList>

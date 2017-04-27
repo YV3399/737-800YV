@@ -6331,7 +6331,7 @@ OBJECT poly
 name "EFIS.lettering"
 loc -0.0020000 0.0000000 0.0010000
 crease 35.0
-texture "EFIS.png"
+texture "EFIS-lettering.png"
 texrep 1 1
 numvert 4
 0.0298616 -0.0076273 0.0610100
