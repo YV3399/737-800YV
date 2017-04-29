@@ -810,8 +810,8 @@
 			<property>/it-autoflight/internal/target-fps</property>
 		</output>
 		<config>
-			<Kp>-3.0</Kp>
-			<Ti>20.0</Ti>        
+			<Kp>-3.8</Kp>
+			<Ti>10.0</Ti>        
 			<Td>0.0</Td>    
             <u_min>
                 <condition>
@@ -953,8 +953,8 @@
 			<property>/it-autoflight/internal/target-fps</property>
 		</output>
 		<config>
-			<Kp>-3.0</Kp>
-			<Ti>20.0</Ti>        
+			<Kp>-3.8</Kp>
+			<Ti>10.0</Ti>        
 			<Td>0.0</Td>    
             <u_min>
                 <condition>
