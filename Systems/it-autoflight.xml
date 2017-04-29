@@ -775,7 +775,7 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</property>
+			<property>/it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
 		</input>
 		<input>
 			<condition>
@@ -784,7 +784,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-mach</property>
+			<property>/it-autoflight/internal/lookahead-5-sec-mach</property>
 			<scale>500.0</scale>
 		</input>
 		<reference>
@@ -810,14 +810,9 @@
 			<property>/it-autoflight/internal/target-fps</property>
 		</output>
 		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/flch</property>
-			</Kp>
-			<beta>1.0</beta>    
-			<alpha>0.1</alpha>  
-			<gamma>0.0</gamma>  
-			<Ti>5.0</Ti>        
-			<Td>0.0001</Td>    
+			<Kp>-3.0</Kp>
+			<Ti>20.0</Ti>        
+			<Td>0.0</Td>    
             <u_min>
                 <condition>
                     <greater-than>
@@ -869,7 +864,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</property>
+			<property>/it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
 		</input>
 		<reference>
 			<condition>
@@ -893,14 +888,9 @@
 			<property>/it-autoflight/internal/target-fps</property>
 		</output>
 		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/flch</property>
-			</Kp>
-			<beta>1.0</beta>    
-			<alpha>0.1</alpha>  
-			<gamma>0.0</gamma>  
-			<Ti>5.0</Ti>        
-			<Td>0.0001</Td>    
+			<Kp>-4.0</Kp>
+			<Ti>10.0</Ti>        
+			<Td>0.0</Td>    
             <u_min>
                 <value>1.6</value>
             </u_min>
@@ -928,7 +918,7 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</property>
+			<property>/it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
 		</input>
 		<input>
 			<condition>
@@ -937,7 +927,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-mach</property>
+			<property>/it-autoflight/internal/lookahead-5-sec-mach</property>
 			<scale>500.0</scale>
 		</input>
 		<reference>
@@ -963,14 +953,9 @@
 			<property>/it-autoflight/internal/target-fps</property>
 		</output>
 		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/flch</property>
-			</Kp>
-			<beta>1.0</beta>    
-			<alpha>0.1</alpha>  
-			<gamma>0.0</gamma>  
-			<Ti>5.0</Ti>        
-			<Td>0.0001</Td>    
+			<Kp>-3.0</Kp>
+			<Ti>20.0</Ti>        
+			<Td>0.0</Td>    
             <u_min>
                 <condition>
                     <greater-than>
@@ -1615,6 +1600,8 @@
 			</expression>
 		</input>
 		<output>/it-autoflight/fd/roll-bar</output>
+		<min>-30</min>
+		<max>30</max>
 	</filter>
 
  
@@ -1632,6 +1619,8 @@
 			</expression>
 		</input>
 		<output>/it-autoflight/fd/pitch-bar</output>
+		<min>-15</min>
+		<max>30</max>
 	</filter>
 
 </PropertyList>
