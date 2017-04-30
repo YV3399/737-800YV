@@ -290,6 +290,7 @@
 			<vorloc>-3.0</vorloc>
 			<alt>0.03</alt>
 			<vs>0.05</vs>
+			<flch-vs>0.10</flch-vs>
 			<fpa>0.30</fpa>
 			<gs>0.11</gs>
 		</cmd>
