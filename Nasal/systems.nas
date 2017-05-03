@@ -1,3 +1,19 @@
+# B737-800 Systems File
+
+# :)
+print(" ____ ______ ____ ______      ___   ___   ___  ");
+print("|  _ \____  |___ \____  |    / _ \ / _ \ / _ \ ");
+print("| |_) |  / /  __) |  / /____| (_) | | | | | | |");
+print("|  _ <  / /  |__ <  / /______> _ <| | | | | | |");
+print("| |_) |/ /   ___) |/ /      | (_) | |_| | |_| |");
+print("|____//_/   |____//_/        \___/ \___/ \___/ ");
+print("-----------------------------------------------------------------------");
+print("(c) 2016-2017 Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods)");
+print("Report all bugs on GitHub Issues tab, or the forums. :)");
+print("Enjoy your flight!!!");
+print("-----------------------------------------------------------------------");
+print(" ");
+
 var altAlertModeSwitch = func {
 	var warning_b = getprop("/b737/warnings/altitude-alert-b-conditions");
 	var diff_0 = getprop("/b737/helpers/alt-diff-ft[0]");

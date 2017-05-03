@@ -453,5 +453,3 @@ var doorERRtoggle = func {
 		,3);	
 	}
 }
-
-print("Doors System : FINE");

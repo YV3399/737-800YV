@@ -3,7 +3,6 @@
 
 
 setlistener("/sim/signals/fdm-initialized", func {
-print("Lighting System: Initializing, please wait");
 
 
 var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0,2, ], "/controls/lighting/beacon" );
@@ -17,9 +16,6 @@ setprop("/controls/lighting/beacon",0);
 setprop("/controls/lighting/landing-lights",0);
 setprop("/controls/lighting/logo-lights",0);
 setprop("/controls/lighting/nav-lights",0);
-
-print("lighting OK");
-
 });
 
 setlistener("controls/lighting/landing-lights[0]", func

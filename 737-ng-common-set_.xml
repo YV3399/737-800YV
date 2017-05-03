@@ -612,6 +612,10 @@
 </autopilot>
 
 <controls>
+  <APU>
+    <master type="int">0</master>
+  </APU>
+
   <engines n="0">
 	<kp>0.01</kp>
 	<kp-spd>0.30</kp-spd>
@@ -712,7 +716,8 @@
 
 <systems>
   <apu>
-   <rpm type="string">0</rpm>
+   <rpm type="float">0</rpm>
+   <egt type="float">0</egt>
  </apu>
  <pitot n="1">
   <serviceable type="bool">true</serviceable>
@@ -759,6 +764,10 @@
     <file>Aircraft/737-800/Nasal/limits.nas</file>
     <file>Aircraft/737-800/Nasal/doors.nas</file> 
   </boeing737>
+  
+  <systems>
+	<file>Aircraft/737-800/Nasal/engines.nas</file>
+  </systems>
 
   <nd>
     <file>Aircraft/737-800/Nasal/ND.nas</file>

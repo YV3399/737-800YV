@@ -1,30 +1,17 @@
 # Electrical system for 737-800 by Joshua Davidson (it0uchpods/411).
 
-var ELEC_UPDATE_PERIOD	= 1;					# A periodic update in secs
-var STD_VOLTS_AC	= 115;						# Typical volts for a power source
-var MIN_VOLTS_AC	= 115;						# Typical minimum voltage level for generic equipment
-var STD_VOLTS_DC	= 28;						# Typical volts for a power source
-var MIN_VOLTS_DC	= 25;						# Typical minimum voltage level for generic equipment
-var STD_AMPS		= 0;						# Not used yet
-var NUM_ENGINES		= 2;
+#############
+# Init Vars #
+#############
 
-
-									# Handy handles for DC source feed indices
-var feed	= {	eng1	: 0,
-			eng2	: 1,
-			apu	: 2,
-			batt	: 3,
-			cart	: 4,
-			rect1	: 5,
-			rect2	: 6
-		  };
-var feed_status	= [0,0,0,0,0,0,0];					# For fast feed switch checking
-var RECT_OFFSET = 5;							# Handy rectifier index offset
+var ac_volt_std = 115;
+var ac_volt_min = 110;
+var dc_volt_std = 28;
+var dc_volt_min = 25;
 
 var elec_init = func {
 	setprop("/controls/electric/battery-switch", 0);   # Set all the stuff I need
-	setprop("/controls/electrical/ext/Lsw", 0);
-	setprop("/controls/electrical/ext/Rsw", 0);
+	setprop("/controls/electrical/ext/sw", 0);
 	setprop("/controls/electrical/emerpwr", 0);
 	setprop("/controls/electrical/galley", 0);
 	setprop("/controls/electrical/xtie/acxtie", 1);
@@ -33,8 +20,8 @@ var elec_init = func {
 	setprop("/controls/electrical/xtie/xtieR", 0);
 	setprop("/controls/electrical/apu/Lsw", 0);
 	setprop("/controls/electrical/apu/Rsw", 0);
-	setprop("/controls/electrical/eng/Lsw", 1);
-	setprop("/controls/electrical/eng/Rsw", 1);
+	setprop("/controls/electrical/eng/Lsw", 0);
+	setprop("/controls/electrical/eng/Rsw", 0);
 	setprop("/systems/electrical/bus/dcL", 0);
 	setprop("/systems/electrical/bus/dcR", 0);
 	setprop("/systems/electrical/bus/acL", 0);
@@ -70,13 +57,17 @@ var elec_init = func {
     setprop("systems/electrical/outputs/taxi-lights", 0);
     setprop("systems/electrical/outputs/transponder", 0);
     setprop("systems/electrical/outputs/turn-coordinator", 0);
+	elec_timer.start();
 }
+
+######################
+# Main Electric Loop #
+######################
 
 var master_elec = func {
 	var battery_on = getprop("/controls/electric/battery-switch");   # Define all the stuff I need
 	var extpwr_on = getprop("/services/ext-pwr/enable");
-	var extL = getprop("/controls/electrical/ext/Lsw");
-	var extR = getprop("/controls/electrical/ext/Rsw");
+	var ext = getprop("/controls/electrical/ext/sw");
 	var emerpwr_on = getprop("/controls/electrical/emerpwr");
 	var acxtie = getprop("/controls/electrical/xtie/acxtie");
 	var dcxtie = getprop("/controls/electrical/xtie/dcxtie");
@@ -98,22 +89,22 @@ var master_elec = func {
 	var galley = getprop("/controls/electrical/galley");
 	
 	# Left cross tie yes?
-	if (extpwr_on and extL) {
+	if (extpwr_on and ext) {
 		setprop("/controls/electrical/xtie/xtieR", 1);
-	} else if (rpmapu >= 99 and apuL) {
+	} else if (rpmapu >= 94.9 and apuL) {
 		setprop("/controls/electrical/xtie/xtieR", 1);
-	} else if (rpmL >= 15 and engL) {
+	} else if (rpmL >= 18 and engL) {
 		setprop("/controls/electrical/xtie/xtieR", 1);
 	} else {
 		setprop("/controls/electrical/xtie/xtieR", 0);
 	}
 	
 	# Right cross tie yes?
-	if (extpwr_on and extR) {
+	if (extpwr_on and ext) {
 		setprop("/controls/electrical/xtie/xtieL", 1);
-	} else if (rpmapu >= 99 and apuR) {
+	} else if (rpmapu >= 94.9 and apuR) {
 		setprop("/controls/electrical/xtie/xtieL", 1);
-	} else if (rpmR >= 15 and engR) {
+	} else if (rpmR >= 18 and engR) {
 		setprop("/controls/electrical/xtie/xtieL", 1);
 	} else {
 		setprop("/controls/electrical/xtie/xtieL", 0);
@@ -121,53 +112,53 @@ var master_elec = func {
 	
 	
 	# Left DC bus yes?
-	if (extpwr_on and extL) {
-		setprop("/systems/electrical/bus/dcL", 28);
-	} else if (rpmapu >= 99 and apuL) {
-		setprop("/systems/electrical/bus/dcL", 28);
-	} else if (rpmL >= 15 and engL) {
-		setprop("/systems/electrical/bus/dcL", 28);
+	if (extpwr_on and ext) {
+		setprop("/systems/electrical/bus/dcL", dc_volt_std);
+	} else if (rpmapu >= 94.9 and apuL) {
+		setprop("/systems/electrical/bus/dcL", dc_volt_std);
+	} else if (rpmL >= 18 and engL) {
+		setprop("/systems/electrical/bus/dcL", dc_volt_std);
 	} else if (xtieL == 1 and dcxtie == 1) {
-		setprop("/systems/electrical/bus/dcL", 28);
+		setprop("/systems/electrical/bus/dcL", dc_volt_std);
 	} else {
 		setprop("/systems/electrical/bus/dcL", 0);
 	}
 	
 	# Right DC bus yes?
-	if (extpwr_on and extR) {
-		setprop("/systems/electrical/bus/dcR", 28);
-	} else if (rpmapu >= 99 and apuR) {
-		setprop("/systems/electrical/bus/dcR", 28);
-	} else if (rpmR >= 15 and engR) {
-		setprop("/systems/electrical/bus/dcR", 28);
+	if (extpwr_on and ext) {
+		setprop("/systems/electrical/bus/dcR", dc_volt_std);
+	} else if (rpmapu >= 94.9 and apuR) {
+		setprop("/systems/electrical/bus/dcR", dc_volt_std);
+	} else if (rpmR >= 18 and engR) {
+		setprop("/systems/electrical/bus/dcR", dc_volt_std);
 	} else if (xtieR == 1 and dcxtie == 1) {
-		setprop("/systems/electrical/bus/dcR", 28);
+		setprop("/systems/electrical/bus/dcR", dc_volt_std);
 	} else {
 		setprop("/systems/electrical/bus/dcR", 0);
 	}
 	
 	# Left AC bus yes?
-	if (extpwr_on and extL) {
-		setprop("/systems/electrical/bus/acL", 115);
-	} else if (rpmapu >= 99 and apuL) {
-		setprop("/systems/electrical/bus/acL", 115);
-	} else if (rpmL >= 15 and engL) {
-		setprop("/systems/electrical/bus/acL", 115);
+	if (extpwr_on and ext) {
+		setprop("/systems/electrical/bus/acL", ac_volt_std);
+	} else if (rpmapu >= 94.9 and apuL) {
+		setprop("/systems/electrical/bus/acL", ac_volt_std);
+	} else if (rpmL >= 18 and engL) {
+		setprop("/systems/electrical/bus/acL", ac_volt_std);
 	} else if (xtieL == 1 and acxtie == 1) {
-		setprop("/systems/electrical/bus/acL", 115);
+		setprop("/systems/electrical/bus/acL", ac_volt_std);
 	} else {
 		setprop("/systems/electrical/bus/acL", 0);
 	}
 	
 	# Right AC bus yes?
-	if (extpwr_on and extR) {
-		setprop("/systems/electrical/bus/acR", 115);
-	} else if (rpmapu >= 99 and apuR) {
-		setprop("/systems/electrical/bus/acR", 115);
-	} else if (rpmR >= 15 and engR) {
-		setprop("/systems/electrical/bus/acR", 115);
+	if (extpwr_on and ext) {
+		setprop("/systems/electrical/bus/acR", ac_volt_std);
+	} else if (rpmapu >= 94.9 and apuR) {
+		setprop("/systems/electrical/bus/acR", ac_volt_std);
+	} else if (rpmR >= 18 and engR) {
+		setprop("/systems/electrical/bus/acR", ac_volt_std);
 	} else if (xtieR == 1 and acxtie == 1) {
-		setprop("/systems/electrical/bus/acR", 115);
+		setprop("/systems/electrical/bus/acR", ac_volt_std);
 	} else {
 		setprop("/systems/electrical/bus/acR", 0);
 	}
@@ -176,35 +167,35 @@ var master_elec = func {
 setlistener("/systems/electrical/bus/dcL", func {
 	var dcL = getprop("/systems/electrical/bus/dcL");
 	if (dcL >= 15) {
-        setprop("systems/electrical/outputs/adf", 28);
-        setprop("systems/electrical/outputs/audio-panel", 28);
-        setprop("systems/electrical/outputs/audio-panel[1]", 28);
-        setprop("systems/electrical/outputs/autopilot", 28);
-        setprop("systems/electrical/outputs/avionics-fan", 28);
-        setprop("systems/electrical/outputs/beacon", 28);
-        setprop("systems/electrical/outputs/bus", 28);
-        setprop("systems/electrical/outputs/cabin-lights", 28);
-        setprop("systems/electrical/outputs/dme", 28);
-        setprop("systems/electrical/outputs/efis", 28);
-        setprop("systems/electrical/outputs/flaps", 28);
-        setprop("systems/electrical/outputs/fuel-pump", 28);
-        setprop("systems/electrical/outputs/fuel-pump[1]", 28);
-        setprop("systems/electrical/outputs/gps", 28);
-        setprop("systems/electrical/outputs/gps-mfd", 28);
-        setprop("systems/electrical/outputs/hsi", 28);
-        setprop("systems/electrical/outputs/instr-ignition-switch", 28);
-        setprop("systems/electrical/outputs/instrument-lights", 28);
-        setprop("systems/electrical/outputs/landing-lights", 28);
-        setprop("systems/electrical/outputs/map-lights", 28);
-        setprop("systems/electrical/outputs/mk-viii", 28);
-        setprop("systems/electrical/outputs/nav", 28);
-        setprop("systems/electrical/outputs/nav[1]", 28);
-        setprop("systems/electrical/outputs/pitot-head", 28);
-        setprop("systems/electrical/outputs/stobe-lights", 28);
-        setprop("systems/electrical/outputs/tacan", 28);
-        setprop("systems/electrical/outputs/taxi-lights", 28);
-        setprop("systems/electrical/outputs/transponder", 28);
-        setprop("systems/electrical/outputs/turn-coordinator", 28);
+        setprop("systems/electrical/outputs/adf", dc_volt_std);
+        setprop("systems/electrical/outputs/audio-panel", dc_volt_std);
+        setprop("systems/electrical/outputs/audio-panel[1]", dc_volt_std);
+        setprop("systems/electrical/outputs/autopilot", dc_volt_std);
+        setprop("systems/electrical/outputs/avionics-fan", dc_volt_std);
+        setprop("systems/electrical/outputs/beacon", dc_volt_std);
+        setprop("systems/electrical/outputs/bus", dc_volt_std);
+        setprop("systems/electrical/outputs/cabin-lights", dc_volt_std);
+        setprop("systems/electrical/outputs/dme", dc_volt_std);
+        setprop("systems/electrical/outputs/efis", dc_volt_std);
+        setprop("systems/electrical/outputs/flaps", dc_volt_std);
+        setprop("systems/electrical/outputs/fuel-pump", dc_volt_std);
+        setprop("systems/electrical/outputs/fuel-pump[1]", dc_volt_std);
+        setprop("systems/electrical/outputs/gps", dc_volt_std);
+        setprop("systems/electrical/outputs/gps-mfd", dc_volt_std);
+        setprop("systems/electrical/outputs/hsi", dc_volt_std);
+        setprop("systems/electrical/outputs/instr-ignition-switch", dc_volt_std);
+        setprop("systems/electrical/outputs/instrument-lights", dc_volt_std);
+        setprop("systems/electrical/outputs/landing-lights", dc_volt_std);
+        setprop("systems/electrical/outputs/map-lights", dc_volt_std);
+        setprop("systems/electrical/outputs/mk-viii", dc_volt_std);
+        setprop("systems/electrical/outputs/nav", dc_volt_std);
+        setprop("systems/electrical/outputs/nav[1]", dc_volt_std);
+        setprop("systems/electrical/outputs/pitot-head", dc_volt_std);
+        setprop("systems/electrical/outputs/stobe-lights", dc_volt_std);
+        setprop("systems/electrical/outputs/tacan", dc_volt_std);
+        setprop("systems/electrical/outputs/taxi-lights", dc_volt_std);
+        setprop("systems/electrical/outputs/transponder", dc_volt_std);
+        setprop("systems/electrical/outputs/turn-coordinator", dc_volt_std);
 	} else {
         setprop("systems/electrical/outputs/adf", 0);
         setprop("systems/electrical/outputs/audio-panel", 0);
@@ -243,7 +234,7 @@ setlistener("/systems/electrical/bus/acR", func {
 	var galley = getprop("/controls/electrical/galley");
 	if (acR >= 100) {
 		if (galley == 1) {
-			setprop("systems/electrical/bus/galley", 115);
+			setprop("systems/electrical/bus/galley", ac_volt_std);
 		} else if (galley == 0) {
 			setprop("systems/electrical/bus/galley", 0);
 		}
@@ -252,34 +243,12 @@ setlistener("/systems/electrical/bus/acR", func {
 	}
 });
 
+###################
+# Update Function #
+###################
 
-setlistener("/controls/electric/battery-switch", func {
-	var batt = getprop("/controls/electric/battery-switch");
-	if (batt == 0) {
-        setprop("systems/electrical/on", 0);
-		ai_spin.setValue(0.2);
-		aispin.stop();
-	} else if (batt == 1) {
-        setprop("systems/electrical/on", 1);
-		aispin.start();
-	}
-});
-
-var ai_spin	= props.globals.getNode("/instrumentation/attitude-indicator/spin");
-
-var aispinfunc = func {
-  ai_spin.setValue(1);
-}
-
-var aispin = maketimer(5, aispinfunc);
-
-  
 var update_electrical = func {
-  master_elec();
-
-  
-  settimer(update_electrical,ELEC_UPDATE_PERIOD);			# Schedule next run
+	master_elec();
 }
 
-
-settimer(update_electrical, 2);						# Give a few seconds for vars to initialize
+var elec_timer = maketimer(0.2, update_electrical);

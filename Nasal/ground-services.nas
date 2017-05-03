@@ -153,22 +153,18 @@ var ground_services = {
 		
 			if (me.ice_time == 2){
 				door.move(1);
-				print ("Lifting De-icing Crane...");
 			}
 			
 			if (me.ice_time == 220){
 				door3.move(1);
-				print ("Starting De-icing Process...");
 			}
 			
 			if (me.ice_time == 420){
 				door3.move(0);
-				print ("De-icing Process Completed...");
 			}
 				
 			if (me.ice_time == 650){
 				door.move(0);
-				print ("Lowering De-icing Crane...");
 			}
 			
 			if (me.ice_time == 900) {
@@ -208,5 +204,4 @@ var toggle_parkingbrakes = func {
 
 setlistener("sim/signals/fdm-initialized", func {
 	ground_services.init();
-	print("Ground Services ... FINE!");
 });

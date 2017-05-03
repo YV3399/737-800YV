@@ -10,8 +10,7 @@ var autostart = func {
   
 	setprop("/controls/electric/battery-switch",1);
 	setprop("/services/ext-pwr/enable", 1);
-	setprop("/controls/electrical/ext/Lsw", 1);
-	setprop("/controls/electrical/ext/Rsw", 1);
+	setprop("/controls/electrical/ext/sw", 1);
 	setprop("/controls/electric/apugen1",1);
 	setprop("/controls/electric/apugen2",1);
 
@@ -23,6 +22,8 @@ var autostart = func {
 	setprop("/controls/fuel/tank[1]/pump-fwd",1);
 	setprop("/controls/fuel/tank[2]/pump-left",1);
 	setprop("/controls/fuel/tank[2]/pump-right",1);
+	setprop("/controls/electrical/eng/Lsw", 1);
+	setprop("/controls/electrical/eng/Rsw", 1);
 
   setprop("/controls/engines/engine[0]/starter",1);
 	setprop("/controls/engines/engine[1]/starter",1);
@@ -35,8 +36,7 @@ var autostart = func {
 	}
 	if (getprop("/engines/engine[0]/n1") > 18) {
 		setprop("/services/ext-pwr/enable", 0);
-		setprop("/controls/electrical/ext/Lsw", 0);
-		setprop("/controls/electrical/ext/Rsw", 0);
+		setprop("/controls/electrical/ext/sw", 0);
 		setprop("/controls/engines/autostart",0);
 	}
 	if (getprop("/engines/engine[0]/n1") < 18) settimer(autostart,0);
@@ -79,8 +79,8 @@ var inAirStart = func {
             setprop("instrumentation/altimeter[1]/setting-inhg", vbaro);
             setprop("instrumentation/altimeter[2]/setting-inhg", vbaro);
         }
-        setprop("/it-autoflight/fd_master", 1);
-        setprop("/it-autoflight/fd_master2", 1);
+        setprop("/it-autoflight/input/fd1", 1);
+        setprop("/it-autoflight/input/fd2", 1);
         var speed = boeing737.roundToNearest(getprop("sim/presets/airspeed-kt"), 1);
         setprop("/it-autoflight/input/spd-kts", speed);
         setprop("/it-autoflight/input/hdg", boeing737.roundToNearest(getprop("orientation/heading-magnetic-deg"), 1));
