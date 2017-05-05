@@ -278,4 +278,18 @@
   </output>
 </filter>
 
+	<!-- Smooth slip skid indicator-->
+<filter n="100119">
+  <type>exponential</type>
+  <filter-time>0.2</filter-time>
+  <input>/accelerations/pilot/y-accel-fps_sec</input>
+  <output>/instrumentation/slip-skid-ball/side-accel-filtered-fps_sec</output>
+</filter>
+<filter n="100120">
+  <type>gain</type>
+  <gain>0.03108095</gain>
+  <input>/instrumentation/slip-skid-ball/side-accel-filtered-fps_sec</input>
+  <output>/instrumentation/slip-skid-ball/side-accel-filtered-norm</output>
+</filter>
+
 </PropertyList>

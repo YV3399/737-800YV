@@ -155,6 +155,7 @@ var canvas_PFD = {
 		var pitch = getprop("orientation/pitch-deg");
 		var path = getprop("orientation/path-deg");
 		var roll =  getprop("orientation/roll-deg");
+		var slipSkid = getprop("instrumentation/slip-skid-ball/side-accel-filtered-norm");
 		var slipSkid = getprop("accelerations/pilot/y-accel-fps_sec") / 32.17404855643;
 		var hdg =  getprop("orientation/heading-magnetic-deg");
 		var track = getprop("/orientation/track-magnetic-deg");
