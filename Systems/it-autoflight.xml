@@ -14,7 +14,7 @@
 		<input>/instrumentation/altimeter/indicated-altitude-ft</input>
 		<output>/it-autoflight/internal/altitude-5-sec-ahead</output>
 		<seconds>5.0</seconds>
-		<filter-gain>0.1</filter-gain>
+		<filter-gain>0.0</filter-gain>
 	</predict-simple>
 
 	<predict-simple>
@@ -214,7 +214,34 @@
 		<type>gain</type>
 		<input>/velocities/vertical-speed-fps</input>
 		<output>/it-autoflight/internal/vert-speed-fpm</output>
-		<gain>55</gain>
+		<gain>55.5</gain>
+	</filter>
+	
+	<filter>
+		<name>INTERNAL VERTICAL SPEED COMPUTER</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<enable>
+			<condition>
+				<and>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>4</value>
+					</not-equals>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</not-equals>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>8</value>
+					</not-equals>
+				</and>
+			</condition>
+		</enable>
+		<input>/velocities/vertical-speed-fps</input>
+		<output>/it-autoflight/internal/target-fpm-b</output>
+		<gain>55.5</gain>
 	</filter>
 
 	<filter>
@@ -563,38 +590,19 @@
  <!-- Vertical Modes                                                  -->
  <!-- =============================================================== -->
 	
-	<pid-controller>
+	<filter>
 		<name>ALTITUDE CAPTURE/HOLD</name>
 		<debug>false</debug>
-		<enable>
-			<condition>
-				<or>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>0</value>
-					</equals>
-					<and>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>8</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/prof-vert</property>
-							<value>0</value>
-						</equals>
-					</and>
-				</or>
-			</condition>
-		</enable>
+		<type>gain</type>
 		<input>
 			<property>/it-autoflight/internal/altitude-5-sec-ahead</property>
 		</input>
 		<reference>
 			<condition>
-				<equals>
+				<not-equals>
 					<property>/it-autoflight/output/vert</property>
-					<value>0</value>
-				</equals>
+					<value>8</value>
+				</not-equals>
 			</condition>
 			<property>/it-autoflight/internal/alt</property>
 		</reference>
@@ -607,27 +615,18 @@
 			</condition>
 			<property>/it-autoflight/internal/prof-alt</property>
 		</reference>
+		<gain>-8</gain>
 		<output>
-			<property>/it-autoflight/internal/target-pitch-deg</property>
+			<property>/it-autoflight/internal/target-fpm</property>
 		</output>
-		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/alt</property>
-			</Kp>      
-			<beta>1.0</beta>       
-			<alpha>0.5</alpha>     
-			<gamma>0.0</gamma>     
-			<Ti>5.0</Ti>
-			<Td>0.00001</Td>
-			<u_min>
-				<property>/it-autoflight/internal/min-pitch</property>
-			</u_min>
-			<u_max>
-				<property>/it-autoflight/internal/max-pitch</property>
-			</u_max>
-		</config>
-	</pid-controller>
-	
+		<min>
+			<property>/it-autoflight/internal/min-vs</property>
+		</min>
+		<max>
+			<property>/it-autoflight/internal/max-vs</property>
+		</max>
+	</filter>
+
 	<pid-controller>
 		<name>FPA HOLD</name>
 		<debug>false</debug>
@@ -756,16 +755,10 @@
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<and>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>7</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>8</value>
-					</not-equals>
-				</and>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>4</value>
+				</equals>
 			</condition>
 		</enable>
 		<input>
@@ -785,7 +778,7 @@
 				</equals>
 			</condition>
 			<property>/it-autoflight/internal/lookahead-10-sec-mach</property>
-			<scale>500.0</scale>
+			<scale>350.0</scale>
 		</input>
 		<reference>
 			<condition>
@@ -804,18 +797,18 @@
 				</equals>
 			</condition>
 			<property>/it-autoflight/input/spd-mach</property>
-			<scale>500.0</scale>
+			<scale>350.0</scale>
 		</reference>
 		<output>
-			<property>/it-autoflight/internal/target-fps</property>
+			<property>/it-autoflight/internal/target-fpm-b</property>
 		</output>
 		<config>
-			<Kp>-4.0</Kp>
+			<Kp>-70</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
-			<Ti>10.0</Ti>        
-			<Td>0.00001</Td>    
+			<Ti>2.5</Ti>        
+			<Td>0.001</Td>    
 			<u_min>
 				<condition>
 					<greater-than>
@@ -823,16 +816,16 @@
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</greater-than>
 				</condition>
-				<value>1.6</value>
+				<value>100</value>
 			</u_min>
 			<u_min>
-			<condition>
+				<condition>
 					<less-than>
 						<property>/it-autoflight/internal/alt</property>
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</less-than>
 				</condition>
-				<value>-100</value>
+				<value>-6000</value>
 			</u_min>
 			<u_max>
 				<condition>
@@ -841,7 +834,7 @@
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</greater-than>
 				</condition>
-				<value>166</value>
+				<value>10000</value>
 			</u_max>
 			<u_max>
 				<condition>
@@ -850,7 +843,7 @@
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</less-than>
 				</condition>
-				<value>-1.6</value>
+				<value>-100</value>
 			</u_max>
 		</config>
 	</pid-controller>
@@ -867,7 +860,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</property>
+			<property>/it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
 		</input>
 		<reference>
 			<condition>
@@ -888,20 +881,20 @@
 			<property>/it-autoflight/input/spd-kts</property>
 		</reference>
 		<output>
-			<property>/it-autoflight/internal/target-fps</property>
+			<property>/it-autoflight/internal/target-fpm-b</property>
 		</output>
 		<config>
-			<Kp>-4.0</Kp>
+			<Kp>-70</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
-			<Ti>10.0</Ti>        
-			<Td>0.00001</Td>    
+			<Ti>2.5</Ti>        
+			<Td>0.001</Td>   
 			<u_min>
-				<value>1.6</value>
+				<value>100</value>
 			</u_min>
 			<u_max>
-				<value>166</value>
+				<value>10000</value>
 			</u_max>
 		</config>
 	</pid-controller>
@@ -934,7 +927,7 @@
 				</equals>
 			</condition>
 			<property>/it-autoflight/internal/lookahead-10-sec-mach</property>
-			<scale>500.0</scale>
+			<scale>350.0</scale>
 		</input>
 		<reference>
 			<condition>
@@ -953,18 +946,18 @@
 				</equals>
 			</condition>
 			<property>/it-autoflight/input/spd-mach</property>
-			<scale>500.0</scale>
+			<scale>350.0</scale>
 		</reference>
 		<output>
-			<property>/it-autoflight/internal/target-fps</property>
+			<property>/it-autoflight/internal/target-fpm-b</property>
 		</output>
 		<config>
-			<Kp>-4.0</Kp>
+			<Kp>-70</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
-			<Ti>10.0</Ti>        
-			<Td>0.00001</Td>    
+			<Ti>2.5</Ti>        
+			<Td>0.001</Td>   
 			<u_min>
 				<condition>
 					<greater-than>
@@ -972,65 +965,81 @@
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</greater-than>
 				</condition>
-				<value>1.6</value>
+				<value>100</value>
 			</u_min>
 			<u_min>
 			<condition>
+					<less-than>
+						<property>/it-autoflight/internal/prof-alt</property>
+						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+					</less-than>
+				</condition>
+				<value>-6000</value>
+			</u_min>
+			<u_max>
+				<condition>
+					<greater-than>
+						<property>/it-autoflight/internal/prof-alt</property>
+						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+					</greater-than>
+				</condition>
+				<value>10000</value>
+			</u_max>
+			<u_max>
+				<condition>
 					<less-than>
 						<property>/it-autoflight/internal/prof-alt</property>
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</less-than>
 				</condition>
 				<value>-100</value>
-			</u_min>
-			<u_max>
-				<condition>
-					<greater-than>
-						<property>/it-autoflight/internal/prof-alt</property>
-						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
-					</greater-than>
-				</condition>
-				<value>166</value>
-			</u_max>
-			<u_max>
-				<condition>
-					<less-than>
-						<property>/it-autoflight/internal/prof-alt</property>
-						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
-					</less-than>
-				</condition>
-				<value>-1.6</value>
 			</u_max>
 		</config>
 	</pid-controller>
 	
 	<pid-controller>
-		<name>V/S HOLD</name>
+		<name>FPM HOLD</name>
 		<debug>false</debug>
 		<enable>
 			<condition>
 				<or>
 					<equals>
 						<property>/it-autoflight/output/vert</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
 						<value>1</value>
 					</equals>
-					<and>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>8</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/prof-vert</property>
-							<value>1</value>
-						</equals>
-					</and>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>8</value>
+					</equals>
 				</or>
 			</condition>
 		</enable>
 		<input>
 			<property>/it-autoflight/internal/vert-speed-fpm</property>
-			<scale>0.01666666</scale>
+			<scale>0.16667</scale>
 		</input>
+		<reference>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/target-fpm</property>
+			<scale>0.16667</scale>
+		</reference>
 		<reference>
 			<condition>
 				<equals>
@@ -1039,49 +1048,9 @@
 				</equals>
 			</condition>
 			<property>/it-autoflight/input/vs</property>
-			<scale>0.01666666</scale>
+			<scale>0.16667</scale>
 		</reference>
 		<reference>
-			<condition>
-				<and>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>8</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/prof-vert</property>
-						<value>1</value>
-					</equals>
-				</and>
-			</condition>
-			<property>/it-autoflight/internal/prof-fpm</property>
-			<scale>0.01666666</scale>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/target-pitch-deg</property>
-		</output>
-		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/vs</property>
-			</Kp>
-			<beta>1.0</beta>
-			<alpha>0.1</alpha>
-			<gamma>0.0</gamma>
-			<Ti>1.0</Ti>
-			<Td>0.00001</Td>
-			<u_min>
-				<value>-10</value>
-			</u_min>
-			<u_max>
-				<value>30</value>
-			</u_max>
-		</config>
-	</pid-controller>
-	
-	<pid-controller>
-		<name>V/S HOLD</name>
-		<debug>false</debug>
-		<enable>
 			<condition>
 				<or>
 					<equals>
@@ -1104,26 +1073,34 @@
 					</and>
 				</or>
 			</condition>
-		</enable>
-		<input>
-			<property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
-			<scale>0.01666666</scale>
-		</input>
+			<property>/it-autoflight/internal/target-fpm-b</property>
+			<scale>0.16667</scale>
+		</reference>
 		<reference>
-			<property>/it-autoflight/internal/target-fps</property>
+			<condition>
+				<and>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>8</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/prof-vert</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+			<property>/it-autoflight/internal/prof-fpm</property>
+			<scale>0.16667</scale>
 		</reference>
 		<output>
 			<property>/it-autoflight/internal/target-pitch-deg</property>
 		</output>
 		<config>
 			<Kp>
-				<property>/it-autoflight/config/cmd/flch-vs</property>
+				<property>/it-autoflight/config/cmd/vs</property>
 			</Kp>
-			<beta>1.0</beta>
-			<alpha>0.1</alpha>
-			<gamma>0.0</gamma>
-			<Ti>5.0</Ti>
-			<Td>0.00001</Td>
+			<Ti>2.5</Ti>
+			<Td>0.001</Td>
 			<u_min>
 				<value>-10</value>
 			</u_min>

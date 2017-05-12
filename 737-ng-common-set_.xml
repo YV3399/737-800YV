@@ -288,9 +288,7 @@
 			<roll-kp>-1.9</roll-kp>
 			<roll-scale>1.5</roll-scale>
 			<vorloc>-3.0</vorloc>
-			<alt>0.03</alt>
-			<vs>0.05</vs>
-			<flch-vs>0.10</flch-vs>
+			<vs>0.01</vs>
 			<fpa>0.30</fpa>
 			<gs>0.11</gs>
 		</cmd>
