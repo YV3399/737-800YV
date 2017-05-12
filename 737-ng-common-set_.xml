@@ -990,7 +990,9 @@
     <baro-previous-show type="bool">0</baro-previous-show>
   </inputs>
 </efis>
-
+<slip-skid-ball>
+	<side-accel-filtered-norm type="double">0</side-accel-filtered-norm>
+</slip-skid-ball>
 </instrumentation>
 
 </PropertyList>
