@@ -112,6 +112,8 @@ setlistener("/it-autoflight/input/athr", func {
 	if (atmas == 0) {
 		setprop("/it-autoflight/output/athr", 0);
 	} else if (atmas == 1) {
+		setprop("/it-autoflight/output/retard", 0);
+		thrustmode();
 		setprop("/it-autoflight/output/athr", 1);
 	}
 });
