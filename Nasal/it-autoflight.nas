@@ -4,6 +4,7 @@
 # This program is 100% GPL!
 
 print("IT-AUTOFLIGHT: Please Wait!");
+setprop("/it-autoflight/internal/vert-speed-fpm", 0);
 
 var ap_init = func {
 	setprop("/it-autoflight/input/kts-mach", 0);
