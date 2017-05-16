@@ -44,6 +44,15 @@
 	</predict-simple>
 	
 	<predict-simple>
+		<name>IAS 15 SECOND PREDICTOR</name>
+		<debug>false</debug>
+		<input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
+		<output>/it-autoflight/internal/lookahead-15-sec-airspeed-kt</output>
+		<seconds>15.0</seconds>
+		<filter-gain>0.0</filter-gain>
+	</predict-simple>
+	
+	<predict-simple>
 		<name>MACH 5 SECOND PREDICTOR</name>
 		<debug>false</debug>
 		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
@@ -58,6 +67,15 @@
 		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
 		<output>/it-autoflight/internal/lookahead-10-sec-mach</output>
 		<seconds>10.0</seconds>
+		<filter-gain>0.0</filter-gain>
+	</predict-simple>
+	
+	<predict-simple>
+		<name>MACH 15 SECOND PREDICTOR</name>
+		<debug>false</debug>
+		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
+		<output>/it-autoflight/internal/lookahead-15-sec-mach</output>
+		<seconds>15.0</seconds>
 		<filter-gain>0.0</filter-gain>
 	</predict-simple>
   
@@ -768,7 +786,7 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</property>
+			<property>/it-autoflight/internal/lookahead-15-sec-airspeed-kt</property>
 		</input>
 		<input>
 			<condition>
@@ -777,7 +795,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-mach</property>
+			<property>/it-autoflight/internal/lookahead-15-sec-mach</property>
 			<scale>350.0</scale>
 		</input>
 		<reference>
@@ -803,7 +821,7 @@
 			<property>/it-autoflight/internal/target-fpm-b</property>
 		</output>
 		<config>
-			<Kp>-70</Kp>
+			<Kp>-40</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
@@ -816,7 +834,7 @@
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</greater-than>
 				</condition>
-				<value>100</value>
+				<value>200</value>
 			</u_min>
 			<u_min>
 				<condition>
@@ -843,7 +861,7 @@
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</less-than>
 				</condition>
-				<value>-100</value>
+				<value>-150</value>
 			</u_max>
 		</config>
 	</pid-controller>
@@ -860,7 +878,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
+			<property>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</property>
 		</input>
 		<reference>
 			<condition>
@@ -884,17 +902,44 @@
 			<property>/it-autoflight/internal/target-fpm-b</property>
 		</output>
 		<config>
-			<Kp>-70</Kp>
+			<Kp>-55</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
 			<Ti>2.5</Ti>        
 			<Td>0.001</Td>   
 			<u_min>
-				<value>100</value>
+				<value>150</value>
 			</u_min>
 			<u_max>
-				<value>10000</value>
+				<condition>
+					<and>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>0</value>
+						</equals>
+					</and>
+				</condition>
+				<value>8000</value>
+			</u_max>
+			<u_max>
+				<condition>
+					<or>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>1</value>
+						</equals>
+					</or>
+				</condition>
+				<value>1000</value>
 			</u_max>
 		</config>
 	</pid-controller>
@@ -917,7 +962,7 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-airspeed-kt</property>
+			<property>/it-autoflight/internal/lookahead-15-sec-airspeed-kt</property>
 		</input>
 		<input>
 			<condition>
@@ -926,7 +971,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/lookahead-10-sec-mach</property>
+			<property>/it-autoflight/internal/lookahead-15-sec-mach</property>
 			<scale>350.0</scale>
 		</input>
 		<reference>
@@ -952,7 +997,7 @@
 			<property>/it-autoflight/internal/target-fpm-b</property>
 		</output>
 		<config>
-			<Kp>-70</Kp>
+			<Kp>-40</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
@@ -965,7 +1010,7 @@
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</greater-than>
 				</condition>
-				<value>100</value>
+				<value>200</value>
 			</u_min>
 			<u_min>
 			<condition>
@@ -992,7 +1037,7 @@
 						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					</less-than>
 				</condition>
-				<value>-100</value>
+				<value>-150</value>
 			</u_max>
 		</config>
 	</pid-controller>
@@ -1105,7 +1150,34 @@
 				<value>-10</value>
 			</u_min>
 			<u_max>
+				<condition>
+					<and>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>0</value>
+						</equals>
+					</and>
+				</condition>
 				<value>30</value>
+			</u_max>
+			<u_max>
+				<condition>
+					<or>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>1</value>
+						</equals>
+					</or>
+				</condition>
+				<value>10</value>
 			</u_max>
 		</config>
 	</pid-controller>
