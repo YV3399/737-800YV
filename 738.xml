@@ -553,8 +553,8 @@
             <aerosurface_scale name="Elevator Control">
                 <input>fcs/pitch-trim-sum</input>
                 <range>
-                    <min>-0.192</min>
-                    <max> 0.3320</max>
+                   <min>-0.34906585</min>
+                   <max>0.244346095</max>
                 </range>
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>
@@ -562,12 +562,12 @@
             <aerosurface_scale name="Elevator Normalized">
                 <input>fcs/elevator-pos-rad</input>
                 <domain>
-                    <min>-0.336</min>
-                    <max> 0.3875</max>
+                    <min>-0.26</min>
+                    <max> 0.44</max>
                 </domain>
                 <range>
                     <min>-1</min>
-                    <max> 1</max>
+                    <max>1</max>
                 </range>
                 <output>fcs/elevator-pos-norm</output>
             </aerosurface_scale>
@@ -691,7 +691,7 @@
 				<traverse>
 					<setting>
 						<position>-1</position>
-						<time>0</time>
+						<time>1.0000</time>
 					</setting>
 					<setting>
 						<position>1</position>
@@ -704,8 +704,8 @@
             <aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
                 <input>fcs/rudder-sum</input>
                 <range>
-                    <min>-0.525</min>
-                    <max> 0.525</max>
+                     <min>-0.4363323125</min>
+                     <max>0.4363323125</max>
                 </range>
                 <output>fcs/rudder-pos-rad</output>
             </aerosurface_scale>
@@ -713,8 +713,8 @@
             <aerosurface_scale name="Rudder Normalized">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                    <min>-0.525</min>
-                    <max> 0.525</max>
+                   <min>-0.4363323125</min>
+                   <max>0.4363323125</max>
                 </domain>
                 <range>
                     <min>-1</min>

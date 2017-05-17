@@ -288,18 +288,7 @@
     <texture>737-800.png</texture>  
   </animation>
 
- <animation>
-  <name>Winglet illumination</name>
-  <type>material</type>
-  <object-name>Winglet</object-name>
-  <emission>
-   <red>0.25</red>
-   <green>0.25</green>
-   <blue>0.25</blue>
-   <factor-prop>controls/lighting/wing</factor-prop>
- </emission>
-</animation>
-
+ 
 <!--Lights-->
 
 <model>
