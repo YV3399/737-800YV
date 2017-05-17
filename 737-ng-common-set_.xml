@@ -277,10 +277,10 @@
 			<kp-cws>0.07</kp-cws>
 		</roll>
 		<pitch>
-			<umin>-0.30</umin>
-			<umax>0.30</umax>
-			<kp>-0.10</kp>
-			<ti>10.0</ti>
+			<umin>-0.45</umin>
+			<umax>0.45</umax>
+			<kp>-0.07</kp>
+			<ti>5.0</ti>
 			<td>0.0001</td>
 			<kp-cws>-0.06</kp-cws>
 		</pitch>

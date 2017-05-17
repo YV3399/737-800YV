@@ -553,8 +553,8 @@
             <aerosurface_scale name="Elevator Control">
                 <input>fcs/pitch-trim-sum</input>
                 <range>
-                   <min>-0.34906585</min>
-                   <max>0.244346095</max>
+                   <min>-0.32906685</min>
+                   <max>0.344344095</max>
                 </range>
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>

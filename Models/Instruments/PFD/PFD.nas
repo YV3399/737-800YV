@@ -293,19 +293,11 @@ var canvas_PFD = {
 		var itaffd2x = getprop("/it-autoflight/output/fd2");
 		if (itaffd1x or itaffd2x) {
 			if (getprop("/it-autoflight/fd/roll-bar") != nil) {
-				var fdRoll = (roll-getprop("/it-autoflight/fd/roll-bar"))*1.1;
-				if (fdRoll > 200)
-					fdRoll = 200;
-				elsif (fdRoll < -200)
-					fdRoll = -200;
+				var fdRoll = (roll-getprop("/it-autoflight/fd/roll-bar"))*0.5;
 				me["fdX"].setTranslation(-fdRoll,0);
 			}
 			if (getprop("/it-autoflight/fd/pitch-bar") != nil) {
-				var fdPitch = (pitch-getprop("/it-autoflight/fd/pitch-bar"))*1.5;
-				if (fdPitch > 200)
-					fdPitch = 200;
-				elsif (fdPitch < -200)
-					fdPitch = -200;
+				var fdPitch = (pitch-getprop("/it-autoflight/fd/pitch-bar"))*0.9 - 1.2;
 				me["fdY"].setTranslation(0,fdPitch);
 			}
 			me["fdX"].show();
