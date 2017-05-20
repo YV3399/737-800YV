@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Standby instrument -->
+
+<PropertyList>
+
+	<path>standby.ac</path>
+
+	<params>
+		<indicated-pitch-deg>instrumentation/attitude-indicator/indicated-pitch-deg</indicated-pitch-deg>
+		<indicated-roll-deg>instrumentation/attitude-indicator/indicated-roll-deg</indicated-roll-deg>
+		<indicated-altitude-ft>instrumentation/altimeter/indicated-altitude-ft</indicated-altitude-ft>
+		<indicated-speed-kt>instrumentation/airspeed-indicator/indicated-speed-kt</indicated-speed-kt>
+		<indicated-mach>instrumentation/airspeed-indicator/indicated-mach</indicated-mach>
+		<altimeter-setting-inhg>instrumentation/altimeter/setting-inhg</altimeter-setting-inhg>
+		<attitude-indicator-spin>instrumentation/attitude-indicator/spin</attitude-indicator-spin>
+	</params>
+	
+	<animation>
+		<type>select</type>
+		<object-name>LCD</object-name>
+		<condition>
+			<or>
+				<greater-than-equals>
+					<property>/systems/electrical/outputs/efis</property>
+					<value>15</value>
+				</greater-than-equals>
+				<equals>
+					<property>/controls/electric/battery-switch</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Power.off</object-name>
+		<condition>
+			<and>
+				<less-than>
+					<property>/systems/electrical/outputs/efis</property>
+					<value>15</value>
+				</less-than>
+				<equals>
+					<property>/controls/electric/battery-switch</property>
+					<value>0</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+
+	<inhg-to-hpa type="float">33.863882</inhg-to-hpa>
+
+	<colors>
+		<white>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</white>
+	</colors>
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>500</max-m>
+	</animation>
+
+	<text>
+		<name>Mach</name>
+		<type>number-value</type>
+		<property alias="../../params/indicated-mach" />
+		<scale>100</scale>
+		<axis-alignment>yz-plane</axis-alignment>
+		<alignment>left-center</alignment>
+		<character-size>0.004</character-size>
+		<character-aspect-ratio>1.2</character-aspect-ratio>
+		<font>helvetica_bold.txf</font>
+		<format>M.%02.f</format>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>-0.02182</y-m>
+			<z-m>0.0273</z-m>
+		</offsets>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>ILS</name>
+		<type>literal</type>
+		<axis-alignment>yz-plane</axis-alignment>
+		<alignment>left-center</alignment>
+		<character-size>0.005</character-size>
+		<character-aspect-ratio>1.8</character-aspect-ratio>
+		<font>helvetica_bold.txf</font>
+		<text>ILS</text>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>-0.01038</y-m>
+			<z-m>0.02693</z-m>
+		</offsets>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>Altimeter pressure setting hpa</name>
+		<type>number-value</type>
+		<property alias="../../params/altimeter-setting-inhg" />
+		<scale alias="../../inhg-to-hpa" />
+		<axis-alignment>yz-plane</axis-alignment>
+		<alignment>right-center</alignment>
+		<character-size>0.004</character-size>
+		<character-aspect-ratio>1.2</character-aspect-ratio>
+		<font>helvetica_bold.txf</font>
+		<format>%04.f hPa</format>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0.0182</y-m>
+			<z-m>0.02675</z-m>
+		</offsets>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>Altimeter thousands counter</name>
+		<type>number-value</type>
+		<property alias="../../params/indicated-altitude-ft" />
+		<scale>0.001</scale>
+		<truncate type="bool">true</truncate>
+		<axis-alignment>yz-plane</axis-alignment>
+		<alignment>right-center</alignment>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio>1.8</character-aspect-ratio>
+		<font>helvetica_bold.txf</font>
+		<format>%02.f</format>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0.01894</y-m>
+			<z-m>-0.00055</z-m>
+		</offsets>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>Altimeter pressure setting</name>
+		<type>number-value</type>
+		<property alias="../../params/altimeter-setting-inhg" />
+		<axis-alignment>yz-plane</axis-alignment>
+		<alignment>right-center</alignment>
+		<character-size>0.004</character-size>
+		<character-aspect-ratio>1.2</character-aspect-ratio>
+		<font>helvetica_bold.txf</font>
+		<format>%02.2f in</format>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0.01617</y-m>
+			<z-m>-0.02876</z-m>
+		</offsets>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<animation>
+		<type>material</type>
+		<object-name>Mach</object-name>
+		<object-name>ILS</object-name>
+		<object-name>Altimeter pressure setting hpa</object-name>
+		<object-name>Altimeter thousands counter</object-name>
+		<object-name>Altimeter pressure setting</object-name>
+		<ambient>
+			<red alias="../../../colors/white/red" />
+			<green alias="../../../colors/white/green" />
+			<blue alias="../../../colors/white/blue" />
+		</ambient>
+		<diffuse>
+			<red alias="../../../colors/white/red" />
+			<green alias="../../../colors/white/green" />
+			<blue alias="../../../colors/white/blue" />
+		</diffuse>
+		<emission>
+			<red alias="../../../colors/white/red" />
+			<green alias="../../../colors/white/green" />
+			<blue alias="../../../colors/white/blue" />
+			<factor-prop>instrumentation/standby/brightness-norm</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<name>Text</name>
+		<object-name>Mach</object-name>
+		<object-name>ILS</object-name>
+		<object-name>Altimeter pressure setting hpa</object-name>
+		<object-name>Altimeter thousands counter</object-name>
+		<object-name>Altimeter pressure setting</object-name>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>SpdTape</object-name>
+		<property alias="../../params/indicated-speed-kt" />
+		<factor>0.001344299</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>texmultiple</type>
+		<object-name>AI</object-name>
+		<transform>
+			<subtype>textranslate</subtype>
+			<property alias="../../../params/indicated-pitch-deg" />
+			<factor>0.00314</factor>
+			<axis>
+				<x>0</x>
+				<y>1</y>
+			</axis>
+		</transform>
+		<transform>
+			<subtype>texrotate</subtype>
+			<property alias="../../../params/indicated-roll-deg" />
+			<axis>
+				<x>0</x>
+				<y>0</y>
+				<z>-1</z>
+			</axis>
+			<center>
+				<x>0.25</x>
+				<y>0.5</y>
+			</center>
+		</transform>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>RollPtr</object-name>
+		<property alias="../../params/indicated-roll-deg" />
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.0551</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>ILSPtr</object-name>
+		<property>instrumentation/nav[0]/heading-needle-deflection-norm</property>
+		<factor>0.0115</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>GSPtr</object-name>
+		<property>instrumentation/nav[0]/gs-needle-deflection-norm</property>
+		<factor>0.0115</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>AltTape</object-name>
+		<property alias="../../params/indicated-altitude-ft" />
+		<factor>0.001001519</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>PlusBtn</object-name>
+		<object-name>PlusBtnText</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/standby/brightness-norm</property>
+				<step>0.05</step>
+				<max>1</max>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>MinusBtn</object-name>
+		<object-name>MinusBtnText</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/standby/brightness-norm</property>
+				<step>-0.05</step>
+				<min>0</min>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>BaroKnob</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/altimeter-setting-inhg" />
+				<step>0.01</step>
+				<max>33</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/altimeter-setting-inhg" />
+				<step>-0.01</step>
+				<min>26</min>
+			</binding>
+		</action>
+	</animation>
+	
+	<!-- Rembrandt !! -->
+	<effect>
+		<name>REMBRANDT transparency</name>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>StdBtnText</object-name>
+		<object-name>PlusBtnText</object-name>
+		<object-name>MinusBtnText</object-name>
+		<object-name>CageBtnText</object-name>
+	</effect>
+
+</PropertyList>

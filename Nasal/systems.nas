@@ -14,6 +14,8 @@ print("Enjoy your flight!!!");
 print("-----------------------------------------------------------------------");
 print(" ");
 
+setprop("/instrumentation/attitude-indicator/spin", 1);
+
 var altAlertModeSwitch = func {
 	var warning_b = getprop("/b737/warnings/altitude-alert-b-conditions");
 	var diff_0 = getprop("/b737/helpers/alt-diff-ft[0]");
