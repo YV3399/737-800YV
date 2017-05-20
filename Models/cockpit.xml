@@ -90,41 +90,6 @@
   </offsets>
 </model>
 
-  <!--
-  <animation>
-  <type>rotate</type>   
-  <object-name>engNo1start</object-name>  
-   <property>/controls/flight/aileron</property> 
-  <factor>100</factor>  
-  <center>
-   <x-m>-6.712</x-m>
-   <y-m>-0.009</y-m>
-   <z-m>1.279</z-m>
-  </center>
-  <axis>
-   <x>0.4</x>
-   <y>0.0</y>
-   <z>-0.7</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>rotate</type>   
-  <object-name>engNo2start</object-name>  
-   <property>/controls/flight/aileron</property> 
-  <factor>100</factor>  
-  <center>
-   <x-m>-6.712</x-m>
-   <y-m>0.099</y-m>
-   <z-m>1.279</z-m>
-  </center>
-  <axis>
-   <x>0.4</x>
-   <y>0.0</y>
-   <z>-0.7</z>
-  </axis>
- </animation>  
--->
 <animation>
   <type>rotate</type>   
   <object-name>cutoffNo1</object-name>  
@@ -859,13 +824,10 @@
    <button>0</button>
    <repeatable>true</repeatable>           
    <binding>   
-     <command>property-assign</command>
-     <property>/controls/engines/engine[0]/cutoff</property>        
-     <value type="bool">false</value>      
-     <step>1</step>
-     <min>0</min>
-     <max>3</max>                
-     <wrap>false</wrap>       
+     <command>property-cycle</command>
+     <property>/controls/engines/engine[0]/cutoff</property>     
+	  <value>0</value>	 
+	  <value>1</value>         
    </binding>
  </action> 
 </animation>
@@ -878,13 +840,10 @@
    <button>1</button>
    <repeatable>true</repeatable>           
    <binding>   
-     <command>property-assign</command>
-     <property>/controls/engines/engine[0]/cutoff</property>       
-     <value type="bool">true</value>      
-     <step>-1</step>
-     <min>0</min>
-     <max>3</max>                
-     <wrap>false</wrap>       
+     <command>property-cycle</command>
+     <property>/controls/engines/engine[0]/cutoff</property>     
+	  <value>0</value>	 
+	  <value>1</value>    
    </binding>
  </action> 
 </animation> 
@@ -897,13 +856,10 @@
    <button>0</button>
    <repeatable>true</repeatable>           
    <binding>   
-     <command>property-assign</command>
-     <property>/controls/engines/engine[1]/cutoff</property>        
-     <value type="bool">false</value>      
-     <step>1</step>
-     <min>0</min>
-     <max>3</max>                
-     <wrap>false</wrap>       
+     <command>property-cycle</command>
+     <property>/controls/engines/engine[1]/cutoff</property>     
+	  <value>0</value>	 
+	  <value>1</value>         
    </binding>
  </action> 
 </animation>
@@ -916,51 +872,10 @@
    <button>1</button>
    <repeatable>true</repeatable>           
    <binding>   
-     <command>property-assign</command>
-     <property>/controls/engines/engine[1]/cutoff</property>       
-     <value type="bool">true</value>      
-     <step>-1</step>
-     <min>0</min>
-     <max>3</max>                
-     <wrap>false</wrap>       
-   </binding>
- </action> 
-</animation> 
-
-<animation>
-  <type>pick</type>
-  <object-name>engNo1start</object-name>         
-  <visible>1</visible>
-  <action>
-   <button>0</button>
-   <repeatable>true</repeatable>           
-   <binding>   
-     <command>property-assign</command>
-     <property>/controls/engines/engine[0]/starter</property>       
-     <value type="bool">true</value>      
-     <step>-1</step>
-     <min>0</min>
-     <max>3</max>                
-     <wrap>false</wrap>       
-   </binding>
- </action> 
-</animation>
-
-<animation>
-  <type>pick</type>
-  <object-name>engNo2start</object-name>         
-  <visible>1</visible>
-  <action>
-   <button>0</button>
-   <repeatable>true</repeatable>           
-   <binding>   
-     <command>property-assign</command>
-     <property>/controls/engines/engine[1]/starter</property>       
-     <value type="bool">true</value>      
-     <step>-1</step>
-     <min>0</min>
-     <max>3</max>                
-     <wrap>false</wrap>       
+     <command>property-cycle</command>
+     <property>/controls/engines/engine[1]/cutoff</property>     
+	  <value>0</value>	 
+	  <value>1</value>        
    </binding>
  </action> 
 </animation> 

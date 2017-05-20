@@ -1,0 +1,37 @@
+<PropertyList>
+
+ <path>EFIS.ac</path>
+ 
+ 	<!-- Power on/off -->
+	<animation>
+		<name>Power on/off</name>
+		<type>select</type>
+		<object-name>Off</object-name>
+		<condition>
+			<and>
+			<less-than>
+				<property>systems/electrical/bus/dcL</property>
+				<value>15</value>
+			</less-than>
+			<less-than>
+				<property>systems/electrical/bus/dcR</property>
+				<value>15</value>
+			</less-than>
+			</and>
+		</condition>
+	</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>lowerEICASScreen</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>boeing737.showlowerEICAS();</script>
+		</binding>
+	</action>
+</animation>
+    
+</PropertyList>

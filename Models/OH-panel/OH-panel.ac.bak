@@ -8,7 +8,7 @@ MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 1 1 1  spec 1 1 1  shi 0  trans 0
 OBJECT world
 kids 79
 OBJECT poly
-name "engNo2start0"
+name "engNo1start0"
 loc 0.214573 0.0730822 -0.716512
 data 16
 engNo1start.mesh
@@ -348,7 +348,7 @@ refs 3
 51 0.239252 0.984946
 kids 0
 OBJECT poly
-name "engNo2start1"
+name "engNo1start1"
 loc 0 0 -0.109565
 data 16
 engNo1start.mesh

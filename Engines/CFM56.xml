@@ -1,23 +1,25 @@
 <?xml version="1.0"?>
 <!--
-  File:     CFM56_5.xml
-  Author:   Aero-Matic v 0.8
+  File:     CFM56.xml
+  Author:   Aero-Matic v 0.81
 
   Inputs:
     name:           CFM56
     type:           turbine
-    thrust:         20000 lb
+    thrust:         26300 lb
     augmented?      no
     injected?       no
 -->
 
-<turbine_engine name="CFM56">
-  <milthrust>   26300.0 </milthrust>
-  <bypassratio>     2.0 </bypassratio>
+<turbine_engine name="CFM56_5B4">
+  <milthrust>     26300 </milthrust>
+  <bypassratio>     7.1 </bypassratio>
   <tsfc>            0.8 </tsfc>
-  <bleed>           0.03</bleed>
+  <bleed>          0.03 </bleed>
   <idlen1>         23.4 </idlen1>
-  <idlen2>         62.7 </idlen2>
+  <idlen2>         63.7 </idlen2>
+  <n1spinup>        0.2 </n1spinup>
+  <n2spinup>        2.0 </n2spinup>
   <maxn1>         105.8 </maxn1>
   <maxn2>         102.1 </maxn2>
   <augmented>         0 </augmented>
@@ -29,12 +31,12 @@
     <independentVar lookup="column">atmosphere/density-altitude</independentVar>
     <tableData>
          -10000     0     10000   20000   30000   40000   50000
-     0.0  0.0420  0.02692  0.0528  0.0694  0.0899  0.1183  0.1467
-     0.2  0.0500  0.0065  0.0335  0.0544  0.0797  0.1049  0.1342
+     0.0  0.0430  0.0488  0.0528  0.0694  0.0899  0.1183  0.1467
+     0.2  0.0500  0.0501  0.0335  0.0544  0.0797  0.1049  0.1342
      0.4  0.0040  0.0047  0.0020  0.0272  0.0595  0.0891  0.1203
      0.6  0.0     0.0     0.0     0.0     0.0276  0.0718  0.1073
-     0.8  0.0     0.0     0.0     0.0     0.0174  0.0468  0.0900
-     1.0  0.0     0.0     0.0     0.0     0.0     0.0422  0.0700
+     0.8  0.0     0.0     0.0     0.0     0.0474  0.0868  0.0900
+     1.0  0.0     0.0     0.0     0.0     0.0     0.0552  0.0800
     </tableData>
    </table>
   </function>
@@ -45,13 +47,14 @@
     <independentVar lookup="column">atmosphere/density-altitude</independentVar>
     <tableData>
           -10000       0   10000   20000   30000   40000   50000
-     0.0   1.2600  1.0805  0.7400  0.5340  0.3720  0.2410  0.1490
-     0.2   1.1710  0.8937  0.6970  0.5060  0.3550  0.2310  0.1430
+     0.0   1.2600  1.0000  0.7400  0.5340  0.3720  0.2410  0.1490
+     0.2   1.1710  0.9340  0.6970  0.5060  0.3550  0.2310  0.1430
      0.4   1.1500  0.9210  0.6920  0.5060  0.3570  0.2330  0.1450
      0.6   1.1810  0.9510  0.7210  0.5320  0.3780  0.2480  0.1540
      0.8   1.2580  1.0200  0.7820  0.5820  0.4170  0.2750  0.1700
      1.0   1.3690  1.1200  0.8710  0.6510  0.4750  0.3150  0.1950
-     1.2   0.0000  0.0000  0.0000  0.0000  0.0000  0.0000  0.0000
+     1.2   1.4850  1.2300  0.9750  0.7440  0.5450  0.3640  0.2250
+     1.4   1.5941  1.3400  1.0860  0.8450  0.6280  0.4240  0.2630
     </tableData>
    </table>
   </function>

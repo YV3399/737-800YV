@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- MD-88/MD-90 Aircraft Config Dialog -->
+
+
+<PropertyList>
+
+	<name>aircraft-config-panelstateload</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Please wait...</label>
+        </text>
+    </group>
+	
+    <hrule/>
+	
+		<group>
+			<layout>vbox</layout>
+			
+			<text>
+				<halign>center</halign>
+				<label>Loading Panel State...</label>
+			</text>
+			<text>
+				<halign>center</halign>
+				<label>Please don't touch anything during this process!</label>
+			</text>
+			
+		</group>
+	
+</PropertyList>

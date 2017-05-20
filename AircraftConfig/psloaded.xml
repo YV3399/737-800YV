@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- MD-88/MD-90 Aircraft Config Dialog -->
+
+
+<PropertyList>
+
+	<name>aircraft-config-panelstateloaded</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Message</label>
+        </text>
+    </group>
+	
+    <hrule/>
+	
+		<group>
+			<layout>vbox</layout>
+			
+			<text>
+				<halign>center</halign>
+				<label>Panel State Load Complete!</label>
+			</text>
+			<button>
+				<halign>center</halign>
+				<legend>Close</legend>
+				<pref-width>140</pref-width>
+				<key>Esc</key>
+				<binding>
+					<command>dialog-close</command>
+				</binding>
+			</button>
+			
+		</group>
+	
+</PropertyList>

@@ -11,7 +11,7 @@
 
     <model>
         <name>EICAS2</name>
-        <path>Models/Instruments/EICAS/eicas.xml</path>
+        <path>Models/Instruments/EICAS_Lower/eicas.xml</path>
         <offsets>
             <x-m>0.426</x-m>
             <y-m>-0.021</y-m>

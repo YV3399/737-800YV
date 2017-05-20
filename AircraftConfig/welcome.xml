@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- MD-88/MD-90 Aircraft Config Dialog -->
+
+
+<PropertyList>
+
+	<name>aircraft-config-welcome</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Welcome!</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+		<group>
+			<layout>vbox</layout>
+			
+			<text>
+				<halign>center</halign>
+				<label>Welcome to the Boeing 737-800 by Gabriel Hernandez (YV3399) and Others</label>
+			</text>
+			<text>
+				<halign>center</halign>
+				<label>B738 Version 1.4.0, it0uchpods Shared Libraies V1.2.6</label>
+			</text>
+			<text>
+				<halign>center</halign>
+				<label>It is currently still under development, and therefore is not complete yet.</label>
+			</text>
+			<text>
+				<halign>center</halign>
+				<label>Use the Aircraft Config to select livery, manage panel states, and more!</label>
+			</text>
+			<text>
+				<halign>center</halign>
+				<label>Please report bugs on the FlightGear forums! Enjoy!</label>
+			</text>
+			
+		</group>
+		
+	    <hrule/>
+	
+		<group>
+			<layout>vbox</layout>
+			
+			<button>
+				<halign>center</halign>
+				<legend>Open A/C Config</legend>
+				<pref-width>140</pref-width>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.main_dlg.open();
+					</script>
+				</binding>
+				<binding>
+					<command>dialog-close</command>
+				</binding>
+			</button>
+			<button>
+				<halign>center</halign>
+				<legend>Close</legend>
+				<pref-width>140</pref-width>
+				<binding>
+					<command>dialog-close</command>
+				</binding>
+			</button>
+		</group>
+	
+</PropertyList>

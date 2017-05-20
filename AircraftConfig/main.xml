@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- MD-88/MD-90 Aircraft Config Dialog -->
+
+
+<PropertyList>
+
+	<name>aircraft-config</name>
+	<layout>vbox</layout>
+	
+	<group>
+		<layout>hbox</layout>
+		<text>
+			<halign>left</halign>
+			<label>Aircraft Configuration</label>
+		</text>
+		<button>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>X</legend>
+			<key>Esc</key>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	
+	<hrule/>
+		
+	<group>
+		<layout>hbox</layout>
+
+		<group>
+			<layout>vbox</layout>
+			
+				<group>
+					<layout>vbox</layout>
+					
+					<button>
+						<halign>center</halign>
+						<legend>Welcome</legend>
+						<pref-width>140</pref-width>
+						<binding>
+							<command>nasal</command>
+							<script>
+							acconfig.welcome_dlg.open();
+							</script>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Select Livery</legend>
+						<pref-width>140</pref-width>
+						<binding>
+							<command>nasal</command>
+							<script>
+							aircraft.livery.dialog.toggle();
+							</script>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Aircraft Tutorial</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<property>/systems/unused/unusedthing</property>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>
+							# Blank for now
+							</script>
+						</binding>
+					</button>
+				</group>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<group>
+					<layout>hbox</layout>
+
+					<hrule>
+						<stretch type="bool">true</stretch>
+					</hrule>
+					<text>
+						<label>Auto Aircraft Config</label>
+					</text>
+					<hrule>
+						<stretch type="bool">true</stretch>
+					</hrule>
+				</group>
+				
+				<group>
+					<layout>vbox</layout>
+					
+					<button>
+						<halign>center</halign>
+						<legend>Autostart</legend>
+						<pref-width>140</pref-width>
+						<binding>
+							<command>nasal</command>
+							<script>boeing737.autostart();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					
+					<button>
+						<halign>center</halign>
+						<legend>Shutdown</legend>
+						<pref-width>140</pref-width>
+						<binding>
+							<command>nasal</command>
+							<script>boeing737.shutdown();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					
+					<button>
+						<halign>center</halign>
+						<legend>Cold and Dark</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<!--not><property>/systems/acconfig/autoconfig-running</property></not-->
+							<property>unused/I-AM-OCTAL</property>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.colddark();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Ready to Start Eng</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<!--not><property>/systems/acconfig/autoconfig-running</property></not-->
+							<property>unused/I-AM-OCTAL</property>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.beforestart();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Ready for Taxi</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<!--not><property>/systems/acconfig/autoconfig-running</property></not-->
+							<property>unused/I-AM-OCTAL</property>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.taxi();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+					<button>
+						<halign>center</halign>
+						<legend>Ready for Takeoff</legend>
+						<pref-width>140</pref-width>
+						<enable>
+							<!--not><property>/systems/acconfig/autoconfig-running</property></not-->
+							<property>unused/I-AM-OCTAL</property>
+						</enable>
+						<binding>
+							<command>nasal</command>
+							<script>acconfig.takeoff();</script>
+						</binding>
+						<binding>
+							<command>dialog-close</command>
+						</binding>
+					</button>
+				</group>
+			</group>
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Enable De-icing Truck</label>
+				<property>services/deicing_truck/enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+
+			<button>
+				<halign>left</halign>
+				<legend>De-ice Aircraft</legend>
+				<padding>5</padding>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if (getprop("services/deicing_truck/enable") == 1) {
+							setprop("/services/deicing_truck/de-ice", 1);
+							screen.log.write("Starting De-icing Process...", 1, 1, 1);
+						} else
+							screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);
+					</script>
+				</binding>
+			</button>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Enable Baggage Ramp</label>
+				<property>services/baggage/enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+
+			<checkbox>
+				<halign>left</halign>
+				<label>Enable External Power Box</label>
+				<property>services/ext-pwr/enable</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Bus</label>
+				<property>controls/switches/bus</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Passenger Stairs Front</label>
+				<property>controls/switches/stairs1</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/switches/stairs1</property>
+				</binding>
+			</checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Passenger Stairs Rear</label>
+				<property>controls/switches/stairs2</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/switches/stairs2</property>
+				</binding>
+			</checkbox>
+			<checkbox>
+				<halign>left</halign>
+				<label>Catering Front</label>
+				<property>controls/switches/catering1</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/switches/catering1</property>
+				</binding>
+			</checkbox>
+			
+			<hrule/>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Show yokes</label>
+				<property>sim/yokes-visible</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<halign>left</halign>
+				<label>Increase FPS ( Disables decoration objects)</label>
+				<live>true</live>
+				<property>controls/switches/increase-fps</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/switches/increase-fps</property>
+				</binding>
+			</checkbox>
+		
+			<group>
+				<layout>hbox</layout>
+				
+				<button>
+					<legend>Fuel Truck Controls</legend>
+					<binding>
+						<command>nasal</command>
+						<script>
+						var fuel = gui.Dialog.new("sim/gui/dialogs/fuel/dialog", "Aircraft/737-800/Systems/fuel-truck.xml");
+						fuel.open();
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Announcements</legend>
+					<binding>
+						<command>nasal</command>
+						<script>
+						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/737-800/Dialogs/announcements-dialog.xml");
+						mal.open();
+						</script>
+					</binding>
+				</button>
+				
+			</group>
+					
+			<group>
+				<layout>hbox</layout>
+
+				
+				<button>
+					<legend>Lights</legend>
+					<binding>
+						<command>nasal</command>
+						<script>
+						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800/Systems/lights-dlg.xml");
+						lights.open();
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Failures</legend>
+					<binding>
+						<command>nasal</command>
+						<script>
+						var failures = gui.Dialog.new("sim/gui/dialogs/failures/dialog", "Aircraft/737-800/Systems/failures-dlg.xml");
+						failures.open();
+						</script>
+					</binding>
+				</button>
+				
+			</group>
+		</group>
+	</group>
+	
+</PropertyList>
