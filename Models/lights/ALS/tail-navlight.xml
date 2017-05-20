@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>tail-navlight.ac</path>
+ <nopreview/>
+
+ 
+<effect>
+    <inherits-from>Aircraft/Cessna-208-Caravan/Models/light/ALS/tail-navlight</inherits-from>
+   <object-name>tail-navlight</object-name>
+ </effect>
+ 
+<effect>
+   <inherits-from>Aircraft/Cessna-208-Caravan/Models/light/ALS/tail-navlight2</inherits-from>
+   <object-name>tail-navlight.001</object-name>
+ </effect>
+ 
+ <animation>
+  <type>scale</type>
+  <x-offset>0.1</x-offset>
+  <y-offset>0.1</y-offset>
+  <z-offset>0.1</z-offset>
+ </animation>
+ 
+<animation>
+		<type>translate</type>
+  <object-name>tail-navlight</object-name>
+  <object-name>tail-navlight.001</object-name>
+		<offset-m>0.5</offset-m><!--translate-offset-m * scale-x-offset = real-offset in sim, so 0.1 * 0.5m =0.05m = 5cm--> 
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+ 
+<animation>
+  <type>dist-scale</type>
+  <object-name>tail-navlight</object-name>
+  <object-name>tail-navlight.001</object-name>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>1</dep>
+   </entry>
+   <entry>
+    <ind>300</ind>
+    <dep>4</dep>
+   </entry>
+   <entry>
+    <ind>1500</ind>
+    <dep>8</dep>
+   </entry>
+  </interpolation>
+ </animation>
+ 
+
+
+</PropertyList>

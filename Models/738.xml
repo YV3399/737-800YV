@@ -300,6 +300,15 @@
     <z-m>1.06</z-m>       
   </offsets>
 </model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/green-navlight.xml</path>
+  <name>Greenlight.ALS</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
+</model>
 
 <model>
   <path>Aircraft/737-800/Models/lights/rednav.xml</path>
@@ -310,11 +319,29 @@
     <z-m>1.06</z-m>        
   </offsets>
 </model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/red-navlight.xml</path>
+  <name>Redlight.ALS</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>-17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
+</model>
 
 
 <model>
   <path>Aircraft/737-800/Models/lights/strobe.xml</path>
-  <name>strobe-right</name>     
+  <name>strobe.right</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/right-strobe.xml</path>
+  <name>strobe.right.ALS</name>     
   <offsets>
     <x-m>3.64</x-m>
     <y-m>17.01</y-m>
@@ -324,28 +351,57 @@
 
 <model>
   <path>Aircraft/737-800/Models/lights/strobe.xml</path>
-  <name>strobe-left</name>     
+  <name>strobe.left</name>     
   <offsets>
     <x-m>3.64</x-m>
     <y-m>-17.01</y-m>
     <z-m>1.06</z-m>     
   </offsets>
 </model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/left-strobe.xml</path>
+  <name>strobe.left.ALS</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>-17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
 
 <model> 
  <path>Aircraft/737-800/Models/lights/strobe.xml</path>
+  <name>strobe.rear</name>     
  <offsets>
    <x-m>18.63</x-m>
    <y-m>0.0</y-m>
    <z-m>2.06</z-m>
  </offsets>
 </model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/tail-strobe.xml</path>
+  <name>strobe.rear.ALS</name>     
+  <offsets>
+   <x-m>18.63</x-m>
+   <y-m>0.0</y-m>
+   <z-m>2.06</z-m>     
+  </offsets>
+</model>
 
 <!--Landing Light-->
 
 <model>
   <path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
-  <name>LeftWingLandinglight</name>
+  <name>landing.LW</name>
+
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>-2.14</y-m>
+    <z-m>-0.51</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/landinglightL.xml</path>
+  <name>landing.LW.ALS</name>
 
   <offsets>
     <x-m>-4.90</x-m>
@@ -356,11 +412,21 @@
 
 <model>
   <path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
-  <name>RightWingLandinglight</name>
+  <name>landing.RW</name>
   <offsets>
     <x-m>-4.98</x-m>
     <y-m>2.14</y-m>
     <z-m>-0.51</z-m>        
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/landinglightR.xml</path>
+  <name>landing.RW.ALS</name>
+
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>2.14</y-m>
+    <z-m>-0.51</z-m>      
   </offsets>
 </model>
 
@@ -369,6 +435,15 @@
 <model>
   <path>Aircraft/737-800/Models/lights/TaxiLight.xml</path>
   <name>TaxiLight</name>
+  <offsets>
+    <x-m>-15.78</x-m>
+    <y-m>0.00</y-m>
+    <z-m>-1.60</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/taxilight.xml</path>
+  <name>TaxiLight.ALS</name>
   <offsets>
     <x-m>-15.78</x-m>
     <y-m>0.00</y-m>
@@ -401,7 +476,16 @@
 
 <model>
   <path>Aircraft/737-800/Models/lights/beacon.xml</path>
-  <name>Beaconlight.top</name>     
+  <name>beacon.top</name>     
+  <offsets>
+    <x-m>0.00</x-m>
+    <y-m>0.00</y-m>
+    <z-m>2.57</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/beacon.xml</path>
+  <name>beacon.top.ALS</name>     
   <offsets>
     <x-m>0.00</x-m>
     <y-m>0.00</y-m>
@@ -411,13 +495,59 @@
 
 <model>
   <path>Aircraft/737-800/Models/lights/beacon.xml</path>
-  <name>Beaconlight.bottom</name>     
+  <name>beacon.bottom</name>     
   <offsets>
     <x-m>0.0</x-m>
     <y-m> 0.00</y-m>
     <z-m>-1.42</z-m>      
   </offsets>
 </model>   
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/beacon.xml</path>
+  <name>beacon.bottom.ALS</name>     
+  <offsets>
+    <x-m>0.0</x-m>
+    <y-m> 0.00</y-m>
+    <z-m>-1.55</z-m>      
+  </offsets>
+</model>
+
+<!--Select animation-->
+<animation>
+    <type>select</type>
+    <object-name>beacon.top</object-name>
+    <object-name>beacon.bottom</object-name>
+    <object-name>Redlight</object-name>
+    <object-name>Greenlight</object-name>
+    <object-name>strobe.left</object-name>
+    <object-name>strobe.right</object-name>
+    <object-name>strobe.rear</object-name>
+    <object-name>landing.LW</object-name>
+    <object-name>landing.RW</object-name>
+    <object-name>TaxiLight</object-name>
+    <condition>
+        <not>
+            <property>/sim/rendering/shaders/skydome</property>
+        </not>
+    </condition>
+</animation>
+<animation>
+    <type>select</type>
+    <object-name>beacon.top.ALS</object-name>
+    <object-name>beacon.bottom.ALS</object-name>
+    <object-name>Redlight.ALS</object-name>
+    <object-name>Greenlight.ALS</object-name>
+    <object-name>strobe.left.ALS</object-name>
+    <object-name>strobe.right.ALS</object-name>
+    <object-name>strobe.rear.ALS</object-name>
+    <object-name>landing.LW.ALS</object-name>
+    <object-name>landing.RW.ALS</object-name>
+    <object-name>TaxiLight.ALS</object-name>
+    <condition>
+            <property>/sim/rendering/shaders/skydome</property>
+    </condition>
+</animation>
+
 
 <!-- Tyre Smoke -->
 

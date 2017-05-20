@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>landinglight.ac</path>
+ <nopreview/>
+
+
+ 
+<effect>
+   <inherits-from>Aircraft/737-800/Models/lights/ALS/taxilight</inherits-from>
+   <object-name>landinglight</object-name>
+ </effect>
+ 
+
+ 
+ <animation>
+  <type>scale</type>
+  <x-offset>0.75</x-offset>
+  <y-offset>0.75</y-offset>
+  <z-offset>0.75</z-offset>
+ </animation>
+ 
+
+ 
+<animation>
+  <type>dist-scale</type>
+  <object-name>landinglight</object-name>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>1</dep>
+   </entry>
+   <entry>
+    <ind>300</ind>
+    <dep>4</dep>
+   </entry>
+   <entry>
+    <ind>1500</ind>
+    <dep>8</dep>
+   </entry>
+  </interpolation>
+ </animation>
+ 
+    <animation>
+        <type>flash</type>
+        <object-name>landinglight</object-name>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <power>8</power>
+        <factor>3</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.5</min>
+        <max>80</max>
+    </animation>
+
+
+</PropertyList>
