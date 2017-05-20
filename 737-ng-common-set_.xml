@@ -195,7 +195,7 @@
 			<kp>-0.07</kp>
 			<ti>5.0</ti>
 			<td>0.0001</td>
-			<kp-cws>-0.06</kp-cws>
+			<kp-cws>-0.03</kp-cws>
 		</pitch>
 		<cmd>
 			<roll-kp>-1.9</roll-kp>
@@ -213,7 +213,7 @@
 	</config>
 	<settings>
 		<default-bank-limit>30</default-bank-limit> <!-- Set the Default Bank Limit -->
-		<enable-cws>0</enable-cws> <!-- Enable/Disable CWS -->
+		<enable-cws>1</enable-cws> <!-- Enable/Disable CWS -->
 		<flare-altitude>40</flare-altitude> <!-- Autoland Flare AGL -->
 		<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
 		<land-flap>0.750</land-flap> <!-- Minimum Flap used for Landing -->

@@ -528,7 +528,8 @@
         <channel name="Pitch">
 
             <summer name="Pitch Trim Sum Cmd">
-                <input>fcs/elevator-cmd-norm</input>
+			<input>/controls/flight/elevator</input>
+			<input>/controls/flight/elevator-trim</input>
                 <clipto>
                     <min>-1</min>
                     <max> 1</max>
@@ -553,8 +554,8 @@
             <aerosurface_scale name="Elevator Control">
                 <input>fcs/pitch-trim-sum</input>
                 <range>
-                   <min>-0.32906685</min>
-                   <max>0.344344095</max>
+                   <min>-0.38906685</min>
+                   <max>0.324344095</max>
                 </range>
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>
