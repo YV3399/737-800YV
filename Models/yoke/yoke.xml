@@ -93,6 +93,16 @@
 		<value>0</value>
 		</binding>
     <binding>
+		<command>property-assign</command>
+		<property>/it-cws/cwsa</property>
+		<value>0</value>
+		</binding>
+    <binding>
+		<command>property-assign</command>
+		<property>/it-cws/cwsb</property>
+		<value>0</value>
+		</binding>
+    <binding>
         <command>property-assign</command>
         <property>/controls/flight/apoff</property>
         <value>1</value>

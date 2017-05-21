@@ -178,7 +178,7 @@
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/cws</property>
+    				<property>/it-cws/cwsa</property>
     				<value>1</value>
     			</equals>
     		</and>
@@ -195,7 +195,7 @@
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/cws</property>
+    				<property>/it-cws/cwsb</property>
     				<value>1</value>
     			</equals>
     		</and>
@@ -901,7 +901,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-toggle</command>
-			<property>it-autoflight/input/cws</property>
+			<property>it-cws/cwsa</property>
 		</binding>
 	</action>
 </animation>
@@ -916,7 +916,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-toggle</command>
-			<property>it-autoflight/input/cws</property>
+			<property>it-cws/cwsb</property>
 		</binding>
 	</action>
 </animation>

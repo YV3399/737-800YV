@@ -606,7 +606,7 @@
   <type>rotate</type>
   <object-name>rhaileron</object-name>      
   <object-name>ailerontabrh</object-name>   
-  <property>controls/flight/aileron</property>
+  <property>/sim/multiplay/generic/float[7]</property>
   <factor>-18</factor>
   <offset-deg>0</offset-deg>   
   <center>
@@ -624,7 +624,7 @@
  <animation>
   <type>rotate</type>   
   <object-name>ailerontabrh</object-name>   
-  <property>controls/flight/aileron</property>
+  <property>/sim/multiplay/generic/float[7]</property>
   <factor>5</factor>
   <offset-deg>0</offset-deg>   
   <center>

@@ -521,6 +521,7 @@
    <system file="steering"/>
    <system file="fuel"/>
    <system file="fmc"/>
+   <system file="it-cws"/>
 
 
     <flight_control name="FCS: 737">
@@ -528,7 +529,7 @@
         <channel name="Pitch">
 
             <summer name="Pitch Trim Sum Cmd">
-			<input>/controls/flight/elevator</input>
+			<input>/controls/flight/elevator-fbw</input>
 			<input>/controls/flight/elevator-trim</input>
                 <clipto>
                     <min>-1</min>
@@ -578,14 +579,14 @@
         <channel name="Roll">
 
             <summer name="Roll Trim Sum">
-                <input>fcs/aileron-cmd-norm</input>
-                <input>fcs/roll-trim-cmd-norm</input>
+				<input>/controls/flight/aileron-fbw</input>
+				<input>/controls/flight/aileron-trim</input>
                 <clipto>
                     <min>-1</min>
                     <max> 1</max>
                 </clipto>
             </summer>
- <fcs_function name="Left Aileron Control">
+			<fcs_function name="Left Aileron Control">
                 <function>
                     <table>
                         <independentVar>fcs/roll-trim-sum</independentVar>
@@ -643,7 +644,7 @@
         <channel name="Yaw">
 
             <summer name="Rudder Command Sum">
-                <input>fcs/rudder-cmd-norm</input>
+                <input>/controls/flight/rudder-fde</input>
                 <input>fcs/yaw-trim-cmd-norm</input>
                 <clipto>
                     <min>-1</min>
@@ -1200,21 +1201,6 @@
 
         <channel name="Throttle">
 
-          <summer name="fcs/throttle/after-landing-time">
-            <input> sim-time-sec </input>
-            <input>-/b737/sensors/landing-time </input>
-          </summer>
-
-          <switch name="fcs/throttle/high-idle">
-            <default value="0.119"/>
-            <test value="0">
-              fcs/throttle/after-landing-time GT 4
-              /gear/gear[0]/wow == 1
-              /gear/gear[1]/wow == 1
-              /gear/gear[2]/wow == 1
-            </test>
-          </switch>
-
           <switch name="fcs/throttle/max-reverse">
             <default value="1"/>
             <test value="0.742">
@@ -1242,7 +1228,7 @@
             <summer name="fcs/throttle/throttle-pos-norm[0]">
                 <input>fcs/throttle/throttle-cmd-norm[0]</input>
                 <clipto>
-                    <min>fcs/throttle/high-idle</min>
+                    <min>0.0</min>
                     <max>fcs/throttle/max-reverse</max>
                 </clipto>
                 <output>fcs/throttle-pos-norm[0]</output>
@@ -1261,7 +1247,7 @@
             <summer name="fcs/throttle/throttle-pos-norm[1]">
                 <input>fcs/throttle/throttle-cmd-norm[1]</input>
                 <clipto>
-                    <min>fcs/throttle/high-idle</min>
+                    <min>0.0</min>
                     <max>fcs/throttle/max-reverse</max>
                 </clipto>
                 <output>fcs/throttle-pos-norm[1]</output>
@@ -1930,7 +1916,7 @@
                     <property>metrics/cbarw-ft</property>
                     <property>aero/ci2vel</property>
                     <property>velocities/q-aero-rad_sec</property>
-                    <value>-37.0</value>
+                    <value>-53.0</value>
                 </product>
             </function>
             <function name="aero/coefficient/Cmadot">

@@ -28,6 +28,11 @@
         <name>IT-AUTOFLIGHT</name>
         <path>Aircraft/737-800/Systems/it-autoflight.xml</path>
       </autopilot>
+	  
+      <autopilot>
+        <name>IT-CWS</name>
+        <path>Aircraft/737-800/Systems/it-cws-b.xml</path>
+      </autopilot>
 
 	  <!-- Uses a custom N1 based autothrottle -->
       <autopilot>
@@ -109,6 +114,9 @@
        <float n="4" alias="/gear/gear[2]/compression-m"/>
        <float n="5" alias="/surface-positions/speedbrake-norm"/>
        <float n="6" alias="/surface-positions/reverser-norm"/>
+       <float n="7" alias="/controls/flight/aileron-fbw"/>
+       <float n="8" alias="/controls/flight/elevator-fbw"/>
+       <float n="9" alias="/controls/flight/rudder-fbw"/>
        <string alias="/sim/multiplay/callsign"/>
      </generic>
    </multiplay>
@@ -213,7 +221,7 @@
 	</config>
 	<settings>
 		<default-bank-limit>30</default-bank-limit> <!-- Set the Default Bank Limit -->
-		<enable-cws>1</enable-cws> <!-- Enable/Disable CWS -->
+		<enable-cws>0</enable-cws> <!-- Enable/Disable CWS -->
 		<flare-altitude>40</flare-altitude> <!-- Autoland Flare AGL -->
 		<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
 		<land-flap>0.750</land-flap> <!-- Minimum Flap used for Landing -->
@@ -542,6 +550,12 @@
 		<start-switch type="int">1</start-switch>
 	</engine>
   </engines>
+  
+  <flight n="0">
+	<aileron-fbw>0</aileron-fbw>
+	<elevator-fbw>0</elevator-fbw>
+	<rudder-fde>0</rudder-fde>
+  </flight>
 
   <gear>
     <autobrakes type="int">0</autobrakes>
@@ -700,6 +714,10 @@
   <itaf>
     <file>Aircraft/737-800/Nasal/it-autoflight.nas</file>
   </itaf>
+  
+  <it-cws>
+    <file>Aircraft/737-800/Nasal/it-cws.nas</file>
+  </it-cws>
   
   <thrust>
     <file>Aircraft/737-800/Nasal/thrust.nas</file>

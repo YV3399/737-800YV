@@ -207,7 +207,7 @@ var canvas_PFD = {
 		
 		if (slipSkid > 0.1) slipSkid = 0.1;
 		if (slipSkid < -0.1) slipSkid = -0.1;
-		me["slipSkid"].setTranslation(slipSkid*-460,0);
+		me["slipSkid"].setTranslation(slipSkid*-320,0);
 		me["bankPointer"].setRotation(-roll*D2R);
 		me["ladderLimiter"].setRotation(-roll*D2R);
 

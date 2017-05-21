@@ -1,0 +1,124 @@
+<!-- B737-800 CWS System by Joshua Davidson (it0uchpods) and Richard Harrison (richard) -->
+
+<system name="it-fbw">
+	<property value="0">/it-cws/roll-deg</property>
+	<property value="0">/it-cws/pitch-deg</property>
+
+	<channel name="FBW Aileron">
+		<fcs_function name="/it-cws/roll-deg">
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<property>/it-autoflight/output/ap1</property>
+							<value>0</value>
+						</eq>
+						<eq>
+							<property>/it-autoflight/output/ap2</property>
+							<value>0</value>
+						</eq>
+						<eq>
+							<property>/gear/gear[0]/wow</property>
+							<value>0</value>
+						</eq>
+						<or>
+							<eq>
+								<property>/it-cws/cwsa-output</property>
+								<value>1</value>
+							</eq>
+							<eq>
+								<property>/it-cws/cwsb-output</property>
+								<value>1</value>
+							</eq>
+						</or>
+					</and>
+					<sum>
+						<property>/it-cws/roll-deg</property>
+						<table>
+							<independentVar lookup="row">/controls/flight/aileron</independentVar>
+							<tableData>
+							-1.0     -0.15
+							-0.7     -0.1
+							-0.5     -0.05
+							-0.3     -0.025
+							-0.15    -0.01
+							-0.05    -0.005
+							 0.00     0.00
+							 0.05     0.005
+							 0.15     0.01
+							 0.3      0.025
+							 0.5      0.05
+							 0.7      0.1
+							 1.0      0.15
+							</tableData>
+						</table>
+					</sum>
+					<property>/orientation/roll-deg</property>
+				</ifthen>
+			</function>
+			<clipto>
+				<min>-30</min>
+				<max>30</max>
+			</clipto>
+		</fcs_function>
+	</channel>
+	
+	<channel name="FBW Elevator">
+		<fcs_function name="/it-cws/pitch-deg">
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<property>/it-autoflight/output/ap1</property>
+							<value>0</value>
+						</eq>
+						<eq>
+							<property>/it-autoflight/output/ap2</property>
+							<value>0</value>
+						</eq>
+						<eq>
+							<property>/gear/gear[0]/wow</property>
+							<value>0</value>
+						</eq>
+						<or>
+							<eq>
+								<property>/it-cws/cwsa-output</property>
+								<value>1</value>
+							</eq>
+							<eq>
+								<property>/it-cws/cwsb-output</property>
+								<value>1</value>
+							</eq>
+						</or>
+					</and>
+					<sum>
+						<property>/it-cws/pitch-deg</property>
+						<table>
+							<independentVar lookup="row">/controls/flight/elevator</independentVar>
+							<tableData>
+							-1.0      0.1
+							-0.7      0.05
+							-0.5      0.02
+							-0.3      0.01
+							-0.15     0.005
+							-0.05     0.001
+							 0.00     0.00
+							 0.05    -0.001
+							 0.15    -0.005
+							 0.3     -0.01
+							 0.5     -0.02
+							 0.7     -0.05
+							 1.0     -0.1
+							</tableData>
+						</table>
+					</sum>
+					<property>/orientation/pitch-deg</property>
+				</ifthen>
+			</function>
+			<clipto>
+				<min>-15</min>
+				<max>30</max>
+			</clipto>
+		</fcs_function>
+	</channel>
+</system>

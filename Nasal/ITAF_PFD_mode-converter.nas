@@ -118,12 +118,13 @@ setlistener("/it-autoflight/output/appr-armed", func {
 var apfd = func {
 	var ap1 = getprop("/it-autoflight/output/ap1");
 	var ap2 = getprop("/it-autoflight/output/ap2");
-	var cws = getprop("/it-autoflight/output/cws");
+	var cwsa = getprop("/it-cws/cwsa-output");
+	var cwsb = getprop("/it-cws/cwsb-output");
 	var fd1 = getprop("/it-autoflight/output/fd1");
 	var fd2 = getprop("/it-autoflight/output/fd2");
 	if (ap1 or ap2) {
 		setprop("/autopilot/display/afds-mode[0]", "CMD");
-	} else if (cws) {
+	} else if (cwsa or cwsb) {
 		setprop("/autopilot/display/afds-mode[0]", "CWS");
 	} else if (fd1 or fd2) {
 		setprop("/autopilot/display/afds-mode[0]", "FD");
@@ -139,13 +140,15 @@ setlistener("/it-autoflight/output/ap1", func {
 setlistener("/it-autoflight/output/ap2", func {
 	apfd();
 });
-setlistener("/it-autoflight/output/cws", func {
-	apfd();
-});
 setlistener("/it-autoflight/output/fd1", func {
 	apfd();
 });
 setlistener("/it-autoflight/output/fd2", func {
 	apfd();
 });
-
+setlistener("/it-cws/cwsa-output", func {
+	apfd();
+});
+setlistener("/it-cws/cwsb-output", func {
+	apfd();
+});
