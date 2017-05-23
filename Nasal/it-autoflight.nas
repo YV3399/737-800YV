@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 180
+# V3.0.0 Build 182
 # This program is 100% GPL!
 
 print("IT-AUTOFLIGHT: Please Wait!");
@@ -51,7 +51,6 @@ var ap_init = func {
 	setprop("/it-autoflight/internal/fpa", 0);
 	setprop("/it-autoflight/internal/prof-fpm", 0);
 	setprop("/it-autoflight/internal/top-of-des-nm", 0);
-	setprop("/it-autoflight/autoland/target-vs", "-650");
 	setprop("/it-autoflight/mode/thr", "PITCH");
 	setprop("/it-autoflight/mode/arm", "HDG");
 	setprop("/it-autoflight/mode/lat", "T/O");
@@ -301,7 +300,6 @@ var vertical = func {
 			setprop("/instrumentation/nav[1]/gs-rate-of-climb", 0);
 			setprop("/it-autoflight/output/appr-armed", 1);
 			setprop("/it-autoflight/mode/arm", "ILS");
-			setprop("/it-autoflight/autoland/target-vs", "-650");
 		}
 	} else if (vertset == 3) {
 		alandt.stop();
@@ -366,7 +364,6 @@ var vertical = func {
 		alandt.stop();
 		alandt1.start();
 		prof_sys_stop();
-		setprop("/it-autoflight/autoland/target-vs", "-650");
 	} else if (vertset == 7) {
 		alandt.stop();
 		alandt1.stop();
@@ -770,8 +767,12 @@ var make_appr_active = func {
 var aland = func {
 	var ap1 = getprop("/it-autoflight/output/ap1");
 	var ap2 = getprop("/it-autoflight/output/ap2");
+	var landoption = getprop("/it-autoflight/settings/autoland-without-ap");
 	if (getprop("/position/gear-agl-ft") <= 100) {
-		if (ap1 or ap2) {
+		if (ap1 == 1 or ap2 == 1) {
+			setprop("/it-autoflight/input/lat", 4);
+			setprop("/it-autoflight/input/vert", 6);
+		} else if (ap1 == 0 and ap2 == 0 and landoption) {
 			setprop("/it-autoflight/input/lat", 4);
 			setprop("/it-autoflight/input/vert", 6);
 		} else {
@@ -783,12 +784,10 @@ var aland = func {
 
 var aland1 = func {
 	var aglal = getprop("/position/gear-agl-ft");
-	var flarealt = getprop("/it-autoflight/settings/flare-altitude");
-	if (aglal <= flarealt and aglal > 5) {
+	if (aglal <= 50 and aglal > 5) {
 		setprop("/it-autoflight/mode/vert", "FLARE");
-		setprop("/it-autoflight/autoland/target-vs", "-120");
 	}
-	if ((getprop("/it-autoflight/output/ap1") == 0) and (getprop("/it-autoflight/output/ap2") == 0)) {
+	if ((getprop("/it-autoflight/output/ap1") == 0) and (getprop("/it-autoflight/output/ap2") == 0) and (getprop("/it-autoflight/settings/autoland-without-ap") == 0)) {
 		alandt.stop();
 		alandt1.stop();
 		setprop("/it-autoflight/output/loc-armed", 0);

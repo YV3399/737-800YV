@@ -16,14 +16,6 @@
 		<seconds>5.0</seconds>
 		<filter-gain>0.0</filter-gain>
 	</predict-simple>
-
-	<predict-simple>
-		<name>VOR/LOC 5 SECONDS AHEAD</name>
-		<input>/it-autoflight/internal/nav1-track-error-deg</input>
-		<output>/it-autoflight/internal/nav1-error-5-sec-ahead</output>
-		<seconds>12</seconds>
-		<filter-gain>0.1</filter-gain>
-	</predict-simple>
 	
 	<predict-simple>
 		<name>IAS 5 SECOND PREDICTOR</name>
@@ -215,15 +207,6 @@
 			<max>180</max>
 		</period>
 		<gain>1.0</gain>
-	</filter>
-	
-	<filter>
-		<name>VOR/LOC HEADING ERROR FILTER</name>
-		<debug>false</debug>
-		<type>noise-spike</type>
-		<input>/it-autoflight/internal/nav1-error-5-sec-ahead</input>
-		<output>/it-autoflight/internal/nav1-heading-error-deg-filtered</output>
-		<max-rate-of-change>90.0</max-rate-of-change>
 	</filter>
 
 	<filter>
@@ -550,16 +533,10 @@
 		<config>
 			<Kp>
 				<condition>
-					<and>
-						<not-equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>2</value>
-						</not-equals>
-						<not-equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>4</value>
-						</not-equals>
-					</and>
+					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>2</value>
+					</not-equals>
 				</condition>
 				<property>/it-autoflight/config/roll/kp</property>
 			</Kp>
@@ -571,15 +548,6 @@
 					</equals>
 				</condition>
 				<property>/it-autoflight/config/roll/kp-vloc</property>
-			</Kp>
-			<Kp>
-				<condition>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>4</value>
-					</equals>
-				</condition>
-				<property>/it-autoflight/config/autoland/kp-roll</property>
 			</Kp>
 			<beta>1.0</beta>	
 			<alpha>0.1</alpha>	
@@ -704,42 +672,6 @@
 			</u_max>
 		</config>
 	</pid-controller>
-	
-	<pi-simple-controller>
-		<name>AUTOLAND VS HOLD</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>6</value>
-				</equals>
-			</condition>
-		</enable>
-		<input>
-			<property>/it-autoflight/internal/vert-speed-fpm</property>
-			<scale>0.2</scale>
-		</input>
-		<reference>
-			<property>/it-autoflight/autoland/target-vs</property>
-			<scale>0.2</scale>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/target-pitch-deg</property>
-		</output>
-		<config>
-			<Kp>
-				<property>/it-autoflight/config/autoland/kp-pitch</property>
-			</Kp>
-			<Ki>0.010</Ki>
-			<min>
-				<value>0</value>
-			</min>
-			<max>
-				<value>15</value>
-			</max>
-		</config>
-	</pi-simple-controller>
 	
 	<pid-controller>
 		<name>FLCH SPEED BY PITCH</name>
@@ -1015,6 +947,28 @@
 		</config>
 	</pid-controller>
 	
+    <filter>
+        <name>AUTOLAND FPM</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <input> 
+            <expression>
+                <table>
+                    <property>/position/gear-agl-ft</property> 
+                    <entry><ind>100</ind><dep>-600</dep></entry>
+                    <entry><ind> 50</ind><dep>-500</dep></entry>
+                    <entry><ind> 40</ind><dep>-400</dep></entry>
+                    <entry><ind> 30</ind><dep>-300</dep></entry>
+                    <entry><ind> 20</ind><dep>-200</dep></entry>
+                    <entry><ind> 10</ind><dep>-150</dep></entry>
+                    <entry><ind>  5</ind><dep>-100</dep></entry>
+                </table>
+            </expression>
+        </input>
+		<output>/it-autoflight/internal/target-fpm-c</output>
+    </filter>
+	
 	<pid-controller>
 		<name>FPM HOLD</name>
 		<debug>false</debug>
@@ -1036,6 +990,10 @@
 					<equals>
 						<property>/it-autoflight/output/vert</property>
 						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>6</value>
 					</equals>
 					<equals>
 						<property>/it-autoflight/output/vert</property>
@@ -1116,6 +1074,16 @@
 		</reference>
 		<reference>
 			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>6</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/target-fpm-c</property>
+			<scale>0.16667</scale>
+		</reference>
+		<reference>
+			<condition>
 				<and>
 					<equals>
 						<property>/it-autoflight/output/vert</property>
@@ -1151,12 +1119,42 @@
 		</output>
 		<config>
 			<Kp>
+				<condition>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>6</value>
+					</not-equals>
+				</condition>
 				<property>/it-autoflight/config/cmd/vs</property>
+			</Kp>
+			<Kp>
+				<condition>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>6</value>
+					</equals>
+				</condition>
+				<property>/it-autoflight/config/autoland/kp-pitch</property>
 			</Kp>
 			<Ti>2.5</Ti>
 			<Td>0.001</Td>
 			<u_min>
+				<condition>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>6</value>
+					</not-equals>
+				</condition>
 				<value>-10</value>
+			</u_min>
+			<u_min>
+				<condition>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>6</value>
+					</equals>
+				</condition>
+				<value>0</value>
 			</u_min>
 			<u_max>
 				<condition>
@@ -1295,7 +1293,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/it-autoflight/internal/nav1-heading-error-deg</property>
+			<property>/it-autoflight/internal/nav-heading-error-deg</property>
 		</input>
 		<reference>
 			<value>0</value>
