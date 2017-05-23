@@ -41,7 +41,7 @@
 	  
     <pure_gain name="fcs/steering/steer-pos-deg">
       <input>fcs/steering/steer-cmd-norm-kinematic</input>
-      <gain>78</gain>
+      <gain>48</gain>
       <output>fcs/steer-pos-deg</output>
     </pure_gain>
 

@@ -23,7 +23,7 @@
     </startup>
      
 		<model>
-			<path>Models/738.xml</path>       
+			<path>Aircraft/737-800/Models/738.xml</path>       
 			<livery>
 				<file>N737BX</file>
 				<newwinglets type="bool">false</newwinglets>   

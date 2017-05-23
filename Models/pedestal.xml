@@ -33,18 +33,6 @@
         </overlay>
     </model>
 	
-	<!-- This file is missing!!!! -it0uchpods -->
-    <!--model> 
-        <name>TRIM</name>
-        <path>Models/trim.xml</path>
-        <offsets>
-            <x-m>1</x-m>
-            <y-m>-1.021</y-m>
-            <z-m>0.738</z-m>
-            <pitch-deg>299.5</pitch-deg>
-        </offsets>
-    </model-->
-
     <model>
         <name>CDU2</name>
         <path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
@@ -62,7 +50,7 @@
 <animation>
   <type>knob</type>
   <object-name>AFDSbrt</object-name>
-  <property>/controls/lighting/panel-norm</property>
+  <property>/controls/lighting/panel</property>
   <factor>250</factor>
   <center>
     <x-m>0.37235</x-m>
@@ -76,7 +64,7 @@
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel-norm</property>
+      <property>/controls/lighting/panel</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>1</max>                
@@ -86,7 +74,7 @@
   <shift-action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel-norm</property>
+      <property>/controls/lighting/panel</property>
       <factor>0.1</factor>
       <min>0</min>
       <max>1</max>                
@@ -175,13 +163,15 @@
   <object-name>No2-knob</object-name>
    <object-name>no1revarm</object-name>
   <object-name>no2revarm</object-name>
+   <object-name>trimwheellh</object-name>
+  <object-name>trimheelrh</object-name>
   <emission>
     <red>0.1</red>
     <green>0.1</green>
     <blue>0.1</blue>
   </emission>
  <condition>
-       <property>systems/electrical/on</property>
+       <property>/controls/lighting/panel</property>
     </condition>
 </animation>
 

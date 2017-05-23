@@ -2,6 +2,16 @@
 <PropertyList>
     <path>flightdesk.ac</path>
 
+ <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+            <image>Aircraft/737-800/Models/Effects/InternalLightMap/pedestal.png</image>
+            </texture>
+            <factor><use>/controls/lighting/panel-light</use></factor>
+      </parameters>
+      <object-name>Plane.001</object-name>
+    </effect>
 
     <model>
         <name>AUTOPILOT</name>
@@ -195,5 +205,22 @@
             <z>0.0</z>
         </axis>
     </animation>
+
+<!-- Illumination -->
+
+<!-- Flaps Instrument -->
+
+ <animation>
+        <type>material</type>
+        <object-name>Circle.173</object-name>
+        <object-name>FlapsNeedle</object-name>
+  <emission>
+    <red>1.055</red>
+    <green>0.512</green>
+    <blue>0.307</blue>
+	    <factor-prop>/controls/lighting/panel</factor-prop>
+ </emission>
+   </animation>
+
 
 </PropertyList>

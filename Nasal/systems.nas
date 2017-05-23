@@ -134,6 +134,11 @@ setlistener("controls/switches/switch",
  		, 3);
  	}
  );
+setlistener("controls/lighting/landing-lights",
+	func {
+		if(getprop("controls/lighting/landing-lights")) setprop("controls/lighting/landing-lights-norm",1); else setprop("controls/lighting/landing-lights-norm",0);
+	}
+);
 
 
 var aglgears = func {

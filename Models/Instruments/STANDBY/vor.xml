@@ -9,7 +9,7 @@
     <red>0.1</red>
     <green>0.1</green>
     <blue>0.1</blue>
-	    <factor-prop>/controls/lighting/panel-norm[0]</factor-prop>
+	    <factor-prop>/controls/lighting/panel-light</factor-prop>
  </emission>
 </animation> 
 
@@ -20,7 +20,7 @@
     		<red>0.8</red>
     		<green>0.8</green>
     		<blue>0.8</blue>
-	    <factor-prop>/controls/lighting/panel-norm[0]</factor-prop>
+	    <factor-prop>/controls/lighting/panel-light</factor-prop>
  	</emission>
 </animation> 
    <animation>

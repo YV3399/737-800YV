@@ -4,6 +4,20 @@
 
  <path>nosegear.ac</path> 
 
+ <effect>
+  <inherits-from>Effects/lightmap</inherits-from>
+  <parameters>
+    <texture n="1">
+      <image>Aircraft/737-800/Models/Effects/LightMap/737-800lightmap.png</image>
+    </texture>
+    <factor>
+      <use>controls/lighting/landing-lights-norm</use>
+    </factor>
+  </parameters>
+  <object-name>rhngdoor</object-name>
+  <object-name>lhngdoor</object-name>
+  </effect>
+
 <animation>
   <type>rotate</type>   
   <object-name>collar</object-name>

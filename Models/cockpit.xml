@@ -1655,8 +1655,8 @@
   <object-name>seatfo</object-name>
   <object-name>seatcapt</object-name>
   <object-name>cockpitdoor</object-name>
-  <object-name>BACKGROUNDcpt</object-name>
   <object-name>AFDSbrt</object-name>
+  <object-name>BACKGROUNDcpt</object-name>
   <object-name>parkbrake_1</object-name>
   <emission>
     <red>0.1</red>
@@ -1665,7 +1665,6 @@
     <factor-prop>controls/lighting/panel-light</factor-prop>	
   </emission>
 </animation>
-
 
 <!-- Pedestal -->
 <!-- Eng 1 Fire -->
@@ -1854,11 +1853,49 @@
   <axis>
     <x>0</x><y>0</y><z>-1</z>
   </axis>
-
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel-norm</property>
+      <property>/controls/lighting/panel-light</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <shift-action>
+    <binding>
+      <command>property-adjust</command>
+     <property>/controls/lighting/panel-light</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>2</max>                
+      <wrap>false</wrap>
+    </binding>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>autobrake.008</object-name>
+  <property>/controls/lighting/floor</property>
+  <factor>125</factor>
+  <center>
+    <x-m>1.3558</x-m>
+    <y-m>-0.21205</y-m>
+    <z-m>0.63339</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/lighting/floor</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>2</max>                
@@ -1882,43 +1919,14 @@
 </animation>
 
 <animation>
-  <type>knob</type>
-  <object-name>autobrake.008</object-name>
-  <property>/controls/lighting/flood-light</property>
-  <factor>125</factor>
-  <center>
-    <x-m>1.3558</x-m>
-    <y-m>-0.21205</y-m>
-    <z-m>0.63339</z-m>
-  </center>
-  <axis>
-    <x>0</x><y>0</y><z>-1</z>
-  </axis>
-
-  <action>
-    <binding>
-      <command>property-adjust</command>
-      <property>/controls/lighting/flood-light</property>
-      <factor>0.05</factor>
-      <min>0</min>
-      <max>2</max>                
-      <wrap>false</wrap>
-    </binding>
-  </action>
-  <shift-action>
-    <binding>
-      <command>property-adjust</command>
-      <property>/controls/lighting/flood-light</property>
-      <factor>0.1</factor>
-      <min>0</min>
-      <max>2</max>                
-      <wrap>false</wrap>
-    </binding>
-  </shift-action>
-  <increase>
-  </increase>
-  <decrease>
-  </decrease>
+  <type>material</type>
+  <object-name>floor</object-name>
+  <emission>
+    <red>4.0</red>
+    <green>4.0</green>
+    <blue>4.0</blue>
+    <factor-prop>controls/lighting/floor</factor-prop>	
+  </emission>
 </animation>
 
 <model>

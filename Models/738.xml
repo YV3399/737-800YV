@@ -72,7 +72,7 @@
     <object-name>windows.ext</object-name>
     <object-name>rearwindows.ext</object-name>
   </effect>
-  <effect>
+   <!--effect>
     <inherits-from>Effects/model</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>doorLF</object-name>
@@ -98,6 +98,33 @@
     <object-name>fan2</object-name>
     <object-name>vstab</object-name>
     <object-name>rudder</object-name>
+  </effect!-->
+
+<effect>
+  <inherits-from>Effects/lightmap</inherits-from>
+  <parameters>
+    <texture n="1">
+      <image>Aircraft/737-800/Models/Effects/LightMap/737-800lightmap.png</image>
+    </texture>
+    <factor>
+      <use>controls/lighting/landing-lights-norm</use>
+    </factor>
+  </parameters>
+  <object-name>fuselage</object-name>
+  <object-name>EexitRR</object-name>
+  <object-name>EexitLF</object-name>
+  <object-name>EexitLR</object-name>
+  <object-name>EexitRF</object-name>
+  <object-name>cargodoorR</object-name>
+  <object-name>cargodoorF</object-name>
+  <object-name>doorRR</object-name>
+  <object-name>doorrhrear</object-name>
+  <object-name>doorRF</object-name>
+  <object-name>dorrhfront.005</object-name>
+  <object-name>doorLF</object-name>
+  <object-name>doorLF.001</object-name>
+  <object-name>doorLR</object-name>
+  <object-name>Circle.006</object-name>
   </effect>
 
   <model n="100">
