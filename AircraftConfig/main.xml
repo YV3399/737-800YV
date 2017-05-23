@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- MD-88/MD-90 Aircraft Config Dialog -->
+<!-- B738 Aircraft Config Dialog -->
 
 
 <PropertyList>
@@ -12,7 +12,7 @@
 		<layout>hbox</layout>
 		<text>
 			<halign>left</halign>
-			<label>Aircraft Configuration</label>
+			<label>Aircraft Configuration V1.3.1</label>
 		</text>
 		<button>
 			<halign>right</halign>
@@ -85,7 +85,7 @@
 						<stretch type="bool">true</stretch>
 					</hrule>
 					<text>
-						<label>Auto Aircraft Config</label>
+						<label>Load Panel State</label>
 					</text>
 					<hrule>
 						<stretch type="bool">true</stretch>

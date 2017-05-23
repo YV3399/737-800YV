@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- MD-88/MD-90 Aircraft Config Dialog -->
+<!-- B738 Aircraft Config Dialog -->
 
 
 <PropertyList>
@@ -24,7 +24,7 @@
 			
 			<text>
 				<halign>center</halign>
-				<label>Initializing...</label>
+				<label>A3XX Logic is startup up...</label>
 			</text>
 			
 		</group>

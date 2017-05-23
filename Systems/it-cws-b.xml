@@ -473,7 +473,7 @@
 			<property>/controls/flight/rudder-fbw-cmd</property>
 		</output>
 		<config>
-			<Kp>0.05</Kp>
+			<Kp>0.02</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
