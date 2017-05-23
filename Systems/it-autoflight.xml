@@ -289,6 +289,28 @@
 		</period>
 		<gain>1.0</gain>
 	</filter>
+	
+	<filter>
+		<name>NAV1 G/S FPM Calc</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<input>/instrumentation/nav[0]/gs-rate-of-climb-fpm</input>
+		<output>/it-autoflight/internal/nav1-rate-of-climb-fpm</output>
+		<gain>1.0</gain>
+		<min>-1500</min>
+		<max>0</max>
+	</filter>
+	
+	<filter>
+		<name>NAV2 G/S FPM Calc</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<input>/instrumentation/nav[1]/gs-rate-of-climb-fpm</input>
+		<output>/it-autoflight/internal/nav2-rate-of-climb-fpm</output>
+		<gain>1.0</gain>
+		<min>-1500</min>
+		<max>0</max>
+	</filter>
 
  <!-- =============================================================== -->
  <!-- Lateral  Modes                                                  -->
@@ -720,55 +742,6 @@
 	</pi-simple-controller>
 	
 	<pid-controller>
-		<name>GLIDESLOPE HOLD</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>2</value>
-				</equals>
-			</condition>
-		</enable>
-		<input>
-			<property>/velocities/vertical-speed-fps</property>
-		</input>
-		<reference>
-			<condition>
-				<equals>
-					<property>/it-autoflight/settings/use-nav2-radio</property>
-					<value>0</value>
-				</equals>
-			</condition>
-			<property>/instrumentation/nav[0]/gs-rate-of-climb</property>
-		</reference>
-		<reference>
-			<condition>
-				<equals>
-					<property>/it-autoflight/settings/use-nav2-radio</property>
-					<value>1</value>
-				</equals>
-			</condition>
-			<property>/instrumentation/nav[1]/gs-rate-of-climb</property>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/target-pitch-deg</property>
-		</output>
-		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/gs</property>
-			</Kp>       
-			<beta>1.0</beta>       
-			<alpha>0.5</alpha>     
-			<gamma>0.0</gamma>			
-			<Ti>10.0</Ti>
-			<Td>0.0001</Td>
-			<u_min>-5</u_min>
-			<u_max>7</u_max>
-		</config>
-	</pid-controller>
-	
-	<pid-controller>
 		<name>FLCH SPEED BY PITCH</name>
 		<debug>false</debug>
 		<enable>
@@ -1058,6 +1031,10 @@
 					</equals>
 					<equals>
 						<property>/it-autoflight/output/vert</property>
+						<value>2</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
 						<value>4</value>
 					</equals>
 					<equals>
@@ -1135,6 +1112,38 @@
 				</and>
 			</condition>
 			<property>/it-autoflight/internal/prof-fpm</property>
+			<scale>0.16667</scale>
+		</reference>
+		<reference>
+			<condition>
+				<and>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>2</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/settings/use-nav2-radio</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
+			<property>/it-autoflight/internal/nav1-rate-of-climb-fpm</property>
+			<scale>0.16667</scale>
+		</reference>
+		<reference>
+			<condition>
+				<and>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>2</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/settings/use-nav2-radio</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+			<property>/it-autoflight/internal/nav2-rate-of-climb-fpm</property>
 			<scale>0.16667</scale>
 		</reference>
 		<output>
