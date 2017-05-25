@@ -257,9 +257,9 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/input/hdg</property>
+			<property>/autopilot/settings/true-heading-deg</property>
 			<offset>
-				<property>/autopilot/settings/true-heading-deg</property>
+				<property>/orientation/heading-deg</property>
 				<scale>-1.0</scale>
 			</offset>
 		</input>
