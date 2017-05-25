@@ -263,6 +263,21 @@
 				<scale>-1.0</scale>
 			</offset>
 		</input>
+		<input>
+			<condition>
+				<and>
+					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>0</value>
+					</not-equals>
+					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>1</value>
+					</not-equals>
+				</and>
+			</condition>
+			<value>0</value>
+		</input>
 		<output>/it-autoflight/internal/heading-error-deg-cmd</output>
 		<period>
 			<min>-180</min>
@@ -284,6 +299,16 @@
 		<max-rate-of-change>
 			<condition>
 				<or>
+					<and>
+						<not-equals>
+							<property>/it-autoflight/output/lat</property>
+							<value>0</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/lat</property>
+							<value>1</value>
+						</not-equals>
+					</and>
 					<equals>
 						<property>/gear/gear[1]/wow</property>
 						<value>1</value>
@@ -299,6 +324,16 @@
 		<max-rate-of-change>
 			<condition>
 				<and>
+					<or>
+						<equals>
+							<property>/it-autoflight/output/lat</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/lat</property>
+							<value>1</value>
+						</equals>
+					</or>
 					<equals>
 						<property>/gear/gear[1]/wow</property>
 						<value>0</value>
@@ -309,7 +344,7 @@
 					</equals>
 				</and>
 			</condition>
-			<value>2.5</value>
+			<value>4</value>
 		</max-rate-of-change>
 	</filter>
 	
