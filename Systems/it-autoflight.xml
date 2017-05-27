@@ -1263,7 +1263,7 @@
 				</condition>
 				<property>/it-autoflight/config/autoland/kp-pitch</property>
 			</Kp>
-			<Ti>2.5</Ti>
+			<Ti>5.0</Ti>
 			<Td>0.001</Td>
 			<u_min>
 				<condition>
