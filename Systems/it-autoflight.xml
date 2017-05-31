@@ -278,74 +278,12 @@
 			</condition>
 			<value>0</value>
 		</input>
-		<output>/it-autoflight/internal/heading-error-deg-cmd</output>
+		<output>/it-autoflight/internal/heading-error-deg</output>
 		<period>
 			<min>-180</min>
 			<max>180</max>
 		</period>
 		<gain>1.0</gain>
-	</filter>
-	
-	<filter>
-		<name>HEADING ERROR FILTER</name>
-		<debug>false</debug>
-		<feedback-if-disabled>true</feedback-if-disabled>
-		<initialize-to>output</initialize-to>
-		<input>
-			<property>/it-autoflight/internal/heading-error-deg-cmd</property>
-		</input>
-		<output>/it-autoflight/internal/heading-error-deg</output>
-		<type>noise-spike</type>
-		<max-rate-of-change>
-			<condition>
-				<or>
-					<and>
-						<not-equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>0</value>
-						</not-equals>
-						<not-equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>1</value>
-						</not-equals>
-					</and>
-					<equals>
-						<property>/gear/gear[1]/wow</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/gear/gear[2]/wow</property>
-						<value>1</value>
-					</equals>
-				</or>
-			</condition>
-			<value>90</value>
-		</max-rate-of-change>
-		<max-rate-of-change>
-			<condition>
-				<and>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>0</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>1</value>
-						</equals>
-					</or>
-					<equals>
-						<property>/gear/gear[1]/wow</property>
-						<value>0</value>
-					</equals>
-					<equals>
-						<property>/gear/gear[2]/wow</property>
-						<value>0</value>
-					</equals>
-				</and>
-			</condition>
-			<value>4</value>
-		</max-rate-of-change>
 	</filter>
 	
 	<filter>
@@ -623,7 +561,7 @@
 		</input>
 		<output>/it-autoflight/internal/target-roll</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>15</max-rate-of-change>
+		<max-rate-of-change>6</max-rate-of-change>
 	</filter>
 	
 	<pid-controller>
@@ -740,7 +678,7 @@
 		</input>
 		<output>/controls/flight/aileron</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.9</max-rate-of-change>
+		<max-rate-of-change>2.5</max-rate-of-change>
 	</filter>
 
  <!-- =============================================================== -->
@@ -888,7 +826,7 @@
 						<value>4</value>
 					</equals>
 				</condition>
-				<value>-40</value>
+				<value>-50</value>
 			</Kp>
 			<Kp>
 				<condition>
@@ -897,7 +835,7 @@
 						<value>7</value>
 					</equals>
 				</condition>
-				<value>-55</value>
+				<value>-60</value>
 			</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
@@ -1029,7 +967,7 @@
 			<property>/it-autoflight/internal/target-fpm-b</property>
 		</output>
 		<config>
-			<Kp>-40</Kp>
+			<Kp>-50</Kp>
 			<beta>1.0</beta>    
 			<alpha>0.1</alpha>  
 			<gamma>0.0</gamma>  
@@ -1264,7 +1202,7 @@
 				<property>/it-autoflight/config/autoland/kp-pitch</property>
 			</Kp>
 			<Ti>5.0</Ti>
-			<Td>0.001</Td>
+			<Td>0.003</Td>
 			<u_min>
 				<condition>
 					<not-equals>
@@ -1326,7 +1264,7 @@
 		</input>
 		<output>/it-autoflight/internal/target-pitch</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>10</max-rate-of-change>
+		<max-rate-of-change>6</max-rate-of-change>
 	</filter>
 
 	<pid-controller>
@@ -1401,7 +1339,7 @@
 		</input>
 		<output>/controls/flight/elevator</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.4</max-rate-of-change>
+		<max-rate-of-change>2.5</max-rate-of-change>
 	</filter>
 	
  <!-- =============================================================== -->
