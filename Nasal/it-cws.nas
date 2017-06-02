@@ -27,7 +27,7 @@ setlistener("/it-autoflight/output/ap2", func {
 });
 
 setlistener("/it-cws/cwsa", func {
-	if (getprop("/gear/gear[0]/wow") == 0 or getprop("/gear/gear[1]/wow") == 0 or getprop("/gear/gear[2]/wow") == 0) {
+	if (getprop("/gear/gear[0]/wow") == 0 and getprop("/gear/gear[1]/wow") == 0 and getprop("/gear/gear[2]/wow") == 0) {
 		if (getprop("/it-cws/cwsa") == 1) {
 			setprop("/it-cws/cwsa-output", 1);
 			setprop("/it-autoflight/output/ap1", 0);
@@ -57,15 +57,19 @@ setlistener("/it-cws/cwsb", func {
 });
 
 setlistener("/gear/gear[1]/wow", func {
-	setprop("/it-cws/cwsa", 0);
-	setprop("/it-cws/cwsb", 0);
-	setprop("/it-cws/cwsa-output", 0);
-	setprop("/it-cws/cwsb-output", 0);
+	if (getprop("/gear/gear[1]/wow") == 1) {
+		setprop("/it-cws/cwsa", 0);
+	}
+	if (getprop("/gear/gear[1]/wow") == 1) {
+		setprop("/it-cws/cwsb", 0);
+	}
 });
 
 setlistener("/gear/gear[2]/wow", func {
-	setprop("/it-cws/cwsa", 0);
-	setprop("/it-cws/cwsb", 0);
-	setprop("/it-cws/cwsa-output", 0);
-	setprop("/it-cws/cwsb-output", 0);
+	if (getprop("/gear/gear[2]/wow") == 1) {
+		setprop("/it-cws/cwsa", 0);
+	}
+	if (getprop("/gear/gear[2]/wow") == 1) {
+		setprop("/it-cws/cwsb", 0);
+	}
 });

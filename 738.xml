@@ -1755,7 +1755,7 @@
                     <property>metrics/bw-ft</property>
                     <property>aero/bi2vel</property>
                     <property>velocities/p-aero-rad_sec</property>
-                    <value>-0.6</value>
+                    <value>-0.4</value>
                 </product>
             </function>
 
@@ -1776,7 +1776,7 @@
                 <product>
                     <property>aero/coefficient/CLdlail</property>
                     <sum>
-                        <value>45.5</value>
+                        <value>44.5</value>
                         <quotient>
                             <property>inertia/cg-y-in</property>
                             <value>12</value>
@@ -1790,7 +1790,7 @@
                 <product>
                     <property>aero/coefficient/CLdrail</property>
                     <sum>
-                        <value>-45.5</value>
+                        <value>-44.5</value>
                         <quotient>
                             <property>inertia/cg-y-in</property>
                             <value>12</value>
@@ -1916,7 +1916,7 @@
                     <property>metrics/cbarw-ft</property>
                     <property>aero/ci2vel</property>
                     <property>velocities/q-aero-rad_sec</property>
-                    <value>-53.0</value>
+                    <value>-30.0</value>
                 </product>
             </function>
             <function name="aero/coefficient/Cmadot">

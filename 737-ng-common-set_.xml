@@ -191,8 +191,8 @@
 		<roll>
 			<umin>-0.40</umin>
 			<umax>0.40</umax>
-			<kp>0.06</kp>
-			<kp-vloc>0.09</kp-vloc>
+			<kp>0.07</kp>
+			<kp-vloc>0.07</kp-vloc>
 			<ti>10.0</ti>
 			<td>0.00001</td>
 			<kp-cws>0.06</kp-cws>
@@ -200,21 +200,21 @@
 		<pitch>
 			<umin>-0.45</umin>
 			<umax>0.45</umax>
-			<kp>-0.07</kp>
+			<kp>-0.08</kp>
 			<ti>5.0</ti>
-			<td>0.0001</td>
-			<kp-cws>-0.07</kp-cws>
+			<td>0.00001</td>
+			<kp-cws>-0.08</kp-cws>
 		</pitch>
 		<cmd>
-			<roll-kp>-1.9</roll-kp>
-			<roll-scale>1.5</roll-scale>
-			<vorloc>-2.5</vorloc>
+			<roll-kp>-1.2</roll-kp>
+			<roll-scale>1.7</roll-scale>
+			<vorloc>-2.0</vorloc>
 			<vs>0.01</vs>
 			<fpa>0.30</fpa>
 		</cmd>
 		<autoland>
 			<kp-pitch>0.02</kp-pitch>
-			<kp-rudder>-0.2</kp-rudder>
+			<kp-rudder>-0.1</kp-rudder>
 		</autoland>
 	</config>
 	<settings>

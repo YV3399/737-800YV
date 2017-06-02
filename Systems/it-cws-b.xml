@@ -188,12 +188,12 @@
 			<property>/controls/flight/elevator-fbw-cmd</property>
 		</output>
 		<config>
-			<Kp>-0.10</Kp>
+			<Kp>-0.09</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
 			<Ti>10</Ti>
-			<Td>0.00001</Td>
+			<Td>0.0001</Td>
 			<u_min>-1</u_min>
 			<u_max>1</u_max>
 		</config>
