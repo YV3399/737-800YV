@@ -216,7 +216,7 @@
 			
 			<button>
 				<legend>SPD</legend>
-				<pref-width>55</pref-width>
+				<pref-width>70</pref-width>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/input/kts-mach</property>
@@ -226,7 +226,7 @@
 		
 			<button>
 				<legend>Mach</legend>
-				<pref-width>55</pref-width>
+				<pref-width>70</pref-width>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/input/kts-mach</property>
@@ -235,21 +235,8 @@
 			</button>
 			
 			<button>
-				<legend>FMS</legend>
-				<pref-width>55</pref-width>
-				<enable>
-					<property>/it-autoflight/input/fms-spd</property>
-				</enable>
-				<binding>
-				<command>property-assign</command>
-				<property>/it-autoflight/input/fms-spd</property>
-				<value>1</value>
-				</binding>
-			</button>
-			
-			<button>
 				<legend>TOGA</legend>
-				<pref-width>55</pref-width>
+				<pref-width>70</pref-width>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/input/toga</property>
@@ -780,38 +767,6 @@
 				<value>2</value>
 				</binding>
 			</button>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			
-			<button>
-                <pref-width>55</pref-width>
-				<legend>VNAV</legend>
-				<enable>
-					<property>/it-autoflight/settings/vnav-test</property>
-				</enable>
-				<binding>
-				<command>property-assign</command>
-				<property>/it-autoflight/input/vert</property>
-				<value>8</value>
-				</binding>
-			</button>
-			
-			<text>
-				<row>0</row>
-				<col>0</col>
-				<label>VNAV Command: </label>
-			</text>
-			
-			<text>
-				<border>1</border>
-				<label>9999999999999</label>
-				<valign>center</valign>
-				<property>/it-autoflight/mode/prof</property>
-				<live>1</live>
-			</text>
-			
 		</group>
 		
 		<group>

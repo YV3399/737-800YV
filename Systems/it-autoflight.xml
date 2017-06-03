@@ -390,10 +390,6 @@
 						<property>/it-autoflight/output/vert</property>
 						<value>7</value>
 					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>8</value>
-					</not-equals>
 				</and>
 			</condition>
 		</enable>
@@ -693,22 +689,7 @@
 			<property>/it-autoflight/internal/altitude-5-sec-ahead</property>
 		</input>
 		<reference>
-			<condition>
-				<not-equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>8</value>
-				</not-equals>
-			</condition>
 			<property>/it-autoflight/internal/alt</property>
-		</reference>
-		<reference>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>8</value>
-				</equals>
-			</condition>
-			<property>/it-autoflight/internal/prof-alt</property>
 		</reference>
 		<gain>-8</gain>
 		<output>
@@ -914,104 +895,6 @@
 		</config>
 	</pid-controller>
 	
-	<pid-controller>
-		<name>VNAV SPEED BY PITCH</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>8</value>
-				</equals>
-			</condition>
-		</enable>
-		<input>
-			<condition>
-				<equals>
-					<property>/it-autoflight/input/kts-mach</property>
-					<value>0</value>
-				</equals>
-			</condition>
-			<property>/it-autoflight/internal/lookahead-15-sec-airspeed-kt</property>
-		</input>
-		<input>
-			<condition>
-				<equals>
-					<property>/it-autoflight/input/kts-mach</property>
-					<value>1</value>
-				</equals>
-			</condition>
-			<property>/it-autoflight/internal/lookahead-15-sec-mach</property>
-			<scale>500.0</scale>
-		</input>
-		<reference>
-			<condition>
-				<equals>
-					<property>/it-autoflight/input/kts-mach</property>
-					<value>0</value>
-				</equals>
-			</condition>
-			<property>/it-autoflight/internal/flch-kts</property>
-		</reference>
-		<reference>
-			<condition>
-				<equals>
-					<property>/it-autoflight/input/kts-mach</property>
-					<value>1</value>
-				</equals>
-			</condition>
-			<property>/it-autoflight/internal/flch-mach</property>
-			<scale>500.0</scale>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/target-fpm-b</property>
-		</output>
-		<config>
-			<Kp>-50</Kp>
-			<beta>1.0</beta>    
-			<alpha>0.1</alpha>  
-			<gamma>0.0</gamma>  
-			<Ti>2.5</Ti>        
-			<Td>0.001</Td>   
-			<u_min>
-				<condition>
-					<greater-than>
-						<property>/it-autoflight/internal/prof-alt</property>
-						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
-					</greater-than>
-				</condition>
-				<value>150</value>
-			</u_min>
-			<u_min>
-			<condition>
-					<less-than>
-						<property>/it-autoflight/internal/prof-alt</property>
-						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
-					</less-than>
-				</condition>
-				<value>-6000</value>
-			</u_min>
-			<u_max>
-				<condition>
-					<greater-than>
-						<property>/it-autoflight/internal/prof-alt</property>
-						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
-					</greater-than>
-				</condition>
-				<value>10000</value>
-			</u_max>
-			<u_max>
-				<condition>
-					<less-than>
-						<property>/it-autoflight/internal/prof-alt</property>
-						<property>/instrumentation/altimeter/indicated-altitude-ft</property>
-					</less-than>
-				</condition>
-				<value>-150</value>
-			</u_max>
-		</config>
-	</pid-controller>
-	
     <filter>
         <name>AUTOLAND FPM</name>
         <type>gain</type>
@@ -1064,10 +947,6 @@
 						<property>/it-autoflight/output/vert</property>
 						<value>7</value>
 					</equals>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>8</value>
-					</equals>
 				</or>
 			</condition>
 		</enable>
@@ -1106,35 +985,9 @@
 						<property>/it-autoflight/output/vert</property>
 						<value>7</value>
 					</equals>
-					<and>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>8</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/prof-vert</property>
-							<value>4</value>
-						</equals>
-					</and>
 				</or>
 			</condition>
 			<property>/it-autoflight/internal/target-fpm-b</property>
-			<scale>0.16667</scale>
-		</reference>
-		<reference>
-			<condition>
-				<and>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>8</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/prof-vert</property>
-						<value>1</value>
-					</equals>
-				</and>
-			</condition>
-			<property>/it-autoflight/internal/prof-fpm</property>
 			<scale>0.16667</scale>
 		</reference>
 		<reference>
