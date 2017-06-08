@@ -1,9 +1,8 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 184
+# V3.0.0 Build 191
 # This program is 100% GPL!
 
-print("IT-AUTOFLIGHT: Please Wait!");
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
 
 var ap_init = func {
@@ -53,7 +52,6 @@ var ap_init = func {
 	setprop("/it-autoflight/input/spd-mach", 0.68);
 	update_armst.start();
 	thrustmode();
-	print("IT-AUTOFLIGHT: Done!");
 }
 
 # AP 1 Master System
