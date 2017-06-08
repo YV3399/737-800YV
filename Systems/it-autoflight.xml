@@ -616,13 +616,13 @@
 		</enable>
 		<input>/orientation/roll-deg</input>
 		<output>/it-autoflight/internal/target-roll-deg</output>
-			<min>
-				<property>/it-autoflight/input/bank-limit</property>
-				<scale>-1</scale>
-			</min>
-			<max>
-				<property>/it-autoflight/input/bank-limit</property>
-			</max>
+		<min>
+			<property>/it-autoflight/input/bank-limit</property>
+			<scale>-1</scale>
+		</min>
+		<max>
+			<property>/it-autoflight/input/bank-limit</property>
+		</max>
 	</filter>
 	
 	<filter>
