@@ -33,7 +33,7 @@
 		<layout>hbox</layout>
 		<button>
 			<legend>A/T</legend>
-            <pref-width>35</pref-width>
+            <pref-width>40</pref-width>
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/input/athr</property>
@@ -41,7 +41,7 @@
 		</button>
 		<button>
 			<legend>AP1</legend>
-            <pref-width>35</pref-width>
+            <pref-width>40</pref-width>
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/input/ap1</property>
@@ -49,29 +49,15 @@
 		</button>
 		<button>
 			<legend>AP2</legend>
-            <pref-width>35</pref-width>
+            <pref-width>40</pref-width>
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/input/ap2</property>
 			</binding>
 		</button>
 		<button>
-			<enable>
-				<equals>
-					<property>/it-autoflight/settings/enable-cws</property>
-					<value>1</value>
-				</equals>
-			</enable>
-			<legend>CWS</legend>
-            <pref-width>35</pref-width>
-			<binding>
-			<command>property-toggle</command>
-			<property>/it-autoflight/input/cws</property>
-			</binding>
-		</button>
-		<button>
 			<legend>FD1</legend>
-            <pref-width>35</pref-width>
+            <pref-width>40</pref-width>
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/input/fd1</property>
@@ -79,7 +65,7 @@
 		</button>
 		<button>
 			<legend>FD2</legend>
-            <pref-width>35</pref-width>
+            <pref-width>40</pref-width>
 			<binding>
 			<command>property-toggle</command>
 			<property>/it-autoflight/input/fd2</property>
@@ -112,15 +98,6 @@
 			<visible>
 				<equals>
 					<property>/it-autoflight/output/ap2</property>
-					<value>1</value>
-				</equals>
-			</visible>
-		</text>
-		<text>
-			<label>[CWS]</label>
-			<visible>
-				<equals>
-					<property>/it-autoflight/output/cws</property>
 					<value>1</value>
 				</equals>
 			</visible>
@@ -629,24 +606,13 @@
 				<live>true</live>
 			</checkbox>
 			<checkbox>
-				<label>Use NAV2</label>
+				<label>Use NAV2 Radio</label>
 				<property>/it-autoflight/settings/use-nav2-radio</property>
 				<enable>
 					<not-equals>
 						<property>/it-autoflight/output/vert</property>
 						<value>2</value>
 					</not-equals>
-				</enable>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
-			<checkbox>
-				<label>B/C</label>
-				<property>/it-autoflight/settings/use-backcourse</property>
-				<enable>
-					<property>/it-autoflight/settings/extra/unused-button</property>
 				</enable>
 				<binding>
 					<command>dialog-apply</command>

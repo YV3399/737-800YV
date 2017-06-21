@@ -210,7 +210,6 @@
 			<roll-scale>1.4</roll-scale>
 			<vorloc>-2.0</vorloc>
 			<vs>0.01</vs>
-			<fpa>0.30</fpa>
 		</cmd>
 		<autoland>
 			<kp-pitch>0.03</kp-pitch>

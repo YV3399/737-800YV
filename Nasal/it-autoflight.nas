@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 191
+# V3.0.0 Build 195 RC2
 # This program is 100% GPL!
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
@@ -10,7 +10,6 @@ var ap_init = func {
 	setprop("/it-autoflight/input/ap1", 0);
 	setprop("/it-autoflight/input/ap2", 0);
 	setprop("/it-autoflight/input/athr", 0);
-	setprop("/it-autoflight/input/cws", 0);
 	setprop("/it-autoflight/input/fd1", 0);
 	setprop("/it-autoflight/input/fd2", 0);
 	setprop("/it-autoflight/input/hdg", 360);
@@ -26,7 +25,6 @@ var ap_init = func {
 	setprop("/it-autoflight/output/ap1", 0);
 	setprop("/it-autoflight/output/ap2", 0);
 	setprop("/it-autoflight/output/athr", 0);
-	setprop("/it-autoflight/output/cws", 0);
 	setprop("/it-autoflight/output/fd1", 0);
 	setprop("/it-autoflight/output/fd2", 0);
 	setprop("/it-autoflight/output/loc-armed", 0);
@@ -36,12 +34,9 @@ var ap_init = func {
 	setprop("/it-autoflight/output/lat", 5);
 	setprop("/it-autoflight/output/vert", 7);
 	setprop("/it-autoflight/settings/use-nav2-radio", 0);
-	setprop("/it-autoflight/settings/use-backcourse", 0);
 	setprop("/it-autoflight/internal/min-vs", -500);
 	setprop("/it-autoflight/internal/max-vs", 500);
 	setprop("/it-autoflight/internal/alt", 10000);
-	setprop("/it-autoflight/internal/cwsr", 0);
-	setprop("/it-autoflight/internal/cwsp", 0);
 	setprop("/it-autoflight/internal/fpa", 0);
 	setprop("/it-autoflight/internal/top-of-des-nm", 0);
 	setprop("/it-autoflight/mode/thr", "PITCH");
@@ -105,27 +100,6 @@ setlistener("/it-autoflight/input/athr", func {
 		setprop("/it-autoflight/output/retard", 0);
 		thrustmode();
 		setprop("/it-autoflight/output/athr", 1);
-	}
-});
-
-# CWS Master System
-setlistener("/it-autoflight/input/cws", func {
-	var cwsmas = getprop("/it-autoflight/input/cws");
-	if (cwsmas == 1) {
-		if ((getprop("/gear/gear[1]/wow") == 0) and (getprop("/gear/gear[2]/wow") == 0)) {
-			setprop("/it-autoflight/input/ap1", 0);
-			setprop("/it-autoflight/input/ap2", 0);
-			setprop("/it-autoflight/internal/cws-roll-deg", getprop("/orientation/roll-deg"));
-			setprop("/it-autoflight/internal/cws-pitch-deg", getprop("/orientation/pitch-deg"));
-			cwsrollt.start();
-			cwspitcht.start();
-			setprop("/it-autoflight/output/cws", 1);
-		}
-	} else if (cwsmas == 0) {
-		cwsrollt.stop();
-		cwspitcht.stop();
-		setprop("/it-autoflight/output/cws", 0);
-		setprop("/controls/flight/aileron-trim", 0);
 	}
 });
 
@@ -740,31 +714,6 @@ var aland1 = func {
 	}
 }
 
-# CWS
-var cwsroll = func {
-  var ail = getprop("/controls/flight/aileron");
-  if (ail < 0.05 and ail > -0.05) {
-	if (getprop("/it-autoflight/internal/cwsr") == 0) {
-      setprop("/it-autoflight/internal/cws-roll-deg", getprop("/orientation/roll-deg"));
-	}
-	setprop("/it-autoflight/internal/cwsr", 1);
-  } else {
-	setprop("/it-autoflight/internal/cwsr", 0);
-  }
-}
-
-var cwspitch = func {
-	var elv = getprop("/controls/flight/elevator");
-	if (elv < 0.05 and elv > -0.05) {
-		if (getprop("/it-autoflight/internal/cwsp") == 0) {
-			setprop("/it-autoflight/internal/cws-pitch-deg", getprop("/orientation/pitch-deg"));
-		}
-		setprop("/it-autoflight/internal/cwsp", 1);
-	} else {
-		setprop("/it-autoflight/internal/cwsp", 0);
-	}
-}
-
 # For Canvas Nav Display.
 setlistener("/it-autoflight/input/hdg", func {
 	setprop("/autopilot/settings/heading-bug-deg", getprop("/it-autoflight/input/hdg"));
@@ -783,8 +732,6 @@ var retardt = maketimer(0.5, retardchk);
 var atofft = maketimer(0.5, atoffchk);
 var alandt = maketimer(0.5, aland);
 var alandt1 = maketimer(0.5, aland1);
-var cwsrollt = maketimer(0.1, cwsroll);
-var cwspitcht = maketimer(0.1, cwspitch);
 var reduct = maketimer(0.5, toga_reduc);
 var latarmt = maketimer(0.5, latarms);
 var fpa_calct = maketimer(0.1, fpa_calc);
