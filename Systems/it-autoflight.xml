@@ -287,6 +287,29 @@
 	</filter>
 	
 	<filter>
+		<name>VERT SPEED SYNC</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<enable>
+			<condition>
+				<not-equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>1</value>
+				</not-equals>
+			</condition>
+		</enable>
+		<input>
+			<expression>
+				<floor>
+					<property>/it-autoflight/internal/vert-speed-fpm</property>
+				</floor>
+			</expression>
+		</input>
+		<output>/it-autoflight/input/vs</output>
+	</filter>
+	
+	<filter>
 		<name>VERT SPEED FILTER</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
