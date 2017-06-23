@@ -207,7 +207,7 @@ var canvas_PFD = {
 		
 		if (slipSkid > 0.1) slipSkid = 0.1;
 		if (slipSkid < -0.1) slipSkid = -0.1;
-		me["slipSkid"].setTranslation(slipSkid*-320,0);
+		me["slipSkid"].setTranslation(slipSkid*-160,0);
 		me["bankPointer"].setRotation(-roll*D2R);
 		me["ladderLimiter"].setRotation(-roll*D2R);
 
@@ -293,11 +293,11 @@ var canvas_PFD = {
 		var itaffd2x = getprop("/it-autoflight/output/fd2");
 		if (itaffd1x or itaffd2x) {
 			if (getprop("/it-autoflight/fd/roll-bar") != nil) {
-				var fdRoll = (roll-getprop("/it-autoflight/fd/roll-bar"))*0.5;
-				me["fdX"].setTranslation(-fdRoll,0);
+				var fdRoll = (getprop("/it-autoflight/fd/roll-bar"))*1.5;
+				me["fdX"].setTranslation(fdRoll,0);
 			}
 			if (getprop("/it-autoflight/fd/pitch-bar") != nil) {
-				var fdPitch = (pitch-getprop("/it-autoflight/fd/pitch-bar"))*0.9 - 1.2;
+				var fdPitch = -(getprop("/it-autoflight/fd/pitch-bar"))*3.8;
 				me["fdY"].setTranslation(0,fdPitch);
 			}
 			me["fdX"].show();

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Flight Control Dialog -->
+
+
+<PropertyList>
+
+	<name>stabilization</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>FCTL System</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+
+    <hrule/>
+	
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <label>AP/CWS/MAN</label>
+        </text>
+    </group>
+	
+	<group>
+		<layout>vbox</layout>
+		
+		<group>
+			<layout>hbox</layout>
+
+			<hrule>
+				<stretch type="bool">true</stretch>
+			</hrule>
+			<text>
+				<label>Roll</label>
+			</text>
+			<hrule>
+				<stretch type="bool">true</stretch>
+			</hrule>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			
+			<group>
+				<layout>vbox</layout>
+
+				<slider>
+					<pref-width>150</pref-width>
+					<property>/controls/flight/aileron-fde</property>
+					<min>-1</min>
+					<max>1</max>
+					<step>0.0001</step>
+					<live>true</live>
+				</slider>
+			</group>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+
+			<hrule>
+				<stretch type="bool">true</stretch>
+			</hrule>
+			<text>
+				<label>Pitch</label>
+			</text>
+			<hrule>
+				<stretch type="bool">true</stretch>
+			</hrule>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>Pitch CMD: </label>
+				</text>
+				<slider>
+					<row>2</row>
+					<col>0</col>
+					<pref-height>150</pref-height>
+					<vertical>true</vertical>
+					<property>/controls/flight/elevator-fde</property>
+					<min>-1</min>
+					<max>1</max>
+					<step>0.0001</step>
+					<live>true</live>
+				</slider>
+			</group>
+				
+			<group>
+				<layout>vbox</layout>
+		
+				<text>
+					<label>Pitch Trim: </label>
+				</text>
+				<slider>
+					<row>2</row>
+					<col>0</col>
+					<pref-height>150</pref-height>
+					<vertical>true</vertical>
+					<property>/controls/flight/elevator-trim</property>
+					<min>-1</min>
+					<max>1</max>
+					<step>0.0001</step>
+					<live>true</live>
+				</slider>
+			</group>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+
+			<hrule>
+				<stretch type="bool">true</stretch>
+			</hrule>
+			<text>
+				<label>Yaw</label>
+			</text>
+			<hrule>
+				<stretch type="bool">true</stretch>
+			</hrule>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<slider>
+					<pref-width>150</pref-width>
+					<property>/controls/flight/rudder-fde</property>
+					<min>1</min>
+					<max>-1</max>
+					<step>0.0001</step>
+					<live>true</live>
+				</slider>
+			</group>
+		</group>
+	</group>
+	
+</PropertyList>

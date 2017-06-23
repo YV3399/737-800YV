@@ -31,7 +31,7 @@
 	  
       <autopilot>
         <name>IT-CWS</name>
-        <path>Aircraft/737-800/Systems/it-cws-b.xml</path>
+        <path>Aircraft/737-800/Systems/it-cws.xml</path>
       </autopilot>
 
 	  <!-- Uses a custom N1 based autothrottle -->
@@ -114,9 +114,9 @@
        <float n="4" alias="/gear/gear[2]/compression-m"/>
        <float n="5" alias="/surface-positions/speedbrake-norm"/>
        <float n="6" alias="/surface-positions/reverser-norm"/>
-       <float n="7" alias="/controls/flight/aileron-fbw"/>
-       <float n="8" alias="/controls/flight/elevator-fbw"/>
-       <float n="9" alias="/controls/flight/rudder-fbw"/>
+       <float n="7" alias="/controls/flight/aileron-fde"/>
+       <float n="8" alias="/controls/flight/elevator-fde"/>
+       <float n="9" alias="/controls/flight/rudder-fde"/>
        <string alias="/sim/multiplay/callsign"/>
      </generic>
    </multiplay>
@@ -549,8 +549,8 @@
   </engines>
   
   <flight n="0">
-	<aileron-fbw>0</aileron-fbw>
-	<elevator-fbw>0</elevator-fbw>
+	<aileron-fde>0</aileron-fde>
+	<elevator-fde>0</elevator-fde>
 	<rudder-fde>0</rudder-fde>
   </flight>
 

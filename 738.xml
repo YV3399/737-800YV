@@ -217,9 +217,9 @@
         </contact>
         <contact name="Left Main Gear" type="BOGEY"> <!-- from AMM - maximum MLG compression is 16 in -->
             <location unit="IN">
-                <x>  775 </x>
-                <y> -112.5 </y>
-                <z>  -109.95 </z> <!-- BWL 98.31 -->
+                <x> 775 </x>
+                <y>-112.5 </y>
+                <z>-114.95 </z> <!-- BWL 98.31 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
@@ -294,7 +294,7 @@
             <location unit="IN">
                 <x> 775 </x>
                 <y> 112.5 </y>
-                <z> -109.95 </z> <!-- BWL 98.31 -->
+                <z>-114.95 </z> <!-- BWL 98.31 -->
             </location>
             <static_friction>  0.80 </static_friction>
             <dynamic_friction> 0.50 </dynamic_friction>
@@ -521,7 +521,6 @@
    <system file="steering"/>
    <system file="fuel"/>
    <system file="fmc"/>
-   <system file="it-cws"/>
 
 
     <flight_control name="FCS: 737">
@@ -529,7 +528,7 @@
         <channel name="Pitch">
 
             <summer name="Pitch Trim Sum Cmd">
-			<input>/controls/flight/elevator-fbw</input>
+			<input>/controls/flight/elevator-fde</input>
 			<input>/controls/flight/elevator-trim</input>
                 <clipto>
                     <min>-1</min>
@@ -579,7 +578,7 @@
         <channel name="Roll">
 
             <summer name="Roll Trim Sum">
-				<input>/controls/flight/aileron-fbw</input>
+				<input>/controls/flight/aileron-fde</input>
 				<input>/controls/flight/aileron-trim</input>
                 <clipto>
                     <min>-1</min>

@@ -556,10 +556,16 @@
     	<object-name>VS.3neg</object-name>
     	<object-name>VS.4neg</object-name>
     	<condition>
-    		<less-than>
-    			<property>it-autoflight/input/vs</property>
-    			<value>0</value>
-    		</less-than>
+			<and>
+				<less-than>
+					<property>it-autoflight/input/vs</property>
+					<value>0</value>
+				</less-than>
+				<equals>
+					<property>it-autoflight/output/vert</property>
+					<value>1</value>
+				</equals>
+			</and>
     	</condition>
     </animation>
 
@@ -634,10 +640,16 @@
     	<object-name>VS.3</object-name>
     	<object-name>VS.4</object-name>
     	<condition>
-    		<greater-than-equals>
-    			<property>it-autoflight/input/vs</property>
-    			<value>0</value>
-    		</greater-than-equals>
+			<and>
+				<greater-than-equals>
+					<property>it-autoflight/input/vs</property>
+					<value>0</value>
+				</greater-than-equals>
+				<equals>
+					<property>it-autoflight/output/vert</property>
+					<value>1</value>
+				</equals>
+			</and>
     	</condition>
     </animation>
 

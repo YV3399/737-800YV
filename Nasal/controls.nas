@@ -164,8 +164,8 @@ var landing_check = func{
 	var was_ia = getprop("/b737/sensors/was-in-air");
 	var landing = getprop("/b737/sensors/landing");
 	var lever_pos = num( getprop("b737/controls/flight/spoilers-lever-pos") );
-	var throttle_1 = getprop("/autopilot/internal/servo-throttle[0]");
-	var throttle_2 = getprop("/autopilot/internal/servo-throttle[1]");
+	var throttle_1 = getprop("/controls/engines/engine[0]/throttle");
+	var throttle_2 = getprop("/controls/engines/engine[1]/throttle");
 	var ab_pos = getprop("/controls/gear/autobrakes");
 	var ab_used = getprop("/fdm/jsbsim/fcs/autobrake/autobrake-used");
 
