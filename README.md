@@ -1,7 +1,13 @@
 # 737-800
-The New Boeing 737 800 For FlightGear 
+Boeing 737 800 (Improved version)
 
-Gabriel Hernandez (YV3399), Jonathan Redpath (legoboyvdlp), Joshua Davidson (it0uchpods), RenanMsV (BR-RVD)
+This aircraft was modified and updated in a joint effort by the following people:
+
+* Gabriel Hernandez (YV3399): Cockpit, Sounds, 3D, Effects, Textures, FDM, Animations etc.
+* Jonathan Redpath (legoboyvdlp):  Textures, Liveries, Improvements, Fixes, Other
+* Joshua Davidson (it0uchpods): Autoflight, FDM, Systems, Other.
+* RenanMsV (BR-RVD): Animations, 3D, Textures Etc.
+
 ![image](http://imgur.com/oO0tJ8n.png)
 ![Image](http://imgur.com/tyWtNHe.png)
 ![Image](http://imgur.com/gqGSLMs.png)
