@@ -101,6 +101,9 @@
 
     <multiplay>
      <generic>
+       <int n="0" alias="/gear/gear[0]/tyre-smoke"/>
+       <int n="1" alias="/gear/gear[1]/tyre-smoke"/>
+       <int n="2" alias="/gear/gear[2]/tyre-smoke"/>
        <int n="0" alias="/systems/electrical/outputs/strobe"/>
        <int n="1" alias="/systems/electrical/outputs/beacon"/>
        <int n="2" alias="/controls/lighting/taxi-light"/>

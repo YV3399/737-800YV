@@ -636,7 +636,8 @@
 			</condition>
 		</stall>
 		
-		<!-- Services-->
+		<!-- Ground Services-->
+
 		<fuelpump>
 			<name>fuel truck pump transfer</name>
 			<path>/Aircraft/737-800/Sounds/electricalengine.wav</path>
@@ -714,6 +715,8 @@
         <reference-dist>60.0</reference-dist>
         <max-dist>50.0</max-dist>
     </deice>
+
+<!-- Announcements -->
 
     <announcement>
     	<name>welcome</name>
@@ -977,6 +980,8 @@
     	</volume>
     </seatbelt>
     
+<!-- GPWS -->
+
     <gpws>
     	<name>2500</name>
     	<path>Aircraft/737-800/Sounds/gpws/altitude-2500.wav</path>
@@ -1023,6 +1028,7 @@
     	</condition>
     </gpws>
 
+<!-- TouchDown -->
 
     <wow>
     	<name>wow 0</name>
@@ -1127,7 +1133,7 @@
     
     <seatbelt>
     	<name>seatbelt sign</name>
-    	<path>Aircraft/737-800/Sounds/cabinalert.wav</path>
+    	<path>Aircraft/737-800/Sounds/cabincall.wav</path>
     	<mode>once</mode>
     	<condition>
     		<property>sim/sound/seatbelt-sign</property>
@@ -1146,7 +1152,7 @@
     
     <nosmoke>
     	<name>no smoking sign</name>
-    	<path>Aircraft/737-800/Sounds/cabinalert.wav</path>
+    	<path>Aircraft/737-800/Sounds/cabincall.wav</path>
     	<mode>once</mode>
     	<condition>
     		<property>sim/sound/no-smoking-sign</property>

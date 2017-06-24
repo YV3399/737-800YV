@@ -7,4 +7,4 @@ Gabriel Hernandez (YV3399), Jonathan Redpath (legoboyvdlp), Joshua Davidson (it0
 ![Image](http://imgur.com/gqGSLMs.png)
 
 ## Note:
-This 737-800 has New Cockpit, Lights, Effects, Sounds, Animations, Systems, Textures, Other.
+The 737 800 Has New Cockpit And Model 3D, Sounds, Animations, Systems, among many other things.

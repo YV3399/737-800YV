@@ -74,7 +74,7 @@
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">-0.15</x-offset-m>
 				<y-offset-m archive="y">1.3</y-offset-m>
-				<z-offset-m archive="y">-17.5</z-offset-m>
+				<z-offset-m archive="y">-17.6</z-offset-m>
 			</config>
 		</view>
 		<view n="109">
@@ -171,10 +171,10 @@
 
 	<limits> <!-- based on EI-RUA aircraft data -->
 		<mass-and-balance>
-			<maximum-ramp-mass-lbs>174694</maximum-ramp-mass-lbs>
-			<maximum-takeoff-mass-lbs>174198</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>146298.76</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>138296</maximum-zero-fuel-mass-lbs>
+			<maximum-ramp-mass-lbs>17300</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>172500</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>14400.76</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>13600</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 		<max-flap-extension-speed>
 			<flaps>0.125</flaps>
