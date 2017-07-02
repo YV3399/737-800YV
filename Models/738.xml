@@ -129,7 +129,7 @@
 
   <model n="100">
     <name>Cockpit</name>
-    <path>Models/cockpit.xml</path>
+    <path>Aircraft/737-800/Models/cockpit.xml</path>
   </model>
   <model>
     <name>passengersseats</name>
@@ -142,7 +142,7 @@
   </model>
   <model>
     <name>LeftWing</name>
-    <path>Models/LWing.xml</path>
+    <path>Aircraft/737-800/Models/LWing.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -152,7 +152,7 @@
   </model>
   <model n="102">
     <name>NoseGear</name>
-    <path>Models/NoseGear.xml</path>
+    <path>Aircraft/737-800/Models/NoseGear.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -163,7 +163,7 @@
 
   <model>
     <name>RightWing</name>
-    <path>Models/RWing.xml</path>
+    <path>Aircraft/737-800/Models/RWing.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -173,7 +173,7 @@
   </model>
   <model n="108">
     <name>VertStab</name>
-    <path>Models/VertStab.xml</path>
+    <path>Aircraft/737-800/Models/VertStab.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -183,7 +183,7 @@
   </model>
   <model n="109">
     <name>HorzStab</name>
-    <path>Models/HorzStab.xml</path>
+    <path>Aircraft/737-800/Models/HorzStab.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -200,7 +200,7 @@
   <!-- normal -->
   <model>
     <name>Winglet</name>
-    <path>winglet.xml</path>
+    <path>Aircraft/737-800/winglet.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -211,7 +211,7 @@
   <!-- split smictar -->
   <model>
     <name>Winglet</name>
-    <path>winglet2.xml</path>
+    <path>Aircraft/737-800/winglet2.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>

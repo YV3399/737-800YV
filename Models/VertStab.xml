@@ -4,11 +4,12 @@
 
  <path>VertStab.ac</path> 
 
-   <animation>
+    <animation>
   <type>rotate</type>
   <object-name>rudder</object-name>
-  <property>/sim/multiplay/generic/float[9]</property>
-  <factor>15.0</factor>
+  <!--<property>fdm/jsbsim/fcs/rudder-pos-rad</property>-->
+  <property>surface-positions/rudder-pos-norm</property>
+  <factor>29</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>16.2</x-m>

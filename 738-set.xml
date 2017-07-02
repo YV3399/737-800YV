@@ -3,7 +3,7 @@
 
 	<sim>
 		<description>Boeing 737-800</description>
-	    <liveries-path type="string">Models/Liveries-800</liveries-path>
+	    <liveries-path type="string">Aircraft/737-800/Models/Liveries-800</liveries-path>
         
 		<aero>738</aero>
     <startup>

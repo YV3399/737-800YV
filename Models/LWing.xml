@@ -498,6 +498,7 @@
    <object-name>mglhlowerstrut</object-name>
     <property>gear/gear[1]/compression-norm</property>
    <factor>0.3048</factor>
+   <offset-m>0.1</offset-m>
    <center>
    <x-m>-7.20</x-m>
    <y-m>-2.88</y-m>
@@ -605,9 +606,21 @@
   <type>rotate</type>
   <object-name>lhaileron</object-name>      
   <object-name>ailerontablh</object-name>   
-  <property>/sim/multiplay/generic/float[7]</property>
-  <factor>18</factor>
-  <offset-deg>0</offset-deg>   
+  <property>surface-positions/left-aileron-pos-norm</property>
+  <interpolation>
+  <entry>
+       <ind>-1</ind>
+       <dep>-20.5</dep>
+     </entry>    
+     <entry>
+       <ind>0</ind>
+       <dep>0.0</dep>
+     </entry>
+     <entry>
+       <ind>1</ind>
+       <dep>15.5</dep>
+     </entry>
+   </interpolation>    
   <center>
    <x-m>2.46</x-m>
    <y-m>-10.58</y-m>
@@ -623,7 +636,7 @@
  <animation>
   <type>rotate</type>   
   <object-name>ailerontablh</object-name>   
-  <property>/sim/multiplay/generic/float[7]</property>
+  <property>surface-positions/left-aileron-pos-norm</property>
   <factor>-5</factor>
   <offset-deg>0</offset-deg>   
   <center>

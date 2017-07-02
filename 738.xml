@@ -616,8 +616,8 @@
            <aerosurface_scale name="Left aileron Normalized">
                 <input>fcs/left-aileron-pos-rad</input>
                 <domain>
-                    <min>-0.00</min>
-                    <max> 1.00</max>
+                    <min>-0.3577924967</min>
+                    <max> 0.2705260341</max>
                 </domain>
                 <range>
                     <min>-1</min>
@@ -629,8 +629,8 @@
             <aerosurface_scale name="Right aileron Normalized">
                 <input>fcs/right-aileron-pos-rad</input>
                 <domain>
-                    <min>-0.00</min>
-                    <max> 1.00</max>
+                    <min>-0.3577924967</min>
+                    <max> 0.2705260341</max>
                 </domain>
                 <range>
                     <min>-1</min>

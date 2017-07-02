@@ -696,7 +696,7 @@
   </boeing737>
   
   <systems>
-	<file>Aircraft/737-800/Nasal/engines.nas</file>
+    <file>Aircraft/737-800/Nasal/engines.nas</file>
     <file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
   </systems>
 
