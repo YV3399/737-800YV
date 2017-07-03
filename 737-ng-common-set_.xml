@@ -173,6 +173,13 @@
 
 <yokes-visible type="bool">1</yokes-visible>
 
+  <multiplay>
+      <generic>
+        <float n="0" alias="/fdm/jsbsim/fcs/stab"/>
+        <short n="0" alias="/gear/gear[0]/steering-multiplay"/>
+      </generic>
+    </multiplay>
+
 <aircraft-data>
   <path>controls/switches/increase-fps</path>
 </aircraft-data>
