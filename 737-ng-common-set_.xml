@@ -101,15 +101,15 @@
 
     <multiplay>
      <generic>
-       <int n="0" alias="/gear/gear[0]/tyre-smoke"/>
-       <int n="1" alias="/gear/gear[1]/tyre-smoke"/>
-       <int n="2" alias="/gear/gear[2]/tyre-smoke"/>
        <int n="0" alias="/systems/electrical/outputs/strobe"/>
        <int n="1" alias="/systems/electrical/outputs/beacon"/>
        <int n="2" alias="/controls/lighting/taxi-light"/>
        <int n="3" alias="/controls/lighting/logo-lights"/>
        <int n="4" alias="/controls/lighting/landing-lights"/>
        <int n="5" alias="/controls/lighting/nav-lights"/>
+       <int n="6" alias="/gear/gear[0]/tyre-smoke"/>
+       <int n="7" alias="/gear/gear[1]/tyre-smoke"/>
+       <int n="8" alias="/gear/gear[2]/tyre-smoke"/>
        <float n="0" alias="/gear/gear[0]/compression-m"/>
        <float n="1" alias="/gear/gear[1]/compression-m"/>
        <float n="2" alias="/gear/gear[2]/compression-m"/>

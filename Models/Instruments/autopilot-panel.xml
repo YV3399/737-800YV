@@ -22,6 +22,21 @@
 			</and>
 		</condition>
 	</animation>
+	
+    <animation>
+    	<type>pick</type>
+    	<object-name>togabtn</object-name>
+    	<action>
+    		<name>TOGA Btn</name>
+    		<button>0</button>
+    		<repeatable>true</repeatable> 
+    		<binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/input/toga</property>
+				<value>1</value>
+    		</binding>
+    	</action>
+    </animation>
 
 	<model>
 		<name>efis-control-panel-left</name>

@@ -199,8 +199,8 @@
   
   <!-- normal -->
   <model>
-    <name>Winglet</name>
-    <path>Aircraft/737-800/winglet.xml</path>
+    <name>Winglet1</name>
+    <path>Aircraft/737-800/Models/winglet.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -210,8 +210,8 @@
   </model>
   <!-- split smictar -->
   <model>
-    <name>Winglet</name>
-    <path>Aircraft/737-800/winglet2.xml</path>
+    <name>Winglet2</name>
+    <path>Aircraft/737-800/Models/winglet2.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>

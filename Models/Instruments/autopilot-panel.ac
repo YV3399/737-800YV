@@ -8,7 +8,26 @@ MATERIAL "ac3dmat1.018" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0.3 0.3 0.3  spec
 MATERIAL "Material.001" rgb 0.8 0.8 0.8  amb 0.5 0.5 0.5  emis 0 0 0  spec 1 1 1  shi 32  trans 0
 MATERIAL "Lettering" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0.7 0.7 0.55  spec 1 1 1  shi 12  trans 0
 OBJECT world
-kids 81
+kids 83
+OBJECT poly
+name "togabtn"
+loc 0.024983 0.025593 -0.185261
+texture "transparent.png"
+crease 45.000000
+numvert 4
+0 0.00481155 -0.00471902
+0 0.00481155 0.00471902
+0 -0.00481155 0.00471902
+0 -0.00481155 -0.00471902
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+0 1 1
+1 0 1
+2 0 0
+3 1 0
+kids 0
 OBJECT poly
 name "MACHknb"
 crease 30.000000
@@ -17163,4 +17182,23 @@ refs 4
 1 0.355534 0.178562
 0 0.298288 0.178562
 2 0.298288 0.130147
+kids 0
+OBJECT poly
+name "togabtn"
+loc 0.024983 0.0250438 0.197004
+texture "transparent.png"
+crease 45.000000
+numvert 4
+0 -0.00481155 -0.00471902
+0 -0.00481155 0.00471902
+0 0.00481155 0.00471902
+0 0.00481155 -0.00471902
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+3 1 1
+2 0 1
+1 0 0
+0 1 0
 kids 0
