@@ -834,6 +834,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/vs</property>
@@ -849,6 +855,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/vs</property>
@@ -865,6 +877,12 @@
                 <pref-width>55</pref-width>
 				<property>/it-autoflight/input/vs</property>
 				<live type="bool">true</live>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -876,6 +894,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/vs</property>
@@ -892,6 +916,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>1</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/vs</property>
@@ -918,6 +948,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>5</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
@@ -933,6 +969,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&lt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>5</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
@@ -949,6 +991,12 @@
                 <pref-width>55</pref-width>
 				<property>/it-autoflight/input/fpa</property>
 				<live type="bool">true</live>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>5</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -960,6 +1008,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>5</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
@@ -976,6 +1030,12 @@
                 <pref-width>25</pref-width>
                 <pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
+				<enable>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>5</value>
+					</equals>
+				</enable>
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
