@@ -271,10 +271,10 @@
   <type>gain</type>
   <gain>0.4536</gain>
   <input>
-    <prop>fdm/jsbsim/inertia/weight-lbs</prop>
+    <prop>/fdm/jsbsim/inertia/weight-lbs</prop>
   </input>
   <output>
-    <prop>fdm/jsbsim/inertia/weight-kg</prop>
+    <prop>/fdm/jsbsim/inertia/weight-kg</prop>
   </output>
 </filter>
 
@@ -282,23 +282,14 @@
 <filter n="100119">
   <type>exponential</type>
   <filter-time>0.2</filter-time>
-  <input>accelerations/pilot/y-accel-fps_sec</input>
-  <output>instrumentation/slip-skid-ball/side-accel-filtered-fps_sec</output>
+  <input>/accelerations/pilot/y-accel-fps_sec</input>
+  <output>/instrumentation/slip-skid-ball/side-accel-filtered-fps_sec</output>
 </filter>
-
 <filter n="100120">
   <type>gain</type>
   <gain>0.03108095</gain>
-  <input>instrumentation/slip-skid-ball/side-accel-filtered-fps_sec</input>
-  <output>instrumentation/slip-skid-ball/side-accel-filtered-norm</output>
-</filter>
-
-<!-- Translate steering angle to short int type -->
-<filter n="200100">
-  <type>gain</type>
-  <gain>420.1025</gain>
-  <input>fdm/jsbsim/fcs/steer-pos-deg</input>
-  <output>gear/gear[0]/steering-multiplay</output>
+  <input>/instrumentation/slip-skid-ball/side-accel-filtered-fps_sec</input>
+  <output>/instrumentation/slip-skid-ball/side-accel-filtered-norm</output>
 </filter>
 
 </PropertyList>

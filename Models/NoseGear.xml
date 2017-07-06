@@ -29,8 +29,8 @@
   <object-name>ngrimrh</object-name>
   <object-name>ngtyrelh</object-name>
   <object-name>ngrimlh</object-name>
-   <property>sim/multiplay/generic/short[0]</property>
-   <factor>-0.002380371</factor>
+   <property>fdm/jsbsim/fcs/steer-pos-deg</property>
+   <factor>-1</factor>
     <center>
    <x-m>-15.5</x-m>
    <y-m>0.0</y-m>
@@ -100,7 +100,6 @@
   <object-name>nlinklower</object-name>
     <property>gear/gear[0]/compression-norm</property>
    <factor>0.3048</factor>
-   <offset-m>0.15</offset-m>
    <center>
    <x-m>-15.5</x-m>
    <y-m>0.0</y-m>
@@ -216,4 +215,3 @@
  </animation>
 
 </PropertyList>
-

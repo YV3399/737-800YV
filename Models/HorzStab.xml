@@ -2,120 +2,90 @@
 
 <PropertyList>
 
-  <path>HorzStab.ac</path>
+ <path>HorzStab.ac</path> 
 
   <animation>
-    <type>rotate</type>
-    <object-name>rhelevator</object-name>
-    <object-name>rhelevatortab</object-name>
-    <object-name>rhstab</object-name>
-    <object-name>lhelevator</object-name>
-    <object-name>lhelevatortab</object-name>
-    <object-name>lhstab</object-name>
-    <property>sim/multiplay/generic/float[0]</property>
-    <factor>1</factor>
-    <offset-deg>0</offset-deg>   
-    <center>
-      <x-m>17.13</x-m>
-      <y-m>0.36</y-m>
-      <z-m>1.64</z-m>
-    </center>
-    <axis>
-      <x>0.0</x>
-      <y>1.0</y>
-      <z>0.0</z>
-    </axis>
-  </animation>
+  <type>rotate</type>
+  <object-name>lhelevator</object-name>
+  <object-name>lhelevatortab</object-name>
+  <property>/sim/multiplay/generic/float[8]</property>
+  <factor>15</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>17.13</x-m>
+   <y-m>-0.36</y-m>
+   <z-m> 1.64</z-m>
+  </center>
+  <axis>
+   <x>-0.33</x>
+   <y>1.0</y>
+   <z>-0.2</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>  
+  <object-name>lhelevatortab</object-name>
+  <property>/sim/multiplay/generic/float[8]</property>
+  <factor>-15</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>17.84</x-m>
+   <y-m>-0.51</y-m>
+   <z-m> 1.74</z-m>
+  </center>
+  <axis>
+   <x>-0.29</x>
+   <y>1.0</y>
+   <z>-0.18</z>
+  </axis>
+ </animation>
 
   <animation>
-    <type>rotate</type>
-    <object-name>lhelevator</object-name>
-    <object-name>lhelevatortab</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <interpolation>
-      <entry><ind>-1</ind><dep>-19.25</dep></entry>
-      <entry><ind>0</ind><dep>0</dep></entry>
-      <entry><ind>1</ind><dep>22.2</dep></entry>
-    </interpolation>   
-    <center>
-      <x-m>17.13</x-m>
-      <y-m>-0.36</y-m>
-      <z-m> 1.64</z-m>
-    </center>
-    <axis>
-      <x>-0.33</x>
-      <y>1.0</y>
-      <z>-0.2</z>
-    </axis>
-  </animation>
+  <type>rotate</type>
+  <object-name>rhelevator</object-name>
+  <object-name>rhelevatortab</object-name>
+  <property>/sim/multiplay/generic/float[8]</property>
+  <factor>15</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>17.13</x-m>
+   <y-m>0.36</y-m>
+   <z-m>1.64</z-m>
+  </center>
+  <axis>
+   <x>0.33</x>
+   <y>1.0</y>
+   <z>0.2</z>
+  </axis>
+ </animation>
 
-  <animation>
-    <type>rotate</type>  
-    <object-name>lhelevatortab</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-15</factor>
-    <offset-deg>0</offset-deg>   
-    <center>
-      <x-m>17.84</x-m>
-      <y-m>-0.51</y-m>
-      <z-m> 1.74</z-m>
-    </center>
-    <axis>
-      <x>-0.29</x>
-      <y>1.0</y>
-      <z>-0.18</z>
-    </axis>
-  </animation>
+ <animation>
+  <type>rotate</type>  
+  <object-name>rhelevatortab</object-name>
+  <property>/sim/multiplay/generic/float[8]</property>
+  <factor>-15</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>17.84</x-m>
+   <y-m>0.51</y-m>
+   <z-m>1.74</z-m>
+  </center>
+  <axis>
+   <x>0.29</x>
+   <y>1.0</y>
+   <z>0.18</z>
+  </axis>
+ </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>rhelevator</object-name>
-    <object-name>rhelevatortab</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
-    <interpolation>
-      <entry><ind>-1</ind><dep>-19.25</dep></entry>
-      <entry><ind>0</ind><dep>0</dep></entry>
-      <entry><ind>1</ind><dep>22.2</dep></entry>
-    </interpolation>   
-    <center>
-      <x-m>17.13</x-m>
-      <y-m>0.36</y-m>
-      <z-m>1.64</z-m>
-    </center>
-    <axis>
-      <x>0.33</x>
-      <y>1.0</y>
-      <z>0.2</z>
-    </axis>
-  </animation>
+       <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>chrome.png</texture>
+          <object-name>lhstab</object-name>  
+          <object-name>rhstab</object-name>
+    </animation><!--
 
-  <animation>
-    <type>rotate</type>  
-    <object-name>rhelevatortab</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-15</factor>
-    <offset-deg>0</offset-deg>   
-    <center>
-      <x-m>17.84</x-m>
-      <y-m>0.51</y-m>
-      <z-m>1.74</z-m>
-    </center>
-    <axis>
-      <x>0.29</x>
-      <y>1.0</y>
-      <z>0.18</z>
-    </axis>
-  </animation>
-
-    <animation>
-      <type>shader</type>
-      <shader>chrome</shader>
-      <texture>chrome.png</texture>
-      <object-name>lhstab</object-name>  
-      <object-name>rhstab</object-name>
-    </animation>
-
-<!--
   <effect>
     <inherits-from>Effects/model</inherits-from>
   <object-name>lhelevator</object-name>
@@ -125,7 +95,4 @@
   <object-name>lhstab</object-name>
   <object-name>rhstab</object-name>
 </effect>-->
-
 </PropertyList>
-
-
