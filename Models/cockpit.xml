@@ -78,7 +78,6 @@
 </offsets>
 </model>
 
-
 <model>
   <name>pedestal</name>
   <path>pedestal.xml</path>
@@ -204,7 +203,6 @@
   </axis>
  </animation>
 
-
 <animation>
   <type>rotate</type>
   <object-name>flaparm</object-name>
@@ -308,7 +306,6 @@
    <z>0.0</z>
   </axis>
  </animation>
-
 
 <!--centre console--> 
 
