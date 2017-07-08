@@ -204,15 +204,6 @@
 		</position>
 	</engine>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<engine>
 		<name>a320_a21</name>
 		<mode>looped</mode>
@@ -370,13 +361,7 @@
 			<z>0.0</z>
 		</position>
 	</engine>
-	
-	
-	
-	
-	
-	
-	
+
 	<engine>
 		<name>xa320_a11</name>
 		<mode>looped</mode>
@@ -442,7 +427,6 @@
 			<z>00</z>
 		</position>
 	</engine>
-	
 	
 	<engine>
 		<name>xa320_b11</name>
