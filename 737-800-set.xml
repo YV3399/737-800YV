@@ -5,7 +5,7 @@
 		<description>Boeing 737-800</description>
 	    <liveries-path type="string">Aircraft/737-800/Models/Liveries-800</liveries-path>
         
-		<aero>738</aero>
+		<aero>737-800</aero>
     <startup>
 		<splash-texture>Aircraft/737-800/Splash/splash.png</splash-texture>
 		<splash-texture>Aircraft/737-800/Splash/splash-1.png</splash-texture>
@@ -23,7 +23,7 @@
     </startup>
      
 		<model>
-			<path>Aircraft/737-800/Models/738.xml</path>       
+			<path>Aircraft/737-800/Models/737-800.xml</path>       
 			<livery>
 				<file>N737BX</file>
 				<newwinglets type="bool">false</newwinglets>   

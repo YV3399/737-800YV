@@ -1,0 +1,1320 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>737-800.ac</path>
+  <animation n="0">
+    <texture>737-800.png</texture>
+  </animation>
+  <model n="100">
+    <name>Cockpit</name>
+    <offsets>
+      <x-m>-18.32</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model n="110">
+    <name>Pushback</name>
+    <offsets>
+      <x-m>-16.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-2.75</z-m>
+    </offsets>
+  </model>
+  
+  <nasal n="0">
+    <load>
+      var liveries = getprop("/sim/liveries-path");
+      var livery_update = aircraft.livery_update.new(liveries,10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+  
+  <animation n="0">
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>doorLF</object-name>
+    <object-name>EexitLF</object-name>
+    <object-name>EexitLR</object-name>
+    <object-name>doorLR</object-name>
+    <object-name>doorRR</object-name>
+    <object-name>EexitRF</object-name>
+    <object-name>EexitRR</object-name>
+    <object-name>doorRF</object-name>
+    <object-name>cargodoorF</object-name>
+    <object-name>cargodoorR</object-name>
+    <object-name>lhfairing</object-name>
+    <object-name>geardoor</object-name>
+    <object-name>engnose.001</object-name>
+    <object-name>lreverserib_1</object-name>
+    <object-name>rhngdoor</object-name>
+    <object-name>lhngdoor</object-name>
+    <object-name>rhwtobfairing</object-name>
+    <object-name>geardoorrh</object-name>
+    <object-name>No2engfancase</object-name>
+    <object-name>No2reverser_1</object-name>
+    <object-name>fan2</object-name>
+    <object-name>vstab</object-name>
+    <object-name>rudder</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+  </animation>
+  
+  <effect>
+    <inherits-from>Effects/glass</inherits-from>
+    <object-name>windows.int</object-name>
+    <object-name>rearwindows.int</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>windows.ext</object-name>
+    <object-name>rearwindows.ext</object-name>
+  </effect>
+   <!--effect>
+    <inherits-from>Effects/model</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>doorLF</object-name>
+    <object-name>EexitLF</object-name>
+    <object-name>EexitLR</object-name>
+    <object-name>doorLR</object-name>
+    <object-name>doorRR</object-name>
+    <object-name>EexitRF</object-name>
+    <object-name>EexitRR</object-name>
+    <object-name>doorRF</object-name>
+    <object-name>cargodoorF</object-name>
+    <object-name>cargodoorR</object-name>
+    <object-name>lhfairing</object-name>
+    <object-name>geardoor</object-name>
+    <object-name>engnose.001</object-name>
+    <object-name>lreverserib_1</object-name>
+    <object-name>rhngdoor</object-name>
+    <object-name>lhngdoor</object-name>
+    <object-name>rhwtobfairing</object-name>
+    <object-name>geardoorrh</object-name>
+    <object-name>No2engfancase</object-name>
+    <object-name>No2reverser_1</object-name>
+    <object-name>fan2</object-name>
+    <object-name>vstab</object-name>
+    <object-name>rudder</object-name>
+  </effect!-->
+
+<effect>
+  <inherits-from>Effects/lightmap</inherits-from>
+  <parameters>
+    <texture n="1">
+      <image>Aircraft/737-800/Models/Effects/LightMap/737-800lightmap.png</image>
+    </texture>
+    <factor>
+      <use>controls/lighting/landing-lights-norm</use>
+    </factor>
+  </parameters>
+  <object-name>fuselage</object-name>
+  <object-name>EexitRR</object-name>
+  <object-name>EexitLF</object-name>
+  <object-name>EexitLR</object-name>
+  <object-name>EexitRF</object-name>
+  <object-name>cargodoorR</object-name>
+  <object-name>cargodoorF</object-name>
+  <object-name>doorRR</object-name>
+  <object-name>doorrhrear</object-name>
+  <object-name>doorRF</object-name>
+  <object-name>dorrhfront.005</object-name>
+  <object-name>doorLF</object-name>
+  <object-name>doorLF.001</object-name>
+  <object-name>doorLR</object-name>
+  <object-name>Circle.006</object-name>
+  </effect>
+
+  <model n="100">
+    <name>Cockpit</name>
+    <path>Aircraft/737-800/Models/cockpit.xml</path>
+  </model>
+  <model>
+    <name>passengersseats</name>
+    <path>Aircraft/737-800/Models/seats/passengers/passenger-seating.xml</path>
+    <condition>
+      <not>
+        <property>controls/switches/increase-fps</property>
+      </not>
+    </condition>
+  </model>
+  <model>
+    <name>LeftWing</name>
+    <path>Aircraft/737-800/Models/LWing.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model n="102">
+    <name>NoseGear</name>
+    <path>Aircraft/737-800/Models/NoseGear.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>RightWing</name>
+    <path>Aircraft/737-800/Models/RWing.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model n="108">
+    <name>VertStab</name>
+    <path>Aircraft/737-800/Models/VertStab.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model n="109">
+    <name>HorzStab</name>
+    <path>Aircraft/737-800/Models/HorzStab.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model n="110">
+    <name>Pushback</name>
+    <path>Models\Airport\Pushback\Goldhofert.xml</path>
+  </model>
+  
+  <!-- normal -->
+  <model>
+    <name>Winglet1</name>
+    <path>Aircraft/737-800/Models/winglet.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <!-- split smictar -->
+  <model>
+    <name>Winglet2</name>
+    <path>Aircraft/737-800/Models/winglet2.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- normal select whenever the livery has value '0' for newwinglets -->
+  <animation>
+    <type>select</type>
+    <object-name>WingletL</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/newwinglets</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </animation>
+  <!-- split scmictar select whenever the livery has value '1' for newwinglets -->
+  <animation>
+    <type>select</type>
+    <object-name>lhwinglet.001</object-name>
+    <object-name>rhwinglet.001</object-name>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/newwinglets</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  <animation>
+    <type>material</type>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>737-800.png</texture>  
+  </animation>
+
+  <!-- normal -->
+  <model>
+    <name>Winglet</name>
+    <path>Aircraft/737-800/Models/winglet.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <!-- split smictar -->
+  <model>
+    <name>Winglet</name>
+    <path>Models/winglet2.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <!-- normal select whenever the livery has value '0' for newwinglets -->
+  <animation>
+    <type>select</type>
+    <object-name>WingletL</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/newwinglets</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </animation>
+  <!-- split scmictar select whenever the livery has value '1' for newwinglets -->
+  <animation>
+    <type>select</type>
+    <object-name>lhwinglet.001</object-name>
+    <object-name>rhwinglet.001</object-name>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/livery/newwinglets</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  <animation>
+    <type>material</type>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>737-800.png</texture>  
+  </animation>
+
+ 
+<!--Lights-->
+
+<model>
+  <path>Aircraft/737-800/Models/lights/greennav.xml</path>
+  <name>Greenlight</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/green-navlight.xml</path>
+  <name>Greenlight.ALS</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/lights/rednav.xml</path>
+  <name>Redlight</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>-17.03</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/red-navlight.xml</path>
+  <name>Redlight.ALS</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>-17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
+</model>
+
+
+<model>
+  <path>Aircraft/737-800/Models/lights/strobe.xml</path>
+  <name>strobe.right</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/right-strobe.xml</path>
+  <name>strobe.right.ALS</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/lights/strobe.xml</path>
+  <name>strobe.left</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>-17.01</y-m>
+    <z-m>1.06</z-m>     
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/left-strobe.xml</path>
+  <name>strobe.left.ALS</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>-17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/737-800/Models/lights/strobe.xml</path>
+  <name>strobe.rear</name>     
+ <offsets>
+   <x-m>18.63</x-m>
+   <y-m>0.0</y-m>
+   <z-m>2.06</z-m>
+ </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/tail-strobe.xml</path>
+  <name>strobe.rear.ALS</name>     
+  <offsets>
+   <x-m>18.63</x-m>
+   <y-m>0.0</y-m>
+   <z-m>2.06</z-m>     
+  </offsets>
+</model>
+
+<!--Landing Light-->
+
+<model>
+  <path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
+  <name>landing.LW</name>
+
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>-2.14</y-m>
+    <z-m>-0.51</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/landinglightL.xml</path>
+  <name>landing.LW.ALS</name>
+
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>-2.14</y-m>
+    <z-m>-0.51</z-m>      
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/lights/landing-stbd.xml</path>
+  <name>landing.RW</name>
+  <offsets>
+    <x-m>-4.98</x-m>
+    <y-m>2.14</y-m>
+    <z-m>-0.51</z-m>        
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/landinglightR.xml</path>
+  <name>landing.RW.ALS</name>
+
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>2.14</y-m>
+    <z-m>-0.51</z-m>      
+  </offsets>
+</model>
+
+<!--Taxi Light-->
+
+<model>
+  <path>Aircraft/737-800/Models/lights/TaxiLight.xml</path>
+  <name>TaxiLight</name>
+  <offsets>
+    <x-m>-15.78</x-m>
+    <y-m>0.00</y-m>
+    <z-m>-1.60</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/taxilight.xml</path>
+  <name>TaxiLight.ALS</name>
+  <offsets>
+    <x-m>-15.78</x-m>
+    <y-m>0.00</y-m>
+    <z-m>-1.60</z-m>      
+  </offsets>
+</model>
+
+<!--Retractable-landinglight -->
+
+<model>
+  <path>Aircraft/737-800/Models/lights/Retractable-landinglight.xml</path>
+  <name>LeftRBlight</name>
+
+  <offsets>
+    <x-m>-7.10</x-m>
+    <y-m>-1.00</y-m>
+    <z-m>-1.30</z-m>      
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/lights/Retractable-landinglight.xml</path>
+  <name>RightWRBlight</name>V
+  <offsets>
+    <x-m>-7.10</x-m>
+    <y-m>1.00</y-m>
+    <z-m>-1.30</z-m>        
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/lights/beacon.xml</path>
+  <name>beacon.top</name>     
+  <offsets>
+    <x-m>0.00</x-m>
+    <y-m>0.00</y-m>
+    <z-m>2.57</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/beacon.xml</path>
+  <name>beacon.top.ALS</name>     
+  <offsets>
+    <x-m>0.00</x-m>
+    <y-m>0.00</y-m>
+    <z-m>2.57</z-m>      
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/lights/beacon.xml</path>
+  <name>beacon.bottom</name>     
+  <offsets>
+    <x-m>0.0</x-m>
+    <y-m> 0.00</y-m>
+    <z-m>-1.42</z-m>      
+  </offsets>
+</model>   
+<model>
+  <path>Aircraft/737-800/Models/lights/ALS/beacon.xml</path>
+  <name>beacon.bottom.ALS</name>     
+  <offsets>
+    <x-m>0.0</x-m>
+    <y-m> 0.00</y-m>
+    <z-m>-1.55</z-m>      
+  </offsets>
+</model>
+
+<!--Select animation-->
+<animation>
+    <type>select</type>
+    <object-name>beacon.top</object-name>
+    <object-name>beacon.bottom</object-name>
+    <object-name>Redlight</object-name>
+    <object-name>Greenlight</object-name>
+    <object-name>strobe.left</object-name>
+    <object-name>strobe.right</object-name>
+    <object-name>strobe.rear</object-name>
+    <object-name>landing.LW</object-name>
+    <object-name>landing.RW</object-name>
+    <object-name>TaxiLight</object-name>
+    <condition>
+        <not>
+            <property>/sim/rendering/shaders/skydome</property>
+        </not>
+    </condition>
+</animation>
+<animation>
+    <type>select</type>
+    <object-name>beacon.top.ALS</object-name>
+    <object-name>beacon.bottom.ALS</object-name>
+    <object-name>Redlight.ALS</object-name>
+    <object-name>Greenlight.ALS</object-name>
+    <object-name>strobe.left.ALS</object-name>
+    <object-name>strobe.right.ALS</object-name>
+    <object-name>strobe.rear.ALS</object-name>
+    <object-name>landing.LW.ALS</object-name>
+    <object-name>landing.RW.ALS</object-name>
+    <object-name>TaxiLight.ALS</object-name>
+    <condition>
+            <property>/sim/rendering/shaders/skydome</property>
+    </condition>
+</animation>
+
+
+<!-- Tyre Smoke -->
+
+<model>
+  <path>Aircraft/737-800/Models/Effects/tyre-smoke-nose.xml</path>
+  <name>tyre-smoke-n</name>
+  <offsets>
+    <x-m>-18.00</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-5.50</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/Effects/tyre-smoke-left.xml</path>
+  <name>tyre-smoke-l</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>-2.12</y-m>
+    <z-m>-0.51</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/Effects/tyre-smoke-right.xml</path>
+  <name>tyre-smoke-r</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>2.12</y-m>
+    <z-m>0.51</z-m>
+  </offsets>
+</model>
+
+<!-- Tyre Rain -->
+
+<model>
+  <path>Aircraft/737-800/Models/Effects/tyrespray/rain-nose.xml</path>
+  <name>tyre-smoke-n</name>
+  <offsets>
+    <x-m>-18.00</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-5.50</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/Effects/tyrespray/rain-port.xml</path>
+  <name>tyre-smoke-l</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>-2.12</y-m>
+    <z-m>-0.51</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/Effects/tyrespray/rain-stbd.xml</path>
+  <name>tyre-smoke-r</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>2.12</y-m>
+    <z-m>0.51</z-m>
+  </offsets>
+</model>
+
+<!-- Engine Fire -->
+
+<model>
+ <path>Aircraft/737-800/Models/Effects/fire.xml</path>
+ <condition>
+   <equals>
+    <property>/controls/fires/fire/phase</property>
+    <value>fire</value>
+  </equals>
+</condition>
+<name>fire_1</name>
+<offsets>
+  <x-m>-3.3</x-m>
+  <y-m>-4.73</y-m>
+  <z-m>-1.4</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<model>
+ <path>Aircraft/737-800/Models/Effects/fire.xml</path>
+ <condition>
+   <equals>
+    <property>/controls/fires/fire[1]/phase</property>
+    <value>fire</value>
+  </equals>
+</condition>
+<name>~fire_1</name>
+<offsets>
+  <x-m>-3.3</x-m>
+  <y-m>4.73</y-m>
+  <z-m>-1.4</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<!-- CONTRAIL -->
+
+<!-- Particules OSG -->
+<model>
+  <path>Aircraft/737-800/Models/Effects/Contrail/contrail.xml</path>
+  <offsets>
+    <x-m>3.3</x-m>
+    <y-m>-4.7632</y-m>
+    <z-m>-1.28782</z-m> 
+    <roll-deg>    0 </roll-deg>
+    <pitch-deg>   0 </pitch-deg>
+    <heading-deg> 0 </heading-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/737-800/Models/Effects/Contrail/contrail.xml</path>
+  <offsets>
+    <x-m>3.3</x-m>
+    <y-m>4.7713</y-m>
+    <z-m>-1.28753</z-m> 
+    <roll-deg>    0 </roll-deg>
+    <pitch-deg>   0 </pitch-deg>
+    <heading-deg> 0 </heading-deg>
+  </offsets>
+</model>
+
+<!-- Fuel Truck -->
+
+<model>
+  <name>fuel-truck</name>
+  <path>Aircraft/737-800/Models/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.xml</path>
+  <offsets>
+    <x-m>1.8</x-m>
+    <y-m>12</y-m>
+    <z-m>1.81</z-m>
+  </offsets>
+  <condition>
+    <and>
+      <less-than> 
+        <property>/velocities/groundspeed-kt</property>
+        <value>1</value>
+      </less-than>
+      <equals>
+       <property>/services/fuel-truck/enable</property>
+       <value>1</value>
+     </equals>
+   </and>
+ </condition>
+</model>
+
+<!-- De-icing Truck -->
+
+<model>
+  <name>de-ice-truck</name>
+  <path>Aircraft/737-800/Models/Services/De-Icing/volvo_deicing_truck.xml</path>
+  <condition>
+    <and>   
+      <equals>
+       <property>/services/deicing_truck/enable</property>
+       <value>1</value>
+     </equals>
+     <less-than>  
+      <property>/velocities/groundspeed-kt</property>
+      <value>1</value>
+    </less-than>
+  </and>
+</condition>
+<offsets>
+  <x-m>-14</x-m><!--original -15-->
+  <y-m>10</y-m>
+  <z-m>-2.48</z-m>
+  <heading-deg>160</heading-deg>
+</offsets>
+</model>
+
+<!-- Baggage Truck -->
+
+<model>
+  <name>baggage-truck</name>
+  <path>Aircraft/737-800/Models/Services/Baggage/cargo_ramp.xml</path>
+  <condition>
+    <and>
+      <equals>
+       <property>/services/baggage/enable</property>
+       <value>1</value>
+     </equals>
+     <less-than>  
+      <property>/velocities/groundspeed-kt</property>
+      <value>1</value>
+    </less-than>
+  </and>
+</condition>
+<offsets>
+  <x-m>-4.2</x-m>
+  <y-m>0</y-m>
+  <z-m>0.95</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<!-- External Power -->
+
+<model>
+  <name>ext-pwr</name>
+  <path>Aircraft/737-800/Models/Services/External-Power/ext-pwr-box.ac</path>
+  <condition>
+    <and>
+      <equals>
+       <property>/services/ext-pwr/enable</property>
+       <value>1</value>
+     </equals>
+     <less-than>  
+      <property>/velocities/groundspeed-kt</property>
+      <value>1</value>
+    </less-than>
+  </and>
+</condition>
+<offsets>
+  <x-m>-13</x-m>
+  <y-m>2</y-m>
+  <z-m>2.16</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<model>
+ <name>Bus</name>
+ <path>Aircraft/737-800/Models/Services/Bus/bus.xml</path>
+ <condition>
+   <property>controls/switches/bus</property>
+   <less-than>
+    <property>velocities/groundspeed-kt</property>
+    <value>1</value>
+  </less-than>
+</condition>
+<offsets>
+  <x-m>6</x-m>
+  <y-m>-10</y-m>
+  <z-m>-0.2</z-m>
+  <pitch-deg>-1</pitch-deg>
+  <heading-deg>-270</heading-deg>
+</offsets>
+</model>
+
+<!-- reverser - Transferred to xml wing -->
+<!--animation>
+  <type>translate</type>
+  <object-name>No2reverser_1</object-name>
+  <object-name>lreverserib_1</object-name>
+  <property>engines/engine/reverser-pos-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1</ind>
+      <dep>0.3</dep>
+    </entry>
+  </interpolation>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation-->
+
+<!-- Registration fuselage upper back -->
+<model>
+  <name>registrationFuselageRightBack</name>
+  <path>Aircraft/737-800/Models/Registration/registration.xml</path>
+  <offsets>
+    <x-m>10.90</x-m>
+    <y-m>1.50</y-m>
+    <z-m>1.60</z-m>
+    <roll-deg>34</roll-deg>
+    <heading-deg>-1.0</heading-deg>
+  </offsets>
+  <overlay>
+    <params>
+      <size>0.5</size>
+      <alignment>reversed-xz-plane</alignment>
+    </params>
+  </overlay>
+</model>
+
+<model>
+  <name>registrationFuselageLeftBack</name>
+  <path>Aircraft/737-800/Models/Registration/registration.xml</path>
+  <offsets>
+    <x-m>10.90</x-m>
+    <y-m>-1.50</y-m>
+    <z-m> 1.60</z-m>
+    <roll-deg>34</roll-deg>
+    <heading-deg>181.0</heading-deg>
+  </offsets>
+  <overlay>
+    <params>
+      <size>0.5</size>
+      <alignment>reversed-xz-plane</alignment>
+    </params>
+  </overlay>
+</model>
+
+
+<animation>
+  <type>material</type>
+  <object-name>floor</object-name>
+  <emission>
+    <red>0.9</red>
+    <green>0.75</green>
+    <blue>0.6</blue>
+    </emission>
+     <condition>
+       <property>systems/electrical/on</property>
+    </condition>
+   </animation>
+
+
+
+<!-- Services by Gabriel Hernandez(YV399) -->
+
+<model>
+  <path>Aircraft/737-800/Models/Services/Services.xml</path>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+  </offsets>
+</model> 
+
+<!-- by RenanMsV and Gabriel Hernandez(YV3399) -->
+<!-- Left front door -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>doorLF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorLFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorLF</object-name>
+  <object-name>doorLF.001</object-name>
+  <property>/controls/doors/LFDoor/LFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorLF</object-name>
+  <object-name>doorLF.001</object-name>
+  <property>/controls/doors/LFDoor/LFDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Left Rear Door -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>doorLR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorLRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorLR</object-name>
+  <object-name>Circle.006</object-name>
+  <property>/controls/doors/LRDoor/LRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorLR</object-name>
+  <object-name>Circle.006</object-name>
+  <property>/controls/doors/LRDoor/LRDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Right Front -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>doorRF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorRFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorRF</object-name>
+  <object-name>dorrhfront.005</object-name>
+  <property>/controls/doors/RFDoor/RFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorRF</object-name>
+  <object-name>dorrhfront.005</object-name>
+  <property>/controls/doors/RFDoor/RFDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Right Rear -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>doorRR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorRRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorRR</object-name>
+  <object-name>doorrhrear</object-name>
+  <property>/controls/doors/RRDoor/RRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorRR</object-name>
+  <object-name>doorrhrear</object-name>
+  <property>/controls/doors/RRDoor/RRDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Cargo Front -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>cargodoorF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorCFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>cargodoorF</object-name>
+  <property>/controls/doors/CFDoor/CFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>cargodoorF</object-name>
+  <property>/controls/doors/CFDoor/CFDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Cargo Rear -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>cargodoorR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorCRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>cargodoorR</object-name>
+  <property>/controls/doors/CRDoor/CRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>cargodoorR</object-name>
+  <property>/controls/doors/CRDoor/CRDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Emergency Left Front -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>EexitRF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorELFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitRF</object-name>
+  <property>/controls/doors/ELFDoor/ELFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitRF</object-name>
+  <property>/controls/doors/ELFDoor/ELFDoorPos2/position-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Emergency Left Rear -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>EexitLR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorELRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitLR</object-name>
+  <property>/controls/doors/ELRDoor/ELRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitLR</object-name>
+  <property>/controls/doors/ELRDoor/ELRDoorPos2/position-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Emergency Right Front -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>EexitLF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorERFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitLF</object-name>
+  <property>/controls/doors/ERFDoor/ERFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitLF</object-name>
+  <property>/controls/doors/ERFDoor/ERFDoorPos2/position-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Emergency Right Rear -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>EexitRR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorERRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitRR</object-name>
+  <property>/controls/doors/ERRDoor/ERRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitRR</object-name>
+  <property>/controls/doors/ERRDoor/ERRDoorPos2/position-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+</PropertyList>
