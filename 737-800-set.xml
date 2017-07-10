@@ -3,170 +3,152 @@
 
 	<sim>
 		<description>Boeing 737-800</description>
-	    <liveries-path type="string">Aircraft/737-800/Models/Liveries-800</liveries-path>
-        
+		<liveries-path type="string">Aircraft/737-800/Models/Liveries-800</liveries-path>
+
 		<aero>737-800</aero>
-    <startup>
-		<splash-texture>Aircraft/737-800/Splash/splash.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-1.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-2.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-3.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-4.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-5.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-6.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-7.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-9.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-10.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-11.png</splash-texture>
-		<splash-texture>Aircraft/737-800/Splash/splash-12.png</splash-texture>
-	    
-    </startup>
-     
+		<startup>
+			<splash-texture>Aircraft/737-800/Splash/splash.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-1.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-2.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-3.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-4.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-5.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-6.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-7.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-9.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-10.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-11.png</splash-texture>
+			<splash-texture>Aircraft/737-800/Splash/splash-12.png</splash-texture>
+		</startup>
+
 		<model>
 			<path>Aircraft/737-800/Models/737-800.xml</path>       
 			<livery>
 				<file>N737BX</file>
 				<newwinglets type="bool">false</newwinglets>   
 			</livery>
-                        <rendering>
-                            <reflection-enabled type="int">1</reflection-enabled>
-                            <reflection-type type="int">2</reflection-type>
-                            <reflection-dynamic type="int">1</reflection-dynamic>
-                            <reflection-correction type="float">0.1</reflection-correction>
-                            <reflection-fresnel type="float">0.5</reflection-fresnel>
-                            <reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
-                            <reflection-rainbow type="float">0.1</reflection-rainbow>
-                            <reflection-noise type="float">0.05</reflection-noise>
-                            <ambient-correction type="float">0.15</ambient-correction>
-                        </rendering>
+			<rendering>
+				<reflection-enabled type="int">1</reflection-enabled>
+				<reflection-type type="int">2</reflection-type>
+				<reflection-dynamic type="int">1</reflection-dynamic>
+				<reflection-correction type="float">0.1</reflection-correction>
+				<reflection-fresnel type="float">0.5</reflection-fresnel>
+				<reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
+				<reflection-rainbow type="float">0.1</reflection-rainbow>
+				<reflection-noise type="float">0.05</reflection-noise>
+				<ambient-correction type="float">0.15</ambient-correction>
+			</rendering>
 		</model>    
-                <rating>
+		<rating>
 			<FDM type="int">3</FDM>
 			<systems type="int">3</systems>
 			<cockpit type="int">3</cockpit>
 			<model type="int">3</model>
 		</rating>
-			<view n="0">
-			<name>Pilot View</name>
+		<view>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-		<default-field-of-view-deg type="double">55</default-field-of-view-deg>
-				<pitch-offset-deg>-4</pitch-offset-deg>
+				<default-field-of-view-deg type="double">65</default-field-of-view-deg>
+				<pitch-offset-deg>-13</pitch-offset-deg>
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">-0.51</x-offset-m>
 				<y-offset-m archive="y">1.25</y-offset-m>
 				<z-offset-m archive="y">-16.98</z-offset-m>
 			</config>
 		</view>
-
-		<view n="108">
+		<view n="100">
+			<name>Copilot</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<default-field-of-view-deg type="double">65</default-field-of-view-deg>
+				<pitch-offset-deg>-13</pitch-offset-deg>
+				<heading-offset-deg>0</heading-offset-deg>
+				<x-offset-m archive="y">0.51</x-offset-m>
+				<y-offset-m archive="y">1.25</y-offset-m>
+				<z-offset-m archive="y">-16.98</z-offset-m>
+			</config>   
+		</view>
+		<view n="101">
 			<name>CDU View</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-		<default-field-of-view-deg type="double">41</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">41</default-field-of-view-deg>
 				<pitch-offset-deg>-70</pitch-offset-deg>
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">-0.15</x-offset-m>
 				<y-offset-m archive="y">1.3</y-offset-m>
 				<z-offset-m archive="y">-17.6</z-offset-m>
 			</config>
-		</view>
-		<view n="109">
-			<name>Right View</name>
+		</view>	
+		<view n="102">
+			<name>Engine Left</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-		<default-field-of-view-deg type="double">58</default-field-of-view-deg>
-				<pitch-offset-deg>0</pitch-offset-deg>
-				<heading-offset-deg>-70</heading-offset-deg>
-				<x-offset-m archive="y">1.75</x-offset-m>
-				<y-offset-m archive="y">1.2</y-offset-m>
-				<z-offset-m archive="y">5.4</z-offset-m>
-			</config>
-		</view>
-		<view n="110">
-			<name>Left Wing</name>
-			<type>lookfrom</type>
-			<internal archive="y">true</internal>
-			<config>
-				<from-model type="bool">true</from-model>
-				<from-model-idx type="int">0</from-model-idx>
-		<default-field-of-view-deg type="double">58</default-field-of-view-deg>
-				<pitch-offset-deg>0</pitch-offset-deg>
-				<heading-offset-deg>70</heading-offset-deg>
-				<x-offset-m archive="y">-1.83</x-offset-m>
-				<y-offset-m archive="y">1.2</y-offset-m>
-				<z-offset-m archive="y">5.02</z-offset-m>
-			</config>
-		</view>
-          	<view n="111">
-			<name> Engine Left </name>
-			<type>lookfrom</type>
-			<internal archive="y">true</internal>
-			<config>
-				<from-model type="bool">true</from-model>
-				<from-model-idx type="int">0</from-model-idx>
-		<default-field-of-view-deg type="double">62</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">62</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>130</heading-offset-deg>
 				<x-offset-m archive="y">-1.83</x-offset-m>
 				<y-offset-m archive="y">1.2</y-offset-m>
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
-		   </view>
-			<view n="112">
-			<name> Engine Right </name>
+		</view>
+		<view n="103">
+			<name>Engine Right</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-		<default-field-of-view-deg type="double">62</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">62</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 				<heading-offset-deg>-130</heading-offset-deg>
 				<x-offset-m archive="y">1.83</x-offset-m>
 				<y-offset-m archive="y">1.2</y-offset-m>
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
-		  </view>
-		  <view n="113">
-			<name> Copilot</name>
+		</view>
+		<view n="104">
+			<name>Right Wing</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-		<default-field-of-view-deg type="double">68</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">80</default-field-of-view-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
-				<heading-offset-deg>-1</heading-offset-deg>
-				<x-offset-m archive="y">0.49</x-offset-m>
-				<y-offset-m archive="y">1.20</y-offset-m>
-				<z-offset-m archive="y">-17.18</z-offset-m>
-			</config>   
-		  </view>
-		  <view n="114">
-			<name> Wing </name>
-			<type>lookfrom</type>
-			<internal archive="y">true</internal>
-			<config>
-				<from-model type="bool">true</from-model>
-				<from-model-idx type="int">0</from-model-idx>
-		<default-field-of-view-deg type="double">58</default-field-of-view-deg>
-				<pitch-offset-deg>0</pitch-offset-deg>
-				<heading-offset-deg>70</heading-offset-deg>
-				<x-offset-m archive="y">-1.83</x-offset-m>
-				<y-offset-m archive="y">1.2</y-offset-m>
-				<z-offset-m archive="y">9.02</z-offset-m>
+				<heading-offset-deg>-90</heading-offset-deg>
+				<x-offset-m archive="y">1.80</x-offset-m>
+				<y-offset-m archive="y">0.91</y-offset-m>
+				<z-offset-m archive="y">2.19</z-offset-m>
 			</config>
-		   </view>            
+		</view>
+		<view n="105">
+			<name>Left Wing</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<default-field-of-view-deg type="double">80</default-field-of-view-deg>
+				<pitch-offset-deg>0</pitch-offset-deg>
+				<heading-offset-deg>90</heading-offset-deg>
+				<x-offset-m archive="y">-1.80</x-offset-m>
+				<y-offset-m archive="y">0.91</y-offset-m>
+				<z-offset-m archive="y">2.19</z-offset-m>
+			</config>
+		</view>
 	</sim>
 
 	<limits> <!-- based on EI-RUA aircraft data -->
