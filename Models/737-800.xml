@@ -1,35 +1,17 @@
 <?xml version="1.0"?>
 <PropertyList>
   <path>737-800.ac</path>
-  <animation n="0">
+  <animation>
     <texture>737-800.png</texture>
   </animation>
-  <model n="100">
-    <name>Cockpit</name>
-    <offsets>
-      <x-m>-18.32</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
-  </model>
-  <model n="110">
-    <name>Pushback</name>
-    <offsets>
-      <x-m>-16.5</x-m>
-      <y-m>0</y-m>
-      <z-m>-2.75</z-m>
-    </offsets>
-  </model>
   
   <nasal n="0">
-    <load>
-      var liveries = getprop("/sim/liveries-path");
-      var livery_update = aircraft.livery_update.new(liveries,10);
-    </load>
-    <unload>
-      livery_update.stop();
-    </unload>
+	<load>
+	 var livery_update = aircraft.livery_update.new("Aircraft/737-800/Models/Liveries-800");
+	</load>
+	<unload>
+	 livery_update.stop();
+	</unload>
   </nasal>
   
   <animation n="0">
@@ -127,9 +109,15 @@
   <object-name>Circle.006</object-name>
   </effect>
 
-  <model n="100">
+  <model>
     <name>Cockpit</name>
     <path>Aircraft/737-800/Models/cockpit.xml</path>
+    <offsets>
+      <x-m>-18.32</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
   </model>
   <model>
     <name>passengersseats</name>
@@ -150,7 +138,7 @@
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
-  <model n="102">
+  <model>
     <name>NoseGear</name>
     <path>Aircraft/737-800/Models/NoseGear.xml</path>
     <offsets>
@@ -171,7 +159,7 @@
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
-  <model n="108">
+  <model>
     <name>VertStab</name>
     <path>Aircraft/737-800/Models/VertStab.xml</path>
     <offsets>
@@ -181,7 +169,7 @@
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
-  <model n="109">
+  <model>
     <name>HorzStab</name>
     <path>Aircraft/737-800/Models/HorzStab.xml</path>
     <offsets>
@@ -192,9 +180,14 @@
     </offsets>
   </model>
   
-  <model n="110">
+  <model>
     <name>Pushback</name>
     <path>Models\Airport\Pushback\Goldhofert.xml</path>
+    <offsets>
+      <x-m>-16.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-2.75</z-m>
+    </offsets>
   </model>
   
   <!-- normal -->
