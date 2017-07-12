@@ -519,41 +519,11 @@
 			</Kp>
 			<Ki>0.0</Ki>
 			<min>
-				<condition>
-					<not-equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>1</value>
-					</not-equals>
-				</condition>
-				<property>/it-autoflight/input/bank-limit</property>
+				<property>/it-autoflight/internal/bank-limit</property>
 				<scale>-1</scale>
 			</min>
-			<min>
-				<condition>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>1</value>
-					</equals>
-				</condition>
-				<value>-25</value>
-			</min>
 			<max>
-				<condition>
-					<not-equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>1</value>
-					</not-equals>
-				</condition>
-				<property>/it-autoflight/input/bank-limit</property>
-			</max>
-			<max>
-				<condition>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>1</value>
-					</equals>
-				</condition>
-				<value>25</value>
+				<property>/it-autoflight/internal/bank-limit</property>
 			</max>
 		</config>
 	</pi-simple-controller>
@@ -603,8 +573,13 @@
 				<property>/it-autoflight/config/cmd/vorloc</property>
 			</Kp>
 			<Ki>0.0001</Ki>
-			<min>-25</min>
-			<max>25</max>
+			<min>
+				<property>/it-autoflight/internal/bank-limit</property>
+				<scale>-1</scale>
+			</min>
+			<max>
+				<property>/it-autoflight/internal/bank-limit</property>
+			</max>
 		</config>
 	</pi-simple-controller>
 	
@@ -638,11 +613,11 @@
 		<input>/orientation/roll-deg</input>
 		<output>/it-autoflight/internal/target-roll-deg</output>
 		<min>
-			<property>/it-autoflight/input/bank-limit</property>
+			<property>/it-autoflight/internal/bank-limit</property>
 			<scale>-1</scale>
 		</min>
 		<max>
-			<property>/it-autoflight/input/bank-limit</property>
+			<property>/it-autoflight/internal/bank-limit</property>
 		</max>
 	</filter>
 	

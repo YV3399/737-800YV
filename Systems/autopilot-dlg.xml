@@ -624,20 +624,19 @@
 		<group>
 			<layout>hbox</layout>
 			<text>
-				<row>0</row>
-				<col>0</col>
-				<label>Bank Limit Select:</label>
+				<label>Bank Limit Degrees Select:</label>
 			</text>
-			
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
 			<slider>
-				<row>0</row>
-				<col>0</col>
 				<halign>center</halign>
-				<pref-width>130</pref-width>
-				<property>/it-autoflight/input/bank-limit</property>
-				<step>5</step>
-				<min>5</min>
-				<max>30</max>
+				<pref-width>215</pref-width>
+				<property>/it-autoflight/input/bank-limit-sw</property>
+				<step>1</step>
+				<min>0</min>
+				<max>6</max>
 				<live type="bool">true</live>
 				<binding>
 					<command>dialog-apply</command>
@@ -647,23 +646,9 @@
 		
 		<group>
 			<layout>hbox</layout>
-			<button>
-                <pref-width>70</pref-width>
-				<legend>AUTO</legend>
-				<binding>
-				<command>nasal</command>
-				<script>
-				var dbl = getprop("/it-autoflight/settings/default-bank-limit");
-				setprop("/it-autoflight/input/bank-limit", dbl);
-				</script>
-				</binding>
-			</button>
-			
 			<text>
-				<row>0</row>
-				<col>0</col>
-				<halign>right</halign>
-				<label>5   10   15   20   25   30</label>
+				<halign>center</halign>
+				<label>AUTO   5     10     15     20     25     30  </label>
 			</text>
 		</group>
 
