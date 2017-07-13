@@ -45,6 +45,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 setlistener("/sim/signals/fdm-initialized", func {
   	setprop("/it-autoflight/input/spd-kts", 100);
+	setprop("/it-autoflight/input/bank-limit-sw", 6);
 });
 
 	setprop("/it-autoflight/input/kts-mach", 0);

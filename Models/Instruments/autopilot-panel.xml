@@ -95,9 +95,11 @@
     <animation>
     	<type>rotate</type>
     	<object-name>BANK</object-name>
-    	<property>/it-autoflight/input/bank-limit</property>          
-    	<factor>-5.8</factor> 
-    	<offset-deg>240</offset-deg>         
+		<property>/it-autoflight/input/bank-limit-sw</property>
+		<interpolation>
+			<entry><ind>2</ind><dep>185</dep></entry>
+			<entry><ind>6</ind><dep>70</dep></entry>
+		</interpolation>     
     	<center>
     		<x-m>0.033</x-m>
     		<y-m>-0.047</y-m>
@@ -1470,10 +1472,10 @@
 		<repeatable>true</repeatable>           
 		<binding>   
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/bank-limit</property> 
-			<step>5</step>
-			<min>10</min>
-			<max>30</max>            
+			<property>/it-autoflight/input/bank-limit-sw</property>
+			<step>1</step>
+			<min>1</min>
+			<max>6</max>            
 			<wrap>false</wrap>       
 		</binding>
 	</action> 
@@ -1489,10 +1491,10 @@
 		<repeatable>true</repeatable>           
 		<binding>   
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/bank-limit</property> 
-			<step>-5</step>
-			<min>10</min>
-			<max>30</max>                
+			<property>/it-autoflight/input/bank-limit-sw</property>
+			<step>-1</step>
+			<min>1</min>
+			<max>6</max>                
 			<wrap>false</wrap>       
 		</binding>
 	</action> 
