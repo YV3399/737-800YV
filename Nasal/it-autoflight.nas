@@ -76,7 +76,6 @@ setlistener("/it-autoflight/input/ap1", func {
 	} else if (apmas == 1) {
 		if ((getprop("/gear/gear[1]/wow") == 0) and (getprop("/gear/gear[2]/wow") == 0)) {
 			setprop("/controls/flight/rudder", 0);
-			setprop("/it-autoflight/input/cws", 0);
 			setprop("/it-autoflight/output/ap1", 1);
 			setprop("/it-autoflight/sound/enableapoffsound", 1);
 			setprop("/it-autoflight/sound/apoffsound", 0);
@@ -97,7 +96,6 @@ setlistener("/it-autoflight/input/ap2", func {
 	} else if (apmas == 1) {
 		if ((getprop("/gear/gear[1]/wow") == 0) and (getprop("/gear/gear[2]/wow") == 0)) {
 			setprop("/controls/flight/rudder", 0);
-			setprop("/it-autoflight/input/cws", 0);
 			setprop("/it-autoflight/output/ap2", 1);
 			setprop("/it-autoflight/sound/enableapoffsound2", 1);
 			setprop("/it-autoflight/sound/apoffsound2", 0);
