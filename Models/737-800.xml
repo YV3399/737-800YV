@@ -284,6 +284,8 @@
  
 <!--Lights-->
 
+<!-- Navigation Lights -->
+
 <model>
   <path>Aircraft/737-800/Models/lights/greennav.xml</path>
   <name>Greenlight</name>     
@@ -322,6 +324,7 @@
   </offsets>
 </model>
 
+<!-- Strobe -->
 
 <model>
   <path>Aircraft/737-800/Models/lights/strobe.xml</path>
@@ -466,6 +469,8 @@
     <z-m>-1.30</z-m>        
   </offsets>
 </model>
+
+<!-- Beacon -->
 
 <model>
   <path>Aircraft/737-800/Models/lights/beacon.xml</path>
@@ -642,9 +647,10 @@
 </offsets>
 </model>
 
-<!-- CONTRAIL -->
+<!-- Contrail -->
 
 <!-- Particules OSG -->
+
 <model>
   <path>Aircraft/737-800/Models/Effects/Contrail/contrail.xml</path>
   <offsets>
@@ -787,29 +793,6 @@
 </offsets>
 </model>
 
-<!-- reverser - Transferred to xml wing -->
-<!--animation>
-  <type>translate</type>
-  <object-name>No2reverser_1</object-name>
-  <object-name>lreverserib_1</object-name>
-  <property>engines/engine/reverser-pos-norm</property>
-  <interpolation>
-    <entry>
-      <ind>0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>1</ind>
-      <dep>0.3</dep>
-    </entry>
-  </interpolation>
-  <axis>
-    <x>1</x>
-    <y>0</y>
-    <z>0</z>
-  </axis>
-</animation-->
-
 <!-- Registration fuselage upper back -->
 <model>
   <name>registrationFuselageRightBack</name>
@@ -847,7 +830,6 @@
   </overlay>
 </model>
 
-
 <animation>
   <type>material</type>
   <object-name>floor</object-name>
@@ -860,8 +842,6 @@
        <property>systems/electrical/on</property>
     </condition>
    </animation>
-
-
 
 <!-- Services by Gabriel Hernandez(YV399) -->
 
