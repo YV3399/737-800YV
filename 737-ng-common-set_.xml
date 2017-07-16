@@ -206,7 +206,7 @@
 			</autoland>
 		</config>
 		<settings>
-			<default-bank-limit>30</default-bank-limit> <!-- Set the Default Bank Limit -->
+			<auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
 			<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
 			<land-flap>0.750</land-flap> <!-- Minimum Flap used for Landing -->
 			<retard-ft>35</retard-ft> <!-- Enable Thrust Retard -->
