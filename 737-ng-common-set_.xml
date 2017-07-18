@@ -110,6 +110,9 @@
 			</generic>
 		</multiplay>
 
+                <flight-recorder include="Systems/flight-recorder.xml"/>
+
+
 		<ai>
 			<submodels>
 				<contrails type="bool">false</contrails>
@@ -865,7 +868,7 @@
 			<file>Aircraft/737-800/Nasal/ITAF_PFD_mode-converter.nas</file>
 			<file>Aircraft/737-800/Nasal/limits.nas</file>
 			<file>Aircraft/737-800/Nasal/doors.nas</file> 
-		</boeing737>
+              		</boeing737>
 		<systems>
 			<file>Aircraft/737-800/Nasal/engines.nas</file>
 			<file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
