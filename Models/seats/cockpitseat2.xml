@@ -13,7 +13,7 @@
      <repeatable>true</repeatable> 
      <binding>
       <command>property-toggle</command>
-      <property>/controls/switches/cockpitseat-hand2</property>
+      <property>controls/switches/cockpitseat-hand2</property>
     </binding>
     <binding>
       <command>nasal</command>
@@ -26,7 +26,7 @@
  <type>rotate</type>
  <object-name>SeatHand</object-name>
 
- <property>/controls/switches/cockpitseat-hand2</property>
+ <property>controls/switches/cockpitseat-hand2</property>
  <factor>90</factor>
  <center>
   <x-m>0.25995</x-m>
@@ -45,7 +45,7 @@
 <animation>
   <type>knob</type>
   <object-name>Rotate</object-name>
-  <property>/controls/switches/cockpitseat-hand2-rot</property>
+  <property>controls/switches/cockpitseat-hand2-rot</property>
   <factor>360</factor>
   <center>
     <x-m>0.22375</x-m>
@@ -59,7 +59,7 @@
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/switches/cockpitseat-hand2-rot</property>
+      <property>controls/switches/cockpitseat-hand2-rot</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>1</max>                
@@ -69,7 +69,7 @@
   <shift-action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/switches/cockpitseat-hand2-rot</property>
+      <property>controls/switches/cockpitseat-hand2-rot</property>
       <factor>0.1</factor>
       <min>0</min>
       <max>1</max>                
@@ -86,7 +86,7 @@
  <type>rotate</type>
  <object-name>SeatBack</object-name>
  <object-name>SeatP.001</object-name>
- <property>/controls/switches/cockpitseat-hand2-rot</property>
+ <property>controls/switches/cockpitseat-hand2-rot</property>
  <factor>60</factor>
  <center>
   <x-m>0.22911</x-m>

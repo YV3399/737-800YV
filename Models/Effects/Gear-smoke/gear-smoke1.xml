@@ -50,7 +50,7 @@
 				 <value>115</value>
 			 </greater-than>
 			  <greater-than>
-			             <property>/gear/gear[1]/compression-norm</property>
+			             <property>gear/gear[1]/compression-norm</property>
                                             <value>0.15</value>
 			 </greater-than>
 	 </and>

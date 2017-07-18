@@ -92,7 +92,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>cutoffNo1</object-name>  
-  <property>/controls/engines/engine[0]/cutoff</property> 
+  <property>controls/engines/engine[0]/cutoff</property> 
   <offset-deg>-25</offset-deg>     
   <factor>25</factor>      
   <center>
@@ -110,7 +110,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>cutoffNo2</object-name>  
-  <property>/controls/engines/engine[1]/cutoff</property>
+  <property>controls/engines/engine[1]/cutoff</property>
   <offset-deg>-25</offset-deg>     
   <factor>25</factor>      
   <center>
@@ -132,7 +132,7 @@
   <object-name>no1thrarm</object-name>
   <object-name>no1revarm</object-name> 
   <object-name>No1-knob</object-name>
-  <property>/controls/engines/engine[0]/throttle</property>
+  <property>controls/engines/engine[0]/throttle</property>
   <interpolation>
     <entry><ind>0</ind><dep>40</dep></entry>
     <entry><ind>1</ind><dep>-10</dep></entry>
@@ -156,7 +156,7 @@
   <object-name>no2thrarm</object-name>
   <object-name>no2revarm</object-name> 
   <object-name>No2-knob</object-name>
-  <property>/controls/engines/engine[1]/throttle</property>
+  <property>controls/engines/engine[1]/throttle</property>
   <interpolation>
     <entry><ind>0</ind><dep>40</dep></entry>
     <entry><ind>1</ind><dep>-10</dep></entry>
@@ -176,7 +176,7 @@
  <animation>
   <type>rotate</type>    
   <object-name>no1revarm</object-name> 
-   <property>/engines/engine[0]/reverser-pos-norm</property>
+   <property>engines/engine[0]/reverser-pos-norm</property>
   <factor>80</factor>  
   <center>
    <x-m>0.66594</x-m>
@@ -191,7 +191,7 @@
   <animation>
   <type>rotate</type>    
   <object-name>no2revarm</object-name> 
-   <property>/engines/engine[1]/reverser-pos-norm</property>
+   <property>engines/engine[1]/reverser-pos-norm</property>
   <factor>80</factor>  
   <center>
    <x-m>0.66594</x-m>
@@ -207,7 +207,7 @@
   <type>rotate</type>
   <object-name>flaparm</object-name>
   <object-name>handle</object-name>
-  <property>/controls/flight/flaps</property>
+  <property>controls/flight/flaps</property>
   <interpolation>
     <entry><ind>  0.000</ind><dep> 0.0</dep></entry>
     <entry><ind>  0.125</ind><dep> 8.0</dep></entry>
@@ -235,7 +235,7 @@
   <type>rotate</type>   
   <object-name>sbhandle</object-name> 
   <object-name>sbarm</object-name>   
-  <property>/b737/controls/flight/spoilers-lever-pos</property> 
+  <property>b737/controls/flight/spoilers-lever-pos</property> 
   <interpolation>
     <entry><ind>  0.0</ind><dep>0.0</dep></entry>
     <entry><ind>  1.0</ind><dep>4.0</dep></entry>
@@ -257,7 +257,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>parkbrake_0</object-name>
-  <property>/controls/gear/brake-parking</property> 
+  <property>controls/gear/brake-parking</property> 
   <factor>45</factor>    
   <center>
    <x-m>0.81</x-m>
@@ -274,7 +274,7 @@
 <animation>
   <type>rotate</type>
   <object-name>parkbrake_1</object-name>
-  <property>/controls/gear/brake-parking</property>
+  <property>controls/gear/brake-parking</property>
   <factor>45</factor>
   <center>
     <x-m>0.81</x-m>
@@ -312,7 +312,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>sby1</object-name>
- <property>/instrumentation/nav/frequencies/standby-mhz</property> 
+ <property>instrumentation/nav/frequencies/standby-mhz</property> 
  <factor>10.0</factor>
  <step>0.01</step>        
  <axis>
@@ -325,7 +325,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>sby2</object-name>
- <property>/instrumentation/nav/frequencies/standby-mhz</property> 
+ <property>instrumentation/nav/frequencies/standby-mhz</property> 
  <factor>1.0</factor>
  <step>0.1</step>        
  <axis>
@@ -338,7 +338,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>sby3</object-name>
- <property>/instrumentation/nav/frequencies/standby-mhz</property> 
+ <property>instrumentation/nav/frequencies/standby-mhz</property> 
  <factor>0.1</factor>
  <step>1</step>        
  <axis>
@@ -351,7 +351,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>sby4</object-name>
- <property>/instrumentation/nav/frequencies/standby-mhz</property> 
+ <property>instrumentation/nav/frequencies/standby-mhz</property> 
  <factor>0.01</factor>
  <step>10</step>        
  <axis>
@@ -364,7 +364,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>navB</object-name>
- <property>/instrumentation/nav/frequencies/selected-mhz</property> 
+ <property>instrumentation/nav/frequencies/selected-mhz</property> 
  <factor>1.0</factor>
  <step>0.1</step>        
  <axis>
@@ -377,7 +377,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>navC</object-name>
- <property>/instrumentation/nav/frequencies/selected-mhz</property> 
+ <property>instrumentation/nav/frequencies/selected-mhz</property> 
  <factor>0.1</factor>
  <step>1</step>        
  <axis>
@@ -390,7 +390,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>navD</object-name>
- <property>/instrumentation/nav/frequencies/selected-mhz</property> 
+ <property>instrumentation/nav/frequencies/selected-mhz</property> 
  <factor>0.01</factor>
  <step>10</step>        
  <axis>
@@ -403,7 +403,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>sby1A</object-name>
- <property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
+ <property>instrumentation/nav[1]/frequencies/standby-mhz</property> 
  <factor>10.0</factor>
  <step>0.01</step>        
  <axis>
@@ -416,7 +416,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>sby1B</object-name>
- <property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
+ <property>instrumentation/nav[1]/frequencies/standby-mhz</property> 
  <factor>1.0</factor>
  <step>0.1</step>        
  <axis>
@@ -429,7 +429,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>sby1C</object-name>
- <property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
+ <property>instrumentation/nav[1]/frequencies/standby-mhz</property> 
  <factor>0.1</factor>
  <step>1</step>        
  <axis>
@@ -442,7 +442,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>sby1D</object-name>
- <property>/instrumentation/nav[1]/frequencies/standby-mhz</property> 
+ <property>instrumentation/nav[1]/frequencies/standby-mhz</property> 
  <factor>0.01</factor>
  <step>10</step>        
  <axis>
@@ -455,7 +455,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>nav1B</object-name>
- <property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
+ <property>instrumentation/nav[1]/frequencies/selected-mhz</property> 
  <factor>1.0</factor>
  <step>0.1</step>        
  <axis>
@@ -468,7 +468,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>nav1C</object-name>
- <property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
+ <property>instrumentation/nav[1]/frequencies/selected-mhz</property> 
  <factor>0.1</factor>
  <step>1</step>        
  <axis>
@@ -481,7 +481,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>nav1D</object-name>
- <property>/instrumentation/nav[1]/frequencies/selected-mhz</property> 
+ <property>instrumentation/nav[1]/frequencies/selected-mhz</property> 
  <factor>0.01</factor>
  <step>10</step>        
  <axis>
@@ -494,7 +494,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>commA1</object-name>
- <property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
+ <property>instrumentation/comm[0]/frequencies/selected-mhz</property> 
  <factor>10.0</factor>
  <step>0.01</step>        
  <axis>
@@ -507,7 +507,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>commA2</object-name>
- <property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
+ <property>instrumentation/comm[0]/frequencies/selected-mhz</property> 
  <factor>1.0</factor>
  <step>0.1</step>        
  <axis>
@@ -520,7 +520,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>commA3</object-name>
- <property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
+ <property>instrumentation/comm[0]/frequencies/selected-mhz</property> 
  <factor>0.1</factor>
  <step>1</step>        
  <axis>
@@ -533,7 +533,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>commA4</object-name>
- <property>/instrumentation/comm[0]/frequencies/selected-mhz</property> 
+ <property>instrumentation/comm[0]/frequencies/selected-mhz</property> 
  <factor>0.01</factor>
  <step>10</step>        
  <axis>
@@ -546,7 +546,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>commB1</object-name>
- <property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
+ <property>instrumentation/comm[0]/frequencies/standby-mhz</property> 
  <factor>10.0</factor>
  <step>0.01</step>        
  <axis>
@@ -559,7 +559,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>commB2</object-name>
- <property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
+ <property>instrumentation/comm[0]/frequencies/standby-mhz</property> 
  <factor>1.0</factor>
  <step>0.1</step>        
  <axis>
@@ -572,7 +572,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>commB3</object-name>
- <property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
+ <property>instrumentation/comm[0]/frequencies/standby-mhz</property> 
  <factor>0.1</factor>
  <step>1</step>        
  <axis>
@@ -585,7 +585,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>commB4</object-name>
- <property>/instrumentation/comm[0]/frequencies/standby-mhz</property> 
+ <property>instrumentation/comm[0]/frequencies/standby-mhz</property> 
  <factor>0.01</factor>
  <step>10</step>        
  <axis>
@@ -598,7 +598,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>comm1A1</object-name>
- <property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
+ <property>instrumentation/comm[1]/frequencies/selected-mhz</property> 
  <factor>10.0</factor>
  <step>0.01</step>        
  <axis>
@@ -611,7 +611,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>comm1A2</object-name>
- <property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
+ <property>instrumentation/comm[1]/frequencies/selected-mhz</property> 
  <factor>1.0</factor>
  <step>0.1</step>        
  <axis>
@@ -624,7 +624,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>comm1A3</object-name>
- <property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
+ <property>instrumentation/comm[1]/frequencies/selected-mhz</property> 
  <factor>0.1</factor>
  <step>1</step>        
  <axis>
@@ -637,7 +637,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>comm1A4</object-name>
- <property>/instrumentation/comm[1]/frequencies/selected-mhz</property> 
+ <property>instrumentation/comm[1]/frequencies/selected-mhz</property> 
  <factor>0.01</factor>
  <step>10</step>        
  <axis>
@@ -650,7 +650,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>comm1B1</object-name>
- <property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
+ <property>instrumentation/comm[1]/frequencies/standby-mhz</property> 
  <factor>10.0</factor>
  <step>0.01</step>        
  <axis>
@@ -663,7 +663,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>comm1B2</object-name>
- <property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
+ <property>instrumentation/comm[1]/frequencies/standby-mhz</property> 
  <factor>1.0</factor>
  <step>0.1</step>        
  <axis>
@@ -676,7 +676,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>comm1B3</object-name>
- <property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
+ <property>instrumentation/comm[1]/frequencies/standby-mhz</property> 
  <factor>0.1</factor>
  <step>1</step>        
  <axis>
@@ -689,7 +689,7 @@
 <animation>
  <type>textranslate</type>
  <object-name>comm1B4</object-name>
- <property>/instrumentation/comm[1]/frequencies/standby-mhz</property> 
+ <property>instrumentation/comm[1]/frequencies/standby-mhz</property> 
  <factor>0.01</factor>
  <step>10</step>        
  <axis>
@@ -785,7 +785,7 @@
    <interval-sec>1.0</interval-sec>           
    <binding>   
      <command>property-adjust</command>
-     <property>/controls/gear/autobrakes</property>        
+     <property>controls/gear/autobrakes</property>        
      <step>1</step>
      <min>-1</min>
      <max>4</max>                
@@ -804,7 +804,7 @@
    <interval-sec>1.0</interval-sec>           
    <binding>   
      <command>property-adjust</command>
-     <property>/controls/gear/autobrakes</property>        
+     <property>controls/gear/autobrakes</property>        
      <step>-1</step>
      <min>-1</min>
      <max>4</max>                
@@ -822,7 +822,7 @@
    <repeatable>true</repeatable>           
    <binding>   
      <command>property-cycle</command>
-     <property>/controls/engines/engine[0]/cutoff</property>     
+     <property>controls/engines/engine[0]/cutoff</property>     
 	  <value>0</value>	 
 	  <value>1</value>         
    </binding>
@@ -838,7 +838,7 @@
    <repeatable>true</repeatable>           
    <binding>   
      <command>property-cycle</command>
-     <property>/controls/engines/engine[0]/cutoff</property>     
+     <property>controls/engines/engine[0]/cutoff</property>     
 	  <value>0</value>	 
 	  <value>1</value>    
    </binding>
@@ -854,7 +854,7 @@
    <repeatable>true</repeatable>           
    <binding>   
      <command>property-cycle</command>
-     <property>/controls/engines/engine[1]/cutoff</property>     
+     <property>controls/engines/engine[1]/cutoff</property>     
 	  <value>0</value>	 
 	  <value>1</value>         
    </binding>
@@ -870,7 +870,7 @@
    <repeatable>true</repeatable>           
    <binding>   
      <command>property-cycle</command>
-     <property>/controls/engines/engine[1]/cutoff</property>     
+     <property>controls/engines/engine[1]/cutoff</property>     
 	  <value>0</value>	 
 	  <value>1</value>        
    </binding>
@@ -887,7 +887,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <property>instrumentation/nav/frequencies/standby-mhz</property>
       <step>0.05</step>
       <min>108</min>
       <max>117.95</max>
@@ -905,7 +905,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <property>instrumentation/nav/frequencies/standby-mhz</property>
       <step>-0.05</step>
       <min>108</min>
       <max>117.95</max>
@@ -923,7 +923,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <property>instrumentation/nav/frequencies/standby-mhz</property>
       <step>1</step>
       <min>108</min>
       <max>117.95</max>
@@ -941,7 +941,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <property>instrumentation/nav/frequencies/standby-mhz</property>
       <step>-1</step>
       <min>108</min>
       <max>117.95</max>
@@ -959,8 +959,8 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-swap</command>
-      <property>/instrumentation/nav/frequencies/selected-mhz</property>
-      <property>/instrumentation/nav/frequencies/standby-mhz</property>
+      <property>instrumentation/nav/frequencies/selected-mhz</property>
+      <property>instrumentation/nav/frequencies/standby-mhz</property>
     </binding>   
   </action>
 </animation>
@@ -973,7 +973,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
       <step>0.05</step>
       <min>108</min>
       <max>117.95</max>
@@ -991,7 +991,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
       <step>-0.05</step>
       <min>108</min>
       <max>117.95</max>
@@ -1009,7 +1009,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
       <step>1</step>
       <min>108</min>
       <max>117.95</max>
@@ -1027,7 +1027,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
       <step>-1</step>
       <min>108</min>
       <max>117.95</max>
@@ -1045,8 +1045,8 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-swap</command>
-      <property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
-      <property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/nav[1]/frequencies/selected-mhz</property>
+      <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
     </binding>   
   </action>
 </animation>
@@ -1059,7 +1059,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
       <step>0.05</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1077,7 +1077,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
       <step>-0.05</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1095,7 +1095,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
       <step>1</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1113,7 +1113,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[0]/frequencies/selected-mhz</property>
+      <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
       <step>-1</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1131,7 +1131,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+      <property>instrumentation/comm[0]/frequencies/standby-mhz</property>
       <step>0.05</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1149,7 +1149,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+      <property>instrumentation/comm[0]/frequencies/standby-mhz</property>
       <step>-0.05</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1167,7 +1167,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[0]/frequencies/standby-mhz</property>
+      <property>instrumentation/comm[0]/frequencies/standby-mhz</property>
       <step>1</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1185,7 +1185,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+      <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
       <step>0.05</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1203,7 +1203,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+      <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
       <step>-0.05</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1221,7 +1221,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+      <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
       <step>1</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1240,7 +1240,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+      <property>instrumentation/comm[1]/frequencies/selected-mhz</property>
       <step>-1</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1258,7 +1258,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
       <step>0.05</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1276,7 +1276,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
       <step>-0.05</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1294,7 +1294,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
       <step>1</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1313,7 +1313,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+      <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
       <step>-1</step>
       <min>118.000</min>
       <max>136.000</max>
@@ -1332,7 +1332,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/adf/frequencies/selected-khz</property>      
+      <property>instrumentation/adf/frequencies/selected-khz</property>      
       <step>1</step>
       <min>100.000</min>
       <max>500.000</max>
@@ -1350,7 +1350,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/instrumentation/adf/frequencies/selected-khz</property>      
+      <property>instrumentation/adf/frequencies/selected-khz</property>      
       <step>-1</step>
       <min>100.000</min>
       <max>500.000</max>
@@ -1368,7 +1368,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-assign</command>
-      <property>/controls/gear/gear-down</property>  
+      <property>controls/gear/gear-down</property>  
       <value type="bool">false</value>      
       <step>1</step>
       <min>0</min>
@@ -1386,7 +1386,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-assign</command>
-      <property>/controls/gear/gear-down</property> 
+      <property>controls/gear/gear-down</property> 
       <value type="bool">true</value>       
       <step>-1</step>
       <min>0</min>
@@ -1404,7 +1404,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-toggle</command>
-      <property>/controls/gear/brake-parking</property> 
+      <property>controls/gear/brake-parking</property> 
       <min>0</min>
       <max>1</max>    		  
       <wrap>false</wrap>
@@ -1420,7 +1420,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-toggle</command>
-      <property>/controls/gear/brake-parking</property> 
+      <property>controls/gear/brake-parking</property> 
       <min>0</min>
       <max>1</max>    		  
       <wrap>false</wrap>
@@ -1608,7 +1608,7 @@
 <animation>
   <type>rotate</type>
   <object-name>cockpitdoor</object-name>
-  <property>/controls/doors/cockpitdoor/position-norm</property>
+  <property>controls/doors/cockpitdoor/position-norm</property>
   <factor>90</factor> <!-- The rotation in degrees -->
   <center>
    <x-m>3.11757</x-m>
@@ -1693,7 +1693,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>Circle.169</object-name>  
-  <property>/controls/switches/fire/engine[0]/on-fire</property>
+  <property>controls/switches/fire/engine[0]/on-fire</property>
   <factor>30</factor>
   <center>
     <x-m>0.87797</x-m>
@@ -1732,7 +1732,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>Circle.170</object-name>  
-  <property>/controls/switches/fire/apu/on-fire</property>
+  <property>controls/switches/fire/apu/on-fire</property>
   <factor>30</factor>
   <center>
     <x-m>0.87699</x-m>
@@ -1775,7 +1775,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>Circle.171</object-name>  
-  <property>/controls/switches/fire/engine[1]/on-fire</property>
+  <property>controls/switches/fire/engine[1]/on-fire</property>
   <factor>30</factor>
   <center>
     <x-m>0.87789</x-m>
@@ -1840,7 +1840,7 @@
 <animation>
   <type>knob</type>
   <object-name>autobrake.007</object-name>
-  <property>/controls/lighting/panel-light</property>
+  <property>controls/lighting/panel-light</property>
   <factor>125</factor>
   <center>
     <x-m>1.35544</x-m>
@@ -1853,7 +1853,7 @@
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel-light</property>
+      <property>controls/lighting/panel-light</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>2</max>                
@@ -1863,7 +1863,7 @@
   <shift-action>
     <binding>
       <command>property-adjust</command>
-     <property>/controls/lighting/panel-light</property>
+     <property>controls/lighting/panel-light</property>
       <factor>0.1</factor>
       <min>0</min>
       <max>2</max>                
@@ -1879,7 +1879,7 @@
 <animation>
   <type>knob</type>
   <object-name>autobrake.008</object-name>
-  <property>/controls/lighting/floor</property>
+  <property>controls/lighting/floor</property>
   <factor>125</factor>
   <center>
     <x-m>1.3558</x-m>
@@ -1892,7 +1892,7 @@
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/floor</property>
+      <property>controls/lighting/floor</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>2</max>                
@@ -1902,7 +1902,7 @@
   <shift-action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/floor</property>
+      <property>controls/lighting/floor</property>
       <factor>0.1</factor>
       <min>0</min>
       <max>2</max>                

@@ -15,7 +15,7 @@
    <repeatable>true</repeatable>           
    <binding>   
      <command>property-cycle</command>
-     <property>/controls/engines/engine[0]/starter</property>          
+     <property>controls/engines/engine[0]/starter</property>          
 	 <value>0</value>
 	 <value>1</value> 
    </binding>
@@ -25,7 +25,7 @@
    <repeatable>true</repeatable>           
    <binding>   
      <command>property-cycle</command>
-     <property>/controls/engines/engine[0]/starter</property>           
+     <property>controls/engines/engine[0]/starter</property>           
 	 <value>0</value>    	 
 	 <value>1</value>    
    </binding>
@@ -42,7 +42,7 @@
    <repeatable>true</repeatable>           
    <binding>   
      <command>property-cycle</command>
-     <property>/controls/engines/engine[1]/starter</property>          
+     <property>controls/engines/engine[1]/starter</property>          
 	 <value>0</value>
 	 <value>1</value>
    </binding>
@@ -52,7 +52,7 @@
    <repeatable>true</repeatable>           
    <binding>   
      <command>property-cycle</command>
-     <property>/controls/engines/engine[1]/starter</property>     
+     <property>controls/engines/engine[1]/starter</property>     
 	 <value>0</value>    	 
 	 <value>1</value>
    </binding>
@@ -64,7 +64,7 @@
 	<object-name>engNo1start0</object-name>
 	<condition>
 		<equals>
-			<property>/controls/engines/engine[0]/starter</property>
+			<property>controls/engines/engine[0]/starter</property>
 			<value>1</value>
 		</equals>
 	</condition>
@@ -75,7 +75,7 @@
 	<object-name>engNo1start1</object-name>
 	<condition>
 		<equals>
-			<property>/controls/engines/engine[0]/starter</property>
+			<property>controls/engines/engine[0]/starter</property>
 			<value>0</value>
 		</equals>
 	</condition>
@@ -86,7 +86,7 @@
 	<object-name>engNo2start0</object-name>
 	<condition>
 		<equals>
-			<property>/controls/engines/engine[1]/starter</property>
+			<property>controls/engines/engine[1]/starter</property>
 			<value>1</value>
 		</equals>
 	</condition>
@@ -97,7 +97,7 @@
 	<object-name>engNo2start1</object-name>
 	<condition>
 		<equals>
-			<property>/controls/engines/engine[1]/starter</property>
+			<property>controls/engines/engine[1]/starter</property>
 			<value>0</value>
 		</equals>
 	</condition>
@@ -112,7 +112,7 @@
    <repeatable type="bool">false</repeatable>   
    <binding>
     <command>property-cycle</command>
-    <property>/controls/APU/master</property>
+    <property>controls/APU/master</property>
 	<value>0</value>
 	<value>1</value>
 	<value>2</value>
@@ -127,7 +127,7 @@
    <repeatable type="bool">false</repeatable>   
    <binding>
     <command>property-cycle</command>
-    <property>/controls/APU/master</property>
+    <property>controls/APU/master</property>
 	<value>2</value>
 	<value>1</value>
 	<value>0</value>
@@ -141,7 +141,7 @@
 <animation>
   <type>rotate</type>
   <object-name>APUswitch</object-name>    
-  <property>/controls/APU/master</property>
+  <property>controls/APU/master</property>
   <factor>20</factor>
   <center>
     <x-m>0.60346</x-m>
@@ -175,14 +175,14 @@
    <repeatable type="bool">false</repeatable>       
    <binding>
     <command>property-toggle</command>
-    <property>/controls/switches/no-smoking-sign</property>
+    <property>controls/switches/no-smoking-sign</property>
   </binding>
 </action> 
 </animation> 
 <animation>
   <type>rotate</type>   
   <object-name>nosmoking</object-name>  
-  <property>/controls/switches/no-smoking-sign</property>
+  <property>controls/switches/no-smoking-sign</property>
   <factor>30</factor>
   <center>
     <x-m>0.8062</x-m>
@@ -205,14 +205,14 @@
    <repeatable type="bool">false</repeatable>     
    <binding>
     <command>property-toggle</command>
-    <property>/controls/switches/seatbelt-sign</property>
+    <property>controls/switches/seatbelt-sign</property>
   </binding>
 </action> 
 </animation> 
 <animation>
   <type>rotate</type>   
   <object-name>fastenseatbelts</object-name>  
-  <property>/controls/switches/seatbelt-sign</property>
+  <property>controls/switches/seatbelt-sign</property>
   <factor>30</factor>
   <center>
     <x-m>0.8062</x-m>
@@ -236,7 +236,7 @@
    <repeatable type="bool">false</repeatable> 
    <binding>
     <command>property-toggle</command>
-    <property>/controls/lighting/logo-lights</property>
+    <property>controls/lighting/logo-lights</property>
   </binding>
   <binding>
     <command>nasal</command>
@@ -247,7 +247,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>logolight</object-name>   
-  <property>/controls/lighting/logo-lights</property>
+  <property>controls/lighting/logo-lights</property>
   <factor>30</factor>
   <center>
     <x-m>0.61194</x-m>
@@ -270,11 +270,11 @@
     <repeatable type="bool">false</repeatable>        
     <binding>
      <command>property-toggle</command>
-     <property>/controls/lighting/strobe</property>
+     <property>controls/lighting/strobe</property>
    </binding>
    <binding>
      <command>property-toggle</command>
-     <property>/controls/lighting/nav-lights</property>
+     <property>controls/lighting/nav-lights</property>
    </binding>
    <binding>
     <command>nasal</command>
@@ -286,7 +286,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>strobelight</object-name>  
-  <property>/controls/lighting/strobe</property>     
+  <property>controls/lighting/strobe</property>     
   <factor>30</factor>
   <center>
    <x-m>0.61194</x-m>
@@ -309,7 +309,7 @@
    <repeatable type="bool">false</repeatable>        
    <binding>
     <command>property-toggle</command>
-    <property>/controls/lighting/beacon</property>
+    <property>controls/lighting/beacon</property>
   </binding>
   <binding>
     <command>nasal</command>
@@ -320,7 +320,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>anticollight</object-name>    
-  <property>/controls/lighting/beacon</property>
+  <property>controls/lighting/beacon</property>
   <factor>30</factor>
   <center>
     <x-m>0.61194</x-m>
@@ -342,7 +342,7 @@
    <repeatable type="bool">false</repeatable>        
    <binding>
     <command>property-toggle</command>
-    <property>/controls/lighting/wing</property>
+    <property>controls/lighting/wing</property>
   </binding>
   <binding>
     <command>nasal</command>
@@ -353,7 +353,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>winglight</object-name>  
-  <property>/controls/lighting/wing</property>
+  <property>controls/lighting/wing</property>
   <factor>30</factor>
   <center>
     <x-m>0.61194</x-m>
@@ -375,7 +375,7 @@
    <repeatable type="bool">false</repeatable>
    <binding>
     <command>property-toggle</command>
-    <property>/controls/lighting/wheel</property>
+    <property>controls/lighting/wheel</property>
   </binding>
   <binding>
     <command>nasal</command>
@@ -386,7 +386,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>wheellight</object-name>   
-  <property>/controls/lighting/wheel</property>
+  <property>controls/lighting/wheel</property>
   <factor>30</factor>
   <center>
     <x-m>0.61194</x-m>
@@ -408,7 +408,7 @@
             <repeatable>true</repeatable>        
             <binding>
             <repeatable type="bool">false</repeatable>
-            <property>/controls/lighting/RB-light</property>
+            <property>controls/lighting/RB-light</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -419,7 +419,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>RNYTurnOffL</object-name>  
-            <property>/controls/lighting/RB-light</property>
+            <property>controls/lighting/RB-light</property>
       <factor>30</factor>
       <center>
           <x-m>0.61599</x-m>
@@ -441,7 +441,7 @@
           <repeatable type="bool">false</repeatable>   
             <binding>
             <command>property-toggle</command>
-            <property>/controls/lighting/RB-light</property>
+            <property>controls/lighting/RB-light</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -452,7 +452,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>RNYTurnOffR</object-name>  
-            <property>/controls/lighting/RB-light</property>
+            <property>controls/lighting/RB-light</property>
       <factor>30</factor>
       <center>
           <x-m>0.61621</x-m>
@@ -474,7 +474,7 @@
             <repeatable type="bool">false</repeatable>
             <binding>
             <command>property-toggle</command>
-            <property>/controls/lighting/Taxi-light</property>
+            <property>controls/lighting/Taxi-light</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -485,7 +485,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>TaxiLight</object-name>  
-            <property>/controls/lighting/Taxi-light</property>
+            <property>controls/lighting/Taxi-light</property>
       <factor>30</factor>
       <center>
           <x-m>0.61611</x-m>
@@ -509,7 +509,7 @@
    <repeatable type="bool">false</repeatable>
    <binding>
     <command>property-toggle</command>
-    <property>/controls/fuel/tank[2]/pump-left</property>
+    <property>controls/fuel/tank[2]/pump-left</property>
   </binding>
   <binding>
     <command>nasal</command>
@@ -520,7 +520,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>fuelpumpL</object-name>  
-  <property>/controls/fuel/tank[2]/pump-left</property>
+  <property>controls/fuel/tank[2]/pump-left</property>
   <factor>30</factor>
   <center>
     <x-m>0.7236</x-m>
@@ -542,7 +542,7 @@
    <repeatable type="bool">false</repeatable>       
    <binding>
     <command>property-toggle</command>
-    <property>/controls/fuel/tank[2]/pump-right</property>
+    <property>controls/fuel/tank[2]/pump-right</property>
   </binding>
   <binding>
     <command>nasal</command>
@@ -553,7 +553,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>fuelpumpR</object-name>  
-  <property>/controls/fuel/tank[2]/pump-right</property>
+  <property>controls/fuel/tank[2]/pump-right</property>
   <factor>30</factor>
   <center>
     <x-m>0.7236</x-m>
@@ -577,7 +577,7 @@
     <repeatable type="bool">false</repeatable>        
     <binding>
       <command>property-toggle</command>
-      <property>/controls/fuel/tank[0]/pump-aft</property>
+      <property>controls/fuel/tank[0]/pump-aft</property>
     </binding>
     <binding>
       <command>nasal</command>
@@ -588,7 +588,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelPumpAFTL</object-name>  
-  <property>/controls/fuel/tank[0]/pump-aft</property>
+  <property>controls/fuel/tank[0]/pump-aft</property>
   <factor>30</factor>
   <center>
     <x-m>0.675</x-m>
@@ -612,7 +612,7 @@
     <repeatable type="bool">false</repeatable>        
     <binding>
       <command>property-toggle</command>
-      <property>/controls/fuel/tank[0]/pump-fwd</property>
+      <property>controls/fuel/tank[0]/pump-fwd</property>
     </binding>
     <binding>
       <command>nasal</command>
@@ -623,7 +623,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelPumpFWDL</object-name>  
-  <property>/controls/fuel/tank[0]/pump-fwd</property>
+  <property>controls/fuel/tank[0]/pump-fwd</property>
   <factor>30</factor>
   <center>
     <x-m>0.675</x-m>
@@ -645,7 +645,7 @@
     <repeatable type="bool">false</repeatable>      
     <binding>
       <command>property-toggle</command>
-      <property>/controls/fuel/tank[1]/pump-fwd</property>
+      <property>controls/fuel/tank[1]/pump-fwd</property>
     </binding>
     <binding>
       <command>nasal</command>
@@ -656,7 +656,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelPumpFWDR</object-name>  
-  <property>/controls/fuel/tank[1]/pump-fwd</property>
+  <property>controls/fuel/tank[1]/pump-fwd</property>
   <factor>30</factor>
   <center>
     <x-m>0.675</x-m>
@@ -678,7 +678,7 @@
     <repeatable type="bool">false</repeatable>     
     <binding>
       <command>property-toggle</command>
-      <property>/controls/fuel/tank[1]/pump-aft</property>
+      <property>controls/fuel/tank[1]/pump-aft</property>
     </binding>
     <binding>
       <command>nasal</command>
@@ -689,7 +689,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelPumpAFTR</object-name>  
-  <property>/controls/fuel/tank[1]/pump-aft</property>
+  <property>controls/fuel/tank[1]/pump-aft</property>
   <factor>30</factor>
   <center>
     <x-m>0.675</x-m>
@@ -714,7 +714,7 @@
     <repeatable type="bool">false</repeatable>     
     <binding>
       <command>property-toggle</command>
-      <property>/controls/electric/battery-switch</property>
+      <property>controls/electric/battery-switch</property>
       <command>nasal</command>
     </binding>
     <binding>
@@ -734,7 +734,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>BatterySwitch</object-name>  
-  <property>/controls/electric/battery-switch</property>
+  <property>controls/electric/battery-switch</property>
   <factor>30</factor>
   <center>
     <x-m>1</x-m>
@@ -757,20 +757,20 @@
 			<or>
 				<and>
 					<equals>
-						<property>/controls/electrical/apu/Lsw</property>
+						<property>controls/electrical/apu/Lsw</property>
 						<value>1</value>
 					</equals>
 					<equals>
-						<property>/controls/electrical/apu/Rsw</property>
+						<property>controls/electrical/apu/Rsw</property>
 						<value>1</value>
 					</equals>
 					<greater-than>
-						<property>/systems/apu/rpm</property>
+						<property>systems/apu/rpm</property>
 						<value>94.9</value>
 					</greater-than>
 				</and>
 				<less-than-equals>
-					<property>/systems/apu/rpm</property>
+					<property>systems/apu/rpm</property>
 					<value>94.9</value>
 				</less-than-equals>
 			</or>
@@ -784,16 +784,16 @@
 			<and>
 				<or>
 					<not-equals>
-						<property>/controls/electrical/apu/Lsw</property>
+						<property>controls/electrical/apu/Lsw</property>
 						<value>1</value>
 					</not-equals>
 					<not-equals>
-						<property>/controls/electrical/apu/Rsw</property>
+						<property>controls/electrical/apu/Rsw</property>
 						<value>1</value>
 					</not-equals>
 				</or>
 				<greater-than>
-					<property>/systems/apu/rpm</property>
+					<property>systems/apu/rpm</property>
 					<value>94.9</value>
 				</greater-than>
 			</and>
@@ -807,16 +807,16 @@
 			<or>
 				<and>
 					<equals>
-						<property>/controls/electrical/eng/Lsw</property>
+						<property>controls/electrical/eng/Lsw</property>
 						<value>1</value>
 					</equals>
 					<greater-than>
-						<property>/engines/engine[0]/n1</property>
+						<property>engines/engine[0]/n1</property>
 						<value>18.0</value>
 					</greater-than>
 				</and>
 				<less-than-equals>
-					<property>/engines/engine[0]/n1</property>
+					<property>engines/engine[0]/n1</property>
 					<value>18.0</value>
 				</less-than-equals>
 			</or>
@@ -830,12 +830,12 @@
 			<and>
 				<or>
 					<not-equals>
-						<property>/controls/electrical/eng/Lsw</property>
+						<property>controls/electrical/eng/Lsw</property>
 						<value>1</value>
 					</not-equals>
 				</or>
 				<greater-than>
-					<property>/engines/engine[0]/n1</property>
+					<property>engines/engine[0]/n1</property>
 					<value>18.0</value>
 				</greater-than>
 			</and>
@@ -849,16 +849,16 @@
 			<or>
 				<and>
 					<equals>
-						<property>/controls/electrical/eng/Rsw</property>
+						<property>controls/electrical/eng/Rsw</property>
 						<value>1</value>
 					</equals>
 					<greater-than>
-						<property>/engines/engine[1]/n1</property>
+						<property>engines/engine[1]/n1</property>
 						<value>18.0</value>
 					</greater-than>
 				</and>
 				<less-than-equals>
-					<property>/engines/engine[1]/n1</property>
+					<property>engines/engine[1]/n1</property>
 					<value>18.0</value>
 				</less-than-equals>
 			</or>
@@ -872,12 +872,12 @@
 			<and>
 				<or>
 					<not-equals>
-						<property>/controls/electrical/eng/Rsw</property>
+						<property>controls/electrical/eng/Rsw</property>
 						<value>1</value>
 					</not-equals>
 				</or>
 				<greater-than>
-					<property>/engines/engine[1]/n1</property>
+					<property>engines/engine[1]/n1</property>
 					<value>18.0</value>
 				</greater-than>
 			</and>
@@ -893,7 +893,7 @@
         <repeatable type="bool">false</repeatable>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/electrical/eng/Lsw</property>
+          <property>controls/electrical/eng/Lsw</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -904,7 +904,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>EngGen1</object-name>  
-      <property>/controls/electrical/eng/Lsw</property>
+      <property>controls/electrical/eng/Lsw</property>
       <factor>30</factor>
       <center>
         <x-m>0.73</x-m>
@@ -926,7 +926,7 @@
         <repeatable type="bool">false</repeatable> 
         <binding>
           <command>property-toggle</command>
-          <property>/controls/electrical/eng/Rsw</property>
+          <property>controls/electrical/eng/Rsw</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -937,7 +937,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>EngGen2</object-name>  
-      <property>/controls/electrical/eng/Rsw</property>
+      <property>controls/electrical/eng/Rsw</property>
       <factor>30</factor>
       <center>
         <x-m>0.73</x-m>
@@ -959,7 +959,7 @@
         <repeatable type="bool">false</repeatable>      
         <binding>
           <command>property-toggle</command>
-          <property>/controls/electrical/apu/Lsw</property>
+          <property>controls/electrical/apu/Lsw</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -970,7 +970,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>ApuGenL</object-name>  
-      <property>/controls/electrical/apu/Lsw</property>
+      <property>controls/electrical/apu/Lsw</property>
       <factor>30</factor>
       <center>
         <x-m>0.73</x-m>
@@ -992,7 +992,7 @@
         <repeatable type="bool">false</repeatable>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/electrical/apu/Rsw</property>
+          <property>controls/electrical/apu/Rsw</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1003,7 +1003,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>ApuGenR</object-name>  
-      <property>/controls/electrical/apu/Rsw</property>
+      <property>controls/electrical/apu/Rsw</property>
       <factor>30</factor>
       <center>
         <x-m>0.73</x-m>
@@ -1026,7 +1026,7 @@
         <repeatable type="bool">false</repeatable>     
         <binding>
           <command>property-toggle</command>
-          <property>/controls/electrical/ext/sw</property>
+          <property>controls/electrical/ext/sw</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1037,7 +1037,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>GroundPWR</object-name>  
-      <property>/controls/electrical/ext/sw</property>
+      <property>controls/electrical/ext/sw</property>
       <factor>30</factor>
       <center>
         <x-m>0.81842</x-m>
@@ -1062,7 +1062,7 @@
         <repeatable type="bool">false</repeatable>      
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/window-heat</property>
+          <property>controls/anti-ice/window-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1073,7 +1073,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>WindowHeatLSide</object-name>  
-      <property>/controls/anti-ice/window-heat</property>
+      <property>controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
         <x-m>1.14064</x-m>
@@ -1095,7 +1095,7 @@
         <repeatable type="bool">false</repeatable>   
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/window-heat</property>
+          <property>controls/anti-ice/window-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1106,7 +1106,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>WindowHeatLFWD</object-name>  
-      <property>/controls/anti-ice/window-heat</property>
+      <property>controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
         <x-m>1.14064</x-m>
@@ -1128,7 +1128,7 @@
         <repeatable type="bool">false</repeatable>  
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/window-heat</property>
+          <property>controls/anti-ice/window-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1139,7 +1139,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>WindowHeatRSide</object-name>  
-      <property>/controls/anti-ice/window-heat</property>
+      <property>controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
         <x-m>1.14064</x-m>
@@ -1161,7 +1161,7 @@
         <repeatable type="bool">false</repeatable>  
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/window-heat</property>
+          <property>controls/anti-ice/window-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1172,7 +1172,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>WindowHeatRFWD</object-name>  
-      <property>/controls/anti-ice/window-heat</property>
+      <property>controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
         <x-m>1.14064</x-m>
@@ -1194,7 +1194,7 @@
         <repeatable type="bool">false</repeatable>      
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/window-heat</property>
+          <property>controls/anti-ice/window-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1205,7 +1205,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>WindowHeatOVHT</object-name>  
-      <property>/controls/anti-ice/window-heat</property>
+      <property>controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
         <x-m>1.14064</x-m>
@@ -1230,7 +1230,7 @@
         <repeatable type="bool">false</repeatable>   
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/wing-heat</property>
+          <property>controls/anti-ice/wing-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1241,7 +1241,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>WingAntiIce</object-name>  
-      <property>/controls/anti-ice/wing-heat</property>
+      <property>controls/anti-ice/wing-heat</property>
       <factor>30</factor>
       <center>
         <x-m>0.99628</x-m>
@@ -1263,11 +1263,11 @@
         <repeatable type="bool">false</repeatable>  
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/engine/carb-heat</property>
+          <property>controls/anti-ice/engine/carb-heat</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/engine/inlet-heat</property>
+          <property>controls/anti-ice/engine/inlet-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1278,7 +1278,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>EngAntiIce1</object-name>  
-      <property>/controls/anti-ice/engine/carb-heat</property>
+      <property>controls/anti-ice/engine/carb-heat</property>
       <factor>30</factor>
       <center>
         <x-m>0.99628</x-m>
@@ -1300,11 +1300,11 @@
         <repeatable type="bool">false</repeatable>        
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/engine[1]/carb-heat</property>
+          <property>controls/anti-ice/engine[1]/carb-heat</property>
         </binding>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/anti-ice/engine[1]/inlet-heat</property>
+          <property>controls/anti-ice/engine[1]/inlet-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1315,7 +1315,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>EngAntiIce2</object-name>  
-      <property>/controls/anti-ice/engine[1]/carb-heat</property>
+      <property>controls/anti-ice/engine[1]/carb-heat</property>
       <factor>30</factor>
       <center>
         <x-m>0.99628</x-m>
@@ -1340,7 +1340,7 @@
         <repeatable type="bool">false</repeatable>    
         <binding>
           <command>property-toggle</command>
-          <property>/controls/hydraulic/system/engine-pump</property>
+          <property>controls/hydraulic/system/engine-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1351,7 +1351,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>HYDPumpEngL</object-name>  
-      <property>/controls/hydraulic/system/engine-pump</property>
+      <property>controls/hydraulic/system/engine-pump</property>
       <factor>30</factor>
       <center>
         <x-m>0.90673</x-m>
@@ -1374,7 +1374,7 @@
         <repeatable type="bool">false</repeatable>   
         <binding>
           <command>property-toggle</command>
-          <property>/controls/hydraulic/system/engine-pump</property>
+          <property>controls/hydraulic/system/engine-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1385,7 +1385,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>HYDPumpEngR</object-name>  
-      <property>/controls/hydraulic/system/engine-pump</property>
+      <property>controls/hydraulic/system/engine-pump</property>
       <factor>30</factor>
       <center>
         <x-m>0.90673</x-m>
@@ -1408,7 +1408,7 @@
         <repeatable type="bool">false</repeatable>
         <binding>
           <command>property-toggle</command>
-          <property>/controls/hydraulic/system/electric-pump</property>
+          <property>controls/hydraulic/system/electric-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1419,7 +1419,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>HYDPumpEletrR</object-name>  
-      <property>/controls/hydraulic/system/electric-pump</property>
+      <property>controls/hydraulic/system/electric-pump</property>
       <factor>30</factor>
       <center>
         <x-m>0.90673</x-m>
@@ -1442,7 +1442,7 @@
         <repeatable type="bool">false</repeatable>        
         <binding>
           <command>property-toggle</command>
-          <property>/controls/hydraulic/system/electric-pump</property>
+          <property>controls/hydraulic/system/electric-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1453,7 +1453,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>HYDPumpEletrL</object-name>  
-      <property>/controls/hydraulic/system/electric-pump</property>
+      <property>controls/hydraulic/system/electric-pump</property>
       <factor>30</factor>
       <center>
         <x-m>0.90673</x-m>
@@ -1479,7 +1479,7 @@
         <repeatable>true</repeatable>        
         <binding>
           <command>property-toggle</command>
-          <property>/controls/air/trim-air</property>
+          <property>controls/air/trim-air</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1490,7 +1490,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>TrimAir</object-name>  
-      <property>/controls/air/trim-air</property>
+      <property>controls/air/trim-air</property>
       <factor>30</factor>
       <center>
         <x-m>1.09427</x-m>
@@ -1517,7 +1517,7 @@
 <animation>
   <type>knob</type>
   <object-name>PanelBright</object-name>
-  <property>/controls/lighting/panel-light</property>
+  <property>controls/lighting/panel-light</property>
   <factor>125</factor>
   <center>
     <x-m>1.02887</x-m>
@@ -1531,7 +1531,7 @@
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel-light</property>
+      <property>controls/lighting/panel-light</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>2</max>                
@@ -1541,7 +1541,7 @@
   <shift-action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel-light</property>
+      <property>controls/lighting/panel-light</property>
       <factor>0.1</factor>
       <min>0</min>
       <max>2</max>                
@@ -1561,7 +1561,7 @@
 <animation>
   <type>knob</type>
   <object-name>CircuitBreakersBright</object-name>
-  <property>/controls/lighting/circuitbrakers-light</property>
+  <property>controls/lighting/circuitbrakers-light</property>
   <factor>125</factor>
   <center>
     <x-m>1.0818</x-m>
@@ -1575,7 +1575,7 @@
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/circuitbrakers-light</property>
+      <property>controls/lighting/circuitbrakers-light</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>2</max>                
@@ -1585,7 +1585,7 @@
   <shift-action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/circuitbrakers-light</property>
+      <property>controls/lighting/circuitbrakers-light</property>
       <factor>0.1</factor>
       <min>0</min>
       <max>2</max>                
@@ -1607,7 +1607,7 @@
    <repeatable>true</repeatable> 
    <binding>
     <command>property-toggle</command>
-    <property>/controls/fuel/crossfeed</property>
+    <property>controls/fuel/crossfeed</property>
   </binding>
   <binding>
     <command>nasal</command>
@@ -1618,7 +1618,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>Cross_Feed</object-name>  
-  <property>/controls/fuel/crossfeed</property>
+  <property>controls/fuel/crossfeed</property>
   <factor>90</factor>
   <center>
     <x-m>0.77407</x-m>

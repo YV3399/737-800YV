@@ -22,11 +22,11 @@
 		<condition>
 			<or>
 				<greater-than-equals>
-					<property>/systems/electrical/outputs/efis</property>
+					<property>systems/electrical/outputs/efis</property>
 					<value>15</value>
 				</greater-than-equals>
 				<equals>
-					<property>/controls/electric/battery-switch</property>
+					<property>controls/electric/battery-switch</property>
 					<value>1</value>
 				</equals>
 			</or>
@@ -39,11 +39,11 @@
 		<condition>
 			<and>
 				<less-than>
-					<property>/systems/electrical/outputs/efis</property>
+					<property>systems/electrical/outputs/efis</property>
 					<value>15</value>
 				</less-than>
 				<equals>
-					<property>/controls/electric/battery-switch</property>
+					<property>controls/electric/battery-switch</property>
 					<value>0</value>
 				</equals>
 			</and>

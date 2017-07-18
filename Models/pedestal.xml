@@ -50,7 +50,7 @@
 <animation>
   <type>knob</type>
   <object-name>AFDSbrt</object-name>
-  <property>/controls/lighting/panel</property>
+  <property>controls/lighting/panel</property>
   <factor>250</factor>
   <center>
     <x-m>0.37235</x-m>
@@ -64,7 +64,7 @@
   <action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel</property>
+      <property>controls/lighting/panel</property>
       <factor>0.05</factor>
       <min>0</min>
       <max>1</max>                
@@ -74,7 +74,7 @@
   <shift-action>
     <binding>
       <command>property-adjust</command>
-      <property>/controls/lighting/panel</property>
+      <property>controls/lighting/panel</property>
       <factor>0.1</factor>
       <min>0</min>
       <max>1</max>                
@@ -95,7 +95,7 @@
             <repeatable>true</repeatable>
            <binding>
     		<command>property-toggle</command>
-   		 <property>/controls/gear/brake-parking</property> 
+   		 <property>controls/gear/brake-parking</property> 
                   <min>0</min>
     		 <max>1</max>    		  
     		 <wrap>false</wrap>
@@ -106,7 +106,7 @@
 <animation>
   <type>pick</type>   
   <object-name>parkbrake_0</object-name>
-   <property>/controls/gear/brake-parking</property> 
+   <property>controls/gear/brake-parking</property> 
     <factor>45</factor>    
   <center>
    <x-m>0.81</x-m>
@@ -123,7 +123,7 @@
     <animation>
         <type>pick</type>
         <object-name>parkbrake_1</object-name>
-        <property>/controls/gear/brake-parking</property>
+        <property>controls/gear/brake-parking</property>
         <factor>45</factor>
         <center>
             <x-m>0.81</x-m>
@@ -141,7 +141,7 @@
     <type>rotate</type>
     <object-name>trimwheellh</object-name>   
     <object-name>trimwheelrh</object-name>   
-    <property>/controls/flight/elevator-trim</property>
+    <property>controls/flight/elevator-trim</property>
     <factor>-10500</factor>
     <center>
       <x-m>0.68</x-m>
@@ -171,7 +171,7 @@
     <blue>0.1</blue>
   </emission>
  <condition>
-       <property>/controls/lighting/panel</property>
+       <property>controls/lighting/panel</property>
     </condition>
 </animation>
 

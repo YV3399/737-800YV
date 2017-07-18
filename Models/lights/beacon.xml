@@ -24,7 +24,7 @@
     <type>select</type>
     <object-name>strobe10000</object-name>
     <condition>
-      <property>/sim/model/lights/beacon/state</property>
+      <property>sim/model/lights/beacon/state</property>
     </condition>
   </animation>
 

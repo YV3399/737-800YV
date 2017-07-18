@@ -525,7 +525,7 @@
     <object-name>TaxiLight</object-name>
     <condition>
         <not>
-            <property>/sim/rendering/shaders/skydome</property>
+            <property>sim/rendering/shaders/skydome</property>
         </not>
     </condition>
 </animation>
@@ -542,7 +542,7 @@
     <object-name>landing.RW.ALS</object-name>
     <object-name>TaxiLight.ALS</object-name>
     <condition>
-            <property>/sim/rendering/shaders/skydome</property>
+            <property>sim/rendering/shaders/skydome</property>
     </condition>
 </animation>
 
@@ -617,7 +617,7 @@
  <path>Aircraft/737-800/Models/Effects/fire.xml</path>
  <condition>
    <equals>
-    <property>/controls/fires/fire/phase</property>
+    <property>controls/fires/fire/phase</property>
     <value>fire</value>
   </equals>
 </condition>
@@ -634,7 +634,7 @@
  <path>Aircraft/737-800/Models/Effects/fire.xml</path>
  <condition>
    <equals>
-    <property>/controls/fires/fire[1]/phase</property>
+    <property>controls/fires/fire[1]/phase</property>
     <value>fire</value>
   </equals>
 </condition>
@@ -688,11 +688,11 @@
   <condition>
     <and>
       <less-than> 
-        <property>/velocities/groundspeed-kt</property>
+        <property>velocities/groundspeed-kt</property>
         <value>1</value>
       </less-than>
       <equals>
-       <property>/services/fuel-truck/enable</property>
+       <property>services/fuel-truck/enable</property>
        <value>1</value>
      </equals>
    </and>
@@ -707,11 +707,11 @@
   <condition>
     <and>   
       <equals>
-       <property>/services/deicing_truck/enable</property>
+       <property>services/deicing_truck/enable</property>
        <value>1</value>
      </equals>
      <less-than>  
-      <property>/velocities/groundspeed-kt</property>
+      <property>velocities/groundspeed-kt</property>
       <value>1</value>
     </less-than>
   </and>
@@ -732,11 +732,11 @@
   <condition>
     <and>
       <equals>
-       <property>/services/baggage/enable</property>
+       <property>services/baggage/enable</property>
        <value>1</value>
      </equals>
      <less-than>  
-      <property>/velocities/groundspeed-kt</property>
+      <property>velocities/groundspeed-kt</property>
       <value>1</value>
     </less-than>
   </and>
@@ -757,11 +757,11 @@
   <condition>
     <and>
       <equals>
-       <property>/services/ext-pwr/enable</property>
+       <property>services/ext-pwr/enable</property>
        <value>1</value>
      </equals>
      <less-than>  
-      <property>/velocities/groundspeed-kt</property>
+      <property>velocities/groundspeed-kt</property>
       <value>1</value>
     </less-than>
   </and>
@@ -876,7 +876,7 @@
   <type>translate</type>
   <object-name>doorLF</object-name>
   <object-name>doorLF.001</object-name>
-  <property>/controls/doors/LFDoor/LFDoorPos1/position-norm</property>
+  <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -888,7 +888,7 @@
   <type>translate</type>
   <object-name>doorLF</object-name>
   <object-name>doorLF.001</object-name>
-  <property>/controls/doors/LFDoor/LFDoorPos2/position-norm</property>
+  <property>controls/doors/LFDoor/LFDoorPos2/position-norm</property>
   <factor>1</factor>
   <axis>
    <x>-1</x>
@@ -918,7 +918,7 @@
   <type>translate</type>
   <object-name>doorLR</object-name>
   <object-name>Circle.006</object-name>
-  <property>/controls/doors/LRDoor/LRDoorPos1/position-norm</property>
+  <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -930,7 +930,7 @@
   <type>translate</type>
   <object-name>doorLR</object-name>
   <object-name>Circle.006</object-name>
-  <property>/controls/doors/LRDoor/LRDoorPos2/position-norm</property>
+  <property>controls/doors/LRDoor/LRDoorPos2/position-norm</property>
   <factor>1</factor>
   <axis>
    <x>1</x>
@@ -960,7 +960,7 @@
   <type>translate</type>
   <object-name>doorRF</object-name>
   <object-name>dorrhfront.005</object-name>
-  <property>/controls/doors/RFDoor/RFDoorPos1/position-norm</property>
+  <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -972,7 +972,7 @@
   <type>translate</type>
   <object-name>doorRF</object-name>
   <object-name>dorrhfront.005</object-name>
-  <property>/controls/doors/RFDoor/RFDoorPos2/position-norm</property>
+  <property>controls/doors/RFDoor/RFDoorPos2/position-norm</property>
   <factor>1</factor>
   <axis>
    <x>-1</x>
@@ -1002,7 +1002,7 @@
   <type>translate</type>
   <object-name>doorRR</object-name>
   <object-name>doorrhrear</object-name>
-  <property>/controls/doors/RRDoor/RRDoorPos1/position-norm</property>
+  <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -1014,7 +1014,7 @@
   <type>translate</type>
   <object-name>doorRR</object-name>
   <object-name>doorrhrear</object-name>
-  <property>/controls/doors/RRDoor/RRDoorPos2/position-norm</property>
+  <property>controls/doors/RRDoor/RRDoorPos2/position-norm</property>
   <factor>1</factor>
   <axis>
    <x>1</x>
@@ -1043,7 +1043,7 @@
 <animation>
   <type>translate</type>
   <object-name>cargodoorF</object-name>
-  <property>/controls/doors/CFDoor/CFDoorPos1/position-norm</property>
+  <property>controls/doors/CFDoor/CFDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -1054,7 +1054,7 @@
 <animation>
   <type>translate</type>
   <object-name>cargodoorF</object-name>
-  <property>/controls/doors/CFDoor/CFDoorPos2/position-norm</property>
+  <property>controls/doors/CFDoor/CFDoorPos2/position-norm</property>
   <factor>1</factor>
   <axis>
    <x>-1</x>
@@ -1083,7 +1083,7 @@
 <animation>
   <type>translate</type>
   <object-name>cargodoorR</object-name>
-  <property>/controls/doors/CRDoor/CRDoorPos1/position-norm</property>
+  <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -1094,7 +1094,7 @@
 <animation>
   <type>translate</type>
   <object-name>cargodoorR</object-name>
-  <property>/controls/doors/CRDoor/CRDoorPos2/position-norm</property>
+  <property>controls/doors/CRDoor/CRDoorPos2/position-norm</property>
   <factor>1</factor>
   <axis>
    <x>1</x>
@@ -1123,7 +1123,7 @@
 <animation>
   <type>translate</type>
   <object-name>EexitRF</object-name>
-  <property>/controls/doors/ELFDoor/ELFDoorPos1/position-norm</property>
+  <property>controls/doors/ELFDoor/ELFDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -1134,7 +1134,7 @@
 <animation>
   <type>translate</type>
   <object-name>EexitRF</object-name>
-  <property>/controls/doors/ELFDoor/ELFDoorPos2/position-norm</property>
+  <property>controls/doors/ELFDoor/ELFDoorPos2/position-norm</property>
   <factor>0.5</factor>
   <axis>
    <x>-1</x>
@@ -1163,7 +1163,7 @@
 <animation>
   <type>translate</type>
   <object-name>EexitLR</object-name>
-  <property>/controls/doors/ELRDoor/ELRDoorPos1/position-norm</property>
+  <property>controls/doors/ELRDoor/ELRDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -1174,7 +1174,7 @@
 <animation>
   <type>translate</type>
   <object-name>EexitLR</object-name>
-  <property>/controls/doors/ELRDoor/ELRDoorPos2/position-norm</property>
+  <property>controls/doors/ELRDoor/ELRDoorPos2/position-norm</property>
   <factor>0.5</factor>
   <axis>
    <x>1</x>
@@ -1203,7 +1203,7 @@
 <animation>
   <type>translate</type>
   <object-name>EexitLF</object-name>
-  <property>/controls/doors/ERFDoor/ERFDoorPos1/position-norm</property>
+  <property>controls/doors/ERFDoor/ERFDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -1214,7 +1214,7 @@
 <animation>
   <type>translate</type>
   <object-name>EexitLF</object-name>
-  <property>/controls/doors/ERFDoor/ERFDoorPos2/position-norm</property>
+  <property>controls/doors/ERFDoor/ERFDoorPos2/position-norm</property>
   <factor>0.5</factor>
   <axis>
    <x>-1</x>
@@ -1243,7 +1243,7 @@
 <animation>
   <type>translate</type>
   <object-name>EexitRR</object-name>
-  <property>/controls/doors/ERRDoor/ERRDoorPos1/position-norm</property>
+  <property>controls/doors/ERRDoor/ERRDoorPos1/position-norm</property>
   <factor>0.05</factor>
   <axis>
    <x>0</x>
@@ -1254,7 +1254,7 @@
 <animation>
   <type>translate</type>
   <object-name>EexitRR</object-name>
-  <property>/controls/doors/ERRDoor/ERRDoorPos2/position-norm</property>
+  <property>controls/doors/ERRDoor/ERRDoorPos2/position-norm</property>
   <factor>0.5</factor>
   <axis>
    <x>1</x>

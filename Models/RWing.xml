@@ -678,7 +678,7 @@
   <type>rotate</type>
   <object-name>spoiler10</object-name>
   <object-name>spoiler11</object-name>
-  <property>/fdm/jsbsim/fcs/spoilers-1011-pos</property>
+  <property>fdm/jsbsim/fcs/spoilers-1011-pos</property>
   <factor>-1</factor>
   <offset-deg>0</offset-deg>   
   <center>
@@ -699,7 +699,7 @@
   <type>rotate</type>   
   <object-name>spoiler8</object-name>
   <object-name>spoiler9</object-name>
-  <property>/fdm/jsbsim/fcs/spoilers-89-pos</property>
+  <property>fdm/jsbsim/fcs/spoilers-89-pos</property>
   <factor>-1</factor>
   <offset-deg>0</offset-deg>   
   <center>

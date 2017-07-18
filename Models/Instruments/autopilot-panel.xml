@@ -32,7 +32,7 @@
     		<repeatable>true</repeatable> 
     		<binding>
 				<command>property-assign</command>
-				<property>/it-autoflight/input/toga</property>
+				<property>it-autoflight/input/toga</property>
 				<value>1</value>
     		</binding>
     	</action>
@@ -61,7 +61,7 @@
     <!--<animation>
         <type>rotate</type>
         <object-name>CPT-COURSE</object-name>
-         <property>/instrumentation/nav[0]/radials/selected-deg</property> 
+         <property>instrumentation/nav[0]/radials/selected-deg</property> 
           <factor>-5.0</factor>         
         <center>
             <x-m>0.033</x-m>
@@ -78,7 +78,7 @@
      <animation>
         <type>rotate</type>
         <object-name>HDG-SEL</object-name>
-        <property>/autopilot/settings/heading-bug-deg</property> 
+        <property>autopilot/settings/heading-bug-deg</property> 
           <factor>-5.0</factor>         
         <center>
             <x-m>0.033</x-m>
@@ -95,7 +95,7 @@
     <animation>
     	<type>rotate</type>
     	<object-name>BANK</object-name>
-		<property>/it-autoflight/input/bank-limit-sw</property>
+		<property>it-autoflight/input/bank-limit-sw</property>
 		<interpolation>
 			<entry><ind>2</ind><dep>185</dep></entry>
 			<entry><ind>6</ind><dep>70</dep></entry>
@@ -137,7 +137,7 @@
     <animation>
     	<type>rotate</type>
     	<object-name>at-arm</object-name>
-    	<property>/it-autoflight/custom/athr-armed</property>
+    	<property>it-autoflight/custom/athr-armed</property>
     	<factor>-30.0</factor>         
     	<center>
     		<x-m>0.03017</x-m>
@@ -157,11 +157,11 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/ap1</property>
+    				<property>it-autoflight/output/ap1</property>
     				<value>1</value>
     			</equals>
     		</and>
@@ -174,11 +174,11 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/ap2</property>
+    				<property>it-autoflight/output/ap2</property>
     				<value>1</value>
     			</equals>
     		</and>
@@ -191,11 +191,11 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-cws/cwsa</property>
+    				<property>it-cws/cwsa</property>
     				<value>1</value>
     			</equals>
     		</and>
@@ -208,11 +208,11 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-cws/cwsb</property>
+    				<property>it-cws/cwsb</property>
     				<value>1</value>
     			</equals>
     		</and>
@@ -226,11 +226,11 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/vert</property>
+    				<property>it-autoflight/output/vert</property>
     				<value>0</value>
     			</equals>
     		</and>
@@ -243,11 +243,11 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/vert</property>
+    				<property>it-autoflight/output/vert</property>
     				<value>1</value>
     			</equals>
     		</and>
@@ -262,11 +262,11 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/lat</property>
+    				<property>it-autoflight/output/lat</property>
     				<value>0</value>
     			</equals>
     		</and>
@@ -279,11 +279,11 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/lat</property>
+    				<property>it-autoflight/output/lat</property>
     				<value>1</value>
     			</equals>
     		</and>
@@ -296,16 +296,16 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<or>
     				<equals>
-    					<property>/it-autoflight/output/vert</property>
+    					<property>it-autoflight/output/vert</property>
     					<value>2</value>
     				</equals>
     				<equals>
-    					<property>/it-autoflight/output/appr-armed</property>
+    					<property>it-autoflight/output/appr-armed</property>
     					<value>1</value>
     				</equals>
     			</or>
@@ -319,12 +319,12 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<or>
     				<equals>
-    					<property>/it-autoflight/output/vert</property>
+    					<property>it-autoflight/output/vert</property>
     					<value>4</value>
     				</equals>
     			</or>
@@ -339,24 +339,24 @@
     		<and>
     			<or>
     				<equals>
-    					<property>/it-autoflight/output/lat</property>
+    					<property>it-autoflight/output/lat</property>
     					<value>2</value>
     				</equals>
     				<equals>
-    					<property>/it-autoflight/output/loc-armed</property>
+    					<property>it-autoflight/output/loc-armed</property>
     					<value>1</value>
     				</equals>
     			</or>
     			<equals>
-    				<property>/it-autoflight/output/appr-armed</property>
+    				<property>it-autoflight/output/appr-armed</property>
     				<value>0</value>
     			</equals>
     			<not-equals>
-    				<property>/it-autoflight/output/vert</property>
+    				<property>it-autoflight/output/vert</property>
     				<value>2</value>
     			</not-equals>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     		</and>
@@ -369,15 +369,15 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/athr</property>
+    				<property>it-autoflight/output/athr</property>
     				<value>1</value>
     			</equals>
     			<equals>
-    				<property>/it-autoflight/output/thr-mode</property>
+    				<property>it-autoflight/output/thr-mode</property>
     				<value>0</value>
     			</equals>
     		</and>
@@ -390,19 +390,19 @@
     	<condition>
     		<and>
     			<greater-than-equals>
-    				<property>/systems/electrical/outputs/efis</property>
+    				<property>systems/electrical/outputs/efis</property>
     				<value>15</value>
     			</greater-than-equals>
     			<equals>
-    				<property>/it-autoflight/output/athr</property>
+    				<property>it-autoflight/output/athr</property>
     				<value>1</value>
     			</equals>
     			<equals>
-    				<property>/it-autoflight/output/thr-mode</property>
+    				<property>it-autoflight/output/thr-mode</property>
     				<value>2</value>
     			</equals>
     			<equals>
-    				<property>/it-autoflight/output/vert</property>
+    				<property>it-autoflight/output/vert</property>
     				<value>7</value>
     			</equals>
     		</and>
@@ -488,7 +488,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>ALT.3</object-name>
-    	<property>/it-autoflight/input/alt</property> 
+    	<property>it-autoflight/input/alt</property> 
     	<factor>0.001</factor>
     	<step>100</step>
     	<axis>
@@ -501,7 +501,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>ALT.4</object-name>
-    	<property>/it-autoflight/input/alt</property> 
+    	<property>it-autoflight/input/alt</property> 
     	<factor>0.0001</factor>
     	<step>1000</step>
     	<axis>
@@ -514,7 +514,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>ALT.5</object-name>
-    	<property>/it-autoflight/input/alt</property> 
+    	<property>it-autoflight/input/alt</property> 
     	<factor>0.00001</factor>
     	<step>10000</step>
     	<axis>
@@ -527,7 +527,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>HDG.1</object-name>
-    	<property>/it-autoflight/input/hdg</property> 
+    	<property>it-autoflight/input/hdg</property> 
     	<factor>0.1</factor>         
     	<axis>
     		<x>0</x>
@@ -539,7 +539,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>HDG.2</object-name>
-    	<property>/it-autoflight/input/hdg</property>
+    	<property>it-autoflight/input/hdg</property>
     	<factor>0.01</factor>
     	<step>10</step>
     	<axis>
@@ -552,7 +552,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>HDG.3</object-name>
-    	<property>/it-autoflight/input/hdg</property>
+    	<property>it-autoflight/input/hdg</property>
     	<factor>0.001</factor>
     	<step>100</step>
     	<axis>
@@ -729,7 +729,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>IAS.1</object-name>
-    	<property>/it-autoflight/input/spd-kts</property>
+    	<property>it-autoflight/input/spd-kts</property>
 
     	<factor>0.1</factor>
     	<step>1</step>
@@ -743,7 +743,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>IAS.2</object-name>
-    	<property>/it-autoflight/input/spd-kts</property>
+    	<property>it-autoflight/input/spd-kts</property>
     	<factor>0.01</factor>
     	<step>10</step>
     	<axis>
@@ -756,7 +756,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>IAS.3</object-name>
-    	<property>/it-autoflight/input/spd-kts</property>
+    	<property>it-autoflight/input/spd-kts</property>
     	<factor>0.001</factor>
     	<step>100</step>
     	<axis>
@@ -769,7 +769,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>MACH.1</object-name>
-    	<property>/it-autoflight/input/spd-mach</property>
+    	<property>it-autoflight/input/spd-mach</property>
     	<factor>1.0</factor>
     	<step>0.1</step>
     	<axis>
@@ -782,7 +782,7 @@
     <animation>
     	<type>textranslate</type>
     	<object-name>MACH.01</object-name>
-    	<property>/it-autoflight/input/spd-mach</property>
+    	<property>it-autoflight/input/spd-mach</property>
     	<factor>10</factor>
     	<step>.01</step>
     	<axis>
@@ -829,7 +829,7 @@
 		<repeatable>false</repeatable> 
 		<binding>
 			<command>property-toggle</command>
-			<property>/it-autoflight/input/fd1</property>
+			<property>it-autoflight/input/fd1</property>
 			<step>1</step>
 			<min>0></min>
 			<max>1</max>
@@ -841,7 +841,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>cap-fd</object-name>
-	<property>/it-autoflight/input/fd1</property>
+	<property>it-autoflight/input/fd1</property>
 	<factor>-30</factor>
 	<offset-deg>0</offset-deg>
 	<center>
@@ -865,7 +865,7 @@
 		<repeatable>false</repeatable> 
 		<binding>
 			<command>property-toggle</command>
-			<property>/it-autoflight/input/fd2</property>
+			<property>it-autoflight/input/fd2</property>
 			<step>1</step>
 			<min>0></min>
 			<max>1</max>
@@ -877,7 +877,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>fo-fd</object-name>
-	<property>/it-autoflight/input/fd2</property>
+	<property>it-autoflight/input/fd2</property>
 	<factor>-30</factor>
 	<offset-deg>30</offset-deg>
 	<center>
@@ -981,7 +981,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-cycle</command>
-			<property>/it-autoflight/input/kts-mach</property>
+			<property>it-autoflight/input/kts-mach</property>
 			<value>0</value>
 			<value>1</value>
 		</binding>
@@ -1017,7 +1017,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/vert</property>
+			<property>it-autoflight/input/vert</property>
 			<value>4</value>
 		</binding>
 		<binding>
@@ -1041,7 +1041,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/vert</property>
+			<property>it-autoflight/input/vert</property>
 			<value>0</value>
 		</binding>
 	</action>
@@ -1057,7 +1057,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/vert</property>
+			<property>it-autoflight/input/vert</property>
 			<value>0</value>
 		</binding>
 	</action>
@@ -1072,7 +1072,7 @@
 		<repeatable>true</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/vert</property>
+			<property>it-autoflight/input/vert</property>
 			<value>1</value>
 		</binding>
 	</action>
@@ -1088,13 +1088,13 @@
 			<tooltip-id>vs-sel</tooltip-id>
 			<mapping>vs</mapping>
 			<label>VS: %5d</label>
-			<property>/it-autoflight/input/vs</property>
+			<property>it-autoflight/input/vs</property>
 		</binding>
 	</hovered>
 	<action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/vs</property>
+			<property>it-autoflight/input/vs</property>
 			<factor>100</factor>
 			<min>-8900</min>
 			<max>7000</max>    
@@ -1114,7 +1114,7 @@
 		<repeatable>true</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/lat</property>
+			<property>it-autoflight/input/lat</property>
 			<value>0</value>
 		</binding>
 	</action>
@@ -1129,7 +1129,7 @@
 		<repeatable>true</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/lat</property>
+			<property>it-autoflight/input/lat</property>
 			<value>0</value>
 		</binding>
 	</action>
@@ -1146,7 +1146,7 @@
 		<repeatable>true</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/lat</property>
+			<property>it-autoflight/input/lat</property>
 			<value>1</value>
 		</binding>
 	</action>
@@ -1161,7 +1161,7 @@
 		<repeatable>true</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/lat</property>
+			<property>it-autoflight/input/lat</property>
 			<value>1</value>
 		</binding>
 	</action>
@@ -1177,7 +1177,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/vert</property>
+			<property>it-autoflight/input/vert</property>
 			<value>2</value>
 		</binding>
 	</action> 
@@ -1193,7 +1193,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
-			<property>/it-autoflight/input/lat</property>
+			<property>it-autoflight/input/lat</property>
 			<value>2</value>
 		</binding>
 	</action> 
@@ -1222,7 +1222,7 @@
 <animation>
 	<type>knob</type>
 	<object-name>CPT-COURSE_1</object-name>
-	<property>/instrumentation/nav[0]/radials/selected-deg</property>
+	<property>instrumentation/nav[0]/radials/selected-deg</property>
 	<factor>-0.5</factor>
 	<center>
 		<x-m>0</x-m>
@@ -1237,7 +1237,7 @@
 	<action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/instrumentation/nav/radials/selected-deg</property>
+			<property>instrumentation/nav/radials/selected-deg</property>
 			<factor>1</factor>
 			<min>0</min>
 			<max>360</max>                
@@ -1249,7 +1249,7 @@
 <animation>
 	<type>knob</type>
 	<object-name>F/O-COURSE.001</object-name>
-	<property>/instrumentation/nav[1]/radials/selected-deg</property>
+	<property>instrumentation/nav[1]/radials/selected-deg</property>
 	<factor>-0.5</factor>
 	<center>
 		<x-m>0</x-m>
@@ -1264,7 +1264,7 @@
 	<action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/instrumentation/nav[1]/radials/selected-deg</property>
+			<property>instrumentation/nav[1]/radials/selected-deg</property>
 			<factor>1</factor>
 			<min>0</min>
 			<max>360</max>                
@@ -1276,7 +1276,7 @@
 <animation>
 	<type>knob</type>
 	<object-name>HDG-SEL</object-name>
-	<property>/it-autoflight/input/hdg</property>
+	<property>it-autoflight/input/hdg</property>
 	<factor>-0.5</factor>
 	<center>
 		<x-m>0</x-m>
@@ -1294,13 +1294,13 @@
 			<tooltip-id>hdg-sel</tooltip-id>
 			<mapping>hdg</mapping>
 			<label>HDG: %3d</label>
-			<property>/it-autoflight/input/hdg</property>
+			<property>it-autoflight/input/hdg</property>
 		</binding>
 	</hovered>
 	<action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/hdg</property>
+			<property>it-autoflight/input/hdg</property>
 			<factor>1</factor>
 			<min>0</min>
 			<max>360</max>
@@ -1312,7 +1312,7 @@
 <animation>
 	<type>knob</type>
 	<object-name>ALT-SEL</object-name>
-	<property>/it-autoflight/input/alt</property>
+	<property>it-autoflight/input/alt</property>
 	<factor>-0.1</factor>
 	<center>
 		<x-m>0</x-m>
@@ -1330,13 +1330,13 @@
 			<tooltip-id>alt-sel</tooltip-id>
 			<mapping>alt</mapping>
 			<label>ALT: %5d</label>
-			<property>/it-autoflight/input/alt</property>
+			<property>it-autoflight/input/alt</property>
 		</binding>
 	</hovered>
 	<action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/alt</property>
+			<property>it-autoflight/input/alt</property>
 			<factor>100</factor>
 			<min>0</min>
 			<max>49900</max>                
@@ -1355,7 +1355,7 @@
 	<object-name>IAS.3</object-name>
 	<condition>
 		<equals>
-			<property>/it-autoflight/input/kts-mach</property>
+			<property>it-autoflight/input/kts-mach</property>
 			<value>0</value>
 		</equals>
 	</condition>
@@ -1368,7 +1368,7 @@
 	<object-name>MACH.01</object-name>
 	<condition>
 		<equals>
-			<property>/it-autoflight/input/kts-mach</property>
+			<property>it-autoflight/input/kts-mach</property>
 			<value>1</value>
 		</equals>
 	</condition>
@@ -1377,7 +1377,7 @@
 <animation>
 	<type>knob</type>
 	<object-name>IASknb</object-name>
-	<property>/it-autoflight/input/spd-kts</property>
+	<property>it-autoflight/input/spd-kts</property>
 	<factor>1</factor>
 	<center>
 		<x-m>0.03459</x-m>
@@ -1393,13 +1393,13 @@
 			<tooltip-id>ias-spd</tooltip-id>
 			<mapping>ias</mapping>
 			<label>IAS Speed: %3d</label>
-			<property>/it-autoflight/input/spd-kts</property>
+			<property>it-autoflight/input/spd-kts</property>
 		</binding>
 	</hovered>
 	<action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/spd-kts</property>
+			<property>it-autoflight/input/spd-kts</property>
 			<factor>1</factor>
 			<min>100</min>
 			<max>330</max>         
@@ -1409,7 +1409,7 @@
 	<shift-action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/spd-kts</property>
+			<property>it-autoflight/input/spd-kts</property>
 			<factor>10</factor>
 			<min>100</min>
 			<max>330</max>               
@@ -1421,7 +1421,7 @@
 <animation>
 	<type>knob</type>
 	<object-name>MACHknb</object-name>
-	<property>/it-autoflight/input/spd-mach</property>
+	<property>it-autoflight/input/spd-mach</property>
 	<factor>1</factor>
 	<center>
 		<x-m>0.03459</x-m>
@@ -1437,13 +1437,13 @@
 			<tooltip-id>mach-spd</tooltip-id>
 			<mapping>mach</mapping>
 			<label>Mach Speed: %.2f</label>
-			<property>/it-autoflight/input/spd-mach</property>
+			<property>it-autoflight/input/spd-mach</property>
 		</binding>
 	</hovered>
 	<action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/spd-mach</property>
+			<property>it-autoflight/input/spd-mach</property>
 			<factor>.01</factor>
 			<min>.2</min>
 			<max>.9</max>         
@@ -1453,7 +1453,7 @@
 	<shift-action>
 		<binding>
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/spd-mach</property>
+			<property>it-autoflight/input/spd-mach</property>
 			<factor>.1</factor>
 			<min>.2</min>
 			<max>.9</max>               
@@ -1472,7 +1472,7 @@
 		<repeatable>true</repeatable>           
 		<binding>   
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/bank-limit-sw</property>
+			<property>it-autoflight/input/bank-limit-sw</property>
 			<step>1</step>
 			<min>1</min>
 			<max>6</max>            
@@ -1491,7 +1491,7 @@
 		<repeatable>true</repeatable>           
 		<binding>   
 			<command>property-adjust</command>
-			<property>/it-autoflight/input/bank-limit-sw</property>
+			<property>it-autoflight/input/bank-limit-sw</property>
 			<step>-1</step>
 			<min>1</min>
 			<max>6</max>                

@@ -71,7 +71,7 @@
             <repeatable>false</repeatable>
             <binding>
             <command>property-toggle</command>
-            <property>/instrumentation/efis[0]/inputs/nd-centered</property>
+            <property>instrumentation/efis[0]/inputs/nd-centered</property>
         </binding>
         </action>
     </animation>
@@ -182,7 +182,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-assign</command>
-                <property>/instrumentation/efis/inputs/lh-vor-adf</property>
+                <property>instrumentation/efis/inputs/lh-vor-adf</property>
                 <value>1</value>
             </binding>
         </action>
@@ -197,7 +197,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-assign</command>
-                <property>/instrumentation/efis/inputs/lh-vor-adf</property>
+                <property>instrumentation/efis/inputs/lh-vor-adf</property>
                 <value>0</value>
             </binding>
         </action>
@@ -212,7 +212,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-assign</command>
-                <property>/instrumentation/efis/inputs/lh-vor-adf</property>
+                <property>instrumentation/efis/inputs/lh-vor-adf</property>
                 <value>-1</value>
             </binding>
         </action>
@@ -244,7 +244,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-assign</command>
-                <property>/instrumentation/efis/inputs/rh-vor-adf</property>
+                <property>instrumentation/efis/inputs/rh-vor-adf</property>
                 <value>1</value>
             </binding>
         </action>
@@ -259,7 +259,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-assign</command>
-                <property>/instrumentation/efis/inputs/rh-vor-adf</property>
+                <property>instrumentation/efis/inputs/rh-vor-adf</property>
                 <value>0</value>
             </binding>
         </action>
@@ -274,7 +274,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-assign</command>
-                <property>/instrumentation/efis/inputs/rh-vor-adf</property>
+                <property>instrumentation/efis/inputs/rh-vor-adf</property>
                 <value>-1</value>
             </binding>
         </action>
@@ -288,7 +288,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/wxr</property>
+                <property>instrumentation/efis[0]/inputs/wxr</property>
             </binding>
         </action>
     </animation>
@@ -301,7 +301,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/sta</property>
+                <property>instrumentation/efis[0]/inputs/sta</property>
             </binding>
         </action>
     </animation>
@@ -314,7 +314,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/wpt</property>
+                <property>instrumentation/efis[0]/inputs/wpt</property>
             </binding>
         </action>
     </animation>
@@ -327,7 +327,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/arpt</property>
+                <property>instrumentation/efis[0]/inputs/arpt</property>
             </binding>
         </action>
     </animation>
@@ -339,7 +339,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/data</property>
+                <property>instrumentation/efis[0]/inputs/data</property>
             </binding>
         </action>
     </animation>
@@ -352,7 +352,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/pos</property>
+                <property>instrumentation/efis[0]/inputs/pos</property>
             </binding>
         </action>
     </animation>
@@ -364,7 +364,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/terr</property>
+                <property>instrumentation/efis[0]/inputs/terr</property>
             </binding>
         </action>
     </animation>
@@ -376,7 +376,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/fpv</property>
+                <property>instrumentation/efis[0]/inputs/fpv</property>
             </binding>
         </action>
     </animation>
@@ -389,7 +389,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>/instrumentation/efis[0]/inputs/alt-meters</property>
+                <property>instrumentation/efis[0]/inputs/alt-meters</property>
             </binding>
         </action>
     </animation>

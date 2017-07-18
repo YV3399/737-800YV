@@ -142,7 +142,7 @@
     <animation>
         <type>rotate</type>
         <object-name>autobrake</object-name>
-        <property>/controls/gear/autobrakes</property>
+        <property>controls/gear/autobrakes</property>
         <factor>-45</factor>
         <center>
             <x-m>-6.943</x-m>
@@ -159,7 +159,7 @@
     <animation>
         <type>rotate</type>
         <object-name>FlapNeedle</object-name>
-        <property>/surface-positions/flap-pos-norm[0]</property>
+        <property>surface-positions/flap-pos-norm[0]</property>
         <interpolation>
             <entry><ind>  0.000</ind><dep> 0.0</dep></entry>
             <entry><ind>  0.125</ind><dep> -38.0</dep></entry>
@@ -187,7 +187,7 @@
     <animation>
         <type>rotate</type>
         <object-name>lghandle</object-name>
-        <property>/gear/gear[1]/position-norm</property>
+        <property>gear/gear[1]/position-norm</property>
         <interpolation>
             <entry><ind>  1.0</ind><dep> 0.0</dep></entry>
             <entry><ind>  0.999</ind><dep>-45</dep></entry>

@@ -37,7 +37,7 @@
    <animation>   
     <type>rotate</type>   
      <object-name>Needle1</object-name>
-    <property>/instrumentation/nav/radials/actual-deg</property>
+    <property>instrumentation/nav/radials/actual-deg</property>
      <offset-deg>90</offset-deg>
      <factor>-1.0</factor>                         
      <axis>
@@ -50,7 +50,7 @@
    <animation>
     <type>rotate</type>
      <object-name>Needle1</object-name>
-     <property>/orientation/heading-magnetic-deg</property>      
+     <property>orientation/heading-magnetic-deg</property>      
      <scale>-1.0</scale> 
       <axis>
      <x>1.0</x>
@@ -62,7 +62,7 @@
     <animation>
     <type>rotate</type>
      <object-name>Needle2</object-name>
-     <property>/instrumentation/nav[1]/radials/actual-deg</property>
+     <property>instrumentation/nav[1]/radials/actual-deg</property>
        <offset-deg>90</offset-deg>      
      <factor>-1.0</factor>                
      <axis>
@@ -75,7 +75,7 @@
      <animation>
     <type>rotate</type>
      <object-name>Needle2</object-name>
-     <property>/orientation/heading-magnetic-deg</property>     
+     <property>orientation/heading-magnetic-deg</property>     
      <scale>-1.0</scale> 
       <axis>
      <x>1.0</x>
@@ -89,7 +89,7 @@
     <type>rotate</type>
      <object-name>ADF1</object-name> 
      <object-name>VOR1</object-name>       
-     <property>/instrumentation/nav/frequencies/selected-mhz</property>    
+     <property>instrumentation/nav/frequencies/selected-mhz</property>    
          
     <center>
             <x-m>0.036</x-m>
@@ -111,7 +111,7 @@
             <repeatable>true</repeatable>
             <binding>
             <command>property-swap</command>
-            <property>/instrumentation/nav/frequencies/selected-mhz</property>
+            <property>instrumentation/nav/frequencies/selected-mhz</property>
                 <step>-0.05</step>
     		<min>108.0</min>
    		<max>117.95</max>
@@ -129,7 +129,7 @@
             <repeatable>true</repeatable>
             <binding>
             <command>property-adjust</command>
-            <property>/instrumentation/nav/frequencies/selected-mhz</property>
+            <property>instrumentation/nav/frequencies/selected-mhz</property>
                 <step>0.05</step>
     		<min>108.0</min>
    		<max>117.95</max>
@@ -147,7 +147,7 @@
             <repeatable>true</repeatable>
            <binding>
     <command>property-adjust</command>
-    <property>/instrumentation/adf/frequencies/selected-khz</property>      
+    <property>instrumentation/adf/frequencies/selected-khz</property>      
     <step>1</step>
     <min>100.000</min>
     <max>500.000</max>

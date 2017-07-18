@@ -19,7 +19,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Needle</object-name>
-  <property>/systems/apu/egt</property>
+  <property>systems/apu/egt</property>
   <interpolation>
     <entry><ind>  0</ind><dep>  5</dep></entry>
     <entry><ind>200</ind><dep> 55</dep></entry>

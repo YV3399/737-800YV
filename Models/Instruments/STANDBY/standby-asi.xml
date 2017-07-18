@@ -127,7 +127,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>inhg.001</object-name>
-        <property>/instrumentation/altimeter/setting-inhg</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -140,7 +140,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>inhg.002</object-name>
-        <property>/instrumentation/altimeter/setting-inhg</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>
@@ -153,7 +153,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>inhg.003</object-name>
-        <property>/instrumentation/altimeter/setting-inhg</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <factor>1.0</factor>
         <step>0.1</step>
         <axis>
@@ -166,7 +166,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>inhg.004</object-name>
-        <property>/instrumentation/altimeter/setting-inhg</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <factor>10.0</factor>
         <step>0.01</step>
         <axis>
@@ -179,7 +179,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>kpa.001</object-name>
-        <property>/instrumentation/efis/kpa</property>
+        <property>instrumentation/efis/kpa</property>
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
@@ -192,7 +192,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>kpa.002</object-name>
-        <property>/instrumentation/efis/kpa</property>
+        <property>instrumentation/efis/kpa</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -205,7 +205,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>kpa.003</object-name>
-        <property>/instrumentation/efis/kpa</property>
+        <property>instrumentation/efis/kpa</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -218,7 +218,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>kpa.004</object-name>
-        <property>/instrumentation/efis/kpa</property>
+        <property>instrumentation/efis/kpa</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>

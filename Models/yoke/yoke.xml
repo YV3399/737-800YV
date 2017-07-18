@@ -84,33 +84,33 @@
   <button>0</button>
     <binding>
 		<command>property-assign</command>
-		<property>/it-autoflight/input/ap1</property>
+		<property>it-autoflight/input/ap1</property>
 		<value>0</value>
 		</binding>
     <binding>
 		<command>property-assign</command>
-		<property>/it-autoflight/input/ap2</property>
+		<property>it-autoflight/input/ap2</property>
 		<value>0</value>
 		</binding>
     <binding>
 		<command>property-assign</command>
-		<property>/it-cws/cwsa</property>
+		<property>it-cws/cwsa</property>
 		<value>0</value>
 		</binding>
     <binding>
 		<command>property-assign</command>
-		<property>/it-cws/cwsb</property>
+		<property>it-cws/cwsb</property>
 		<value>0</value>
 		</binding>
     <binding>
         <command>property-assign</command>
-        <property>/controls/flight/apoff</property>
+        <property>controls/flight/apoff</property>
         <value>1</value>
     </binding>
     <mod-up>
         <binding>
             <command>property-assign</command>
-            <property>/controls/flight/apoff</property>
+            <property>controls/flight/apoff</property>
             <value>0</value>
         </binding>
     </mod-up>
@@ -141,7 +141,7 @@
         <repeatable>true</repeatable>
         <binding>
         <command>property-adjust</command>
-        <property>/controls/flight/elevator-trim</property>
+        <property>controls/flight/elevator-trim</property>
         <step>-0.005</step>
         <min>-1.0</min>
         <max> 1.0</max>
@@ -149,13 +149,13 @@
         </binding>
 				<binding>
 		      <command>property-assign</command>
-		      <property>/controls/special/yoke-switch2</property>
+		      <property>controls/special/yoke-switch2</property>
 		      <value type="double">-1.0</value>
 		    </binding>        
 		    <mod-up>
 		      <binding>
 				    <command>property-assign</command>
-				    <property>/controls/special/yoke-switch2</property>
+				    <property>controls/special/yoke-switch2</property>
 				    <value type="double">0.0</value>
 				  </binding>   
         </mod-up>         
@@ -171,7 +171,7 @@
         <repeatable>true</repeatable>
         <binding>
         <command>property-adjust</command>
-        <property>/controls/flight/elevator-trim</property>
+        <property>controls/flight/elevator-trim</property>
         <step>0.005</step>
         <min>-1.0</min>
         <max> 1.0</max>
@@ -179,13 +179,13 @@
         </binding>
 				<binding>
 		      <command>property-assign</command>
-		      <property>/controls/special/yoke-switch2</property>
+		      <property>controls/special/yoke-switch2</property>
 		      <value type="double">1.0</value>
 		    </binding>        
 		    <mod-up>
 		      <binding>
 				    <command>property-assign</command>
-				    <property>/controls/special/yoke-switch2</property>
+				    <property>controls/special/yoke-switch2</property>
 				    <value type="double">0.0</value>
 				  </binding>   
         </mod-up>         
@@ -196,7 +196,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>switch.001</object-name>		
-     <property>/controls/special/yoke-switch2</property>
+     <property>controls/special/yoke-switch2</property>
 		<interpolation>
 		  <entry><ind> 1.0</ind><dep> -10.0</dep></entry>
 		  <entry><ind> 0.0</ind><dep>   0.0</dep></entry>
@@ -216,13 +216,13 @@
 
 <!--  <animation>
   <type>translate</type>
-	<property>/xadjust</property>
+	<property>xadjust</property>
 	<axis><x>1</x></axis>
 </animation>
 	
 <animation>
   <type>translate</type>
-	<property>/zadjust</property>
+	<property>zadjust</property>
 	<axis><z>1</z></axis>
 </animation>  -->
 

@@ -24,7 +24,7 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>/controls/lighting/nav-lights</property>
+      <property>controls/lighting/nav-lights</property>
     </condition>
   </animation>
 
