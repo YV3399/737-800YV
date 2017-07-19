@@ -161,8 +161,7 @@
       <y-m>0</y-m>
       <z-m>-2.75</z-m>
     </offsets>
-  </model>
-  
+  </model> 
   <!-- normal -->
   <model>
     <name>Winglet1</name>
@@ -222,66 +221,6 @@
     <texture>737-800.png</texture>  
   </animation>
 
-  <!-- normal -->
-  <model>
-    <name>Winglet</name>
-    <path>Aircraft/737-800/Models/winglet.xml</path>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
-  </model>
-  <!-- split smictar -->
-  <model>
-    <name>Winglet</name>
-    <path>Models/winglet2.xml</path>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
-  </model>
-  
-  <!-- normal select whenever the livery has value '0' for newwinglets -->
-  <animation>
-    <type>select</type>
-    <object-name>WingletL</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/livery/newwinglets</property>
-        <value>0</value>
-      </equals>
-    </condition>
-  </animation>
-  <!-- split scmictar select whenever the livery has value '1' for newwinglets -->
-  <animation>
-    <type>select</type>
-    <object-name>lhwinglet.001</object-name>
-    <object-name>rhwinglet.001</object-name>
-    <object-name>lhwinglet.002</object-name>
-    <object-name>rhwinglet.002</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/livery/newwinglets</property>
-        <value>1</value>
-      </equals>
-    </condition>
-  </animation>
-  <animation>
-    <type>material</type>
-    <object-name>lhwinglet.002</object-name>
-    <object-name>rhwinglet.002</object-name>
-    <object-name>lhwinglet.002</object-name>
-    <object-name>rhwinglet.002</object-name>
-    <property-base>sim/model/livery</property-base>
-    <texture-prop>texture</texture-prop>
-    <texture>737-800.png</texture>  
-  </animation>
-
- 
 <!--Lights-->
 
 <!-- Navigation Lights -->
