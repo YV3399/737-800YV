@@ -545,14 +545,14 @@
 			<property>/controls/flight/rudder-fbw-cmd</property>
 		</output>
 		<config>
-			<Kp>0.02</Kp>
+			<Kp>0.025</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
 			<Ti>5.0</Ti>
-			<Td>0.00000001</Td>
-			<u_min>-0.4</u_min>
-			<u_max>0.4</u_max>
+			<Td>0.000001</Td>
+			<u_min>-0.3</u_min>
+			<u_max>0.3</u_max>
 		</config>
 	</pid-controller>
 	
