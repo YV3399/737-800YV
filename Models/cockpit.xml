@@ -1656,14 +1656,15 @@
   <object-name>BACKGROUNDcpt</object-name>
   <object-name>parkbrake_1</object-name>
   <emission>
-    <red>0.1</red>
-    <green>0.1</green>
-    <blue>0.1</blue>
+    <red>0.18</red>
+    <green>0.18</green>
+    <blue>0.18</blue>
     <factor-prop>controls/lighting/panel-light</factor-prop>	
   </emission>
 </animation>
 
 <!-- Pedestal -->
+
 <!-- Eng 1 Fire -->
 <animation>
   <type>pick</type>

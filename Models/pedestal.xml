@@ -166,9 +166,9 @@
    <object-name>trimwheellh</object-name>
   <object-name>trimheelrh</object-name>
   <emission>
-    <red>0.1</red>
-    <green>0.1</green>
-    <blue>0.1</blue>
+    <red>0.18</red>
+    <green>0.18</green>
+    <blue>0.18</blue>
   </emission>
  <condition>
        <property>controls/lighting/panel</property>
