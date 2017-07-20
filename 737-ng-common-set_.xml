@@ -66,6 +66,50 @@
 				<kd type="double">0</kd>
 				<position-norm type="double">0</position-norm>
 			</pushback>
+			<icing>
+				<iceable>
+					<name>Wing</name>
+					<ice-inches>0.0</ice-inches>
+					<salvage-control>/controls/deice/wing</salvage-control>
+					<sensitivity type="double">0.8</sensitivity>
+					<output-property>/fdm/jsbsim/ice/wing</output-property>
+				</iceable>
+				<iceable>
+					<name>LeftEngine</name>
+					<ice-inches>0.0</ice-inches>
+					<salvage-control>/controls/deice/lengine</salvage-control>
+					<sensitivity type="double">0.5</sensitivity>
+					<output-property>/fdm/jsbsim/ice/lengine</output-property>
+				</iceable>
+				<iceable>
+					<name>RightEngine</name>
+					<ice-inches>0.0</ice-inches>
+					<salvage-control>/controls/deice/rengine</salvage-control>
+					<sensitivity type="double">0.5</sensitivity>
+					<output-property>/fdm/jsbsim/ice/rengine</output-property>
+				</iceable>
+				<iceable>
+					<name>Windshield</name>
+					<ice-inches>0.0</ice-inches>
+					<salvage-control>/controls/deice/windowprobeheat</salvage-control>
+					<sensitivity type="double">0.5</sensitivity>
+				<!-- not relevant for fdm, ignore output-property -->
+				</iceable>
+				<iceable>
+					<name>Fuselage</name>
+					<ice-inches>0.0</ice-inches>
+					<!-- no salvage control, no deicing of the fuselage -->
+					<sensitivity type="double">0.3</sensitivity>
+					<output-property>/fdm/jsbsim/ice/fuselage</output-property>
+				</iceable>
+				<iceable>
+					<name>Pitot tube</name>
+					<ice-inches>0.0</ice-inches>
+					<sensitivity type="double">1</sensitivity>
+					<salvage-control>/controls/deice/windowprobeheat</salvage-control>
+					<output-property>/systems/pitot/icing</output-property>
+				</iceable>
+			</icing>
 		</model>
 		
 		<view n="1">
@@ -915,6 +959,9 @@
 		<acconfig>
 			<file>Aircraft/737-800/AircraftConfig/acconfig.nas</file>
 		</acconfig>
+		<icing>
+			<file>Aircraft/737-800/Nasal/icing.nas</file>
+		</icing>
 	</nasal>
 
 </PropertyList>
