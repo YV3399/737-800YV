@@ -24,6 +24,10 @@ var autostart = func {
 	setprop("/controls/fuel/tank[2]/pump-right",1);
 	setprop("/controls/electrical/eng/Lsw", 1);
 	setprop("/controls/electrical/eng/Rsw", 1);
+	setprop("/controls/hydraulic/a-eng1-pump", 1);
+	setprop("/controls/hydraulic/a-eng2-pump", 1);
+	setprop("/controls/hydraulic/b-elec1-pump", 1);
+	setprop("/controls/hydraulic/b-elec2-pump", 1);
 
   setprop("/controls/engines/engine[0]/starter",1);
 	setprop("/controls/engines/engine[1]/starter",1);
@@ -34,7 +38,7 @@ var autostart = func {
 		setprop("/controls/engines/engine[0]/cutoff",0);
 		setprop("/controls/engines/engine[1]/cutoff",0);
 	}
-	if (getprop("/engines/engine[0]/n1") > 18) {
+	if (getprop("/engines/engine[0]/n1") > 55) {
 		setprop("/services/ext-pwr/enable", 0);
 		setprop("/controls/electrical/ext/sw", 0);
 		setprop("/controls/engines/autostart",0);

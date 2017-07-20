@@ -8,8 +8,8 @@
   <type>rotate</type>
   <object-name>lhelevator</object-name>
   <object-name>lhelevatortab</object-name>
-  <property>sim/multiplay/generic/float[8]</property>
-  <factor>15</factor>
+  <property>sim/multiplay/generic/float[9]</property>
+  <factor>30</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>17.13</x-m>
@@ -26,8 +26,8 @@
  <animation>
   <type>rotate</type>  
   <object-name>lhelevatortab</object-name>
-  <property>sim/multiplay/generic/float[8]</property>
-  <factor>-15</factor>
+  <property>sim/multiplay/generic/float[9]</property>
+  <factor>-30</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>17.84</x-m>
@@ -45,8 +45,8 @@
   <type>rotate</type>
   <object-name>rhelevator</object-name>
   <object-name>rhelevatortab</object-name>
-  <property>sim/multiplay/generic/float[8]</property>
-  <factor>15</factor>
+  <property>sim/multiplay/generic/float[10]</property>
+  <factor>30</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>17.13</x-m>
@@ -63,8 +63,8 @@
  <animation>
   <type>rotate</type>  
   <object-name>rhelevatortab</object-name>
-  <property>sim/multiplay/generic/float[8]</property>
-  <factor>-15</factor>
+  <property>sim/multiplay/generic/float[10]</property>
+  <factor>-30</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>17.84</x-m>

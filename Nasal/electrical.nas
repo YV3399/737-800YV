@@ -1,4 +1,5 @@
-# Electrical system for 737-800 by Joshua Davidson (it0uchpods/411).
+# 737-800 Electrical System
+# Joshua Davidson (it0uchpods)
 
 #############
 # Init Vars #
@@ -8,6 +9,31 @@ var ac_volt_std = 115;
 var ac_volt_min = 110;
 var dc_volt_std = 28;
 var dc_volt_min = 25;
+
+setlistener("/sim/signals/fdm-initialized", func {
+	var battery_on = getprop("/controls/electric/battery-switch");
+	var extpwr_on = getprop("/services/ext-pwr/enable");
+	var ext = getprop("/controls/electrical/ext/sw");
+	var emerpwr_on = getprop("/controls/electrical/emerpwr");
+	var acxtie = getprop("/controls/electrical/xtie/acxtie");
+	var dcxtie = getprop("/controls/electrical/xtie/dcxtie");
+	var xtieL = getprop("/controls/electrical/xtie/xtieL");
+	var xtieR = getprop("/controls/electrical/xtie/xtieR");
+	var rpmapu = getprop("/systems/apu/rpm");
+	var apuL = getprop("/controls/electrical/apu/Lsw");
+	var apuR = getprop("/controls/electrical/apu/Rsw");
+	var engL = getprop("/controls/electrical/eng/Lsw");
+	var engR = getprop("/controls/electrical/eng/Rsw");
+	var rpmL = getprop("/engines/engine[0]/n1");
+	var rpmR = getprop("/engines/engine[1]/n1");
+	var dcbusL = getprop("/systems/electrical/bus/dcL");
+	var dcbusR = getprop("/systems/electrical/bus/dcR");
+	var acbusL = getprop("/systems/electrical/bus/acL");
+	var acbusR = getprop("/systems/electrical/bus/acR");
+	var Lgen = getprop("/systems/electrical/bus/genL");
+	var Rgen = getprop("/systems/electrical/bus/genR");
+	var galley = getprop("/controls/electrical/galley");
+});
 
 var elec_init = func {
 	setprop("/controls/electric/battery-switch", 0);   # Set all the stuff I need
@@ -65,35 +91,35 @@ var elec_init = func {
 ######################
 
 var master_elec = func {
-	var battery_on = getprop("/controls/electric/battery-switch");   # Define all the stuff I need
-	var extpwr_on = getprop("/services/ext-pwr/enable");
-	var ext = getprop("/controls/electrical/ext/sw");
-	var emerpwr_on = getprop("/controls/electrical/emerpwr");
-	var acxtie = getprop("/controls/electrical/xtie/acxtie");
-	var dcxtie = getprop("/controls/electrical/xtie/dcxtie");
-	var xtieL = getprop("/controls/electrical/xtie/xtieL");
-	var xtieR = getprop("/controls/electrical/xtie/xtieR");
-	var rpmapu = getprop("/systems/apu/rpm");
-	var apuL = getprop("/controls/electrical/apu/Lsw");
-	var apuR = getprop("/controls/electrical/apu/Rsw");
-	var engL = getprop("/controls/electrical/eng/Lsw");
-	var engR = getprop("/controls/electrical/eng/Rsw");
-	var rpmL = getprop("/engines/engine[0]/n1");
-	var rpmR = getprop("/engines/engine[1]/n1");
-	var dcbusL = getprop("/systems/electrical/bus/dcL");
-	var dcbusR = getprop("/systems/electrical/bus/dcR");
-	var acbusL = getprop("/systems/electrical/bus/acL");
-	var acbusR = getprop("/systems/electrical/bus/acR");
-	var Lgen = getprop("/systems/electrical/bus/genL");
-	var Rgen = getprop("/systems/electrical/bus/genR");
-	var galley = getprop("/controls/electrical/galley");
+	battery_on = getprop("/controls/electric/battery-switch");
+	extpwr_on = getprop("/services/ext-pwr/enable");
+	ext = getprop("/controls/electrical/ext/sw");
+	emerpwr_on = getprop("/controls/electrical/emerpwr");
+	acxtie = getprop("/controls/electrical/xtie/acxtie");
+	dcxtie = getprop("/controls/electrical/xtie/dcxtie");
+	xtieL = getprop("/controls/electrical/xtie/xtieL");
+	xtieR = getprop("/controls/electrical/xtie/xtieR");
+	rpmapu = getprop("/systems/apu/rpm");
+	apuL = getprop("/controls/electrical/apu/Lsw");
+	apuR = getprop("/controls/electrical/apu/Rsw");
+	engL = getprop("/controls/electrical/eng/Lsw");
+	engR = getprop("/controls/electrical/eng/Rsw");
+	rpmL = getprop("/engines/engine[0]/n2");
+	rpmR = getprop("/engines/engine[1]/n2");
+	dcbusL = getprop("/systems/electrical/bus/dcL");
+	dcbusR = getprop("/systems/electrical/bus/dcR");
+	acbusL = getprop("/systems/electrical/bus/acL");
+	acbusR = getprop("/systems/electrical/bus/acR");
+	Lgen = getprop("/systems/electrical/bus/genL");
+	Rgen = getprop("/systems/electrical/bus/genR");
+	galley = getprop("/controls/electrical/galley");
 	
 	# Left cross tie yes?
 	if (extpwr_on and ext) {
 		setprop("/controls/electrical/xtie/xtieR", 1);
 	} else if (rpmapu >= 94.9 and apuL) {
 		setprop("/controls/electrical/xtie/xtieR", 1);
-	} else if (rpmL >= 18 and engL) {
+	} else if (rpmL >= 54 and engL) {
 		setprop("/controls/electrical/xtie/xtieR", 1);
 	} else {
 		setprop("/controls/electrical/xtie/xtieR", 0);
@@ -104,7 +130,7 @@ var master_elec = func {
 		setprop("/controls/electrical/xtie/xtieL", 1);
 	} else if (rpmapu >= 94.9 and apuR) {
 		setprop("/controls/electrical/xtie/xtieL", 1);
-	} else if (rpmR >= 18 and engR) {
+	} else if (rpmR >= 54 and engR) {
 		setprop("/controls/electrical/xtie/xtieL", 1);
 	} else {
 		setprop("/controls/electrical/xtie/xtieL", 0);
@@ -116,7 +142,7 @@ var master_elec = func {
 		setprop("/systems/electrical/bus/dcL", dc_volt_std);
 	} else if (rpmapu >= 94.9 and apuL) {
 		setprop("/systems/electrical/bus/dcL", dc_volt_std);
-	} else if (rpmL >= 18 and engL) {
+	} else if (rpmL >= 54 and engL) {
 		setprop("/systems/electrical/bus/dcL", dc_volt_std);
 	} else if (xtieL == 1 and dcxtie == 1) {
 		setprop("/systems/electrical/bus/dcL", dc_volt_std);
@@ -129,7 +155,7 @@ var master_elec = func {
 		setprop("/systems/electrical/bus/dcR", dc_volt_std);
 	} else if (rpmapu >= 94.9 and apuR) {
 		setprop("/systems/electrical/bus/dcR", dc_volt_std);
-	} else if (rpmR >= 18 and engR) {
+	} else if (rpmR >= 54 and engR) {
 		setprop("/systems/electrical/bus/dcR", dc_volt_std);
 	} else if (xtieR == 1 and dcxtie == 1) {
 		setprop("/systems/electrical/bus/dcR", dc_volt_std);
@@ -142,7 +168,7 @@ var master_elec = func {
 		setprop("/systems/electrical/bus/acL", ac_volt_std);
 	} else if (rpmapu >= 94.9 and apuL) {
 		setprop("/systems/electrical/bus/acL", ac_volt_std);
-	} else if (rpmL >= 18 and engL) {
+	} else if (rpmL >= 54 and engL) {
 		setprop("/systems/electrical/bus/acL", ac_volt_std);
 	} else if (xtieL == 1 and acxtie == 1) {
 		setprop("/systems/electrical/bus/acL", ac_volt_std);
@@ -155,7 +181,7 @@ var master_elec = func {
 		setprop("/systems/electrical/bus/acR", ac_volt_std);
 	} else if (rpmapu >= 94.9 and apuR) {
 		setprop("/systems/electrical/bus/acR", ac_volt_std);
-	} else if (rpmR >= 18 and engR) {
+	} else if (rpmR >= 54 and engR) {
 		setprop("/systems/electrical/bus/acR", ac_volt_std);
 	} else if (xtieR == 1 and acxtie == 1) {
 		setprop("/systems/electrical/bus/acR", ac_volt_std);
@@ -167,8 +193,7 @@ var master_elec = func {
 }
 
 setlistener("/systems/electrical/bus/dcL", func {
-	var dcL = getprop("/systems/electrical/bus/dcL");
-	if (dcL >= 15) {
+	if (getprop("/systems/electrical/bus/dcL") >= 15) {
         setprop("systems/electrical/outputs/adf", dc_volt_std);
         setprop("systems/electrical/outputs/audio-panel", dc_volt_std);
         setprop("systems/electrical/outputs/audio-panel[1]", dc_volt_std);
@@ -232,12 +257,10 @@ setlistener("/systems/electrical/bus/dcL", func {
 });
 
 setlistener("/systems/electrical/bus/acR", func {
-	var acR = getprop("/systems/electrical/bus/acR");
-	var galley = getprop("/controls/electrical/galley");
-	if (acR >= 100) {
-		if (galley == 1) {
+	if (getprop("/systems/electrical/bus/acR") >= 100) {
+		if (getprop("/controls/electrical/galley") == 1) {
 			setprop("systems/electrical/bus/galley", ac_volt_std);
-		} else if (galley == 0) {
+		} else if (getprop("/controls/electrical/galley") == 0) {
 			setprop("systems/electrical/bus/galley", 0);
 		}
 	} else {

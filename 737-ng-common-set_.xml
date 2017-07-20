@@ -12,31 +12,34 @@
 			<electrical>
 				<path></path>
 			</electrical>
-			<autopilot>
+			<autopilot n="0">
 				<path>Aircraft/737-800/Systems/737_pfd.xml</path>
 			</autopilot>
-			<autopilot>
+			<autopilot n="1">
 				<path>Aircraft/737-800/Systems/737_fmc_fg.xml</path>
 			</autopilot>
-			<autopilot>
+			<autopilot n="2">
+				<path>Aircraft/737-800/Systems/hydraulics.xml</path>
+			</autopilot>
+			<autopilot n="3">
 				<path>Aircraft/737-800/Systems/aircraft-systems-logic.xml</path>
 			</autopilot>
-			<autopilot>
+			<autopilot n="4">
 				<name>IT-AUTOFLIGHT</name>
 				<path>Aircraft/737-800/Systems/it-autoflight.xml</path>
 			</autopilot>
-			<autopilot>
+			<autopilot n="5">
 				<name>IT-CWS</name>
 				<path>Aircraft/737-800/Systems/it-cws.xml</path>
 			</autopilot>
 			<!-- Uses a custom N1 based autothrottle -->
-			<autopilot>
+			<autopilot n="6">
 				<path>Aircraft/737-800/Systems/custom-autothrust.xml</path>
 			</autopilot>
-			<autopilot>
+			<autopilot n="7">
 				<path>Aircraft/737-800/Systems/autospeedbrake.xml</path>
 			</autopilot>
-			<autopilot>
+			<autopilot n="8">
 				<path>Aircraft/737-800/Systems/fl2070_sound.xml</path>
 			</autopilot>
 			<path>Aircraft/737-800/Systems/systems.xml</path>
@@ -103,9 +106,11 @@
 				<float n="4" alias="/gear/gear[2]/compression-m"/>
 				<float n="5" alias="/surface-positions/speedbrake-norm"/>
 				<float n="6" alias="/surface-positions/reverser-norm"/>
-				<float n="7" alias="/controls/flight/aileron-fde"/>
-				<float n="8" alias="/controls/flight/elevator-fde"/>
-				<float n="9" alias="/controls/flight/rudder-fde"/>
+				<float n="7" alias="/controls/flight/aileron-left"/>
+				<float n="8" alias="/controls/flight/aileron-right"/>
+				<float n="9" alias="/controls/flight/elevator-left"/>
+				<float n="10" alias="/controls/flight/elevator-right"/>
+				<float n="11" alias="/controls/flight/rudder-sum"/>
 				<string alias="/sim/multiplay/callsign"/>
 			</generic>
 		</multiplay>
@@ -519,9 +524,27 @@
 		</engines>
 
 		<flight n="0">
-			<aileron-fde>0</aileron-fde>
-			<elevator-fde>0</elevator-fde>
-			<rudder-fde>0</rudder-fde>
+			<aileron-sum>0</aileron-sum>
+			<elevator-sum>0</elevator-sum>
+			<rudder-sum>0</rudder-sum>
+			<spoiler-1>0.0</spoiler-1>
+			<spoiler-2>0.0</spoiler-2>
+			<spoiler-3>0.0</spoiler-3>
+			<spoiler-4>0.0</spoiler-4>
+			<spoiler-5>0.0</spoiler-5>
+			<spoiler-6>0.0</spoiler-6>
+			<spoiler-l-sum>0.0</spoiler-l-sum>
+			<spoiler-7>0.0</spoiler-7>
+			<spoiler-8>0.0</spoiler-8>
+			<spoiler-9>0.0</spoiler-9>
+			<spoiler-10>0.0</spoiler-10>
+			<spoiler-11>0.0</spoiler-11>
+			<spoiler-12>0.0</spoiler-12>
+			<spoiler-r-sum>0.0</spoiler-r-sum>
+			<speedbrake-output>0.0</speedbrake-output>
+			<speedbrake-arm>0</speedbrake-arm>
+			<ground-spoilers-armed type="bool">0</ground-spoilers-armed>
+			<speedbrake-lever type="double">0</speedbrake-lever>
 		</flight>
 
 		<gear>
@@ -868,10 +891,11 @@
 			<file>Aircraft/737-800/Nasal/ITAF_PFD_mode-converter.nas</file>
 			<file>Aircraft/737-800/Nasal/limits.nas</file>
 			<file>Aircraft/737-800/Nasal/doors.nas</file> 
-              		</boeing737>
+		</boeing737>
 		<systems>
+			<file>Aircraft/737-800/Nasal/electrical.nas</file>
+			<file>Aircraft/737-800/Nasal/hydraulics.nas</file>
 			<file>Aircraft/737-800/Nasal/engines.nas</file>
-			<file>Aircraft/737-800/Nasal/jd-electrical.nas</file>
 		</systems>
 		<nd>
 			<file>Aircraft/737-800/Nasal/ND.nas</file>

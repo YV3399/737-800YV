@@ -12,14 +12,10 @@ var roundToNearest = func(n, m) {
 var TRIM_RATE = 0.01;
 
 var elevatorTrim = func {
-	var ap_a_on = getprop("/autopilot/internal/CMDA");
-	var ap_b_on = getprop("/autopilot/internal/CMDB");
+	var ap_a_on = getprop("/it-autoflight/output/ap1");
+	var ap_b_on = getprop("/it-autoflight/output/ap2");
 	var stab_pos = num( getprop("/fdm/jsbsim/fcs/stabilizer-pos-unit") );
 	var flaps_pos = num( getprop("/fdm/jsbsim/fcs/flap-pos-norm") );
-
-	if (ap_a_on or ap_b_on) {
-		autopilot737.ap_disengage();
-	}
 
 	setprop("fdm/jsbsim/fcs/stabilizer/stab-target", arg[0] * -17);
 

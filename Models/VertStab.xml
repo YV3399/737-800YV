@@ -7,8 +7,7 @@
     <animation>
   <type>rotate</type>
   <object-name>rudder</object-name>
-  <!--<property>fdm/jsbsim/fcs/rudder-pos-rad</property>-->
-  <property>surface-positions/rudder-pos-norm</property>
+  <property>sim/multiplay/generic/float[11]</property>
   <factor>29</factor>
   <offset-deg>0</offset-deg>   
   <center>

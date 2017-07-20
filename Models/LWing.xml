@@ -606,11 +606,11 @@
   <type>rotate</type>
   <object-name>lhaileron</object-name>      
   <object-name>ailerontablh</object-name>   
-  <property>surface-positions/left-aileron-pos-norm</property>
+  <property>sim/multiplay/generic/float[7]</property>
   <interpolation>
   <entry>
        <ind>-1</ind>
-       <dep>-20.5</dep>
+       <dep>-41</dep>
      </entry>    
      <entry>
        <ind>0</ind>
@@ -618,7 +618,7 @@
      </entry>
      <entry>
        <ind>1</ind>
-       <dep>15.5</dep>
+       <dep>31</dep>
      </entry>
    </interpolation>    
   <center>
@@ -636,8 +636,8 @@
  <animation>
   <type>rotate</type>   
   <object-name>ailerontablh</object-name>   
-  <property>surface-positions/left-aileron-pos-norm</property>
-  <factor>-5</factor>
+  <property>sim/multiplay/generic/float[7]</property>
+  <factor>-20</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>2.68</x-m>
@@ -656,8 +656,8 @@
  <animation>
   <type>rotate</type>   
   <object-name>spoiler1</object-name>
-  <property>surface-positions/spoilers-pos-norm</property>
-  <factor>-70</factor>
+  <property>controls/flight/spoiler-1</property>
+  <factor>-60</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>1.26</x-m>
@@ -676,9 +676,26 @@
  <animation>
   <type>rotate</type>
   <object-name>spoiler2</object-name>
+  <property>controls/flight/spoiler-2</property>
+  <factor>-33</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>1.26</x-m>
+   <y-m>-7.63</y-m>
+   <z-m>0.19</z-m>
+  </center>
+  <axis>
+   <x>-0.325</x>
+   <y>1</y>
+   <z>-0.10</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>
    <object-name>spoiler3</object-name>
-  <property>fdm/jsbsim/fcs/spoilers-23-pos</property>
-  <factor>-1</factor>
+  <property>controls/flight/spoiler-3</property>
+  <factor>-33</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>1.26</x-m>
@@ -697,9 +714,26 @@
  <animation>
   <type>rotate</type>   
   <object-name>spoiler4</object-name>
+  <property>controls/flight/spoiler-4</property>
+  <factor>-38</factor>
+  <offset-deg>0</offset-deg>   
+  <center>
+   <x-m>0.61</x-m>
+   <y-m>-5.62</y-m>
+   <z-m>0.03</z-m>
+  </center>
+  <axis>
+   <x>-0.325</x>
+   <y>1</y>
+   <z>-0.10</z>
+  </axis>
+ </animation>
+ 
+ <animation>
+  <type>rotate</type>   
   <object-name>spoiler5</object-name>
-  <property>fdm/jsbsim/fcs/spoilers-45-pos</property>
-  <factor>-1</factor>
+  <property>controls/flight/spoiler-5</property>
+  <factor>-38</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>0.61</x-m>
@@ -718,8 +752,8 @@
  <animation>
   <type>rotate</type>   
   <object-name>spoiler6</object-name>   
-  <property>surface-positions/spoilers-pos-norm</property>
-  <factor>-70</factor>
+  <property>controls/flight/spoiler-6</property>
+  <factor>-52</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>0.75</x-m>

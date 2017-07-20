@@ -57,7 +57,7 @@
 				</or>
         </R>
         <output>
-			<property>/controls/flight/autospeedbrake-cmd</property>
+			<property>/controls/flight/speedbrake</property>
 		</output>	
     </flipflop>
 

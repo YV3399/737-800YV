@@ -160,6 +160,75 @@
                 <type>float</type>
                 <property type="string">surface-positions/reverser-norm[1]</property>
             </signal>
+			
+           <signal>
+                <type>float</type>
+                <property>controls/flight/elevator-left</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/elevator-right</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/aileron-left</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/aileron-right</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/rudder-sum</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-1</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-2</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-3</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-4</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-5</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-6</property>
+            </signal>
+	            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-7</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-8</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-9</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-10</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-11</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/spoiler-12</property>
+            </signal>
 
         </signals>
 
