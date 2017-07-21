@@ -1135,7 +1135,7 @@
 						<property>/controls/flight/spoiler-l-sum</property>
 						<property>/controls/flight/spoiler-r-sum</property>
 					</sum>
-					<value>0.15</value>
+					<value>0.10125</value>
 				</product>
 			</expression>
 		</input>
@@ -1158,7 +1158,7 @@
 						<property>/controls/flight/spoiler-l-sum</property>
 						<property>/controls/flight/spoiler-r-sum</property>
 					</sum>
-					<value>0.1</value>
+					<value>0.083333333333333333333334</value>
 				</product>
 			</expression>
 		</input>
