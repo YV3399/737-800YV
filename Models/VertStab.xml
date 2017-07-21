@@ -8,7 +8,7 @@
   <type>rotate</type>
   <object-name>rudder</object-name>
   <property>sim/multiplay/generic/float[11]</property>
-  <factor>29</factor>
+  <factor>-29</factor>
   <offset-deg>0</offset-deg>   
   <center>
    <x-m>16.2</x-m>

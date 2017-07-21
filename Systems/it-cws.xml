@@ -550,7 +550,7 @@
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
 			<Ti>5.0</Ti>
-			<Td>0.000001</Td>
+			<Td>0.00001</Td>
 			<u_min>-0.3</u_min>
 			<u_max>0.3</u_max>
 		</config>
