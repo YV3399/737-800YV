@@ -1077,20 +1077,23 @@
 				</or>
 			</condition>
 			<expression>
-				<sum>
-					<table>
-						<property>/controls/flight/rudder</property> 
-						<entry><ind>-1</ind><dep>-1.0</dep></entry>
-						<entry><ind> 0</ind><dep> 0.0</dep></entry>
-						<entry><ind> 1</ind><dep> 1.0</dep></entry>
-					</table>
-					<table>
-						<property>/controls/flight/rudder-trim</property> 
-						<entry><ind>-1</ind><dep>-1.0</dep></entry>
-						<entry><ind> 0</ind><dep> 0.0</dep></entry>
-						<entry><ind> 1</ind><dep> 1.0</dep></entry>
-					</table>
-				</sum>
+				<product>
+					<sum>
+						<table>
+							<property>/controls/flight/rudder</property> 
+							<entry><ind>-1</ind><dep>-1.0</dep></entry>
+							<entry><ind> 0</ind><dep> 0.0</dep></entry>
+							<entry><ind> 1</ind><dep> 1.0</dep></entry>
+						</table>
+						<table>
+							<property>/controls/flight/rudder-trim</property> 
+							<entry><ind>-1</ind><dep>-1.0</dep></entry>
+							<entry><ind> 0</ind><dep> 0.0</dep></entry>
+							<entry><ind> 1</ind><dep> 1.0</dep></entry>
+						</table>
+					</sum>
+					<value>-1.0</value>
+				</product>
 			</expression>
 		</input>
 		<output>/controls/flight/rudder-sum-cmd</output>
