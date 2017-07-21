@@ -650,31 +650,54 @@
                 </clipto>
             </summer>
 
-            <scheduled_gain name="Yaw Damper">
+              <!--Yaw damper-->        
+            <washout_filter name="yaw-wf">
                 <input>velocities/r-aero-rad_sec</input>
-                <table>
-                  <independentVar>velocities/mach</independentVar>
-                    <tableData>
-                        0.00	0.0
-                        0.10	0.1
-                        0.11	1.1
-                    </tableData>
-                </table>
-            </scheduled_gain>
+                <c1>4</c1>
+            </washout_filter>
 
-            <scheduled_gain name="Yaw Damper Final">
+            <pure_gain name="Yaw Damper">
+                <input>fcs/yaw-wf</input>
+                <gain>5</gain>
+            </pure_gain>
+
+
+            <!--Slip stabilizer-->
+            <switch name="accelerations/Ny-switched">
+                <default value="0.0"/>
+                <test logic="AND" value="accelerations/Ny">
+                    aero/h_b-mac-ft GE 1
+                    /b737/controls/flight/yaw-damper NE 0
+                </test>
+            </switch>
+
+            <pid name="fcs/yaw-slip">
+                <input>accelerations/Ny-switched</input>
+                <kp> -0.1 </kp>
+                <ki> 0.05 </ki>
+                <kd> 0.0 </kd>
+                <clipto>
+                    <min>-0.12</min>
+                    <max>0.12</max>
+                </clipto>
+                <!--<output>fcs/yaw-slip-out</output> possible for debug -->
+            </pid>
+
+            <summer name="Yaw Damper Sum">
                 <input>fcs/yaw-damper</input>
-                <table>
-                  <independentVar>velocities/mach</independentVar>
-                    <tableData>
-                        0.00	0.0
-                        0.10	0.1
-                        0.11	1.1
-                    </tableData>
-                </table>
-            </scheduled_gain>
+                <input>fcs/yaw-slip</input>
+                <clipto>
+                    <min>-0.12</min>
+                    <max> 0.12</max>
+                </clipto>
+            </summer>
 
-
+            <switch name="Yaw Damper Final">
+                <default value="0.0"/>
+                <test value="fcs/yaw-damper-sum">
+                    /b737/controls/flight/yaw-damper ne 0
+                </test>
+            </switch>
 
             <summer name="Rudder Sum Cmd">
 
