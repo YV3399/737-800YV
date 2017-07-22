@@ -717,7 +717,7 @@ var make_appr_active = func {
 	setprop("/it-autoflight/output/vert", 2);
 	setprop("/it-autoflight/mode/vert", "G/S");
 	setprop("/it-autoflight/mode/arm", " ");
-	if (getprop("/it-autoflight/settings/land-enable") == 1){
+	if (getprop("/it-autoflight/settings/land-enable") == 1) {
 		alandt.start();
 	}
 	thrustmode();
