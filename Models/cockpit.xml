@@ -12,20 +12,26 @@
           <pitch-deg>-15</pitch-deg>
         </offsets>
       </model>
-	  <model>
+	  <model><!-- Keep <model> until we finish the animations -JD -->
         <name>overhead</name>
         <path>OH-panel/OH-panel.xml</path>
+		<condition>
+			<not><property>options/new-oh</property></not>
+		</condition>
 	  </model>
-      <!--model>
+      <model>
         <name>overhead</name>
         <path>Overhead/Overhead.xml</path>
+		<condition><!-- Keep <condition> until we finish the animations -JD -->
+			<property>options/new-oh</property>
+		</condition>
 		<offsets>
 		<x-m>0.86836</x-m>
 		<y-m>-0.0236</y-m>
 		<z-m>1.58936</z-m>
 		<pitch-deg>155.968</pitch-deg>
 		</offsets>
-      </model--> <!-- Keep deactiveated until we finish the animations -JD -->
+      </model> 
       <model>
         <name>seatcapt</name>
         <path>Aircraft/737-800YV/Models/seats/cockpitseat.xml</path>
