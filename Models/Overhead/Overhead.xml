@@ -1,7 +1,461 @@
 <?xml version="1.0"?>
 
+<!-- 737-800 Overhead-->
+<!-- 3D and Texture by Gabriel Hernandez (YV3399) -->
+<!-- XML and Animations by Joshua Davidson (it0uchpods) -->
+
 <PropertyList>
 
 	<path>Overhead.ac</path>
+	
+	<!-- Battery Cover/Switch -->
+	<animation>
+		<type>pick</type>
+		<object-name>batt-cover</object-name>       
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/OH/batt-cover</property>
+			</binding>
+			<binding>
+				<condition>
+					<equals>
+						<property>controls/OH/batt-cover</property>
+						<value>0</value>
+					</equals>
+				</condition>
+				<command>property-assign</command>
+				<property>controls/electric/battery-switch</property>
+				<value>1</value>
+			</binding>
+		</action> 
+	</animation>
+	
+	<animation>
+		<type>rotate</type>   
+		<object-name>batt-cover</object-name>  
+		<property>controls/OH/batt-cover</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>-0.11915</x-m>
+			<y-m>0</y-m>
+			<z-m>0.08976</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>batt-switch</object-name>       
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<condition>
+					<equals>
+						<property>controls/OH/batt-cover</property>
+						<value>1</value>
+					</equals>
+				</condition>
+				<command>property-toggle</command>
+				<property>controls/electric/battery-switch</property>
+			</binding>
+		</action> 
+	</animation>
+	
+	<animation>
+		<type>rotate</type>   
+		<object-name>batt-switch</object-name>  
+		<property>controls/electric/battery-switch</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep> 30</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-0.09419</x-m>
+			<y-m>0</y-m>
+			<z-m>0.08976</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- External Power -->
+	<animation>
+		<type>select</type>
+		<object-name>GrdPowerAvail</object-name>
+		<condition>
+			<equals>
+				<property>services/ext-pwr/enable</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>grdpwr-switch</object-name>       
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electrical/ext/sw</property>
+			</binding>
+		</action> 
+	</animation>
+	
+	<animation>
+		<type>rotate</type>   
+		<object-name>grdpwr-switch</object-name>  
+		<property>controls/electrical/ext/sw</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep> 30</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.07664</x-m>
+			<y-m>0</y-m>
+			<z-m>0.07776</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- Engine Gen 1 -->
+	<animation>
+		<type>select</type>
+		<object-name>GenOffBus1</object-name>
+		<condition>
+			<and>
+				<or>
+					<not-equals>
+						<property>controls/electrical/eng/Lsw</property>
+						<value>1</value>
+					</not-equals>
+				</or>
+				<greater-than-equals>
+					<property>engines/engine[0]/n2</property>
+					<value>54.0</value>
+				</greater-than-equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>gen1-switch</object-name>       
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electrical/eng/Lsw</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/OH/gen1-switch</property>
+				<value>2</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/OH/gen1-switch</property>
+					<value>1</value>
+				</binding>
+			</mod-up>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electrical/eng/Lsw</property>
+				<value>0</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/OH/gen1-switch</property>
+				<value>0</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/OH/gen1-switch</property>
+					<value>1</value>
+				</binding>
+			</mod-up>
+		</action> 		
+	</animation>
+	
+	<animation>
+		<type>rotate</type>   
+		<object-name>gen1-switch</object-name>  
+		<property>controls/OH/gen1-switch</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>  0</dep></entry>
+			<entry><ind>2</ind><dep> 30</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.16397</x-m>
+			<y-m>0</y-m>
+			<z-m>0.08976</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- APU Gen Shared -->
+	<animation>
+		<type>select</type>
+		<object-name>APUGenOffBus</object-name>
+		<condition>
+			<and>
+				<or>
+					<not-equals>
+						<property>controls/electrical/apu/Lsw</property>
+						<value>1</value>
+					</not-equals>
+					<not-equals>
+						<property>controls/electrical/apu/Rsw</property>
+						<value>1</value>
+					</not-equals>
+				</or>
+				<greater-than>
+					<property>systems/apu/rpm</property>
+					<value>94.9</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<!-- APU Gen Left -->
+	<animation>
+		<type>pick</type>
+		<object-name>apugenl-switch</object-name>       
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electrical/apu/Lsw</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/OH/apugenl-switch</property>
+				<value>2</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/OH/apugenl-switch</property>
+					<value>1</value>
+				</binding>
+			</mod-up>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electrical/apu/Lsw</property>
+				<value>0</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/OH/apugenl-switch</property>
+				<value>0</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/OH/apugenl-switch</property>
+					<value>1</value>
+				</binding>
+			</mod-up>
+		</action> 		
+	</animation>
+	
+	<animation>
+		<type>rotate</type>   
+		<object-name>apugenl-switch</object-name>  
+		<property>controls/OH/apugenl-switch</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>  0</dep></entry>
+			<entry><ind>2</ind><dep> 30</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.16397</x-m>
+			<y-m>0</y-m>
+			<z-m>0.08976</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- APU Gen Right -->
+	<animation>
+		<type>pick</type>
+		<object-name>apugenr-switch</object-name>       
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electrical/apu/Rsw</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/OH/apugenr-switch</property>
+				<value>2</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/OH/apugenr-switch</property>
+					<value>1</value>
+				</binding>
+			</mod-up>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electrical/apu/Rsw</property>
+				<value>0</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/OH/apugenr-switch</property>
+				<value>0</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/OH/apugenr-switch</property>
+					<value>1</value>
+				</binding>
+			</mod-up>
+		</action> 		
+	</animation>
+	
+	<animation>
+		<type>rotate</type>   
+		<object-name>apugenr-switch</object-name>  
+		<property>controls/OH/apugenr-switch</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>  0</dep></entry>
+			<entry><ind>2</ind><dep> 30</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.16397</x-m>
+			<y-m>0</y-m>
+			<z-m>0.08976</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	<!-- Engine Gen 2 -->
+	<animation>
+		<type>select</type>
+		<object-name>GenOffBus2</object-name>
+		<condition>
+			<and>
+				<or>
+					<not-equals>
+						<property>controls/electrical/eng/Rsw</property>
+						<value>1</value>
+					</not-equals>
+				</or>
+				<greater-than-equals>
+					<property>engines/engine[1]/n2</property>
+					<value>54.0</value>
+				</greater-than-equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>gen2-switch</object-name>       
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electrical/eng/Rsw</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/OH/gen2-switch</property>
+				<value>2</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/OH/gen2-switch</property>
+					<value>1</value>
+				</binding>
+			</mod-up>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>     
+			<binding>
+				<command>property-assign</command>
+				<property>controls/electrical/eng/Rsw</property>
+				<value>0</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/OH/gen2-switch</property>
+				<value>0</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/OH/gen2-switch</property>
+					<value>1</value>
+				</binding>
+			</mod-up>
+		</action> 		
+	</animation>
+	
+	<animation>
+		<type>rotate</type>   
+		<object-name>gen2-switch</object-name>  
+		<property>controls/OH/gen2-switch</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>  0</dep></entry>
+			<entry><ind>2</ind><dep> 30</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>0.16397</x-m>
+			<y-m>0</y-m>
+			<z-m>0.08976</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 	
 </PropertyList>

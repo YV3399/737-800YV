@@ -544,6 +544,15 @@
 				<pump-right type="bool">0</pump-right>
 			</tank>
 		</fuel>
+		
+		<OH>
+			<apugenl-switch type="int">1</apugenl-switch>
+			<apugenr-switch type="int">1</apugenr-switch>
+			<batt-cover type="bool">1</batt-cover>
+			<gen1-switch type="int">1</gen1-switch>
+			<gen2-switch type="int">1</gen2-switch>
+		</OH>
+		
 	</controls>
 
 	<fdm>
