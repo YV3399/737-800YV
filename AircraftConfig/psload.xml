@@ -2,7 +2,6 @@
 
 <!-- B738 Aircraft Config Dialog -->
 
-
 <PropertyList>
 
 	<name>aircraft-config-panelstateload</name>
@@ -27,7 +26,14 @@
 			</text>
 			<text>
 				<halign>left</halign>
-				<label>Please be paitent, and don't touch anything during this process!</label>
+				<label>Please be patient, and don't touch anything during this process!</label>
+			</text>
+			<text>
+				<border>1</border>
+				<label>9</label>
+				<valign>center</valign>
+				<property>/systems/acconfig/spin</property>
+				<live>1</live>
 			</text>
 			
 		</group>

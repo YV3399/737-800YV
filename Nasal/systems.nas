@@ -40,40 +40,37 @@ setprop("/controls/lighting/AFDSbrt","0");
 setlistener("/sim/signals/fdm-initialized", func {	
 	systems.elec_init();
 	systems.hyd_init();
-  	itaf.ap_init();			
+  	itaf.ap_init();
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800YV/Systems/autopilot-dlg.xml");
-});
-
-setlistener("/sim/signals/fdm-initialized", func {
   	setprop("/it-autoflight/input/spd-kts", 100);
 	setprop("/it-autoflight/input/bank-limit-sw", 6);
 });
 
-	setprop("/it-autoflight/input/kts-mach", 0);
-	setprop("/it-autoflight/input/ap1", 0);
-	setprop("/it-autoflight/input/ap2", 0);
-	setprop("/it-autoflight/input/athr", 0);
-	setprop("/it-autoflight/input/fd1", 0);
-	setprop("/it-autoflight/input/fd2", 0);
-	setprop("/it-autoflight/input/spd-kts", 200);
-	setprop("/it-autoflight/input/spd-mach", 0.68);
-	setprop("/it-autoflight/input/hdg", 360);
-	setprop("/it-autoflight/input/alt", 10000);
-	setprop("/it-autoflight/input/vs", 0);
-	setprop("/it-autoflight/input/lat", 0);
-	setprop("/it-autoflight/input/vert", 4);
-	setprop("/it-autoflight/input/bank-limit", 30);
-	setprop("/it-autoflight/input/trk", 0);
-	setprop("/it-autoflight/output/ap1", 0);
-	setprop("/it-autoflight/output/ap2", 0);
-	setprop("/it-autoflight/output/at", 0);
-	setprop("/it-autoflight/output/fd1", 0);
-	setprop("/it-autoflight/output/fd2", 0);
-	setprop("/it-autoflight/output/loc-armed", 0);
-	setprop("/it-autoflight/output/appr-armed", 0);
-	setprop("/it-autoflight/output/thr-mode", 0);
-	setprop("/it-autoflight/output/retard", 0);
-	setprop("/it-autoflight/internal/alt", 10000);
+setprop("/it-autoflight/input/kts-mach", 0);
+setprop("/it-autoflight/input/ap1", 0);
+setprop("/it-autoflight/input/ap2", 0);
+setprop("/it-autoflight/input/athr", 0);
+setprop("/it-autoflight/input/fd1", 0);
+setprop("/it-autoflight/input/fd2", 0);
+setprop("/it-autoflight/input/spd-kts", 200);
+setprop("/it-autoflight/input/spd-mach", 0.68);
+setprop("/it-autoflight/input/hdg", 360);
+setprop("/it-autoflight/input/alt", 10000);
+setprop("/it-autoflight/input/vs", 0);
+setprop("/it-autoflight/input/lat", 0);
+setprop("/it-autoflight/input/vert", 4);
+setprop("/it-autoflight/input/bank-limit", 30);
+setprop("/it-autoflight/input/trk", 0);
+setprop("/it-autoflight/output/ap1", 0);
+setprop("/it-autoflight/output/ap2", 0);
+setprop("/it-autoflight/output/at", 0);
+setprop("/it-autoflight/output/fd1", 0);
+setprop("/it-autoflight/output/fd2", 0);
+setprop("/it-autoflight/output/loc-armed", 0);
+setprop("/it-autoflight/output/appr-armed", 0);
+setprop("/it-autoflight/output/thr-mode", 0);
+setprop("/it-autoflight/output/retard", 0);
+setprop("/it-autoflight/internal/alt", 10000);
 
 setlistener("/it-autoflight/input/vs", func {
 	setprop("/it-autoflight/input/vs-reduced", getprop("/it-autoflight/input/vs") / 100);

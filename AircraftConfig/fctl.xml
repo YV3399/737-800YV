@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Flight Control Dialog -->
-
+<!-- B738 Aircraft Config Dialog -->
 
 <PropertyList>
 
-	<name>stabilization</name>
+	<name>aircraft-config-fctl</name>
 	<layout>vbox</layout>
 
     <group>
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label>FCTL System</label>
+            <label>Flight Controls</label>
         </text>
         <button>
             <halign>right</halign>

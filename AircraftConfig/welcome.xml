@@ -2,7 +2,6 @@
 
 <!-- B738 Aircraft Config Dialog -->
 
-
 <PropertyList>
 
 	<name>aircraft-config-welcome</name>
@@ -37,11 +36,15 @@
 			</text>
 			<text>
 				<halign>center</halign>
-				<label>Version 1.4.0, it0uchpods Shared Libraies V1.3.1</label>
+				<label>Version 1.4.1, Shared Libraies V1.4.2</label>
 			</text>
 			<text>
 				<halign>center</halign>
-				<label>It is currently still under development, and therefore is not complete yet.</label>
+				<label>This is a complex simulation of this amazing Boeing Aircraft.</label>
+			</text>
+			<text>
+				<halign>center</halign>
+				<label>It are currently still under development, and therefore is not complete yet.</label>
 			</text>
 			<text>
 				<halign>center</halign>
@@ -81,7 +84,6 @@
 					<command>dialog-close</command>
 				</binding>
 			</button>
-		</group>
 		</group>
 	
 </PropertyList>

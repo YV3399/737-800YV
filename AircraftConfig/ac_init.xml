@@ -2,12 +2,11 @@
 
 <!-- B738 Aircraft Config Dialog -->
 
-
 <PropertyList>
 
 	<name>aircraft-config-init</name>
 	<layout>vbox</layout>
-	<pref-width>200</pref-width>
+    <pref-width>260</pref-width>
 
     <group>
         <layout>hbox</layout>
@@ -23,8 +22,15 @@
 			<layout>vbox</layout>
 			
 			<text>
-				<halign>center</halign>
+				<halign>left</halign>
 				<label>Initializing...</label>
+			</text>
+			<text>
+				<border>1</border>
+				<label>9</label>
+				<valign>center</valign>
+				<property>/systems/acconfig/spin</property>
+				<live>1</live>
 			</text>
 			
 		</group>

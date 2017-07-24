@@ -2,7 +2,6 @@
 
 <!-- B738 Aircraft Config Dialog -->
 
-
 <PropertyList>
 
 	<name>aircraft-config</name>
@@ -12,7 +11,7 @@
 		<layout>hbox</layout>
 		<text>
 			<halign>left</halign>
-			<label>Aircraft Configuration V1.3.1</label>
+			<label>Aircraft Configuration V1.4.2</label>
 		</text>
 		<button>
 			<halign>right</halign>
@@ -61,15 +60,12 @@
 					</button>
 					<button>
 						<halign>center</halign>
-						<legend>Aircraft Tutorial</legend>
+						<legend>Aircraft Help</legend>
 						<pref-width>140</pref-width>
-						<enable>
-							<property>/systems/unused/unusedthing</property>
-						</enable>
 						<binding>
 							<command>nasal</command>
 							<script>
-							# Blank for now
+							acconfig.help_dlg.open();
 							</script>
 						</binding>
 					</button>
@@ -285,18 +281,29 @@
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.saveSettings();
+					</script>
+				</binding>
 				<live>true</live>
 			</checkbox>
 			
 			<checkbox>
 				<halign>left</halign>
-				<label>Increase FPS ( Disables decoration objects)</label>
-				<live>true</live>
+				<label>Increase FPS (Disables decoration objects)</label>
 				<property>controls/switches/increase-fps</property>
 				<binding>
-					<command>property-toggle</command>
-					<property>controls/switches/increase-fps</property>
+					<command>dialog-apply</command>
 				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.saveSettings();
+					</script>
+				</binding>
+				<live>true</live>
 			</checkbox>
 		
 			<group>
@@ -337,6 +344,17 @@
 						<script>
 						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800YV/Systems/lights-dlg.xml");
 						lights.open();
+						</script>
+					</binding>
+				</button>
+				
+				
+				<button>
+					<legend>Flight Controls</legend>
+					<binding>
+						<command>nasal</command>
+						<script>
+						acconfig.fctl_dlg.open();
 						</script>
 					</binding>
 				</button>
