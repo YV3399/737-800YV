@@ -6,10 +6,8 @@
     xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 	<fileheader>
-		<author> Michael Soitanen (Change by legoboyvdlp, YV3399, and it0uchpods)</author>
-		<filecreationdate> 2014-09-30 </filecreationdate>
-		<version>$Revison: 1.0 $</version>
-		<description> Models a 737-800. </description>
+		<author>Michael Soitanen, Jonathan Redpath, Gabriel Hernandez, Joshua Davidson</author>
+		<description>737-800 Flight Dynamics</description>
 	</fileheader>
 
 	<!--
@@ -518,7 +516,6 @@
     </propulsion>
 
    <system file="pushback"/>
-   <system file="steering"/>
    <system file="fuel"/>
    <system file="fmc"/>
 
@@ -1090,6 +1087,50 @@
             </fcs_function>
 
         </channel>
+		
+		<channel name="Tiller">
+			<switch name="/controls/gear/tiller-disabled">
+				<default value="0"/>
+				<test logic="AND" value="1">
+					/controls/gear/tiller-enabled == 0
+				</test>
+			</switch>
+			
+			<fcs_function name="Nose Wheel Steering 0">
+				<function name="fcs/steer-nose-deg[0]">
+					<description>Steering command for nose gear</description>
+					<sum>
+						<product>
+							<table>
+								<independentVar lookup="row">/controls/gear/tiller-cmd-norm</independentVar>
+								<independentVar lookup="column">/controls/flight/rudder</independentVar>
+								<tableData>
+									-1   0   1
+									-1 -70 -70 -70
+									0  -7   0   7
+									1  70  70  70
+								</tableData>
+							</table>
+							<property>/controls/gear/tiller-enabled</property>
+						</product>
+						<product>
+							<product>
+								<property>/controls/flight/rudder</property>
+								<value>70</value>
+							</product>
+							<property>/controls/gear/tiller-disabled</property>
+						</product>
+					</sum>
+				</function>
+			</fcs_function>
+			
+			<actuator name="Gear Nose Actuator">
+				<input>fcs/steer-nose-deg[0]</input>
+				<rate_limit>70</rate_limit>
+				<output>fcs/steer-pos-deg[0]</output>
+			</actuator>
+			
+		</channel>
 
     </flight_control>
 

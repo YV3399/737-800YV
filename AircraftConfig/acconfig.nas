@@ -28,6 +28,10 @@ var ps_loaded_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/psloaded/dialog", "
 var init_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/init/dialog", "Aircraft/737-800YV/AircraftConfig/ac_init.xml");
 var help_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/help/dialog", "Aircraft/737-800YV/AircraftConfig/help.xml");
 var fctl_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/fctl/dialog", "Aircraft/737-800YV/AircraftConfig/fctl.xml");
+var announcements_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/announcements/dialog", "Aircraft/737-800YV/AircraftConfig/announcements.xml");
+var lights_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/lights/dialog", "Aircraft/737-800YV/AircraftConfig/lights.xml");
+var fuel_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/fuel/dialog", "Aircraft/737-800YV/AircraftConfig/fuel.xml");
+var fail_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/fail/dialog", "Aircraft/737-800YV/AircraftConfig/fail.xml");
 spinning.start();
 init_dlg.open();
 

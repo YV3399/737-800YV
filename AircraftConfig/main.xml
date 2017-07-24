@@ -314,8 +314,7 @@
 					<binding>
 						<command>nasal</command>
 						<script>
-						var fuel = gui.Dialog.new("sim/gui/dialogs/fuel/dialog", "Aircraft/737-800YV/Systems/fuel-truck.xml");
-						fuel.open();
+						acconfig.fuel_dlg.open();
 						</script>
 					</binding>
 				</button>
@@ -325,8 +324,7 @@
 					<binding>
 						<command>nasal</command>
 						<script>
-						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/737-800YV/Dialogs/announcements-dialog.xml");
-						mal.open();
+						acconfig.announcements_dlg.open();
 						</script>
 					</binding>
 				</button>
@@ -342,8 +340,7 @@
 					<binding>
 						<command>nasal</command>
 						<script>
-						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800YV/Systems/lights-dlg.xml");
-						lights.open();
+						acconfig.lights_dlg.open();
 						</script>
 					</binding>
 				</button>
@@ -364,8 +361,7 @@
 					<binding>
 						<command>nasal</command>
 						<script>
-						var failures = gui.Dialog.new("sim/gui/dialogs/failures/dialog", "Aircraft/737-800YV/Systems/failures-dlg.xml");
-						failures.open();
+						acconfig.fail_dlg.open();
 						</script>
 					</binding>
 				</button>

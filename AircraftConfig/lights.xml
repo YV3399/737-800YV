@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- B738 Aircraft Config Dialog -->
+
 <PropertyList>
 
-	<name>lights-dlg</name>
+	<name>aircraft-config-lights</name>
 	<layout>vbox</layout>
 
-	<text>
-		<label>737-800 Light Controller</label>
-	</text>
-
-	<hrule />
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Lights</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
 
 	<group>
 		<layout>vbox</layout>
@@ -96,25 +112,6 @@
 					<command>dialog-apply</command>
 				</binding>
 			</slider>
-	</group>
-
-	<hrule />
-
-	<group>
-		<layout>vbox</layout>
-
-		<button>
-			<legend>Close</legend>
-			<default>true</default>
-			<key>Esc</key>
-		<padding>10</padding>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<binding>
-				<command>dialog-close</command>
-			</binding>
-		</button>
 	</group>
 
 </PropertyList>

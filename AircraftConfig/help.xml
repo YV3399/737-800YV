@@ -27,39 +27,38 @@
 	
     <hrule/>
 	
-		<group>
-			<layout>vbox</layout>
-			
-			<text>
-				<halign>left</halign>
-				<label>Information:</label>
-			</text>
-			
-			<text>
-				<halign>left</halign>
-				<label>The goal of this 737-800 is to provide FlightGear with authentic, realistic, Boeing 737-800 Aircraft.</label>
-			</text>
-			
-			<hrule/>
-			
-			<text>
-				<halign>left</halign>
-				<label>Key Commands (Incomplete):</label>
-			</text>
-			<text>
-				<halign>left</halign>
-				<label>DEL - Toggle Reverse Thrust</label>
-			</text>
-			<text>
-				<halign>left</halign>
-				<label>CTRL + B - Cycle Spoilers</label>
-			</text>
-			<text>
-				<halign>left</halign>
-				<label>SHIFT + B - Toggle Parking Brake</label>
-			</text>
-			
-		</group>
-	
+	<group>
+		<layout>vbox</layout>
+		
+		<text>
+			<halign>left</halign>
+			<label>Information:</label>
+		</text>
+		
+		<text>
+			<halign>left</halign>
+			<label>The goal of this 737-800 is to provide FlightGear with authentic, realistic, Boeing 737-800 Aircraft.</label>
+		</text>
+		
+		<hrule/>
+		
+		<text>
+			<halign>left</halign>
+			<label>Key Commands:</label>
+		</text>
+		<text>
+			<halign>left</halign>
+			<label>DEL - Toggle Reverse Thrust</label>
+		</text>
+		<text>
+			<halign>left</halign>
+			<label>CTRL + B - Cycle Spoilers</label>
+		</text>
+		<text>
+			<halign>left</halign>
+			<label>SHIFT + B - Toggle Parking Brake</label>
+		</text>
+		
+	</group>
 	
 </PropertyList>

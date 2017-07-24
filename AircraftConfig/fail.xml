@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- B738 Aircraft Config Dialog -->
+
 <PropertyList>
-	<name>failures</name>
+
+	<name>aircraft-config-fail</name>
 	<layout>vbox</layout>
 
 <!-- System Failures By Gabriel Hernandez(YV-3399) -->
 
-
-	<text>
-		<label>Boeing 737-800 Failures</label>
-	</text>
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Failures</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
 	
-                
-	<hrule />
+    <hrule/>
+	
 		<group>
 		<layout>vbox</layout>
 		
@@ -124,7 +140,6 @@
 		<live>true</live>
 	</checkbox>
 </group>
-</group>
 
 	<hrule />
 <button>
@@ -144,19 +159,6 @@
 			</script>
 		</binding>
 	</button>
-		<button>
-			<legend>Close</legend>
-			<default>true</default>
-			<key>Esc</key>
-		<padding>1</padding>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<binding>
-				<command>dialog-close</command>
-			</binding>
-		</button>
-		
-		</group>
+</group>
 
 </PropertyList>

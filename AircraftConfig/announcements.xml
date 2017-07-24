@@ -1,21 +1,37 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- B738 Aircraft Config Dialog -->
+
 <PropertyList>
-  <name>Cabin Announcements</name>
+
+	<name>aircraft-config-announcements</name>
   <layout>vbox</layout>
 
 <!-- Reminder, included are: Seatbelt, Departure, CrewDeparture, take-off, cruising, descending, brace -->
 
-  <text>
-    <label>Cabin Announcements</label>
-  </text>
-
-  <hrule/>
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Cabin Announcements</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
 
   <group>
     <layout>vbox</layout>
     <halign>center</halign>
-
-<hrule/>
 
     <checkbox>
       <halign>left</halign>
@@ -194,24 +210,6 @@
     </checkbox>
 
 
-  </group>
-
-  <hrule/>
-
-  <group>
-    <layout>hbox</layout>
-    <empty><stretch>true</stretch></empty>
-
-    <button>
-      <legend>Close</legend>
-      <default>true</default>
-      <key>Esc</key>
-      <binding>
-        <command>dialog-close</command>
-      </binding>
-    </button>
-
-    <empty><stretch>true</stretch></empty>
   </group>
 
 </PropertyList>

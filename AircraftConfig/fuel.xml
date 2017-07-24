@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- B738 Aircraft Config Dialog -->
+
 <PropertyList>
 
-	<name>fuel_truck</name>
+	<name>aircraft-config-fuel</name>
 	<layout>vbox</layout>
 
-	<text>
-		<label>Fuel Truck Controls</label>
-	</text>
-
-	<hrule />
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Fuel Truck</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
 
 	<group>
 	<layout>vbox</layout>
@@ -80,7 +96,7 @@
 		<layout>hbox</layout>
 		
 			<button>
-				<legend>Re-fuel</legend>
+				<legend>Refuel</legend>
 				<padding>5</padding>
 				<binding>
 					<command>nasal</command>
@@ -140,26 +156,6 @@
 		
 		</group>
 	
-	</group>
-
-	<hrule />
-	
-	<group>
-	<layout>hbox</layout>
-
-		<button>
-			<legend>Close</legend>
-			<default>true</default>
-			<key>Esc</key>
-		<padding>5</padding>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<binding>
-				<command>dialog-close</command>
-			</binding>
-		</button>
-		
 	</group>
 
 </PropertyList>

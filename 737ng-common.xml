@@ -193,16 +193,6 @@
 							<dialog-name>pushback</dialog-name>
 						</binding>
 					</item>
-					<item>
-						<label>Tiller steering</label>
-						<binding>
-							<command>nasal</command>
-							<script>
-							var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800YV/Dialogs/tiller-steering.xml");
-							tiller.open();
-							</script>
-						</binding>
-					</item>
 				</menu>
 			</default>
 		</menubar>
@@ -346,61 +336,6 @@
 					<value>4</value>
 					<value>5</value>
 					<value>6</value>
-				</binding>
-			</key>
-
-			<key n="113">
-				<name>q</name>
-				<desc>Turn tiller left</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					boeing737.tiller_left();
-					</script>
-				</binding>
-			</key>
-
-			<key n="81">
-				<name>Q</name>
-				<desc>Turn tiller left small</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					boeing737.tiller_left_small();
-					</script>
-				</binding>
-			</key>
-
-			<key n="101">
-				<name>e</name>
-				<desc>Turn tiller right</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					boeing737.tiller_right();
-					</script>
-				</binding>
-			</key>
-
-			<key n="69">
-				<name>E</name>
-				<desc>Turn tiller right small</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					boeing737.tiller_right_small();
-					</script>
-				</binding>
-			</key>
-
-			<key n="119">
-				<name>w</name>
-				<desc>Turn tiller to center</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					boeing737.tiller_center();
-					</script>
 				</binding>
 			</key>
 
@@ -590,6 +525,8 @@
 
 		<gear>
 			<autobrakes type="int">0</autobrakes> <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
+            <tiller-cmd-norm type="double">0</tiller-cmd-norm>
+			<tiller-enabled type="bool">0</tiller-enabled>
 		</gear>
 
 		<fuel>
