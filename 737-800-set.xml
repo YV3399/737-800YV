@@ -3,26 +3,26 @@
 
 	<sim>
 		<description>Boeing 737-800</description>
-		<liveries-path type="string">Aircraft/737-800/Models/Liveries-800</liveries-path>
+		<liveries-path type="string">Aircraft/737-800YV/Models/Liveries-800</liveries-path>
 
 		<aero>737-800</aero>
 		<startup>
-			<splash-texture>Aircraft/737-800/Splash/splash.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-1.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-2.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-3.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-4.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-5.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-6.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-7.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-9.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-10.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-11.png</splash-texture>
-			<splash-texture>Aircraft/737-800/Splash/splash-12.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-1.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-2.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-3.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-4.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-5.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-6.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-7.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-9.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-10.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-11.png</splash-texture>
+			<splash-texture>Aircraft/737-800YV/Splash/splash-12.png</splash-texture>
 		</startup>
 
 		<model>
-			<path>Aircraft/737-800/Models/737-800.xml</path>       
+			<path>Aircraft/737-800YV/Models/737-800.xml</path>       
 			<livery>
 				<file>N737BX</file>
 				<newwinglets type="bool">false</newwinglets>   

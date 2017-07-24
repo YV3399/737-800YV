@@ -307,7 +307,7 @@
 					<binding>
 						<command>nasal</command>
 						<script>
-						var fuel = gui.Dialog.new("sim/gui/dialogs/fuel/dialog", "Aircraft/737-800/Systems/fuel-truck.xml");
+						var fuel = gui.Dialog.new("sim/gui/dialogs/fuel/dialog", "Aircraft/737-800YV/Systems/fuel-truck.xml");
 						fuel.open();
 						</script>
 					</binding>
@@ -318,7 +318,7 @@
 					<binding>
 						<command>nasal</command>
 						<script>
-						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/737-800/Dialogs/announcements-dialog.xml");
+						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/737-800YV/Dialogs/announcements-dialog.xml");
 						mal.open();
 						</script>
 					</binding>
@@ -335,7 +335,7 @@
 					<binding>
 						<command>nasal</command>
 						<script>
-						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800/Systems/lights-dlg.xml");
+						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/737-800YV/Systems/lights-dlg.xml");
 						lights.open();
 						</script>
 					</binding>
@@ -346,7 +346,7 @@
 					<binding>
 						<command>nasal</command>
 						<script>
-						var failures = gui.Dialog.new("sim/gui/dialogs/failures/dialog", "Aircraft/737-800/Systems/failures-dlg.xml");
+						var failures = gui.Dialog.new("sim/gui/dialogs/failures/dialog", "Aircraft/737-800YV/Systems/failures-dlg.xml");
 						failures.open();
 						</script>
 					</binding>

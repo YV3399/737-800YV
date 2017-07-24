@@ -13,47 +13,47 @@
 				<path></path>
 			</electrical>
 			<autopilot n="0">
-				<path>Aircraft/737-800/Systems/737_pfd.xml</path>
+				<path>Aircraft/737-800YV/Systems/737_pfd.xml</path>
 			</autopilot>
 			<autopilot n="1">
-				<path>Aircraft/737-800/Systems/737_fmc_fg.xml</path>
+				<path>Aircraft/737-800YV/Systems/737_fmc_fg.xml</path>
 			</autopilot>
 			<autopilot n="2">
-				<path>Aircraft/737-800/Systems/hydraulics.xml</path>
+				<path>Aircraft/737-800YV/Systems/hydraulics.xml</path>
 			</autopilot>
 			<autopilot n="3">
-				<path>Aircraft/737-800/Systems/aircraft-systems-logic.xml</path>
+				<path>Aircraft/737-800YV/Systems/aircraft-systems-logic.xml</path>
 			</autopilot>
 			<autopilot n="4">
 				<name>IT-AUTOFLIGHT</name>
-				<path>Aircraft/737-800/Systems/it-autoflight.xml</path>
+				<path>Aircraft/737-800YV/Systems/it-autoflight.xml</path>
 			</autopilot>
 			<autopilot n="5">
 				<name>IT-CWS</name>
-				<path>Aircraft/737-800/Systems/it-cws.xml</path>
+				<path>Aircraft/737-800YV/Systems/it-cws.xml</path>
 			</autopilot>
 			<!-- Uses a custom N1 based autothrottle -->
 			<autopilot n="6">
-				<path>Aircraft/737-800/Systems/custom-autothrust.xml</path>
+				<path>Aircraft/737-800YV/Systems/custom-autothrust.xml</path>
 			</autopilot>
 			<autopilot n="7">
-				<path>Aircraft/737-800/Systems/autospeedbrake.xml</path>
+				<path>Aircraft/737-800YV/Systems/autospeedbrake.xml</path>
 			</autopilot>
 			<autopilot n="8">
-				<path>Aircraft/737-800/Systems/fl2070_sound.xml</path>
+				<path>Aircraft/737-800YV/Systems/fl2070_sound.xml</path>
 			</autopilot>
-			<path>Aircraft/737-800/Systems/systems.xml</path>
+			<path>Aircraft/737-800YV/Systems/systems.xml</path>
 			<property-rule n="101">
-				<path>Aircraft/737-800/Systems/instrument-filters.xml</path>
+				<path>Aircraft/737-800YV/Systems/instrument-filters.xml</path>
 			</property-rule>
 		</systems>
 
 		<instrumentation>
-			<path>Aircraft/737-800/Systems/instrumentation.xml</path>
+			<path>Aircraft/737-800YV/Systems/instrumentation.xml</path>
 		</instrumentation>
 		
 		<sound>
-			<path>Aircraft/737-800/Sounds/737-sound.xml</path>
+			<path>Aircraft/737-800YV/Sounds/737-sound.xml</path>
 		</sound>
 		
 		<virtual-cockpit archive="y">true</virtual-cockpit>
@@ -198,7 +198,7 @@
 						<binding>
 							<command>nasal</command>
 							<script>
-							var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800/Dialogs/tiller-steering.xml");
+							var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800YV/Dialogs/tiller-steering.xml");
 							tiller.open();
 							</script>
 						</binding>
@@ -799,7 +799,7 @@
 				<category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
 			</configuration-module>
 			<voice>		
-				<file-prefix type="string">Aircraft/737-800/Sounds/gpws/</file-prefix>		
+				<file-prefix type="string">Aircraft/737-800YV/Sounds/gpws/</file-prefix>		
 			</voice>
 			<inputs>                            <!-- Module I/O -->
 				<arinc429>
@@ -918,49 +918,49 @@
 			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
 		</Boeing>
 		<boeing737>
-			<file>Aircraft/737-800/Models/Instruments/PFD/PFD.nas</file>
-			<file>Aircraft/737-800/Models/Instruments/EICAS/upperEICAS.nas</file>
-			<file>Aircraft/737-800/Models/Instruments/EICAS_Lower/lowerEICAS.nas</file>
-			<file>Aircraft/737-800/Nasal/air-ground.nas</file>
-			<file>Aircraft/737-800/Nasal/autostart.nas</file>
-			<file>Aircraft/737-800/Nasal/controls.nas</file>
-			<file>Aircraft/737-800/Nasal/friction.nas</file>
-			<file>Aircraft/737-800/Nasal/lighting.nas</file>     
-			<file>Aircraft/737-800/Nasal/tire-smoke.nas</file>
-			<file>Aircraft/737-800/Nasal/ground-services.nas</file>      
-			<file>Aircraft/737-800/Nasal/liveries.nas</file>
-			<file>Aircraft/737-800/Nasal/systems.nas</file>
-			<file>Aircraft/737-800/Nasal/registration.nas</file>
-			<file>Aircraft/737-800/Nasal/engine-fire.nas</file> 
-			<file>Aircraft/737-800/Nasal/ITAF_PFD_mode-converter.nas</file>
-			<file>Aircraft/737-800/Nasal/limits.nas</file>
-			<file>Aircraft/737-800/Nasal/doors.nas</file> 
+			<file>Aircraft/737-800YV/Models/Instruments/PFD/PFD.nas</file>
+			<file>Aircraft/737-800YV/Models/Instruments/EICAS/upperEICAS.nas</file>
+			<file>Aircraft/737-800YV/Models/Instruments/EICAS_Lower/lowerEICAS.nas</file>
+			<file>Aircraft/737-800YV/Nasal/air-ground.nas</file>
+			<file>Aircraft/737-800YV/Nasal/autostart.nas</file>
+			<file>Aircraft/737-800YV/Nasal/controls.nas</file>
+			<file>Aircraft/737-800YV/Nasal/friction.nas</file>
+			<file>Aircraft/737-800YV/Nasal/lighting.nas</file>     
+			<file>Aircraft/737-800YV/Nasal/tire-smoke.nas</file>
+			<file>Aircraft/737-800YV/Nasal/ground-services.nas</file>      
+			<file>Aircraft/737-800YV/Nasal/liveries.nas</file>
+			<file>Aircraft/737-800YV/Nasal/systems.nas</file>
+			<file>Aircraft/737-800YV/Nasal/registration.nas</file>
+			<file>Aircraft/737-800YV/Nasal/engine-fire.nas</file> 
+			<file>Aircraft/737-800YV/Nasal/ITAF_PFD_mode-converter.nas</file>
+			<file>Aircraft/737-800YV/Nasal/limits.nas</file>
+			<file>Aircraft/737-800YV/Nasal/doors.nas</file> 
 		</boeing737>
 		<systems>
-			<file>Aircraft/737-800/Nasal/electrical.nas</file>
-			<file>Aircraft/737-800/Nasal/hydraulics.nas</file>
-			<file>Aircraft/737-800/Nasal/engines.nas</file>
+			<file>Aircraft/737-800YV/Nasal/electrical.nas</file>
+			<file>Aircraft/737-800YV/Nasal/hydraulics.nas</file>
+			<file>Aircraft/737-800YV/Nasal/engines.nas</file>
 		</systems>
 		<nd>
-			<file>Aircraft/737-800/Nasal/ND.nas</file>
+			<file>Aircraft/737-800YV/Nasal/ND.nas</file>
 		</nd>
 		<reversethrust>
-			<file>Aircraft/737-800/Nasal/reverse-thrust.nas</file>
+			<file>Aircraft/737-800YV/Nasal/reverse-thrust.nas</file>
 		</reversethrust>
 		<itaf>
-			<file>Aircraft/737-800/Nasal/it-autoflight.nas</file>
+			<file>Aircraft/737-800YV/Nasal/it-autoflight.nas</file>
 		</itaf>
 		<it-cws>
-			<file>Aircraft/737-800/Nasal/it-cws.nas</file>
+			<file>Aircraft/737-800YV/Nasal/it-cws.nas</file>
 		</it-cws>
 		<thrust>
-			<file>Aircraft/737-800/Nasal/thrust.nas</file>
+			<file>Aircraft/737-800YV/Nasal/thrust.nas</file>
 		</thrust>
 		<acconfig>
-			<file>Aircraft/737-800/AircraftConfig/acconfig.nas</file>
+			<file>Aircraft/737-800YV/AircraftConfig/acconfig.nas</file>
 		</acconfig>
 		<icing>
-			<file>Aircraft/737-800/Nasal/icing.nas</file>
+			<file>Aircraft/737-800YV/Nasal/icing.nas</file>
 		</icing>
 	</nasal>
 

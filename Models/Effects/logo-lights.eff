@@ -4,7 +4,7 @@
 	<parameters>
 		<lightmap-enabled type="int">1</lightmap-enabled>
 		<texture n="3">
-			<image>Aircraft/737-800/Models/Effects/logo-lightmap.png</image>
+			<image>Aircraft/737-800YV/Models/Effects/logo-lightmap.png</image>
 		</texture>
 		<lightmap-factor type="float" n="0">
 			<use>controls/lighting/logo-lights</use>

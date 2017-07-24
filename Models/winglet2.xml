@@ -9,7 +9,7 @@
   <inherits-from>Effects/lightmap</inherits-from>
   <parameters>
     <texture n="1">
-      <image>Aircraft/737-800/Models/Effects/LightMap/737-800lightmap.png</image>
+      <image>Aircraft/737-800YV/Models/Effects/LightMap/737-800lightmap.png</image>
     </texture>
   </parameters>
   <object-name>oble.000</object-name>

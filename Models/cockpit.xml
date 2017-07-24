@@ -12,13 +12,23 @@
           <pitch-deg>-15</pitch-deg>
         </offsets>
       </model>
-      <model>
+	  <model>
         <name>overhead</name>
         <path>OH-panel/OH-panel.xml</path>
-      </model>
+	  </model>
+      <!--model>
+        <name>overhead</name>
+        <path>Overhead/Overhead.xml</path>
+		<offsets>
+		<x-m>0.86836</x-m>
+		<y-m>-0.0236</y-m>
+		<z-m>1.58936</z-m>
+		<pitch-deg>155.968</pitch-deg>
+		</offsets>
+      </model--> <!-- Keep deactiveated until we finish the animations -JD -->
       <model>
         <name>seatcapt</name>
-        <path>Aircraft/737-800/Models/seats/cockpitseat.xml</path>
+        <path>Aircraft/737-800YV/Models/seats/cockpitseat.xml</path>
         <offsets>
          <x-m>1.25</x-m>
          <y-m>-0.5390</y-m>
@@ -28,7 +38,7 @@
 
      <model>
       <name>seatfo</name>
-      <path>Aircraft/737-800/Models/seats/cockpitseat2.xml</path>
+      <path>Aircraft/737-800YV/Models/seats/cockpitseat2.xml</path>
       <offsets>
        <x-m>1.25</x-m>
        <y-m>0.4950</y-m>
@@ -38,7 +48,7 @@
 
    <model>
     <name>yokecapt</name>
-    <path>Aircraft/737-800/Models/yoke/yoke.xml</path>
+    <path>Aircraft/737-800YV/Models/yoke/yoke.xml</path>
     <offsets>
      <x-m>0.842</x-m>
      <y-m>-0.5390</y-m>
@@ -48,7 +58,7 @@
 
  <model>
   <name>yokefo</name>
-  <path>Aircraft/737-800/Models/yoke/yoke.xml</path>
+  <path>Aircraft/737-800YV/Models/yoke/yoke.xml</path>
   <offsets>
    <x-m>0.83</x-m>
    <y-m>0.4950</y-m>
@@ -1629,7 +1639,7 @@
         <binding>
           <command>nasal</command>
           <script>
-            var st = gui.Dialog.new("sim/gui/dialogs/tiller/dialog", "Aircraft/737-800/Dialogs/tiller-steering.xml");
+            var st = gui.Dialog.new("sim/gui/dialogs/tiller/dialog", "Aircraft/737-800YV/Dialogs/tiller-steering.xml");
             st.open();
           </script>
         </binding>

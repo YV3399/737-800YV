@@ -41,7 +41,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 	systems.elec_init();
 	systems.hyd_init();
   	itaf.ap_init();			
-	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800/Systems/autopilot-dlg.xml");
+	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800YV/Systems/autopilot-dlg.xml");
 });
 
 setlistener("/sim/signals/fdm-initialized", func {

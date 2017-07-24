@@ -7,7 +7,7 @@
 
  
 <effect>
-   <inherits-from>Aircraft/737-800/Models/lights/ALS/landinglightL</inherits-from>
+   <inherits-from>Aircraft/737-800YV/Models/lights/ALS/landinglightL</inherits-from>
    <object-name>landinglight</object-name>
  </effect>
  

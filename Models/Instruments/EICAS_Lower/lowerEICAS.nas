@@ -17,7 +17,7 @@ var canvas_lowerEICAS = {
 				return "LiberationFonts/LiberationSans-Regular.ttf";
 		};
 		
-		canvas.parsesvg(lowerEICAS, "Aircraft/737-800/Models/Instruments/EICAS_Lower/lowerEICAS.svg", {'font-mapper': font_mapper});
+		canvas.parsesvg(lowerEICAS, "Aircraft/737-800YV/Models/Instruments/EICAS_Lower/lowerEICAS.svg", {'font-mapper': font_mapper});
 		
 		var svg_keys = ["engine0N1","engine0N1Decimal","engine1N1","engine1N1Decimal","needleN1_0","needleN1_1","ff_0","ff_1"];
 		foreach(var key; svg_keys) {

@@ -36,7 +36,7 @@
 
  
 <effect>
-   <inherits-from>Aircraft/737-800/Models/lights/ALS/beacon</inherits-from>
+   <inherits-from>Aircraft/737-800YV/Models/lights/ALS/beacon</inherits-from>
    <object-name>beacon</object-name>
  </effect>
 

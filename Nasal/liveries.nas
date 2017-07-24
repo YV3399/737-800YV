@@ -1,3 +1,3 @@
 
-aircraft.livery.init("Aircraft/737-800/Models/Liveries-800");
+aircraft.livery.init("Aircraft/737-800YV/Models/Liveries-800");
 

@@ -7,7 +7,7 @@
 
 
  <effect>
-   <inherits-from>Aircraft/737-800/Models/lights/ALS/red-navlight</inherits-from>
+   <inherits-from>Aircraft/737-800YV/Models/lights/ALS/red-navlight</inherits-from>
    <object-name>red-navlight</object-name>
  </effect>
  

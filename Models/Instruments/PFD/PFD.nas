@@ -35,7 +35,7 @@ var canvas_PFD = {
 				return "LiberationFonts/LiberationSans-Regular.ttf";
 		};
 		
-		canvas.parsesvg(pfd, "Aircraft/737-800/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
+		canvas.parsesvg(pfd, "Aircraft/737-800YV/Models/Instruments/PFD/PFD.svg", {'font-mapper': font_mapper});
 		
 		var svg_keys = ["afdsMode","afdsModeBox","altTape","altText1","altText2","atMode",
 		"altTapeScale","altTextHigh1","altTextHigh2","altTextHigh3","altTextHigh4","altTextHigh5",

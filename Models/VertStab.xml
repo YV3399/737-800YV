@@ -26,7 +26,7 @@
   <inherits-from>Effects/lightmap</inherits-from>
   <parameters>
     <texture n="1">
-      <image>Aircraft/737-800/Models/Effects/LightMap/logolight_lightmap.png</image>
+      <image>Aircraft/737-800YV/Models/Effects/LightMap/logolight_lightmap.png</image>
     </texture>
     <factor><use>/controls/lighting/logo-lights</use></factor>
   </parameters>

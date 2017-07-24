@@ -20,7 +20,7 @@
 # Tuned by Torsten Dreyer
 # ===========================
 var registrationDialog = gui.Dialog.new("/sim/gui/dialogs/b707/status/dialog",
-				  "Aircraft/737-800/Systems/registration.xml");
+				  "Aircraft/737-800YV/Systems/registration.xml");
 
 var l = setlistener("/sim/signals/fdm-initialized", func {
   var callsign = props.globals.getNode("/sim/multiplay/callsign",1).getValue();

@@ -349,7 +349,7 @@ var efis_ctrl = func(n, knob, action) {
 #tiller controls
 
 var tiller_left = func() {
-	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800/Dialogs/tiller-steering.xml");
+	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800YV/Dialogs/tiller-steering.xml");
     tiller.open();
     var tillerpos = getprop("/fdm/jsbsim/fcs/tiller-cmd-norm");
     tillerpos = tillerpos -  0.05;
@@ -358,7 +358,7 @@ var tiller_left = func() {
 }
 
 var tiller_left_small = func() {
-	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800/Dialogs/tiller-steering.xml");
+	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800YV/Dialogs/tiller-steering.xml");
     tiller.open();
     var tillerpos = getprop("/fdm/jsbsim/fcs/tiller-cmd-norm");
     tillerpos = tillerpos -  0.02;
@@ -367,7 +367,7 @@ var tiller_left_small = func() {
 }
 
 var tiller_right = func() {
-	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800/Dialogs/tiller-steering.xml");
+	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800YV/Dialogs/tiller-steering.xml");
     tiller.open();
     var tillerpos = getprop("/fdm/jsbsim/fcs/tiller-cmd-norm");
     tillerpos = tillerpos +  0.05;
@@ -376,7 +376,7 @@ var tiller_right = func() {
 }
 
 var tiller_right_small = func() {
-	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800/Dialogs/tiller-steering.xml");
+	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800YV/Dialogs/tiller-steering.xml");
     tiller.open();
     var tillerpos = getprop("/fdm/jsbsim/fcs/tiller-cmd-norm");
     tillerpos = tillerpos +  0.02;
@@ -385,7 +385,7 @@ var tiller_right_small = func() {
 }
 
 var tiller_center = func() {
-	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800/Dialogs/tiller-steering.xml");
+	var tiller = gui.Dialog.new("/sim/gui/dialogs/b737/menu/dialog","Aircraft/737-800YV/Dialogs/tiller-steering.xml");
     tiller.open();
     interpolate("/fdm/jsbsim/fcs/tiller-cmd-norm", 0, 0.5);
 }

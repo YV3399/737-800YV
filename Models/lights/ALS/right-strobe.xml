@@ -7,7 +7,7 @@
 
  
 <effect>
-   <inherits-from>Aircraft/737-800/Models/lights/ALS/right-strobe</inherits-from>
+   <inherits-from>Aircraft/737-800YV/Models/lights/ALS/right-strobe</inherits-from>
    <object-name>right-strobe</object-name>
  </effect>
  
