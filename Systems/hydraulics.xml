@@ -4,13 +4,10 @@
 <!-- Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
-
- <!-- =============================================================== -->
- <!-- Surface Droop                                                   -->
- <!-- =============================================================== -->
  
+	<!-- Manual Reversion -->
     <filter>
-        <name>Aileron Droop</name>
+        <name>Aileron Manual Authority</name>
         <type>gain</type>
         <gain>1</gain>
         <update-interval-secs type="double">0.05</update-interval-secs>
@@ -18,16 +15,33 @@
             <expression>
                 <table>
                     <property>/velocities/airspeed-kt</property>
-                    <entry><ind> 62</ind><dep>0.5</dep></entry>
-                    <entry><ind>116</ind><dep>0.0</dep></entry>
+                    <entry><ind> 60</ind><dep>0.0</dep></entry>
+                    <entry><ind> 80</ind><dep>0.5</dep></entry>
+                    <entry><ind>380</ind><dep>0.7</dep></entry>
                 </table>
             </expression>
         </input>
-		<output>/systems/hydraulic/aileron-droop</output>
+		<output>/systems/hydraulic/aileron-authority</output>
     </filter>
 	
     <filter>
-        <name>Elevator Droop</name>
+        <name>Aileron Manual Control</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <input> 
+            <expression>
+				<product>
+					<property>/controls/flight/aileron</property>
+					<property>/systems/hydraulic/aileron-authority</property>
+				</product>
+            </expression>
+        </input>
+		<output>/controls/flight/aileron-manual</output>
+    </filter>
+	
+    <filter>
+        <name>Elevator Manual Authority</name>
         <type>gain</type>
         <gain>1</gain>
         <update-interval-secs type="double">0.05</update-interval-secs>
@@ -35,12 +49,32 @@
             <expression>
                 <table>
                     <property>/velocities/airspeed-kt</property>
-                    <entry><ind> 72</ind><dep>0.5</dep></entry>
-                    <entry><ind>121</ind><dep>0.0</dep></entry>
+                    <entry><ind> 50</ind><dep>0.0</dep></entry>
+                    <entry><ind> 70</ind><dep>0.2</dep></entry>
+                    <entry><ind>370</ind><dep>0.4</dep></entry>
                 </table>
             </expression>
         </input>
-		<output>/systems/hydraulic/elevator-droop</output>
+		<output>/systems/hydraulic/elevator-authority</output>
+    </filter>
+	
+    <filter>
+        <name>Elevator Manual Control</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <input> 
+            <expression>
+				<sum>
+					<property>/systems/hydraulic/elevator-droop</property>
+					<product>
+						<property>/controls/flight/elevator</property>
+						<property>/systems/hydraulic/elevator-authority</property>
+					</product>
+				</sum>
+            </expression>
+        </input>
+		<output>/controls/flight/elevator-manual</output>
     </filter>
 	
 	<!-- Aileron L -->
@@ -51,31 +85,19 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
+				<equals>
+					<property>/systems/hydraulic/ail-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
-			<property>/systems/hydraulic/aileron-droop</property>
+			<property>/systems/hydraulic/aileron-manual</property>
 		</input>
 		<input>
 			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
+				<equals>
+					<property>/systems/hydraulic/ail-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
             <expression>
 				<sum>
@@ -112,32 +134,20 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
+				<equals>
+					<property>/systems/hydraulic/ail-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
-			<property>/systems/hydraulic/aileron-droop</property>
+			<property>/systems/hydraulic/aileron-manual</property>
 			<scale>-1.0</scale>
 		</input>
 		<input>
 			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
+				<equals>
+					<property>/systems/hydraulic/ail-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
             <expression>
 				<sum>
@@ -179,10 +189,10 @@
 		<input>
 			<condition>
 				<and>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
+					<equals>
+						<property>/systems/hydraulic/spoiler-a-active</property>
+						<value>1</value>
+					</equals>
 					<not-equals>
 						<property>/controls/flight/spoilers</property>
 						<value>0.0</value>
@@ -203,10 +213,10 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
@@ -231,10 +241,10 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<greater-than-equals>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</greater-than-equals>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
 			<expression>
 				<table>
@@ -247,10 +257,10 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
@@ -275,10 +285,10 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<greater-than-equals>
-					<property>/systems/hydraulic/b-psi</property>
-					<value>1500</value>
-				</greater-than-equals>
+				<equals>
+					<property>/systems/hydraulic/spoiler-b-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
 			<expression>
 				<table>
@@ -291,10 +301,10 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/b-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-b-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
@@ -320,10 +330,10 @@
 		<input>
 			<condition>
 				<and>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
+					<equals>
+						<property>/systems/hydraulic/spoiler-a-active</property>
+						<value>1</value>
+					</equals>
 					<not-equals>
 						<property>/controls/flight/speedbrake</property>
 						<value>0.0</value>
@@ -343,19 +353,19 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
 		<input>
 			<condition>
-				<greater-than-equals>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</greater-than-equals>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
             <expression>
                 <table>
@@ -387,10 +397,10 @@
 		<input>
 			<condition>
 				<and>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
+					<equals>
+						<property>/systems/hydraulic/spoiler-b-active</property>
+						<value>1</value>
+					</equals>
 					<not-equals>
 						<property>/controls/flight/speedbrake</property>
 						<value>0.0</value>
@@ -410,19 +420,19 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/b-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-b-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
 		<input>
 			<condition>
-				<greater-than-equals>
-					<property>/systems/hydraulic/b-psi</property>
-					<value>1500</value>
-				</greater-than-equals>
+				<equals>
+					<property>/systems/hydraulic/spoiler-b-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
             <expression>
                 <table>
@@ -454,10 +464,10 @@
 		<input>
 			<condition>
 				<and>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
+					<equals>
+						<property>/systems/hydraulic/spoiler-a-active</property>
+						<value>1</value>
+					</equals>
 					<not-equals>
 						<property>/controls/flight/spoilers</property>
 						<value>0.0</value>
@@ -478,10 +488,10 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
@@ -528,10 +538,10 @@
 		<input>
 			<condition>
 				<and>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
+					<equals>
+						<property>/systems/hydraulic/spoiler-a-active</property>
+						<value>1</value>
+					</equals>
 					<not-equals>
 						<property>/controls/flight/spoilers</property>
 						<value>0.0</value>
@@ -552,10 +562,10 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
@@ -581,10 +591,10 @@
 		<input>
 			<condition>
 				<and>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
+					<equals>
+						<property>/systems/hydraulic/spoiler-b-active</property>
+						<value>1</value>
+					</equals>
 					<not-equals>
 						<property>/controls/flight/speedbrake</property>
 						<value>0.0</value>
@@ -604,19 +614,19 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/b-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-b-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
 		<input>
 			<condition>
-				<greater-than-equals>
-					<property>/systems/hydraulic/b-psi</property>
-					<value>1500</value>
-				</greater-than-equals>
+				<equals>
+					<property>/systems/hydraulic/spoiler-b-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
             <expression>
                 <table>
@@ -648,10 +658,10 @@
 		<input>
 			<condition>
 				<and>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
+					<equals>
+						<property>/systems/hydraulic/spoiler-a-active</property>
+						<value>1</value>
+					</equals>
 					<not-equals>
 						<property>/controls/flight/speedbrake</property>
 						<value>0.0</value>
@@ -671,19 +681,19 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
 		<input>
 			<condition>
-				<greater-than-equals>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</greater-than-equals>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
             <expression>
                 <table>
@@ -714,10 +724,10 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<greater-than-equals>
-					<property>/systems/hydraulic/b-psi</property>
-					<value>1500</value>
-				</greater-than-equals>
+				<equals>
+					<property>/systems/hydraulic/spoiler-b-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
 			<expression>
 				<table>
@@ -730,10 +740,10 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/b-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-b-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
@@ -758,10 +768,10 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<greater-than-equals>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</greater-than-equals>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
 			<expression>
 				<table>
@@ -774,10 +784,10 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
@@ -803,10 +813,10 @@
 		<input>
 			<condition>
 				<and>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
+					<equals>
+						<property>/systems/hydraulic/spoiler-a-active</property>
+						<value>1</value>
+					</equals>
 					<not-equals>
 						<property>/controls/flight/spoilers</property>
 						<value>0.0</value>
@@ -827,10 +837,10 @@
 		</input>
 		<input>
 			<condition>
-				<less-than>
-					<property>/systems/hydraulic/a-psi</property>
-					<value>1500</value>
-				</less-than>
+				<equals>
+					<property>/systems/hydraulic/spoiler-a-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0.0</value>
 		</input>
@@ -917,31 +927,19 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
+				<equals>
+					<property>/systems/hydraulic/elev-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
-			<property>/systems/hydraulic/elevator-droop</property>
+			<property>/systems/hydraulic/elevator-manual</property>
 		</input>
 		<input>
 			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
+				<equals>
+					<property>/systems/hydraulic/elev-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
             <expression>
                 <table>
@@ -969,31 +967,19 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
+				<equals>
+					<property>/systems/hydraulic/elev-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
-			<property>/systems/hydraulic/elevator-droop</property>
+			<property>/systems/hydraulic/elevator-manual</property>
 		</input>
 		<input>
 			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
+				<equals>
+					<property>/systems/hydraulic/elev-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
             <expression>
                 <table>
@@ -1042,39 +1028,19 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/stby-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
+				<equals>
+					<property>/systems/hydraulic/rudder-active</property>
+					<value>0</value>
+				</equals>
 			</condition>
 			<value>0</value>
 		</input>
 		<input>
 			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/stby-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
+				<equals>
+					<property>/systems/hydraulic/rudder-active</property>
+					<value>1</value>
+				</equals>
 			</condition>
 			<expression>
 				<product>
