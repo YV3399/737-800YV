@@ -32,7 +32,7 @@
 		<object-name>switch.001</object-name>
 		<object-name>checklist</object-name>
       <object-name>colum</object-name>
- <property>controls/flight/elevator</property>
+ <property>systems/hydraulic/elevator-manual</property>
  <factor>7</factor>
  <offset-deg>5</offset-deg>
  <center>
@@ -56,7 +56,7 @@
 		<object-name>sup.001</object-name>
 		<object-name>switch.001</object-name>
 		<object-name>checklist</object-name>
- <property>controls/flight/aileron</property>
+ <property>systems/hydraulic/aileron-manual</property>
 <interpolation>
 <entry><ind>-1</ind><dep>-60</dep></entry>
 <entry><ind>0</ind><dep>0</dep></entry>

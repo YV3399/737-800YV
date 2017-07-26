@@ -6,75 +6,101 @@
 <PropertyList>
  
 	<!-- Manual Reversion -->
+	
     <filter>
-        <name>Aileron Manual Authority</name>
+        <name>Aileron Min/Max</name>
         <type>gain</type>
         <gain>1</gain>
         <update-interval-secs type="double">0.05</update-interval-secs>
-        <input> 
-            <expression>
-                <table>
-                    <property>/velocities/airspeed-kt</property>
-                    <entry><ind> 60</ind><dep>0.0</dep></entry>
-                    <entry><ind> 80</ind><dep>0.5</dep></entry>
-                    <entry><ind>380</ind><dep>0.7</dep></entry>
-                </table>
+        <input>
+			<expression>
+				<table>
+					<property>/velocities/mach</property>
+					<entry><ind>0.1</ind><dep>1.0</dep></entry>
+					<entry><ind>0.4</ind><dep>0.4</dep></entry>
+					<entry><ind>0.9</ind><dep>0.1</dep></entry>
+				</table>
             </expression>
-        </input>
-		<output>/systems/hydraulic/aileron-authority</output>
+		</input>
+		<output>/controls/flight/aileron-authority</output>
+    </filter>
+	
+    <filter>
+        <name>Elevator Min/Max</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <input>
+			<expression>
+				<table>
+					<property>/velocities/mach</property>
+					<entry><ind>0.1</ind><dep>1.0</dep></entry>
+					<entry><ind>0.4</ind><dep>0.3</dep></entry>
+					<entry><ind>0.9</ind><dep>0.1</dep></entry>
+				</table>
+            </expression>
+		</input>
+		<output>/controls/flight/elevator-authority</output>
     </filter>
 	
     <filter>
         <name>Aileron Manual Control</name>
         <type>gain</type>
         <gain>1</gain>
-        <update-interval-secs type="double">0.05</update-interval-secs>
-        <input> 
-            <expression>
-				<product>
-					<property>/controls/flight/aileron</property>
-					<property>/systems/hydraulic/aileron-authority</property>
-				</product>
-            </expression>
-        </input>
-		<output>/controls/flight/aileron-manual</output>
-    </filter>
-	
-    <filter>
-        <name>Elevator Manual Authority</name>
-        <type>gain</type>
-        <gain>1</gain>
-        <update-interval-secs type="double">0.05</update-interval-secs>
-        <input> 
-            <expression>
-                <table>
-                    <property>/velocities/airspeed-kt</property>
-                    <entry><ind> 50</ind><dep>0.0</dep></entry>
-                    <entry><ind> 70</ind><dep>0.2</dep></entry>
-                    <entry><ind>370</ind><dep>0.4</dep></entry>
-                </table>
-            </expression>
-        </input>
-		<output>/systems/hydraulic/elevator-authority</output>
+        <update-interval-secs type="double">0.01</update-interval-secs>
+        <input>/controls/flight/aileron-fde</input>
+		<output>/systems/hydraulic/aileron-manual</output>
+		<min>
+			<condition>
+				<equals>
+					<property>/systems/hydraulic/ail-active</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/controls/flight/aileron-authority</property>
+			<scale>-1.0</scale>
+		</min>
+		<min>-1.0</min>
+		<max>
+			<condition>
+				<equals>
+					<property>/systems/hydraulic/ail-active</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/controls/flight/aileron-authority</property>
+		</max>
+		<max>1.0</max>
     </filter>
 	
     <filter>
         <name>Elevator Manual Control</name>
         <type>gain</type>
         <gain>1</gain>
-        <update-interval-secs type="double">0.05</update-interval-secs>
-        <input> 
-            <expression>
-				<sum>
-					<property>/systems/hydraulic/elevator-droop</property>
-					<product>
-						<property>/controls/flight/elevator</property>
-						<property>/systems/hydraulic/elevator-authority</property>
-					</product>
-				</sum>
-            </expression>
-        </input>
-		<output>/controls/flight/elevator-manual</output>
+        <update-interval-secs type="double">0.01</update-interval-secs>
+        <input>/controls/flight/elevator-fde</input>
+		<output>/systems/hydraulic/elevator-manual</output>
+		<min>
+			<condition>
+				<equals>
+					<property>/systems/hydraulic/elev-active</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/controls/flight/elevator-authority</property>
+			<scale>-1.0</scale>
+		</min>
+		<min>-1.0</min>
+		<max>
+			<condition>
+				<equals>
+					<property>/systems/hydraulic/elev-active</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/controls/flight/elevator-authority</property>
+		</max>
+		<max>1.0</max>
     </filter>
 	
 	<!-- Aileron L -->
@@ -90,7 +116,14 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/systems/hydraulic/aileron-manual</property>
+            <expression>
+				<table>
+					<property>/systems/hydraulic/aileron-manual</property> 
+					<entry><ind>-1</ind><dep>-0.5</dep></entry>
+					<entry><ind> 0</ind><dep> 0.0</dep></entry>
+					<entry><ind> 1</ind><dep> 0.5</dep></entry>
+				</table>
+            </expression>
 		</input>
 		<input>
 			<condition>
@@ -139,8 +172,14 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/systems/hydraulic/aileron-manual</property>
-			<scale>-1.0</scale>
+            <expression>
+				<table>
+					<property>/systems/hydraulic/aileron-manual</property> 
+					<entry><ind>-1</ind><dep>-0.5</dep></entry>
+					<entry><ind> 0</ind><dep> 0.0</dep></entry>
+					<entry><ind> 1</ind><dep> 0.5</dep></entry>
+				</table>
+            </expression>
 		</input>
 		<input>
 			<condition>
@@ -932,7 +971,14 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/systems/hydraulic/elevator-manual</property>
+            <expression>
+				<table>
+					<property>/systems/hydraulic/elevator-manual</property> 
+					<entry><ind>-1</ind><dep>-0.5</dep></entry>
+					<entry><ind> 0</ind><dep> 0.0</dep></entry>
+					<entry><ind> 1</ind><dep> 0.5</dep></entry>
+				</table>
+            </expression>
 		</input>
 		<input>
 			<condition>
@@ -972,7 +1018,14 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/systems/hydraulic/elevator-manual</property>
+            <expression>
+				<table>
+					<property>/systems/hydraulic/elevator-manual</property> 
+					<entry><ind>-1</ind><dep>-0.5</dep></entry>
+					<entry><ind> 0</ind><dep> 0.0</dep></entry>
+					<entry><ind> 1</ind><dep> 0.5</dep></entry>
+				</table>
+            </expression>
 		</input>
 		<input>
 			<condition>
