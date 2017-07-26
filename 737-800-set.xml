@@ -21,6 +21,18 @@
 			<splash-texture>Aircraft/737-800YV/Splash/splash-11.png</splash-texture>
 			<splash-texture>Aircraft/737-800YV/Splash/splash-12.png</splash-texture>
 		</startup>
+		<previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-5.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-6.png</path>
+			</preview>
+		</previews>
 
 		<model>
 			<path>Aircraft/737-800YV/Models/737-800.xml</path>       
