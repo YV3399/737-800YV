@@ -5,7 +5,7 @@ MATERIAL "Color_M0" rgb 0 0 0  amb 1 1 1  emis 0 0 0  spec 0.1647 0.1647 0.1647 
 MATERIAL "Legends" rgb 0.4392 0.4157 0.4784  amb 1 1 1  emis 0 0 0  spec 0.1647 0.1647 0.1647  shi 12  trans 0
 MATERIAL "Preto" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0.1647 0.1647 0.1647  shi 12  trans 0
 OBJECT world
-kids 465
+kids 472
 OBJECT poly
 name "batt-switch"
 loc -0.3375 0.0377591 0.33508
@@ -1608,7 +1608,7 @@ name "Mesh01"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh01
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 96
 0.5385 0.056 -0.41224
@@ -2266,7 +2266,7 @@ name "Mesh02"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh02
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 144
 0.51199 0.04 -0.46994
@@ -3308,7 +3308,7 @@ name "Mesh03"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh03
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 48
 0.55039 0.04 -0.21086
@@ -3630,7 +3630,7 @@ name "Mesh04"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh04
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 120
 0.10715 0.04 -0.58036
@@ -4312,7 +4312,7 @@ name "Mesh05"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh05
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 120
 0.41019 0.052 -0.04259
@@ -4994,7 +4994,7 @@ name "Mesh06"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh06
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.19471 0.056 -0.34449
@@ -5755,7 +5755,7 @@ name "Mesh07"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh07
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.14371 0.056 -0.34449
@@ -6516,7 +6516,7 @@ name "Mesh08"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh08
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.20611 0.056 -0.26978
@@ -7277,7 +7277,7 @@ name "Mesh09"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh09
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 168
 0.675 0 -0.52414
@@ -8391,7 +8391,7 @@ name "Mesh10"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh10
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.20468 0.056 -0.1921
@@ -9152,7 +9152,7 @@ name "Mesh100"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh100
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.15792 0.04205 -0.38709
@@ -9178,7 +9178,7 @@ name "Mesh101"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh101
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.3686 0.04205 -0.38828
@@ -9204,7 +9204,7 @@ name "Mesh102"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh102
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.12875 0.04205 -0.47512
@@ -9230,7 +9230,7 @@ name "Mesh103"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh103
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.14333 0.04205 -0.47512
@@ -9256,7 +9256,7 @@ name "Mesh104"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh104
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.11443 0.04205 -0.47512
@@ -9282,7 +9282,7 @@ name "Mesh105"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh105
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.1937 0.04205 -0.47534
@@ -9308,7 +9308,7 @@ name "Mesh106"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh106
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.34001 0.04205 -0.41569
@@ -9334,7 +9334,7 @@ name "Mesh107"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh107
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.34001 0.04205 -0.44328
@@ -9360,7 +9360,7 @@ name "Mesh108"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh108
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.35402 0.04205 -0.41569
@@ -9386,7 +9386,7 @@ name "Mesh109"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh109
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.35402 0.04205 -0.44328
@@ -9412,7 +9412,7 @@ name "Mesh11"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh11
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.35457 0.056 -0.03003
@@ -10173,7 +10173,7 @@ name "Mesh110"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh110
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.3686 0.04205 -0.44328
@@ -10199,7 +10199,7 @@ name "Mesh111"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh111
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.3686 0.04205 -0.41569
@@ -10225,7 +10225,7 @@ name "Mesh112"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh112
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.38282 0.04205 -0.44328
@@ -10251,7 +10251,7 @@ name "Mesh113"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh113
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.38282 0.04205 -0.41569
@@ -10277,7 +10277,7 @@ name "Mesh114"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh114
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.35402 0.04205 -0.47052
@@ -10303,7 +10303,7 @@ name "Mesh115"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh115
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.3686 0.04205 -0.47052
@@ -10329,7 +10329,7 @@ name "Mesh116"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh116
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.15792 0.04205 -0.47512
@@ -10355,7 +10355,7 @@ name "Mesh117"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh117
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.1937 0.04205 -0.44865
@@ -10381,7 +10381,7 @@ name "Mesh118"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh118
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.14978 0.05405 -0.54121
@@ -10407,7 +10407,7 @@ name "Mesh119"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh119
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.14978 0.05405 -0.58247
@@ -10433,7 +10433,7 @@ name "Mesh12"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh12
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.58282 0.056 -0.25536
@@ -11194,7 +11194,7 @@ name "Mesh120"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh120
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.14978 0.05405 -0.62351
@@ -11220,7 +11220,7 @@ name "Mesh121"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh121
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.21305 0.04205 -0.54174
@@ -11246,7 +11246,7 @@ name "Mesh122"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh122
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.32647 0.05405 -0.55166
@@ -11272,7 +11272,7 @@ name "Mesh123"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh123
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.32647 0.05405 -0.61377
@@ -11298,7 +11298,7 @@ name "Mesh124"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh124
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.40526 0.04205 -0.54106
@@ -11324,7 +11324,7 @@ name "Mesh125"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh125
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.34077 0.05405 -0.55166
@@ -11350,7 +11350,7 @@ name "Mesh126"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh126
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.34077 0.05405 -0.61377
@@ -11376,7 +11376,7 @@ name "Mesh127"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh127
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.35502 0.05405 -0.61377
@@ -11402,7 +11402,7 @@ name "Mesh128"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh128
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.40526 0.04205 -0.56807
@@ -11428,7 +11428,7 @@ name "Mesh129"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh129
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.40526 0.04205 -0.59592
@@ -11454,7 +11454,7 @@ name "Mesh13"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh13
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.58196 0.056 -0.33109
@@ -12215,7 +12215,7 @@ name "Mesh130"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh130
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.40526 0.04205 -0.62293
@@ -12241,7 +12241,7 @@ name "Mesh131"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh131
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.14978 0.052 -0.56724
@@ -12339,7 +12339,7 @@ name "Mesh132"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh132
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.15027 0.052 -0.6085
@@ -12437,7 +12437,7 @@ name "Mesh133"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh133
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.15027 0.052 -0.64954
@@ -12535,7 +12535,7 @@ name "Mesh134"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh134
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.21305 0.04 -0.56777
@@ -12633,7 +12633,7 @@ name "Mesh135"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh135
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.21305 0.04 -0.59459
@@ -12731,7 +12731,7 @@ name "Mesh136"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh136
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.21305 0.04 -0.65101
@@ -12829,7 +12829,7 @@ name "Mesh137"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh137
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.32647 0.052 -0.57769
@@ -12927,7 +12927,7 @@ name "Mesh138"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh138
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.34077 0.052 -0.57769
@@ -13025,7 +13025,7 @@ name "Mesh139"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh139
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.35502 0.052 -0.57769
@@ -13123,7 +13123,7 @@ name "Mesh14"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh14
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.64298 0.044 -0.31531
@@ -13884,7 +13884,7 @@ name "Mesh140"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh140
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.32647 0.052 -0.6398
@@ -13982,7 +13982,7 @@ name "Mesh141"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh141
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.34077 0.052 -0.6398
@@ -14080,7 +14080,7 @@ name "Mesh142"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh142
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.35502 0.052 -0.6398
@@ -14178,7 +14178,7 @@ name "Mesh143"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh143
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.34173 0.0568 -0.59408
@@ -14900,7 +14900,7 @@ name "Mesh144"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh144
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.25951 0.0568 -0.64583
@@ -15622,7 +15622,7 @@ name "Mesh145"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh145
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.40526 0.04 -0.56709
@@ -15720,7 +15720,7 @@ name "Mesh146"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh146
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.40526 0.04 -0.5941
@@ -15818,7 +15818,7 @@ name "Mesh147"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh147
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.40526 0.04 -0.64896
@@ -15916,7 +15916,7 @@ name "Mesh148"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh148
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.40526 0.04 -0.62195
@@ -16014,7 +16014,7 @@ name "Mesh149"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh149
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.35402 0.04 -0.49655
@@ -16112,7 +16112,7 @@ name "Mesh15"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh15
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.64261 0.044 -0.42075
@@ -16873,7 +16873,7 @@ name "Mesh150"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh150
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.3686 0.04 -0.49655
@@ -16971,7 +16971,7 @@ name "Mesh151"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh151
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.3686 0.04 -0.44172
@@ -17069,7 +17069,7 @@ name "Mesh152"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh152
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.35402 0.04 -0.44172
@@ -17167,7 +17167,7 @@ name "Mesh153"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh153
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.3686 0.04 -0.46931
@@ -17265,7 +17265,7 @@ name "Mesh154"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh154
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.35402 0.04 -0.46931
@@ -17363,7 +17363,7 @@ name "Mesh155"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh155
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.38282 0.04 -0.44172
@@ -17461,7 +17461,7 @@ name "Mesh156"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh156
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.38282 0.04 -0.46931
@@ -17559,7 +17559,7 @@ name "Mesh157"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh157
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.34001 0.04 -0.44172
@@ -17657,7 +17657,7 @@ name "Mesh158"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh158
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.34001 0.04 -0.46931
@@ -17755,7 +17755,7 @@ name "Mesh159"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh159
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.3686 0.04 -0.41431
@@ -17853,7 +17853,7 @@ name "Mesh16"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh16
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.54474 0.056 -0.62888
@@ -18614,7 +18614,7 @@ name "Mesh160"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh160
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.28413 0.04 -0.44172
@@ -18712,7 +18712,7 @@ name "Mesh161"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh161
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.28413 0.04 -0.41421
@@ -18810,7 +18810,7 @@ name "Mesh162"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh162
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.26984 0.04 -0.44172
@@ -18908,7 +18908,7 @@ name "Mesh163"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh163
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.28413 0.04 -0.47609
@@ -19006,7 +19006,7 @@ name "Mesh164"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh164
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.20798 0.04 -0.47468
@@ -19104,7 +19104,7 @@ name "Mesh165"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh165
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.28413 0.04 -0.50362
@@ -19202,7 +19202,7 @@ name "Mesh166"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh166
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.1937 0.04 -0.47468
@@ -19300,7 +19300,7 @@ name "Mesh167"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh167
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.1937 0.04 -0.50137
@@ -19398,7 +19398,7 @@ name "Mesh168"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh168
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.20798 0.04 -0.50137
@@ -19496,7 +19496,7 @@ name "Mesh169"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh169
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.20798 0.04 -0.43769
@@ -19594,7 +19594,7 @@ name "Mesh17"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh17
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 48
 0.19711 0.04 -0.67
@@ -19916,7 +19916,7 @@ name "Mesh170"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh170
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.20798 0.04 -0.411
@@ -20014,7 +20014,7 @@ name "Mesh171"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh171
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.05158 0.04 -0.47468
@@ -20112,7 +20112,7 @@ name "Mesh172"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh172
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.05158 0.04 -0.50137
@@ -20210,7 +20210,7 @@ name "Mesh173"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh173
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.06586 0.04 -0.50137
@@ -20308,7 +20308,7 @@ name "Mesh174"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh174
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.06586 0.04 -0.47468
@@ -20406,7 +20406,7 @@ name "Mesh175"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh175
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.06586 0.04 -0.41312
@@ -20504,7 +20504,7 @@ name "Mesh176"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh176
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.06586 0.04 -0.43981
@@ -20602,7 +20602,7 @@ name "Mesh177"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh177
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.05158 0.04 -0.41312
@@ -20700,7 +20700,7 @@ name "Mesh178"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh178
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.05158 0.04 -0.43981
@@ -20798,7 +20798,7 @@ name "Mesh179"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh179
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.26961 0.04 -0.47609
@@ -20896,7 +20896,7 @@ name "Mesh18"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh18
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 66
 0.03199 0.052 -0.65223
@@ -21296,7 +21296,7 @@ name "Mesh180"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh180
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.15792 0.04 -0.41344
@@ -21394,7 +21394,7 @@ name "Mesh181"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh181
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.14333 0.04 -0.41344
@@ -21492,7 +21492,7 @@ name "Mesh182"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh182
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.12875 0.04 -0.41344
@@ -21590,7 +21590,7 @@ name "Mesh183"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh183
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.11443 0.04 -0.41344
@@ -21688,7 +21688,7 @@ name "Mesh184"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh184
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.12875 0.04 -0.50147
@@ -21786,7 +21786,7 @@ name "Mesh185"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh185
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.11443 0.04 -0.50147
@@ -21884,7 +21884,7 @@ name "Mesh186"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh186
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.15792 0.04 -0.50147
@@ -21982,7 +21982,7 @@ name "Mesh187"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh187
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.14333 0.04 -0.50147
@@ -22080,7 +22080,7 @@ name "Mesh188"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh188
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.15404 0.0568 -0.44294
@@ -22802,7 +22802,7 @@ name "Mesh189"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh189
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.39392 0.04 -0.13472
@@ -22900,7 +22900,7 @@ name "Mesh19"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh19
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 64
 0.21443 0.052 -0.67016
@@ -23334,7 +23334,7 @@ name "Mesh190"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh190
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.4082 0.04 -0.13472
@@ -23432,7 +23432,7 @@ name "Mesh191"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh191
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.39392 0.04 -0.04216
@@ -23530,7 +23530,7 @@ name "Mesh192"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh192
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.4082 0.04 -0.04216
@@ -23628,7 +23628,7 @@ name "Mesh193"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh193
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.45541 0.04 -0.04216
@@ -23726,7 +23726,7 @@ name "Mesh194"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh194
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.45541 0.04 -0.08701
@@ -23824,7 +23824,7 @@ name "Mesh195"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh195
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.45541 0.04 -0.13374
@@ -23922,7 +23922,7 @@ name "Mesh196"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh196
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.54274 0.04 -0.19285
@@ -24020,7 +24020,7 @@ name "Mesh197"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh197
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.56425 0.052 -0.06694
@@ -24118,7 +24118,7 @@ name "Mesh198"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh198
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.56425 0.052 -0.03659
@@ -24216,7 +24216,7 @@ name "Mesh199"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh199
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.56425 0.052 -0.10972
@@ -24314,7 +24314,7 @@ name "Mesh20"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh20
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 162
 0.22717 0.064 -0.61096
@@ -25434,7 +25434,7 @@ name "Mesh200"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh200
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.56425 0.052 -0.14007
@@ -25532,7 +25532,7 @@ name "Mesh201"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh201
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.45254 0.052 -0.18957
@@ -25630,7 +25630,7 @@ name "Mesh202"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh202
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.46682 0.052 -0.18957
@@ -25728,7 +25728,7 @@ name "Mesh203"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh203
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.48159 0.052 -0.18957
@@ -25826,7 +25826,7 @@ name "Mesh204"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh204
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.48159 0.052 -0.28991
@@ -25924,7 +25924,7 @@ name "Mesh205"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh205
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.45254 0.052 -0.28991
@@ -26022,7 +26022,7 @@ name "Mesh206"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh206
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.46682 0.052 -0.28991
@@ -26120,7 +26120,7 @@ name "Mesh207"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh207
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.47912 0.052 -0.23944
@@ -26218,7 +26218,7 @@ name "Mesh208"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh208
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.54269 0.04 -0.24647
@@ -26316,7 +26316,7 @@ name "Mesh209"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh209
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.54269 0.04 -0.27362
@@ -26414,7 +26414,7 @@ name "Mesh21"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh21
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 94
 0.5507 0.052 -0.51966
@@ -27046,7 +27046,7 @@ name "Mesh210"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh210
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.39208 0.04 -0.23944
@@ -27144,7 +27144,7 @@ name "Mesh211"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh211
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.54274 0.04 -0.21952
@@ -27242,7 +27242,7 @@ name "Mesh212"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh212
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.50873 0.052 -0.10331
@@ -27340,7 +27340,7 @@ name "Mesh213"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh213
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.50873 0.052 -0.07348
@@ -27438,7 +27438,7 @@ name "Mesh214"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh214
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.50549 0.052 -0.33545
@@ -27536,7 +27536,7 @@ name "Mesh215"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh215
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.32297 0.052 -0.33503
@@ -27634,7 +27634,7 @@ name "Mesh216"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh216
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.32297 0.052 -0.36218
@@ -27732,7 +27732,7 @@ name "Mesh217"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh217
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.25841 0.052 -0.34842
@@ -27830,7 +27830,7 @@ name "Mesh218"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh218
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.30568 0.052 -0.28462
@@ -27928,7 +27928,7 @@ name "Mesh219"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh219
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.29285 0.052 -0.2394
@@ -28026,7 +28026,7 @@ name "Mesh22"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh22
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 32
 0.09874 0.04 -0.3721
@@ -28236,7 +28236,7 @@ name "Mesh220"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh220
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.30577 0.052 -0.19481
@@ -28334,7 +28334,7 @@ name "Mesh221"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh221
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.19961 0.052 -0.05932
@@ -28432,7 +28432,7 @@ name "Mesh222"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh222
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.19951 0.052 -0.12478
@@ -28530,7 +28530,7 @@ name "Mesh223"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh223
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.185 0.052 -0.12478
@@ -28628,7 +28628,7 @@ name "Mesh224"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh224
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.17083 0.052 -0.12478
@@ -28726,7 +28726,7 @@ name "Mesh225"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh225
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.15676 0.052 -0.12478
@@ -28824,7 +28824,7 @@ name "Mesh226"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh226
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.1167 0.052 -0.07295
@@ -28922,7 +28922,7 @@ name "Mesh227"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh227
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.1167 0.052 -0.04563
@@ -29020,7 +29020,7 @@ name "Mesh228"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh228
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.08537 0.052 -0.13038
@@ -29118,7 +29118,7 @@ name "Mesh229"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh229
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.07088 0.052 -0.13038
@@ -29216,7 +29216,7 @@ name "Mesh23"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh23
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 24
 0.24405 0.04 -0.50984
@@ -29370,7 +29370,7 @@ name "Mesh230"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh230
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.05603 0.052 -0.13038
@@ -29468,7 +29468,7 @@ name "Mesh231"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh231
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.16325 0.052 -0.19945
@@ -29566,7 +29566,7 @@ name "Mesh232"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh232
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.16325 0.052 -0.22722
@@ -29664,7 +29664,7 @@ name "Mesh233"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh233
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.16325 0.052 -0.25499
@@ -29762,7 +29762,7 @@ name "Mesh234"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh234
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.04825 0.052 -0.1986
@@ -29860,7 +29860,7 @@ name "Mesh235"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh235
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.36066 0.052 -0.32271
@@ -29958,7 +29958,7 @@ name "Mesh236"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh236
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 34
 0.34364 0.052 -0.26181
@@ -30386,7 +30386,7 @@ name "Mesh237"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh237
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 34
 0.34364 0.052 -0.1723
@@ -31290,7 +31290,7 @@ name "Mesh239"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh239
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 34
 0.1148 0.052 -0.10348
@@ -31718,7 +31718,7 @@ name "Mesh24"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh24
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 40
 0.31547 0.04 -0.50746
@@ -34856,7 +34856,7 @@ name "Mesh246"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh246
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 32
 0.43579 0.052 -0.58272
@@ -35066,7 +35066,7 @@ name "Mesh247"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh247
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 32
 0.50663 0.052 -0.58272
@@ -35276,7 +35276,7 @@ name "Mesh248"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh248
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.47725 0.0448 -0.49133
@@ -35998,7 +35998,7 @@ name "Mesh249"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh249
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.46993 0.0568 -0.34969
@@ -36720,7 +36720,7 @@ name "Mesh25"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh25
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 96
 0.45687 0.052 -0.14754
@@ -37378,7 +37378,7 @@ name "Mesh250"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh250
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.46993 0.0568 -0.31815
@@ -38100,7 +38100,7 @@ name "Mesh251"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh251
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.15014 0.0568 -0.27885
@@ -38822,7 +38822,7 @@ name "Mesh252"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh252
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.06002 0.05546 -0.18487
@@ -39544,7 +39544,7 @@ name "Mesh253"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh253
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 100
 0.40671 0.04346 -0.43485
@@ -40266,7 +40266,7 @@ name "Mesh254"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh254
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 50
 0.40671 0.04346 -0.4612
@@ -40590,7 +40590,7 @@ name "Mesh255"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh255
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 62
 0.40562 0.04086 -0.46057
@@ -41006,7 +41006,7 @@ refs 3
 61 3.88883 3.48095
 kids 0
 OBJECT poly
-name "Mesh256"
+name "APUswitch"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh256
@@ -42251,7 +42251,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh257"
+name "APUswitch"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh257
@@ -42596,7 +42596,7 @@ refs 3
 71 0.13353 0.013716
 kids 0
 OBJECT poly
-name "Mesh258"
+name "TaxiLight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh258
@@ -43841,7 +43841,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh259"
+name "TaxiLight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh259
@@ -44190,7 +44190,7 @@ name "Mesh26"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh26
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 180
 0.42866 0.04 -0.25551
@@ -46109,7 +46109,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh261"
+name "RNYTurnR"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh261
@@ -47354,7 +47354,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh262"
+name "RNYTurnR"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh262
@@ -48400,7 +48400,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh264"
+name "RNYTurnL"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh264
@@ -49645,7 +49645,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh265"
+name "RNYTurnL"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh265
@@ -50691,7 +50691,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh267"
+name "strobelight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh267
@@ -51936,7 +51936,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh268"
+name "strobelight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh268
@@ -52986,7 +52986,7 @@ name "Mesh27"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh27
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 16
 0.07331 0.04 -0.21015
@@ -53080,7 +53080,7 @@ refs 3
 7 3.31353 3.8914
 kids 0
 OBJECT poly
-name "Mesh270"
+name "logolight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh270
@@ -54325,7 +54325,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh271"
+name "logolight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh271
@@ -55371,276 +55371,276 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh273"
-loc -0.3375 0.0377591 0.33508
+name "anticollight"
+loc -0.3375 0.0397247 0.33508
 data 7
 Mesh273
 crease 35.000000
 numvert 264
-0.63272 0.05281 -0.55404
-0.6312 0.05567 -0.55385
-0.63157 0.05567 -0.55338
-0.63214 0.05281 -0.55479
-0.63272 0.05281 -0.55404
-0.6312 0.04906 -0.55385
-0.63214 0.05281 -0.55479
-0.63157 0.04906 -0.55338
-0.63308 0.05281 -0.55317
-0.63157 0.04906 -0.55338
-0.63272 0.05281 -0.55404
-0.6318 0.04906 -0.55283
-0.63308 0.05281 -0.55317
-0.63187 0.04906 -0.55223
-0.6318 0.04906 -0.55283
-0.6332 0.05281 -0.55223
-0.63308 0.05281 -0.55317
-0.63308 0.05281 -0.5513
-0.6332 0.05281 -0.55223
-0.63272 0.05281 -0.55404
-0.63272 0.05281 -0.55042
-0.63214 0.05281 -0.55479
-0.63214 0.05281 -0.54967
-0.63139 0.05281 -0.55537
-0.63139 0.05281 -0.5491
-0.63052 0.05281 -0.55573
-0.63052 0.05281 -0.54874
-0.62958 0.05281 -0.55585
-0.62958 0.05281 -0.54861
-0.62865 0.05281 -0.55573
-0.62865 0.05281 -0.54874
-0.62777 0.05281 -0.5491
-0.62777 0.05281 -0.55537
-0.62703 0.05281 -0.55479
-0.62703 0.05281 -0.54967
-0.62645 0.05281 -0.55404
-0.62645 0.05281 -0.55042
-0.62609 0.05281 -0.55317
-0.62609 0.05281 -0.5513
-0.62597 0.05281 -0.55223
-0.62729 0.05567 -0.55223
-0.62609 0.05281 -0.55317
-0.62597 0.05281 -0.55223
-0.62737 0.05567 -0.55283
-0.62737 0.05567 -0.55164
-0.62737 0.05567 -0.55283
-0.62729 0.05567 -0.55223
-0.6276 0.05567 -0.55109
-0.62609 0.05281 -0.5513
-0.6276 0.05567 -0.55109
-0.62737 0.05567 -0.55164
-0.62645 0.05281 -0.55042
-0.62609 0.05281 -0.5513
-0.6276 0.04906 -0.55109
-0.62645 0.05281 -0.55042
-0.62737 0.04906 -0.55164
-0.62597 0.05281 -0.55223
-0.62737 0.04906 -0.55164
-0.62609 0.05281 -0.5513
-0.62729 0.04906 -0.55223
-0.62609 0.05281 -0.55317
-0.62729 0.04906 -0.55223
-0.62597 0.05281 -0.55223
-0.62737 0.04906 -0.55283
-0.62609 0.05281 -0.55317
-0.6276 0.04906 -0.55338
-0.62737 0.04906 -0.55283
-0.62645 0.05281 -0.55404
-0.62609 0.05281 -0.55317
-0.6276 0.05567 -0.55338
-0.62645 0.05281 -0.55404
-0.62737 0.05567 -0.55283
-0.6276 0.05567 -0.55338
-0.62796 0.05567 -0.55061
-0.62645 0.05281 -0.55042
-0.62796 0.05567 -0.55061
-0.6276 0.05567 -0.55109
-0.62703 0.05281 -0.54967
-0.62645 0.05281 -0.55042
-0.62796 0.04906 -0.55061
-0.62703 0.05281 -0.54967
-0.6276 0.04906 -0.55109
-0.6276 0.04906 -0.55109
-0.62796 0.04906 -0.55385
-0.62796 0.04906 -0.55061
-0.6276 0.04906 -0.55338
-0.62737 0.04906 -0.55164
-0.62737 0.04906 -0.55283
-0.62729 0.04906 -0.55223
-0.62645 0.05281 -0.55404
-0.62796 0.04906 -0.55385
-0.6276 0.04906 -0.55338
-0.62703 0.05281 -0.55479
-0.62645 0.05281 -0.55404
-0.62796 0.05567 -0.55385
-0.62703 0.05281 -0.55479
-0.6276 0.05567 -0.55338
-0.62796 0.05567 -0.55385
-0.62844 0.05567 -0.55025
-0.62703 0.05281 -0.54967
-0.62844 0.05567 -0.55025
-0.62796 0.05567 -0.55061
-0.62777 0.05281 -0.5491
-0.62796 0.04906 -0.55061
-0.62777 0.05281 -0.5491
-0.62703 0.05281 -0.54967
-0.62844 0.04906 -0.55025
-0.62844 0.04906 -0.55422
-0.62844 0.04906 -0.55025
-0.62703 0.05281 -0.55479
-0.62844 0.04906 -0.55422
-0.62796 0.04906 -0.55385
-0.62777 0.05281 -0.55537
-0.62796 0.05567 -0.55385
-0.62777 0.05281 -0.55537
-0.62703 0.05281 -0.55479
-0.62844 0.05567 -0.55422
-0.62844 0.05567 -0.55422
-0.62899 0.05567 -0.55445
-0.62899 0.05567 -0.55002
-0.62777 0.05281 -0.5491
-0.62899 0.05567 -0.55002
-0.62844 0.05567 -0.55025
-0.62865 0.05281 -0.54874
-0.62844 0.04906 -0.55025
-0.62865 0.05281 -0.54874
-0.62777 0.05281 -0.5491
-0.62899 0.04906 -0.55002
-0.62899 0.04906 -0.55445
-0.62899 0.04906 -0.55002
-0.62777 0.05281 -0.55537
-0.62899 0.04906 -0.55445
-0.62844 0.04906 -0.55422
-0.62865 0.05281 -0.55573
-0.62844 0.05567 -0.55422
-0.62865 0.05281 -0.55573
-0.62777 0.05281 -0.55537
-0.62899 0.05567 -0.55445
-0.62899 0.05567 -0.55445
-0.62958 0.05281 -0.55585
-0.62865 0.05281 -0.55573
-0.62958 0.05567 -0.55452
-0.62958 0.05567 -0.54994
-0.62958 0.05567 -0.55452
-0.62865 0.05281 -0.54874
-0.62958 0.05567 -0.54994
-0.62899 0.05567 -0.55002
-0.62958 0.05281 -0.54861
-0.62899 0.04906 -0.55002
-0.62958 0.05281 -0.54861
-0.62865 0.05281 -0.54874
-0.62958 0.04906 -0.54994
-0.62958 0.04906 -0.55452
-0.62958 0.04906 -0.54994
-0.62865 0.05281 -0.55573
-0.62958 0.04906 -0.55452
-0.62899 0.04906 -0.55445
-0.62958 0.05281 -0.55585
-0.62958 0.05281 -0.55585
-0.63018 0.04906 -0.55445
-0.62958 0.04906 -0.55452
-0.63052 0.05281 -0.55573
-0.62958 0.05567 -0.55452
-0.63052 0.05281 -0.55573
-0.62958 0.05281 -0.55585
-0.63018 0.05567 -0.55445
-0.63018 0.05567 -0.55002
-0.63018 0.05567 -0.55445
-0.62958 0.05281 -0.54861
-0.63018 0.05567 -0.55002
-0.62958 0.05567 -0.54994
-0.63052 0.05281 -0.54874
-0.62958 0.04906 -0.54994
-0.63052 0.05281 -0.54874
-0.62958 0.05281 -0.54861
-0.63018 0.04906 -0.55002
-0.63018 0.04906 -0.55445
-0.63018 0.04906 -0.55002
-0.63073 0.04906 -0.55422
-0.63052 0.05281 -0.55573
-0.63073 0.04906 -0.55422
-0.63018 0.04906 -0.55445
-0.63139 0.05281 -0.55537
-0.63018 0.05567 -0.55445
-0.63139 0.05281 -0.55537
-0.63052 0.05281 -0.55573
-0.63073 0.05567 -0.55422
-0.63073 0.05567 -0.55025
-0.63073 0.05567 -0.55422
-0.63052 0.05281 -0.54874
-0.63073 0.05567 -0.55025
-0.63018 0.05567 -0.55002
-0.63139 0.05281 -0.5491
-0.63018 0.04906 -0.55002
-0.63139 0.05281 -0.5491
-0.63052 0.05281 -0.54874
-0.63073 0.04906 -0.55025
-0.63073 0.04906 -0.55025
-0.6312 0.04906 -0.55385
-0.63139 0.05281 -0.55537
-0.6312 0.04906 -0.55385
-0.63073 0.04906 -0.55422
-0.63214 0.05281 -0.55479
-0.63073 0.05567 -0.55422
-0.63214 0.05281 -0.55479
-0.63139 0.05281 -0.55537
-0.6312 0.05567 -0.55385
-0.6312 0.05567 -0.55385
-0.6312 0.05567 -0.55061
-0.63139 0.05281 -0.5491
-0.6312 0.05567 -0.55061
-0.63073 0.05567 -0.55025
-0.63214 0.05281 -0.54967
-0.63073 0.04906 -0.55025
-0.63214 0.05281 -0.54967
-0.63139 0.05281 -0.5491
-0.6312 0.04906 -0.55061
-0.6312 0.04906 -0.55061
-0.63157 0.04906 -0.55338
-0.63157 0.04906 -0.55109
-0.6318 0.04906 -0.55283
-0.6318 0.04906 -0.55164
-0.63187 0.04906 -0.55223
-0.6332 0.05281 -0.55223
-0.6318 0.04906 -0.55164
-0.63187 0.04906 -0.55223
-0.63308 0.05281 -0.5513
-0.6332 0.05281 -0.55223
-0.6318 0.05567 -0.55164
-0.63308 0.05281 -0.5513
-0.63187 0.05567 -0.55223
-0.63308 0.05281 -0.55317
-0.63187 0.05567 -0.55223
-0.6332 0.05281 -0.55223
-0.6318 0.05567 -0.55283
-0.63308 0.05281 -0.55317
-0.63157 0.05567 -0.55338
-0.6318 0.05567 -0.55283
-0.63272 0.05281 -0.55404
-0.63157 0.05567 -0.55338
-0.6318 0.05567 -0.55164
-0.6318 0.05567 -0.55283
-0.63157 0.05567 -0.55109
-0.6312 0.05567 -0.55061
-0.63272 0.05281 -0.55042
-0.63157 0.05567 -0.55109
-0.63214 0.05281 -0.54967
-0.6312 0.04906 -0.55061
-0.63272 0.05281 -0.55042
-0.63214 0.05281 -0.54967
-0.63157 0.04906 -0.55109
-0.63157 0.04906 -0.55109
-0.63308 0.05281 -0.5513
-0.63272 0.05281 -0.55042
-0.6318 0.04906 -0.55164
-0.63308 0.05281 -0.5513
-0.63157 0.05567 -0.55109
-0.63272 0.05281 -0.55042
-0.6318 0.05567 -0.55164
-0.63187 0.05567 -0.55223
-0.62737 0.05567 -0.55164
-0.62597 0.05281 -0.55223
-0.62609 0.05281 -0.5513
-0.62729 0.05567 -0.55223
+0.63272 0.0509454 -0.55404
+0.6312 0.0537044 -0.55385
+0.63157 0.0537044 -0.55338
+0.63214 0.0509454 -0.55479
+0.63272 0.0509454 -0.55404
+0.6312 0.0473278 -0.55385
+0.63214 0.0509454 -0.55479
+0.63157 0.0473278 -0.55338
+0.63308 0.0509454 -0.55317
+0.63157 0.0473278 -0.55338
+0.63272 0.0509454 -0.55404
+0.6318 0.0473278 -0.55283
+0.63308 0.0509454 -0.55317
+0.63187 0.0473278 -0.55223
+0.6318 0.0473278 -0.55283
+0.6332 0.0509454 -0.55223
+0.63308 0.0509454 -0.55317
+0.63308 0.0509454 -0.5513
+0.6332 0.0509454 -0.55223
+0.63272 0.0509454 -0.55404
+0.63272 0.0509454 -0.55042
+0.63214 0.0509454 -0.55479
+0.63214 0.0509454 -0.54967
+0.63139 0.0509454 -0.55537
+0.63139 0.0509454 -0.5491
+0.63052 0.0509454 -0.55573
+0.63052 0.0509454 -0.54874
+0.62958 0.0509454 -0.55585
+0.62958 0.0509454 -0.54861
+0.62865 0.0509454 -0.55573
+0.62865 0.0509454 -0.54874
+0.62777 0.0509454 -0.5491
+0.62777 0.0509454 -0.55537
+0.62703 0.0509454 -0.55479
+0.62703 0.0509454 -0.54967
+0.62645 0.0509454 -0.55404
+0.62645 0.0509454 -0.55042
+0.62609 0.0509454 -0.55317
+0.62609 0.0509454 -0.5513
+0.62597 0.0509454 -0.55223
+0.62729 0.0537044 -0.55223
+0.62609 0.0509454 -0.55317
+0.62597 0.0509454 -0.55223
+0.62737 0.0537044 -0.55283
+0.62737 0.0537044 -0.55164
+0.62737 0.0537044 -0.55283
+0.62729 0.0537044 -0.55223
+0.6276 0.0537044 -0.55109
+0.62609 0.0509454 -0.5513
+0.6276 0.0537044 -0.55109
+0.62737 0.0537044 -0.55164
+0.62645 0.0509454 -0.55042
+0.62609 0.0509454 -0.5513
+0.6276 0.0473278 -0.55109
+0.62645 0.0509454 -0.55042
+0.62737 0.0473278 -0.55164
+0.62597 0.0509454 -0.55223
+0.62737 0.0473278 -0.55164
+0.62609 0.0509454 -0.5513
+0.62729 0.0473278 -0.55223
+0.62609 0.0509454 -0.55317
+0.62729 0.0473278 -0.55223
+0.62597 0.0509454 -0.55223
+0.62737 0.0473278 -0.55283
+0.62609 0.0509454 -0.55317
+0.6276 0.0473278 -0.55338
+0.62737 0.0473278 -0.55283
+0.62645 0.0509454 -0.55404
+0.62609 0.0509454 -0.55317
+0.6276 0.0537044 -0.55338
+0.62645 0.0509454 -0.55404
+0.62737 0.0537044 -0.55283
+0.6276 0.0537044 -0.55338
+0.62796 0.0537044 -0.55061
+0.62645 0.0509454 -0.55042
+0.62796 0.0537044 -0.55061
+0.6276 0.0537044 -0.55109
+0.62703 0.0509454 -0.54967
+0.62645 0.0509454 -0.55042
+0.62796 0.0473278 -0.55061
+0.62703 0.0509454 -0.54967
+0.6276 0.0473278 -0.55109
+0.6276 0.0473278 -0.55109
+0.62796 0.0473278 -0.55385
+0.62796 0.0473278 -0.55061
+0.6276 0.0473278 -0.55338
+0.62737 0.0473278 -0.55164
+0.62737 0.0473278 -0.55283
+0.62729 0.0473278 -0.55223
+0.62645 0.0509454 -0.55404
+0.62796 0.0473278 -0.55385
+0.6276 0.0473278 -0.55338
+0.62703 0.0509454 -0.55479
+0.62645 0.0509454 -0.55404
+0.62796 0.0537044 -0.55385
+0.62703 0.0509454 -0.55479
+0.6276 0.0537044 -0.55338
+0.62796 0.0537044 -0.55385
+0.62844 0.0537044 -0.55025
+0.62703 0.0509454 -0.54967
+0.62844 0.0537044 -0.55025
+0.62796 0.0537044 -0.55061
+0.62777 0.0509454 -0.5491
+0.62796 0.0473278 -0.55061
+0.62777 0.0509454 -0.5491
+0.62703 0.0509454 -0.54967
+0.62844 0.0473278 -0.55025
+0.62844 0.0473278 -0.55422
+0.62844 0.0473278 -0.55025
+0.62703 0.0509454 -0.55479
+0.62844 0.0473278 -0.55422
+0.62796 0.0473278 -0.55385
+0.62777 0.0509454 -0.55537
+0.62796 0.0537044 -0.55385
+0.62777 0.0509454 -0.55537
+0.62703 0.0509454 -0.55479
+0.62844 0.0537044 -0.55422
+0.62844 0.0537044 -0.55422
+0.62899 0.0537044 -0.55445
+0.62899 0.0537044 -0.55002
+0.62777 0.0509454 -0.5491
+0.62899 0.0537044 -0.55002
+0.62844 0.0537044 -0.55025
+0.62865 0.0509454 -0.54874
+0.62844 0.0473278 -0.55025
+0.62865 0.0509454 -0.54874
+0.62777 0.0509454 -0.5491
+0.62899 0.0473278 -0.55002
+0.62899 0.0473278 -0.55445
+0.62899 0.0473278 -0.55002
+0.62777 0.0509454 -0.55537
+0.62899 0.0473278 -0.55445
+0.62844 0.0473278 -0.55422
+0.62865 0.0509454 -0.55573
+0.62844 0.0537044 -0.55422
+0.62865 0.0509454 -0.55573
+0.62777 0.0509454 -0.55537
+0.62899 0.0537044 -0.55445
+0.62899 0.0537044 -0.55445
+0.62958 0.0509454 -0.55585
+0.62865 0.0509454 -0.55573
+0.62958 0.0537044 -0.55452
+0.62958 0.0537044 -0.54994
+0.62958 0.0537044 -0.55452
+0.62865 0.0509454 -0.54874
+0.62958 0.0537044 -0.54994
+0.62899 0.0537044 -0.55002
+0.62958 0.0509454 -0.54861
+0.62899 0.0473278 -0.55002
+0.62958 0.0509454 -0.54861
+0.62865 0.0509454 -0.54874
+0.62958 0.0473278 -0.54994
+0.62958 0.0473278 -0.55452
+0.62958 0.0473278 -0.54994
+0.62865 0.0509454 -0.55573
+0.62958 0.0473278 -0.55452
+0.62899 0.0473278 -0.55445
+0.62958 0.0509454 -0.55585
+0.62958 0.0509454 -0.55585
+0.63018 0.0473278 -0.55445
+0.62958 0.0473278 -0.55452
+0.63052 0.0509454 -0.55573
+0.62958 0.0537044 -0.55452
+0.63052 0.0509454 -0.55573
+0.62958 0.0509454 -0.55585
+0.63018 0.0537044 -0.55445
+0.63018 0.0537044 -0.55002
+0.63018 0.0537044 -0.55445
+0.62958 0.0509454 -0.54861
+0.63018 0.0537044 -0.55002
+0.62958 0.0537044 -0.54994
+0.63052 0.0509454 -0.54874
+0.62958 0.0473278 -0.54994
+0.63052 0.0509454 -0.54874
+0.62958 0.0509454 -0.54861
+0.63018 0.0473278 -0.55002
+0.63018 0.0473278 -0.55445
+0.63018 0.0473278 -0.55002
+0.63073 0.0473278 -0.55422
+0.63052 0.0509454 -0.55573
+0.63073 0.0473278 -0.55422
+0.63018 0.0473278 -0.55445
+0.63139 0.0509454 -0.55537
+0.63018 0.0537044 -0.55445
+0.63139 0.0509454 -0.55537
+0.63052 0.0509454 -0.55573
+0.63073 0.0537044 -0.55422
+0.63073 0.0537044 -0.55025
+0.63073 0.0537044 -0.55422
+0.63052 0.0509454 -0.54874
+0.63073 0.0537044 -0.55025
+0.63018 0.0537044 -0.55002
+0.63139 0.0509454 -0.5491
+0.63018 0.0473278 -0.55002
+0.63139 0.0509454 -0.5491
+0.63052 0.0509454 -0.54874
+0.63073 0.0473278 -0.55025
+0.63073 0.0473278 -0.55025
+0.6312 0.0473278 -0.55385
+0.63139 0.0509454 -0.55537
+0.6312 0.0473278 -0.55385
+0.63073 0.0473278 -0.55422
+0.63214 0.0509454 -0.55479
+0.63073 0.0537044 -0.55422
+0.63214 0.0509454 -0.55479
+0.63139 0.0509454 -0.55537
+0.6312 0.0537044 -0.55385
+0.6312 0.0537044 -0.55385
+0.6312 0.0537044 -0.55061
+0.63139 0.0509454 -0.5491
+0.6312 0.0537044 -0.55061
+0.63073 0.0537044 -0.55025
+0.63214 0.0509454 -0.54967
+0.63073 0.0473278 -0.55025
+0.63214 0.0509454 -0.54967
+0.63139 0.0509454 -0.5491
+0.6312 0.0473278 -0.55061
+0.6312 0.0473278 -0.55061
+0.63157 0.0473278 -0.55338
+0.63157 0.0473278 -0.55109
+0.6318 0.0473278 -0.55283
+0.6318 0.0473278 -0.55164
+0.63187 0.0473278 -0.55223
+0.6332 0.0509454 -0.55223
+0.6318 0.0473278 -0.55164
+0.63187 0.0473278 -0.55223
+0.63308 0.0509454 -0.5513
+0.6332 0.0509454 -0.55223
+0.6318 0.0537044 -0.55164
+0.63308 0.0509454 -0.5513
+0.63187 0.0537044 -0.55223
+0.63308 0.0509454 -0.55317
+0.63187 0.0537044 -0.55223
+0.6332 0.0509454 -0.55223
+0.6318 0.0537044 -0.55283
+0.63308 0.0509454 -0.55317
+0.63157 0.0537044 -0.55338
+0.6318 0.0537044 -0.55283
+0.63272 0.0509454 -0.55404
+0.63157 0.0537044 -0.55338
+0.6318 0.0537044 -0.55164
+0.6318 0.0537044 -0.55283
+0.63157 0.0537044 -0.55109
+0.6312 0.0537044 -0.55061
+0.63272 0.0509454 -0.55042
+0.63157 0.0537044 -0.55109
+0.63214 0.0509454 -0.54967
+0.6312 0.0473278 -0.55061
+0.63272 0.0509454 -0.55042
+0.63214 0.0509454 -0.54967
+0.63157 0.0473278 -0.55109
+0.63157 0.0473278 -0.55109
+0.63308 0.0509454 -0.5513
+0.63272 0.0509454 -0.55042
+0.6318 0.0473278 -0.55164
+0.63308 0.0509454 -0.5513
+0.63157 0.0537044 -0.55109
+0.63272 0.0509454 -0.55042
+0.6318 0.0537044 -0.55164
+0.63187 0.0537044 -0.55223
+0.62737 0.0537044 -0.55164
+0.62597 0.0509454 -0.55223
+0.62609 0.0509454 -0.5513
+0.62729 0.0537044 -0.55223
 numsurf 162
 SURF 0x0
 mat 1
@@ -56616,7 +56616,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh274"
+name "anticollight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh274
@@ -57662,7 +57662,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh276"
+name "winglight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh276
@@ -58907,7 +58907,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh277"
+name "winglight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh277
@@ -59953,7 +59953,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh279"
+name "wheellight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh279
@@ -61202,7 +61202,7 @@ name "Mesh28"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh28
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 67
 0.25379 0.052 -0.15102
@@ -61659,7 +61659,7 @@ refs 3
 61 3.43491 3.59805
 kids 0
 OBJECT poly
-name "Mesh280"
+name "wheellight"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh280
@@ -67287,7 +67287,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh288"
+name "FuelpumpL"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh288
@@ -68532,7 +68532,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh289"
+name "FuelpumpL"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh289
@@ -68881,7 +68881,7 @@ name "Mesh29"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh29
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 64
 0.35757 0.04 -0.30223
@@ -70012,7 +70012,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh291"
+name "FuelpumpR"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh291
@@ -71257,7 +71257,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh292"
+name "FuelpumpR"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh292
@@ -72303,7 +72303,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh294"
+name "FuelPumpFWDL"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh294
@@ -73548,7 +73548,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh295"
+name "FuelPumpFWDL"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh295
@@ -74594,1252 +74594,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh297"
-loc -0.3375 0.0377591 0.33508
-data 7
-Mesh297
-crease 35.000000
-numvert 264
-0.58701 0.0713 -0.02636
-0.58482 0.07545 -0.02609
-0.58534 0.07545 -0.0254
-0.58618 0.0713 -0.02745
-0.58701 0.0713 -0.02636
-0.58482 0.06586 -0.02609
-0.58618 0.0713 -0.02745
-0.58534 0.06586 -0.0254
-0.58754 0.0713 -0.0251
-0.58534 0.06586 -0.0254
-0.58701 0.0713 -0.02636
-0.58568 0.06586 -0.0246
-0.58754 0.0713 -0.0251
-0.58579 0.06586 -0.02374
-0.58568 0.06586 -0.0246
-0.58772 0.0713 -0.02374
-0.58754 0.0713 -0.0251
-0.58754 0.0713 -0.02238
-0.58772 0.0713 -0.02374
-0.58701 0.0713 -0.02636
-0.58701 0.0713 -0.02112
-0.58618 0.0713 -0.02745
-0.58618 0.0713 -0.02003
-0.58509 0.0713 -0.02828
-0.58509 0.0713 -0.0192
-0.58383 0.0713 -0.02881
-0.58383 0.0713 -0.01867
-0.58247 0.0713 -0.02899
-0.58247 0.0713 -0.01849
-0.58111 0.0713 -0.02881
-0.58111 0.0713 -0.01867
-0.57985 0.0713 -0.0192
-0.57985 0.0713 -0.02828
-0.57876 0.0713 -0.02745
-0.57876 0.0713 -0.02003
-0.57793 0.0713 -0.02636
-0.57793 0.0713 -0.02112
-0.5774 0.0713 -0.0251
-0.5774 0.0713 -0.02238
-0.57722 0.0713 -0.02374
-0.57915 0.07545 -0.02374
-0.5774 0.0713 -0.0251
-0.57722 0.0713 -0.02374
-0.57926 0.07545 -0.0246
-0.57926 0.07545 -0.02288
-0.57926 0.07545 -0.0246
-0.57915 0.07545 -0.02374
-0.57959 0.07545 -0.02208
-0.5774 0.0713 -0.02238
-0.57959 0.07545 -0.02208
-0.57926 0.07545 -0.02288
-0.57793 0.0713 -0.02112
-0.5774 0.0713 -0.02238
-0.57959 0.06586 -0.02208
-0.57793 0.0713 -0.02112
-0.57926 0.06586 -0.02288
-0.57722 0.0713 -0.02374
-0.57926 0.06586 -0.02288
-0.5774 0.0713 -0.02238
-0.57915 0.06586 -0.02374
-0.5774 0.0713 -0.0251
-0.57915 0.06586 -0.02374
-0.57722 0.0713 -0.02374
-0.57926 0.06586 -0.0246
-0.5774 0.0713 -0.0251
-0.57959 0.06586 -0.0254
-0.57926 0.06586 -0.0246
-0.57793 0.0713 -0.02636
-0.5774 0.0713 -0.0251
-0.57959 0.07545 -0.0254
-0.57793 0.0713 -0.02636
-0.57926 0.07545 -0.0246
-0.57959 0.07545 -0.0254
-0.58012 0.07545 -0.02139
-0.57793 0.0713 -0.02112
-0.58012 0.07545 -0.02139
-0.57959 0.07545 -0.02208
-0.57876 0.0713 -0.02003
-0.57793 0.0713 -0.02112
-0.58012 0.06586 -0.02139
-0.57876 0.0713 -0.02003
-0.57959 0.06586 -0.02208
-0.57959 0.06586 -0.02208
-0.58012 0.06586 -0.02609
-0.58012 0.06586 -0.02139
-0.57959 0.06586 -0.0254
-0.57926 0.06586 -0.02288
-0.57926 0.06586 -0.0246
-0.57915 0.06586 -0.02374
-0.57793 0.0713 -0.02636
-0.58012 0.06586 -0.02609
-0.57959 0.06586 -0.0254
-0.57876 0.0713 -0.02745
-0.57793 0.0713 -0.02636
-0.58012 0.07545 -0.02609
-0.57876 0.0713 -0.02745
-0.57959 0.07545 -0.0254
-0.58012 0.07545 -0.02609
-0.58081 0.07545 -0.02086
-0.57876 0.0713 -0.02003
-0.58081 0.07545 -0.02086
-0.58012 0.07545 -0.02139
-0.57985 0.0713 -0.0192
-0.58012 0.06586 -0.02139
-0.57985 0.0713 -0.0192
-0.57876 0.0713 -0.02003
-0.58081 0.06586 -0.02086
-0.58081 0.06586 -0.02662
-0.58081 0.06586 -0.02086
-0.57876 0.0713 -0.02745
-0.58081 0.06586 -0.02662
-0.58012 0.06586 -0.02609
-0.57985 0.0713 -0.02828
-0.58012 0.07545 -0.02609
-0.57985 0.0713 -0.02828
-0.57876 0.0713 -0.02745
-0.58081 0.07545 -0.02662
-0.58081 0.07545 -0.02662
-0.58161 0.07545 -0.02695
-0.58161 0.07545 -0.02053
-0.57985 0.0713 -0.0192
-0.58161 0.07545 -0.02053
-0.58081 0.07545 -0.02086
-0.58111 0.0713 -0.01867
-0.58081 0.06586 -0.02086
-0.58111 0.0713 -0.01867
-0.57985 0.0713 -0.0192
-0.58161 0.06586 -0.02053
-0.58161 0.06586 -0.02695
-0.58161 0.06586 -0.02053
-0.57985 0.0713 -0.02828
-0.58161 0.06586 -0.02695
-0.58081 0.06586 -0.02662
-0.58111 0.0713 -0.02881
-0.58081 0.07545 -0.02662
-0.58111 0.0713 -0.02881
-0.57985 0.0713 -0.02828
-0.58161 0.07545 -0.02695
-0.58161 0.07545 -0.02695
-0.58247 0.0713 -0.02899
-0.58111 0.0713 -0.02881
-0.58247 0.07545 -0.02706
-0.58247 0.07545 -0.02042
-0.58247 0.07545 -0.02706
-0.58111 0.0713 -0.01867
-0.58247 0.07545 -0.02042
-0.58161 0.07545 -0.02053
-0.58247 0.0713 -0.01849
-0.58161 0.06586 -0.02053
-0.58247 0.0713 -0.01849
-0.58111 0.0713 -0.01867
-0.58247 0.06586 -0.02042
-0.58247 0.06586 -0.02706
-0.58247 0.06586 -0.02042
-0.58111 0.0713 -0.02881
-0.58247 0.06586 -0.02706
-0.58161 0.06586 -0.02695
-0.58247 0.0713 -0.02899
-0.58247 0.0713 -0.02899
-0.58333 0.06586 -0.02695
-0.58247 0.06586 -0.02706
-0.58383 0.0713 -0.02881
-0.58247 0.07545 -0.02706
-0.58383 0.0713 -0.02881
-0.58247 0.0713 -0.02899
-0.58333 0.07545 -0.02695
-0.58333 0.07545 -0.02053
-0.58333 0.07545 -0.02695
-0.58247 0.0713 -0.01849
-0.58333 0.07545 -0.02053
-0.58247 0.07545 -0.02042
-0.58383 0.0713 -0.01867
-0.58247 0.06586 -0.02042
-0.58383 0.0713 -0.01867
-0.58247 0.0713 -0.01849
-0.58333 0.06586 -0.02053
-0.58333 0.06586 -0.02695
-0.58333 0.06586 -0.02053
-0.58413 0.06586 -0.02662
-0.58383 0.0713 -0.02881
-0.58413 0.06586 -0.02662
-0.58333 0.06586 -0.02695
-0.58509 0.0713 -0.02828
-0.58333 0.07545 -0.02695
-0.58509 0.0713 -0.02828
-0.58383 0.0713 -0.02881
-0.58413 0.07545 -0.02662
-0.58413 0.07545 -0.02086
-0.58413 0.07545 -0.02662
-0.58383 0.0713 -0.01867
-0.58413 0.07545 -0.02086
-0.58333 0.07545 -0.02053
-0.58509 0.0713 -0.0192
-0.58333 0.06586 -0.02053
-0.58509 0.0713 -0.0192
-0.58383 0.0713 -0.01867
-0.58413 0.06586 -0.02086
-0.58413 0.06586 -0.02086
-0.58482 0.06586 -0.02609
-0.58509 0.0713 -0.02828
-0.58482 0.06586 -0.02609
-0.58413 0.06586 -0.02662
-0.58618 0.0713 -0.02745
-0.58413 0.07545 -0.02662
-0.58618 0.0713 -0.02745
-0.58509 0.0713 -0.02828
-0.58482 0.07545 -0.02609
-0.58482 0.07545 -0.02609
-0.58482 0.07545 -0.02139
-0.58509 0.0713 -0.0192
-0.58482 0.07545 -0.02139
-0.58413 0.07545 -0.02086
-0.58618 0.0713 -0.02003
-0.58413 0.06586 -0.02086
-0.58618 0.0713 -0.02003
-0.58509 0.0713 -0.0192
-0.58482 0.06586 -0.02139
-0.58482 0.06586 -0.02139
-0.58534 0.06586 -0.0254
-0.58534 0.06586 -0.02208
-0.58568 0.06586 -0.0246
-0.58568 0.06586 -0.02288
-0.58579 0.06586 -0.02374
-0.58772 0.0713 -0.02374
-0.58568 0.06586 -0.02288
-0.58579 0.06586 -0.02374
-0.58754 0.0713 -0.02238
-0.58772 0.0713 -0.02374
-0.58568 0.07545 -0.02288
-0.58754 0.0713 -0.02238
-0.58579 0.07545 -0.02374
-0.58754 0.0713 -0.0251
-0.58579 0.07545 -0.02374
-0.58772 0.0713 -0.02374
-0.58568 0.07545 -0.0246
-0.58754 0.0713 -0.0251
-0.58534 0.07545 -0.0254
-0.58568 0.07545 -0.0246
-0.58701 0.0713 -0.02636
-0.58534 0.07545 -0.0254
-0.58568 0.07545 -0.02288
-0.58568 0.07545 -0.0246
-0.58534 0.07545 -0.02208
-0.58482 0.07545 -0.02139
-0.58701 0.0713 -0.02112
-0.58534 0.07545 -0.02208
-0.58618 0.0713 -0.02003
-0.58482 0.06586 -0.02139
-0.58701 0.0713 -0.02112
-0.58618 0.0713 -0.02003
-0.58534 0.06586 -0.02208
-0.58534 0.06586 -0.02208
-0.58754 0.0713 -0.02238
-0.58701 0.0713 -0.02112
-0.58568 0.06586 -0.02288
-0.58754 0.0713 -0.02238
-0.58534 0.07545 -0.02208
-0.58701 0.0713 -0.02112
-0.58568 0.07545 -0.02288
-0.58579 0.07545 -0.02374
-0.57926 0.07545 -0.02288
-0.57722 0.0713 -0.02374
-0.5774 0.0713 -0.02238
-0.57915 0.07545 -0.02374
-numsurf 162
-SURF 0x0
-mat 1
-refs 3
-0 0.007702 -0.008494
-1 0.038063 0.115466
-2 0.014527 0.115466
-SURF 0x0
-mat 1
-refs 3
-1 0.038063 0.115466
-0 0.007702 -0.008494
-3 0.044888 -0.008494
-SURF 0x0
-mat 1
-refs 3
-4 0.007702 0.252266
-5 0.038063 0.095791
-6 0.044888 0.252266
-SURF 0x0
-mat 1
-refs 3
-5 0.038063 0.095791
-4 0.007702 0.252266
-7 0.014527 0.095791
-SURF 0x0
-mat 1
-refs 3
-8 0.058499 0.247757
-9 0.088861 0.091281
-10 0.095686 0.247757
-SURF 0x0
-mat 1
-refs 3
-9 0.088861 0.091281
-8 0.058499 0.247757
-11 0.065325 0.091281
-SURF 0x0
-mat 1
-refs 3
-12 0.14123 0.239045
-13 0.110869 0.082569
-14 0.134405 0.082569
-SURF 0x0
-mat 1
-refs 3
-13 0.110869 0.082569
-12 0.14123 0.239045
-15 0.104044 0.239045
-SURF 0x0
-mat 1
-refs 3
-16 0.280044 0.179317
-17 0.280044 0.10558
-18 0.284898 0.142449
-SURF 0x0
-mat 1
-refs 3
-19 0.265813 0.213673
-17 0.280044 0.10558
-16 0.280044 0.179317
-SURF 0x0
-mat 1
-refs 3
-19 0.265813 0.213673
-20 0.265813 0.071224
-17 0.280044 0.10558
-SURF 0x0
-mat 1
-refs 3
-21 0.243175 0.243175
-20 0.265813 0.071224
-19 0.265813 0.213673
-SURF 0x0
-mat 1
-refs 3
-21 0.243175 0.243175
-22 0.243175 0.041722
-20 0.265813 0.071224
-SURF 0x0
-mat 1
-refs 3
-23 0.213673 0.265813
-22 0.243175 0.041722
-21 0.243175 0.243175
-SURF 0x0
-mat 1
-refs 3
-23 0.213673 0.265813
-24 0.213673 0.019085
-22 0.243175 0.041722
-SURF 0x0
-mat 1
-refs 3
-25 0.179317 0.280044
-24 0.213673 0.019085
-23 0.213673 0.265813
-SURF 0x0
-mat 1
-refs 3
-25 0.179317 0.280044
-26 0.179317 0.004854
-24 0.213673 0.019085
-SURF 0x0
-mat 1
-refs 3
-27 0.142449 0.284898
-26 0.179317 0.004854
-25 0.179317 0.280044
-SURF 0x0
-mat 1
-refs 3
-27 0.142449 0.284898
-28 0.142449 0
-26 0.179317 0.004854
-SURF 0x0
-mat 1
-refs 3
-29 0.10558 0.280044
-28 0.142449 0
-27 0.142449 0.284898
-SURF 0x0
-mat 1
-refs 3
-29 0.10558 0.280044
-30 0.10558 0.004854
-28 0.142449 0
-SURF 0x0
-mat 1
-refs 3
-29 0.10558 0.280044
-31 0.071224 0.019085
-30 0.10558 0.004854
-SURF 0x0
-mat 1
-refs 3
-32 0.071224 0.265813
-31 0.071224 0.019085
-29 0.10558 0.280044
-SURF 0x0
-mat 1
-refs 3
-33 0.041722 0.243175
-31 0.071224 0.019085
-32 0.071224 0.265813
-SURF 0x0
-mat 1
-refs 3
-33 0.041722 0.243175
-34 0.041722 0.041722
-31 0.071224 0.019085
-SURF 0x0
-mat 1
-refs 3
-35 0.019085 0.213673
-34 0.041722 0.041722
-33 0.041722 0.243175
-SURF 0x0
-mat 1
-refs 3
-35 0.019085 0.213673
-36 0.019085 0.071224
-34 0.041722 0.041722
-SURF 0x0
-mat 1
-refs 3
-37 0.004854 0.179317
-36 0.019085 0.071224
-35 0.019085 0.213673
-SURF 0x0
-mat 1
-refs 3
-37 0.004854 0.179317
-38 0.004854 0.10558
-36 0.019085 0.071224
-SURF 0x0
-mat 1
-refs 3
-38 0.004854 0.10558
-37 0.004854 0.179317
-39 0 0.142449
-SURF 0x0
-mat 1
-refs 3
-40 -0.148056 0.25029
-41 -0.178417 0.126329
-42 -0.14123 0.126329
-SURF 0x0
-mat 1
-refs 3
-41 -0.178417 0.126329
-40 -0.148056 0.25029
-43 -0.171591 0.25029
-SURF 0x0
-mat 1
-refs 3
-44 0.055363 0.119114
-45 0.055363 0.165783
-46 0.052291 0.142449
-SURF 0x0
-mat 1
-refs 3
-45 0.055363 0.165783
-44 0.055363 0.119114
-47 0.06437 0.09737
-SURF 0x0
-mat 1
-refs 3
-48 -0.095686 0.152879
-49 -0.065325 0.27684
-50 -0.088861 0.27684
-SURF 0x0
-mat 1
-refs 3
-49 -0.065325 0.27684
-48 -0.095686 0.152879
-51 -0.058499 0.152879
-SURF 0x0
-mat 1
-refs 3
-52 -0.095686 0.124426
-53 -0.065325 -0.03205
-54 -0.058499 0.124426
-SURF 0x0
-mat 1
-refs 3
-53 -0.065325 -0.03205
-52 -0.095686 0.124426
-55 -0.088861 -0.03205
-SURF 0x0
-mat 1
-refs 3
-56 -0.14123 0.133138
-57 -0.110869 -0.023337
-58 -0.104044 0.133138
-SURF 0x0
-mat 1
-refs 3
-57 -0.110869 -0.023337
-56 -0.14123 0.133138
-59 -0.134405 -0.023337
-SURF 0x0
-mat 1
-refs 3
-60 -0.178417 0.145459
-61 -0.148056 -0.011017
-62 -0.14123 0.145459
-SURF 0x0
-mat 1
-refs 3
-61 -0.148056 -0.011017
-60 -0.178417 0.145459
-63 -0.171591 -0.011017
-SURF 0x0
-mat 1
-refs 3
-64 -0.167525 0.160549
-65 -0.197886 0.004073
-66 -0.17435 0.004073
-SURF 0x0
-mat 1
-refs 3
-65 -0.197886 0.004073
-64 -0.167525 0.160549
-67 -0.204712 0.160549
-SURF 0x0
-mat 1
-refs 3
-68 -0.167525 0.107281
-69 -0.197886 0.231242
-70 -0.204712 0.107281
-SURF 0x0
-mat 1
-refs 3
-69 -0.197886 0.231242
-68 -0.167525 0.107281
-71 -0.17435 0.231242
-SURF 0x0
-mat 1
-refs 3
-45 0.055363 0.165783
-47 0.06437 0.09737
-72 0.06437 0.187528
-SURF 0x0
-mat 1
-refs 3
-72 0.06437 0.187528
-47 0.06437 0.09737
-73 0.078698 0.078698
-SURF 0x0
-mat 1
-refs 3
-74 -0.044888 0.158572
-75 -0.014527 0.282532
-76 -0.038063 0.282532
-SURF 0x0
-mat 1
-refs 3
-75 -0.014527 0.282532
-74 -0.044888 0.158572
-77 -0.007702 0.158572
-SURF 0x0
-mat 1
-refs 3
-78 -0.044888 0.119917
-79 -0.014527 -0.036559
-80 -0.007702 0.119917
-SURF 0x0
-mat 1
-refs 3
-79 -0.014527 -0.036559
-78 -0.044888 0.119917
-81 -0.038063 -0.036559
-SURF 0x0
-mat 1
-refs 3
-82 -0.06437 0.09737
-83 -0.078698 0.2062
-84 -0.078698 0.078698
-SURF 0x0
-mat 1
-refs 3
-82 -0.06437 0.09737
-85 -0.06437 0.187528
-83 -0.078698 0.2062
-SURF 0x0
-mat 1
-refs 3
-86 -0.055363 0.119114
-85 -0.06437 0.187528
-82 -0.06437 0.09737
-SURF 0x0
-mat 1
-refs 3
-86 -0.055363 0.119114
-87 -0.055363 0.165783
-85 -0.06437 0.187528
-SURF 0x0
-mat 1
-refs 3
-87 -0.055363 0.165783
-86 -0.055363 0.119114
-88 -0.052291 0.142449
-SURF 0x0
-mat 1
-refs 3
-89 -0.181136 0.177379
-90 -0.211498 0.020904
-91 -0.187962 0.020904
-SURF 0x0
-mat 1
-refs 3
-90 -0.211498 0.020904
-89 -0.181136 0.177379
-92 -0.218323 0.177379
-SURF 0x0
-mat 1
-refs 3
-93 -0.181136 0.086036
-94 -0.211498 0.209997
-95 -0.218323 0.086036
-SURF 0x0
-mat 1
-refs 3
-94 -0.211498 0.209997
-93 -0.181136 0.086036
-96 -0.187962 0.209997
-SURF 0x0
-mat 1
-refs 3
-72 0.06437 0.187528
-73 0.078698 0.078698
-97 0.078698 0.2062
-SURF 0x0
-mat 1
-refs 3
-97 0.078698 0.2062
-73 0.078698 0.078698
-98 0.09737 0.06437
-SURF 0x0
-mat 1
-refs 3
-99 0.007702 0.158572
-100 0.038063 0.282532
-101 0.014527 0.282532
-SURF 0x0
-mat 1
-refs 3
-100 0.038063 0.282532
-99 0.007702 0.158572
-102 0.044888 0.158572
-SURF 0x0
-mat 1
-refs 3
-103 0.014527 -0.036559
-104 0.044888 0.119917
-105 0.007702 0.119917
-SURF 0x0
-mat 1
-refs 3
-104 0.044888 0.119917
-103 0.014527 -0.036559
-106 0.038063 -0.036559
-SURF 0x0
-mat 1
-refs 3
-84 -0.078698 0.078698
-107 -0.09737 0.220527
-108 -0.09737 0.06437
-SURF 0x0
-mat 1
-refs 3
-84 -0.078698 0.078698
-83 -0.078698 0.2062
-107 -0.09737 0.220527
-SURF 0x0
-mat 1
-refs 3
-109 -0.181136 0.194804
-110 -0.211498 0.038328
-111 -0.187962 0.038328
-SURF 0x0
-mat 1
-refs 3
-110 -0.211498 0.038328
-109 -0.181136 0.194804
-112 -0.218323 0.194804
-SURF 0x0
-mat 1
-refs 3
-113 -0.187962 0.188002
-114 -0.218323 0.064042
-115 -0.181136 0.064042
-SURF 0x0
-mat 1
-refs 3
-114 -0.218323 0.064042
-113 -0.187962 0.188002
-116 -0.211498 0.188002
-SURF 0x0
-mat 1
-refs 3
-97 0.078698 0.2062
-98 0.09737 0.06437
-117 0.09737 0.220527
-SURF 0x0
-mat 1
-refs 3
-117 0.09737 0.220527
-98 0.09737 0.06437
-118 0.119114 0.229534
-SURF 0x0
-mat 1
-refs 3
-118 0.119114 0.229534
-98 0.09737 0.06437
-119 0.119114 0.055363
-SURF 0x0
-mat 1
-refs 3
-120 0.058499 0.152879
-121 0.088861 0.27684
-122 0.065325 0.27684
-SURF 0x0
-mat 1
-refs 3
-121 0.088861 0.27684
-120 0.058499 0.152879
-123 0.095686 0.152879
-SURF 0x0
-mat 1
-refs 3
-124 0.065325 -0.03205
-125 0.095686 0.124426
-126 0.058499 0.124426
-SURF 0x0
-mat 1
-refs 3
-125 0.095686 0.124426
-124 0.065325 -0.03205
-127 0.088861 -0.03205
-SURF 0x0
-mat 1
-refs 3
-108 -0.09737 0.06437
-128 -0.119114 0.229534
-129 -0.119114 0.055363
-SURF 0x0
-mat 1
-refs 3
-108 -0.09737 0.06437
-107 -0.09737 0.220527
-128 -0.119114 0.229534
-SURF 0x0
-mat 1
-refs 3
-130 -0.167525 0.211634
-131 -0.197886 0.055158
-132 -0.17435 0.055158
-SURF 0x0
-mat 1
-refs 3
-131 -0.197886 0.055158
-130 -0.167525 0.211634
-133 -0.204712 0.211634
-SURF 0x0
-mat 1
-refs 3
-134 -0.17435 0.166757
-135 -0.204712 0.042796
-136 -0.167525 0.042796
-SURF 0x0
-mat 1
-refs 3
-135 -0.204712 0.042796
-134 -0.17435 0.166757
-137 -0.197886 0.166757
-SURF 0x0
-mat 1
-refs 3
-138 -0.148056 0.147709
-139 -0.178417 0.023748
-140 -0.14123 0.023748
-SURF 0x0
-mat 1
-refs 3
-139 -0.178417 0.023748
-138 -0.148056 0.147709
-141 -0.171591 0.147709
-SURF 0x0
-mat 1
-refs 3
-118 0.119114 0.229534
-142 0.142449 0.052291
-143 0.142449 0.232606
-SURF 0x0
-mat 1
-refs 3
-118 0.119114 0.229534
-119 0.119114 0.055363
-142 0.142449 0.052291
-SURF 0x0
-mat 1
-refs 3
-144 0.104044 0.141882
-145 0.134405 0.265842
-146 0.110869 0.265842
-SURF 0x0
-mat 1
-refs 3
-145 0.134405 0.265842
-144 0.104044 0.141882
-147 0.14123 0.141882
-SURF 0x0
-mat 1
-refs 3
-148 0.110869 -0.023337
-149 0.14123 0.133138
-150 0.104044 0.133138
-SURF 0x0
-mat 1
-refs 3
-149 0.14123 0.133138
-148 0.110869 -0.023337
-151 0.134405 -0.023337
-SURF 0x0
-mat 1
-refs 3
-129 -0.119114 0.055363
-152 -0.142449 0.232606
-153 -0.142449 0.052291
-SURF 0x0
-mat 1
-refs 3
-129 -0.119114 0.055363
-128 -0.119114 0.229534
-152 -0.142449 0.232606
-SURF 0x0
-mat 1
-refs 3
-154 -0.14123 0.226724
-155 -0.171591 0.070248
-156 -0.148056 0.070248
-SURF 0x0
-mat 1
-refs 3
-155 -0.171591 0.070248
-154 -0.14123 0.226724
-157 -0.178417 0.226724
-SURF 0x0
-mat 1
-refs 3
-158 -0.104044 0.239045
-159 -0.134405 0.082569
-160 -0.110869 0.082569
-SURF 0x0
-mat 1
-refs 3
-159 -0.134405 0.082569
-158 -0.104044 0.239045
-161 -0.14123 0.239045
-SURF 0x0
-mat 1
-refs 3
-162 -0.110869 0.132156
-163 -0.14123 0.008196
-164 -0.104044 0.008196
-SURF 0x0
-mat 1
-refs 3
-163 -0.14123 0.008196
-162 -0.110869 0.132156
-165 -0.134405 0.132156
-SURF 0x0
-mat 1
-refs 3
-143 0.142449 0.232606
-166 0.165783 0.055363
-167 0.165783 0.229534
-SURF 0x0
-mat 1
-refs 3
-143 0.142449 0.232606
-142 0.142449 0.052291
-166 0.165783 0.055363
-SURF 0x0
-mat 1
-refs 3
-168 0.14123 0.126329
-169 0.171591 0.25029
-170 0.148056 0.25029
-SURF 0x0
-mat 1
-refs 3
-169 0.171591 0.25029
-168 0.14123 0.126329
-171 0.178417 0.126329
-SURF 0x0
-mat 1
-refs 3
-172 0.148056 -0.011017
-173 0.178417 0.145459
-174 0.14123 0.145459
-SURF 0x0
-mat 1
-refs 3
-173 0.178417 0.145459
-172 0.148056 -0.011017
-175 0.171591 -0.011017
-SURF 0x0
-mat 1
-refs 3
-153 -0.142449 0.052291
-176 -0.165783 0.229534
-177 -0.165783 0.055363
-SURF 0x0
-mat 1
-refs 3
-153 -0.142449 0.052291
-152 -0.142449 0.232606
-176 -0.165783 0.229534
-SURF 0x0
-mat 1
-refs 3
-177 -0.165783 0.055363
-176 -0.165783 0.229534
-178 -0.187528 0.220527
-SURF 0x0
-mat 1
-refs 3
-179 -0.058499 0.247757
-180 -0.088861 0.091281
-181 -0.065325 0.091281
-SURF 0x0
-mat 1
-refs 3
-180 -0.088861 0.091281
-179 -0.058499 0.247757
-182 -0.095686 0.247757
-SURF 0x0
-mat 1
-refs 3
-183 -0.065325 0.121159
-184 -0.095686 -0.002801
-185 -0.058499 -0.002801
-SURF 0x0
-mat 1
-refs 3
-184 -0.095686 -0.002801
-183 -0.065325 0.121159
-186 -0.088861 0.121159
-SURF 0x0
-mat 1
-refs 3
-167 0.165783 0.229534
-187 0.187528 0.06437
-188 0.187528 0.220527
-SURF 0x0
-mat 1
-refs 3
-167 0.165783 0.229534
-166 0.165783 0.055363
-187 0.187528 0.06437
-SURF 0x0
-mat 1
-refs 3
-189 0.167525 0.107281
-190 0.197886 0.231242
-191 0.17435 0.231242
-SURF 0x0
-mat 1
-refs 3
-190 0.197886 0.231242
-189 0.167525 0.107281
-192 0.204712 0.107281
-SURF 0x0
-mat 1
-refs 3
-193 0.17435 0.004073
-194 0.204712 0.160549
-195 0.167525 0.160549
-SURF 0x0
-mat 1
-refs 3
-194 0.204712 0.160549
-193 0.17435 0.004073
-196 0.197886 0.004073
-SURF 0x0
-mat 1
-refs 3
-177 -0.165783 0.055363
-178 -0.187528 0.220527
-197 -0.187528 0.06437
-SURF 0x0
-mat 1
-refs 3
-197 -0.187528 0.06437
-178 -0.187528 0.220527
-198 -0.2062 0.2062
-SURF 0x0
-mat 1
-refs 3
-199 -0.007702 0.252266
-200 -0.038063 0.095791
-201 -0.014527 0.095791
-SURF 0x0
-mat 1
-refs 3
-200 -0.038063 0.095791
-199 -0.007702 0.252266
-202 -0.044888 0.252266
-SURF 0x0
-mat 1
-refs 3
-203 -0.014527 0.115466
-204 -0.044888 -0.008494
-205 -0.007702 -0.008494
-SURF 0x0
-mat 1
-refs 3
-204 -0.044888 -0.008494
-203 -0.014527 0.115466
-206 -0.038063 0.115466
-SURF 0x0
-mat 1
-refs 3
-188 0.187528 0.220527
-187 0.187528 0.06437
-207 0.2062 0.2062
-SURF 0x0
-mat 1
-refs 3
-207 0.2062 0.2062
-187 0.187528 0.06437
-208 0.2062 0.078698
-SURF 0x0
-mat 1
-refs 3
-209 0.181136 0.086036
-210 0.211498 0.209997
-211 0.187962 0.209997
-SURF 0x0
-mat 1
-refs 3
-210 0.211498 0.209997
-209 0.181136 0.086036
-212 0.218323 0.086036
-SURF 0x0
-mat 1
-refs 3
-213 0.187962 0.020904
-214 0.218323 0.177379
-215 0.181136 0.177379
-SURF 0x0
-mat 1
-refs 3
-214 0.218323 0.177379
-213 0.187962 0.020904
-216 0.211498 0.020904
-SURF 0x0
-mat 1
-refs 3
-197 -0.187528 0.06437
-198 -0.2062 0.2062
-217 -0.2062 0.078698
-SURF 0x0
-mat 1
-refs 3
-217 -0.2062 0.078698
-198 -0.2062 0.2062
-218 -0.220527 0.187528
-SURF 0x0
-mat 1
-refs 3
-217 -0.2062 0.078698
-218 -0.220527 0.187528
-219 -0.220527 0.09737
-SURF 0x0
-mat 1
-refs 3
-219 -0.220527 0.09737
-218 -0.220527 0.187528
-220 -0.229534 0.165783
-SURF 0x0
-mat 1
-refs 3
-219 -0.220527 0.09737
-220 -0.229534 0.165783
-221 -0.229534 0.119114
-SURF 0x0
-mat 1
-refs 3
-221 -0.229534 0.119114
-220 -0.229534 0.165783
-222 -0.232606 0.142449
-SURF 0x0
-mat 1
-refs 3
-223 0.178417 0.226724
-224 0.148056 0.070248
-225 0.171591 0.070248
-SURF 0x0
-mat 1
-refs 3
-224 0.148056 0.070248
-223 0.178417 0.226724
-226 0.14123 0.226724
-SURF 0x0
-mat 1
-refs 3
-227 0.178417 0.023748
-228 0.148056 0.147709
-229 0.14123 0.023748
-SURF 0x0
-mat 1
-refs 3
-228 0.148056 0.147709
-227 0.178417 0.023748
-230 0.171591 0.147709
-SURF 0x0
-mat 1
-refs 3
-231 0.14123 0.008196
-232 0.110869 0.132156
-233 0.104044 0.008196
-SURF 0x0
-mat 1
-refs 3
-232 0.110869 0.132156
-231 0.14123 0.008196
-234 0.134405 0.132156
-SURF 0x0
-mat 1
-refs 3
-235 0.058499 -0.002801
-236 0.088861 0.121159
-237 0.065325 0.121159
-SURF 0x0
-mat 1
-refs 3
-236 0.088861 0.121159
-235 0.058499 -0.002801
-238 0.095686 -0.002801
-SURF 0x0
-mat 1
-refs 3
-239 0.220527 0.187528
-240 0.229534 0.119114
-241 0.229534 0.165783
-SURF 0x0
-mat 1
-refs 3
-239 0.220527 0.187528
-242 0.220527 0.09737
-240 0.229534 0.119114
-SURF 0x0
-mat 1
-refs 3
-207 0.2062 0.2062
-242 0.220527 0.09737
-239 0.220527 0.187528
-SURF 0x0
-mat 1
-refs 3
-207 0.2062 0.2062
-208 0.2062 0.078698
-242 0.220527 0.09737
-SURF 0x0
-mat 1
-refs 3
-243 0.187962 0.188002
-244 0.218323 0.064042
-245 0.211498 0.188002
-SURF 0x0
-mat 1
-refs 3
-244 0.218323 0.064042
-243 0.187962 0.188002
-246 0.181136 0.064042
-SURF 0x0
-mat 1
-refs 3
-247 0.187962 0.038328
-248 0.218323 0.194804
-249 0.181136 0.194804
-SURF 0x0
-mat 1
-refs 3
-248 0.218323 0.194804
-247 0.187962 0.038328
-250 0.211498 0.038328
-SURF 0x0
-mat 1
-refs 3
-251 0.17435 0.055158
-252 0.204712 0.211634
-253 0.167525 0.211634
-SURF 0x0
-mat 1
-refs 3
-252 0.204712 0.211634
-251 0.17435 0.055158
-254 0.197886 0.055158
-SURF 0x0
-mat 1
-refs 3
-255 0.204712 0.042796
-256 0.17435 0.166757
-257 0.167525 0.042796
-SURF 0x0
-mat 1
-refs 3
-256 0.17435 0.166757
-255 0.204712 0.042796
-258 0.197886 0.166757
-SURF 0x0
-mat 1
-refs 3
-241 0.229534 0.165783
-240 0.229534 0.119114
-259 0.232606 0.142449
-SURF 0x0
-mat 1
-refs 3
-260 -0.110869 0.265842
-261 -0.14123 0.141882
-262 -0.104044 0.141882
-SURF 0x0
-mat 1
-refs 3
-261 -0.14123 0.141882
-260 -0.110869 0.265842
-263 -0.134405 0.265842
-kids 0
-OBJECT poly
-name "Mesh298"
+name "FuelPumpAFTL"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh298
@@ -76889,7 +75644,7 @@ name "Mesh30"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh30
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 70
 0.24357 0.04 -0.14056
@@ -77349,7 +76104,7 @@ refs 3
 37 -0.727559 0.25315
 kids 0
 OBJECT poly
-name "Mesh300"
+name "FuelPumpFWDR"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh300
@@ -78594,7 +77349,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh301"
+name "FuelPumpFWDR"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh301
@@ -79640,7 +78395,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh303"
+name "FuelPumpAFTR"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh303
@@ -80885,7 +79640,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh304"
+name "FuelPumpAFTR"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh304
@@ -85471,7 +84226,7 @@ name "Mesh31"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh31
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 128
 0.14041 0.052 -0.14295
@@ -93571,7 +92326,7 @@ name "Mesh32"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh32
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 40
 0.58314 0.04 -0.30182
@@ -101411,7 +100166,7 @@ name "Mesh33"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh33
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 35
 0.11346 0.04 -0.36883
@@ -103935,7 +102690,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh333"
+name "fastenseatbelts"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh333
@@ -105180,12 +103935,36 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh334"
+name "fastenseatbelts"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh334
 crease 35.000000
-numvert 72
+numvert 96
+0.41909 0.06596 -0.35318
+0.42052 0.0521 -0.35236
+0.42025 0.0521 -0.35138
+0.41861 0.06596 -0.35138
+0.41909 0.06596 -0.34958
+0.42052 0.0521 -0.3504
+0.42123 0.0521 -0.35307
+0.42041 0.06596 -0.3545
+0.42041 0.06596 -0.34826
+0.42123 0.0521 -0.34968
+0.42221 0.0521 -0.35334
+0.42221 0.06596 -0.35498
+0.42221 0.06596 -0.34778
+0.42221 0.0521 -0.34942
+0.42319 0.0521 -0.35307
+0.42401 0.06596 -0.3545
+0.42401 0.06596 -0.34826
+0.42319 0.0521 -0.34968
+0.42391 0.0521 -0.35236
+0.42533 0.06596 -0.35318
+0.42533 0.06596 -0.34958
+0.42581 0.06596 -0.35138
+0.42417 0.0521 -0.35138
+0.42391 0.0521 -0.3504
 0.42042 0.052 -0.35246
 0.42042 0.052 -0.3505
 0.42015 0.052 -0.35148
@@ -105258,271 +104037,775 @@ numvert 72
 0.42571 0.06586 -0.35148
 0.42523 0.06586 -0.34968
 0.42407 0.052 -0.35148
-numsurf 44
+numsurf 116
 SURF 0x0
 mat 4
 refs 3
-0 -0.051766 0.12437
-1 -0.051766 0.07122
+1 -0.051766 0.12437
+5 -0.051766 0.07122
 2 -0.044646 0.097795
 SURF 0x0
 mat 4
 refs 3
-1 -0.051766 0.07122
-0 -0.051766 0.12437
-3 -0.07122 0.143824
+5 -0.051766 0.07122
+1 -0.051766 0.12437
+6 -0.07122 0.143824
 SURF 0x0
 mat 4
 refs 3
-4 -0.112992 0.384684
-5 -0.15206 0.005844
-6 -0.124547 0.005844
+0 -0.112992 0.384684
+6 -0.15206 0.005844
+1 -0.124547 0.005844
 SURF 0x0
 mat 4
 refs 3
-5 -0.15206 0.005844
-4 -0.112992 0.384684
+6 -0.15206 0.005844
+0 -0.112992 0.384684
 7 -0.163615 0.384684
 SURF 0x0
 mat 4
 refs 3
-8 0.013102 0.146693
-9 0.048898 0.013102
-10 0.048898 0.182488
+0 0.013102 0.146693
+8 0.048898 0.013102
+7 0.048898 0.182488
 SURF 0x0
 mat 4
 refs 3
-8 0.013102 0.146693
-11 0.013102 0.048898
-9 0.048898 0.013102
+0 0.013102 0.146693
+4 0.013102 0.048898
+8 0.048898 0.013102
 SURF 0x0
 mat 4
 refs 3
-11 0.013102 0.048898
-8 0.013102 0.146693
-12 0 0.097795
+4 0.013102 0.048898
+0 0.013102 0.146693
+3 0 0.097795
 SURF 0x0
 mat 4
 refs 3
-13 -0.13353 -0.002028
-14 -0.094463 0.376813
-15 -0.145086 0.376813
+1 -0.13353 -0.002028
+3 -0.094463 0.376813
+0 -0.145086 0.376813
 SURF 0x0
 mat 4
 refs 3
-14 -0.094463 0.376813
-13 -0.13353 -0.002028
-16 -0.106018 -0.002028
+3 -0.094463 0.376813
+1 -0.13353 -0.002028
+2 -0.106018 -0.002028
 SURF 0x0
 mat 4
 refs 3
-17 -0.055396 -0.00779
-18 -0.094463 0.37105
-19 -0.082908 -0.00779
+5 -0.055396 -0.00779
+3 -0.094463 0.37105
+2 -0.082908 -0.00779
 SURF 0x0
 mat 4
 refs 3
-18 -0.094463 0.37105
-17 -0.055396 -0.00779
-20 -0.04384 0.37105
+3 -0.094463 0.37105
+5 -0.055396 -0.00779
+4 -0.04384 0.37105
 SURF 0x0
 mat 4
 refs 3
-21 -0.013756 -0.009899
-22 0.025311 0.368941
-23 -0.025311 0.368941
+5 -0.013756 -0.009899
+8 0.025311 0.368941
+4 -0.025311 0.368941
 SURF 0x0
 mat 4
 refs 3
-22 0.025311 0.368941
-21 -0.013756 -0.009899
-24 0.013756 -0.009899
+8 0.025311 0.368941
+5 -0.013756 -0.009899
+9 0.013756 -0.009899
 SURF 0x0
 mat 4
 refs 3
-1 -0.051766 0.07122
-3 -0.07122 0.143824
-25 -0.07122 0.051766
+5 -0.051766 0.07122
+6 -0.07122 0.143824
+9 -0.07122 0.051766
 SURF 0x0
 mat 4
 refs 3
-25 -0.07122 0.051766
-3 -0.07122 0.143824
-26 -0.097795 0.150945
+9 -0.07122 0.051766
+6 -0.07122 0.143824
+10 -0.097795 0.150945
 SURF 0x0
 mat 4
 refs 3
-27 -0.094463 0.392556
-28 -0.13353 0.013716
-29 -0.106018 0.013716
+7 -0.094463 0.392556
+10 -0.13353 0.013716
+6 -0.106018 0.013716
 SURF 0x0
 mat 4
 refs 3
-28 -0.13353 0.013716
-27 -0.094463 0.392556
-30 -0.145086 0.392556
+10 -0.13353 0.013716
+7 -0.094463 0.392556
+11 -0.145086 0.392556
 SURF 0x0
 mat 4
 refs 3
-10 0.048898 0.182488
-31 0.097795 0
-32 0.097795 0.195591
+7 0.048898 0.182488
+12 0.097795 0
+11 0.097795 0.195591
 SURF 0x0
 mat 4
 refs 3
-10 0.048898 0.182488
-9 0.048898 0.013102
-31 0.097795 0
+7 0.048898 0.182488
+8 0.048898 0.013102
+12 0.097795 0
 SURF 0x0
 mat 4
 refs 3
-33 0.055396 -0.00779
-34 0.094463 0.37105
-35 0.04384 0.37105
+9 0.055396 -0.00779
+12 0.094463 0.37105
+8 0.04384 0.37105
 SURF 0x0
 mat 4
 refs 3
-34 0.094463 0.37105
-33 0.055396 -0.00779
-36 0.082908 -0.00779
+12 0.094463 0.37105
+9 0.055396 -0.00779
+13 0.082908 -0.00779
 SURF 0x0
 mat 4
 refs 3
-25 -0.07122 0.051766
-26 -0.097795 0.150945
-37 -0.097795 0.044646
+9 -0.07122 0.051766
+10 -0.097795 0.150945
+13 -0.097795 0.044646
 SURF 0x0
 mat 4
 refs 3
-37 -0.097795 0.044646
-26 -0.097795 0.150945
-38 -0.12437 0.143824
+13 -0.097795 0.044646
+10 -0.097795 0.150945
+14 -0.12437 0.143824
 SURF 0x0
 mat 4
 refs 3
-39 -0.04384 0.398319
-40 -0.082908 0.019478
-41 -0.055396 0.019478
+11 -0.04384 0.398319
+14 -0.082908 0.019478
+10 -0.055396 0.019478
 SURF 0x0
 mat 4
 refs 3
-40 -0.082908 0.019478
-39 -0.04384 0.398319
-42 -0.094463 0.398319
+14 -0.082908 0.019478
+11 -0.04384 0.398319
+15 -0.094463 0.398319
 SURF 0x0
 mat 4
 refs 3
-32 0.097795 0.195591
-43 0.146693 0.013102
-44 0.146693 0.182488
+11 0.097795 0.195591
+16 0.146693 0.013102
+15 0.146693 0.182488
 SURF 0x0
 mat 4
 refs 3
-32 0.097795 0.195591
-31 0.097795 0
-43 0.146693 0.013102
+11 0.097795 0.195591
+12 0.097795 0
+16 0.146693 0.013102
 SURF 0x0
 mat 4
 refs 3
-45 0.106018 -0.002028
-46 0.145086 0.376813
-47 0.094463 0.376813
+13 0.106018 -0.002028
+16 0.145086 0.376813
+12 0.094463 0.376813
 SURF 0x0
 mat 4
 refs 3
-46 0.145086 0.376813
-45 0.106018 -0.002028
-48 0.13353 -0.002028
+16 0.145086 0.376813
+13 0.106018 -0.002028
+17 0.13353 -0.002028
 SURF 0x0
 mat 4
 refs 3
-37 -0.097795 0.044646
-38 -0.12437 0.143824
-49 -0.12437 0.051766
+13 -0.097795 0.044646
+14 -0.12437 0.143824
+17 -0.12437 0.051766
 SURF 0x0
 mat 4
 refs 3
-49 -0.12437 0.051766
-38 -0.12437 0.143824
-50 -0.143824 0.12437
+17 -0.12437 0.051766
+14 -0.12437 0.143824
+18 -0.143824 0.12437
 SURF 0x0
 mat 4
 refs 3
-51 0.013756 0.021587
-52 -0.025311 0.400428
-53 -0.013756 0.021587
+14 0.013756 0.021587
+19 -0.025311 0.400428
+18 -0.013756 0.021587
 SURF 0x0
 mat 4
 refs 3
-52 -0.025311 0.400428
-51 0.013756 0.021587
-54 0.025311 0.400428
+19 -0.025311 0.400428
+14 0.013756 0.021587
+15 0.025311 0.400428
 SURF 0x0
 mat 4
 refs 3
-44 0.146693 0.182488
-43 0.146693 0.013102
-55 0.182488 0.146693
+15 0.146693 0.182488
+16 0.146693 0.013102
+19 0.182488 0.146693
 SURF 0x0
 mat 4
 refs 3
-55 0.182488 0.146693
-43 0.146693 0.013102
-56 0.182488 0.048898
+19 0.182488 0.146693
+16 0.146693 0.013102
+20 0.182488 0.048898
 SURF 0x0
 mat 4
 refs 3
-57 0.124547 0.005844
-58 0.163615 0.384684
-59 0.112992 0.384684
+17 0.124547 0.005844
+20 0.163615 0.384684
+16 0.112992 0.384684
 SURF 0x0
 mat 4
 refs 3
-58 0.163615 0.384684
-57 0.124547 0.005844
-60 0.15206 0.005844
+20 0.163615 0.384684
+17 0.124547 0.005844
+23 0.15206 0.005844
 SURF 0x0
 mat 4
 refs 3
-49 -0.12437 0.051766
-50 -0.143824 0.12437
-61 -0.143824 0.07122
+17 -0.12437 0.051766
+18 -0.143824 0.12437
+23 -0.143824 0.07122
 SURF 0x0
 mat 4
 refs 3
-61 -0.143824 0.07122
-50 -0.143824 0.12437
-62 -0.150945 0.097795
+23 -0.143824 0.07122
+18 -0.143824 0.12437
+22 -0.150945 0.097795
 SURF 0x0
 mat 4
 refs 3
-63 0.082908 0.019478
-64 0.04384 0.398319
-65 0.055396 0.019478
+18 0.082908 0.019478
+21 0.04384 0.398319
+22 0.055396 0.019478
 SURF 0x0
 mat 4
 refs 3
-64 0.04384 0.398319
-63 0.082908 0.019478
-66 0.094463 0.398319
+21 0.04384 0.398319
+18 0.082908 0.019478
+19 0.094463 0.398319
 SURF 0x0
 mat 4
 refs 3
-55 0.182488 0.146693
-56 0.182488 0.048898
-67 0.195591 0.097795
+19 0.182488 0.146693
+20 0.182488 0.048898
+21 0.195591 0.097795
 SURF 0x0
 mat 4
 refs 3
-68 0.106018 0.013716
-69 0.145086 0.392556
-70 0.094463 0.392556
+23 0.106018 0.013716
+21 0.145086 0.392556
+20 0.094463 0.392556
 SURF 0x0
 mat 4
 refs 3
-69 0.145086 0.392556
-68 0.106018 0.013716
-71 0.13353 0.013716
+21 0.145086 0.392556
+23 0.106018 0.013716
+22 0.13353 0.013716
+SURF 0x0
+mat 4
+refs 4
+26 0 0
+24 0 0
+1 0 0
+2 0 0
+SURF 0x0
+mat 4
+refs 4
+25 0 0
+26 0 0
+2 0 0
+5 0 0
+SURF 0x0
+mat 4
+refs 4
+24 0 0
+27 0 0
+6 0 0
+1 0 0
+SURF 0x0
+mat 4
+refs 4
+30 0 0
+28 0 0
+0 0 0
+1 0 0
+SURF 0x0
+mat 4
+refs 4
+29 0 0
+30 0 0
+1 0 0
+6 0 0
+SURF 0x0
+mat 4
+refs 4
+31 0 0
+29 0 0
+6 0 0
+7 0 0
+SURF 0x0
+mat 4
+refs 4
+28 0 0
+31 0 0
+7 0 0
+0 0 0
+SURF 0x0
+mat 4
+refs 4
+34 0 0
+32 0 0
+0 0 0
+7 0 0
+SURF 0x0
+mat 4
+refs 4
+35 0 0
+33 0 0
+8 0 0
+4 0 0
+SURF 0x0
+mat 4
+refs 4
+36 0 0
+35 0 0
+4 0 0
+3 0 0
+SURF 0x0
+mat 4
+refs 4
+32 0 0
+36 0 0
+3 0 0
+0 0 0
+SURF 0x0
+mat 4
+refs 4
+39 0 0
+37 0 0
+1 0 0
+0 0 0
+SURF 0x0
+mat 4
+refs 4
+38 0 0
+39 0 0
+0 0 0
+3 0 0
+SURF 0x0
+mat 4
+refs 4
+40 0 0
+38 0 0
+3 0 0
+2 0 0
+SURF 0x0
+mat 4
+refs 4
+37 0 0
+40 0 0
+2 0 0
+1 0 0
+SURF 0x0
+mat 4
+refs 4
+43 0 0
+41 0 0
+5 0 0
+2 0 0
+SURF 0x0
+mat 4
+refs 4
+42 0 0
+43 0 0
+2 0 0
+3 0 0
+SURF 0x0
+mat 4
+refs 4
+44 0 0
+42 0 0
+3 0 0
+4 0 0
+SURF 0x0
+mat 4
+refs 4
+41 0 0
+44 0 0
+4 0 0
+5 0 0
+SURF 0x0
+mat 4
+refs 4
+47 0 0
+45 0 0
+5 0 0
+4 0 0
+SURF 0x0
+mat 4
+refs 4
+46 0 0
+47 0 0
+4 0 0
+8 0 0
+SURF 0x0
+mat 4
+refs 4
+48 0 0
+46 0 0
+8 0 0
+9 0 0
+SURF 0x0
+mat 4
+refs 4
+45 0 0
+48 0 0
+9 0 0
+5 0 0
+SURF 0x0
+mat 4
+refs 4
+49 0 0
+25 0 0
+5 0 0
+9 0 0
+SURF 0x0
+mat 4
+refs 4
+27 0 0
+50 0 0
+10 0 0
+6 0 0
+SURF 0x0
+mat 4
+refs 4
+53 0 0
+51 0 0
+7 0 0
+6 0 0
+SURF 0x0
+mat 4
+refs 4
+52 0 0
+53 0 0
+6 0 0
+10 0 0
+SURF 0x0
+mat 4
+refs 4
+54 0 0
+52 0 0
+10 0 0
+11 0 0
+SURF 0x0
+mat 4
+refs 4
+51 0 0
+54 0 0
+11 0 0
+7 0 0
+SURF 0x0
+mat 4
+refs 4
+56 0 0
+34 0 0
+7 0 0
+11 0 0
+SURF 0x0
+mat 4
+refs 4
+33 0 0
+55 0 0
+12 0 0
+8 0 0
+SURF 0x0
+mat 4
+refs 4
+59 0 0
+57 0 0
+9 0 0
+8 0 0
+SURF 0x0
+mat 4
+refs 4
+58 0 0
+59 0 0
+8 0 0
+12 0 0
+SURF 0x0
+mat 4
+refs 4
+60 0 0
+58 0 0
+12 0 0
+13 0 0
+SURF 0x0
+mat 4
+refs 4
+57 0 0
+60 0 0
+13 0 0
+9 0 0
+SURF 0x0
+mat 4
+refs 4
+61 0 0
+49 0 0
+9 0 0
+13 0 0
+SURF 0x0
+mat 4
+refs 4
+50 0 0
+62 0 0
+14 0 0
+10 0 0
+SURF 0x0
+mat 4
+refs 4
+65 0 0
+63 0 0
+11 0 0
+10 0 0
+SURF 0x0
+mat 4
+refs 4
+64 0 0
+65 0 0
+10 0 0
+14 0 0
+SURF 0x0
+mat 4
+refs 4
+66 0 0
+64 0 0
+14 0 0
+15 0 0
+SURF 0x0
+mat 4
+refs 4
+63 0 0
+66 0 0
+15 0 0
+11 0 0
+SURF 0x0
+mat 4
+refs 4
+68 0 0
+56 0 0
+11 0 0
+15 0 0
+SURF 0x0
+mat 4
+refs 4
+55 0 0
+67 0 0
+16 0 0
+12 0 0
+SURF 0x0
+mat 4
+refs 4
+71 0 0
+69 0 0
+13 0 0
+12 0 0
+SURF 0x0
+mat 4
+refs 4
+70 0 0
+71 0 0
+12 0 0
+16 0 0
+SURF 0x0
+mat 4
+refs 4
+72 0 0
+70 0 0
+16 0 0
+17 0 0
+SURF 0x0
+mat 4
+refs 4
+69 0 0
+72 0 0
+17 0 0
+13 0 0
+SURF 0x0
+mat 4
+refs 4
+73 0 0
+61 0 0
+13 0 0
+17 0 0
+SURF 0x0
+mat 4
+refs 4
+62 0 0
+74 0 0
+18 0 0
+14 0 0
+SURF 0x0
+mat 4
+refs 4
+77 0 0
+75 0 0
+14 0 0
+18 0 0
+SURF 0x0
+mat 4
+refs 4
+76 0 0
+77 0 0
+18 0 0
+19 0 0
+SURF 0x0
+mat 4
+refs 4
+78 0 0
+76 0 0
+19 0 0
+15 0 0
+SURF 0x0
+mat 4
+refs 4
+75 0 0
+78 0 0
+15 0 0
+14 0 0
+SURF 0x0
+mat 4
+refs 4
+79 0 0
+68 0 0
+15 0 0
+19 0 0
+SURF 0x0
+mat 4
+refs 4
+67 0 0
+80 0 0
+20 0 0
+16 0 0
+SURF 0x0
+mat 4
+refs 4
+83 0 0
+81 0 0
+17 0 0
+16 0 0
+SURF 0x0
+mat 4
+refs 4
+82 0 0
+83 0 0
+16 0 0
+20 0 0
+SURF 0x0
+mat 4
+refs 4
+84 0 0
+82 0 0
+20 0 0
+23 0 0
+SURF 0x0
+mat 4
+refs 4
+81 0 0
+84 0 0
+23 0 0
+17 0 0
+SURF 0x0
+mat 4
+refs 4
+85 0 0
+73 0 0
+17 0 0
+23 0 0
+SURF 0x0
+mat 4
+refs 4
+86 0 0
+85 0 0
+23 0 0
+22 0 0
+SURF 0x0
+mat 4
+refs 4
+74 0 0
+86 0 0
+22 0 0
+18 0 0
+SURF 0x0
+mat 4
+refs 4
+89 0 0
+87 0 0
+18 0 0
+22 0 0
+SURF 0x0
+mat 4
+refs 4
+88 0 0
+89 0 0
+22 0 0
+21 0 0
+SURF 0x0
+mat 4
+refs 4
+90 0 0
+88 0 0
+21 0 0
+19 0 0
+SURF 0x0
+mat 4
+refs 4
+87 0 0
+90 0 0
+19 0 0
+18 0 0
+SURF 0x0
+mat 4
+refs 4
+91 0 0
+79 0 0
+19 0 0
+21 0 0
+SURF 0x0
+mat 4
+refs 4
+80 0 0
+91 0 0
+21 0 0
+20 0 0
+SURF 0x0
+mat 4
+refs 4
+94 0 0
+92 0 0
+23 0 0
+20 0 0
+SURF 0x0
+mat 4
+refs 4
+93 0 0
+94 0 0
+20 0 0
+21 0 0
+SURF 0x0
+mat 4
+refs 4
+95 0 0
+93 0 0
+21 0 0
+22 0 0
+SURF 0x0
+mat 4
+refs 4
+92 0 0
+95 0 0
+22 0 0
+23 0 0
 kids 0
 OBJECT poly
 name "Mesh335"
@@ -106226,7 +105509,7 @@ refs 3
 130 0.462992 0.231496
 kids 0
 OBJECT poly
-name "Mesh336"
+name "nosmoking"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh336
@@ -107471,7 +106754,7 @@ refs 3
 263 -0.134405 0.265842
 kids 0
 OBJECT poly
-name "Mesh337"
+name "nosmoking"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh337
@@ -109766,7 +109049,7 @@ name "Mesh34"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh34
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.10661 0.056 -0.63374
@@ -117745,7 +117028,7 @@ name "Mesh35"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh35
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.18105 0.05544 -0.64125
@@ -126080,7 +125363,7 @@ name "Mesh36"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh36
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.17821 0.05544 -0.6042
@@ -134959,7 +134242,7 @@ name "Mesh37"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh37
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 127
 0.17206 0.05544 -0.56174
@@ -142938,7 +142221,7 @@ name "Mesh38"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh38
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 578
 0.47578 0.044 -0.56733
@@ -153392,7 +152675,7 @@ name "Mesh39"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh39
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 139
 0.52575 0.044 -0.56809
@@ -162403,7 +161686,7 @@ name "Mesh40"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh40
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 91
 0.45451 0.052 -0.64887
@@ -170222,556 +169505,6 @@ refs 3
 71 0.13353 0.013716
 kids 0
 OBJECT poly
-name "Mesh41"
-loc -0.3375 0.0377591 0.33508
-data 6
-Mesh41
-texture "Overhead.png"
-crease 35.000000
-numvert 84
-0.48913 0.058 -0.07808
-0.4647 0.058 -0.08073
-0.46421 0.058 -0.07808
-0.46751 0.058 -0.08523
-0.47171 0.058 -0.08823
-0.47667 0.058 -0.08929
-0.48163 0.058 -0.08823
-0.48583 0.058 -0.08523
-0.48864 0.058 -0.08073
-0.48864 0.044 -0.08073
-0.48963 0.066 -0.07542
-0.48963 0.044 -0.07542
-0.48913 0.066 -0.07277
-0.48963 0.044 -0.07542
-0.48963 0.066 -0.07542
-0.48913 0.058 -0.07277
-0.48864 0.058 -0.07012
-0.48864 0.044 -0.07012
-0.48583 0.058 -0.06562
-0.48864 0.058 -0.07012
-0.48583 0.044 -0.06562
-0.48583 0.058 -0.06562
-0.48163 0.044 -0.06261
-0.48163 0.058 -0.06261
-0.48913 0.058 -0.07277
-0.48163 0.058 -0.06261
-0.48583 0.058 -0.06562
-0.47667 0.058 -0.06156
-0.47171 0.058 -0.06261
-0.46751 0.058 -0.06562
-0.4647 0.058 -0.07012
-0.46421 0.058 -0.07277
-0.48913 0.066 -0.07277
-0.46421 0.066 -0.07277
-0.46421 0.066 -0.07808
-0.46421 0.066 -0.07277
-0.48913 0.066 -0.07277
-0.46371 0.066 -0.07542
-0.46421 0.066 -0.07808
-0.46371 0.044 -0.07542
-0.46371 0.066 -0.07542
-0.46421 0.066 -0.07808
-0.48913 0.066 -0.07808
-0.48913 0.066 -0.07808
-0.48963 0.066 -0.07542
-0.48913 0.066 -0.07808
-0.4647 0.044 -0.08073
-0.4647 0.044 -0.08073
-0.46751 0.044 -0.08523
-0.47171 0.044 -0.08823
-0.46751 0.044 -0.08523
-0.47667 0.044 -0.08929
-0.47171 0.044 -0.08823
-0.48163 0.044 -0.08823
-0.47667 0.044 -0.08929
-0.48583 0.044 -0.08523
-0.48163 0.044 -0.08823
-0.48583 0.044 -0.08523
-0.48864 0.044 -0.08073
-0.48583 0.044 -0.08523
-0.48864 0.044 -0.08073
-0.48163 0.044 -0.08823
-0.47667 0.044 -0.06156
-0.47667 0.044 -0.08929
-0.47171 0.044 -0.08823
-0.47171 0.044 -0.06261
-0.46751 0.044 -0.06562
-0.46751 0.044 -0.08523
-0.4647 0.044 -0.07012
-0.4647 0.044 -0.08073
-0.46371 0.044 -0.07542
-0.46421 0.058 -0.07277
-0.4647 0.058 -0.07012
-0.4647 0.058 -0.07012
-0.46751 0.058 -0.06562
-0.47171 0.058 -0.06261
-0.46751 0.058 -0.06562
-0.47667 0.058 -0.06156
-0.47171 0.058 -0.06261
-0.48163 0.058 -0.06261
-0.47667 0.058 -0.06156
-0.46371 0.066 -0.07542
-0.46421 0.066 -0.07277
-0.48864 0.058 -0.07012
-numsurf 76
-SURF 0x0
-mat 0
-refs 3
-0 3.11569 3.27536
-1 3.11969 3.31156
-2 3.11573 3.31229
-SURF 0x0
-mat 0
-refs 3
-1 3.11969 3.31156
-0 3.11569 3.27536
-3 3.1264 3.3074
-SURF 0x0
-mat 0
-refs 3
-3 3.1264 3.3074
-0 3.11569 3.27536
-4 3.13088 3.30117
-SURF 0x0
-mat 0
-refs 3
-4 3.13088 3.30117
-0 3.11569 3.27536
-5 3.13244 3.29382
-SURF 0x0
-mat 0
-refs 3
-5 3.13244 3.29382
-0 3.11569 3.27536
-6 3.13086 3.28648
-SURF 0x0
-mat 0
-refs 3
-6 3.13086 3.28648
-0 3.11569 3.27536
-7 3.12636 3.28025
-SURF 0x0
-mat 0
-refs 3
-7 3.12636 3.28025
-0 3.11569 3.27536
-8 3.11965 3.27609
-SURF 0x0
-mat 0
-refs 3
-0 3.11569 3.27536
-9 3.12166 3.26642
-8 3.11965 3.27609
-SURF 0x0
-mat 0
-refs 3
-0 3.11569 3.27536
-10 3.11057 3.28016
-9 3.12166 3.26642
-SURF 0x0
-mat 0
-refs 3
-9 3.12166 3.26642
-10 3.11057 3.28016
-11 3.11374 3.26496
-SURF 0x0
-mat 0
-refs 3
-12 3.1063 4.73984
-13 3.11342 4.72537
-14 3.11026 4.74057
-SURF 0x0
-mat 0
-refs 3
-15 3.10745 4.73431
-13 3.11342 4.72537
-12 3.1063 4.73984
-SURF 0x0
-mat 0
-refs 3
-16 3.10349 4.73358
-13 3.11342 4.72537
-15 3.10745 4.73431
-SURF 0x0
-mat 0
-refs 3
-13 3.11342 4.72537
-16 3.10349 4.73358
-17 3.1055 4.72391
-SURF 0x0
-mat 0
-refs 3
-18 3.09295 4.7281
-17 3.1055 4.72391
-19 3.09966 4.73226
-SURF 0x0
-mat 0
-refs 3
-17 3.1055 4.72391
-18 3.09295 4.7281
-20 3.09878 4.71975
-SURF 0x0
-mat 0
-refs 3
-21 3.08982 4.72548
-22 3.09429 4.71352
-20 3.09878 4.71975
-SURF 0x0
-mat 0
-refs 3
-22 3.09429 4.71352
-21 3.08982 4.72548
-23 3.08533 4.71925
-SURF 0x0
-mat 0
-refs 3
-24 3.11367 3.31298
-25 3.12882 3.30186
-26 3.12434 3.30809
-SURF 0x0
-mat 0
-refs 3
-24 3.11367 3.31298
-27 3.13038 3.29452
-25 3.12882 3.30186
-SURF 0x0
-mat 0
-refs 3
-24 3.11367 3.31298
-28 3.1288 3.28717
-27 3.13038 3.29452
-SURF 0x0
-mat 0
-refs 3
-24 3.11367 3.31298
-29 3.12431 3.28094
-28 3.1288 3.28717
-SURF 0x0
-mat 0
-refs 3
-24 3.11367 3.31298
-30 3.11759 3.27678
-29 3.12431 3.28094
-SURF 0x0
-mat 0
-refs 3
-30 3.11759 3.27678
-24 3.11367 3.31298
-31 3.11363 3.27605
-SURF 0x0
-mat 0
-refs 3
-32 3.10738 3.31299
-31 3.11363 3.27605
-24 3.11367 3.31298
-SURF 0x0
-mat 0
-refs 3
-31 3.11363 3.27605
-32 3.10738 3.31299
-33 3.10734 3.27606
-SURF 0x0
-mat 0
-refs 3
-34 3.11063 3.31313
-35 3.10271 3.31313
-36 3.10267 3.2762
-SURF 0x0
-mat 0
-refs 3
-35 3.10271 3.31313
-34 3.11063 3.31313
-37 3.10667 3.31386
-SURF 0x0
-mat 0
-refs 3
-38 3.11458 3.30676
-39 3.11378 3.32269
-40 3.11062 3.3075
-SURF 0x0
-mat 0
-refs 3
-39 3.11378 3.32269
-38 3.11458 3.30676
-2 3.11573 3.31229
-SURF 0x0
-mat 0
-refs 3
-41 3.10943 3.31229
-0 3.11569 3.27536
-2 3.11573 3.31229
-SURF 0x0
-mat 0
-refs 3
-0 3.11569 3.27536
-41 3.10943 3.31229
-42 3.10939 3.27537
-SURF 0x0
-mat 0
-refs 3
-34 3.11063 3.31313
-36 3.10267 3.2762
-43 3.11058 3.2762
-SURF 0x0
-mat 0
-refs 3
-43 3.11058 3.2762
-36 3.10267 3.2762
-44 3.10663 3.27547
-SURF 0x0
-mat 0
-refs 3
-0 3.11569 3.27536
-45 3.11454 3.28089
-10 3.11057 3.28016
-SURF 0x0
-mat 0
-refs 3
-39 3.11378 3.32269
-2 3.11573 3.31229
-46 3.1217 3.32123
-SURF 0x0
-mat 0
-refs 3
-46 3.1217 3.32123
-2 3.11573 3.31229
-1 3.11969 3.31156
-SURF 0x0
-mat 0
-refs 3
-3 3.1264 3.3074
-47 3.12552 3.3199
-1 3.11969 3.31156
-SURF 0x0
-mat 0
-refs 3
-47 3.12552 3.3199
-3 3.1264 3.3074
-48 3.13223 3.31573
-SURF 0x0
-mat 0
-refs 3
-3 3.1264 3.3074
-49 3.13984 3.30688
-50 3.13536 3.31311
-SURF 0x0
-mat 0
-refs 3
-49 3.13984 3.30688
-3 3.1264 3.3074
-4 3.13088 3.30117
-SURF 0x0
-mat 0
-refs 3
-4 3.13088 3.30117
-51 3.14322 3.29586
-52 3.14165 3.30321
-SURF 0x0
-mat 0
-refs 3
-51 3.14322 3.29586
-4 3.13088 3.30117
-5 3.13244 3.29382
-SURF 0x0
-mat 0
-refs 3
-5 3.13244 3.29382
-53 3.14163 3.28442
-54 3.14322 3.29176
-SURF 0x0
-mat 0
-refs 3
-53 3.14163 3.28442
-5 3.13244 3.29382
-6 3.13086 3.28648
-SURF 0x0
-mat 0
-refs 3
-6 3.13086 3.28648
-55 3.13532 3.27452
-56 3.13982 3.28075
-SURF 0x0
-mat 0
-refs 3
-55 3.13532 3.27452
-6 3.13086 3.28648
-7 3.12636 3.28025
-SURF 0x0
-mat 0
-refs 3
-8 3.11965 3.27609
-57 3.1322 3.2719
-7 3.12636 3.28025
-SURF 0x0
-mat 0
-refs 3
-57 3.1322 3.2719
-8 3.11965 3.27609
-58 3.12548 3.26774
-SURF 0x0
-mat 0
-refs 3
-20 3.09878 4.71975
-59 3.12805 4.71975
-60 3.12134 4.72391
-SURF 0x0
-mat 0
-refs 3
-22 3.09429 4.71352
-59 3.12805 4.71975
-20 3.09878 4.71975
-SURF 0x0
-mat 0
-refs 3
-22 3.09429 4.71352
-61 3.13252 4.71352
-59 3.12805 4.71975
-SURF 0x0
-mat 0
-refs 3
-62 3.0927 4.70618
-61 3.13252 4.71352
-22 3.09429 4.71352
-SURF 0x0
-mat 0
-refs 3
-62 3.0927 4.70618
-63 3.13409 4.70618
-61 3.13252 4.71352
-SURF 0x0
-mat 0
-refs 3
-62 3.0927 4.70618
-64 3.13251 4.69883
-63 3.13409 4.70618
-SURF 0x0
-mat 0
-refs 3
-65 3.09427 4.69883
-64 3.13251 4.69883
-62 3.0927 4.70618
-SURF 0x0
-mat 0
-refs 3
-66 3.09875 4.6926
-64 3.13251 4.69883
-65 3.09427 4.69883
-SURF 0x0
-mat 0
-refs 3
-66 3.09875 4.6926
-67 3.12801 4.6926
-64 3.13251 4.69883
-SURF 0x0
-mat 0
-refs 3
-68 3.10546 4.68844
-67 3.12801 4.6926
-66 3.09875 4.6926
-SURF 0x0
-mat 0
-refs 3
-68 3.10546 4.68844
-69 3.12129 4.68844
-67 3.12801 4.6926
-SURF 0x0
-mat 0
-refs 3
-69 3.12129 4.68844
-68 3.10546 4.68844
-70 3.11337 4.68698
-SURF 0x0
-mat 0
-refs 3
-68 3.10546 4.68844
-71 3.1074 4.67804
-70 3.11337 4.68698
-SURF 0x0
-mat 0
-refs 3
-71 3.1074 4.67804
-68 3.10546 4.68844
-72 3.10344 4.67877
-SURF 0x0
-mat 0
-refs 3
-66 3.09875 4.6926
-73 3.09962 4.68011
-68 3.10546 4.68844
-SURF 0x0
-mat 0
-refs 3
-73 3.09962 4.68011
-66 3.09875 4.6926
-74 3.09291 4.68427
-SURF 0x0
-mat 0
-refs 3
-66 3.09875 4.6926
-75 3.08531 4.69312
-76 3.08979 4.68689
-SURF 0x0
-mat 0
-refs 3
-75 3.08531 4.69312
-66 3.09875 4.6926
-65 3.09427 4.69883
-SURF 0x0
-mat 0
-refs 3
-65 3.09427 4.69883
-77 3.08193 4.70414
-78 3.08349 4.69679
-SURF 0x0
-mat 0
-refs 3
-77 3.08193 4.70414
-65 3.09427 4.69883
-62 3.0927 4.70618
-SURF 0x0
-mat 0
-refs 3
-62 3.0927 4.70618
-79 3.08351 4.71558
-80 3.08193 4.70823
-SURF 0x0
-mat 0
-refs 3
-79 3.08351 4.71558
-62 3.0927 4.70618
-22 3.09429 4.71352
-SURF 0x0
-mat 0
-refs 3
-70 3.11337 4.68698
-71 3.1074 4.67804
-81 3.11021 4.67179
-SURF 0x0
-mat 0
-refs 3
-81 3.11021 4.67179
-71 3.1074 4.67804
-82 3.10625 4.67252
-SURF 0x0
-mat 0
-refs 3
-20 3.09878 4.71975
-60 3.12134 4.72391
-17 3.1055 4.72391
-SURF 0x0
-mat 0
-refs 3
-17 3.1055 4.72391
-60 3.12134 4.72391
-13 3.11342 4.72537
-SURF 0x0
-mat 0
-refs 3
-24 3.11367 3.31298
-26 3.12434 3.30809
-83 3.11763 3.31225
-kids 0
-OBJECT poly
 name "Mesh410"
 loc -0.3375 0.0377591 0.33508
 data 7
@@ -176531,11 +175264,11 @@ refs 3
 82 -0.711269 0.38531
 kids 0
 OBJECT poly
-name "Mesh418"
+name "landinglight4"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh418
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 94
 0.62873 0.05031 -0.15055
@@ -177043,11 +175776,11 @@ refs 3
 42 3.23156 3.06843
 kids 0
 OBJECT poly
-name "Mesh419"
+name "landinglight3"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh419
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 94
 0.62873 0.05031 -0.12595
@@ -177559,7 +176292,7 @@ name "Mesh42"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh42
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 64
 0.08361 0.056 -0.17759
@@ -177989,11 +176722,11 @@ refs 3
 63 3.26448 3.79775
 kids 0
 OBJECT poly
-name "Mesh420"
+name "landinglight2"
 loc -0.3375 0.0377591 0.33508
 data 7
 Mesh420
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 94
 0.62873 0.05031 -0.103
@@ -178090,518 +176823,6 @@ numvert 94
 0.6311 0.05031 -0.10163
 0.63322 0.05031 -0.10958
 0.63322 0.05031 -0.09418
-numsurf 68
-SURF 0x0
-mat 0
-refs 3
-0 3.02362 3.97641
-1 3.00899 3.97518
-2 3.02365 3.97541
-SURF 0x0
-mat 0
-refs 3
-1 3.00899 3.97518
-0 3.02362 3.97641
-3 3.00897 3.97574
-SURF 0x0
-mat 0
-refs 3
-4 3.08015 4.95152
-5 3.06552 4.95275
-6 3.0655 4.95219
-SURF 0x0
-mat 0
-refs 3
-5 3.06552 4.95275
-4 3.08015 4.95152
-7 3.08018 4.95252
-SURF 0x0
-mat 0
-refs 3
-8 3.04307 3.08515
-9 3.03259 3.07728
-10 3.04277 3.08414
-SURF 0x0
-mat 0
-refs 3
-11 3.04386 3.08589
-9 3.03259 3.07728
-8 3.04307 3.08515
-SURF 0x0
-mat 0
-refs 3
-12 3.05341 3.09395
-9 3.03259 3.07728
-11 3.04386 3.08589
-SURF 0x0
-mat 0
-refs 3
-9 3.03259 3.07728
-12 3.05341 3.09395
-13 3.03161 3.08232
-SURF 0x0
-mat 0
-refs 3
-14 3.20885 3.08216
-15 3.23261 3.07794
-16 3.23261 3.08216
-SURF 0x0
-mat 0
-refs 3
-15 3.23261 3.07794
-14 3.20885 3.08216
-17 3.20885 3.07794
-SURF 0x0
-mat 0
-refs 3
-18 3.20491 3.08027
-19 3.20578 3.07332
-17 3.20885 3.07794
-SURF 0x0
-mat 0
-refs 3
-19 3.20578 3.07332
-18 3.20491 3.08027
-20 3.20184 3.07565
-SURF 0x0
-mat 0
-refs 3
-11 3.04386 3.08589
-21 3.05864 3.09144
-12 3.05341 3.09395
-SURF 0x0
-mat 0
-refs 3
-21 3.05864 3.09144
-11 3.04386 3.08589
-22 3.04495 3.08615
-SURF 0x0
-mat 0
-refs 3
-23 3.03144 3.50325
-24 3.01681 3.50202
-25 3.03147 3.50225
-SURF 0x0
-mat 0
-refs 3
-24 3.01681 3.50202
-23 3.03144 3.50325
-26 3.01679 3.50258
-SURF 0x0
-mat 0
-refs 3
-27 3.01595 3.50283
-24 3.01681 3.50202
-28 3.01649 3.50253
-SURF 0x0
-mat 0
-refs 3
-24 3.01681 3.50202
-27 3.01595 3.50283
-29 3.01533 3.50283
-SURF 0x0
-mat 0
-refs 3
-24 3.01681 3.50202
-29 3.01533 3.50283
-30 3.0168 3.50144
-SURF 0x0
-mat 0
-refs 3
-30 3.0168 3.50144
-29 3.01533 3.50283
-31 3.01479 3.50253
-SURF 0x0
-mat 0
-refs 3
-32 3.22692 4.92605
-33 3.21219 4.93043
-34 3.21204 4.92987
-SURF 0x0
-mat 0
-refs 3
-33 3.21219 4.93043
-32 3.22692 4.92605
-35 3.22719 4.92707
-SURF 0x0
-mat 0
-refs 3
-10 3.04277 3.08414
-9 3.03259 3.07728
-36 3.04305 3.08312
-SURF 0x0
-mat 0
-refs 3
-36 3.04305 3.08312
-9 3.03259 3.07728
-37 3.04383 3.08237
-SURF 0x0
-mat 0
-refs 3
-37 3.04383 3.08237
-9 3.03259 3.07728
-38 3.03755 3.07456
-SURF 0x0
-mat 0
-refs 3
-39 3.23431 3.0731
-40 3.23564 3.0663
-41 3.23839 3.07098
-SURF 0x0
-mat 0
-refs 3
-40 3.23564 3.0663
-39 3.23431 3.0731
-42 3.23156 3.06843
-SURF 0x0
-mat 0
-refs 3
-39 3.23431 3.0731
-43 3.20858 3.06843
-42 3.23156 3.06843
-SURF 0x0
-mat 0
-refs 3
-39 3.23431 3.0731
-19 3.20578 3.07332
-43 3.20858 3.06843
-SURF 0x0
-mat 0
-refs 3
-15 3.23261 3.07794
-19 3.20578 3.07332
-39 3.23431 3.0731
-SURF 0x0
-mat 0
-refs 3
-19 3.20578 3.07332
-15 3.23261 3.07794
-17 3.20885 3.07794
-SURF 0x0
-mat 0
-refs 3
-44 3.23877 3.07449
-15 3.23261 3.07794
-39 3.23431 3.0731
-SURF 0x0
-mat 0
-refs 3
-15 3.23261 3.07794
-44 3.23877 3.07449
-45 3.23707 3.07933
-SURF 0x0
-mat 0
-refs 3
-46 3.20167 3.07125
-43 3.20858 3.06843
-19 3.20578 3.07332
-SURF 0x0
-mat 0
-refs 3
-43 3.20858 3.06843
-46 3.20167 3.07125
-47 3.20447 3.06635
-SURF 0x0
-mat 0
-refs 3
-21 3.05864 3.09144
-48 3.04708 3.08411
-49 3.05863 3.08581
-SURF 0x0
-mat 0
-refs 3
-21 3.05864 3.09144
-50 3.0468 3.08512
-48 3.04708 3.08411
-SURF 0x0
-mat 0
-refs 3
-21 3.05864 3.09144
-51 3.04602 3.08587
-50 3.0468 3.08512
-SURF 0x0
-mat 0
-refs 3
-21 3.05864 3.09144
-22 3.04495 3.08615
-51 3.04602 3.08587
-SURF 0x0
-mat 0
-refs 3
-52 3.23489 4.93523
-53 3.22338 4.92605
-54 3.22412 4.92531
-SURF 0x0
-mat 0
-refs 3
-53 3.22338 4.92605
-52 3.23489 4.93523
-55 3.23448 4.93564
-SURF 0x0
-mat 0
-refs 3
-30 3.0168 3.50144
-56 3.03144 3.50021
-57 3.03147 3.5012
-SURF 0x0
-mat 0
-refs 3
-56 3.03144 3.50021
-30 3.0168 3.50144
-58 3.01679 3.50088
-SURF 0x0
-mat 0
-refs 3
-30 3.0168 3.50144
-31 3.01479 3.50253
-59 3.01649 3.50093
-SURF 0x0
-mat 0
-refs 3
-59 3.01649 3.50093
-31 3.01479 3.50253
-60 3.01447 3.50202
-SURF 0x0
-mat 0
-refs 3
-61 3.08019 4.95357
-62 3.0655 4.95389
-63 3.06552 4.95334
-SURF 0x0
-mat 0
-refs 3
-62 3.0655 4.95389
-61 3.08019 4.95357
-64 3.08015 4.95456
-SURF 0x0
-mat 0
-refs 3
-65 3.22692 4.92808
-66 3.2154 4.91891
-67 3.21582 4.91849
-SURF 0x0
-mat 0
-refs 3
-66 3.2154 4.91891
-65 3.22692 4.92808
-68 3.22617 4.92883
-SURF 0x0
-mat 0
-refs 3
-37 3.04383 3.08237
-38 3.03755 3.07456
-69 3.04491 3.08209
-SURF 0x0
-mat 0
-refs 3
-69 3.04491 3.08209
-38 3.03755 3.07456
-70 3.04599 3.08236
-SURF 0x0
-mat 0
-refs 3
-49 3.05863 3.08581
-70 3.04599 3.08236
-38 3.03755 3.07456
-SURF 0x0
-mat 0
-refs 3
-49 3.05863 3.08581
-71 3.04679 3.0831
-70 3.04599 3.08236
-SURF 0x0
-mat 0
-refs 3
-49 3.05863 3.08581
-48 3.04708 3.08411
-71 3.04679 3.0831
-SURF 0x0
-mat 0
-refs 3
-72 3.06629 3.04666
-73 3.08092 3.04544
-74 3.08096 3.04643
-SURF 0x0
-mat 0
-refs 3
-73 3.08092 3.04544
-72 3.06629 3.04666
-75 3.06627 3.04611
-SURF 0x0
-mat 0
-refs 3
-76 3.01595 3.50063
-77 3.01447 3.50144
-78 3.01533 3.50063
-SURF 0x0
-mat 0
-refs 3
-76 3.01595 3.50063
-60 3.01447 3.50202
-77 3.01447 3.50144
-SURF 0x0
-mat 0
-refs 3
-59 3.01649 3.50093
-60 3.01447 3.50202
-76 3.01595 3.50063
-SURF 0x0
-mat 0
-refs 3
-79 3.22338 4.92808
-80 3.2381 4.9237
-81 3.23826 4.92427
-SURF 0x0
-mat 0
-refs 3
-80 3.2381 4.9237
-79 3.22338 4.92808
-82 3.2231 4.92707
-SURF 0x0
-mat 0
-refs 3
-78 3.01533 3.50063
-77 3.01447 3.50144
-83 3.01479 3.50093
-SURF 0x0
-mat 0
-refs 3
-84 3.12967 4.4988
-85 3.11498 4.49912
-86 3.115 4.49857
-SURF 0x0
-mat 0
-refs 3
-85 3.11498 4.49912
-84 3.12967 4.4988
-87 3.12964 4.49979
-SURF 0x0
-mat 0
-refs 3
-88 3.22515 4.9291
-89 3.22835 4.91554
-90 3.22893 4.9157
-SURF 0x0
-mat 0
-refs 3
-89 3.22835 4.91554
-88 3.22515 4.9291
-91 3.22413 4.92883
-SURF 0x0
-mat 0
-refs 3
-92 3.23156 3.06422
-43 3.20858 3.06843
-93 3.20858 3.06422
-SURF 0x0
-mat 0
-refs 3
-43 3.20858 3.06843
-92 3.23156 3.06422
-42 3.23156 3.06843
-kids 0
-OBJECT poly
-name "Mesh421"
-loc -0.3375 0.0377591 0.33508
-data 7
-Mesh421
-texture "Overhead.png"
-crease 35.000000
-numvert 94
-0.62873 0.05031 -0.08132
-0.62915 0.0405 -0.08064
-0.62855 0.05031 -0.08064
-0.62925 0.0405 -0.08102
-0.62873 0.05031 -0.08132
-0.62953 0.0405 -0.0813
-0.62925 0.0405 -0.08102
-0.62923 0.05031 -0.08182
-0.62873 0.05031 -0.08132
-0.63007 0.05031 -0.08974
-0.62923 0.05031 -0.08182
-0.62855 0.05031 -0.08064
-0.6268 0.05031 -0.07268
-0.6268 0.05031 -0.0886
-0.6268 0.05031 -0.07268
-0.6268 0.05331 -0.0886
-0.6268 0.05031 -0.0886
-0.6268 0.05331 -0.07268
-0.6268 0.05031 -0.07268
-0.62992 0.05331 -0.07062
-0.62992 0.05031 -0.07062
-0.62992 0.05031 -0.07062
-0.62873 0.05031 -0.07995
-0.62855 0.05031 -0.08064
-0.62925 0.0405 -0.08025
-0.62873 0.05031 -0.07995
-0.62915 0.0405 -0.08064
-0.62925 0.0405 -0.08102
-0.62915 0.0405 -0.08064
-0.62953 0.0405 -0.0813
-0.62953 0.0405 -0.07997
-0.62992 0.0405 -0.0814
-0.62923 0.05031 -0.08182
-0.62992 0.0405 -0.0814
-0.62953 0.0405 -0.0813
-0.62992 0.05031 -0.08201
-0.62992 0.05031 -0.08201
-0.6306 0.05031 -0.08182
-0.63322 0.05031 -0.0879
-0.63007 0.05331 -0.08974
-0.63322 0.05031 -0.0879
-0.63007 0.05031 -0.08974
-0.63322 0.05331 -0.0879
-0.63322 0.05331 -0.0725
-0.63007 0.05031 -0.08974
-0.6268 0.05031 -0.0886
-0.62992 0.05031 -0.07062
-0.63322 0.05031 -0.0725
-0.6306 0.05031 -0.07945
-0.63322 0.05031 -0.0725
-0.62992 0.05031 -0.07927
-0.62923 0.05031 -0.07945
-0.62925 0.0405 -0.08025
-0.62923 0.05031 -0.07945
-0.62873 0.05031 -0.07995
-0.62953 0.0405 -0.07997
-0.62992 0.05031 -0.07927
-0.62923 0.05031 -0.07945
-0.62992 0.0405 -0.07987
-0.62992 0.0405 -0.07987
-0.6303 0.0405 -0.0813
-0.62992 0.05031 -0.08201
-0.6303 0.0405 -0.0813
-0.62992 0.0405 -0.0814
-0.6306 0.05031 -0.08182
-0.6306 0.05031 -0.08182
-0.63058 0.0405 -0.08102
-0.6303 0.0405 -0.0813
-0.6311 0.05031 -0.08132
-0.6311 0.05031 -0.08132
-0.63129 0.05031 -0.08064
-0.6311 0.05031 -0.07995
-0.6303 0.0405 -0.07997
-0.6311 0.05031 -0.07995
-0.6306 0.05031 -0.07945
-0.63058 0.0405 -0.08025
-0.6303 0.0405 -0.07997
-0.63058 0.0405 -0.08102
-0.63058 0.0405 -0.08025
-0.6306 0.05031 -0.07945
-0.62992 0.0405 -0.07987
-0.6303 0.0405 -0.07997
-0.62992 0.05031 -0.07927
-0.63069 0.0405 -0.08064
-0.6311 0.05031 -0.08132
-0.63069 0.0405 -0.08064
-0.63058 0.0405 -0.08102
-0.63129 0.05031 -0.08064
-0.63129 0.05031 -0.08064
-0.63058 0.0405 -0.08025
-0.63069 0.0405 -0.08064
-0.6311 0.05031 -0.07995
-0.63322 0.05031 -0.0879
-0.63322 0.05031 -0.0725
 numsurf 68
 SURF 0x0
 mat 0
@@ -185189,7 +183410,7 @@ name "Mesh43"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh43
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 48
 0.0584 0.04 -0.34432
@@ -193085,7 +191306,7 @@ name "Mesh44"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh44
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 56
 0.63561 0.041 -0.2608
@@ -199459,7 +197680,7 @@ name "Mesh45"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh45
-texture "Overhead.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
 crease 35.000000
 numvert 102
 0.0488 0.05151 -0.26416
@@ -211342,7 +209563,7 @@ name "Mesh47"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh47
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.1167 0.05405 -0.0196
@@ -211368,7 +209589,7 @@ name "Mesh48"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh48
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.1167 0.05405 -0.04692
@@ -211394,7 +209615,7 @@ name "Mesh49"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh49
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.45541 0.04205 -0.01613
@@ -211420,7 +209641,7 @@ name "Mesh50"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh50
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.50873 0.05405 -0.07728
@@ -211446,7 +209667,7 @@ name "Mesh51"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh51
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.56422 0.05405 -0.0106
@@ -211472,7 +209693,7 @@ name "Mesh52"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh52
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.56422 0.05405 -0.04091
@@ -211498,7 +209719,7 @@ name "Mesh53"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh53
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.56422 0.05405 -0.08369
@@ -211524,7 +209745,7 @@ name "Mesh54"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh54
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.56422 0.05405 -0.11404
@@ -211550,7 +209771,7 @@ name "Mesh55"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh55
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.28413 0.04205 -0.38818
@@ -211576,7 +209797,7 @@ name "Mesh56"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh56
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.28413 0.04205 -0.41569
@@ -211602,7 +209823,7 @@ name "Mesh57"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh57
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.28413 0.04205 -0.45006
@@ -211628,7 +209849,7 @@ name "Mesh58"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh58
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.28413 0.04205 -0.47759
@@ -211654,7 +209875,7 @@ name "Mesh59"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh59
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.05158 0.04205 -0.38709
@@ -211680,7 +209901,7 @@ name "Mesh60"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh60
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.26984 0.04205 -0.45006
@@ -211706,7 +209927,7 @@ name "Mesh61"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh61
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.07088 0.05405 -0.10435
@@ -211732,7 +209953,7 @@ name "Mesh62"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh62
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.05603 0.05405 -0.10435
@@ -211758,7 +209979,7 @@ name "Mesh63"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh63
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.19961 0.05405 -0.03329
@@ -211784,7 +210005,7 @@ name "Mesh64"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh64
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.15676 0.05405 -0.09875
@@ -211810,7 +210031,7 @@ name "Mesh65"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh65
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 8
 0.18404 0.05405 -0.09875
@@ -211852,7 +210073,7 @@ name "Mesh66"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh66
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.19821 0.05405 -0.09875
@@ -211878,7 +210099,7 @@ name "Mesh67"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh67
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.45541 0.04205 -0.10771
@@ -211904,7 +210125,7 @@ name "Mesh68"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh68
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.16325 0.05405 -0.17342
@@ -211930,7 +210151,7 @@ name "Mesh69"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh69
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.50873 0.05405 -0.04698
@@ -211956,7 +210177,7 @@ name "Mesh70"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh70
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.16325 0.05405 -0.20119
@@ -211982,7 +210203,7 @@ name "Mesh71"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh71
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.16325 0.05405 -0.22896
@@ -212008,7 +210229,7 @@ name "Mesh72"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh72
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.30577 0.05405 -0.16878
@@ -212034,7 +210255,7 @@ name "Mesh73"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh73
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.29285 0.05405 -0.21337
@@ -212060,7 +210281,7 @@ name "Mesh74"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh74
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.30577 0.05405 -0.25859
@@ -212086,7 +210307,7 @@ name "GrdPowerAvail"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh75
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.39208 0.04205 -0.21341
@@ -212112,7 +210333,7 @@ name "Mesh76"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh76
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.45254 0.05405 -0.16354
@@ -212138,7 +210359,7 @@ name "Mesh77"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh77
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.46682 0.05405 -0.16354
@@ -212164,7 +210385,7 @@ name "Mesh78"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh78
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.45254 0.05405 -0.26388
@@ -212190,7 +210411,7 @@ name "Mesh79"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh79
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.46682 0.05405 -0.26388
@@ -212216,7 +210437,7 @@ name "GenOffBus1"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh80
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.48159 0.05405 -0.16354
@@ -212242,7 +210463,7 @@ name "GenOffBus2"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh81
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.48159 0.05405 -0.26388
@@ -212268,7 +210489,7 @@ name "Mesh82"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh82
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.54274 0.04205 -0.19349
@@ -212294,7 +210515,7 @@ name "Mesh83"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh83
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.54274 0.04205 -0.22044
@@ -212320,7 +210541,7 @@ name "Mesh84"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh84
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.54274 0.04205 -0.24759
@@ -212346,7 +210567,7 @@ name "Mesh85"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh85
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.32297 0.05405 -0.309
@@ -212372,7 +210593,7 @@ name "Mesh86"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh86
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.32297 0.05405 -0.33615
@@ -212398,7 +210619,7 @@ name "APUGenOffBus"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh87
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.47912 0.05405 -0.21341
@@ -212424,7 +210645,7 @@ name "Mesh88"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh88
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.36066 0.05405 -0.30951
@@ -212450,7 +210671,7 @@ name "Mesh89"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh89
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.05158 0.04205 -0.41378
@@ -212476,7 +210697,7 @@ name "Mesh90"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh90
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.05158 0.04205 -0.44865
@@ -212502,7 +210723,7 @@ name "Mesh91"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh91
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.05158 0.04205 -0.47534
@@ -212528,7 +210749,7 @@ name "Mesh92"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh92
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.06586 0.04205 -0.38709
@@ -212554,7 +210775,7 @@ name "Mesh93"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh93
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.06586 0.04205 -0.41378
@@ -212580,7 +210801,7 @@ name "Mesh94"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh94
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.06586 0.04205 -0.44865
@@ -212606,7 +210827,7 @@ name "Mesh95"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh95
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.06586 0.04205 -0.47534
@@ -212632,7 +210853,7 @@ name "Mesh96"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh96
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.26984 0.04205 -0.41569
@@ -212658,7 +210879,7 @@ name "Mesh97"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh97
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.11443 0.04205 -0.38709
@@ -212684,7 +210905,7 @@ name "Mesh98"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh98
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.12875 0.04205 -0.38709
@@ -212710,7 +210931,7 @@ name "Mesh99"
 loc -0.3375 0.0377591 0.33508
 data 6
 Mesh99
-texture "Legends.png"
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Legends.png"
 crease 35.000000
 numvert 4
 0.14333 0.04205 -0.38709
@@ -212737,4 +210958,2359 @@ loc -0.3375 0.0377591 0.33508
 data 5
 Model
 crease 35.000000
+kids 0
+OBJECT poly
+name "Layer0"
+loc -0.3375 0.0377591 0.33508
+data 6
+Layer0
+crease 35.000000
+kids 0
+OBJECT poly
+name "Model"
+loc -0.3375 0.0377591 0.33508
+data 5
+Model
+crease 35.000000
+kids 0
+OBJECT poly
+name "OHlettering"
+data 8
+Mesh.236
+crease 30.000000
+kids 0
+OBJECT poly
+name "Layer0"
+loc -0.3375 0.0377591 0.33508
+data 6
+Layer0
+crease 35.000000
+kids 0
+OBJECT poly
+name "Model"
+loc -0.3375 0.0377591 0.33508
+data 5
+Model
+crease 35.000000
+kids 0
+OBJECT poly
+name "Layer0"
+loc -0.3375 0.0377591 0.33508
+data 6
+Layer0
+crease 35.000000
+kids 0
+OBJECT poly
+name "Model"
+loc -0.3375 0.0377591 0.33508
+data 5
+Model
+crease 35.000000
+kids 0
+OBJECT poly
+name "landinglight1"
+loc -0.3375 0.0377591 0.33508
+data 7
+Mesh421
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
+crease 35.000000
+numvert 94
+0.62873 0.05031 -0.08132
+0.62915 0.0405 -0.08064
+0.62855 0.05031 -0.08064
+0.62925 0.0405 -0.08102
+0.62873 0.05031 -0.08132
+0.62953 0.0405 -0.0813
+0.62925 0.0405 -0.08102
+0.62923 0.05031 -0.08182
+0.62873 0.05031 -0.08132
+0.63007 0.05031 -0.08974
+0.62923 0.05031 -0.08182
+0.62855 0.05031 -0.08064
+0.6268 0.05031 -0.07268
+0.6268 0.05031 -0.0886
+0.6268 0.05031 -0.07268
+0.6268 0.05331 -0.0886
+0.6268 0.05031 -0.0886
+0.6268 0.05331 -0.07268
+0.6268 0.05031 -0.07268
+0.62992 0.05331 -0.07062
+0.62992 0.05031 -0.07062
+0.62992 0.05031 -0.07062
+0.62873 0.05031 -0.07995
+0.62855 0.05031 -0.08064
+0.62925 0.0405 -0.08025
+0.62873 0.05031 -0.07995
+0.62915 0.0405 -0.08064
+0.62925 0.0405 -0.08102
+0.62915 0.0405 -0.08064
+0.62953 0.0405 -0.0813
+0.62953 0.0405 -0.07997
+0.62992 0.0405 -0.0814
+0.62923 0.05031 -0.08182
+0.62992 0.0405 -0.0814
+0.62953 0.0405 -0.0813
+0.62992 0.05031 -0.08201
+0.62992 0.05031 -0.08201
+0.6306 0.05031 -0.08182
+0.63322 0.05031 -0.0879
+0.63007 0.05331 -0.08974
+0.63322 0.05031 -0.0879
+0.63007 0.05031 -0.08974
+0.63322 0.05331 -0.0879
+0.63322 0.05331 -0.0725
+0.63007 0.05031 -0.08974
+0.6268 0.05031 -0.0886
+0.62992 0.05031 -0.07062
+0.63322 0.05031 -0.0725
+0.6306 0.05031 -0.07945
+0.63322 0.05031 -0.0725
+0.62992 0.05031 -0.07927
+0.62923 0.05031 -0.07945
+0.62925 0.0405 -0.08025
+0.62923 0.05031 -0.07945
+0.62873 0.05031 -0.07995
+0.62953 0.0405 -0.07997
+0.62992 0.05031 -0.07927
+0.62923 0.05031 -0.07945
+0.62992 0.0405 -0.07987
+0.62992 0.0405 -0.07987
+0.6303 0.0405 -0.0813
+0.62992 0.05031 -0.08201
+0.6303 0.0405 -0.0813
+0.62992 0.0405 -0.0814
+0.6306 0.05031 -0.08182
+0.6306 0.05031 -0.08182
+0.63058 0.0405 -0.08102
+0.6303 0.0405 -0.0813
+0.6311 0.05031 -0.08132
+0.6311 0.05031 -0.08132
+0.63129 0.05031 -0.08064
+0.6311 0.05031 -0.07995
+0.6303 0.0405 -0.07997
+0.6311 0.05031 -0.07995
+0.6306 0.05031 -0.07945
+0.63058 0.0405 -0.08025
+0.6303 0.0405 -0.07997
+0.63058 0.0405 -0.08102
+0.63058 0.0405 -0.08025
+0.6306 0.05031 -0.07945
+0.62992 0.0405 -0.07987
+0.6303 0.0405 -0.07997
+0.62992 0.05031 -0.07927
+0.63069 0.0405 -0.08064
+0.6311 0.05031 -0.08132
+0.63069 0.0405 -0.08064
+0.63058 0.0405 -0.08102
+0.63129 0.05031 -0.08064
+0.63129 0.05031 -0.08064
+0.63058 0.0405 -0.08025
+0.63069 0.0405 -0.08064
+0.6311 0.05031 -0.07995
+0.63322 0.05031 -0.0879
+0.63322 0.05031 -0.0725
+numsurf 68
+SURF 0x0
+mat 0
+refs 3
+0 3.02362 3.97641
+1 3.00899 3.97518
+2 3.02365 3.97541
+SURF 0x0
+mat 0
+refs 3
+1 3.00899 3.97518
+0 3.02362 3.97641
+3 3.00897 3.97574
+SURF 0x0
+mat 0
+refs 3
+4 3.08015 4.95152
+5 3.06552 4.95275
+6 3.0655 4.95219
+SURF 0x0
+mat 0
+refs 3
+5 3.06552 4.95275
+4 3.08015 4.95152
+7 3.08018 4.95252
+SURF 0x0
+mat 0
+refs 3
+8 3.04307 3.08515
+9 3.03259 3.07728
+10 3.04277 3.08414
+SURF 0x0
+mat 0
+refs 3
+11 3.04386 3.08589
+9 3.03259 3.07728
+8 3.04307 3.08515
+SURF 0x0
+mat 0
+refs 3
+12 3.05341 3.09395
+9 3.03259 3.07728
+11 3.04386 3.08589
+SURF 0x0
+mat 0
+refs 3
+9 3.03259 3.07728
+12 3.05341 3.09395
+13 3.03161 3.08232
+SURF 0x0
+mat 0
+refs 3
+14 3.20885 3.08216
+15 3.23261 3.07794
+16 3.23261 3.08216
+SURF 0x0
+mat 0
+refs 3
+15 3.23261 3.07794
+14 3.20885 3.08216
+17 3.20885 3.07794
+SURF 0x0
+mat 0
+refs 3
+18 3.20491 3.08027
+19 3.20578 3.07332
+17 3.20885 3.07794
+SURF 0x0
+mat 0
+refs 3
+19 3.20578 3.07332
+18 3.20491 3.08027
+20 3.20184 3.07565
+SURF 0x0
+mat 0
+refs 3
+11 3.04386 3.08589
+21 3.05864 3.09144
+12 3.05341 3.09395
+SURF 0x0
+mat 0
+refs 3
+21 3.05864 3.09144
+11 3.04386 3.08589
+22 3.04495 3.08615
+SURF 0x0
+mat 0
+refs 3
+23 3.03144 3.50325
+24 3.01681 3.50202
+25 3.03147 3.50225
+SURF 0x0
+mat 0
+refs 3
+24 3.01681 3.50202
+23 3.03144 3.50325
+26 3.01679 3.50258
+SURF 0x0
+mat 0
+refs 3
+27 3.01595 3.50283
+24 3.01681 3.50202
+28 3.01649 3.50253
+SURF 0x0
+mat 0
+refs 3
+24 3.01681 3.50202
+27 3.01595 3.50283
+29 3.01533 3.50283
+SURF 0x0
+mat 0
+refs 3
+24 3.01681 3.50202
+29 3.01533 3.50283
+30 3.0168 3.50144
+SURF 0x0
+mat 0
+refs 3
+30 3.0168 3.50144
+29 3.01533 3.50283
+31 3.01479 3.50253
+SURF 0x0
+mat 0
+refs 3
+32 3.22692 4.92605
+33 3.21219 4.93043
+34 3.21204 4.92987
+SURF 0x0
+mat 0
+refs 3
+33 3.21219 4.93043
+32 3.22692 4.92605
+35 3.22719 4.92707
+SURF 0x0
+mat 0
+refs 3
+10 3.04277 3.08414
+9 3.03259 3.07728
+36 3.04305 3.08312
+SURF 0x0
+mat 0
+refs 3
+36 3.04305 3.08312
+9 3.03259 3.07728
+37 3.04383 3.08237
+SURF 0x0
+mat 0
+refs 3
+37 3.04383 3.08237
+9 3.03259 3.07728
+38 3.03755 3.07456
+SURF 0x0
+mat 0
+refs 3
+39 3.23431 3.0731
+40 3.23564 3.0663
+41 3.23839 3.07098
+SURF 0x0
+mat 0
+refs 3
+40 3.23564 3.0663
+39 3.23431 3.0731
+42 3.23156 3.06843
+SURF 0x0
+mat 0
+refs 3
+39 3.23431 3.0731
+43 3.20858 3.06843
+42 3.23156 3.06843
+SURF 0x0
+mat 0
+refs 3
+39 3.23431 3.0731
+19 3.20578 3.07332
+43 3.20858 3.06843
+SURF 0x0
+mat 0
+refs 3
+15 3.23261 3.07794
+19 3.20578 3.07332
+39 3.23431 3.0731
+SURF 0x0
+mat 0
+refs 3
+19 3.20578 3.07332
+15 3.23261 3.07794
+17 3.20885 3.07794
+SURF 0x0
+mat 0
+refs 3
+44 3.23877 3.07449
+15 3.23261 3.07794
+39 3.23431 3.0731
+SURF 0x0
+mat 0
+refs 3
+15 3.23261 3.07794
+44 3.23877 3.07449
+45 3.23707 3.07933
+SURF 0x0
+mat 0
+refs 3
+46 3.20167 3.07125
+43 3.20858 3.06843
+19 3.20578 3.07332
+SURF 0x0
+mat 0
+refs 3
+43 3.20858 3.06843
+46 3.20167 3.07125
+47 3.20447 3.06635
+SURF 0x0
+mat 0
+refs 3
+21 3.05864 3.09144
+48 3.04708 3.08411
+49 3.05863 3.08581
+SURF 0x0
+mat 0
+refs 3
+21 3.05864 3.09144
+50 3.0468 3.08512
+48 3.04708 3.08411
+SURF 0x0
+mat 0
+refs 3
+21 3.05864 3.09144
+51 3.04602 3.08587
+50 3.0468 3.08512
+SURF 0x0
+mat 0
+refs 3
+21 3.05864 3.09144
+22 3.04495 3.08615
+51 3.04602 3.08587
+SURF 0x0
+mat 0
+refs 3
+52 3.23489 4.93523
+53 3.22338 4.92605
+54 3.22412 4.92531
+SURF 0x0
+mat 0
+refs 3
+53 3.22338 4.92605
+52 3.23489 4.93523
+55 3.23448 4.93564
+SURF 0x0
+mat 0
+refs 3
+30 3.0168 3.50144
+56 3.03144 3.50021
+57 3.03147 3.5012
+SURF 0x0
+mat 0
+refs 3
+56 3.03144 3.50021
+30 3.0168 3.50144
+58 3.01679 3.50088
+SURF 0x0
+mat 0
+refs 3
+30 3.0168 3.50144
+31 3.01479 3.50253
+59 3.01649 3.50093
+SURF 0x0
+mat 0
+refs 3
+59 3.01649 3.50093
+31 3.01479 3.50253
+60 3.01447 3.50202
+SURF 0x0
+mat 0
+refs 3
+61 3.08019 4.95357
+62 3.0655 4.95389
+63 3.06552 4.95334
+SURF 0x0
+mat 0
+refs 3
+62 3.0655 4.95389
+61 3.08019 4.95357
+64 3.08015 4.95456
+SURF 0x0
+mat 0
+refs 3
+65 3.22692 4.92808
+66 3.2154 4.91891
+67 3.21582 4.91849
+SURF 0x0
+mat 0
+refs 3
+66 3.2154 4.91891
+65 3.22692 4.92808
+68 3.22617 4.92883
+SURF 0x0
+mat 0
+refs 3
+37 3.04383 3.08237
+38 3.03755 3.07456
+69 3.04491 3.08209
+SURF 0x0
+mat 0
+refs 3
+69 3.04491 3.08209
+38 3.03755 3.07456
+70 3.04599 3.08236
+SURF 0x0
+mat 0
+refs 3
+49 3.05863 3.08581
+70 3.04599 3.08236
+38 3.03755 3.07456
+SURF 0x0
+mat 0
+refs 3
+49 3.05863 3.08581
+71 3.04679 3.0831
+70 3.04599 3.08236
+SURF 0x0
+mat 0
+refs 3
+49 3.05863 3.08581
+48 3.04708 3.08411
+71 3.04679 3.0831
+SURF 0x0
+mat 0
+refs 3
+72 3.06629 3.04666
+73 3.08092 3.04544
+74 3.08096 3.04643
+SURF 0x0
+mat 0
+refs 3
+73 3.08092 3.04544
+72 3.06629 3.04666
+75 3.06627 3.04611
+SURF 0x0
+mat 0
+refs 3
+76 3.01595 3.50063
+77 3.01447 3.50144
+78 3.01533 3.50063
+SURF 0x0
+mat 0
+refs 3
+76 3.01595 3.50063
+60 3.01447 3.50202
+77 3.01447 3.50144
+SURF 0x0
+mat 0
+refs 3
+59 3.01649 3.50093
+60 3.01447 3.50202
+76 3.01595 3.50063
+SURF 0x0
+mat 0
+refs 3
+79 3.22338 4.92808
+80 3.2381 4.9237
+81 3.23826 4.92427
+SURF 0x0
+mat 0
+refs 3
+80 3.2381 4.9237
+79 3.22338 4.92808
+82 3.2231 4.92707
+SURF 0x0
+mat 0
+refs 3
+78 3.01533 3.50063
+77 3.01447 3.50144
+83 3.01479 3.50093
+SURF 0x0
+mat 0
+refs 3
+84 3.12967 4.4988
+85 3.11498 4.49912
+86 3.115 4.49857
+SURF 0x0
+mat 0
+refs 3
+85 3.11498 4.49912
+84 3.12967 4.4988
+87 3.12964 4.49979
+SURF 0x0
+mat 0
+refs 3
+88 3.22515 4.9291
+89 3.22835 4.91554
+90 3.22893 4.9157
+SURF 0x0
+mat 0
+refs 3
+89 3.22835 4.91554
+88 3.22515 4.9291
+91 3.22413 4.92883
+SURF 0x0
+mat 0
+refs 3
+92 3.23156 3.06422
+43 3.20858 3.06843
+93 3.20858 3.06422
+SURF 0x0
+mat 0
+refs 3
+43 3.20858 3.06843
+92 3.23156 3.06422
+42 3.23156 3.06843
+kids 0
+OBJECT poly
+name "FuelPumpAFTL"
+loc -0.3375 0.0377591 0.33508
+data 7
+Mesh297
+crease 35.000000
+numvert 264
+0.58701 0.0713 -0.02636
+0.58482 0.07545 -0.02609
+0.58534 0.07545 -0.0254
+0.58618 0.0713 -0.02745
+0.58701 0.0713 -0.02636
+0.58482 0.06586 -0.02609
+0.58618 0.0713 -0.02745
+0.58534 0.06586 -0.0254
+0.58754 0.0713 -0.0251
+0.58534 0.06586 -0.0254
+0.58701 0.0713 -0.02636
+0.58568 0.06586 -0.0246
+0.58754 0.0713 -0.0251
+0.58579 0.06586 -0.02374
+0.58568 0.06586 -0.0246
+0.58772 0.0713 -0.02374
+0.58754 0.0713 -0.0251
+0.58754 0.0713 -0.02238
+0.58772 0.0713 -0.02374
+0.58701 0.0713 -0.02636
+0.58701 0.0713 -0.02112
+0.58618 0.0713 -0.02745
+0.58618 0.0713 -0.02003
+0.58509 0.0713 -0.02828
+0.58509 0.0713 -0.0192
+0.58383 0.0713 -0.02881
+0.58383 0.0713 -0.01867
+0.58247 0.0713 -0.02899
+0.58247 0.0713 -0.01849
+0.58111 0.0713 -0.02881
+0.58111 0.0713 -0.01867
+0.57985 0.0713 -0.0192
+0.57985 0.0713 -0.02828
+0.57876 0.0713 -0.02745
+0.57876 0.0713 -0.02003
+0.57793 0.0713 -0.02636
+0.57793 0.0713 -0.02112
+0.5774 0.0713 -0.0251
+0.5774 0.0713 -0.02238
+0.57722 0.0713 -0.02374
+0.57915 0.07545 -0.02374
+0.5774 0.0713 -0.0251
+0.57722 0.0713 -0.02374
+0.57926 0.07545 -0.0246
+0.57926 0.07545 -0.02288
+0.57926 0.07545 -0.0246
+0.57915 0.07545 -0.02374
+0.57959 0.07545 -0.02208
+0.5774 0.0713 -0.02238
+0.57959 0.07545 -0.02208
+0.57926 0.07545 -0.02288
+0.57793 0.0713 -0.02112
+0.5774 0.0713 -0.02238
+0.57959 0.06586 -0.02208
+0.57793 0.0713 -0.02112
+0.57926 0.06586 -0.02288
+0.57722 0.0713 -0.02374
+0.57926 0.06586 -0.02288
+0.5774 0.0713 -0.02238
+0.57915 0.06586 -0.02374
+0.5774 0.0713 -0.0251
+0.57915 0.06586 -0.02374
+0.57722 0.0713 -0.02374
+0.57926 0.06586 -0.0246
+0.5774 0.0713 -0.0251
+0.57959 0.06586 -0.0254
+0.57926 0.06586 -0.0246
+0.57793 0.0713 -0.02636
+0.5774 0.0713 -0.0251
+0.57959 0.07545 -0.0254
+0.57793 0.0713 -0.02636
+0.57926 0.07545 -0.0246
+0.57959 0.07545 -0.0254
+0.58012 0.07545 -0.02139
+0.57793 0.0713 -0.02112
+0.58012 0.07545 -0.02139
+0.57959 0.07545 -0.02208
+0.57876 0.0713 -0.02003
+0.57793 0.0713 -0.02112
+0.58012 0.06586 -0.02139
+0.57876 0.0713 -0.02003
+0.57959 0.06586 -0.02208
+0.57959 0.06586 -0.02208
+0.58012 0.06586 -0.02609
+0.58012 0.06586 -0.02139
+0.57959 0.06586 -0.0254
+0.57926 0.06586 -0.02288
+0.57926 0.06586 -0.0246
+0.57915 0.06586 -0.02374
+0.57793 0.0713 -0.02636
+0.58012 0.06586 -0.02609
+0.57959 0.06586 -0.0254
+0.57876 0.0713 -0.02745
+0.57793 0.0713 -0.02636
+0.58012 0.07545 -0.02609
+0.57876 0.0713 -0.02745
+0.57959 0.07545 -0.0254
+0.58012 0.07545 -0.02609
+0.58081 0.07545 -0.02086
+0.57876 0.0713 -0.02003
+0.58081 0.07545 -0.02086
+0.58012 0.07545 -0.02139
+0.57985 0.0713 -0.0192
+0.58012 0.06586 -0.02139
+0.57985 0.0713 -0.0192
+0.57876 0.0713 -0.02003
+0.58081 0.06586 -0.02086
+0.58081 0.06586 -0.02662
+0.58081 0.06586 -0.02086
+0.57876 0.0713 -0.02745
+0.58081 0.06586 -0.02662
+0.58012 0.06586 -0.02609
+0.57985 0.0713 -0.02828
+0.58012 0.07545 -0.02609
+0.57985 0.0713 -0.02828
+0.57876 0.0713 -0.02745
+0.58081 0.07545 -0.02662
+0.58081 0.07545 -0.02662
+0.58161 0.07545 -0.02695
+0.58161 0.07545 -0.02053
+0.57985 0.0713 -0.0192
+0.58161 0.07545 -0.02053
+0.58081 0.07545 -0.02086
+0.58111 0.0713 -0.01867
+0.58081 0.06586 -0.02086
+0.58111 0.0713 -0.01867
+0.57985 0.0713 -0.0192
+0.58161 0.06586 -0.02053
+0.58161 0.06586 -0.02695
+0.58161 0.06586 -0.02053
+0.57985 0.0713 -0.02828
+0.58161 0.06586 -0.02695
+0.58081 0.06586 -0.02662
+0.58111 0.0713 -0.02881
+0.58081 0.07545 -0.02662
+0.58111 0.0713 -0.02881
+0.57985 0.0713 -0.02828
+0.58161 0.07545 -0.02695
+0.58161 0.07545 -0.02695
+0.58247 0.0713 -0.02899
+0.58111 0.0713 -0.02881
+0.58247 0.07545 -0.02706
+0.58247 0.07545 -0.02042
+0.58247 0.07545 -0.02706
+0.58111 0.0713 -0.01867
+0.58247 0.07545 -0.02042
+0.58161 0.07545 -0.02053
+0.58247 0.0713 -0.01849
+0.58161 0.06586 -0.02053
+0.58247 0.0713 -0.01849
+0.58111 0.0713 -0.01867
+0.58247 0.06586 -0.02042
+0.58247 0.06586 -0.02706
+0.58247 0.06586 -0.02042
+0.58111 0.0713 -0.02881
+0.58247 0.06586 -0.02706
+0.58161 0.06586 -0.02695
+0.58247 0.0713 -0.02899
+0.58247 0.0713 -0.02899
+0.58333 0.06586 -0.02695
+0.58247 0.06586 -0.02706
+0.58383 0.0713 -0.02881
+0.58247 0.07545 -0.02706
+0.58383 0.0713 -0.02881
+0.58247 0.0713 -0.02899
+0.58333 0.07545 -0.02695
+0.58333 0.07545 -0.02053
+0.58333 0.07545 -0.02695
+0.58247 0.0713 -0.01849
+0.58333 0.07545 -0.02053
+0.58247 0.07545 -0.02042
+0.58383 0.0713 -0.01867
+0.58247 0.06586 -0.02042
+0.58383 0.0713 -0.01867
+0.58247 0.0713 -0.01849
+0.58333 0.06586 -0.02053
+0.58333 0.06586 -0.02695
+0.58333 0.06586 -0.02053
+0.58413 0.06586 -0.02662
+0.58383 0.0713 -0.02881
+0.58413 0.06586 -0.02662
+0.58333 0.06586 -0.02695
+0.58509 0.0713 -0.02828
+0.58333 0.07545 -0.02695
+0.58509 0.0713 -0.02828
+0.58383 0.0713 -0.02881
+0.58413 0.07545 -0.02662
+0.58413 0.07545 -0.02086
+0.58413 0.07545 -0.02662
+0.58383 0.0713 -0.01867
+0.58413 0.07545 -0.02086
+0.58333 0.07545 -0.02053
+0.58509 0.0713 -0.0192
+0.58333 0.06586 -0.02053
+0.58509 0.0713 -0.0192
+0.58383 0.0713 -0.01867
+0.58413 0.06586 -0.02086
+0.58413 0.06586 -0.02086
+0.58482 0.06586 -0.02609
+0.58509 0.0713 -0.02828
+0.58482 0.06586 -0.02609
+0.58413 0.06586 -0.02662
+0.58618 0.0713 -0.02745
+0.58413 0.07545 -0.02662
+0.58618 0.0713 -0.02745
+0.58509 0.0713 -0.02828
+0.58482 0.07545 -0.02609
+0.58482 0.07545 -0.02609
+0.58482 0.07545 -0.02139
+0.58509 0.0713 -0.0192
+0.58482 0.07545 -0.02139
+0.58413 0.07545 -0.02086
+0.58618 0.0713 -0.02003
+0.58413 0.06586 -0.02086
+0.58618 0.0713 -0.02003
+0.58509 0.0713 -0.0192
+0.58482 0.06586 -0.02139
+0.58482 0.06586 -0.02139
+0.58534 0.06586 -0.0254
+0.58534 0.06586 -0.02208
+0.58568 0.06586 -0.0246
+0.58568 0.06586 -0.02288
+0.58579 0.06586 -0.02374
+0.58772 0.0713 -0.02374
+0.58568 0.06586 -0.02288
+0.58579 0.06586 -0.02374
+0.58754 0.0713 -0.02238
+0.58772 0.0713 -0.02374
+0.58568 0.07545 -0.02288
+0.58754 0.0713 -0.02238
+0.58579 0.07545 -0.02374
+0.58754 0.0713 -0.0251
+0.58579 0.07545 -0.02374
+0.58772 0.0713 -0.02374
+0.58568 0.07545 -0.0246
+0.58754 0.0713 -0.0251
+0.58534 0.07545 -0.0254
+0.58568 0.07545 -0.0246
+0.58701 0.0713 -0.02636
+0.58534 0.07545 -0.0254
+0.58568 0.07545 -0.02288
+0.58568 0.07545 -0.0246
+0.58534 0.07545 -0.02208
+0.58482 0.07545 -0.02139
+0.58701 0.0713 -0.02112
+0.58534 0.07545 -0.02208
+0.58618 0.0713 -0.02003
+0.58482 0.06586 -0.02139
+0.58701 0.0713 -0.02112
+0.58618 0.0713 -0.02003
+0.58534 0.06586 -0.02208
+0.58534 0.06586 -0.02208
+0.58754 0.0713 -0.02238
+0.58701 0.0713 -0.02112
+0.58568 0.06586 -0.02288
+0.58754 0.0713 -0.02238
+0.58534 0.07545 -0.02208
+0.58701 0.0713 -0.02112
+0.58568 0.07545 -0.02288
+0.58579 0.07545 -0.02374
+0.57926 0.07545 -0.02288
+0.57722 0.0713 -0.02374
+0.5774 0.0713 -0.02238
+0.57915 0.07545 -0.02374
+numsurf 162
+SURF 0x0
+mat 1
+refs 3
+0 0.007702 -0.008494
+1 0.038063 0.115466
+2 0.014527 0.115466
+SURF 0x0
+mat 1
+refs 3
+1 0.038063 0.115466
+0 0.007702 -0.008494
+3 0.044888 -0.008494
+SURF 0x0
+mat 1
+refs 3
+4 0.007702 0.252266
+5 0.038063 0.095791
+6 0.044888 0.252266
+SURF 0x0
+mat 1
+refs 3
+5 0.038063 0.095791
+4 0.007702 0.252266
+7 0.014527 0.095791
+SURF 0x0
+mat 1
+refs 3
+8 0.058499 0.247757
+9 0.088861 0.091281
+10 0.095686 0.247757
+SURF 0x0
+mat 1
+refs 3
+9 0.088861 0.091281
+8 0.058499 0.247757
+11 0.065325 0.091281
+SURF 0x0
+mat 1
+refs 3
+12 0.14123 0.239045
+13 0.110869 0.082569
+14 0.134405 0.082569
+SURF 0x0
+mat 1
+refs 3
+13 0.110869 0.082569
+12 0.14123 0.239045
+15 0.104044 0.239045
+SURF 0x0
+mat 1
+refs 3
+16 0.280044 0.179317
+17 0.280044 0.10558
+18 0.284898 0.142449
+SURF 0x0
+mat 1
+refs 3
+19 0.265813 0.213673
+17 0.280044 0.10558
+16 0.280044 0.179317
+SURF 0x0
+mat 1
+refs 3
+19 0.265813 0.213673
+20 0.265813 0.071224
+17 0.280044 0.10558
+SURF 0x0
+mat 1
+refs 3
+21 0.243175 0.243175
+20 0.265813 0.071224
+19 0.265813 0.213673
+SURF 0x0
+mat 1
+refs 3
+21 0.243175 0.243175
+22 0.243175 0.041722
+20 0.265813 0.071224
+SURF 0x0
+mat 1
+refs 3
+23 0.213673 0.265813
+22 0.243175 0.041722
+21 0.243175 0.243175
+SURF 0x0
+mat 1
+refs 3
+23 0.213673 0.265813
+24 0.213673 0.019085
+22 0.243175 0.041722
+SURF 0x0
+mat 1
+refs 3
+25 0.179317 0.280044
+24 0.213673 0.019085
+23 0.213673 0.265813
+SURF 0x0
+mat 1
+refs 3
+25 0.179317 0.280044
+26 0.179317 0.004854
+24 0.213673 0.019085
+SURF 0x0
+mat 1
+refs 3
+27 0.142449 0.284898
+26 0.179317 0.004854
+25 0.179317 0.280044
+SURF 0x0
+mat 1
+refs 3
+27 0.142449 0.284898
+28 0.142449 0
+26 0.179317 0.004854
+SURF 0x0
+mat 1
+refs 3
+29 0.10558 0.280044
+28 0.142449 0
+27 0.142449 0.284898
+SURF 0x0
+mat 1
+refs 3
+29 0.10558 0.280044
+30 0.10558 0.004854
+28 0.142449 0
+SURF 0x0
+mat 1
+refs 3
+29 0.10558 0.280044
+31 0.071224 0.019085
+30 0.10558 0.004854
+SURF 0x0
+mat 1
+refs 3
+32 0.071224 0.265813
+31 0.071224 0.019085
+29 0.10558 0.280044
+SURF 0x0
+mat 1
+refs 3
+33 0.041722 0.243175
+31 0.071224 0.019085
+32 0.071224 0.265813
+SURF 0x0
+mat 1
+refs 3
+33 0.041722 0.243175
+34 0.041722 0.041722
+31 0.071224 0.019085
+SURF 0x0
+mat 1
+refs 3
+35 0.019085 0.213673
+34 0.041722 0.041722
+33 0.041722 0.243175
+SURF 0x0
+mat 1
+refs 3
+35 0.019085 0.213673
+36 0.019085 0.071224
+34 0.041722 0.041722
+SURF 0x0
+mat 1
+refs 3
+37 0.004854 0.179317
+36 0.019085 0.071224
+35 0.019085 0.213673
+SURF 0x0
+mat 1
+refs 3
+37 0.004854 0.179317
+38 0.004854 0.10558
+36 0.019085 0.071224
+SURF 0x0
+mat 1
+refs 3
+38 0.004854 0.10558
+37 0.004854 0.179317
+39 0 0.142449
+SURF 0x0
+mat 1
+refs 3
+40 -0.148056 0.25029
+41 -0.178417 0.126329
+42 -0.14123 0.126329
+SURF 0x0
+mat 1
+refs 3
+41 -0.178417 0.126329
+40 -0.148056 0.25029
+43 -0.171591 0.25029
+SURF 0x0
+mat 1
+refs 3
+44 0.055363 0.119114
+45 0.055363 0.165783
+46 0.052291 0.142449
+SURF 0x0
+mat 1
+refs 3
+45 0.055363 0.165783
+44 0.055363 0.119114
+47 0.06437 0.09737
+SURF 0x0
+mat 1
+refs 3
+48 -0.095686 0.152879
+49 -0.065325 0.27684
+50 -0.088861 0.27684
+SURF 0x0
+mat 1
+refs 3
+49 -0.065325 0.27684
+48 -0.095686 0.152879
+51 -0.058499 0.152879
+SURF 0x0
+mat 1
+refs 3
+52 -0.095686 0.124426
+53 -0.065325 -0.03205
+54 -0.058499 0.124426
+SURF 0x0
+mat 1
+refs 3
+53 -0.065325 -0.03205
+52 -0.095686 0.124426
+55 -0.088861 -0.03205
+SURF 0x0
+mat 1
+refs 3
+56 -0.14123 0.133138
+57 -0.110869 -0.023337
+58 -0.104044 0.133138
+SURF 0x0
+mat 1
+refs 3
+57 -0.110869 -0.023337
+56 -0.14123 0.133138
+59 -0.134405 -0.023337
+SURF 0x0
+mat 1
+refs 3
+60 -0.178417 0.145459
+61 -0.148056 -0.011017
+62 -0.14123 0.145459
+SURF 0x0
+mat 1
+refs 3
+61 -0.148056 -0.011017
+60 -0.178417 0.145459
+63 -0.171591 -0.011017
+SURF 0x0
+mat 1
+refs 3
+64 -0.167525 0.160549
+65 -0.197886 0.004073
+66 -0.17435 0.004073
+SURF 0x0
+mat 1
+refs 3
+65 -0.197886 0.004073
+64 -0.167525 0.160549
+67 -0.204712 0.160549
+SURF 0x0
+mat 1
+refs 3
+68 -0.167525 0.107281
+69 -0.197886 0.231242
+70 -0.204712 0.107281
+SURF 0x0
+mat 1
+refs 3
+69 -0.197886 0.231242
+68 -0.167525 0.107281
+71 -0.17435 0.231242
+SURF 0x0
+mat 1
+refs 3
+45 0.055363 0.165783
+47 0.06437 0.09737
+72 0.06437 0.187528
+SURF 0x0
+mat 1
+refs 3
+72 0.06437 0.187528
+47 0.06437 0.09737
+73 0.078698 0.078698
+SURF 0x0
+mat 1
+refs 3
+74 -0.044888 0.158572
+75 -0.014527 0.282532
+76 -0.038063 0.282532
+SURF 0x0
+mat 1
+refs 3
+75 -0.014527 0.282532
+74 -0.044888 0.158572
+77 -0.007702 0.158572
+SURF 0x0
+mat 1
+refs 3
+78 -0.044888 0.119917
+79 -0.014527 -0.036559
+80 -0.007702 0.119917
+SURF 0x0
+mat 1
+refs 3
+79 -0.014527 -0.036559
+78 -0.044888 0.119917
+81 -0.038063 -0.036559
+SURF 0x0
+mat 1
+refs 3
+82 -0.06437 0.09737
+83 -0.078698 0.2062
+84 -0.078698 0.078698
+SURF 0x0
+mat 1
+refs 3
+82 -0.06437 0.09737
+85 -0.06437 0.187528
+83 -0.078698 0.2062
+SURF 0x0
+mat 1
+refs 3
+86 -0.055363 0.119114
+85 -0.06437 0.187528
+82 -0.06437 0.09737
+SURF 0x0
+mat 1
+refs 3
+86 -0.055363 0.119114
+87 -0.055363 0.165783
+85 -0.06437 0.187528
+SURF 0x0
+mat 1
+refs 3
+87 -0.055363 0.165783
+86 -0.055363 0.119114
+88 -0.052291 0.142449
+SURF 0x0
+mat 1
+refs 3
+89 -0.181136 0.177379
+90 -0.211498 0.020904
+91 -0.187962 0.020904
+SURF 0x0
+mat 1
+refs 3
+90 -0.211498 0.020904
+89 -0.181136 0.177379
+92 -0.218323 0.177379
+SURF 0x0
+mat 1
+refs 3
+93 -0.181136 0.086036
+94 -0.211498 0.209997
+95 -0.218323 0.086036
+SURF 0x0
+mat 1
+refs 3
+94 -0.211498 0.209997
+93 -0.181136 0.086036
+96 -0.187962 0.209997
+SURF 0x0
+mat 1
+refs 3
+72 0.06437 0.187528
+73 0.078698 0.078698
+97 0.078698 0.2062
+SURF 0x0
+mat 1
+refs 3
+97 0.078698 0.2062
+73 0.078698 0.078698
+98 0.09737 0.06437
+SURF 0x0
+mat 1
+refs 3
+99 0.007702 0.158572
+100 0.038063 0.282532
+101 0.014527 0.282532
+SURF 0x0
+mat 1
+refs 3
+100 0.038063 0.282532
+99 0.007702 0.158572
+102 0.044888 0.158572
+SURF 0x0
+mat 1
+refs 3
+103 0.014527 -0.036559
+104 0.044888 0.119917
+105 0.007702 0.119917
+SURF 0x0
+mat 1
+refs 3
+104 0.044888 0.119917
+103 0.014527 -0.036559
+106 0.038063 -0.036559
+SURF 0x0
+mat 1
+refs 3
+84 -0.078698 0.078698
+107 -0.09737 0.220527
+108 -0.09737 0.06437
+SURF 0x0
+mat 1
+refs 3
+84 -0.078698 0.078698
+83 -0.078698 0.2062
+107 -0.09737 0.220527
+SURF 0x0
+mat 1
+refs 3
+109 -0.181136 0.194804
+110 -0.211498 0.038328
+111 -0.187962 0.038328
+SURF 0x0
+mat 1
+refs 3
+110 -0.211498 0.038328
+109 -0.181136 0.194804
+112 -0.218323 0.194804
+SURF 0x0
+mat 1
+refs 3
+113 -0.187962 0.188002
+114 -0.218323 0.064042
+115 -0.181136 0.064042
+SURF 0x0
+mat 1
+refs 3
+114 -0.218323 0.064042
+113 -0.187962 0.188002
+116 -0.211498 0.188002
+SURF 0x0
+mat 1
+refs 3
+97 0.078698 0.2062
+98 0.09737 0.06437
+117 0.09737 0.220527
+SURF 0x0
+mat 1
+refs 3
+117 0.09737 0.220527
+98 0.09737 0.06437
+118 0.119114 0.229534
+SURF 0x0
+mat 1
+refs 3
+118 0.119114 0.229534
+98 0.09737 0.06437
+119 0.119114 0.055363
+SURF 0x0
+mat 1
+refs 3
+120 0.058499 0.152879
+121 0.088861 0.27684
+122 0.065325 0.27684
+SURF 0x0
+mat 1
+refs 3
+121 0.088861 0.27684
+120 0.058499 0.152879
+123 0.095686 0.152879
+SURF 0x0
+mat 1
+refs 3
+124 0.065325 -0.03205
+125 0.095686 0.124426
+126 0.058499 0.124426
+SURF 0x0
+mat 1
+refs 3
+125 0.095686 0.124426
+124 0.065325 -0.03205
+127 0.088861 -0.03205
+SURF 0x0
+mat 1
+refs 3
+108 -0.09737 0.06437
+128 -0.119114 0.229534
+129 -0.119114 0.055363
+SURF 0x0
+mat 1
+refs 3
+108 -0.09737 0.06437
+107 -0.09737 0.220527
+128 -0.119114 0.229534
+SURF 0x0
+mat 1
+refs 3
+130 -0.167525 0.211634
+131 -0.197886 0.055158
+132 -0.17435 0.055158
+SURF 0x0
+mat 1
+refs 3
+131 -0.197886 0.055158
+130 -0.167525 0.211634
+133 -0.204712 0.211634
+SURF 0x0
+mat 1
+refs 3
+134 -0.17435 0.166757
+135 -0.204712 0.042796
+136 -0.167525 0.042796
+SURF 0x0
+mat 1
+refs 3
+135 -0.204712 0.042796
+134 -0.17435 0.166757
+137 -0.197886 0.166757
+SURF 0x0
+mat 1
+refs 3
+138 -0.148056 0.147709
+139 -0.178417 0.023748
+140 -0.14123 0.023748
+SURF 0x0
+mat 1
+refs 3
+139 -0.178417 0.023748
+138 -0.148056 0.147709
+141 -0.171591 0.147709
+SURF 0x0
+mat 1
+refs 3
+118 0.119114 0.229534
+142 0.142449 0.052291
+143 0.142449 0.232606
+SURF 0x0
+mat 1
+refs 3
+118 0.119114 0.229534
+119 0.119114 0.055363
+142 0.142449 0.052291
+SURF 0x0
+mat 1
+refs 3
+144 0.104044 0.141882
+145 0.134405 0.265842
+146 0.110869 0.265842
+SURF 0x0
+mat 1
+refs 3
+145 0.134405 0.265842
+144 0.104044 0.141882
+147 0.14123 0.141882
+SURF 0x0
+mat 1
+refs 3
+148 0.110869 -0.023337
+149 0.14123 0.133138
+150 0.104044 0.133138
+SURF 0x0
+mat 1
+refs 3
+149 0.14123 0.133138
+148 0.110869 -0.023337
+151 0.134405 -0.023337
+SURF 0x0
+mat 1
+refs 3
+129 -0.119114 0.055363
+152 -0.142449 0.232606
+153 -0.142449 0.052291
+SURF 0x0
+mat 1
+refs 3
+129 -0.119114 0.055363
+128 -0.119114 0.229534
+152 -0.142449 0.232606
+SURF 0x0
+mat 1
+refs 3
+154 -0.14123 0.226724
+155 -0.171591 0.070248
+156 -0.148056 0.070248
+SURF 0x0
+mat 1
+refs 3
+155 -0.171591 0.070248
+154 -0.14123 0.226724
+157 -0.178417 0.226724
+SURF 0x0
+mat 1
+refs 3
+158 -0.104044 0.239045
+159 -0.134405 0.082569
+160 -0.110869 0.082569
+SURF 0x0
+mat 1
+refs 3
+159 -0.134405 0.082569
+158 -0.104044 0.239045
+161 -0.14123 0.239045
+SURF 0x0
+mat 1
+refs 3
+162 -0.110869 0.132156
+163 -0.14123 0.008196
+164 -0.104044 0.008196
+SURF 0x0
+mat 1
+refs 3
+163 -0.14123 0.008196
+162 -0.110869 0.132156
+165 -0.134405 0.132156
+SURF 0x0
+mat 1
+refs 3
+143 0.142449 0.232606
+166 0.165783 0.055363
+167 0.165783 0.229534
+SURF 0x0
+mat 1
+refs 3
+143 0.142449 0.232606
+142 0.142449 0.052291
+166 0.165783 0.055363
+SURF 0x0
+mat 1
+refs 3
+168 0.14123 0.126329
+169 0.171591 0.25029
+170 0.148056 0.25029
+SURF 0x0
+mat 1
+refs 3
+169 0.171591 0.25029
+168 0.14123 0.126329
+171 0.178417 0.126329
+SURF 0x0
+mat 1
+refs 3
+172 0.148056 -0.011017
+173 0.178417 0.145459
+174 0.14123 0.145459
+SURF 0x0
+mat 1
+refs 3
+173 0.178417 0.145459
+172 0.148056 -0.011017
+175 0.171591 -0.011017
+SURF 0x0
+mat 1
+refs 3
+153 -0.142449 0.052291
+176 -0.165783 0.229534
+177 -0.165783 0.055363
+SURF 0x0
+mat 1
+refs 3
+153 -0.142449 0.052291
+152 -0.142449 0.232606
+176 -0.165783 0.229534
+SURF 0x0
+mat 1
+refs 3
+177 -0.165783 0.055363
+176 -0.165783 0.229534
+178 -0.187528 0.220527
+SURF 0x0
+mat 1
+refs 3
+179 -0.058499 0.247757
+180 -0.088861 0.091281
+181 -0.065325 0.091281
+SURF 0x0
+mat 1
+refs 3
+180 -0.088861 0.091281
+179 -0.058499 0.247757
+182 -0.095686 0.247757
+SURF 0x0
+mat 1
+refs 3
+183 -0.065325 0.121159
+184 -0.095686 -0.002801
+185 -0.058499 -0.002801
+SURF 0x0
+mat 1
+refs 3
+184 -0.095686 -0.002801
+183 -0.065325 0.121159
+186 -0.088861 0.121159
+SURF 0x0
+mat 1
+refs 3
+167 0.165783 0.229534
+187 0.187528 0.06437
+188 0.187528 0.220527
+SURF 0x0
+mat 1
+refs 3
+167 0.165783 0.229534
+166 0.165783 0.055363
+187 0.187528 0.06437
+SURF 0x0
+mat 1
+refs 3
+189 0.167525 0.107281
+190 0.197886 0.231242
+191 0.17435 0.231242
+SURF 0x0
+mat 1
+refs 3
+190 0.197886 0.231242
+189 0.167525 0.107281
+192 0.204712 0.107281
+SURF 0x0
+mat 1
+refs 3
+193 0.17435 0.004073
+194 0.204712 0.160549
+195 0.167525 0.160549
+SURF 0x0
+mat 1
+refs 3
+194 0.204712 0.160549
+193 0.17435 0.004073
+196 0.197886 0.004073
+SURF 0x0
+mat 1
+refs 3
+177 -0.165783 0.055363
+178 -0.187528 0.220527
+197 -0.187528 0.06437
+SURF 0x0
+mat 1
+refs 3
+197 -0.187528 0.06437
+178 -0.187528 0.220527
+198 -0.2062 0.2062
+SURF 0x0
+mat 1
+refs 3
+199 -0.007702 0.252266
+200 -0.038063 0.095791
+201 -0.014527 0.095791
+SURF 0x0
+mat 1
+refs 3
+200 -0.038063 0.095791
+199 -0.007702 0.252266
+202 -0.044888 0.252266
+SURF 0x0
+mat 1
+refs 3
+203 -0.014527 0.115466
+204 -0.044888 -0.008494
+205 -0.007702 -0.008494
+SURF 0x0
+mat 1
+refs 3
+204 -0.044888 -0.008494
+203 -0.014527 0.115466
+206 -0.038063 0.115466
+SURF 0x0
+mat 1
+refs 3
+188 0.187528 0.220527
+187 0.187528 0.06437
+207 0.2062 0.2062
+SURF 0x0
+mat 1
+refs 3
+207 0.2062 0.2062
+187 0.187528 0.06437
+208 0.2062 0.078698
+SURF 0x0
+mat 1
+refs 3
+209 0.181136 0.086036
+210 0.211498 0.209997
+211 0.187962 0.209997
+SURF 0x0
+mat 1
+refs 3
+210 0.211498 0.209997
+209 0.181136 0.086036
+212 0.218323 0.086036
+SURF 0x0
+mat 1
+refs 3
+213 0.187962 0.020904
+214 0.218323 0.177379
+215 0.181136 0.177379
+SURF 0x0
+mat 1
+refs 3
+214 0.218323 0.177379
+213 0.187962 0.020904
+216 0.211498 0.020904
+SURF 0x0
+mat 1
+refs 3
+197 -0.187528 0.06437
+198 -0.2062 0.2062
+217 -0.2062 0.078698
+SURF 0x0
+mat 1
+refs 3
+217 -0.2062 0.078698
+198 -0.2062 0.2062
+218 -0.220527 0.187528
+SURF 0x0
+mat 1
+refs 3
+217 -0.2062 0.078698
+218 -0.220527 0.187528
+219 -0.220527 0.09737
+SURF 0x0
+mat 1
+refs 3
+219 -0.220527 0.09737
+218 -0.220527 0.187528
+220 -0.229534 0.165783
+SURF 0x0
+mat 1
+refs 3
+219 -0.220527 0.09737
+220 -0.229534 0.165783
+221 -0.229534 0.119114
+SURF 0x0
+mat 1
+refs 3
+221 -0.229534 0.119114
+220 -0.229534 0.165783
+222 -0.232606 0.142449
+SURF 0x0
+mat 1
+refs 3
+223 0.178417 0.226724
+224 0.148056 0.070248
+225 0.171591 0.070248
+SURF 0x0
+mat 1
+refs 3
+224 0.148056 0.070248
+223 0.178417 0.226724
+226 0.14123 0.226724
+SURF 0x0
+mat 1
+refs 3
+227 0.178417 0.023748
+228 0.148056 0.147709
+229 0.14123 0.023748
+SURF 0x0
+mat 1
+refs 3
+228 0.148056 0.147709
+227 0.178417 0.023748
+230 0.171591 0.147709
+SURF 0x0
+mat 1
+refs 3
+231 0.14123 0.008196
+232 0.110869 0.132156
+233 0.104044 0.008196
+SURF 0x0
+mat 1
+refs 3
+232 0.110869 0.132156
+231 0.14123 0.008196
+234 0.134405 0.132156
+SURF 0x0
+mat 1
+refs 3
+235 0.058499 -0.002801
+236 0.088861 0.121159
+237 0.065325 0.121159
+SURF 0x0
+mat 1
+refs 3
+236 0.088861 0.121159
+235 0.058499 -0.002801
+238 0.095686 -0.002801
+SURF 0x0
+mat 1
+refs 3
+239 0.220527 0.187528
+240 0.229534 0.119114
+241 0.229534 0.165783
+SURF 0x0
+mat 1
+refs 3
+239 0.220527 0.187528
+242 0.220527 0.09737
+240 0.229534 0.119114
+SURF 0x0
+mat 1
+refs 3
+207 0.2062 0.2062
+242 0.220527 0.09737
+239 0.220527 0.187528
+SURF 0x0
+mat 1
+refs 3
+207 0.2062 0.2062
+208 0.2062 0.078698
+242 0.220527 0.09737
+SURF 0x0
+mat 1
+refs 3
+243 0.187962 0.188002
+244 0.218323 0.064042
+245 0.211498 0.188002
+SURF 0x0
+mat 1
+refs 3
+244 0.218323 0.064042
+243 0.187962 0.188002
+246 0.181136 0.064042
+SURF 0x0
+mat 1
+refs 3
+247 0.187962 0.038328
+248 0.218323 0.194804
+249 0.181136 0.194804
+SURF 0x0
+mat 1
+refs 3
+248 0.218323 0.194804
+247 0.187962 0.038328
+250 0.211498 0.038328
+SURF 0x0
+mat 1
+refs 3
+251 0.17435 0.055158
+252 0.204712 0.211634
+253 0.167525 0.211634
+SURF 0x0
+mat 1
+refs 3
+252 0.204712 0.211634
+251 0.17435 0.055158
+254 0.197886 0.055158
+SURF 0x0
+mat 1
+refs 3
+255 0.204712 0.042796
+256 0.17435 0.166757
+257 0.167525 0.042796
+SURF 0x0
+mat 1
+refs 3
+256 0.17435 0.166757
+255 0.204712 0.042796
+258 0.197886 0.166757
+SURF 0x0
+mat 1
+refs 3
+241 0.229534 0.165783
+240 0.229534 0.119114
+259 0.232606 0.142449
+SURF 0x0
+mat 1
+refs 3
+260 -0.110869 0.265842
+261 -0.14123 0.141882
+262 -0.104044 0.141882
+SURF 0x0
+mat 1
+refs 3
+261 -0.14123 0.141882
+260 -0.110869 0.265842
+263 -0.134405 0.265842
+kids 0
+OBJECT poly
+name "Cross_Feed"
+loc -0.3375 0.0377591 0.33508
+data 6
+Mesh41
+texture "/Applications/FlightGear.app/Contents/Resources/data/Aircraft/737-800YV/Models/Overhead/Overhead.png"
+crease 35.000000
+numvert 84
+0.48913 0.058 -0.07808
+0.4647 0.058 -0.08073
+0.46421 0.058 -0.07808
+0.46751 0.058 -0.08523
+0.47171 0.058 -0.08823
+0.47667 0.058 -0.08929
+0.48163 0.058 -0.08823
+0.48583 0.058 -0.08523
+0.48864 0.058 -0.08073
+0.48864 0.044 -0.08073
+0.48963 0.066 -0.07542
+0.48963 0.044 -0.07542
+0.48913 0.066 -0.07277
+0.48963 0.044 -0.07542
+0.48963 0.066 -0.07542
+0.48913 0.058 -0.07277
+0.48864 0.058 -0.07012
+0.48864 0.044 -0.07012
+0.48583 0.058 -0.06562
+0.48864 0.058 -0.07012
+0.48583 0.044 -0.06562
+0.48583 0.058 -0.06562
+0.48163 0.044 -0.06261
+0.48163 0.058 -0.06261
+0.48913 0.058 -0.07277
+0.48163 0.058 -0.06261
+0.48583 0.058 -0.06562
+0.47667 0.058 -0.06156
+0.47171 0.058 -0.06261
+0.46751 0.058 -0.06562
+0.4647 0.058 -0.07012
+0.46421 0.058 -0.07277
+0.48913 0.066 -0.07277
+0.46421 0.066 -0.07277
+0.46421 0.066 -0.07808
+0.46421 0.066 -0.07277
+0.48913 0.066 -0.07277
+0.46371 0.066 -0.07542
+0.46421 0.066 -0.07808
+0.46371 0.044 -0.07542
+0.46371 0.066 -0.07542
+0.46421 0.066 -0.07808
+0.48913 0.066 -0.07808
+0.48913 0.066 -0.07808
+0.48963 0.066 -0.07542
+0.48913 0.066 -0.07808
+0.4647 0.044 -0.08073
+0.4647 0.044 -0.08073
+0.46751 0.044 -0.08523
+0.47171 0.044 -0.08823
+0.46751 0.044 -0.08523
+0.47667 0.044 -0.08929
+0.47171 0.044 -0.08823
+0.48163 0.044 -0.08823
+0.47667 0.044 -0.08929
+0.48583 0.044 -0.08523
+0.48163 0.044 -0.08823
+0.48583 0.044 -0.08523
+0.48864 0.044 -0.08073
+0.48583 0.044 -0.08523
+0.48864 0.044 -0.08073
+0.48163 0.044 -0.08823
+0.47667 0.044 -0.06156
+0.47667 0.044 -0.08929
+0.47171 0.044 -0.08823
+0.47171 0.044 -0.06261
+0.46751 0.044 -0.06562
+0.46751 0.044 -0.08523
+0.4647 0.044 -0.07012
+0.4647 0.044 -0.08073
+0.46371 0.044 -0.07542
+0.46421 0.058 -0.07277
+0.4647 0.058 -0.07012
+0.4647 0.058 -0.07012
+0.46751 0.058 -0.06562
+0.47171 0.058 -0.06261
+0.46751 0.058 -0.06562
+0.47667 0.058 -0.06156
+0.47171 0.058 -0.06261
+0.48163 0.058 -0.06261
+0.47667 0.058 -0.06156
+0.46371 0.066 -0.07542
+0.46421 0.066 -0.07277
+0.48864 0.058 -0.07012
+numsurf 76
+SURF 0x0
+mat 0
+refs 3
+0 3.11569 3.27536
+1 3.11969 3.31156
+2 3.11573 3.31229
+SURF 0x0
+mat 0
+refs 3
+1 3.11969 3.31156
+0 3.11569 3.27536
+3 3.1264 3.3074
+SURF 0x0
+mat 0
+refs 3
+3 3.1264 3.3074
+0 3.11569 3.27536
+4 3.13088 3.30117
+SURF 0x0
+mat 0
+refs 3
+4 3.13088 3.30117
+0 3.11569 3.27536
+5 3.13244 3.29382
+SURF 0x0
+mat 0
+refs 3
+5 3.13244 3.29382
+0 3.11569 3.27536
+6 3.13086 3.28648
+SURF 0x0
+mat 0
+refs 3
+6 3.13086 3.28648
+0 3.11569 3.27536
+7 3.12636 3.28025
+SURF 0x0
+mat 0
+refs 3
+7 3.12636 3.28025
+0 3.11569 3.27536
+8 3.11965 3.27609
+SURF 0x0
+mat 0
+refs 3
+0 3.11569 3.27536
+9 3.12166 3.26642
+8 3.11965 3.27609
+SURF 0x0
+mat 0
+refs 3
+0 3.11569 3.27536
+10 3.11057 3.28016
+9 3.12166 3.26642
+SURF 0x0
+mat 0
+refs 3
+9 3.12166 3.26642
+10 3.11057 3.28016
+11 3.11374 3.26496
+SURF 0x0
+mat 0
+refs 3
+12 3.1063 4.73984
+13 3.11342 4.72537
+14 3.11026 4.74057
+SURF 0x0
+mat 0
+refs 3
+15 3.10745 4.73431
+13 3.11342 4.72537
+12 3.1063 4.73984
+SURF 0x0
+mat 0
+refs 3
+16 3.10349 4.73358
+13 3.11342 4.72537
+15 3.10745 4.73431
+SURF 0x0
+mat 0
+refs 3
+13 3.11342 4.72537
+16 3.10349 4.73358
+17 3.1055 4.72391
+SURF 0x0
+mat 0
+refs 3
+18 3.09295 4.7281
+17 3.1055 4.72391
+19 3.09966 4.73226
+SURF 0x0
+mat 0
+refs 3
+17 3.1055 4.72391
+18 3.09295 4.7281
+20 3.09878 4.71975
+SURF 0x0
+mat 0
+refs 3
+21 3.08982 4.72548
+22 3.09429 4.71352
+20 3.09878 4.71975
+SURF 0x0
+mat 0
+refs 3
+22 3.09429 4.71352
+21 3.08982 4.72548
+23 3.08533 4.71925
+SURF 0x0
+mat 0
+refs 3
+24 3.11367 3.31298
+25 3.12882 3.30186
+26 3.12434 3.30809
+SURF 0x0
+mat 0
+refs 3
+24 3.11367 3.31298
+27 3.13038 3.29452
+25 3.12882 3.30186
+SURF 0x0
+mat 0
+refs 3
+24 3.11367 3.31298
+28 3.1288 3.28717
+27 3.13038 3.29452
+SURF 0x0
+mat 0
+refs 3
+24 3.11367 3.31298
+29 3.12431 3.28094
+28 3.1288 3.28717
+SURF 0x0
+mat 0
+refs 3
+24 3.11367 3.31298
+30 3.11759 3.27678
+29 3.12431 3.28094
+SURF 0x0
+mat 0
+refs 3
+30 3.11759 3.27678
+24 3.11367 3.31298
+31 3.11363 3.27605
+SURF 0x0
+mat 0
+refs 3
+32 3.10738 3.31299
+31 3.11363 3.27605
+24 3.11367 3.31298
+SURF 0x0
+mat 0
+refs 3
+31 3.11363 3.27605
+32 3.10738 3.31299
+33 3.10734 3.27606
+SURF 0x0
+mat 0
+refs 3
+34 3.11063 3.31313
+35 3.10271 3.31313
+36 3.10267 3.2762
+SURF 0x0
+mat 0
+refs 3
+35 3.10271 3.31313
+34 3.11063 3.31313
+37 3.10667 3.31386
+SURF 0x0
+mat 0
+refs 3
+38 3.11458 3.30676
+39 3.11378 3.32269
+40 3.11062 3.3075
+SURF 0x0
+mat 0
+refs 3
+39 3.11378 3.32269
+38 3.11458 3.30676
+2 3.11573 3.31229
+SURF 0x0
+mat 0
+refs 3
+41 3.10943 3.31229
+0 3.11569 3.27536
+2 3.11573 3.31229
+SURF 0x0
+mat 0
+refs 3
+0 3.11569 3.27536
+41 3.10943 3.31229
+42 3.10939 3.27537
+SURF 0x0
+mat 0
+refs 3
+34 3.11063 3.31313
+36 3.10267 3.2762
+43 3.11058 3.2762
+SURF 0x0
+mat 0
+refs 3
+43 3.11058 3.2762
+36 3.10267 3.2762
+44 3.10663 3.27547
+SURF 0x0
+mat 0
+refs 3
+0 3.11569 3.27536
+45 3.11454 3.28089
+10 3.11057 3.28016
+SURF 0x0
+mat 0
+refs 3
+39 3.11378 3.32269
+2 3.11573 3.31229
+46 3.1217 3.32123
+SURF 0x0
+mat 0
+refs 3
+46 3.1217 3.32123
+2 3.11573 3.31229
+1 3.11969 3.31156
+SURF 0x0
+mat 0
+refs 3
+3 3.1264 3.3074
+47 3.12552 3.3199
+1 3.11969 3.31156
+SURF 0x0
+mat 0
+refs 3
+47 3.12552 3.3199
+3 3.1264 3.3074
+48 3.13223 3.31573
+SURF 0x0
+mat 0
+refs 3
+3 3.1264 3.3074
+49 3.13984 3.30688
+50 3.13536 3.31311
+SURF 0x0
+mat 0
+refs 3
+49 3.13984 3.30688
+3 3.1264 3.3074
+4 3.13088 3.30117
+SURF 0x0
+mat 0
+refs 3
+4 3.13088 3.30117
+51 3.14322 3.29586
+52 3.14165 3.30321
+SURF 0x0
+mat 0
+refs 3
+51 3.14322 3.29586
+4 3.13088 3.30117
+5 3.13244 3.29382
+SURF 0x0
+mat 0
+refs 3
+5 3.13244 3.29382
+53 3.14163 3.28442
+54 3.14322 3.29176
+SURF 0x0
+mat 0
+refs 3
+53 3.14163 3.28442
+5 3.13244 3.29382
+6 3.13086 3.28648
+SURF 0x0
+mat 0
+refs 3
+6 3.13086 3.28648
+55 3.13532 3.27452
+56 3.13982 3.28075
+SURF 0x0
+mat 0
+refs 3
+55 3.13532 3.27452
+6 3.13086 3.28648
+7 3.12636 3.28025
+SURF 0x0
+mat 0
+refs 3
+8 3.11965 3.27609
+57 3.1322 3.2719
+7 3.12636 3.28025
+SURF 0x0
+mat 0
+refs 3
+57 3.1322 3.2719
+8 3.11965 3.27609
+58 3.12548 3.26774
+SURF 0x0
+mat 0
+refs 3
+20 3.09878 4.71975
+59 3.12805 4.71975
+60 3.12134 4.72391
+SURF 0x0
+mat 0
+refs 3
+22 3.09429 4.71352
+59 3.12805 4.71975
+20 3.09878 4.71975
+SURF 0x0
+mat 0
+refs 3
+22 3.09429 4.71352
+61 3.13252 4.71352
+59 3.12805 4.71975
+SURF 0x0
+mat 0
+refs 3
+62 3.0927 4.70618
+61 3.13252 4.71352
+22 3.09429 4.71352
+SURF 0x0
+mat 0
+refs 3
+62 3.0927 4.70618
+63 3.13409 4.70618
+61 3.13252 4.71352
+SURF 0x0
+mat 0
+refs 3
+62 3.0927 4.70618
+64 3.13251 4.69883
+63 3.13409 4.70618
+SURF 0x0
+mat 0
+refs 3
+65 3.09427 4.69883
+64 3.13251 4.69883
+62 3.0927 4.70618
+SURF 0x0
+mat 0
+refs 3
+66 3.09875 4.6926
+64 3.13251 4.69883
+65 3.09427 4.69883
+SURF 0x0
+mat 0
+refs 3
+66 3.09875 4.6926
+67 3.12801 4.6926
+64 3.13251 4.69883
+SURF 0x0
+mat 0
+refs 3
+68 3.10546 4.68844
+67 3.12801 4.6926
+66 3.09875 4.6926
+SURF 0x0
+mat 0
+refs 3
+68 3.10546 4.68844
+69 3.12129 4.68844
+67 3.12801 4.6926
+SURF 0x0
+mat 0
+refs 3
+69 3.12129 4.68844
+68 3.10546 4.68844
+70 3.11337 4.68698
+SURF 0x0
+mat 0
+refs 3
+68 3.10546 4.68844
+71 3.1074 4.67804
+70 3.11337 4.68698
+SURF 0x0
+mat 0
+refs 3
+71 3.1074 4.67804
+68 3.10546 4.68844
+72 3.10344 4.67877
+SURF 0x0
+mat 0
+refs 3
+66 3.09875 4.6926
+73 3.09962 4.68011
+68 3.10546 4.68844
+SURF 0x0
+mat 0
+refs 3
+73 3.09962 4.68011
+66 3.09875 4.6926
+74 3.09291 4.68427
+SURF 0x0
+mat 0
+refs 3
+66 3.09875 4.6926
+75 3.08531 4.69312
+76 3.08979 4.68689
+SURF 0x0
+mat 0
+refs 3
+75 3.08531 4.69312
+66 3.09875 4.6926
+65 3.09427 4.69883
+SURF 0x0
+mat 0
+refs 3
+65 3.09427 4.69883
+77 3.08193 4.70414
+78 3.08349 4.69679
+SURF 0x0
+mat 0
+refs 3
+77 3.08193 4.70414
+65 3.09427 4.69883
+62 3.0927 4.70618
+SURF 0x0
+mat 0
+refs 3
+62 3.0927 4.70618
+79 3.08351 4.71558
+80 3.08193 4.70823
+SURF 0x0
+mat 0
+refs 3
+79 3.08351 4.71558
+62 3.0927 4.70618
+22 3.09429 4.71352
+SURF 0x0
+mat 0
+refs 3
+70 3.11337 4.68698
+71 3.1074 4.67804
+81 3.11021 4.67179
+SURF 0x0
+mat 0
+refs 3
+81 3.11021 4.67179
+71 3.1074 4.67804
+82 3.10625 4.67252
+SURF 0x0
+mat 0
+refs 3
+20 3.09878 4.71975
+60 3.12134 4.72391
+17 3.1055 4.72391
+SURF 0x0
+mat 0
+refs 3
+17 3.1055 4.72391
+60 3.12134 4.72391
+13 3.11342 4.72537
+SURF 0x0
+mat 0
+refs 3
+24 3.11367 3.31298
+26 3.12434 3.30809
+83 3.11763 3.31225
 kids 0
