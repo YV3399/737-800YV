@@ -155,7 +155,7 @@
   
   <model>
     <name>Pushback</name>
-    <path>Models\Airport\Pushback\Goldhofert.xml</path>
+    <path>Models/Airport/Pushback/Goldhofert.xml</path>
     <offsets>
       <x-m>-16.5</x-m>
       <y-m>0</y-m>
@@ -212,8 +212,9 @@
   </animation>
   <animation>
     <type>material</type>
-    <object-name>lhwinglet.002</object-name>
-    <object-name>rhwinglet.002</object-name>
+    <object-name>WingletL</object-name>
+    <object-name>lhwinglet.001</object-name>
+    <object-name>rhwinglet.001</object-name>
     <object-name>lhwinglet.002</object-name>
     <object-name>rhwinglet.002</object-name>
     <property-base>sim/model/livery</property-base>
