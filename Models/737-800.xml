@@ -155,7 +155,7 @@
   
   <model>
     <name>Pushback</name>
-    <path>Models/Airport/Pushback/Goldhofert.xml</path>
+    <path>Models\Airport\Pushback\Goldhofert.xml</path>
     <offsets>
       <x-m>-16.5</x-m>
       <y-m>0</y-m>
@@ -172,7 +172,7 @@
       <z-m>0.0</z-m>
       <pitch-deg>0</pitch-deg>
     </offsets>
-  </model> -->
+  </model>
   <!-- split smictar -->
   <model>
     <name>Winglet2</name>
@@ -196,7 +196,6 @@
       </equals>
     </condition>
   </animation>
-
   <!-- split scmictar select whenever the livery has value '1' for newwinglets -->
   <animation>
     <type>select</type>
@@ -213,14 +212,13 @@
   </animation>
   <animation>
     <type>material</type>
-    <object-name>WingletL</object-name>
-    <object-name>lhwinglet.001</object-name>
-    <object-name>rhwinglet.001</object-name>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
     <object-name>lhwinglet.002</object-name>
     <object-name>rhwinglet.002</object-name>
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
-    <texture>737-800.png</texture>
+    <texture>737-800.png</texture>  
   </animation>
 
 <!--Lights-->
@@ -403,7 +401,7 @@
 
 <model>
   <path>Aircraft/737-800YV/Models/lights/Retractable-landinglight.xml</path>
-  <name>RightWRBlight</name>
+  <name>RightWRBlight</name>V
   <offsets>
     <x-m>-7.10</x-m>
     <y-m>1.00</y-m>
