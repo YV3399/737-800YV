@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 200 RC3
+# V3.0.0 Stable
 # This program is 100% GPL!
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
