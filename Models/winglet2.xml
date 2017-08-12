@@ -12,10 +12,9 @@
       <image>Aircraft/737-800YV/Models/Effects/LightMap/737-800lightmap.png</image>
     </texture>
   </parameters>
-  <object-name>oble.000</object-name>
-  <object-name>oble.001</object-name>
-  <object-name>oble.002</object-name>
-  <object-name>oble.003</object-name>
+  <object-name>rhwinglet.001</object-name>
+  <object-name>rhwinglet.001</object-name>
+  <object-name>lhwinglet.002</object-name>
   <object-name>rhwinglet.002</object-name>
 </effect>
 
