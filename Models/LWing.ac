@@ -251,7 +251,7 @@ OBJECT poly
 name "Cross_Feed"
 loc 0.77407 1.49283 0.264091
 data 11
-Círculo.001
+CÃ­rculo.001
 texture "crossfeed.png"
 crease 35.000000
 numvert 32
@@ -405,7 +405,7 @@ OBJECT poly
 name "Cross_Feed.001"
 loc 0.77407 1.49283 0.264091
 data 11
-Círculo.000
+CÃ­rculo.000
 texture "crossfeed.png"
 crease 35.000000
 numvert 32
@@ -559,7 +559,7 @@ OBJECT poly
 name "Cross_Feed.002"
 loc 0.77407 1.49283 0.264091
 data 11
-Círculo.002
+CÃ­rculo.002
 texture "crossfeed.png"
 crease 35.000000
 numvert 32
@@ -713,7 +713,7 @@ OBJECT poly
 name "Cross_Feed.003"
 loc 0.77407 1.49283 0.264091
 data 11
-Círculo.003
+CÃ­rculo.003
 texture "crossfeed.png"
 crease 35.000000
 numvert 32
