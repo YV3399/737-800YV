@@ -1514,7 +1514,7 @@
 				<and>
 					<greater-than>
 						<property>/it-autoflight/internal/elevator-cmd</property>
-						<value>0.05</value>
+						<value>0.01</value>
 					</greater-than>
 					<or>
 						<equals>
@@ -1558,7 +1558,7 @@
 				<and>
 					<less-than>
 						<property>/it-autoflight/internal/elevator-cmd</property>
-						<value>-0.05</value>
+						<value>-0.01</value>
 					</less-than>
 					<or>
 						<equals>
@@ -1615,11 +1615,11 @@
 					<or>
 						<greater-than>
 							<property>/it-autoflight/internal/elevator-cmd</property>
-							<value>0.05</value>
+							<value>0.01</value>
 						</greater-than>
 						<less-than>
 							<property>/it-autoflight/internal/elevator-cmd</property>
-							<value>-0.05</value>
+							<value>-0.01</value>
 						</less-than>
 					</or>
 				</and>
