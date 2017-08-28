@@ -133,22 +133,17 @@
 				</equals>
 			</condition>
             <expression>
-				<sum>
-					<table>
-						<property>/controls/flight/aileron-fde</property> 
-						<entry><ind>-1</ind><dep>-0.5</dep></entry>
-						<entry><ind> 0</ind><dep> 0.0</dep></entry>
-						<entry><ind> 1</ind><dep> 0.5</dep></entry>
-					</table>
-					<table>
-						<property>/fdm/jsbsim/fcs/flap-pos-deg</property> 
-						<entry><ind>1</ind><dep>0.0</dep></entry>
-						<entry><ind>5</ind><dep>0.2</dep></entry>
-					</table>
-				</sum>
+				<table>
+					<property>/controls/flight/aileron-fde</property> 
+					<entry><ind>-1</ind><dep>-0.5</dep></entry>
+					<entry><ind> 0</ind><dep> 0.0</dep></entry>
+					<entry><ind> 1</ind><dep> 0.5</dep></entry>
+				</table>
             </expression>
 		</input>
 		<output>/controls/flight/aileron-left-cmd</output>
+		<min>-0.5</min>
+		<max>0.5</max>
 	</filter>
 	
 	<filter>
@@ -189,22 +184,17 @@
 				</equals>
 			</condition>
             <expression>
-				<sum>
-					<table>
-						<property>/controls/flight/aileron-fde</property> 
-						<entry><ind>-1</ind><dep>-0.5</dep></entry>
-						<entry><ind> 0</ind><dep> 0.0</dep></entry>
-						<entry><ind> 1</ind><dep> 0.5</dep></entry>
-					</table>
-					<table>
-						<property>/fdm/jsbsim/fcs/flap-pos-deg</property> 
-						<entry><ind>1</ind><dep> 0.0</dep></entry>
-						<entry><ind>5</ind><dep>-0.2</dep></entry>
-					</table>
-				</sum>
+				<table>
+					<property>/controls/flight/aileron-fde</property> 
+					<entry><ind>-1</ind><dep>-0.5</dep></entry>
+					<entry><ind> 0</ind><dep> 0.0</dep></entry>
+					<entry><ind> 1</ind><dep> 0.5</dep></entry>
+				</table>
             </expression>
 		</input>
 		<output>/controls/flight/aileron-right-cmd</output>
+		<min>-0.5</min>
+		<max>0.5</max>
 	</filter>
 	
 	<filter>
@@ -997,6 +987,8 @@
             </expression>
 		</input>
 		<output>/controls/flight/elevator-left-cmd</output>
+		<min>-0.5</min>
+		<max>0.5</max>
 	</filter>
 	
 	<filter>
@@ -1044,6 +1036,8 @@
             </expression>
 		</input>
 		<output>/controls/flight/elevator-right-cmd</output>
+		<min>-0.5</min>
+		<max>0.5</max>
 	</filter>
 	
 	<filter>
