@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Stable
+# V3.0.2 Stable
 # This program is 100% GPL!
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
@@ -68,6 +68,8 @@ setlistener("/it-autoflight/input/ap1", func {
 	var apmas = getprop("/it-autoflight/input/ap1");
 	if (apmas == 0) {
 		setprop("/it-autoflight/output/ap1", 0);
+		setprop("/controls/flight/aileron", 0);
+		setprop("/controls/flight/elevator", 0);
 		setprop("/controls/flight/rudder", 0);
 		if (getprop("/it-autoflight/sound/enableapoffsound") == 1) {
 			setprop("/it-autoflight/sound/apoffsound", 1);
@@ -88,6 +90,8 @@ setlistener("/it-autoflight/input/ap2", func {
 	var apmas = getprop("/it-autoflight/input/ap2");
 	if (apmas == 0) {
 		setprop("/it-autoflight/output/ap2", 0);
+		setprop("/controls/flight/aileron", 0);
+		setprop("/controls/flight/elevator", 0);
 		setprop("/controls/flight/rudder", 0);
 		if (getprop("/it-autoflight/sound/enableapoffsound2") == 1) {
 			setprop("/it-autoflight/sound/apoffsound2", 1);	
@@ -554,9 +558,11 @@ var altcapt = func {
 		if (vsnow > 0 and dif < 0) {
 			setprop("/it-autoflight/input/vert", 3);
 			setprop("/it-autoflight/output/thr-mode", 0);
+			setprop("/it-autoflight/mode/thr", "THRUST");
 		} else if (vsnow < 0 and dif > 0) {
 			setprop("/it-autoflight/input/vert", 3);
 			setprop("/it-autoflight/output/thr-mode", 0);
+			setprop("/it-autoflight/mode/thr", "THRUST");
 		}
 	}
 	var altinput = getprop("/it-autoflight/input/alt");
@@ -585,8 +591,7 @@ var minmax = func {
 var thrustmode = func {
 	var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 	var alt = getprop("/it-autoflight/internal/alt");
-	var vertm = getprop("/it-autoflight/output/vert");
-	if (vertm == 4) {
+	if (getprop("/it-autoflight/output/vert") == 4) {
 		if (calt < alt) {
 			setprop("/it-autoflight/output/thr-mode", 2);
 			setprop("/it-autoflight/mode/thr", " PITCH");
@@ -600,12 +605,10 @@ var thrustmode = func {
 			setprop("/it-autoflight/mode/thr", "THRUST");
 			setprop("/it-autoflight/input/vert", 3);
 		}
-	} else if (vertm == 7) {
+	} else if (getprop("/it-autoflight/output/vert") == 7) {
 		setprop("/it-autoflight/output/thr-mode", 2);
 		setprop("/it-autoflight/mode/thr", " PITCH");
-	} else if (vertm == 8) {
-		thrustmodet.stop();
-	}  else {
+	} else {
 		setprop("/it-autoflight/output/thr-mode", 0);
 		setprop("/it-autoflight/mode/thr", "THRUST");
 		thrustmodet.stop();
