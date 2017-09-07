@@ -38,7 +38,7 @@ var autostart = func {
 		setprop("/controls/engines/engine[0]/cutoff",0);
 		setprop("/controls/engines/engine[1]/cutoff",0);
 	}
-	if (getprop("/engines/engine[0]/n1") > 55) {
+	if (getprop("/engines/engine[0]/n2") > 55) {
 		setprop("/services/ext-pwr/enable", 0);
 		setprop("/controls/electrical/ext/sw", 0);
 		setprop("/controls/engines/autostart",0);
