@@ -62,12 +62,14 @@
 			<property>/controls/flight/aileron-fbw-cmd</property>
 		</output>
 		<config>
-			<Kp>0.10</Kp>
+			<Kp>
+				<property>/it-autoflight/config/roll/kp</property>
+			</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
-			<Ti>0.5</Ti>
-			<Td>0.00001</Td>
+			<Ti>1.0</Ti>
+			<Td>0.0001</Td>
 			<u_min>-1</u_min>
 			<u_max>1</u_max>
 		</config>
@@ -220,12 +222,14 @@
 			<property>/controls/flight/elevator-fbw-cmd</property>
 		</output>
 		<config>
-			<Kp>-0.20</Kp>
+			<Kp>
+				<property>/it-autoflight/config/pitch/kp</property>
+			</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
-			<Ti>0.5</Ti>
-			<Td>0.00001</Td>
+			<Ti>0.45</Ti>
+			<Td>0.001</Td>
 			<u_min>-1</u_min>
 			<u_max>1</u_max>
 		</config>

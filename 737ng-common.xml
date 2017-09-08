@@ -26,7 +26,7 @@
 			</autopilot>
 			<autopilot n="4">
 				<name>IT-AUTOFLIGHT</name>
-				<path>Aircraft/737-800YV/Systems/it-autoflight.xml</path>
+				<path>Aircraft/737-800YV/Systems/autoflight.xml</path>
 			</autopilot>
 			<autopilot n="5">
 				<name>IT-CWS</name>
@@ -215,23 +215,18 @@
 	<it-autoflight>
 		<config>
 			<roll>
-				<umin>-0.40</umin>
-				<umax>0.40</umax>
-				<kp>0.045</kp>
-				<kp-vloc>0.06</kp-vloc>
-				<ti>10.0</ti>
-				<td>0.00001</td>
+				<gain>-0.1</gain>
+				<min>-0.4</min>
+				<max>0.4</max>
 			</roll>
 			<pitch>
-				<umin>-0.20</umin>
-				<umax>0.20</umax>
-				<kp>-0.06</kp>
-				<ti>10.0</ti>
-				<td>0.000001</td>
+				<gain>0.15</gain>
+				<min>-0.3</min>
+				<max>0.3</max>
 			</pitch>
 			<cmd>
-				<roll-kp>-1.0</roll-kp>
-				<roll-scale>1.4</roll-scale>
+				<roll-kp>-0.9</roll-kp>
+				<roll-scale>1.2</roll-scale>
 				<vorloc>-2.0</vorloc>
 				<vs>0.01</vs>
 			</cmd>
