@@ -14,3 +14,5 @@ This aircraft was modified and updated in a joint effort by the following people
 
 ## Note:
 The 737 800 Has New Cockpit And Model 3D, Sounds, Animations, Systems, among many other things.
+
+metal-tex.png was public domain (CC0) 
