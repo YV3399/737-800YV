@@ -43,7 +43,7 @@ var autostart = func {
 		setprop("/controls/electrical/ext/sw", 0);
 		setprop("/controls/engines/autostart",0);
 	}
-	if (getprop("/engines/engine[0]/n1") < 18) settimer(autostart,0);
+	if (getprop("/engines/engine[0]/n2") <= 55) settimer(autostart,0);
 }
 
 # Shutdown #
