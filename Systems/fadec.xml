@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+#########################################
+# Copyright (c) it0uchpods Design Group #
+#########################################
+-->
+
+<PropertyList>
+
+	<filter>
+		<name>OAT Thrust Scale</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<update-interval-secs type="double">0.05</update-interval-secs>
+		<input> 
+			<expression>
+				<table>
+					<property>/environment/temperature-degc</property>
+					<entry><ind> 70</ind><dep>0.840</dep></entry>
+					<entry><ind> 40</ind><dep>0.855</dep></entry>
+					<entry><ind>-60</ind><dep>1.000</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/controls/engines/throttle-scale</output>
+	</filter>
+	
+    <filter>
+        <name>N1 Limit TOGA</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <input>
+            <expression>
+				<div>
+					<floor>
+						<product>
+							<table>
+								<product>
+									<value>0.97</value>
+									<property>/controls/engines/throttle-scale</property>
+								</product>
+								<entry><ind>0.00</ind><dep> 22.4</dep></entry>
+								<entry><ind>1.00</ind><dep>103.8</dep></entry>
+							</table>
+							<value>10</value>
+						</product>
+					</floor>
+					<value>10</value>
+				</div>
+            </expression>
+        </input>
+		<output>/systems/thrust/n1/toga-lim</output>
+    </filter>
+	
+    <filter>
+        <name>N1 Limit CLB</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <input>
+            <expression>
+				<div>
+					<floor>
+						<product>
+							<table>
+								<product>
+									<value>0.91</value>
+									<property>/controls/engines/throttle-scale</property>
+								</product>
+								<entry><ind>0.00</ind><dep> 22.4</dep></entry>
+								<entry><ind>1.00</ind><dep>103.8</dep></entry>
+							</table>
+							<value>10</value>
+						</product>
+					</floor>
+					<value>10</value>
+				</div>
+            </expression>
+        </input>
+		<output>/systems/thrust/n1/clb-lim</output>
+    </filter>
+	
+	<filter>
+		<name>Thrust Limit</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+            <expression>
+				<table>
+					<property>/controls/engines/n1-limit</property>
+					<entry><ind> 22.4</ind><dep>0.00</dep></entry>
+					<entry><ind>103.8</ind><dep>1.00</dep></entry>
+				</table>
+            </expression>
+		</input>
+		<output>/controls/engines/throttle-limit</output>
+	</filter>
+	
+	<filter>
+		<name>EGT 1</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<update-interval-secs type="double">0.05</update-interval-secs>
+		<input>
+			<expression>
+				<table>
+					<property>/engines/engine[0]/n1</property>
+					<entry><ind>  0.0</ind><dep>  0</dep></entry>
+					<entry><ind> 22.4</ind><dep>342</dep></entry>
+					<entry><ind>118.0</ind><dep>620</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/engines/engine[0]/egt-actual</output>
+	</filter>
+	
+	<filter>
+		<name>EGT 2</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<update-interval-secs type="double">0.05</update-interval-secs>
+		<input>
+			<expression>
+				<table>
+					<property>/engines/engine[1]/n1</property> 
+					<entry><ind>  0.0</ind><dep>  0</dep></entry>
+					<entry><ind> 22.4</ind><dep>342</dep></entry>
+					<entry><ind>118.0</ind><dep>620</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/engines/engine[1]/egt-actual</output>
+	</filter>
+
+</PropertyList>

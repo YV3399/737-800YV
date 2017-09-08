@@ -122,8 +122,8 @@
           <product><property>/engines/engine[0]/n1</property><value>0.01</value>  </product>
 			<entry><ind>0.06</ind> <dep>0.00</dep></entry>
 			<entry><ind>0.22</ind> <dep>0.40</dep></entry>
-			<entry><ind>0.40</ind> <dep>0.15</dep></entry>
-			<entry><ind>0.50</ind> <dep>0.00</dep></entry>
+			<entry><ind>0.45</ind> <dep>0.15</dep></entry>
+			<entry><ind>0.55</ind> <dep>0.00</dep></entry>
         </table>
       </product>
     </expression> 
@@ -143,8 +143,8 @@
           <product><property>/engines/engine[1]/n1</property><value>0.01</value>  </product>
 			<entry><ind>0.06</ind> <dep>0.00</dep></entry>
 			<entry><ind>0.22</ind> <dep>0.40</dep></entry>
-			<entry><ind>0.40</ind> <dep>0.15</dep></entry>
-			<entry><ind>0.50</ind> <dep>0.00</dep></entry>
+			<entry><ind>0.45</ind> <dep>0.15</dep></entry>
+			<entry><ind>0.55</ind> <dep>0.00</dep></entry>
         </table>
       </product>
     </expression> 
@@ -162,8 +162,8 @@
       <product>
         <table>
           <product><property>/engines/engine[0]/n1</property><value>0.01</value>  </product>
-			<entry><ind>0.22</ind> <dep>0.00</dep></entry>
-			<entry><ind>0.50</ind> <dep>0.30</dep></entry>
+			<entry><ind>0.32</ind> <dep>0.00</dep></entry>
+			<entry><ind>0.65</ind> <dep>0.30</dep></entry>
 			<entry><ind>0.90</ind> <dep>0.25</dep></entry>
 			<entry><ind>0.99</ind> <dep>0.08</dep></entry>
         </table>
@@ -183,8 +183,8 @@
       <product>
         <table>
           <product><property>/engines/engine[1]/n1</property><value>0.01</value>  </product>
-			<entry><ind>0.22</ind> <dep>0.00</dep></entry>
-			<entry><ind>0.50</ind> <dep>0.30</dep></entry>
+			<entry><ind>0.32</ind> <dep>0.00</dep></entry>
+			<entry><ind>0.65</ind> <dep>0.30</dep></entry>
 			<entry><ind>0.90</ind> <dep>0.25</dep></entry>
 			<entry><ind>0.99</ind> <dep>0.08</dep></entry>
         </table>
@@ -204,8 +204,9 @@
       <product>
         <table>
           <product><property>/engines/engine[0]/n1</property><value>0.01</value>  </product>
-			<entry><ind>0.85</ind> <dep>0.00</dep></entry>
-			<entry><ind>1.08</ind> <dep>0.70</dep></entry>
+			<entry><ind>0.65</ind> <dep>0.00</dep></entry>
+			<entry><ind>0.70</ind> <dep>0.10</dep></entry>
+			<entry><ind>1.02</ind> <dep>0.80</dep></entry>
         </table>
       </product>
     </expression> 
@@ -223,8 +224,9 @@
       <product>
         <table>
           <product><property>/engines/engine[1]/n1</property><value>0.01</value>  </product>
-			<entry><ind>0.85</ind> <dep>0.00</dep></entry>
-			<entry><ind>1.08</ind> <dep>0.70</dep></entry>
+			<entry><ind>0.65</ind> <dep>0.00</dep></entry>
+			<entry><ind>0.70</ind> <dep>0.10</dep></entry>
+			<entry><ind>1.02</ind> <dep>0.80</dep></entry>
         </table>
       </product>
     </expression> 
@@ -309,7 +311,7 @@
         <table>
           <product><property>/engines/engine[0]/n1</property><value>0.01</value>  </product>
 			<entry><ind>0.22</ind> <dep>0.70</dep></entry>
-			<entry><ind>0.95</ind> <dep>2.20</dep></entry>
+			<entry><ind>0.99</ind> <dep>1.80</dep></entry>
         </table>
       </product>
     </expression> 
@@ -328,7 +330,7 @@
         <table>
           <product><property>/engines/engine[1]/n1</property><value>0.01</value>  </product>
 			<entry><ind>0.22</ind> <dep>0.70</dep></entry>
-			<entry><ind>0.95</ind> <dep>2.20</dep></entry>
+			<entry><ind>0.99</ind> <dep>1.80</dep></entry>
         </table>
       </product>
     </expression> 
@@ -346,9 +348,8 @@
       <product>
         <table>
           <product><property>/engines/engine[0]/n1</property><value>0.01</value>  </product>
-			<entry><ind>0.90</ind> <dep>0.80</dep></entry>
-			<entry><ind>1.01</ind> <dep>0.90</dep></entry>
-			<entry><ind>1.08</ind> <dep>0.96</dep></entry>
+			<entry><ind>0.70</ind> <dep>0.80</dep></entry>
+			<entry><ind>1.02</ind> <dep>1.28</dep></entry>
         </table>
       </product>
     </expression> 
@@ -366,9 +367,8 @@
       <product>
         <table>
           <product><property>/engines/engine[1]/n1</property><value>0.01</value>  </product>
-			<entry><ind>0.90</ind> <dep>0.80</dep></entry>
-			<entry><ind>1.01</ind> <dep>0.90</dep></entry>
-			<entry><ind>1.08</ind> <dep>0.96</dep></entry>
+			<entry><ind>0.70</ind> <dep>0.80</dep></entry>
+			<entry><ind>1.02</ind> <dep>1.28</dep></entry>
         </table>
       </product>
     </expression> 

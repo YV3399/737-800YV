@@ -28,8 +28,8 @@ var canvas_lowerEICAS = {
 	},
 	update: func()
 	{
-		var n1_0 = getprop("/engines/engine[0]/n2");
-		var n1_1 = getprop("/engines/engine[1]/n2");
+		var n1_0 = getprop("/engines/engine[0]/n2") + 0.05;
+		var n1_1 = getprop("/engines/engine[1]/n2") + 0.05;
 		var fuel_flow_0 = getprop("/engines/engine[0]/fuel-flow_pph")*0.4536/1000;
 		var fuel_flow_1 = getprop("/engines/engine[1]/fuel-flow_pph")*0.4536/1000;
 

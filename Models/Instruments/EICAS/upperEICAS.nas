@@ -41,10 +41,10 @@ var canvas_upperEICAS = {
 	},
 	update: func()
 	{
-		var n1_0 = getprop("/engines/engine[0]/n1");
-		var n1_1 = getprop("/engines/engine[1]/n1");
-		var egt_0 = (getprop("/engines/engine[0]/egt-degf")-32)/1.8;
-		var egt_1 = (getprop("/engines/engine[1]/egt-degf")-32)/1.8;
+		var n1_0 = getprop("/engines/engine[0]/n1") + 0.05;
+		var n1_1 = getprop("/engines/engine[1]/n1") + 0.05;
+		var egt_0 = getprop("/engines/engine[0]/egt-actual");
+		var egt_1 = getprop("/engines/engine[1]/egt-actual");
 		var fuel_flow_0 = getprop("/engines/engine[0]/fuel-flow_pph")*0.4536/1000;
 		var fuel_flow_1 = getprop("/engines/engine[1]/fuel-flow_pph")*0.4536/1000;
 		var tat = roundToNearest(getprop("/fdm/jsbsim/propulsion/tat-c"),1);

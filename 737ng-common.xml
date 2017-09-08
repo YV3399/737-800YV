@@ -42,6 +42,9 @@
 			<autopilot n="8">
 				<path>Aircraft/737-800YV/Systems/fl2070_sound.xml</path>
 			</autopilot>
+			<autopilot n="9">
+				<path>Aircraft/737-800YV/Systems/fadec.xml</path>
+			</autopilot>
 			<path>Aircraft/737-800YV/Systems/systems.xml</path>
 			<property-rule n="101">
 				<path>Aircraft/737-800YV/Systems/instrument-filters.xml</path>
@@ -276,11 +279,13 @@
 
 	<engines>
 		<engine n="0">
+			<egt-actual type="double">0</egt-actual>
 			<state type="int">0</state>
 			<running>false</running>
 			<reverser-pos-norm type="double">0</reverser-pos-norm>
 		</engine>
 		<engine n="1">
+			<egt-actual type="double">0</egt-actual>
 			<state type="int">0</state>
 			<running>false</running>
 			<reverser-pos-norm type="double">0</reverser-pos-norm>
@@ -481,16 +486,13 @@
 		</APU>
 
 		<engines n="0">
-			<kp>0.01</kp>
-			<kp-spd>0.30</kp-spd>
-			<n1-roc-thr>20</n1-roc-thr>
-			<n1-roc-pitch>5</n1-roc-pitch>
-			<n1-roc-retard>20</n1-roc-retard>
 			<engine n="0">
 				<start-switch type="int">1</start-switch>
+				<throttle-fdm type="double">0</throttle-fdm>
 			</engine>
 			<engine n="1">
 				<start-switch type="int">1</start-switch>
+				<throttle-fdm type="double">0</throttle-fdm>
 			</engine>
 		</engines>
 
@@ -892,7 +894,7 @@
 			<file>Aircraft/737-800YV/Nasal/it-cws.nas</file>
 		</it-cws>
 		<thrust>
-			<file>Aircraft/737-800YV/Nasal/thrust.nas</file>
+			<file>Aircraft/737-800YV/Nasal/fadec.nas</file>
 		</thrust>
 		<acconfig>
 			<file>Aircraft/737-800YV/AircraftConfig/acconfig.nas</file>
