@@ -253,10 +253,10 @@
   <object-name>sbarm</object-name>   
   <property>b737/controls/flight/spoilers-lever-pos</property> 
   <interpolation>
-    <entry><ind>  0.0</ind><dep>0.0</dep></entry>
-    <entry><ind>  1.0</ind><dep>4.0</dep></entry>
-    <entry><ind>  5.0</ind><dep>40</dep></entry>
-    <entry><ind>  6.0</ind><dep>50.0</dep></entry>       
+    <entry><ind>  0.0</ind><dep>-20.0</dep></entry>
+    <entry><ind>  1.0</ind><dep>-14.0</dep></entry>
+    <entry><ind>  5.0</ind><dep>   35</dep></entry>
+    <entry><ind>  6.0</ind><dep> 50.0</dep></entry>       
   </interpolation>  
   <center>
    <x-m>0.68</x-m>
