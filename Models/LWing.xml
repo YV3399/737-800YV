@@ -351,11 +351,9 @@
   <object-name>mglhlinkupper</object-name>
   <object-name>mglhlinklower</object-name>
   <object-name>mglhlowerstrut</object-name>
-  <object-name>mglhaxle</object-name>  
-  <object-name>mglhtyrelh</object-name>
-  <object-name>mglhrimlh</object-name> 
-   <object-name>mglhtyrerh</object-name>
-   <object-name>mglhrimrh</object-name>   
+  <object-name>mglhaxle</object-name>
+  <object-name>Bearing</object-name>
+  <object-name>Tires</object-name>
   <object-name>lhgdmid</object-name>
   <object-name>geardoor</object-name>           
   <property>gear/gear[1]/position-norm</property>
@@ -489,10 +487,8 @@
 
    <animation>
  <type>translate</type>   
-   <object-name>mglhtyrelh</object-name>
-   <object-name>mglhrimlh</object-name> 
-    <object-name>mglhtyrerh</object-name>
-   <object-name>mglhrimrh</object-name>  
+  <object-name>Bearing</object-name>
+  <object-name>Tires</object-name>
    <object-name>mglhaxle</object-name>
    <object-name>mglhlinklower</object-name>
    <object-name>mglhlowerstrut</object-name>
@@ -513,28 +509,10 @@
 
   <animation>
   <type>spin</type>
-  <object-name>mglhtyrelh</object-name>
-   <object-name>mglhrimlh</object-name>     
+  <object-name>Bearing</object-name>
+  <object-name>Tires</object-name> 
   <property>gear/gear[1]/rollspeed-ms</property>
-  <factor>-5</factor>    
-  <center>
-   <x-m>0.288</x-m>
-   <y-m>3.0</y-m>
-   <z-m>-2.499</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-  <animation>
-  <type>spin</type>
- <object-name>mglhtyrerh</object-name>
-   <object-name>mglhrimrh</object-name>    
-  <property>gear/gear[1]/rollspeed-ms</property>
-  <factor>-5</factor>    
+  <factor>-10</factor>    
   <center>
    <x-m>0.288</x-m>
    <y-m>3.0</y-m>
