@@ -25,10 +25,8 @@
   <object-name>nlinklower</object-name>
   <object-name>nlowerstrut</object-name>
   <object-name>noseaxle</object-name>
-  <object-name>ngtyrerh</object-name>
-  <object-name>ngrimrh</object-name>
-  <object-name>ngtyrelh</object-name>
-  <object-name>ngrimlh</object-name>
+  <object-name>Bearing</object-name>
+  <object-name>Tires</object-name>
    <property>fdm/jsbsim/fcs/steer-pos-deg</property>
    <factor>-1</factor>
     <center>
@@ -53,10 +51,8 @@
   <object-name>nlinklower</object-name>
   <object-name>nlowerstrut</object-name>
   <object-name>noseaxle</object-name>
-  <object-name>ngtyrerh</object-name>
-  <object-name>ngrimrh</object-name>
-  <object-name>ngtyrelh</object-name>
-  <object-name>ngrimlh</object-name>
+  <object-name>Bearing</object-name>
+  <object-name>Tires</object-name>
   <property>gear/gear[0]/position-norm</property>
    <interpolation>
     <entry>
@@ -91,10 +87,8 @@
  <animation>
  <type>translate</type>   
    <object-name>noseaxle</object-name>
-  <object-name>ngtyrerh</object-name>
-  <object-name>ngrimrh</object-name>
-  <object-name>ngtyrelh</object-name>
-  <object-name>ngrimlh</object-name>
+  <object-name>Bearing</object-name>
+  <object-name>Tires</object-name>
   <object-name>nlowerstrut</object-name>
   <object-name>noseaxle</object-name>
   <object-name>nlinklower</object-name>
@@ -184,7 +178,7 @@
   <type>rotate</type>
   <object-name>nlinkupper</object-name>   
  <property>gear/gear[0]/compression-norm</property>
-  <factor>-200.0</factor>     
+  <factor>-25.0</factor>     
   <center>
    <x-m>-15.41</x-m>
    <y-m>0.0</y-m>
@@ -201,7 +195,7 @@
   <type>rotate</type>
  <object-name>nlinklower</object-name>  
  <property>gear/gear[0]/compression-norm</property>
-  <factor>200.0</factor>     
+  <factor>25.0</factor>     
   <center>
    <x-m>-15.41</x-m>
    <y-m>0.0</y-m>
@@ -213,5 +207,24 @@
    <z>0</z>
   </axis>
  </animation>
+ 
+	<animation>
+		<name>Tire rotation</name>
+		<type>spin</type>
+		<object-name>Tires</object-name>
+		<object-name>Bearing</object-name>
+		<property>gear/gear[0]/rollspeed-ms</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-15.4974</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.48332</z-m>
+		</center>
+	</animation>
 
 </PropertyList>
