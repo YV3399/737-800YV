@@ -142,15 +142,47 @@
 </animation>    
 
 <animation>
+	<type>pick</type>
+	<object-name>ATdiscL</object-name>
+	<object-name>ATdiscR</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>property-assign</command>
+			<property>/it-autoflight/input/athr</property>
+			<value>0</value>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>TOGAbtnL</object-name>
+	<object-name>TOGAbtnR</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>property-assign</command>
+			<property>/it-autoflight/input/toga</property>
+			<value>1</value>
+		</binding>
+	</action>
+</animation>
+
+<animation>
   <type>rotate</type>   
   <object-name>quadone</object-name> 
   <object-name>boxone</object-name> 
   <object-name>no1thrarm</object-name>
   <object-name>no1revarm</object-name> 
   <object-name>No1-knob</object-name>
+  <object-name>TOGAbtnL</object-name>
+  <object-name>ATdiscL</object-name>
   <property>controls/engines/engine[0]/throttle</property>
   <interpolation>
-    <entry><ind>0</ind><dep>40</dep></entry>
+    <entry><ind>0</ind><dep>42</dep></entry>
     <entry><ind>1</ind><dep>-10</dep></entry>
   </interpolation>
   <center>
@@ -172,9 +204,11 @@
   <object-name>no2thrarm</object-name>
   <object-name>no2revarm</object-name> 
   <object-name>No2-knob</object-name>
+   <object-name>TOGAbtnR</object-name>
+   <object-name>ATdiscR</object-name>
   <property>controls/engines/engine[1]/throttle</property>
   <interpolation>
-    <entry><ind>0</ind><dep>40</dep></entry>
+    <entry><ind>0</ind><dep>42</dep></entry>
     <entry><ind>1</ind><dep>-10</dep></entry>
   </interpolation> 
   <center>
@@ -225,15 +259,15 @@
   <object-name>handle</object-name>
   <property>controls/flight/flaps</property>
   <interpolation>
-    <entry><ind>  0.000</ind><dep> 0.0</dep></entry>
-    <entry><ind>  0.125</ind><dep> 8.0</dep></entry>
-    <entry><ind>  0.250</ind><dep> 16.0</dep></entry>
-    <entry><ind>  0.375</ind><dep> 24.0</dep></entry>
-    <entry><ind>  0.500</ind><dep> 32.0</dep></entry>
-    <entry><ind>  0.625</ind><dep> 40.0</dep></entry>
-    <entry><ind>  0.750</ind><dep> 48.0</dep></entry>
-    <entry><ind>  0.875</ind><dep> 56.0</dep></entry>
-    <entry><ind>  1.000</ind><dep> 64.0</dep></entry>
+    <entry><ind>  0.000</ind><dep>-10.0</dep></entry>
+    <entry><ind>  0.125</ind><dep> -0.5</dep></entry>
+    <entry><ind>  0.250</ind><dep>  7.0</dep></entry>
+    <entry><ind>  0.375</ind><dep> 17.0</dep></entry>
+    <entry><ind>  0.500</ind><dep> 24.4</dep></entry>
+    <entry><ind>  0.625</ind><dep> 33.5</dep></entry>
+    <entry><ind>  0.750</ind><dep> 42.2</dep></entry>
+    <entry><ind>  0.875</ind><dep> 53.0</dep></entry>
+    <entry><ind>  1.000</ind><dep> 62.0</dep></entry>
   </interpolation>   
   <center>
    <x-m>0.68</x-m>
