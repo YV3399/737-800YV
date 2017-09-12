@@ -37,6 +37,7 @@ var trim_handler = func {
   if ( old_trim == nil ) old_trim = 0.0;
   var new_trim = num( getprop("/controls/flight/elevator-trim") );
   if ( new_trim == nil ) new_trim = 0.0;
+  if (new_trim >= 0.99 or new_trim <= -0.99) setprop("/controls/flight/elevator-trim",0);
   var delta = new_trim - old_trim;
   setprop( "b737/controls/trim/stabilizer-old", new_trim );
   if( delta > 0.0 ) elevatorTrim(1);
