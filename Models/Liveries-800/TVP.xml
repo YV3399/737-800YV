@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Travel Service Polska (Air Explore)</name>
+            <texture>/Liveries-800/TVP.png</texture>  
+			<newwinglets type="bool">true</newwinglets> 
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
