@@ -1598,7 +1598,7 @@
                         <property>metrics/lh-ft</property>
                         <quotient>
                             <difference>
-                                <value>734</value>
+                                <value>660</value>
                                 <property>inertia/cg-x-in</property>
                             </difference>
                             <value>12</value>
