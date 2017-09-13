@@ -1417,13 +1417,11 @@
     <button>0</button>
     <repeatable>true</repeatable>
     <binding>
-      <command>property-assign</command>
-      <property>controls/gear/gear-down</property>  
-      <value type="bool">false</value>      
-      <step>1</step>
-      <min>0</min>
-      <max>1</max>    		  
-      <wrap>false</wrap>
+      <command>property-cycle</command>
+      <property>b737/controls/gear/lever</property>  
+      <value>0</value>
+	  <value>1</value>
+	  <value>2</value>
     </binding>
   </action>
 </animation>
@@ -1435,13 +1433,11 @@
     <button>1</button>
     <repeatable>true</repeatable>
     <binding>
-      <command>property-assign</command>
-      <property>controls/gear/gear-down</property> 
-      <value type="bool">true</value>       
-      <step>-1</step>
-      <min>0</min>
-      <max>1</max>    		  
-      <wrap>false</wrap>
+       <command>property-cycle</command>
+       <property>b737/controls/gear/lever</property>  
+       <value>2</value>
+	   <value>1</value>
+	   <value>0</value>
     </binding>
   </action>
 </animation>

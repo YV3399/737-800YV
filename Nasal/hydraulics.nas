@@ -23,9 +23,12 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var acR = getprop("/systems/electrical/bus/acR");
 	var n2_1 = getprop("/engines/engine[0]/n2");
 	var n2_2 = getprop("/engines/engine[1]/n2");
+	
+	var gearlvr = getprop("/b737/controls/gear/lever");
 });
 
 var hyd_init = func {
+	setprop("/b737/controls/gear/lever", 0);
 	setprop("/controls/hydraulic/a-eng1-pump", 1);
 	setprop("/controls/hydraulic/a-eng2-pump", 1);
 	setprop("/controls/hydraulic/b-elec1-pump", 1);
@@ -157,8 +160,23 @@ var master_hyd = func {
 	} else {
 		setprop("/systems/hydraulic/rudder-active", 0);
 	}
+	
+	# landing gear
+	# Add override trigger later. Remember that only the nose gear will retract on the ground due to the mlg needing to rotate past vertical to extend
 }
 
+setlistener("/b737/controls/gear/lever", func {
+	gearlvr = getprop("/b737/controls/gear/lever");
+	wow = getprop("/gear/gear[1]/wow");
+	if (gearlvr == 0 and !wow) {  # in air, put gear down
+		setprop("/controls/gear/gear-down", 1);
+	} else if (gearlvr == 1 and !wow) { # in air put gear up
+		setprop("/controls/gear/gear-down", 0);
+	} else if (gearlvr == 1 or gearlvr == 2 and wow) { # on ground inhibit lever movement. 
+		setprop("/controls/gear/gear-down", 1);
+		setprop("/b737/controls/gear/lever", 0);
+	} 
+});
 ###################
 # Update Function #
 ###################
