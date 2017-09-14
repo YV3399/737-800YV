@@ -1,4 +1,4 @@
-## Controls systems that depend on the air-ground sensor## Controls systems that depend on the air-ground sensor
+## Controls systems that depend on the air-ground sensor
 # (also called "squat-switch") position.  This assumes
 # the airplane always starts on the ground (just like the
 # real airplane).

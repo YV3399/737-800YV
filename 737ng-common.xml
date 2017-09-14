@@ -25,8 +25,8 @@
 				<path>Aircraft/737-800YV/Systems/aircraft-systems-logic.xml</path>
 			</autopilot>
 			<autopilot n="4">
-				<name>IT-AUTOFLIGHT</name>
-				<path>Aircraft/737-800YV/Systems/autoflight.xml</path>
+				<name>737-AUTOFLIGHT</name>
+				<path>Aircraft/737-800YV/Systems/737-autoflight.xml</path>
 			</autopilot>
 			<autopilot n="5">
 				<name>IT-CWS</name>
@@ -872,9 +872,9 @@
 	</instrumentation>
 
 	<nasal>
-		<Boeing>
-			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
-		</Boeing>
+		<cdu>
+			<file>Aircraft/737-800YV/Models/Instruments/CDU/boeing.nas</file> <!-- custom implementation of the CDU from instruments-3D -->
+		</cdu>
 		<boeing737>
 			<file>Aircraft/737-800YV/Models/Instruments/PFD/PFD.nas</file>
 			<file>Aircraft/737-800YV/Models/Instruments/EICAS/upperEICAS.nas</file>
@@ -906,7 +906,7 @@
 			<file>Aircraft/737-800YV/Nasal/reverse-thrust.nas</file>
 		</reversethrust>
 		<itaf>
-			<file>Aircraft/737-800YV/Nasal/it-autoflight.nas</file>
+			<file>Aircraft/737-800YV/Nasal/737-autoflight.nas</file>
 		</itaf>
 		<it-cws>
 			<file>Aircraft/737-800YV/Nasal/it-cws.nas</file>

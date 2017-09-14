@@ -1,6 +1,7 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
 # V3.0.3 Stable
+# Customized for the 737-800 with the Honeywell MCP
 # This program is 100% GPL!
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);

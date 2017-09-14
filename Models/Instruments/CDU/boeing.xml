@@ -1188,26 +1188,9 @@
 		<button>0</button>
 		<repeatable>false</repeatable>  
 		<binding>
-			<condition>
-				<equals>
-					<property>instrumentation/cdu/display</property>
-					<value>RTE1_2</value>
-				</equals>
-			</condition>
-			<command>property-assign</command>
-			<property>instrumentation/cdu/display</property>
-			<value>RTE1_1</value>
+			<command>nasal</command>
+			<script>cdu.key('prev');</script>
 		</binding>
-		 <binding>
-                        <condition>
-                            <equals>
-                                <property>instrumentation/cdu/display</property>
-                                <value>RTE1_LEGS</value>
-                            </equals>
-                        </condition>
-                        <command>nasal</command>
-                        <script>cdu.pgupdn(-1);</script>
-                </binding>
 	</action>
 </animation>
 
@@ -1218,26 +1201,9 @@
 		<button>0</button>
 		<repeatable>false</repeatable>  
 		<binding>
-			<condition>
-				<equals>
-					<property>instrumentation/cdu/display</property>
-					<value>RTE1_1</value>
-				</equals>
-			</condition>
-			<command>property-assign</command>
-			<property>instrumentation/cdu/display</property>
-			<value>RTE1_2</value>
+			<command>nasal</command>
+			<script>cdu.key('next');</script>
 		</binding>
-		<binding>
-                        <condition>
-                            <equals>
-                                <property>instrumentation/cdu/display</property>
-                                <value>RTE1_LEGS</value>
-                            </equals>
-                        </condition>
-                        <command>nasal</command>
-                        <script>cdu.pgupdn(1);</script>
-                </binding>
 	</action>
 </animation>
 
@@ -1769,7 +1735,7 @@
 		<repeatable>false</repeatable>  
 		<binding>
 			<command>nasal</command>
-			<script>cdu.delete();</script>
+			<script>cdu.delete_func();</script>
 		</binding>
 		<binding>
 			<condition>
