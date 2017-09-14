@@ -21,7 +21,7 @@
     </model>
     <model>
         <name>CDU1</name>
-        <path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
+        <path>Aircraft/737-800YV/Instruments/CDU/boeing.xml</path>
         <offsets>
             <x-m>0.460</x-m>
             <y-m>-0.203</y-m>
@@ -35,7 +35,7 @@
 	
     <model>
         <name>CDU2</name>
-        <path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
+        <path>Aircraft/737-800YV/Instruments/CDU/boeing.xml</path>
         <offsets>
             <x-m>0.460</x-m>
             <y-m>0.162</y-m>

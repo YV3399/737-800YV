@@ -108,7 +108,7 @@
 </effect>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -129,7 +129,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.043</y-m>
@@ -150,7 +150,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.045</y-m>
@@ -171,7 +171,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.049</y-m>
@@ -192,7 +192,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -213,7 +213,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -234,7 +234,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.045</y-m>
@@ -255,7 +255,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.049</y-m>
@@ -276,7 +276,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.045</y-m>
@@ -297,7 +297,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.049</y-m>
@@ -318,7 +318,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -339,7 +339,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -360,7 +360,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.045</y-m>
@@ -381,7 +381,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.049</y-m>
@@ -402,7 +402,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.045</y-m>
@@ -423,7 +423,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.049</y-m>
@@ -444,7 +444,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -465,7 +465,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -486,7 +486,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.045</y-m>
@@ -507,7 +507,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.049</y-m>
@@ -528,7 +528,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.045</y-m>
@@ -549,7 +549,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.049</y-m>
@@ -570,7 +570,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -591,7 +591,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -612,7 +612,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.045</y-m>
@@ -633,7 +633,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.049</y-m>
@@ -654,7 +654,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.045</y-m>
@@ -675,7 +675,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.049</y-m>
@@ -696,7 +696,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -717,7 +717,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -738,7 +738,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.045</y-m>
@@ -759,7 +759,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.049</y-m>
@@ -780,7 +780,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.045</y-m>
@@ -801,7 +801,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m>-0.049</y-m>
@@ -822,7 +822,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -843,7 +843,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
@@ -864,7 +864,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.045</y-m>
@@ -885,7 +885,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.049</y-m>
@@ -906,7 +906,7 @@
 </model>
 
 <model>
-	<path>Aircraft/Instruments-3d/cdu/display-text-value.xml</path>
+	<path>Aircraft/737-800YV/cdu/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
 		<y-m> 0.000</y-m>
