@@ -26,7 +26,7 @@ OBJECT poly
 name "Btn.A"
 data 8
 Mesh.001
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.025141 0.002832
@@ -120,7 +120,7 @@ OBJECT poly
 name "Btn.B"
 data 8
 Mesh.002
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.025141 -0.01182
@@ -214,7 +214,7 @@ OBJECT poly
 name "Btn.C"
 data 8
 Mesh.003
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.025141 -0.026784
@@ -308,7 +308,7 @@ OBJECT poly
 name "Btn.D"
 data 8
 Mesh.004
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.025141 -0.041966
@@ -402,7 +402,7 @@ OBJECT poly
 name "Btn.E"
 data 8
 Mesh.005
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.025141 -0.056822
@@ -496,7 +496,7 @@ OBJECT poly
 name "Btn.F"
 data 8
 Mesh.006
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.040841 0.002832
@@ -590,7 +590,7 @@ OBJECT poly
 name "Btn.G"
 data 8
 Mesh.007
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.040841 -0.01182
@@ -684,7 +684,7 @@ OBJECT poly
 name "Btn.H"
 data 8
 Mesh.008
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.040841 -0.026784
@@ -778,7 +778,7 @@ OBJECT poly
 name "Btn.I"
 data 8
 Mesh.009
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.040841 -0.041966
@@ -872,7 +872,7 @@ OBJECT poly
 name "Btn.J"
 data 8
 Mesh.010
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.040841 -0.056822
@@ -966,7 +966,7 @@ OBJECT poly
 name "Btn.K"
 data 8
 Mesh.011
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.056206 0.002832
@@ -1060,7 +1060,7 @@ OBJECT poly
 name "Btn.L"
 data 8
 Mesh.012
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.056206 -0.01182
@@ -1154,7 +1154,7 @@ OBJECT poly
 name "Btn.M"
 data 8
 Mesh.013
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.056206 -0.026784
@@ -1248,7 +1248,7 @@ OBJECT poly
 name "Btn.N"
 data 8
 Mesh.014
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.056206 -0.041966
@@ -1342,7 +1342,7 @@ OBJECT poly
 name "Btn.O"
 data 8
 Mesh.015
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.056206 -0.056822
@@ -1436,7 +1436,7 @@ OBJECT poly
 name "Btn.P"
 data 8
 Mesh.016
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.071386 0.002832
@@ -1530,7 +1530,7 @@ OBJECT poly
 name "Btn.Q"
 data 8
 Mesh.017
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.071386 -0.01182
@@ -1624,7 +1624,7 @@ OBJECT poly
 name "Btn.R"
 data 8
 Mesh.018
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.071386 -0.026784
@@ -1718,7 +1718,7 @@ OBJECT poly
 name "Btn.S"
 data 8
 Mesh.019
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.071386 -0.041966
@@ -1812,7 +1812,7 @@ OBJECT poly
 name "Btn.T"
 data 8
 Mesh.020
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.071386 -0.056822
@@ -1906,7 +1906,7 @@ OBJECT poly
 name "Btn.U"
 data 8
 Mesh.021
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.087681 0.002832
@@ -2000,7 +2000,7 @@ OBJECT poly
 name "Btn.V"
 data 8
 Mesh.022
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.087681 -0.01182
@@ -2094,7 +2094,7 @@ OBJECT poly
 name "Btn.W"
 data 8
 Mesh.023
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.087681 -0.026784
@@ -2188,7 +2188,7 @@ OBJECT poly
 name "Btn.X"
 data 8
 Mesh.024
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.087681 -0.041966
@@ -2282,7 +2282,7 @@ OBJECT poly
 name "Btn.Y"
 data 8
 Mesh.025
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.087681 -0.056822
@@ -2376,7 +2376,7 @@ OBJECT poly
 name "Btn.Z"
 data 8
 Mesh.026
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.101524 0.002832
@@ -2470,7 +2470,7 @@ OBJECT poly
 name "Btn.altn"
 data 8
 Mesh.027
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 0.005336 -0.012193
@@ -2564,7 +2564,7 @@ OBJECT poly
 name "Btn.clr"
 data 8
 Mesh.028
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.101524 -0.056822
@@ -2658,7 +2658,7 @@ OBJECT poly
 name "Btn.del"
 data 8
 Mesh.029
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.101524 -0.026784
@@ -2752,7 +2752,7 @@ OBJECT poly
 name "Btn.dep-arr"
 data 8
 Mesh.030
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 0.005336 0.006414
@@ -2846,7 +2846,7 @@ OBJECT poly
 name "Btn.exec"
 data 8
 Mesh.031
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005591 -0.01016 -0.056177
@@ -2940,7 +2940,7 @@ OBJECT poly
 name "Btn.fix"
 data 8
 Mesh.032
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.009832 0.043383
@@ -3034,7 +3034,7 @@ OBJECT poly
 name "Btn.fmc-comm"
 data 8
 Mesh.033
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.009832 -0.012168
@@ -3128,7 +3128,7 @@ OBJECT poly
 name "Btn.hold"
 data 8
 Mesh.034
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.009832 0.006302
@@ -3222,7 +3222,7 @@ OBJECT poly
 name "Btn.init-ref"
 data 8
 Mesh.035
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 0.005336 0.043639
@@ -3316,7 +3316,7 @@ OBJECT poly
 name "Btn.legs"
 data 8
 Mesh.036
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.009832 0.024912
@@ -3410,7 +3410,7 @@ OBJECT poly
 name "Btn.menu"
 data 8
 Mesh.037
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.025918 0.043383
@@ -3504,7 +3504,7 @@ OBJECT poly
 name "Btn.nav-rad"
 data 8
 Mesh.038
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.025918 0.024912
@@ -3598,7 +3598,7 @@ OBJECT poly
 name "Btn.next-page"
 data 8
 Mesh.039
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.041915 0.024912
@@ -3692,7 +3692,7 @@ OBJECT poly
 name "Btn.num1"
 data 8
 Mesh.040
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.057612 0.050208
@@ -3786,7 +3786,7 @@ OBJECT poly
 name "Btn.num2"
 data 8
 Mesh.041
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.057612 0.035226
@@ -3880,7 +3880,7 @@ OBJECT poly
 name "Btn.num3"
 data 8
 Mesh.042
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.057612 0.020332
@@ -3974,7 +3974,7 @@ OBJECT poly
 name "Btn.num4"
 data 8
 Mesh.043
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.072224 0.050208
@@ -4068,7 +4068,7 @@ OBJECT poly
 name "Btn.num5"
 data 8
 Mesh.044
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.072224 0.035226
@@ -4162,7 +4162,7 @@ OBJECT poly
 name "Btn.num6"
 data 8
 Mesh.045
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.072224 0.020332
@@ -4256,7 +4256,7 @@ OBJECT poly
 name "Btn.num7"
 data 8
 Mesh.046
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.087583 0.050208
@@ -4350,7 +4350,7 @@ OBJECT poly
 name "Btn.num8"
 data 8
 Mesh.047
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.087583 0.035226
@@ -4444,7 +4444,7 @@ OBJECT poly
 name "Btn.num9"
 data 8
 Mesh.048
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.087583 0.020332
@@ -4538,7 +4538,7 @@ OBJECT poly
 name "Btn.period"
 data 8
 Mesh.049
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.102985 0.050208
@@ -4632,7 +4632,7 @@ OBJECT poly
 name "Btn.plusminus"
 data 8
 Mesh.050
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.102985 0.020332
@@ -4726,7 +4726,7 @@ OBJECT poly
 name "Btn.prev-page"
 data 8
 Mesh.051
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.041915 0.043383
@@ -4820,7 +4820,7 @@ OBJECT poly
 name "Btn.prog"
 data 8
 Mesh.052
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 -0.009832 -0.030947
@@ -4914,7 +4914,7 @@ OBJECT poly
 name "Btn.rte"
 data 8
 Mesh.053
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 0.005336 0.025032
@@ -5014,7 +5014,7 @@ OBJECT poly
 name "Btn.side.l.1"
 data 4
 Mesh
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.095214 0.06113
@@ -5108,7 +5108,7 @@ OBJECT poly
 name "Btn.side.l.2"
 data 8
 Mesh.063
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.080173 0.066074
@@ -5202,7 +5202,7 @@ OBJECT poly
 name "Btn.side.l.3"
 data 8
 Mesh.064
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.071542 0.06113
@@ -5296,7 +5296,7 @@ OBJECT poly
 name "Btn.side.l.4"
 data 8
 Mesh.065
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.056369 0.066074
@@ -5390,7 +5390,7 @@ OBJECT poly
 name "Btn.side.l.5"
 data 8
 Mesh.066
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.047338 0.06113
@@ -5484,7 +5484,7 @@ OBJECT poly
 name "Btn.side.l.6"
 data 8
 Mesh.067
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.03203 0.066074
@@ -5578,7 +5578,7 @@ OBJECT poly
 name "Btn.side.r.1"
 data 8
 Mesh.073
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.092142 -0.065557
@@ -5672,7 +5672,7 @@ OBJECT poly
 name "Btn.side.r.2"
 data 8
 Mesh.072
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.083246 -0.070502
@@ -5766,7 +5766,7 @@ OBJECT poly
 name "Btn.side.r.3"
 data 8
 Mesh.071
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.068471 -0.065557
@@ -5860,7 +5860,7 @@ OBJECT poly
 name "Btn.side.r.4"
 data 8
 Mesh.070
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.059441 -0.070502
@@ -5954,7 +5954,7 @@ OBJECT poly
 name "Btn.side.r.5"
 data 8
 Mesh.069
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.044266 -0.065557
@@ -6048,7 +6048,7 @@ OBJECT poly
 name "Btn.side.r.6"
 data 8
 Mesh.068
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005471 0.035103 -0.070502
@@ -6142,7 +6142,7 @@ OBJECT poly
 name "Btn.slash"
 data 8
 Mesh.055
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.101524 -0.041966
@@ -6236,7 +6236,7 @@ OBJECT poly
 name "Btn.sp"
 data 8
 Mesh.056
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005655 -0.101524 -0.01182
@@ -6330,7 +6330,7 @@ OBJECT poly
 name "Btn.vnav"
 data 8
 Mesh.057
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.005637 0.005336 -0.030947
@@ -6424,7 +6424,7 @@ OBJECT poly
 name "Btn.zero"
 data 8
 Mesh.058
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 13
 0.00562 -0.102985 0.035226
@@ -6518,7 +6518,7 @@ OBJECT poly
 name "CDU"
 data 8
 Mesh.059
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 28
 0.005003 0.113478 -0.054589
@@ -6727,7 +6727,7 @@ OBJECT poly
 name "Cylinder.038"
 data 8
 Mesh.061
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 25
 0.005156 0.118423 0.055866
@@ -6917,7 +6917,7 @@ OBJECT poly
 name "Cylinder.039"
 data 8
 Mesh.062
-texture "boeing_brown.png"
+texture "boeing_grey.png"
 crease 30.000000
 numvert 25
 0.005057 0.002129 -0.056188
