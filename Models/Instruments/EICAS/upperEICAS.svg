@@ -14,7 +14,7 @@
    height="1024"
    id="svg3542"
    version="1.1"
-   inkscape:version="0.91 r"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="upperEICAS.svg">
   <defs
      id="defs3544">
@@ -65,16 +65,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="293.84472"
-     inkscape:cy="984.63734"
+     inkscape:zoom="8.4976309"
+     inkscape:cx="324.84025"
+     inkscape:cy="907.74452"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1360"
-     inkscape:window-height="716"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:snap-center="true"
      inkscape:snap-global="false" />
@@ -1057,5 +1057,96 @@
          id="tspan4280-7"
          x="533.67175"
          y="71.95652">REV</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:28.06949425px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="60.333664"
+       y="87.03569"
+       id="TAI-l"
+       sodipodi:linespacing="125%"
+       transform="scale(0.99388226,1.0061554)"
+       inkscape:label="#text4282"><tspan
+         sodipodi:role="line"
+         id="tspan4284"
+         x="60.333664"
+         y="87.03569">TAI</tspan></text>
+    <text
+       inkscape:label="#text4282"
+       transform="scale(0.99388226,1.0061554)"
+       sodipodi:linespacing="125%"
+       id="TAI-r"
+       y="82.066284"
+       x="357.14951"
+       style="font-style:normal;font-weight:normal;font-size:28.06949425px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="82.066284"
+         x="357.14951"
+         id="tspan4288"
+         sodipodi:role="line">TAI</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36.65403748px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="292.63708"
+       y="29.567831"
+       id="thrustSetting"
+       sodipodi:linespacing="125%"
+       transform="scale(0.81959834,1.2201098)"
+       inkscape:label="#text4290"><tspan
+         sodipodi:role="line"
+         id="tspan4292"
+         x="292.63708"
+         y="29.567831">CON</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:32.03102875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffdc00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="68.704865"
+       y="376.69168"
+       id="engFailL"
+       sodipodi:linespacing="125%"
+       transform="scale(0.95932061,1.0424044)"
+       inkscape:label="#text4294"><tspan
+         sodipodi:role="line"
+         id="tspan4296"
+         x="68.704865"
+         y="376.69168">ENG FAIL</tspan></text>
+    <text
+       inkscape:label="#text4294"
+       transform="scale(0.9593206,1.0424044)"
+       sodipodi:linespacing="125%"
+       id="engFailR"
+       y="373.26553"
+       x="371.7467"
+       style="font-style:normal;font-weight:normal;font-size:32.03102875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffdc00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="373.26553"
+         x="371.7467"
+         id="tspan4300"
+         sodipodi:role="line">ENG FAIL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:35.10857773px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="43.194958"
+       y="125.52757"
+       id="N1limit1"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.96059475,0.24685933,-0.24054266,0.97920565,0,0)"
+       inkscape:label="#text4296"><tspan
+         sodipodi:role="line"
+         id="tspan4298"
+         x="43.194958"
+         y="125.52757">&gt;</tspan></text>
+    <text
+       inkscape:label="#text4296"
+       transform="matrix(0.96059475,0.24685933,-0.24054266,0.97920565,0,0)"
+       sodipodi:linespacing="125%"
+       id="N1limit2"
+       y="54.47361"
+       x="324.3931"
+       style="font-style:normal;font-weight:normal;font-size:35.10857773px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="54.47361"
+         x="324.3931"
+         id="tspan4302"
+         sodipodi:role="line">&gt;</tspan></text>
   </g>
 </svg>
