@@ -2,7 +2,7 @@
 
 <turbine_engine name="CFM56_5B4">
 
-	<milthrust>     27000 </milthrust>
+	<milthrust>     27300 </milthrust>
 	<bypassratio>     8.1 </bypassratio>
 	<tsfc>            0.5 </tsfc>
 	<bleed>          0.03 </bleed>
