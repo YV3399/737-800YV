@@ -1500,5 +1500,144 @@
       </axis>
     </animation> 
 
+    <!-- Eletric Hyd Pumps -->
+
+    <animation>
+      <type>pick</type>
+      <object-name>hydeng1</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>    
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/hydraulic/system/engine-pump</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>hydeng1</object-name>  
+      <property>controls/hydraulic/system/engine-pump</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.03142</x-m>
+        <y-m>0.06466</y-m>
+        <z-m>0.09329</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+    <animation>
+      <type>pick</type>
+      <object-name>hydeng2</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>   
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/hydraulic/system/engine-pump</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>hydeng2</object-name>  
+      <property>controls/hydraulic/system/engine-pump</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.03150</x-m>
+        <y-m>0.12788</y-m>
+        <z-m>0.09266</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+    <animation>
+      <type>pick</type>
+      <object-name>hydelectrR</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/hydraulic/system/electric-pump</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>hydelectrR</object-name>  
+      <property>controls/hydraulic/system/electric-pump</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.03147</x-m>
+        <y-m>0.09233</y-m>
+        <z-m>0.09192</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+    <animation>
+      <type>pick</type>
+      <object-name>hydelectrL</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>        
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/hydraulic/system/electric-pump</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>  
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>hydelectrL</object-name>  
+      <property>controls/hydraulic/system/electric-pump</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.03146</x-m>
+        <y-m>0.15637</y-m>
+        <z-m>0.09264</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+
 
 </PropertyList>
