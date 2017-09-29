@@ -733,8 +733,8 @@
             <aerosurface_scale name="Rudder Normalized">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                   <min>-0.7763323125</min>
-                   <max>0.7763323125</max>
+                   <min>-0.523599</min>
+                   <max>0.523599</max>
                 </domain>
                 <range>
                     <min>-1</min>
