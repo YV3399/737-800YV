@@ -139,10 +139,24 @@ var canvas_PFD = {
 		m["risingRwy"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 		m["risingRwyPtr"].set("clip", "rect(220.816, 693.673, 750.887, 192.606)");
 
-		m.update_ap_modes();
+		m.timers=[];
 
 		return m;
 	},
+    
+    newMFD: func()
+ 	{
+ 		me.update_timer = maketimer(0.04, func me.update() );
+ 		me.update_slow_timer = maketimer(0.1, func me.update_slow() );
+ 		me.update_ap_modes_timer = maketimer(0.5, func me.update_ap_modes() );
+ 		
+ 		me["curAltDig45Low2"].enableUpdate();
+ 		
+ 		me.update_timer.start();
+ 		me.update_slow_timer.start();
+ 		me.update_ap_modes_timer.start();
+ 	},
+    
 	update: func()
 	{
 		var radioAlt = getprop("instrumentation/radar-altimeter/radar-altitude-ft") or 0;
@@ -406,7 +420,7 @@ var canvas_PFD = {
 		me["curAltDig45High2"].setText(sprintf("%02d",math.mod(math.abs(altR20+20),100)));
 		me["curAltDig45High1"].setText(sprintf("%02d",math.mod(math.abs(altR20),100)));
 		me["curAltDig45Low1"].setText(sprintf("%02d",math.mod(math.abs(altR20-20),100)));
-		me["curAltDig45Low2"].setText(sprintf("%02d",math.mod(math.abs(altR20-40),100)));
+		me["curAltDig45Low2"].updateText(sprintf("%02d",math.mod(math.abs(altR20-40),100)));
 		me["curAltDig45"].setTranslation(0,((alt - altR20)/20*36.31));
 
 		me["curAltMtrTxt"].setText(sprintf("%4.0f",alt*FT2M));
@@ -700,7 +714,6 @@ var canvas_PFD = {
 			me["vsiNeedle"].setRotation(vsiDeg*D2R);
 		}
 		
-		settimer(func me.update(), 0.04);
 	},
 	update_ap_modes: func()
 	{
@@ -793,7 +806,6 @@ var canvas_PFD = {
 			me["pitchModeChange"].hide();
 		}
 
-		settimer(func me.update_ap_modes(), 0.5);
 	},
 	update_slow: func()
 	{
@@ -989,8 +1001,6 @@ var canvas_PFD = {
 			me["speedText"].setText(sprintf("%3.0f",apSpd));
 		}
 		
-		
-		settimer(func me.update_slow(), 0.1);
 	},
 };
 
@@ -1004,8 +1014,7 @@ setlistener("sim/signals/fdm-initialized", func() {
 	pfd_display.addPlacement({"node": "pfdScreen"});
 	var group = pfd_display.createGroup();
 	pfd_canvas = canvas_PFD.new(group);
-	pfd_canvas.update();
-	pfd_canvas.update_slow();
+	pfd_canvas.newMFD();
 });
 
 #setlistener("sim/signals/reinit", func pfd_display.del());
