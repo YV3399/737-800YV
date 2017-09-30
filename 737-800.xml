@@ -715,7 +715,7 @@
 					</setting>
 					<setting>
 						<position>1</position>
-						<time>0.909</time> <!-- from jammed rudder reports -->
+						<time>0.404</time> <!-- from jammed rudder reports -->
 					</setting>
 				</traverse>
 				<output>fcs/rudder-sum</output>
@@ -724,8 +724,8 @@
             <aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
                 <input>fcs/rudder-sum</input>
                 <range>
-                     <min>-0.4363323125</min>
-                     <max>0.4363323125</max>
+                     <min>-0.7763323125</min>
+                     <max>0.7763323125</max>
                 </range>
                 <output>fcs/rudder-pos-rad</output>
             </aerosurface_scale>
@@ -733,8 +733,8 @@
             <aerosurface_scale name="Rudder Normalized">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                   <min>-0.4363323125</min>
-                   <max>0.4363323125</max>
+                   <min>-0.523599</min>
+                   <max>0.523599</max>
                 </domain>
                 <range>
                     <min>-1</min>
@@ -1598,7 +1598,7 @@
                         <property>metrics/lh-ft</property>
                         <quotient>
                             <difference>
-                                <value>734</value>
+                                <value>660</value>
                                 <property>inertia/cg-x-in</property>
                             </difference>
                             <value>12</value>

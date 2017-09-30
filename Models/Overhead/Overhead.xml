@@ -51,6 +51,7 @@
 	<animation>
 		<type>pick</type>
 		<object-name>batt-switch</object-name>       
+		<object-name>batt-switch.001</object-name>       
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>     
@@ -70,6 +71,7 @@
 	<animation>
 		<type>rotate</type>   
 		<object-name>batt-switch</object-name>  
+		<object-name>batt-switch.001</object-name>       
 		<property>controls/electric/battery-switch</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -99,13 +101,14 @@
 	
 	<animation>
 		<type>pick</type>
-		<object-name>grdpwr-switch</object-name>       
+		<object-name>grdpwr-switch</object-name>     
+		<object-name>grdpwr-switch.001</object-name>      
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/electrical/ext/sw</property>
+				<property>controls/electric/contact/external</property>
 			</binding>
 		</action> 
 	</animation>
@@ -113,7 +116,8 @@
 	<animation>
 		<type>rotate</type>   
 		<object-name>grdpwr-switch</object-name>  
-		<property>controls/electrical/ext/sw</property>
+		<object-name>grdpwr-switch.001</object-name>    
+		<property>controls/electric/contact/external</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
 			<entry><ind>1</ind><dep> 30</dep></entry>
@@ -136,7 +140,7 @@
 			<and>
 				<or>
 					<not-equals>
-						<property>controls/electrical/eng/Lsw</property>
+						<property>controls/electric/contact/engine_1</property>
 						<value>1</value>
 					</not-equals>
 				</or>
@@ -151,12 +155,13 @@
 	<animation>
 		<type>pick</type>
 		<object-name>gen1-switch</object-name>       
+		<object-name>gen1-switch.001</object-name>       
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-assign</command>
-				<property>controls/electrical/eng/Lsw</property>
+				<property>controls/electric/contact/engine_1</property>
 				<value>1</value>
 			</binding>
 			<binding>
@@ -177,7 +182,7 @@
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-assign</command>
-				<property>controls/electrical/eng/Lsw</property>
+				<property>controls/electric/contact/engine_1</property>
 				<value>0</value>
 			</binding>
 			<binding>
@@ -198,6 +203,7 @@
 	<animation>
 		<type>rotate</type>   
 		<object-name>gen1-switch</object-name>  
+		<object-name>gen1-switch.001</object-name>       
 		<property>controls/OH/gen1-switch</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -220,16 +226,10 @@
 		<object-name>APUGenOffBus</object-name>
 		<condition>
 			<and>
-				<or>
-					<not-equals>
-						<property>controls/electrical/apu/Lsw</property>
+				<not-equals>
+						<property>controls/electric/contact/apu_gen</property>
 						<value>1</value>
 					</not-equals>
-					<not-equals>
-						<property>controls/electrical/apu/Rsw</property>
-						<value>1</value>
-					</not-equals>
-				</or>
 				<greater-than>
 					<property>systems/apu/rpm</property>
 					<value>94.9</value>
@@ -241,13 +241,14 @@
 	<!-- APU Gen Left -->
 	<animation>
 		<type>pick</type>
-		<object-name>apugenl-switch</object-name>       
+		<object-name>apugenl-switch</object-name>    
+		<object-name>apugenl-switch.001</object-name>     
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-assign</command>
-				<property>controls/electrical/apu/Lsw</property>
+				<property>controls/electric/contact/apu_gen</property>
 				<value>1</value>
 			</binding>
 			<binding>
@@ -268,7 +269,7 @@
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-assign</command>
-				<property>controls/electrical/apu/Lsw</property>
+				<property>controls/electric/contact/apu_gen</property>
 				<value>0</value>
 			</binding>
 			<binding>
@@ -289,6 +290,7 @@
 	<animation>
 		<type>rotate</type>   
 		<object-name>apugenl-switch</object-name>  
+		<object-name>apugenl-switch.001</object-name>  
 		<property>controls/OH/apugenl-switch</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -308,13 +310,14 @@
 	<!-- APU Gen Right -->
 	<animation>
 		<type>pick</type>
-		<object-name>apugenr-switch</object-name>       
+		<object-name>apugenr-switch</object-name>
+		<object-name>apugenr-switch.001</object-name>  		
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-assign</command>
-				<property>controls/electrical/apu/Rsw</property>
+				<property>controls/electric/contact/apu_gen</property>
 				<value>1</value>
 			</binding>
 			<binding>
@@ -335,7 +338,7 @@
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-assign</command>
-				<property>controls/electrical/apu/Rsw</property>
+				<property>controls/electric/contact/apu_gen</property>
 				<value>0</value>
 			</binding>
 			<binding>
@@ -355,7 +358,8 @@
 	
 	<animation>
 		<type>rotate</type>   
-		<object-name>apugenr-switch</object-name>  
+		<object-name>apugenr-switch</object-name>
+		<object-name>apugenr-switch.001</object-name>    
 		<property>controls/OH/apugenr-switch</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -380,7 +384,7 @@
 			<and>
 				<or>
 					<not-equals>
-						<property>controls/electrical/eng/Rsw</property>
+						<property>controls/electric/contact/engine_2</property>
 						<value>1</value>
 					</not-equals>
 				</or>
@@ -394,13 +398,14 @@
 	
 	<animation>
 		<type>pick</type>
-		<object-name>gen2-switch</object-name>       
+		<object-name>gen2-switch</object-name>    
+		<object-name>gen2-switch.001</object-name>     
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-assign</command>
-				<property>controls/electrical/eng/Rsw</property>
+				<property>controls/electric/contact/engine_2</property>
 				<value>1</value>
 			</binding>
 			<binding>
@@ -421,7 +426,7 @@
 			<repeatable type="bool">false</repeatable>     
 			<binding>
 				<command>property-assign</command>
-				<property>controls/electrical/eng/Rsw</property>
+				<property>controls/electric/contact/engine_2</property>
 				<value>0</value>
 			</binding>
 			<binding>
@@ -441,7 +446,8 @@
 	
 	<animation>
 		<type>rotate</type>   
-		<object-name>gen2-switch</object-name>  
+		<object-name>gen2-switch</object-name>
+		<object-name>gen2-switch.001</object-name>  		
 		<property>controls/OH/gen2-switch</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
@@ -464,7 +470,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>logolight</object-name>         
+  <object-name>logolight</object-name>   
+<object-name>logolight.001</object-name>     
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -482,6 +489,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>logolight</object-name>   
+   <object-name>logolight.001</object-name> 
   <property>controls/lighting/logo-lights</property>
   <factor>30</factor>
   <center>
@@ -500,7 +508,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>strobelight</object-name>         
+  <object-name>strobelight</object-name>   
+ <object-name>strobelight.001</object-name>   
   <visible>1</visible>
   <action>
     <button>0</button>
@@ -523,6 +532,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>strobelight</object-name>  
+   <object-name>strobelight.001</object-name> 
   <property>controls/lighting/strobe</property>     
   <factor>30</factor>
   <center>
@@ -542,6 +552,7 @@
 <animation>
   <type>pick</type>
   <object-name>anticollight</object-name>         
+  <object-name>anticollight.001</object-name> 
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -559,6 +570,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>anticollight</object-name>    
+  <object-name>anticollight.001</object-name> 
   <property>controls/lighting/beacon</property>
   <factor>30</factor>
   <center>
@@ -578,6 +590,7 @@
 <animation>
   <type>pick</type>
   <object-name>winglight</object-name>         
+  <object-name>winglight.001</object-name>   
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -595,6 +608,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>winglight</object-name>  
+  <object-name>winglight.001</object-name>   
   <property>controls/lighting/wing</property>
   <factor>30</factor>
   <center>
@@ -613,7 +627,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>wheellight</object-name>         
+  <object-name>wheellight</object-name>    
+  <object-name>wheellight.001</object-name>  
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -630,7 +645,8 @@
 </animation> 
 <animation>
   <type>rotate</type>   
-  <object-name>wheellight</object-name>   
+  <object-name>wheellight</object-name>  
+  <object-name>wheellight.001</object-name>  
   <property>controls/lighting/wheel</property>
   <factor>30</factor>
   <center>
@@ -649,7 +665,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>APUswitch</object-name>         
+  <object-name>APUswitch</object-name>    
+<object-name>APUswitch.001</object-name>    
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -684,7 +701,8 @@
 </animation> 
 <animation>
   <type>rotate</type>
-  <object-name>APUswitch</object-name>    
+  <object-name>APUswitch</object-name> 
+<object-name>APUswitch.001</object-name>    
   <property>controls/APU/master</property>
   <factor>20</factor>
   <center>
@@ -704,6 +722,7 @@
  <animation>
         <type>pick</type>
         <object-name>RNYTurnL</object-name>         
+		 <object-name>RNYTurnL.001</object-name>         
         <visible>1</visible>
         <action>
          <button>0</button>
@@ -721,6 +740,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>RNYTurnL</object-name>  
+		 <object-name>RNYTurnL.001</object-name>         
             <property>controls/lighting/RB-light</property>
       <factor>30</factor>
       <center>
@@ -736,7 +756,8 @@
   </animation>
   <animation>
         <type>pick</type>
-        <object-name>RNYTurnR</object-name>         
+        <object-name>RNYTurnR</object-name>   
+ <object-name>RNYTurnR.001</object-name>         		
         <visible>1</visible>
         <action>
          <button>0</button>
@@ -754,6 +775,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>RNYTurnR</object-name>  
+ <object-name>RNYTurnR.001</object-name>     
             <property>controls/lighting/RB-light</property>
       <factor>30</factor>
       <center>
@@ -772,7 +794,8 @@
 
   <animation>
         <type>pick</type>
-        <object-name>TaxiLight</object-name>         
+        <object-name>TaxiLight</object-name>    
+        <object-name>TaxiLight.001</object-name>       
         <visible>1</visible>
         <action>
          <button>0</button>
@@ -790,6 +813,7 @@
   <animation>
       <type>rotate</type>   
         <object-name>TaxiLight</object-name>  
+        <object-name>TaxiLight.001</object-name>  
             <property>controls/lighting/Taxi-light</property>
       <factor>30</factor>
       <center>
@@ -914,7 +938,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>nosmoking</object-name>         
+  <object-name>nosmoking</object-name>     
+  <object-name>nosmoking.001</object-name>      
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -928,6 +953,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>nosmoking</object-name>  
+  <object-name>nosmoking.001</object-name>  
   <property>controls/switches/no-smoking-sign</property>
   <factor>30</factor>
   <center>
@@ -946,7 +972,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>fastenseatbelts</object-name>         
+  <object-name>fastenseatbelts</object-name>    
+  <object-name>fastenseatbelts.001</object-name>      
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -960,6 +987,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>fastenseatbelts</object-name>  
+  <object-name>fastenseatbelts.001</object-name> 
   <property>controls/switches/seatbelt-sign</property>
   <factor>30</factor>
   <center>
@@ -979,6 +1007,7 @@
 <animation>
   <type>pick</type>
   <object-name>FuelpumpL</object-name>         
+   <object-name>FuelpumpL.001</object-name>      
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -996,6 +1025,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelpumpL</object-name>  
+   <object-name>FuelpumpL.001</object-name>  
   <property>controls/fuel/tank[2]/pump-left</property>
   <factor>30</factor>
   <center>
@@ -1012,7 +1042,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>FuelpumpR</object-name>         
+  <object-name>FuelpumpR</object-name>       
+  <object-name>FuelpumpR.001</object-name>           
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -1030,6 +1061,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelpumpR</object-name>  
+  <object-name>FuelpumpR.001</object-name>    
   <property>controls/fuel/tank[2]/pump-right</property>
   <factor>30</factor>
   <center>
@@ -1048,7 +1080,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>FuelPumpAFTL</object-name>         
+  <object-name>FuelPumpAFTL</object-name> 
+<object-name>FuelpumpAFTL.001</object-name>      
   <visible>1</visible>
   <action>
     <button>0</button>
@@ -1066,6 +1099,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelPumpAFTL</object-name>  
+  <object-name>FuelpumpAFTL.001</object-name>      
   <property>controls/fuel/tank[0]/pump-aft</property>
   <factor>30</factor>
   <center>
@@ -1082,7 +1116,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>FuelPumpFWDL</object-name>         
+  <object-name>FuelPumpFWDL</object-name>  
+<object-name>FuelpumpFWDL.001</object-name>        
   <visible>1</visible>
   <action>
     <button>0</button>
@@ -1100,6 +1135,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelPumpFWDL</object-name>  
+  <object-name>FuelpumpFWDL.001</object-name>     
   <property>controls/fuel/tank[0]/pump-fwd</property>
   <factor>30</factor>
   <center>
@@ -1116,7 +1152,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>FuelPumpFWDR</object-name>         
+  <object-name>FuelPumpFWDR</object-name>   
+<object-name>FuelpumpFWDR.001</object-name>       
   <visible>1</visible>
   <action>
     <button>0</button>
@@ -1134,6 +1171,7 @@
 <animation>
   <type>rotate</type>   
   <object-name>FuelPumpFWDR</object-name>  
+  <object-name>FuelpumpFWDR.001</object-name> 
   <property>controls/fuel/tank[1]/pump-fwd</property>
   <factor>30</factor>
   <center>
@@ -1150,7 +1188,8 @@
 
 <animation>
   <type>pick</type>
-  <object-name>FuelPumpAFTR</object-name>         
+  <object-name>FuelPumpAFTR</object-name>     
+<object-name>FuelpumpAFTR.001</object-name>   
   <visible>1</visible>
   <action>
     <button>0</button>
@@ -1167,7 +1206,8 @@
 </animation>
 <animation>
   <type>rotate</type>   
-  <object-name>FuelPumpAFTR</object-name>  
+  <object-name>FuelPumpAFTR</object-name> 
+<object-name>FuelpumpAFTR.001</object-name>     
   <property>controls/fuel/tank[1]/pump-aft</property>
   <factor>30</factor>
   <center>
@@ -1181,5 +1221,423 @@
     <z>0</z>
   </axis>
 </animation>
+
+<!-- Anti Ice -->
+
+<animation>
+      <type>pick</type>
+      <object-name>wingantiice</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>   
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/wing-heat</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>wingantiice</object-name>  
+      <property>controls/anti-ice/wing-heat</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.10681</x-m>
+        <y-m>0.07800</y-m>
+        <z-m>0.09137</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+    <animation>
+      <type>pick</type>
+      <object-name>enganti1</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>  
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/engine/carb-heat</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/engine/inlet-heat</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>enganti1</object-name>  
+      <property>controls/anti-ice/engine/carb-heat</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.10643</x-m>
+        <y-m>0.12794</y-m>
+        <z-m>0.09386</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+    <animation>
+      <type>pick</type>
+      <object-name>enganti2</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>        
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/engine[1]/carb-heat</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/engine[1]/inlet-heat</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>enganti2</object-name>  
+      <property>controls/anti-ice/engine[1]/carb-heat</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.10643</x-m>
+        <y-m>0.15569</y-m>
+        <z-m>0.09386</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+
+  <!--Window Heat-->
+
+    <animation>
+      <type>pick</type>
+      <object-name>windowlf</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>      
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>windowlf</object-name>  
+      <property>controls/anti-ice/window-heat</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.24707</x-m>
+        <y-m>0.06009</y-m>
+        <z-m>0.09258</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+    <animation>
+      <type>pick</type>
+      <object-name>windowlf1</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>   
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>windowlf1</object-name>  
+      <property>controls/anti-ice/window-heat</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.24690</x-m>
+        <y-m>0.08433</y-m>
+        <z-m>0.09341</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+    <animation>
+      <type>pick</type>
+      <object-name>windowctr</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>  
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>windowctr</object-name>  
+      <property>controls/anti-ice/window-heat</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.24691</x-m>
+        <y-m>0.11191</y-m>
+        <z-m>0.09326</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+    <animation>
+      <type>pick</type>
+      <object-name>windowrt1</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>  
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>windowrt1</object-name>  
+      <property>controls/anti-ice/window-heat</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.24696</x-m>
+        <y-m>0.13806</y-m>
+        <z-m>0.09286</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+    <animation>
+      <type>pick</type>
+      <object-name>windowrt</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>      
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/anti-ice/window-heat</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>windowrt</object-name>  
+      <property>controls/anti-ice/window-heat</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.24695</x-m>
+        <y-m>0.16354</y-m>
+        <z-m>0.09373</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+    <!-- Eletric Hyd Pumps -->
+
+    <animation>
+      <type>pick</type>
+      <object-name>hydeng1</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>    
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/hydraulic/system/engine-pump</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>hydeng1</object-name>  
+      <property>controls/hydraulic/system/engine-pump</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.03142</x-m>
+        <y-m>0.06466</y-m>
+        <z-m>0.09329</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+    <animation>
+      <type>pick</type>
+      <object-name>hydeng2</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>   
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/hydraulic/system/engine-pump</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>hydeng2</object-name>  
+      <property>controls/hydraulic/system/engine-pump</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.03150</x-m>
+        <y-m>0.12788</y-m>
+        <z-m>0.09266</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+    <animation>
+      <type>pick</type>
+      <object-name>hydelectrR</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/hydraulic/system/electric-pump</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>hydelectrR</object-name>  
+      <property>controls/hydraulic/system/electric-pump</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.03147</x-m>
+        <y-m>0.09233</y-m>
+        <z-m>0.09192</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+    <animation>
+      <type>pick</type>
+      <object-name>hydelectrL</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>        
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/hydraulic/system/electric-pump</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>  
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>hydelectrL</object-name>  
+      <property>controls/hydraulic/system/electric-pump</property>
+      <factor>30</factor>
+      <center>
+        <x-m>-0.03146</x-m>
+        <y-m>0.15637</y-m>
+        <z-m>0.09264</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation> 
+
+
 
 </PropertyList>

@@ -3,7 +3,26 @@
 <PropertyList>
 
      <keyboard>
-
+	
+	<key n="71">
+      <name>G</name>
+      <desc>Gear Down Custom Binding</desc>
+      <binding>
+        <command>property-assign</command>
+        <property>/b737/controls/gear/lever</property>
+        <value>0</value>
+      </binding>
+    </key>
+	<key n="103">
+      <name>g</name>
+      <desc>Gear Up Custom Binding</desc>
+      <binding>
+        <command>property-assign</command>
+        <property>/b737/controls/gear/lever</property>
+        <value>1</value>
+      </binding>
+    </key>
+	
     <key n="106">
       <name>j</name>
       <desc>Decrease spoiler lever position</desc>

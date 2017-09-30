@@ -1,0 +1,58 @@
+<!-- $Id: display-text.xml,v 1.2 2009/11/02 16:31:26 vmmeazza Exp $ -->
+<!--
+  Zeppelin NT07 airship.
+
+  Copyright (C) 2009  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license v2 or later.
+-->
+<PropertyList>
+
+ <params>
+  <property type="string">engines/engine[0]/mp-inhg</property>
+  <factor type="double">1.0</factor>
+  <offset type="double">0.0</offset>
+  <format type="string">%2.1f</format>
+  <color>
+   <red   type="double">0.0</red>
+   <green type="double">1.0</green>
+   <blue  type="double">0.0</blue>
+  </color>
+ </params>
+
+ <text>
+  <name>text</name>
+  <axis-alignment>yz-plane</axis-alignment>
+  <type type="string">text-value</type>
+  <property alias="../../params/property"/>
+  <scale alias="../../params/factor"/>
+  <offset alias="../../params/offset"/>
+  <format>%s</format>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+  <alignment alias="../../params/alignment"/>
+  <character-size alias="../../params/character-size"/>
+ </text>
+
+ <animation>
+  <type>material</type>
+  <diffuse>
+   <red   alias="../../../params/color/red"/>
+   <green alias="../../../params/color/green"/>
+   <blue  alias="../../../params/color/blue"/>
+  </diffuse>
+  <ambient>
+   <red   alias="../../../params/color/red"/>
+   <green alias="../../../params/color/green"/>
+   <blue  alias="../../../params/color/blue"/>
+  </ambient>
+  <emission>
+   <red   alias="../../../params/color/red"/>
+   <green alias="../../../params/color/green"/>
+   <blue  alias="../../../params/color/blue"/>
+  </emission>
+ </animation>
+
+</PropertyList>

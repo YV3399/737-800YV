@@ -1,5 +1,6 @@
 # ==============================================================================
 # For 737-800 by Michael Soitanen
+# Updated and Expanded according to FCOM by Jonathan Redpath
 # ==============================================================================
 
 var roundToNearest = func(n, m) {
@@ -32,17 +33,26 @@ var canvas_upperEICAS = {
 		"EGT_0","EGT_1","needleEGT_0","needleEGT_1","ff_0","ff_1",
 		"needleN1_0","needleN1_1","tat",
 		"tank1Thousand","tank1Decimal","tank2Thousand","tank2Decimal","tankCtrThousand","tankCtrDecimal",
-		"tank1Line","tank2Line","tankCtrLine"];
+		"tank1Line","tank2Line","tankCtrLine","engFailL","engFailR","TAI-l","TAI-r","thrustSetting","N1limit1","N1limit2"];
 		foreach(var key; svg_keys) {
 			m[key] = upperEICAS.getElementById(key);
 		}
-
+                 m.timers = [];
+ 
 		return m;
 	},
+          newMFD: func()
+ 	{
+ 		me.update_timer = maketimer(0.04, func me.update() );
+ 		
+ 		me.update_timer.start();
+        },
 	update: func()
 	{
 		var n1_0 = getprop("/engines/engine[0]/n1") + 0.05;
 		var n1_1 = getprop("/engines/engine[1]/n1") + 0.05;
+		var n2_0 = getprop("/engines/engine[0]/n2");
+		var n2_1 = getprop("/engines/engine[1]/n2");
 		var egt_0 = getprop("/engines/engine[0]/egt-actual");
 		var egt_1 = getprop("/engines/engine[1]/egt-actual");
 		var fuel_flow_0 = getprop("/engines/engine[0]/fuel-flow_pph")*0.4536/1000;
@@ -51,7 +61,7 @@ var canvas_upperEICAS = {
 		var tank1 = roundToNearest(getprop("/consumables/fuel/tank[0]/level-kg"), 20);
 		var tank2 = roundToNearest(getprop("/consumables/fuel/tank[1]/level-kg"), 20);
 		var tankCtr = roundToNearest(getprop("/consumables/fuel/tank[2]/level-kg"), 20);
-
+		
 		var n1_0_int = int(n1_0);
 		var n1_0_dec = int(10*math.mod(n1_0,1));
 		var n1_1_int = int(n1_1);
@@ -59,7 +69,17 @@ var canvas_upperEICAS = {
 
 		var reverser_0 = getprop("/engines/engine[0]/reverser-pos-norm");
 		var reverser_1 = getprop("/engines/engine[1]/reverser-pos-norm");
-
+		var cutoff_0 = getprop("/controls/engines/engine[0]/cutoff");
+		var cutoff_1 = getprop("/controls/engines/engine[1]/cutoff");
+		var starter_0 = getprop("/controls/engines/engine[0]/starter");
+		var starter_1 = getprop("/controls/engines/engine[1]/starter");
+		var serviceable_0 = getprop("/sim/failure-manager/engines/engine[0]/serviceable");
+		var serviceable_1 = getprop("/sim/failure-manager/engines/engine[1]/serviceable");
+		var antiiceL = getprop("controls/anti-ice/engine[0]/carb-heat");
+		var antiiceR = getprop("controls/anti-ice/engine[1]/carb-heat");
+		
+		var thrustStg = getprop("/it-autoflight/input/thrustStg");
+		
 		me["engine0N1"].setText(sprintf("%s", n1_0_int));
 		me["engine0N1Decimal"].setText(sprintf("%s", n1_0_dec));
 		me["engine1N1"].setText(sprintf("%s", n1_1_int));
@@ -76,7 +96,39 @@ var canvas_upperEICAS = {
 		me["ff_1"].setText(sprintf("%01.2f",fuel_flow_1));
 
 		me["tat"].setText(sprintf("%+2.0f", tat));
-
+		
+		if (antiiceL) {
+			me["TAI-l"].show();
+		} else {
+			me["TAI-l"].hide();
+		}
+		
+		if (antiiceR) {
+			me["TAI-r"].show();
+		} else {
+			me["TAI-r"].hide();
+		}
+		
+		if (thrustStg == "G/A") {
+			me["thrustSetting"].setText(sprintf("%s","G/A"));
+		} else if (thrustStg == "TO") {
+			me["thrustSetting"].setText(sprintf("%s","TO"));
+		} else {
+            me["thrustSetting"].setText(sprintf("%s","CON"));
+        }
+		
+		if (n2_0 < 50 and cutoff_0 == 0 and starter_0 == 0 and !serviceable_0) {
+			me["engFailL"].show();
+		} else {
+			me["engFailL"].hide();
+		}
+		
+		if (n2_1 < 50 and cutoff_1 == 0 and starter_1 == 0 and !serviceable_1) {
+			me["engFailR"].show();
+		} else {
+			me["engFailR"].hide();
+		}
+		
 		if (tank1 < 1000 ) {
 			me["tank1Thousand"].hide();
 			me["tank1Decimal"].setText(sprintf("%3.0f",math.mod(tank1,1000)));
@@ -161,7 +213,6 @@ var canvas_upperEICAS = {
 			}
 		}
 
-		settimer(func me.update(), 0.04);
 	},
 };
 
@@ -175,7 +226,8 @@ setlistener("sim/signals/fdm-initialized", func() {
 	upperEICAS_display.addPlacement({"node": "upperEICASScreen"});
 	var group = upperEICAS_display.createGroup();
 	upperEICAS_canvas = canvas_upperEICAS.new(group);
-	upperEICAS_canvas.update();
+        upperEICAS_canvas.newMFD();
+ 	#upperEICAS_canvas.update();
 });
 
 #setlistener("sim/signals/reinit", func upperEICAS_display.del());

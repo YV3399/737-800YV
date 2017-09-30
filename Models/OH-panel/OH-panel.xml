@@ -757,11 +757,7 @@
 			<or>
 				<and>
 					<equals>
-						<property>controls/electrical/apu/Lsw</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>controls/electrical/apu/Rsw</property>
+						<property>/controls/electric/contact/apu_gen</property>
 						<value>1</value>
 					</equals>
 					<greater-than>
@@ -782,16 +778,10 @@
 		<object-name>apugenO</object-name>
 		<condition>
 			<and>
-				<or>
-					<not-equals>
-						<property>controls/electrical/apu/Lsw</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>controls/electrical/apu/Rsw</property>
-						<value>1</value>
-					</not-equals>
-				</or>
+				<not-equals>
+					<property>/controls/electric/contact/apu_gen</property>
+					<value>1</value>
+				</not-equals>
 				<greater-than>
 					<property>systems/apu/rpm</property>
 					<value>94.9</value>
@@ -807,7 +797,7 @@
 			<or>
 				<and>
 					<equals>
-						<property>controls/electrical/eng/Lsw</property>
+						<property>/controls/electric/contact/engine_1</property>
 						<value>1</value>
 					</equals>
 					<greater-than>
@@ -830,7 +820,7 @@
 			<and>
 				<or>
 					<not-equals>
-						<property>controls/electrical/eng/Lsw</property>
+						<property>/controls/electric/contact/engine_1</property>
 						<value>1</value>
 					</not-equals>
 				</or>
@@ -849,7 +839,7 @@
 			<or>
 				<and>
 					<equals>
-						<property>controls/electrical/eng/Rsw</property>
+						<property>/controls/electric/contact/engine_2</property>
 						<value>1</value>
 					</equals>
 					<greater-than>
@@ -872,7 +862,7 @@
 			<and>
 				<or>
 					<not-equals>
-						<property>controls/electrical/eng/Rsw</property>
+						<property>/controls/electric/contact/engine_2</property>
 						<value>1</value>
 					</not-equals>
 				</or>
@@ -893,7 +883,7 @@
         <repeatable type="bool">false</repeatable>
         <binding>
           <command>property-toggle</command>
-          <property>controls/electrical/eng/Lsw</property>
+          <property>/controls/electric/contact/engine_1</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -904,7 +894,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>EngGen1</object-name>  
-      <property>controls/electrical/eng/Lsw</property>
+      <property>/controls/electric/contact/engine_1</property>
       <factor>30</factor>
       <center>
         <x-m>0.73</x-m>
@@ -926,7 +916,7 @@
         <repeatable type="bool">false</repeatable> 
         <binding>
           <command>property-toggle</command>
-          <property>controls/electrical/eng/Rsw</property>
+          <property>/controls/electric/contact/engine_2</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -937,7 +927,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>EngGen2</object-name>  
-      <property>controls/electrical/eng/Rsw</property>
+      <property>/controls/electric/contact/engine_2</property>
       <factor>30</factor>
       <center>
         <x-m>0.73</x-m>
@@ -959,7 +949,7 @@
         <repeatable type="bool">false</repeatable>      
         <binding>
           <command>property-toggle</command>
-          <property>controls/electrical/apu/Lsw</property>
+          <property>/controls/electric/contact/apu_gen</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -970,7 +960,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>ApuGenL</object-name>  
-      <property>controls/electrical/apu/Lsw</property>
+      <property>/controls/electric/contact/apu_gen</property>
       <factor>30</factor>
       <center>
         <x-m>0.73</x-m>
@@ -992,7 +982,7 @@
         <repeatable type="bool">false</repeatable>
         <binding>
           <command>property-toggle</command>
-          <property>controls/electrical/apu/Rsw</property>
+          <property>/controls/electric/contact/apu_gen</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1003,7 +993,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>ApuGenR</object-name>  
-      <property>controls/electrical/apu/Rsw</property>
+      <property>/controls/electric/contact/apu_gen</property>
       <factor>30</factor>
       <center>
         <x-m>0.73</x-m>
@@ -1026,7 +1016,7 @@
         <repeatable type="bool">false</repeatable>     
         <binding>
           <command>property-toggle</command>
-          <property>controls/electrical/ext/sw</property>
+          <property>/controls/electric/contact/external</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1037,7 +1027,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>GroundPWR</object-name>  
-      <property>controls/electrical/ext/sw</property>
+      <property>/controls/electric/contact/external</property>
       <factor>30</factor>
       <center>
         <x-m>0.81842</x-m>

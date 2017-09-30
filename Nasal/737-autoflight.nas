@@ -1,6 +1,7 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
 # V3.0.3 Stable
+# Customized for the 737-800 with the Honeywell MCP
 # This program is 100% GPL!
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
@@ -33,6 +34,7 @@ var ap_init = func {
 	setprop("/it-autoflight/input/vert", 7);
 	setprop("/it-autoflight/input/trk", 0);
 	setprop("/it-autoflight/input/toga", 0);
+	setprop("/it-autoflight/input/thrustStg", "");
 	setprop("/it-autoflight/input/bank-limit-sw", 0);
 	setprop("/it-autoflight/output/ap1", 0);
 	setprop("/it-autoflight/output/ap2", 0);
@@ -470,12 +472,14 @@ var togasel = func {
 		setprop("/it-autoflight/input/kts-mach", 0);
 		setprop("/it-autoflight/mode/vert", "G/A CLB");
 		setprop("/it-autoflight/input/lat", 3);
+		setprop("/it-autoflight/input/thrustStg", "G/A");
 	} else {
 		setprop("/it-autoflight/input/lat", 5);
 		lateral();
 		setprop("/it-autoflight/mode/lat", "T/O");
 		setprop("/it-autoflight/mode/vert", "T/O CLB");
 		setprop("/it-autoflight/input/athr", 1);
+		setprop("/it-autoflight/input/thrustStg", "TO");
 	}
 }
 
