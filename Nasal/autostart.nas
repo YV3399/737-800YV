@@ -10,9 +10,8 @@ var autostart = func {
   
 	setprop("/controls/electric/battery-switch",1);
 	setprop("/services/ext-pwr/enable", 1);
-	setprop("/controls/electrical/ext/sw", 1);
-	setprop("/controls/electric/apugen1",1);
-	setprop("/controls/electric/apugen2",1);
+	setprop("/controls/electric/contact/external", 1);
+	setprop("/controls/electric/contact/apu_gen", 1);
 
 #	setprop("/systems/electrical/outputs/efis",28); #for central eicas function
 	
@@ -22,14 +21,14 @@ var autostart = func {
 	setprop("/controls/fuel/tank[1]/pump-fwd",1);
 	setprop("/controls/fuel/tank[2]/pump-left",1);
 	setprop("/controls/fuel/tank[2]/pump-right",1);
-	setprop("/controls/electrical/eng/Lsw", 1);
-	setprop("/controls/electrical/eng/Rsw", 1);
+	setprop("/controls/electric/contact/engine_1", 0);
+	setprop("/controls/electric/contact/engine_2", 0);
 	setprop("/controls/hydraulic/a-eng1-pump", 1);
 	setprop("/controls/hydraulic/a-eng2-pump", 1);
 	setprop("/controls/hydraulic/b-elec1-pump", 1);
 	setprop("/controls/hydraulic/b-elec2-pump", 1);
 
-  setprop("/controls/engines/engine[0]/starter",1);
+	setprop("/controls/engines/engine[0]/starter",1);
 	setprop("/controls/engines/engine[1]/starter",1);
 	setprop("/controls/engines/engine[0]/cutoff",1);
 	setprop("/controls/engines/engine[1]/cutoff",1);
@@ -40,7 +39,8 @@ var autostart = func {
 	}
 	if (getprop("/engines/engine[0]/n2") > 55) {
 		setprop("/services/ext-pwr/enable", 0);
-		setprop("/controls/electrical/ext/sw", 0);
+		setprop("/controls/electric/contact/external", 0);
+		setprop("/controls/electric/contact/apu_gen", 0);
 		setprop("/controls/engines/autostart",0);
 	}
 	if (getprop("/engines/engine[0]/n2") <= 55) settimer(autostart,0);
@@ -53,11 +53,11 @@ var shutdown = func {
   	setprop("/controls/engines/engine[0]/cutoff",1);
 	  setprop("/controls/engines/engine[1]/cutoff",1);
 	  setprop("/controls/electric/battery-switch",0);
-		setprop("/controls/electrical/ext/Lsw", 0);
-		setprop("/controls/electrical/ext/Rsw", 0);
+		setprop("/controls/electric/contact/external", 0);
+		setprop("/controls/electric/contact/apu_gen", 0);
 		setprop("/services/ext-pwr/enable", 0);
-	  setprop("/controls/electric/apugen1",0);
-	  setprop("/controls/electric/apugen2",0);
+	setprop("/controls/electric/contact/engine_1", 0);
+	setprop("/controls/electric/contact/engine_2", 0);
     setprop("/controls/engines/engine[0]/starter",0);
 	  setprop("/controls/engines/engine[1]/starter",0);
 
