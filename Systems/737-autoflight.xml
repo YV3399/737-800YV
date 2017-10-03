@@ -600,7 +600,7 @@
 			<Kp>
 				<property>/it-autoflight/config/cmd/vorloc</property>
 			</Kp>
-			<Ki>0.0001</Ki>
+			<Ki>-0.0001</Ki>
 			<min>
 				<property>/it-autoflight/internal/bank-limit</property>
 				<scale>-1</scale>

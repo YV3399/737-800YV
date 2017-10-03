@@ -12,19 +12,9 @@
           <pitch-deg>-15</pitch-deg>
         </offsets>
       </model>
-	  <model><!-- Keep <model> until we finish the animations -JD -->
-        <name>overhead</name>
-        <path>OH-panel/OH-panel.xml</path>
-		<condition>
-			<not><property>options/new-oh</property></not>
-		</condition>
-	  </model>
       <model>
         <name>overhead</name>
         <path>Overhead/Overhead.xml</path>
-		<condition><!-- Keep <condition> until we finish the animations -JD -->
-			<property>options/new-oh</property>
-		</condition>
 		<offsets>
 		<x-m>0.86836</x-m>
 		<y-m>-0.0236</y-m>
