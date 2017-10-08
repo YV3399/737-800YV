@@ -316,30 +316,7 @@
 		<input>/controls/engines/throttle-cmd-pid</input>
 		<output>/controls/engines/engine[0]/throttle</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/thr-mode</property>
-					<value>0</value>
-				</equals>
-			</condition>
-			<value>0.1</value>
-		</max-rate-of-change>
-		<max-rate-of-change>
-			<condition>
-				<or>
-					<equals>
-						<property>/it-autoflight/output/thr-mode</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/thr-mode</property>
-						<value>2</value>
-					</equals>
-				</or>
-			</condition>
-			<value>0.05</value>
-		</max-rate-of-change>
+		<max-rate-of-change>0.1</max-rate-of-change>
 	</filter>
 	
 	<!-- Engine 2 -->
@@ -359,30 +336,7 @@
 		<input>/controls/engines/throttle-cmd-pid</input>
 		<output>/controls/engines/engine[1]/throttle</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>
-			<condition>
-				<equals>
-					<property>/it-autoflight/output/thr-mode</property>
-					<value>0</value>
-				</equals>
-			</condition>
-			<value>0.1</value>
-		</max-rate-of-change>
-		<max-rate-of-change>
-			<condition>
-				<or>
-					<equals>
-						<property>/it-autoflight/output/thr-mode</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/thr-mode</property>
-						<value>2</value>
-					</equals>
-				</or>
-			</condition>
-			<value>0.05</value>
-		</max-rate-of-change>
+		<max-rate-of-change>0.1</max-rate-of-change>
 	</filter>
 
 </PropertyList>
