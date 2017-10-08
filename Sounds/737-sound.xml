@@ -610,7 +610,7 @@
 		
 		<stall>
 			<name>stall</name>
-			<mode>looped</mode>
+			<mode>loop</mode>
 			<path>Aircraft/737-800YV/Sounds/stall.wav</path>
 			<condition>
 				<equals>

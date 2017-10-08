@@ -69,8 +69,8 @@ var master_hyd = func {
 	a_psi = getprop("/systems/hydraulic/a-psi");
 	b_psi = getprop("/systems/hydraulic/b-psi");
 	stby_psi = getprop("/systems/hydraulic/stby-psi");
-	acL = getprop("/systems/electric/elec-buses/ac-trans-bus-1/volts");
-	acR = getprop("/systems/electric/elec-buses/ac-trans-bus-2/volts");
+	acL = getprop("/systems/electrical/bus/acL");
+	acR = getprop("/systems/electrical/bus/acR");
 	n2_1 = getprop("/engines/engine[0]/n2");
 	n2_2 = getprop("/engines/engine[1]/n2");
 	
