@@ -70,8 +70,8 @@
 			<gamma>0</gamma>
 			<Ti>1.0</Ti>
 			<Td>0.0001</Td>
-			<u_min>-1</u_min>
-			<u_max>1</u_max>
+			<u_min>-0.7</u_min>
+			<u_max>0.7</u_max>
 		</config>
 	</pid-controller>
 	
@@ -230,8 +230,8 @@
 			<gamma>0</gamma>
 			<Ti>0.45</Ti>
 			<Td>0.001</Td>
-			<u_min>-1</u_min>
-			<u_max>1</u_max>
+			<u_min>-0.3</u_min>
+			<u_max>0.3</u_max>
 		</config>
 	</pid-controller>
 	
