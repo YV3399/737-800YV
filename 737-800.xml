@@ -398,7 +398,7 @@
     </ground_reactions>
 
     <propulsion>
-        <engine file="CFM56">
+        <engine file="cfm56_7b26">
             <location unit="IN">
                 <x>  715.6 </x> <!-- value from simulator data -->
                 <y> -193.68 </y> <!-- value from simulator data -->
@@ -424,7 +424,7 @@
             </thruster>
         </engine>
 
-        <engine file="CFM56">
+        <engine file="cfm56_7b26">
             <location unit="IN">
                 <x> 715.6 </x> <!-- value from simulator data -->
                 <y> 193.68 </y> <!-- value from simulator data -->

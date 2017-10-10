@@ -41,7 +41,7 @@
 									<value>0.97</value>
 									<property>/controls/engines/throttle-scale</property>
 								</product>
-								<entry><ind>0.00</ind><dep> 22.4</dep></entry>
+								<entry><ind>0.00</ind><dep> 19.7</dep></entry>
 								<entry><ind>1.00</ind><dep>103.8</dep></entry>
 							</table>
 							<value>10</value>
@@ -69,7 +69,7 @@
 									<value>0.91</value>
 									<property>/controls/engines/throttle-scale</property>
 								</product>
-								<entry><ind>0.00</ind><dep> 22.4</dep></entry>
+								<entry><ind>0.00</ind><dep> 19.7</dep></entry>
 								<entry><ind>1.00</ind><dep>103.8</dep></entry>
 							</table>
 							<value>10</value>
@@ -90,7 +90,7 @@
             <expression>
 				<table>
 					<property>/controls/engines/n1-limit</property>
-					<entry><ind> 22.4</ind><dep>0.00</dep></entry>
+					<entry><ind> 19.7</ind><dep>0.00</dep></entry>
 					<entry><ind>103.8</ind><dep>1.00</dep></entry>
 				</table>
             </expression>
@@ -108,8 +108,8 @@
 				<table>
 					<property>/engines/engine[0]/n1</property>
 					<entry><ind>  0.0</ind><dep>  0</dep></entry>
-					<entry><ind> 22.4</ind><dep>342</dep></entry>
-					<entry><ind>118.0</ind><dep>620</dep></entry>
+                    <entry><ind> 19.7</ind><dep>434</dep></entry>
+                    <entry><ind>110.0</ind><dep>620</dep></entry>
 				</table>
 			</expression>
 		</input>
@@ -126,8 +126,8 @@
 				<table>
 					<property>/engines/engine[1]/n1</property> 
 					<entry><ind>  0.0</ind><dep>  0</dep></entry>
-					<entry><ind> 22.4</ind><dep>342</dep></entry>
-					<entry><ind>118.0</ind><dep>620</dep></entry>
+                    <entry><ind> 19.7</ind><dep>434</dep></entry>
+                    <entry><ind>110.0</ind><dep>620</dep></entry>
 				</table>
 			</expression>
 		</input>

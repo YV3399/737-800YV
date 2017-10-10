@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
 
-<turbine_engine name="CFM56_5B4">
+<!-- (c) Joshua Davidson (it0uchpods) -->
 
-	<milthrust>     27300 </milthrust>
+<turbine_engine name="CFM56_7B26">
+
+	<milthrust>     26300 </milthrust>
 	<bypassratio>     8.1 </bypassratio>
 	<tsfc>            0.5 </tsfc>
 	<bleed>          0.03 </bleed>
-	<idlen1>         22.4 </idlen1>
-	<idlen2>         60.9 </idlen2>
+	<idlen1>         19.7 </idlen1>
+	<idlen2>         61.2 </idlen2>
 	<n1spinup>        0.2 </n1spinup>
 	<n2spinup>        2.0 </n2spinup>
 	<maxn1>         103.8 </maxn1>
