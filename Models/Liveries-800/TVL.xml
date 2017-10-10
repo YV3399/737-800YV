@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">TRAVEL SOVICE</name>
-            <texture>/Liveries-800/TFYM.png</texture>  
+            <texture>/Liveries-800/TVL.png</texture> 
 			<newwinglets type="bool">true</newwinglets> 
         </livery>        
     </model>
