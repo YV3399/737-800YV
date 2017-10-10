@@ -1,11 +1,37 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-  <checklist>
+ <checklist>
+    <title>PREFLIGHT</title>
+    <item>
+      <name>Oxygen</name>
+      <value>Tested, 100%</value>
+    </item>
+    <item>
+      <name>Navigation transfer and display switches</name>
+      <value>NORMAL, AUTO</value>
+    </item>
+    <item>
+      <name>Window heat</name>
+      <value>ON</value>
+    </item>
+    <item>
+      <name>Pressurization mode selector</name>
+      <value>AUTO</value>
+    </item>
+    <item>
+      <name>Flight instruments</name>
+      <value>Heading ___, Altimeter ___</value>
+    </item>
+    <item>
+      <name>Parking brake</name>
+      <value>Set</value>
+    </item>
+
     <title>Before Start</title>
     <item>
       <name>Flight Deck Door</name>
-      <value>CLOSED AND LOCKED</value>
+      <value>Closed and locked</value>
     </item>
     <item>
       <name>N1 bugs</name>
@@ -63,7 +89,40 @@
       <name>Parking brake</name>
       <value>ON</value>
     </item>
+    <item>
+      <name>Fuel</name>
+      <value>___ LBS/KGS, Pumps ON</value>
+    </item>
+    <item>
+      <name>Passenger signs</name>
+      <value>___</value>
+    </item>
+    <item>
+      <name>Windows</name>
+      <value>Locked</value>
+    </item>
+    <item>
+      <name>MCP</name>
+      <value>V2 ___, HEADING ___, ALTITUDE ___</value>
+    </item>
+    <item>
+      <name>Takeoff speeds</name>
+      <value>V1 ___, VR ___, V2 ___</value>
+    </item>
+    <item>
+      <name>CDU preflight</name>
+      <value>Completed</value>
+    </item>
+    <item>
+      <name>Rudder and aileron trim</name>
+      <value>Free and 0</value>
+    </item>
+    <item>
+      <name>Taxi and takeoff briefing</name>
+      <value>Completed</value>
+    </item>
   </checklist>
+
   <checklist>
     <title>Engine Start</title>
     <item>
@@ -108,6 +167,7 @@
       <value>ON</value>
     </item>
   </checklist>
+
   <checklist>
     <title>Before Taxi</title>
     <item>
@@ -155,6 +215,7 @@
       <value>AS NEEDED</value>
     </item>
   </checklist>
+
   <checklist>
     <title>Before Takeoff</title>
     <item>
@@ -170,6 +231,7 @@
       <value>STROBE</value>
     </item>
   </checklist>
+
   <checklist>
     <title>After Takeoff</title>
     <item>
@@ -181,6 +243,7 @@
       <value>OFF</value>
     </item>
   </checklist>
+
   <checklist>
     <title>Descent / Approach</title>
     <item>
@@ -192,6 +255,7 @@
       <value>SET</value>
     </item>
   </checklist>
+
   <checklist>
     <title>Before landing</title>
     <item>

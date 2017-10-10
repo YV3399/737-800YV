@@ -10,6 +10,8 @@ var roundToNearest = func(n, m) {
 }
 
 var TRIM_RATE = 0.01;
+var timer_trim_stop = maketimer(0.1, func elev_trim_stop() );
+ timer_trim_stop.singleShot = 1;
 
 var elevatorTrim = func {
 	var ap_a_on = getprop("/it-autoflight/output/ap1");
@@ -23,8 +25,8 @@ var elevatorTrim = func {
 	if (stab_pos < 3.95 and arg[0]*-1 == -1 and flaps_pos == 0) setprop( "fdm/jsbsim/fcs/stabilizer/stab-target", stab_pos );
 	if (stab_pos < 0.05 and arg[0]*-1 == -1 and flaps_pos > 0) setprop( "fdm/jsbsim/fcs/stabilizer/stab-target", stab_pos );
 
-	
-	settimer( elev_trim_stop, 0.1 );
+         timer_trim_stop.start();
+
 }
 
 var elev_trim_stop = func {
@@ -70,6 +72,8 @@ setlistener( "/autopilot/internal/CMDB", stop_stab_move, 0, 0);
 ############################################
 #### SPOILERS
 ############################################
+var update_timer_spoilers = maketimer(1, func spoilers_control() );
+
 var spoilers_control = func {
   var lever_pos = num( getprop("b737/controls/flight/spoilers-lever-pos") );
 
@@ -80,6 +84,7 @@ var spoilers_control = func {
     if (getprop("/sim/messages/copilot") == "Spoilers DOWN!") { } else {
     if (getprop("sim/co-pilot")) setprop ("/sim/messages/copilot", "Spoilers DOWN!");}
     setprop("b737/sound/spoiler-auto", 0);
+    update_timer_spoilers.stop();
   }
   if (lever_pos == 1) {
     setprop( "/controls/flight/speedbrake", 0.00 );
@@ -87,11 +92,17 @@ var spoilers_control = func {
 	setprop( "/controls/flight/autospeedbrake", 1 );
     if (getprop("/sim/messages/copilot") == "Spoilers ARMED!") { } else {
     if (getprop("sim/co-pilot")) setprop ("/sim/messages/copilot", "Spoilers ARMED!");}
+    update_timer_spoilers.stop();
+    }
+   if (lever_pos == 2) {
+   	setprop( "/controls/flight/speedbrake", 0.1625 );
+     update_timer_spoilers.stop();
   }
-  if (lever_pos == 2) setprop( "/controls/flight/speedbrake", 0.1625 );
+
   if (lever_pos == 3) {
     setprop( "/controls/flight/speedbrake", 0.325 );
     setprop( "/controls/flight/spoilers", 0 );
+    update_timer_spoilers.stop();
   }
   if (lever_pos == 4) {
     setprop( "/controls/flight/speedbrake", 0.4875 );
@@ -103,7 +114,7 @@ var spoilers_control = func {
     var height = getprop("/position/altitude-agl-ft");
     var time = height / 70;
     if (time < 0.2 or time > 600) time = 0.2;
-    settimer(spoilers_control, time);
+    update_timer_spoilers.restart(time);
   }
   if (lever_pos == 5) {
     setprop( "/controls/flight/speedbrake", 0.65 );
@@ -118,7 +129,7 @@ var spoilers_control = func {
     var height = getprop("/position/altitude-agl-ft");
     var time = height / 70;
     if (time < 0.2 or time > 600) time = 0.2;
-    settimer(spoilers_control, time);
+    update_timer_spoilers.restart(time);
   }
   if (lever_pos == 6) {
     setprop( "/controls/flight/speedbrake", 1.00 );
@@ -133,7 +144,7 @@ var spoilers_control = func {
     var height = getprop("/position/altitude-agl-ft");
     var time = height / 70;
     if (time < 0.2 or time > 600) time = 0.2;
-    settimer(spoilers_control, time);
+   update_timer_spoilers.restart(time);
   }
 }
 
@@ -147,6 +158,11 @@ controls.gearDown = func(v) {
 }
 
 setlistener( "/b737/controls/flight/spoilers-lever-pos", spoilers_control, 0, 0 );
+var update_timer_landing_check = maketimer(1, func landing_check() );
+ update_timer_landing_check.start();
+ var dearm_autothrust = maketimer(2, func {setprop("/autopilot/internal/SPD", 0);});
+ dearm_autothrust.singleShot = 1;
+ 
 
 setlistener("/controls/flight/autospeedbrake-cmd", func {
 	if (getprop("/controls/flight/autospeedbrake-cmd") == 1) {
@@ -173,7 +189,7 @@ var landing_check = func{
 		}
 		if (ab_pos > 0 and !ab_used) autobrake_apply();
 		setprop("/b737/sensors/landing-time", getprop("/fdm/jsbsim/sim-time-sec"));
-		settimer(func {setprop("/autopilot/internal/SPD", 0);},2);
+		dearm_autothrust.start();
 		setprop("/b737/sensors/landing", 1);
 	} elsif (air_ground and !was_ia and spin_up and 
     getprop("/controls/engines/engine[0]/throttle") < 0.05 and 
@@ -195,7 +211,7 @@ var landing_check = func{
     var time = height / 70;
     if (time < 0.2 or time > 600) time = 0.2;
 
-    settimer(landing_check, time);
+    update_timer_landing_check.restart(time);
 }
 landing_check();
 
@@ -269,7 +285,9 @@ var parking_brake_set = func {
 	setprop("/controls/gear/brake-parking", 1);
 	setprop("/sim/menubar/visibility", "true");
 }
-settimer (parking_brake_set, 2);
+var timer_parking_brake = maketimer(2, func parking_brake_set() );
+ timer_parking_brake.singleShot = 1;
+ timer_parking_brake.start();
 
 # EFIS controls
 

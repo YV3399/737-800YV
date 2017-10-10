@@ -1,18 +1,4 @@
 
-# ==================================== timer stuff ===============================
-
-# set the update period
-
-UPDATE_PERIOD = 0.3;
-
-# set the timer for the selected function
-
-var registerTimer = func {
-
-	settimer(arg[0], UPDATE_PERIOD);
-
-} # end function 
-
 var run_tyresmoke0 = 0;
 var run_tyresmoke1 = 0;
 var run_tyresmoke2 = 0;
@@ -80,7 +66,7 @@ setlistener("gear/gear[2]/position-norm", func {
 
 #============================ Tyre Smoke ===================================
 
-var tyresmoke = func {
+var update_tire_smoke = maketimer(0, func {
 
 #print ("run_tyresmoke ",run_tyresmoke0);
 
@@ -92,21 +78,16 @@ var tyresmoke = func {
 
 	if (run_tyresmoke2)
 		tyresmoke_2.update();
-
-	settimer(tyresmoke, 0);
-}# end tyresmoke
-
-# == fire it up ===
-
-tyresmoke();
-
-
+} );
+ update_tire_smoke.start();
+  		  	
+  		  	
 #============================ Rain ===================================
 aircraft.rain.init();
-var rain = func {
+
+var update_rain_smoke = maketimer(0, func {
 aircraft.rain.update();
-settimer(rain, 0);
-}
+} );
 # == fire it up ===
-rain()
+update_rain_smoke.start();
 # end 
