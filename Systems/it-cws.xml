@@ -5,6 +5,22 @@
 
 <PropertyList>
 
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/aileron</input>
+		<output>/controls/flight/aileron-feed</output>
+		<max-rate-of-change>2.5</max-rate-of-change>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/elevator</input>
+		<output>/controls/flight/elevator-feed</output>
+		<max-rate-of-change>2.5</max-rate-of-change>
+	</filter>
+
  <!-- =============================================================== -->
  <!-- Lateral                                                         -->
  <!-- =============================================================== -->
@@ -34,11 +50,11 @@
 						</equals>
 					</or>
 					<less-than>
-						<property>/controls/flight/aileron</property>
+						<property>/controls/flight/aileron-feed</property>
 						<value>0.05</value>
 					</less-than>
 					<greater-than>
-						<property>/controls/flight/aileron</property>
+						<property>/controls/flight/aileron-feed</property>
 						<value>-0.05</value>
 					</greater-than>
 					<equals>
@@ -102,11 +118,11 @@
 						</equals>
 					</or>
 					<less-than>
-						<property>/controls/flight/aileron</property>
+						<property>/controls/flight/aileron-feed</property>
 						<value>0.05</value>
 					</less-than>
 					<greater-than>
-						<property>/controls/flight/aileron</property>
+						<property>/controls/flight/aileron-feed</property>
 						<value>-0.05</value>
 					</greater-than>
 					<equals>
@@ -141,11 +157,11 @@
 						<value>0</value>
 					</equals>
 					<less-than-equals>
-						<property>/controls/flight/aileron</property>
+						<property>/controls/flight/aileron-feed</property>
 						<value>-0.05</value>
 					</less-than-equals>
 					<greater-than-equals>
-						<property>/controls/flight/aileron</property>
+						<property>/controls/flight/aileron-feed</property>
 						<value>0.05</value>
 					</greater-than-equals>
 					<equals>
@@ -194,11 +210,11 @@
 						</equals>
 					</or>
 					<less-than>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>0.05</value>
 					</less-than>
 					<greater-than>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>-0.05</value>
 					</greater-than>
 					<equals>
@@ -262,11 +278,11 @@
 						</equals>
 					</or>
 					<less-than>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>0.05</value>
 					</less-than>
 					<greater-than>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>-0.05</value>
 					</greater-than>
 					<equals>
@@ -301,11 +317,11 @@
 						<value>0</value>
 					</equals>
 					<less-than-equals>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>-0.05</value>
 					</less-than-equals>
 					<greater-than-equals>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>0.05</value>
 					</greater-than-equals>
 					<equals>
@@ -354,11 +370,11 @@
 						</equals>
 					</or>
 					<less-than>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>0.05</value>
 					</less-than>
 					<greater-than>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>-0.05</value>
 					</greater-than>
 					<greater-than-equals>
@@ -418,11 +434,11 @@
 						</equals>
 					</or>
 					<less-than>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>0.05</value>
 					</less-than>
 					<greater-than>
-						<property>/controls/flight/elevator</property>
+						<property>/controls/flight/elevator-feed</property>
 						<value>-0.05</value>
 					</greater-than>
 					<greater-than-equals>
@@ -481,11 +497,11 @@
 							</equals>
 						</or>
 						<less-than>
-							<property>/controls/flight/elevator</property>
+							<property>/controls/flight/elevator-feed</property>
 							<value>0.05</value>
 						</less-than>
 						<greater-than>
-							<property>/controls/flight/elevator</property>
+							<property>/controls/flight/elevator-feed</property>
 							<value>-0.05</value>
 						</greater-than>
 						<greater-than-equals>

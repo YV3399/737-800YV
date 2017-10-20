@@ -1540,7 +1540,7 @@
                 <product>
                     <property>aero/coefficient/CLdlail</property>
                     <sum>
-                        <value>146.5</value>
+                        <value>129.8</value>
                         <quotient>
                             <property>inertia/cg-y-in</property>
                             <value>12</value>
@@ -1554,7 +1554,7 @@
                 <product>
                     <property>aero/coefficient/CLdrail</property>
                     <sum>
-                        <value>-146.5</value>
+                        <value>-129.8</value>
                         <quotient>
                             <property>inertia/cg-y-in</property>
                             <value>12</value>
