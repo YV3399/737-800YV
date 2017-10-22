@@ -556,7 +556,7 @@ refs 4
 kids 0
 OBJECT poly
 name "N1-2"
-loc 3.19145e-005 -8.02183e-005 0
+loc -0.000285225 -6.98492e-010 4.91738e-007
 texture "autopilot-pnl.png"
 crease 30.000000
 numvert 8
@@ -16693,6 +16693,7 @@ refs 4
 kids 0
 OBJECT poly
 name "N1"
+loc -0.000299821 0 0
 texture "autopilot-pnl.png"
 crease 30.000000
 numvert 8

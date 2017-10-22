@@ -752,8 +752,8 @@
 			<expression>
 				<table>
 					<property>/velocities/mach</property>
-					<entry><ind>0.2</ind><dep>0.11</dep></entry>
-					<entry><ind>0.9</ind><dep>0.06</dep></entry>
+					<entry><ind>0.2</ind><dep>0.14</dep></entry>
+					<entry><ind>0.9</ind><dep>0.05</dep></entry>
 				</table>
 			</expression>
 		</input>
@@ -795,8 +795,8 @@
 			<gamma>0</gamma>
 			<Ti>1.0</Ti>
 			<Td>0.0001</Td>
-			<u_min>-1</u_min>
-			<u_max>1</u_max>
+			<u_min>-0.7</u_min>
+			<u_max>0.7</u_max>
 		</config>
 	</pid-controller>
 	
@@ -824,7 +824,7 @@
 		</input>
 		<output>/controls/flight/aileron</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.8</max-rate-of-change>
+		<max-rate-of-change>2.5</max-rate-of-change>
 	</filter>
 
  <!-- =============================================================== -->
@@ -1492,8 +1492,8 @@
 			<expression>
 				<table>
 					<property>/velocities/mach</property>
-					<entry><ind>0.2</ind><dep>-0.20</dep></entry>
-					<entry><ind>0.9</ind><dep>-0.14</dep></entry>
+					<entry><ind>0.2</ind><dep>-0.28</dep></entry>
+					<entry><ind>0.9</ind><dep>-0.10</dep></entry>
 				</table>
 			</expression>
 		</input>
@@ -1564,7 +1564,7 @@
 		</input>
 		<output>/controls/flight/elevator</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.8</max-rate-of-change>
+		<max-rate-of-change>2.5</max-rate-of-change>
 	</filter>
 	
  <!-- =============================================================== -->
@@ -1769,7 +1769,7 @@
 		</input>
 		<output>/controls/flight/elevator-trim</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.01</max-rate-of-change>
+		<max-rate-of-change>0.007</max-rate-of-change>
 	</filter>
 	
  <!-- =============================================================== -->
