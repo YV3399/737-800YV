@@ -1106,15 +1106,15 @@
 <animation>
 	<type>pick</type>
 	<object-name>APP</object-name>
+	<object-name>APP2</object-name>
 	<visible>1</visible>
 	<action>
 		<name>Arm APPR</name>
 		<button>0</button>
 		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/vert</property>
-			<value>2</value>
+			<command>nasal</command>
+			<script>itaf.buttonAPPR();</script>
 		</binding>
 	</action> 
 </animation>  

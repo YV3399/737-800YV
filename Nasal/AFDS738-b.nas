@@ -55,7 +55,10 @@ var buttonVORLOC = func {
 			setprop("/it-autoflight/input/lat", 0);
 		} else if (getprop("/it-autoflight/output/lat") == 1) {
 			setprop("/it-autoflight/input/lat", 1);
-		} else if (getprop("/it-autoflight/output/lat") == 4 or getprop("/it-autoflight/output/lat") == 5 or getprop("/it-autoflight/output/lat") == 9) {
+		} else if (getprop("/it-autoflight/output/lat") == 5) {
+			setprop("/it-autoflight/input/lat", 5);
+			setprop("/it-autoflight/output/loc-armed", 0);
+		} else if (getprop("/it-autoflight/output/lat") == 4 or getprop("/it-autoflight/output/lat") == 9) {
 			setprop("/it-autoflight/input/lat", 9);
 		}
 	} else {
@@ -93,17 +96,15 @@ var buttonLVLCH = func {
 
 var buttonAPPR = func {
 	if (getprop("/it-autoflight/output/appr-armed") == 1) {
-		if (getprop("/it-autoflight/output/vert") == 0) {
-			setprop("/it-autoflight/input/vert", 3);
-		} else if (getprop("/it-autoflight/output/vert") == 1) {
-			setprop("/it-autoflight/input/vert", 1);
-		} else if (getprop("/it-autoflight/output/vert") == 4) {
-			setprop("/it-autoflight/input/vert", 4);
-		} else if (getprop("/it-autoflight/output/vert") == 5) {
-			setprop("/it-autoflight/input/vert", 5);
-		} else if (getprop("/it-autoflight/output/vert") == 7 or getprop("/it-autoflight/output/vert") == 10) {
+		if (getprop("/it-autoflight/output/vert") == 9) {
+			setprop("/it-autoflight/input/vert", 9);
+		} else if (getprop("/it-autoflight/output/vert") == 10) {
 			setprop("/it-autoflight/input/vert", 10);
 		}
+		buttonVORLOC();
+		setprop("/it-autoflight/output/loc-armed", 0);
+		setprop("/it-autoflight/output/appr-armed", 0);
+		setprop("/it-autoflight/mode/arm", " ");
 	} else {
 		if (getprop("/it-autoflight/output/vert") == 2 or getprop("/it-autoflight/output/vert") == 6) {
 			setprop("/it-autoflight/input/vert", 9);
