@@ -314,8 +314,16 @@ var canvas_PFD = {
 				var fdPitch = -(getprop("/it-autoflight/fd/pitch-bar"))*3.8;
 				me["fdY"].setTranslation(0,fdPitch);
 			}
-			me["fdX"].show();
-			me["fdY"].show();
+			if (getprop("/it-autoflight/output/lat") != 9) {
+				me["fdX"].show();
+			} else {
+				me["fdX"].hide();
+			}
+			if (getprop("/it-autoflight/output/vert") != 9 and getprop("/it-autoflight/output/vert") != 10) {
+				me["fdY"].show();
+			} else {
+				me["fdY"].hide();
+			}
 		} else {
 			me["fdX"].hide();
 			me["fdY"].hide();
@@ -739,7 +747,7 @@ var canvas_PFD = {
 			me["singleChBox"].hide();
 			me["afdsMode"].show();
 			me["afdsMode"].setText(afds);
-			if ( getprop("/autopilot/display/afds-mode-rectangle[0]") == 1 ) {
+			if (getprop("/autopilot/display/afds-mode-rectangle[0]") == 1 and getprop("/autopilot/display/afds-mode") != " ") {
 				me["afdsModeBox"].show();
 			} else {
 				me["afdsModeBox"].hide();
@@ -768,7 +776,7 @@ var canvas_PFD = {
 		me["pitchArmMode"].setText(apPitchArm);
 
 		var spdChange = getprop("/autopilot/display/throttle-mode-rectangle");
-		if ( spdChange == 1 ) {
+		if (spdChange == 1 and getprop("/autopilot/display/throttle-mode") != " ") {
 			me["spdModeChange"].show();
 		} else {
 			me["spdModeChange"].hide();
@@ -793,14 +801,14 @@ var canvas_PFD = {
 		}
 
 		var rollChange = getprop("/autopilot/display/roll-mode-rectangle");
-		if ( rollChange == 1 ) {
+		if (rollChange == 1 and getprop("/autopilot/display/roll-mode") != " ") {
 			me["rollModeChange"].show();
 		} else {
 			me["rollModeChange"].hide();
 		}
 
 		var pitchChange = getprop("/autopilot/display/pitch-mode-rectangle");
-		if ( pitchChange == 1 ) {
+		if (pitchChange == 1 and getprop("/autopilot/display/pitch-mode") != " ") {
 			me["pitchModeChange"].show();
 		} else {
 			me["pitchModeChange"].hide();

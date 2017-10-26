@@ -25,24 +25,32 @@
 				<path>Aircraft/737-800YV/Systems/aircraft-systems-logic.xml</path>
 			</autopilot>
 			<autopilot n="4">
-				<name>737-AUTOFLIGHT</name>
-				<path>Aircraft/737-800YV/Systems/737-autoflight.xml</path>
+				<name>AFDS DRIVERS</name>
+				<path>Aircraft/737-800YV/Systems/afds-drivers.xml</path>
 			</autopilot>
 			<autopilot n="5">
+				<name>AFDS ROLL YAW</name>
+				<path>Aircraft/737-800YV/Systems/afds-roll-yaw.xml</path>
+			</autopilot>
+			<autopilot n="6">
+				<name>AFDS PITCH</name>
+				<path>Aircraft/737-800YV/Systems/afds-pitch.xml</path>
+			</autopilot>
+			<autopilot n="7">
 				<name>IT-CWS</name>
 				<path>Aircraft/737-800YV/Systems/it-cws.xml</path>
 			</autopilot>
 			<!-- Uses a custom N1 based autothrottle -->
-			<autopilot n="6">
+			<autopilot n="8">
 				<path>Aircraft/737-800YV/Systems/custom-autothrust.xml</path>
 			</autopilot>
-			<autopilot n="7">
+			<autopilot n="9">
 				<path>Aircraft/737-800YV/Systems/autospeedbrake.xml</path>
 			</autopilot>
-			<autopilot n="8">
+			<autopilot n="10">
 				<path>Aircraft/737-800YV/Systems/fl2070_sound.xml</path>
 			</autopilot>
-			<autopilot n="9">
+			<autopilot n="11">
 				<path>Aircraft/737-800YV/Systems/fadec.xml</path>
 			</autopilot>
 			<path>Aircraft/737-800YV/Systems/systems.xml</path>
@@ -890,7 +898,7 @@
 			<file>Aircraft/737-800YV/Nasal/systems.nas</file>
 			<file>Aircraft/737-800YV/Nasal/registration.nas</file>
 			<file>Aircraft/737-800YV/Nasal/engine-fire.nas</file> 
-			<file>Aircraft/737-800YV/Nasal/ITAF_PFD_mode-converter.nas</file>
+			<file>Aircraft/737-800YV/Nasal/PFD_FMA.nas</file>
 			<file>Aircraft/737-800YV/Nasal/limits.nas</file>
 			<file>Aircraft/737-800YV/Nasal/doors.nas</file> 
 		</boeing737>
@@ -906,7 +914,8 @@
 			<file>Aircraft/737-800YV/Nasal/reverse-thrust.nas</file>
 		</reversethrust>
 		<itaf>
-			<file>Aircraft/737-800YV/Nasal/737-autoflight.nas</file>
+			<file>Aircraft/737-800YV/Nasal/AFDS738.nas</file>
+			<file>Aircraft/737-800YV/Nasal/AFDS738-b.nas</file>
 		</itaf>
 		<it-cws>
 			<file>Aircraft/737-800YV/Nasal/it-cws.nas</file>
