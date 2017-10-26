@@ -187,12 +187,11 @@
     <animation>
         <type>rotate</type>
         <object-name>lghandle</object-name>
-        <property>/gear/gear[1]/position-norm</property>
+        <property>b737/controls/gear/lever</property>
         <interpolation>
-            <entry><ind>  1.0</ind><dep> 0.0</dep></entry>
-            <entry><ind>  0.999</ind><dep>-45</dep></entry>
-            <entry><ind>  0.001</ind><dep>-45</dep></entry>
-            <entry><ind>  0.0</ind><dep>-24.0</dep></entry>
+            <entry><ind>  0</ind><dep> 10.0</dep></entry>
+            <entry><ind>  1</ind><dep>-45.0</dep></entry>
+            <entry><ind>  2</ind><dep>-22.0</dep></entry>
         </interpolation>
         <center>
             <x-m>-0.102</x-m>
