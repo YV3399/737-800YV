@@ -9,6 +9,8 @@ setprop("/autopilot/display/throttle-mode-rectangle-time", 0);
 setprop("/autopilot/display/roll-mode-rectangle-time", 0);
 setprop("/autopilot/display/pitch-mode-rectangle-time", 0);
 setprop("/autopilot/display/afds-mode-rectangle-time", 0);
+setprop("/it-autoflight/custom/athr-deactivate", 0);
+setprop("/controls/engines/throttle-cmd-norm", 0);
 
 setlistener("sim/signals/fdm-initialized", func {
 	loopFMA.start();
@@ -44,16 +46,33 @@ setlistener("/it-autoflight/output/thr-mode", func {
 	var thr = getprop("/it-autoflight/output/thr-mode");
 	var newthr = getprop("/autopilot/display/throttle-mode");
 	if (thr == 0) {
+		thrIdle.stop();
+		setprop("/it-autoflight/custom/athr-deactivate", 0);
 		if (newthr != "MCP SPD") {
 			setprop("/autopilot/display/throttle-mode", "MCP SPD");
 		}
 	} else if (thr == 1) {
-		if (newthr != "RETARD") {
-			setprop("/autopilot/display/throttle-mode", "RETARD");
-		}
+		thrIdle.start();
 	} else if (thr == 2) {
+		thrIdle.stop();
+		setprop("/it-autoflight/custom/athr-deactivate", 0);
 		if (newthr != "N1") {
 			setprop("/autopilot/display/throttle-mode", "N1");
+		}
+	}
+});
+
+var thrIdle = maketimer(0.25, func {
+	var newthr = getprop("/autopilot/display/throttle-mode");
+	if (getprop("/controls/engines/throttle-cmd-norm") < 0.011) {
+		setprop("/it-autoflight/custom/athr-deactivate", 1);
+		if (newthr != "ARM") {
+			setprop("/autopilot/display/throttle-mode", "ARM");
+		}
+	} else {
+		setprop("/it-autoflight/custom/athr-deactivate", 0);
+		if (newthr != "RETARD") {
+			setprop("/autopilot/display/throttle-mode", "RETARD");
 		}
 	}
 });
@@ -239,7 +258,7 @@ setlistener("/it-cws/cwsb-output", func {
 
 # Boxes
 setlistener("/autopilot/display/throttle-mode", func {
-	if (getprop("/autopilot/display/throttle-mode") != " ") {
+	if (getprop("/autopilot/display/throttle-mode") != " " and getprop("/autopilot/display/throttle-mode") != "ARM") {
 		setprop("/autopilot/display/throttle-mode-rectangle-time", getprop("/sim/time/elapsed-sec"));
 	}
 });

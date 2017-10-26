@@ -223,16 +223,10 @@
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<or>
-					<equals>
-						<property>/it-autoflight/output/thr-mode</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/retard</property>
-						<value>1</value>
-					</equals>
-				</or>
+				<equals>
+					<property>/it-autoflight/output/thr-mode</property>
+					<value>1</value>
+				</equals>
 			</condition>
 		</enable>
 		<input>
@@ -264,16 +258,10 @@
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<and>
-					<equals>
-						<property>/it-autoflight/output/thr-mode</property>
-						<value>2</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/retard</property>
-						<value>0</value>
-					</equals>
-				</and>
+				<equals>
+					<property>/it-autoflight/output/thr-mode</property>
+					<value>2</value>
+				</equals>
 			</condition>
 		</enable>
 		<input>
@@ -299,7 +287,7 @@
 		</config>
 	</pid-controller>
 	
-	<!-- Engine 1 -->
+	<!-- Throttle PID Normalizer -->
 	<filter>
 		<name>Thrust Filter 1</name>
 		<debug>false</debug>
@@ -309,6 +297,32 @@
 					<property>/it-autoflight/output/athr</property>
 					<value>1</value>
 				</equals>
+			</condition>
+		</enable>
+		<feedback-if-disabled>false</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<input>/controls/engines/throttle-cmd-pid</input>
+		<output>/controls/engines/throttle-cmd-norm</output>
+		<type>noise-spike</type>
+		<max-rate-of-change>0.1</max-rate-of-change>
+	</filter>
+	
+	<!-- Engine 1 -->
+	<filter>
+		<name>Thrust Filter 1</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<and>
+					<equals>
+						<property>/it-autoflight/output/athr</property>
+						<value>1</value>
+					</equals>
+					<not-equals>
+						<property>/it-autoflight/custom/athr-deactivate</property>
+						<value>1</value>
+					</not-equals>
+				</and>
 			</condition>
 		</enable>
 		<feedback-if-disabled>false</feedback-if-disabled>
@@ -325,10 +339,16 @@
 		<debug>false</debug>
 		<enable>
 			<condition>
-				<equals>
-					<property>/it-autoflight/output/athr</property>
-					<value>1</value>
-				</equals>
+				<and>
+					<equals>
+						<property>/it-autoflight/output/athr</property>
+						<value>1</value>
+					</equals>
+					<not-equals>
+						<property>/it-autoflight/custom/athr-deactivate</property>
+						<value>1</value>
+					</not-equals>
+				</and>
 			</condition>
 		</enable>
 		<feedback-if-disabled>false</feedback-if-disabled>
