@@ -128,335 +128,7 @@
 		</axis>
 	</animation>
 	
-	<!-- Engine Gen 1 -->
-	<animation>
-		<type>select</type>
-		<object-name>GenOffBus1</object-name>
-		<condition>
-			<and>
-				<or>
-					<not-equals>
-						<property>controls/electrical/eng/Lsw</property>
-						<value>1</value>
-					</not-equals>
-				</or>
-				<greater-than-equals>
-					<property>engines/engine[0]/n2</property>
-					<value>54.0</value>
-				</greater-than-equals>
-			</and>
-		</condition>
-	</animation>
 	
-	<animation>
-		<type>pick</type>
-		<object-name>gen1-switch</object-name>       
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>     
-			<binding>
-				<command>property-assign</command>
-				<property>controls/electrical/eng/Lsw</property>
-				<value>1</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/OH/gen1-switch</property>
-				<value>2</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/OH/gen1-switch</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action>
-		<action>
-			<button>1</button>
-			<repeatable type="bool">false</repeatable>     
-			<binding>
-				<command>property-assign</command>
-				<property>controls/electrical/eng/Lsw</property>
-				<value>0</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/OH/gen1-switch</property>
-				<value>0</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/OH/gen1-switch</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action> 		
-	</animation>
-	
-	<animation>
-		<type>rotate</type>   
-		<object-name>gen1-switch</object-name>  
-		<property>controls/OH/gen1-switch</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>  0</dep></entry>
-			<entry><ind>2</ind><dep> 30</dep></entry>
-		</interpolation>
-		<center>
-			<x-m>0.16397</x-m>
-			<y-m>0</y-m>
-			<z-m>0.08976</z-m>
-		</center>
-		<axis>
-			<y>1</y>
-		</axis>
-	</animation>
-	
-	<!-- APU Gen Shared -->
-	<animation>
-		<type>select</type>
-		<object-name>APUGenOffBus</object-name>
-		<condition>
-			<and>
-				<or>
-					<not-equals>
-						<property>controls/electrical/apu/Lsw</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>controls/electrical/apu/Rsw</property>
-						<value>1</value>
-					</not-equals>
-				</or>
-				<greater-than>
-					<property>systems/apu/rpm</property>
-					<value>94.9</value>
-				</greater-than>
-			</and>
-		</condition>
-	</animation>
-	
-	<!-- APU Gen Left -->
-	<animation>
-		<type>pick</type>
-		<object-name>apugenl-switch</object-name>       
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>     
-			<binding>
-				<command>property-assign</command>
-				<property>controls/electrical/apu/Lsw</property>
-				<value>1</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/OH/apugenl-switch</property>
-				<value>2</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/OH/apugenl-switch</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action>
-		<action>
-			<button>1</button>
-			<repeatable type="bool">false</repeatable>     
-			<binding>
-				<command>property-assign</command>
-				<property>controls/electrical/apu/Lsw</property>
-				<value>0</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/OH/apugenl-switch</property>
-				<value>0</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/OH/apugenl-switch</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action> 		
-	</animation>
-	
-	<animation>
-		<type>rotate</type>   
-		<object-name>apugenl-switch</object-name>  
-		<property>controls/OH/apugenl-switch</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>  0</dep></entry>
-			<entry><ind>2</ind><dep> 30</dep></entry>
-		</interpolation>
-		<center>
-			<x-m>0.16397</x-m>
-			<y-m>0</y-m>
-			<z-m>0.08976</z-m>
-		</center>
-		<axis>
-			<y>1</y>
-		</axis>
-	</animation>
-	
-	<!-- APU Gen Right -->
-	<animation>
-		<type>pick</type>
-		<object-name>apugenr-switch</object-name>       
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>     
-			<binding>
-				<command>property-assign</command>
-				<property>controls/electrical/apu/Rsw</property>
-				<value>1</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/OH/apugenr-switch</property>
-				<value>2</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/OH/apugenr-switch</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action>
-		<action>
-			<button>1</button>
-			<repeatable type="bool">false</repeatable>     
-			<binding>
-				<command>property-assign</command>
-				<property>controls/electrical/apu/Rsw</property>
-				<value>0</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/OH/apugenr-switch</property>
-				<value>0</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/OH/apugenr-switch</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action> 		
-	</animation>
-	
-	<animation>
-		<type>rotate</type>   
-		<object-name>apugenr-switch</object-name>  
-		<property>controls/OH/apugenr-switch</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>  0</dep></entry>
-			<entry><ind>2</ind><dep> 30</dep></entry>
-		</interpolation>
-		<center>
-			<x-m>0.16397</x-m>
-			<y-m>0</y-m>
-			<z-m>0.08976</z-m>
-		</center>
-		<axis>
-			<y>1</y>
-		</axis>
-	</animation>
-	
-	<!-- Engine Gen 2 -->
-	<animation>
-		<type>select</type>
-		<object-name>GenOffBus2</object-name>
-		<condition>
-			<and>
-				<or>
-					<not-equals>
-						<property>controls/electrical/eng/Rsw</property>
-						<value>1</value>
-					</not-equals>
-				</or>
-				<greater-than-equals>
-					<property>engines/engine[1]/n2</property>
-					<value>54.0</value>
-				</greater-than-equals>
-			</and>
-		</condition>
-	</animation>
-	
-	<animation>
-		<type>pick</type>
-		<object-name>gen2-switch</object-name>       
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>     
-			<binding>
-				<command>property-assign</command>
-				<property>controls/electrical/eng/Rsw</property>
-				<value>1</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/OH/gen2-switch</property>
-				<value>2</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/OH/gen2-switch</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action>
-		<action>
-			<button>1</button>
-			<repeatable type="bool">false</repeatable>     
-			<binding>
-				<command>property-assign</command>
-				<property>controls/electrical/eng/Rsw</property>
-				<value>0</value>
-			</binding>
-			<binding>
-				<command>property-assign</command>
-				<property>controls/OH/gen2-switch</property>
-				<value>0</value>
-			</binding>
-			<mod-up>
-				<binding>
-					<command>property-assign</command>
-					<property>controls/OH/gen2-switch</property>
-					<value>1</value>
-				</binding>
-			</mod-up>
-		</action> 		
-	</animation>
-	
-	<animation>
-		<type>rotate</type>   
-		<object-name>gen2-switch</object-name>  
-		<property>controls/OH/gen2-switch</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>  0</dep></entry>
-			<entry><ind>2</ind><dep> 30</dep></entry>
-		</interpolation>
-		<center>
-			<x-m>0.16397</x-m>
-			<y-m>0</y-m>
-			<z-m>0.08976</z-m>
-		</center>
-		<axis>
-			<y>1</y>
-		</axis>
-	</animation>
 	
 <!-- Lights -->
 
@@ -1182,6 +854,147 @@
   </axis>
 </animation>
 
+
+<!-- Engines Gen -->
+
+ <animation>
+      <type>pick</type>
+      <object-name>EngGen1</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/electrical/eng/Lsw</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>EngGen1</object-name>  
+      <property>controls/electrical/eng/Lsw</property>
+      <factor>30</factor>
+      <center>
+        <x-m>0.16636</x-m>
+        <y-m>0.15703</y-m>
+        <z-m>0.09351</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+    
+   <animation>
+      <type>pick</type>
+      <object-name>EngGen2</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable> 
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/electrical/eng/Rsw</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>EngGen2</object-name>  
+      <property>controls/electrical/eng/Rsw</property>
+      <factor>30</factor>
+      <center>
+        <x-m>0.16635</x-m>
+        <y-m>-0.05795</y-m>
+        <z-m>0.09409</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+   
+<!-- APU Gen -->
+
+ <animation>
+      <type>pick</type>
+      <object-name>ApuGenL</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>      
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/electrical/apu/Lsw</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+<animation>
+      <type>rotate</type>   
+      <object-name>ApuGenL</object-name>  
+      <property>controls/electrical/apu/Lsw</property>
+      <factor>30</factor>
+      <center>
+        <x-m>0.16655</x-m>
+        <y-m>0.12901</y-m>
+        <z-m>0.09512</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+  
+ <animation>
+      <type>pick</type>
+      <object-name>ApuGenR</object-name>         
+      <visible>1</visible>
+      <action>
+        <button>0</button>
+        <repeatable type="bool">false</repeatable>
+        <binding>
+          <command>property-toggle</command>
+          <property>controls/electrical/apu/Rsw</property>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+        </binding>
+      </action> 
+    </animation>
+    <animation>
+      <type>rotate</type>   
+      <object-name>ApuGenR</object-name>  
+      <property>controls/electrical/apu/Rsw</property>
+      <factor>30</factor>
+      <center>
+        <x-m>0.16644</x-m>
+        <y-m>0.08698</y-m>
+        <z-m>0.09425</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+    </animation>
+
 <!-- Anti Ice -->
 
 <animation>
@@ -1532,7 +1345,7 @@
 
     <animation>
       <type>pick</type>
-      <object-name>hydelectrR</object-name>         
+      <object-name>hydelectr2</object-name>         
       <visible>1</visible>
       <action>
         <button>0</button>
@@ -1549,7 +1362,7 @@
     </animation>
     <animation>
       <type>rotate</type>   
-      <object-name>hydelectrR</object-name>  
+      <object-name>hydelectr2</object-name>  
       <property>controls/hydraulic/system/electric-pump</property>
       <factor>30</factor>
       <center>
@@ -1566,7 +1379,7 @@
 
     <animation>
       <type>pick</type>
-      <object-name>hydelectrL</object-name>         
+      <object-name>hydelectr1</object-name>         
       <visible>1</visible>
       <action>
         <button>0</button>
@@ -1583,7 +1396,7 @@
     </animation>
     <animation>
       <type>rotate</type>   
-      <object-name>hydelectrL</object-name>  
+      <object-name>hydelectr1</object-name>  
       <property>controls/hydraulic/system/electric-pump</property>
       <factor>30</factor>
       <center>
@@ -1598,6 +1411,47 @@
       </axis>
     </animation> 
 
+ <!-- Light panel -->
+
+<animation>
+  <type>knob</type>
+  <object-name>light-panel</object-name>
+  <property>controls/lighting/panel</property>
+  <factor>125</factor>
+  <center>
+    <x-m>-0.13086</x-m>
+    <y-m>0.00034</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>-0.45</x><y></y><z>-1</z>
+  </axis>
+
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/panel</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <shift-action>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/panel</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+    </binding>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
+</animation>
 
 
 </PropertyList>

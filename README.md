@@ -9,7 +9,7 @@ This aircraft was modified and updated in a joint effort by the following people
 * RenanMsV (BR-RVD): Animations, 3D, Textures Etc.
 
 ![image](http://imgur.com/oO0tJ8n.png)
-![Image](http://imgur.com/tyWtNHe.png)
+![Image](https://imgur.com/wmfyjHC.png)
 ![Image](http://imgur.com/gqGSLMs.png)
 
 ## Note:
