@@ -170,7 +170,6 @@
 	</pid-controller>
 
 	<!-- Auto throttle (Mach Hold)-->
-
 	<pid-controller>
 		<name>MACH THR</name>
 		<debug>false</debug>
