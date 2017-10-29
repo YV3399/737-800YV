@@ -6,7 +6,7 @@
         <livery>                     
             <name type="string">LOT</name>
             <texture>Liveries-800/LOT.png</texture>     
-			<newwinglets type="bool">true</newwinglets> 
+			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>
 </sim>
