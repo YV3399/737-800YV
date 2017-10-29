@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+       <livery>                     
+            <name type="string">American Airlines (Air Cal Heritage Livery)</name>
+            <texture>/Liveries-800/N917NN.png</texture>       
+			<newwinglets type="bool">false</newwinglets>              
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
