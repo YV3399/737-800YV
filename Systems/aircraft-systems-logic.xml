@@ -10,7 +10,7 @@
       <abs>
         <dif>
           <property>/instrumentation/altimeter[0]/indicated-altitude-ft</property>
-          <property>/it-autoflight/settings/target-altitude-ft-actual</property>
+          <property>/it-autoflight/internal/alt</property>
         </dif>
       </abs>
     </expression> 
@@ -28,7 +28,7 @@
       <abs>
         <dif>
           <property>/instrumentation/altimeter[1]/indicated-altitude-ft</property>
-          <property>/it-autoflight/settings/target-altitude-ft-actual</property>
+          <property>/it-autoflight/internal/alt</property>
         </dif>
       </abs>
     </expression> 

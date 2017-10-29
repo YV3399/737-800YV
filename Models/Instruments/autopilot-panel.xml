@@ -401,10 +401,6 @@
     				<property>it-autoflight/output/thr-mode</property>
     				<value>2</value>
     			</equals>
-    			<equals>
-    				<property>it-autoflight/output/vert</property>
-    				<value>7</value>
-    			</equals>
     		</and>
     	</condition>
     </animation>
@@ -992,17 +988,14 @@
 	<type>pick</type>
 	<visible>true</visible>
 	<object-name>N1</object-name>
+	<object-name>N1-2</object-name>
 	<action>
 		<name>Toggle N1</name>
 		<button>0</button>
 		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>
-			if (getprop("/it-autoflight/custom/athr-armed") == 1) {
-				setprop("/it-autoflight/input/athr", 1);
-			}
-			</script>
+			<script>itaf.buttonN1();</script>
 		</binding>
 	</action>
 </animation>
@@ -1016,17 +1009,8 @@
 		<button>0</button>
 		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/vert</property>
-			<value>4</value>
-		</binding>
-		<binding>
 			<command>nasal</command>
-			<script>
-			if (getprop("/it-autoflight/custom/athr-armed") == 1) {
-				setprop("/it-autoflight/input/athr", 1);
-			}
-			</script>
+			<script>itaf.buttonLVLCH();</script>
 		</binding>
 	</action> 
 </animation>
@@ -1034,21 +1018,6 @@
 <animation>
 	<type>pick</type>
 	<object-name>ALT-HLD</object-name>
-	<visible>1</visible>
-	<action>
-		<name>Toggle ALT Mode</name>
-		<button>0</button>
-		<repeatable>false</repeatable>
-		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/vert</property>
-			<value>0</value>
-		</binding>
-	</action>
-</animation>   
-
-<animation>
-	<type>pick</type>
 	<object-name>ALT-HLD2</object-name>
 	<visible>1</visible>
 	<action>
@@ -1056,9 +1025,8 @@
 		<button>0</button>
 		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/vert</property>
-			<value>0</value>
+			<command>nasal</command>
+			<script>itaf.buttonALT();</script>
 		</binding>
 	</action>
 </animation>     	 
@@ -1067,13 +1035,13 @@
 	<type>pick</type>
 	<visible>true</visible>
 	<object-name>V/S</object-name>
+	<object-name>V/S2</object-name>
 	<action>
 		<button>0</button>
 		<repeatable>true</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/vert</property>
-			<value>1</value>
+			<command>nasal</command>
+			<script>itaf.buttonVS();</script>
 		</binding>
 	</action>
 </animation>
@@ -1096,8 +1064,8 @@
 			<command>property-adjust</command>
 			<property>it-autoflight/input/vs</property>
 			<factor>100</factor>
-			<min>-8900</min>
-			<max>7000</max>    
+			<min>-6000</min>
+			<max>8000</max>    
 			<wrap>false</wrap>
 		</binding>
 	</action>
@@ -1107,62 +1075,30 @@
 
 <animation>
 	<type>pick</type>
+	<object-name>HDG-HLD</object-name>
 	<object-name>HDG-HLD2</object-name>
 	<visible>1</visible>
 	<action>
 		<button>0</button>
 		<repeatable>true</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/lat</property>
-			<value>0</value>
+			<command>nasal</command>
+			<script>itaf.buttonHDG();</script>
 		</binding>
 	</action>
 </animation>
-
-<animation>
-	<type>pick</type>
-	<object-name>HDG-HLD</object-name>
-	<visible>1</visible>
-	<action>
-		<button>0</button>
-		<repeatable>true</repeatable>
-		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/lat</property>
-			<value>0</value>
-		</binding>
-	</action>
-</animation>
-
-<!-- LNAV button -->
 
 <animation>
 	<type>pick</type>
 	<visible>true</visible>
 	<object-name>L-NAV</object-name>
-	<action>
-		<button>0</button>
-		<repeatable>true</repeatable>
-		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/lat</property>
-			<value>1</value>
-		</binding>
-	</action>
-</animation>
-
-<animation>
-	<type>pick</type>
-	<visible>true</visible>
 	<object-name>L-NAV2</object-name>
 	<action>
 		<button>0</button>
 		<repeatable>true</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/lat</property>
-			<value>1</value>
+			<command>nasal</command>
+			<script>itaf.buttonLNAV();</script>
 		</binding>
 	</action>
 </animation>
@@ -1170,15 +1106,15 @@
 <animation>
 	<type>pick</type>
 	<object-name>APP</object-name>
+	<object-name>APP2</object-name>
 	<visible>1</visible>
 	<action>
 		<name>Arm APPR</name>
 		<button>0</button>
 		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/vert</property>
-			<value>2</value>
+			<command>nasal</command>
+			<script>itaf.buttonAPPR();</script>
 		</binding>
 	</action> 
 </animation>  
@@ -1186,23 +1122,23 @@
 <animation>
 	<type>pick</type>
 	<object-name>VOR-LOC</object-name>
+	<object-name>VOR-LOC2</object-name>
 	<visible>1</visible>
 	<action>
 		<name>Arm VOR/LOC</name>
 		<button>0</button>
 		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>it-autoflight/input/lat</property>
-			<value>2</value>
+			<command>nasal</command>
+			<script>itaf.buttonVORLOC();</script>
 		</binding>
 	</action> 
-
 </animation> 
 
 <animation>
 	<type>pick</type>
 	<object-name>SPEED</object-name>
+	<object-name>SPEED-2</object-name>
 	<visible>1</visible>
 	<action>
 		<name>Toggle SPEED</name>
@@ -1210,11 +1146,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>
-			if (getprop("/it-autoflight/custom/athr-armed") == 1) {
-				setprop("/it-autoflight/input/athr", 1);
-			}
-			</script>
+			<script>itaf.buttonSPD();</script>
 		</binding>
 	</action>
 </animation> 
