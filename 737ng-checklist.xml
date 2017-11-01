@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+
  <checklist>
     <title>PREFLIGHT</title>
     <item>
@@ -272,4 +273,5 @@
       <value>ON</value>
     </item>
   </checklist>
+
 </PropertyList>
