@@ -5,7 +5,7 @@
 	xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 	<fileheader>
-		<author> Michael Soitanen </author>
+		<author> Michael Soitanen, YV3399 And it0uchpods </author>
 		<filecreationdate> 2014-09-30 </filecreationdate>
 		<version>$Revison: 1.0 $</version>
 		<description> Models a 737-800. </description>
@@ -2118,8 +2118,6 @@
 		</force>
 
 	</external_reactions>
-
-
 
    <!-- <output name="B737_datalog.csv" rate="10" type="CSV">
 		<property> /instrumentation/airspeed-indicator/indicated-speed-kt </property>

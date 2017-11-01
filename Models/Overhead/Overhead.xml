@@ -1453,5 +1453,98 @@
   </decrease>
 </animation>
 
+<!-- Engine Starter -->
+
+<animation>
+	<type>pick</type>
+	<object-name>Mesh14</object-name>       
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>Mesh15</object-name>       
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>Mesh282</object-name>       
+	<action>
+		<button>0</button>
+		<binding>
+			<command>property-adjust</command>
+			<property>/sim/input/selected/SelectedEngine738</property>
+			<step>1</step>
+			<min>-1</min>
+			<max>1</max>
+		</binding>
+	</action>
+	<action>
+		<button>1</button>
+		<binding>
+			<command>property-adjust</command>
+			<property>/sim/input/selected/SelectedEngine738</property>
+			<step>-1</step>
+			<min>-1</min>
+			<max>1</max>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>Mesh14</object-name>
+  <property>/controls/engines/engine[0]/starter</property>
+  <factor>17</factor>
+  <center>
+    <x-m>0.29991</x-m>
+    <y-m>-0.01406</y-m>
+    <z-m>0.08895</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/engines/engine[0]/starter</property>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>Mesh15</object-name>
+  <property>/controls/engines/engine[1]/starter</property>
+  <factor>17</factor>
+  <center>
+    <x-m>0.29872</x-m>
+    <y-m>0.09073</y-m>
+    <z-m>0.08895</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/engines/engine[1]/starter</property>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+	<type>rotate</type>   
+	<object-name>Mesh282</object-name>
+	<object-name>Mesh283</object-name> 
+	<property>/sim/input/selected/SelectedEngine738</property>
+	<factor>-30</factor>
+	<center>
+		<x-m>0.29427</x-m>
+		<y-m>0.03704</y-m>
+		<z-m>0.07808</z-m>
+	</center>
+	<axis>
+		<x>1</x>
+	</axis>
+</animation>
+
 
 </PropertyList>

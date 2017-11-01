@@ -3,8 +3,8 @@
 <PropertyList>
 
 	<sim>
-		<author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), Jonathan Redpath (legoboyvdlp), RenanMsV (BR-RVD)</author>
-		<status>Version 1.0</status>
+               <author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), Jonathan Redpath (legoboyvdlp), RenanMsV (BR-RVD)</author>
+		<status>Version 0.8</status>
 		<flight-model>jsb</flight-model>
 
 		<systems>
@@ -311,7 +311,8 @@
 					<value>0</value>
 					</binding>
 			</key>
-			<key n="103">
+			
+                        <key n="103">
 				<name>g</name>
 				<desc>Gear Up Custom Binding</desc>
 				<binding>
@@ -343,8 +344,8 @@
 					<max type="double">6</max>
 				</binding>
 			</key>
-
-			<key n="2">
+			
+                        <key n="2">
 				<name>Ctrl-b</name>
 				<desc>Cycle speedbrake setting</desc>
 				<binding>
@@ -884,9 +885,9 @@
 			<file>Aircraft/737-800YV/Models/Instruments/CDU/boeing.nas</file> <!-- custom implementation of the CDU from instruments-3D -->
 		</cdu>
 		<boeing737>
-			<file>Aircraft/737-800YV/Models/Instruments/PFD/PFD.nas</file>
-			<file>Aircraft/737-800YV/Models/Instruments/EICAS/upperEICAS.nas</file>
-			<file>Aircraft/737-800YV/Models/Instruments/EICAS_Lower/lowerEICAS.nas</file>
+	<file>Aircraft/737-800YV/Models/Instruments/PFD/PFD.nas</file>
+	<file>Aircraft/737-800YV/Models/Instruments/EICAS/upperEICAS.nas</file>
+	<file>Aircraft/737-800YV/Models/Instruments/EICAS_Lower/lowerEICAS.nas</file>
 			<file>Aircraft/737-800YV/Nasal/air-ground.nas</file>
 			<file>Aircraft/737-800YV/Nasal/autostart.nas</file>
 			<file>Aircraft/737-800YV/Nasal/controls.nas</file>
@@ -896,7 +897,6 @@
 			<file>Aircraft/737-800YV/Nasal/ground-services.nas</file>      
 			<file>Aircraft/737-800YV/Nasal/liveries.nas</file>
 			<file>Aircraft/737-800YV/Nasal/systems.nas</file>
-			<file>Aircraft/737-800YV/Nasal/registration.nas</file>
 			<file>Aircraft/737-800YV/Nasal/engine-fire.nas</file> 
 			<file>Aircraft/737-800YV/Nasal/PFD_FMA.nas</file>
 			<file>Aircraft/737-800YV/Nasal/limits.nas</file>

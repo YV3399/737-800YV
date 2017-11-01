@@ -157,3 +157,20 @@ setlistener("/it-autoflight/output/athr", func {
 		setprop("/it-autoflight/custom/athr-armed", 1);
 	}
 });
+
+# selected engine system
+props.globals.initNode("sim/input/selected/SelectedEngine738", 0, "INT");
+setlistener("sim/input/selected/SelectedEngine738", func {
+	a = getprop("sim/input/selected/SelectedEngine738");
+	if (a == 0) {
+		setprop("sim/input/selected/engine", 1);
+		setprop("sim/input/selected/engine[1]", 1);
+	} else if(a == 1) {
+		setprop("sim/input/selected/engine", 0);
+		setprop("sim/input/selected/engine[1]", 1);
+
+	} else if(a == -1) {
+		setprop("sim/input/selected/engine", 1);
+		setprop("sim/input/selected/engine[1]", 0);
+	}
+});
