@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Virgin Australia</name>
-            <texture>/Liveries-800/Voz.png</texture>  
+            <texture>/Liveries-800/VOZ.png</texture>  
                <newwinglets type="bool">false</newwinglets>            
         </livery>        
     </model>
