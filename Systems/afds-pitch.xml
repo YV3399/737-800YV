@@ -322,7 +322,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/it-autoflight/internal/vs</property>
+			<property>/it-autoflight/input/vs</property>
 		</input>
 		<input>
 			<condition>
