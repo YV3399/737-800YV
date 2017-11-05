@@ -43,11 +43,6 @@
 		</position>
 	</engine>
 	
-	
-	
-	
-	
-	
 	<engine>
 		<name>a320_a11</name>
 		<mode>looped</mode>
@@ -909,25 +904,6 @@
     </announcement>
 
     <announcement>
-    	<name>boarding2</name>
-    	<path>Aircraft/737-800YV/Sounds/announce/music2.wav</path>
-    	<mode>looped</mode>
-    	<condition>
-    		<property>sim/sound/music2</property>
-    	</condition>
-    	<volume>
-    		<factor>8</factor>
-    	</volume>
-    	<position>
-    		<x>0.00</x>
-    		<y>0.00</y>
-    		<z>0.00</z>
-    	</position>
-    	<reference-dist>20.0</reference-dist>
-    	<max-dist>100.0</max-dist>
-    </announcement>
-
-    <announcement>
     	<name>brace</name>
     	<path>Aircraft/737-800YV/Sounds/announce/brace.wav</path>
     	<mode>once</mode>
@@ -1196,43 +1172,6 @@
     	</volume>
     	<max-dist>20.0</max-dist>
     </cockpitdoor>
-        
-        <!-- Crashed -->
-
-        <crash>
-        	<name>intense ground contact</name>
-        	<mode>once</mode>
-        	<path>Aircraft/737-800YV/Sounds/crash.wav</path>
-        	<property>sim/crashed</property>
-        	<volume>
-        		<factor>1</factor>
-        	</volume>
-        	<pitch>
-        		<factor>1.5</factor>
-        	</pitch>
-        </crash>
-
-<eightyknots>
-        <name>eightyknots</name>
-        <mode>once</mode>
-        <type>avionics</type>
-        <path>Aircraft/737-800YV/Sounds/80kt.wav</path>
-        <condition>
-			<or>
-			<property>/gear/gear[0]/wow</property>
-			<property>/gear/gear[2]/wow</property>
-			</or>	
-			<greater-than>
-				<property>/velocities/airspeed-kt</property>
-				<value>80</value>
-			</greater-than>
-			<less-than>
-				<property>/velocities/airspeed-kt</property>
-				<value>88</value>
-			</less-than>			
-			</condition>	
-    </eightyknots>   
-
 
    <wind>
         <name>wind</name>

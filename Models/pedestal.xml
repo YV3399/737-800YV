@@ -174,5 +174,22 @@
        <property>controls/lighting/panel</property>
     </condition>
 </animation>
+ 
+      <!-- Controls -->
+
+<animation>
+<type>material</type> 
+<object-name>break</object-name>
+ <condition>
+ <property>controls/gear/brake-parking</property> 
+ </condition>
+<emission>
+    <red>4.90</red>
+    <green>0.01</green>
+    <blue>0.01</blue>
+	    <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+ </emission>
+</animation>
+
 
 </PropertyList>
