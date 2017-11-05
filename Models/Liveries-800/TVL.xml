@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">TRAVEL SOVICE</name>
+            <name type="string">Travel Service</name>
             <texture>/Liveries-800/TVL.png</texture> 
 			<newwinglets type="bool">true</newwinglets> 
         </livery>        
