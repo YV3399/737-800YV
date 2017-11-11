@@ -719,42 +719,6 @@
 </offsets>
 </model>
 
-<!-- Registration fuselage upper back -->
-<model>
-  <name>registrationFuselageRightBack</name>
-  <path>Aircraft/737-800YV/Models/Registration/registration.xml</path>
-  <offsets>
-    <x-m>10.90</x-m>
-    <y-m>1.50</y-m>
-    <z-m>1.60</z-m>
-    <roll-deg>34</roll-deg>
-    <heading-deg>-1.0</heading-deg>
-  </offsets>
-  <overlay>
-    <params>
-      <size>0.5</size>
-      <alignment>reversed-xz-plane</alignment>
-    </params>
-  </overlay>
-</model>
-
-<model>
-  <name>registrationFuselageLeftBack</name>
-  <path>Aircraft/737-800YV/Models/Registration/registration.xml</path>
-  <offsets>
-    <x-m>10.90</x-m>
-    <y-m>-1.50</y-m>
-    <z-m> 1.60</z-m>
-    <roll-deg>34</roll-deg>
-    <heading-deg>181.0</heading-deg>
-  </offsets>
-  <overlay>
-    <params>
-      <size>0.5</size>
-      <alignment>reversed-xz-plane</alignment>
-    </params>
-  </overlay>
-</model>
 
 <animation>
   <type>material</type>
