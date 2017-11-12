@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Qantas 2017</name>
-            <texture>/Liveries-800/VH-VXM.png</texture>
+            <texture>/Liveries-800/QFA-new.png</texture>
                    <newwinglets type="bool">false</newwinglets>
         </livery>        
     </model>
