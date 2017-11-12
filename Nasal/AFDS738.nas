@@ -7,6 +7,7 @@
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
 setprop("/it-autoflight/internal/heading-5-sec-ahead", 0);
+setprop("/it-autoflight/internal/altitude-5-sec-ahead", 0);
 
 setlistener("/sim/signals/fdm-initialized", func {
 	var trueSpeedKts = getprop("/instrumentation/airspeed-indicator/true-speed-kt");
@@ -295,9 +296,9 @@ var vertical = func {
 		} else {
 			setprop("/it-autoflight/mode/arm", " ");
 		}
-		var altnow = int((getprop("/instrumentation/altimeter/indicated-altitude-ft")+50)/100)*100;
-		setprop("/it-autoflight/input/alt", altnow);
-		setprop("/it-autoflight/internal/alt", altnow);
+		var alt5sec = math.round(getprop("/it-autoflight/internal/altitude-5-sec-ahead"), 500);
+		setprop("/it-autoflight/input/alt", alt5sec);
+		setprop("/it-autoflight/internal/alt", alt5sec);
 		thrustmode();
 	} else if (vertset == 1) {
 		alandt.stop();
