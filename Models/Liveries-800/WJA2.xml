@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">WestJet (with new winglets)</name>
+            <texture>/Liveries-800/WJA2.png</texture>
+                   <newwinglets type="bool">true</newwinglets>
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
