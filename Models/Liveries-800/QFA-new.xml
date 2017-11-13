@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">Qantas 2017</name>
+            <name type="string">Qantas</name>
             <texture>/Liveries-800/QFA-new.png</texture>
                    <newwinglets type="bool">false</newwinglets>
         </livery>        
