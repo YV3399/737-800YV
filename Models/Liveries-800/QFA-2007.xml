@@ -4,8 +4,8 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">Qantas 2007 Livery </name>
-            <texture>/Liveries-800/VH-VXI.png</texture>
+            <name type="string">Qantas 2007 Livery</name>
+            <texture>/Liveries-800/QFA-2007.png</texture>
                    <newwinglets type="bool">false</newwinglets>
         </livery>        
     </model>
