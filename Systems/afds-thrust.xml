@@ -217,9 +217,11 @@
 	</pid-controller>
 
 	<!-- IDLE THR -->
-	<pid-controller>
+	<filter>
 		<name>IDLE</name>
 		<debug>false</debug>
+		<type>gain</type>
+		<gain>1</gain>
 		<enable>
 			<condition>
 				<equals>
@@ -229,32 +231,28 @@
 			</condition>
 		</enable>
 		<input>
-			<value>900</value>
+			<condition>
+				<equals>
+					<property>/it-autoflight/mode/thr</property>
+					<value>RETARD</value>
+				</equals>
+			</condition>
+			<value>0.0</value>
 		</input>
-		<reference>
-			<value>0</value>
-		</reference>
+		<input>
+			<value>0.01</value>
+		</input>
 		<output>
 			<property>/controls/engines/throttle-cmd-pid</property>
 		</output>
-		<config>
-			<Kp>0.008</Kp>
-			<beta>1.0</beta>
-			<alpha>0.1</alpha>
-			<gamma>0.0</gamma>
-			<Ti>10.0</Ti>
-			<Td>0.00001</Td>
-			<u_min>0.01</u_min>
-			<u_max>
-				<property>/controls/engines/throttle-limit</property>
-			</u_max>
-		</config>
-	</pid-controller>
+	</filter>
 
 	<!-- CLB THR -->
-	<pid-controller>
+	<filter>
 		<name>CLB</name>
 		<debug>false</debug>
+		<type>gain</type>
+		<gain>1</gain>
 		<enable>
 			<condition>
 				<equals>
@@ -264,27 +262,12 @@
 			</condition>
 		</enable>
 		<input>
-			<value>0</value>
+			<property>/controls/engines/throttle-limit</property>
 		</input>
-		<reference>
-			<value>900</value>
-		</reference>
 		<output>
-			<property>/controls/engines/throttle-cmd-pid</property>
+			<property>/controls/flight/throttle-cmd</property>
 		</output>
-		<config>
-			<Kp>0.008</Kp>
-			<beta>1.0</beta>
-			<alpha>0.1</alpha>
-			<gamma>0.0</gamma>
-			<Ti>10.0</Ti>
-			<Td>0.00001</Td>
-			<u_min>0.005</u_min>
-			<u_max>
-				<property>/controls/engines/throttle-limit</property>
-			</u_max>
-		</config>
-	</pid-controller>
+	</filter>
 	
 	<!-- Throttle PID Normalizer -->
 	<filter>
@@ -303,7 +286,7 @@
 		<input>/controls/engines/throttle-cmd-pid</input>
 		<output>/controls/engines/throttle-cmd-norm</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.1</max-rate-of-change>
+		<max-rate-of-change>0.15</max-rate-of-change>
 	</filter>
 	
 	<!-- Engine 1 -->
@@ -329,7 +312,7 @@
 		<input>/controls/engines/throttle-cmd-pid</input>
 		<output>/controls/engines/engine[0]/throttle</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.1</max-rate-of-change>
+		<max-rate-of-change>0.15</max-rate-of-change>
 	</filter>
 	
 	<!-- Engine 2 -->
@@ -355,7 +338,7 @@
 		<input>/controls/engines/throttle-cmd-pid</input>
 		<output>/controls/engines/engine[1]/throttle</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.1</max-rate-of-change>
+		<max-rate-of-change>0.15</max-rate-of-change>
 	</filter>
 
 </PropertyList>

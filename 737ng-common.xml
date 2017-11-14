@@ -243,8 +243,11 @@
 			</cmd>
 			<autoland>
 				<kp-pitch>0.03</kp-pitch>
-				<kp-rudder>-0.01</kp-rudder>
+				<kp-rudder>-0.05</kp-rudder>
 			</autoland>
+			<rollout>
+				<kp-rudder>-0.02</kp-rudder>
+			</rollout>
 		</config>
 		<settings>
 			<auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
