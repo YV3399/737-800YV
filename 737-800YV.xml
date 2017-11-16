@@ -143,7 +143,7 @@
 			<location unit="IN">
 				<x> 161 </x>
 				<y>   0 </y>
-				<z> -105.83 </z> <!-- BWL 106.57 -->
+				<z> -110.83 </z> <!-- BWL 106.57 -->
 			</location>
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
@@ -217,7 +217,7 @@
 			<location unit="IN">
 				<x>  775 </x>
 				<y> -112.5 </y>
-				<z> -111.99 </z> <!-- BWL 98.31 -->
+				<z> -113.99 </z> <!-- BWL 98.31 -->
 			</location>
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
@@ -292,7 +292,7 @@
 			<location unit="IN">
 				<x> 775 </x>
 				<y> 112.5 </y>
-				<z> -111.99 </z> <!-- BWL 98.31 -->
+				<z> -113.99 </z> <!-- BWL 98.31 -->
 			</location>
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>

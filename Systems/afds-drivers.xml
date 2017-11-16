@@ -19,7 +19,7 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/orientation/heading-magnetic-deg</property>
+			<property>/it-autoflight/internal/heading-deg</property>
 		</input>
 		<input>
 			<condition>
@@ -28,7 +28,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/orientation/heading-deg</property>
+			<property>/it-autoflight/internal/track-deg</property>
 		</input>
 		<output>/it-autoflight/internal/heading-5-sec-ahead</output>
 		<seconds>5.0</seconds>
@@ -264,6 +264,56 @@
     </filter>
   
 	<filter>
+		<name>HEADING DEG</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<property>/it-autoflight/input/true-course</property>
+			</condition>
+			<property>/orientation/heading-deg</property>
+		</input>
+		<input>
+			<property>/orientation/heading-magnetic-deg</property>
+		</input>
+		<reference>0</reference>
+		<output>/it-autoflight/internal/heading-deg</output>
+	</filter>
+	
+	<filter>
+		<name>TRACK DEG</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<property>/it-autoflight/input/true-course</property>
+					<greater-than>
+						<property>/velocities/groundspeed-kt</property>
+						<value>1</value>
+					</greater-than>
+				</and>
+			</condition>
+			<property>/orientation/track-deg</property>
+		</input>
+		<input>
+			<condition>
+				<and>
+					<not><property>/it-autoflight/input/true-course</property></not>
+					<greater-than>
+						<property>/velocities/groundspeed-kt</property>
+						<value>1</value>
+					</greater-than>
+				</and>
+			</condition>
+			<property>/orientation/track-magnetic-deg</property>
+		</input>
+		<input>/instrumentation/pfd/heading-deg</input>
+		<reference>0</reference>
+		<output>/it-autoflight/internal/track-deg</output>
+	</filter>
+  
+	<filter>
 		<name>HEADING ERROR DEG</name>
 		<debug>false</debug>
 		<type>gain</type>
@@ -282,7 +332,7 @@
 			</condition>
 			<property>/it-autoflight/input/hdg</property>
 			<offset>
-				<property>/orientation/heading-magnetic-deg</property>
+				<property>/it-autoflight/internal/heading-deg</property>
 				<scale>-1.0</scale>
 			</offset>
 		</input>
@@ -301,7 +351,7 @@
 			</condition>
 			<property>/it-autoflight/input/hdg</property>
 			<offset>
-				<property>/orientation/heading-deg</property>
+				<property>/it-autoflight/internal/track-deg</property>
 				<scale>-1.0</scale>
 			</offset>
 		</input>
