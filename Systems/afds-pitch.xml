@@ -728,6 +728,14 @@
 		<enable>
 			<condition>
 				<and>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>0</value>
+					</equals>
 					<or>
 						<equals>
 							<property>/it-autoflight/output/ap1</property>
@@ -802,7 +810,34 @@
 			</condition>
 		</enable>
 		<input>
+			<condition>
+				<and>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
 			<property>/it-autoflight/internal/elevator-cmd</property>
+		</input>
+		<input>
+			<condition>
+				<or>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>1</value>
+					</equals>
+				</or>
+			</condition>
+			<value>0.15</value>
 		</input>
 		<output>/controls/flight/elevator</output>
 		<type>noise-spike</type>

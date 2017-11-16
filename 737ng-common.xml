@@ -3,7 +3,7 @@
 <PropertyList>
 
 	<sim>
-               <author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), Jonathan Redpath (legoboyvdlp), RenanMsV (BR-RVD)</author>
+		<author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), Jonathan Redpath (legoboyvdlp), RenanMsV (BR-RVD)</author>
 		<status>Version 0.8</status>
 		<flight-model>jsb</flight-model>
 
@@ -37,12 +37,12 @@
 				<path>Aircraft/737-800YV/Systems/afds-pitch.xml</path>
 			</autopilot>
 			<autopilot n="7">
+				<name>AFDS THRUST</name>
+				<path>Aircraft/737-800YV/Systems/afds-thrust.xml</path>
+			</autopilot>
+			<autopilot n="8">
 				<name>IT-CWS</name>
 				<path>Aircraft/737-800YV/Systems/it-cws.xml</path>
-			</autopilot>
-			<!-- Uses a custom N1 based autothrottle -->
-			<autopilot n="8">
-				<path>Aircraft/737-800YV/Systems/custom-autothrust.xml</path>
 			</autopilot>
 			<autopilot n="9">
 				<path>Aircraft/737-800YV/Systems/autospeedbrake.xml</path>
@@ -170,7 +170,7 @@
 			</generic>
 		</multiplay>
 
-                <flight-recorder include="Systems/flight-recorder.xml"/>
+				<flight-recorder include="Systems/flight-recorder.xml"/>
 
 
 		<ai>
@@ -243,8 +243,11 @@
 			</cmd>
 			<autoland>
 				<kp-pitch>0.03</kp-pitch>
-				<kp-rudder>-0.01</kp-rudder>
+				<kp-rudder>-0.05</kp-rudder>
 			</autoland>
+			<rollout>
+				<kp-rudder>-0.02</kp-rudder>
+			</rollout>
 		</config>
 		<settings>
 			<auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
@@ -312,7 +315,7 @@
 					</binding>
 			</key>
 			
-                        <key n="103">
+						<key n="103">
 				<name>g</name>
 				<desc>Gear Up Custom Binding</desc>
 				<binding>
@@ -345,7 +348,7 @@
 				</binding>
 			</key>
 			
-                        <key n="2">
+						<key n="2">
 				<name>Ctrl-b</name>
 				<desc>Cycle speedbrake setting</desc>
 				<binding>
@@ -549,7 +552,7 @@
 
 		<gear>
 			<autobrakes type="int">0</autobrakes> <!-- 0=off, 1=1, 2=2, 3=3, 4=MAX, -1=RTO -->
-            <tiller-cmd-norm type="double">0</tiller-cmd-norm>
+			<tiller-cmd-norm type="double">0</tiller-cmd-norm>
 			<tiller-enabled type="bool">0</tiller-enabled>
 		</gear>
 
@@ -885,9 +888,9 @@
 			<file>Aircraft/737-800YV/Models/Instruments/CDU/boeing.nas</file> <!-- custom implementation of the CDU from instruments-3D -->
 		</cdu>
 		<boeing737>
-	<file>Aircraft/737-800YV/Models/Instruments/PFD/PFD.nas</file>
-	<file>Aircraft/737-800YV/Models/Instruments/EICAS/upperEICAS.nas</file>
-	<file>Aircraft/737-800YV/Models/Instruments/EICAS_Lower/lowerEICAS.nas</file>
+			<file>Aircraft/737-800YV/Models/Instruments/PFD/PFD.nas</file>
+			<file>Aircraft/737-800YV/Models/Instruments/EICAS/upperEICAS.nas</file>
+			<file>Aircraft/737-800YV/Models/Instruments/EICAS_Lower/lowerEICAS.nas</file>
 			<file>Aircraft/737-800YV/Nasal/air-ground.nas</file>
 			<file>Aircraft/737-800YV/Nasal/autostart.nas</file>
 			<file>Aircraft/737-800YV/Nasal/controls.nas</file>
@@ -898,7 +901,6 @@
 			<file>Aircraft/737-800YV/Nasal/liveries.nas</file>
 			<file>Aircraft/737-800YV/Nasal/systems.nas</file>
 			<file>Aircraft/737-800YV/Nasal/engine-fire.nas</file> 
-			<file>Aircraft/737-800YV/Nasal/PFD_FMA.nas</file>
 			<file>Aircraft/737-800YV/Nasal/limits.nas</file>
 			<file>Aircraft/737-800YV/Nasal/doors.nas</file> 
 		</boeing737>
@@ -916,6 +918,7 @@
 		<itaf>
 			<file>Aircraft/737-800YV/Nasal/AFDS738.nas</file>
 			<file>Aircraft/737-800YV/Nasal/AFDS738-b.nas</file>
+			<file>Aircraft/737-800YV/Nasal/AFDS738-c.nas</file>
 		</itaf>
 		<it-cws>
 			<file>Aircraft/737-800YV/Nasal/it-cws.nas</file>
