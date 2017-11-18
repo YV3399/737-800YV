@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">Transavia</name>
+            <name type="string">Transavia Old Livery</name>
             <texture>/Liveries-800/TRA.png</texture> 
 			<newwinglets type="bool">false</newwinglets> 			
         </livery>        
