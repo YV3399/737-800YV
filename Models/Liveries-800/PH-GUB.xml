@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Transavia New GOL Hybrid </name>
-            <texture>/Liveries-800/TRA-new.png</texture> 
+            <texture>/Liveries-800/PH-GUB.png</texture> 
 			<newwinglets type="bool">false</newwinglets> 			
         </livery>        
     </model>
