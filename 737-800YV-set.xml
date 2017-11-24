@@ -11,7 +11,7 @@
 		<splash-texture>Aircraft/737-800YV/Splash/splash-1.png</splash-texture>
                 <splash-texture>Aircraft/737-800YV/Splash/splash-2.png</splash-texture>
                 <splash-texture>Aircraft/737-800YV/Splash/splash-3.png</splash-texture>
-                <splash-texture>Aircraft/737-800YV/Splash/splash-4.png</splash-texture>		</startup>
+                <splash-texture>Aircraft/737-800YV/Splash/splash-4.png</splash-texture>		        </startup>
 		<previews>
 			<preview>
 				<type>exterior</type>
