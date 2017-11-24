@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Norwegian Air Shuttle (Erik Bye)</name>
+            <texture>/Liveries-800/LN-DYA.png</texture>       
+			<newwinglets type="bool">false</newwinglets>     
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
