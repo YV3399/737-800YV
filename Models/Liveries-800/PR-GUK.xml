@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">GOL CBF 2017</name>
-            <texture>/Liveries-800/GOLCBF2017.png</texture>            
+            <texture>/Liveries-800/PR-GUK.png</texture>            
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>
