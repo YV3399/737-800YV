@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Delta Skyteam</name>
-            <texture>/Liveries-800/DAL-skyteam.png</texture>   
+            <texture>/Liveries-800/N3755D.png</texture>   
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>

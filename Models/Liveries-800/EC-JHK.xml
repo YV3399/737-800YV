@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Air Europa SkyTeam</name>
-            <texture>Liveries-800/AEA-skyteam.png</texture>  
+            <texture>Liveries-800/EC-JHK.png</texture>  
 			<newwinglets type="bool">false</newwinglets>
         </livery>        
     </model>
