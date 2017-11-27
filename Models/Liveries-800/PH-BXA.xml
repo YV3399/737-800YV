@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">KLM Royal Dutch Airlines (retro)</name>
-            <texture>/Liveries-800/KLM-retro.png</texture>      
+            <texture>/Liveries-800/PH-BXA.png</texture>      
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>
