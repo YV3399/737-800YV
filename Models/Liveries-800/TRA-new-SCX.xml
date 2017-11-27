@@ -4,8 +4,8 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">Transavia (1998?-2015)</name>
-            <texture>/Liveries-800/TRA.png</texture> 
+            <name type="string">Transavia (2015) leased by Sun Country</name>
+            <texture>/Liveries-800/TRA-new-SCX.png</texture> 
 			<newwinglets type="bool">false</newwinglets> 			
         </livery>        
     </model>
