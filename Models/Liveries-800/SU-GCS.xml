@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Egypt Air Star Alliance</name>
-            <texture>Liveries-800/MSR SA.png</texture>  
+            <texture>Liveries-800/SU-GCS.png</texture>  
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>
