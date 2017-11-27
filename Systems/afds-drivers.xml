@@ -232,7 +232,7 @@
     <filter>
         <name>IAS SYNC</name>
         <type>gain</type>
-        <gain>1</gain>
+        <gain>1.0</gain>
 		<enable>
 			<condition>
 				<equals>
@@ -249,7 +249,7 @@
     <filter>
         <name>MACH SYNC</name>
         <type>gain</type>
-        <gain>1</gain>
+        <gain>1.0</gain>
 		<enable>
 			<condition>
 				<equals>
@@ -317,6 +317,7 @@
 		<name>HEADING ERROR DEG</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>
 			<condition>
 				<and>
@@ -388,7 +389,6 @@
 			<min>-180</min>
 			<max>180</max>
 		</period>
-		<gain>1.0</gain>
 	</filter>
 	
 	<filter>
@@ -460,6 +460,7 @@
 		<name>NAV ERROR DEG</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>
 			<condition>
 				<equals>
@@ -491,22 +492,22 @@
 			<min>-180</min>
 			<max>180</max>
 		</period>
-		<gain>1.0</gain>
 	</filter>
 
 	<filter>
 		<name>INTERNAL VERTICAL SPEED COMPUTER</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>60.0</gain>
 		<input>/velocities/vertical-speed-fps</input>
 		<output>/it-autoflight/internal/vert-speed-fpm</output>
-		<gain>55.5</gain>
 	</filter>
 	
 	<filter>
 		<name>INTERNAL VERTICAL SPEED COMPUTER SYNC 4</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<and>
@@ -521,15 +522,15 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/velocities/vertical-speed-fps</input>
+		<input>/it-autoflight/internal/vert-speed-fpm</input>
 		<output>/it-autoflight/internal/target-fpm-b</output>
-		<gain>55.5</gain>
 	</filter>
 	
 	<filter>
 		<name>INTERNAL VERTICAL SPEED COMPUTER SYNC 5</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<not-equals>
@@ -538,19 +539,18 @@
 				</not-equals>
 			</condition>
 		</enable>
-		<input>/velocities/vertical-speed-fps</input>
+		<input>/it-autoflight/internal/vert-speed-fpm</input>
 		<output>/it-autoflight/internal/target-fpm-d</output>
-		<gain>55.5</gain>
 	</filter>
 	
 	<filter>
 		<name>NAV1 G/S FPM Calc</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>/instrumentation/nav[0]/gs-rate-of-climb-fpm</input>
 		<output>/it-autoflight/internal/nav1-rate-of-climb-fpm</output>
-		<gain>1.0</gain>
-		<min>-1500</min>
+		<min>-1200</min>
 		<max>0</max>
 	</filter>
 	
@@ -558,10 +558,10 @@
 		<name>NAV2 G/S FPM Calc</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>/instrumentation/nav[1]/gs-rate-of-climb-fpm</input>
 		<output>/it-autoflight/internal/nav2-rate-of-climb-fpm</output>
-		<gain>1.0</gain>
-		<min>-1500</min>
+		<min>-1200</min>
 		<max>0</max>
 	</filter>
 	
