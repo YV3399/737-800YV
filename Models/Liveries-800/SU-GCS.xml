@@ -4,8 +4,8 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">GOL CBF 2017</name>
-            <texture>/Liveries-800/GOLCBF2017.png</texture>            
+            <name type="string">Egypt Air Star Alliance</name>
+            <texture>Liveries-800/SU-GCS.png</texture>  
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>

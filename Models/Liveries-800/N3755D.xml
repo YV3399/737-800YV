@@ -4,8 +4,8 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">KLM Royal Dutch Airlines (retro)</name>
-            <texture>/Liveries-800/KLM-retro.png</texture>      
+            <name type="string">Delta Skyteam</name>
+            <texture>/Liveries-800/N3755D.png</texture>   
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>

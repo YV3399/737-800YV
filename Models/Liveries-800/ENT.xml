@@ -1,11 +1,11 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
  
 <PropertyList>
 <sim>
     <model>
         <livery>                     
-            <name type="string">Egypt Air 85th Livery</name>
-            <texture>Liveries-800/MSR SU-GEH.png</texture>   
+            <name type="string">Enter Air</name>
+            <texture>Liveries-800/ENT.png</texture> 
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>

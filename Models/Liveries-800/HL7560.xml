@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Korean Air Skyteam</name>
+            <texture>/Liveries-800/HL7560.png</texture>   
+			<newwinglets type="bool">false</newwinglets> 
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
