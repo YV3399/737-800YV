@@ -843,123 +843,23 @@
 		<type>noise-spike</type>
 		<max-rate-of-change>2.5</max-rate-of-change>
 	</filter>
-
- <!-- =============================================================== -->
- <!-- Autotrim                                                        -->
- <!-- =============================================================== -->
 	
-	<pid-controller>
-		<name>AP PITCH HELPER PLUS</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<and>
-					<greater-than>
-						<property>/it-autoflight/internal/elevator-cmd</property>
-						<value>0.01</value>
-					</greater-than>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/ap1</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/ap2</property>
-							<value>1</value>
-						</equals>
-					</or>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>9</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>10</value>
-					</not-equals>
-				</and>
-			</condition>
-		</enable>
-		<input>
-			<value>0</value>
-		</input>
-		<reference>
-			<value>1</value>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/elevator-trim-cmd</property>
-		</output>
-		<config>
-			<Kp>0.08</Kp>
-			<beta>1.0</beta>
-			<alpha>0.1</alpha>
-			<gamma>0.0</gamma>
-			<Ti>10</Ti>
-			<Td>0.00001</Td>
-			<u_min>-1.00</u_min>
-			<u_max>1.00</u_max>
-		</config>
-	</pid-controller>
-	
-	<pid-controller>
-		<name>AP PITCH HELPER MINUS</name>
-		<debug>false</debug>
-		<enable>
-			<condition>
-				<and>
-					<less-than>
-						<property>/it-autoflight/internal/elevator-cmd</property>
-						<value>-0.01</value>
-					</less-than>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/ap1</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/ap2</property>
-							<value>1</value>
-						</equals>
-					</or>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>9</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>10</value>
-					</not-equals>
-				</and>
-			</condition>
-		</enable>
-		<input>
-			<value>0</value>
-		</input>
-		<reference>
-			<value>1</value>
-		</reference>
-		<output>
-			<property>/it-autoflight/internal/elevator-trim-cmd</property>
-		</output>
-		<config>
-			<Kp>-0.08</Kp>
-			<beta>1.0</beta>
-			<alpha>0.1</alpha>
-			<gamma>0.0</gamma>
-			<Ti>10</Ti>
-			<Td>0.00001</Td>
-			<u_min>-1.00</u_min>
-			<u_max>1.00</u_max>
-		</config>
-	</pid-controller>
-		
 	<filter>
-		<name>IT-CONTROLLER: PITCH TRIM CMD</name>
+		<name>IT-CONTROLLER: PITCH TRIM</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
 		<enable>
 			<condition>
 				<and>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>0</value>
+					</equals>
 					<or>
 						<equals>
 							<property>/it-autoflight/output/ap1</property>
@@ -970,14 +870,6 @@
 							<value>1</value>
 						</equals>
 					</or>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>9</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>10</value>
-					</not-equals>
 					<or>
 						<greater-than>
 							<property>/it-autoflight/internal/elevator-cmd</property>
@@ -992,11 +884,26 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/it-autoflight/internal/elevator-trim-cmd</property>
+			<condition>
+				<greater-than>
+					<property>/it-autoflight/internal/elevator-cmd</property>
+					<value>0.01</value>
+				</greater-than>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/it-autoflight/internal/elevator-cmd</property>
+					<value>-0.01</value>
+				</less-than>
+			</condition>
+			<value>-1</value>
 		</input>
 		<output>/controls/flight/elevator-trim</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.007</max-rate-of-change>
+		<max-rate-of-change>0.01</max-rate-of-change>
 	</filter>
 
 </PropertyList>
