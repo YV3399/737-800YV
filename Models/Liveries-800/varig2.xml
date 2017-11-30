@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">VARIG</name>
+            <name type="string">VARIG (PR-VBF)</name>
             <texture>/Liveries-800/varig2.png</texture>  
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
