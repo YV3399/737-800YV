@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Japan Airlines (Sunarc)</name>
+            <texture>Liveries-800/JAL-OLD.png</texture>       
+			<newwinglets type="bool">false</newwinglets> 
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
