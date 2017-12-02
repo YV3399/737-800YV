@@ -156,11 +156,11 @@
 			<property>/controls/engines/throttle-cmd-pid</property>
 		</output>
 		<config>
-			<Kp>0.05</Kp>
+			<Kp>0.055</Kp>
 			<beta>1.0</beta>
 			<alpha>0.1</alpha>
 			<gamma>0.0</gamma>
-			<Ti>10.0</Ti>
+			<Ti>9.0</Ti>
 			<Td>0.00001</Td>
 			<u_min>0.005</u_min>
 			<u_max>
@@ -193,21 +193,21 @@
 		</enable>
 		<input>
 			<property>/instrumentation/airspeed-indicator/indicated-mach</property>
-			<scale>500.0</scale>
+			<scale>1000.0</scale>
 		</input>
 		<reference>
 			<property>/it-autoflight/internal/mach</property>
-			<scale>500.0</scale>
+			<scale>1000.0</scale>
 		</reference>
 		<output>
 			<property>/controls/engines/throttle-cmd-pid</property>
 		</output>
 		<config>
-			<Kp>0.05</Kp>
+			<Kp>0.055</Kp>
 			<beta>1.0</beta>
 			<alpha>0.1</alpha>
 			<gamma>0.0</gamma>
-			<Ti>10.0</Ti>
+			<Ti>9.0</Ti>
 			<Td>0.00001</Td>
 			<u_min>0.005</u_min>
 			<u_max>
@@ -265,7 +265,7 @@
 			<property>/controls/engines/throttle-limit</property>
 		</input>
 		<output>
-			<property>/controls/flight/throttle-cmd</property>
+			<property>/controls/engines/throttle-cmd-pid</property>
 		</output>
 	</filter>
 	
