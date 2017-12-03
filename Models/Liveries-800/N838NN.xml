@@ -4,7 +4,7 @@
 <sim>
     <model>
        <livery>                     
-            <name type="string">American Airlines (Oneworld Livery) (Work in Progress)</name>
+            <name type="string">American Airlines (Oneworld Livery)</name>
             <texture>/Liveries-800/N838NN.png</texture>       
 			<newwinglets type="bool">false</newwinglets>              
         </livery>        
