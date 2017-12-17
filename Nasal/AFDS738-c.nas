@@ -132,7 +132,6 @@ setlistener("/it-autoflight/mode/vert", func {
 	} else if (vert == "G/S") {
 		if (newvert != "G/S") {
 			setprop("/autopilot/display/pitch-mode", "G/S");
-			gsupdate.start();
 		}
 	} else if (vert == "SPD CLB") {
 		if (newvert != "MCP SPD") {

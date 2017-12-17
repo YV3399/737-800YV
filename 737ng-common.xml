@@ -224,31 +224,6 @@
 	</lighting>
 
 	<it-autoflight>
-		<config>
-			<roll>
-				<gain>-0.05</gain>
-				<min>-0.4</min>
-				<max>0.4</max>
-			</roll>
-			<pitch>
-				<gain>0.12</gain>
-				<min>-0.3</min>
-				<max>0.3</max>
-			</pitch>
-			<cmd>
-				<roll-kp>-0.9</roll-kp>
-				<roll-scale>1.0</roll-scale>
-				<vorloc>-1.5</vorloc>
-				<vs>0.01</vs>
-			</cmd>
-			<autoland>
-				<kp-pitch>0.03</kp-pitch>
-				<kp-rudder>-0.05</kp-rudder>
-			</autoland>
-			<rollout>
-				<kp-rudder>-0.02</kp-rudder>
-			</rollout>
-		</config>
 		<settings>
 			<auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
 			<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->

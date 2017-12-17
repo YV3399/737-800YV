@@ -776,7 +776,7 @@ var canvas_PFD = {
 		me["pitchArmMode"].setText(apPitchArm);
 
 		var spdChange = getprop("/autopilot/display/throttle-mode-rectangle");
-		if (spdChange == 1 and getprop("/autopilot/display/throttle-mode") != " ") {
+		if (spdChange == 1 and getprop("/autopilot/display/throttle-mode") != " " and getprop("/it-autoflight/output/athr") == 1) {
 			me["spdModeChange"].show();
 		} else {
 			me["spdModeChange"].hide();
