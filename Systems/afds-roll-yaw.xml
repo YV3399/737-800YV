@@ -59,10 +59,8 @@
 			<property>/it-autoflight/internal/target-roll-deg</property>
 		</output>
 		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/roll-kp</property>
-			</Kp>
-			<Ki>0.0</Ki>
+			<Kp>-0.9</Kp>
+			<Ki>-0.000001</Ki>
 			<min>
 				<property>/it-autoflight/internal/bank-limit</property>
 				<scale>-1</scale>
@@ -114,9 +112,7 @@
 			<property>/it-autoflight/internal/target-roll-deg</property>
 		</output>
 		<config>
-			<Kp>
-				<property>/it-autoflight/config/cmd/vorloc</property>
-			</Kp>
+			<Kp>-1.5</Kp>
 			<Ki>-0.0001</Ki>
 			<min>
 				<property>/it-autoflight/internal/bank-limit</property>
@@ -132,7 +128,7 @@
 		<name>ROLL DEG SYNC</name>
 		<debug>false</debug>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<or>
@@ -189,9 +185,7 @@
 		<name>System Command: Roll Rate</name>
 		<debug>false</debug>
 		<type>gain</type>
-		<gain>
-			<property>/it-autoflight/config/roll/gain</property>
-		</gain>
+		<gain>-0.6</gain>
 		<enable>
 			<condition>
 				<and>
@@ -246,37 +240,16 @@
 			<value>0</value>
 		</reference>
 		<output>
-			<property>/it-autoflight/internal/rate-aileron-cmd</property>
+			<property>/it-autoflight/internal/roll-rate</property>
 		</output>
-		<min>
-			<property>/it-autoflight/config/roll/min</property>
-		</min>
-		<max>
-			<property>/it-autoflight/config/roll/max</property>
-		</max>
+		<min>-4.8</min>
+		<max>4.8</max>
 	</filter>
-	
-	<filter>
-		<name>IT-CONTROLLER: ROLL RATE CMD</name>
-		<type>gain</type>
-		<gain>1</gain>
-		<input>
-			<expression>
-				<table>
-					<property>/it-autoflight/internal/rate-aileron-cmd</property> 
-					<entry><ind>-1</ind><dep>-12.0</dep></entry>
-					<entry><ind> 0</ind><dep>  0.0</dep></entry>
-					<entry><ind> 1</ind><dep> 12.0</dep></entry>
-				</table>
-			</expression>
-		</input>
-		<output>/it-autoflight/internal/roll-rate</output>
-    </filter>
 	
 	<filter>
 		<name>IT-CONTROLLER: ROLL RATE KP (P Gain)</name>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<input>
 			<expression>
 				<table>
@@ -346,7 +319,7 @@
 	<filter>
 		<name>IT-CONTROLLER: RUDDER NORMALIZER</name>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<or>
@@ -462,7 +435,7 @@
 						</equals>
 					</and>
 				</condition>
-				<property>/it-autoflight/config/autoland/kp-rudder</property>
+				<value>-0.05</value>
 			</Kp>
 			<Kp>
 				<condition>
@@ -477,7 +450,7 @@
 						</equals>
 					</or>
 				</condition>
-				<property>/it-autoflight/config/rollout/kp-rudder</property>
+				<value>-0.02</value>
 			</Kp>
 			<Ki>0</Ki>
 		</config>
@@ -524,7 +497,7 @@
 		</input>
 		<output>/controls/flight/rudder</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.20</max-rate-of-change>
+		<max-rate-of-change>0.6</max-rate-of-change>
 	</filter>
 
 </PropertyList>
