@@ -312,6 +312,19 @@
 		<reference>0</reference>
 		<output>/it-autoflight/internal/track-deg</output>
 	</filter>
+	
+	<filter>
+		<name>DRIFT ANGLE</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>/orientation/track-magnetic-deg</input>
+		<reference>/orientation/heading-magnetic-deg</reference>
+		<output>/it-autoflight/internal/drift-angle-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
+	</filter>
   
 	<filter>
 		<name>HEADING ERROR DEG</name>
@@ -367,7 +380,7 @@
 				<sum>
 					<property>/autopilot/route-manager/wp[0]/true-bearing-deg</property>
 					<product>
-						<property>/autopilot/internal/drift-angle-deg</property>
+						<property>/it-autoflight/internal/drift-angle-deg</property>
 						<value>-1</value>
 					</product>
 					<product>
