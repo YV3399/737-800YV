@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Air Canada (fictional)</name>
+            <texture>/Liveries-800/ACA.png</texture>  
+               <newwinglets type="bool">true</newwinglets>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
