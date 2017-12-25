@@ -48,9 +48,6 @@
 		</enable>
 		<input>
 			<property>/it-autoflight/internal/heading-error-deg</property>
-			<scale>
-				<property>/it-autoflight/config/cmd/roll-scale</property>
-			</scale>
 		</input>
 		<reference>
 			<value>0</value>
