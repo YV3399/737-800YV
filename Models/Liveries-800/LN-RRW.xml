@@ -4,8 +4,8 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">SAS (Star Alliance 10th Anniversary)</name>
-            <texture>/Liveries-800/LN-RRL.png</texture> 
+            <name type="string">SAS (Star Alliance)</name>
+            <texture>/Liveries-800/LN-RRW.png</texture> 
                <newwinglets type="bool">false</newwinglets>            
         </livery>        
     </model>
