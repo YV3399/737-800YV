@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Lion Air 80th 737 Next Generation Livery</name>
-            <texture>/Liveries-800/LNI PK-LKP.png</texture>       
+            <texture>/Liveries-800/PK-LKP.png</texture>       
 			<newwinglets type="bool">false</newwinglets>     
     </livery>        
     </model>
