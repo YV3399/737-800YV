@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">LOT Polish Airlines</name>
+            <name type="string">LOT</name>
             <texture>Liveries-800/LOT.png</texture>     
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
