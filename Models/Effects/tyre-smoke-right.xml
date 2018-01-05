@@ -44,12 +44,13 @@
 			</rotation-speed>
 		</shooter>
 
-		<counter>
-			<particles-per-sec>
-				<value>250</value>
-				<spread>100</spread>
-			</particles-per-sec>
-		</counter>
+		  <counter>
+            <particles-per-sec>
+				<property>velocities/speed-down-fps</property>
+				<factor>1</factor>
+                <spread>50</spread>
+            </particles-per-sec>
+                 </counter>
 
 		<align>billboard</align>
 
@@ -57,35 +58,35 @@
 			<start>
 				<color>
 					<red>
-						<value>0.95</value>
+						<value>0.9</value>
 					</red>
 					<green>
-						<value>0.95</value>
+						<value>0.9</value>
 					</green>
 					<blue>
-						<value>0.95</value>
+						<value>0.9</value>
 					</blue>
 					<alpha>
-						<value>0.05</value>
+						<value>0.5</value>
 					</alpha>
 				</color>
 				<size>
-					<value>0.5</value>
+					<value>1.5</value>
 				</size>
 			</start>
 			<end>
 				<color>
 					<red>
-						<value>1</value>
+						<value>0.7</value>
 					</red>
 					<green>
-						<value>1</value>
+						<value>0.7</value>
 					</green>
 					<blue>
-						<value>1</value>
+						<value>0.7</value>
 					</blue>
 					<alpha>
-						<value>0.020</value>
+						<value>0.005</value>
 					</alpha>
 				</color>
 				<size>
@@ -93,7 +94,7 @@
 				</size>
 			</end>
 			<life-sec>
-				<value>1</value>
+				<value>2</value>
 			</life-sec>
 			<mass-kg>0.025</mass-kg>
 			<radius-m>0.175</radius-m>
@@ -101,7 +102,7 @@
 
 		<program>
 			<fluid>air</fluid>
-			<gravity>true</gravity>
+			<gravity>false</gravity>
 			<wind>true</wind>
 		</program>
 
