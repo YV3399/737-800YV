@@ -59,7 +59,7 @@
         <offset>0</offset>
         <two-sides type="bool">false</two-sides>
         <min>0.5</min>
-        <max>80</max>
+        <max>1.5</max>
     </animation>
 
 
