@@ -5,9 +5,10 @@
     <model>
         <livery>                     
             <name type="string">TUI (fictional)</name>
-            <texture>/Liveries-800/TUI.png</texture> 
+            <texture>/Liveries-800/TUI-blue.png</texture> 
 			<newwinglets type="bool">true</newwinglets> 
         </livery>        
     </model>
 </sim>
 </PropertyList>
+

@@ -6,8 +6,9 @@
         <livery>                     
             <name type="string">SAS</name>
             <texture>/Liveries-800/SAS.png</texture> 
-               <newwinglets type="bool">true</newwinglets>            
+               <newwinglets type="bool">false</newwinglets>            
         </livery>        
     </model>
 </sim>
 </PropertyList>
+
