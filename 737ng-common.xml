@@ -744,7 +744,7 @@
 				<category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
 			</configuration-module>
 			<voice>		
-				<file-prefix type="string">Aircraft/737-800YV/Sounds/gpws/</file-prefix>		
+				<file-prefix type="string">Aircraft/737-800YV/Sounds/GPWS/</file-prefix>		
 			</voice>
 			<inputs>                            <!-- Module I/O -->
 				<arinc429>

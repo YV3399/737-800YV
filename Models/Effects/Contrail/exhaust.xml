@@ -7,7 +7,7 @@ by YV3399
 <particlesystem>
 	<!-- <type>trail</type>-->
 	<name>flare</name>
-	<texture>contrail.rgb</texture>
+	<texture>smoke.png</texture>
 	<emissive>true</emissive>
 	<lighting>false</lighting>
 	<offsets>
