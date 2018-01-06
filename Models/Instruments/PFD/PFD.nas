@@ -1,6 +1,6 @@
 # ==============================================================================
 # Original Boeing 747-400 PFD by Gijs de Rooy
-# Modified for 737-800 by Michael Soitanen
+# Modified for 737-800 by Michael Soitanen and Gabriel Hernandez(YV3399)
 # Modified for IT-AUTOFLIGHT by Joshua Davidson (it0uchpods/411)
 # ==============================================================================
 
@@ -301,7 +301,17 @@ var canvas_PFD = {
 		me["compassSNmbr4"].setText(sprintf("%0.0f", SNmbr4));
 		me["compassSNmbr5"].setText(sprintf("%0.0f", SNmbr5));
 		me["compassSNmbr6"].setText(sprintf("%0.0f", SNmbr6));
-			
+		me["compassLNmbr1"].update();
+ 		me["compassLNmbr2"].update();
+ 		me["compassLNmbr3"].update();
+ 		me["compassSNmbr1"].update();
+ 		me["compassSNmbr2"].update();
+ 		me["compassSNmbr3"].update();
+ 		me["compassSNmbr4"].update();
+ 		me["compassSNmbr5"].update();
+ 		me["compassSNmbr6"].update();
+        
+        	
 		# Flight director
 		var itaffd1x = getprop("/it-autoflight/output/fd1");
 		var itaffd2x = getprop("/it-autoflight/output/fd2");
@@ -391,7 +401,8 @@ var canvas_PFD = {
 			var curAltDig1Add = 0;
 		}
 		me["curAltDig1"].setTranslation(0,curAltDig1Add*64/20);
-		
+		me["curAltDig1"].update();
+        
 		if (alt > 0) {
 			me["curAltDig2High"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/1000)+1,10)));
 			me["curAltDig2Low"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/1000),10)));
@@ -407,6 +418,7 @@ var canvas_PFD = {
 			var curAltDig2Add = 0;
 		}
 		me["curAltDig2"].setTranslation(0,curAltDig2Add*64/20);
+                me["curAltDig2"].update();
 
 		if (alt > 0) {
 			me["curAltDig3High"].setText(sprintf("%1.0f",math.fmod(math.floor(alt/100)+1,10)));
@@ -423,14 +435,16 @@ var canvas_PFD = {
 			var curAltDig3Add = 0;
 		}
 		me["curAltDig3"].setTranslation(0,curAltDig3Add*59/20);
-
+                me["curAltDig3"].update();
+        
 		var altR20 = roundToNearest(alt, 20);
 		me["curAltDig45High2"].setText(sprintf("%02d",math.mod(math.abs(altR20+20),100)));
 		me["curAltDig45High1"].setText(sprintf("%02d",math.mod(math.abs(altR20),100)));
 		me["curAltDig45Low1"].setText(sprintf("%02d",math.mod(math.abs(altR20-20),100)));
 		me["curAltDig45Low2"].updateText(sprintf("%02d",math.mod(math.abs(altR20-40),100)));
 		me["curAltDig45"].setTranslation(0,((alt - altR20)/20*36.31));
-
+                me["curAltDig45"].update();
+        
 		me["curAltMtrTxt"].setText(sprintf("%4.0f",alt*FT2M));
 		
 		var altAlert = getprop("/b737/warnings/altitude-alert");
@@ -996,7 +1010,8 @@ var canvas_PFD = {
 		}
 		var navId = getprop("instrumentation/nav[0]/nav-id");
 		var navFrq = getprop("instrumentation/nav[0]/frequencies/selected-mhz-fmt") or 0;
-		if (navId == "" or navId == nil) {
+		var navInRange = getprop("instrumentation/nav[0]/in-range");
+                if (navId == "" or navId == nil or navInRange == 0) {
 			me["ilsId"].setText(sprintf("%s /%03d°",navFrq,getprop("instrumentation/nav/radials/selected-deg")));
 		} else {
 			me["ilsId"].setText(sprintf("%s /%03d°",navId,getprop("instrumentation/nav/radials/selected-deg")));

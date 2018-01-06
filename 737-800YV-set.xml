@@ -23,7 +23,7 @@
 		<model>
 			<path>Aircraft/737-800YV/Models/737-800.xml</path>       
 			<livery>
-				<file>N737BX</file>
+				<file>BOE</file>
 				<newwinglets type="bool">false</newwinglets>   
 			</livery>
 			<rendering>
