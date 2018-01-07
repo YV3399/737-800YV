@@ -8,7 +8,7 @@ This aircraft was modified and updated in a joint effort by the following people
 * Joshua Davidson (it0uchpods): Autoflight, FDM, Systems, Other.
 * RenanMsV (BR-RVD): Animations, 3D, Textures Etc.
 
-![image](http://imgur.com/oO0tJ8n.png)
+![image](https://imgur.com/A03GZVi.png)
 ![Image](https://imgur.com/wmfyjHC.png)
 ![Image](http://imgur.com/gqGSLMs.png)
 
