@@ -11,6 +11,7 @@
     <texture n="1">
       <image>Aircraft/737-800YV/Models/Effects/LightMap/737-800lightmap.png</image>
     </texture>
+    <factor><use>/controls/lighting/logo-lights</use></factor>  
   </parameters>
   <object-name>rhwinglet.001</object-name>
   <object-name>rhwinglet.001</object-name>
