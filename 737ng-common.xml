@@ -238,8 +238,6 @@
 			<retard-ft>35</retard-ft> <!-- Enable Thrust Retard -->
 			<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
 			<togaspd>156</togaspd> <!-- V2 + 10kts -->
-			<lat-agl-ft>999999</lat-agl-ft> <!-- Set to 999999 if you do not want T/O to change automatically to HDG, or LNAV -->
-			<reduc-agl-ft>999999</reduc-agl-ft> <!-- Set to 999999 if you do not want TOGA to change automatically to FLCH -->
 			<autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
 		</settings>
 		<custom>
