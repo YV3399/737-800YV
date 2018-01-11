@@ -196,6 +196,13 @@
 							<script>acconfig.main_dlg.open();</script>
 						</binding>
 					</item>
+					<item>
+						<lable>Select Livery</lable>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.toggle();</script>
+						</binding>
+					</item>
 					<item n="10">
 						<label>Pushback</label>
 						<name>pushback</name>
