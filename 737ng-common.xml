@@ -6,6 +6,39 @@
 		<author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), Jonathan Redpath (legoboyvdlp), RenanMsV (BR-RVD)</author>
 		<status>Version 0.8</status>
 		<flight-model>jsb</flight-model>
+                
+                <previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-1.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-2.png</path>
+			</preview>
+			<preview>
+				<type>interior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-3.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-4.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-5.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-6.png</path>
+			</preview>
+		</previews>
 
 		<systems>
 			<!-- Disable the generic electrical system -->
