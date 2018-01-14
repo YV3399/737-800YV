@@ -8,13 +8,13 @@
 
 		<aero>737-800YV</aero>
 		<startup>
-		<splash-texture>Aircraft/737-800YV/Splash/splash-1.png</splash-texture>
-                <splash-texture>Aircraft/737-800YV/Splash/splash-2.png</splash-texture>
-                <splash-texture>Aircraft/737-800YV/Splash/splash-3.png</splash-texture>
-                <splash-texture>Aircraft/737-800YV/Splash/splash-4.png</splash-texture>
-                <splash-texture>Aircraft/737-800YV/Splash/splash-5.png</splash-texture>
-                <splash-texture>Aircraft/737-800YV/Splash/splash-6.png</splash-texture>
-        </startup>
+                        <splash-texture>Aircraft/737-800YV/Splash/splash-1.png</splash-texture>
+                        <splash-texture>Aircraft/737-800YV/Splash/splash-2.png</splash-texture>
+                        <splash-texture>Aircraft/737-800YV/Splash/splash-3.png</splash-texture>
+                        <splash-texture>Aircraft/737-800YV/Splash/splash-4.png</splash-texture>
+                        <splash-texture>Aircraft/737-800YV/Splash/splash-5.png</splash-texture>
+                        <splash-texture>Aircraft/737-800YV/Splash/splash-6.png</splash-texture>
+                </startup>
 		<previews>
 			<preview>
 				<type>exterior</type>
@@ -155,10 +155,10 @@
 
 	<limits> <!-- based on EI-RUA aircraft data -->
 		<mass-and-balance>
-			<maximum-ramp-mass-lbs>17300</maximum-ramp-mass-lbs>
+			<maximum-ramp-mass-lbs>173000</maximum-ramp-mass-lbs>
 			<maximum-takeoff-mass-lbs>172500</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>14400.76</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>13600</maximum-zero-fuel-mass-lbs>
+			<maximum-landing-mass-lbs>144076</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>136000</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 		<max-flap-extension-speed>
 			<flaps>0.125</flaps>

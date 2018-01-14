@@ -5,6 +5,13 @@
   <particlesystem>
     <name>smoke</name>
     <texture>smoke.png</texture>
+    
+    <offsets>
+        <x-m>30</x-m>
+        <y-m>0.00</y-m>
+        <z-m>3</z-m>
+        <pitch-deg>90</pitch-deg>
+    </offsets>
 
     <emissive type="bool">false</emissive>
     <lighting type="bool">false</lighting>
