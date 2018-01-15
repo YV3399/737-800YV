@@ -38,6 +38,11 @@
 				<splash type="bool">true</splash>
 				<path>Splash/splash-6.png</path>
 			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash-7.png</path>
+			</preview>
 		</previews>
 
 		<systems>
