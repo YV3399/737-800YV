@@ -7,7 +7,7 @@
 		<status>Version 0.8</status>
 		<flight-model>jsb</flight-model>
                 
-                <previews>
+		<previews>
 			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
