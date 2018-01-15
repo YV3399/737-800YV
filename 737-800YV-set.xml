@@ -20,7 +20,7 @@
 			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
-				<path>Splash/Splash-1.png</path>
+				<path>Splash/splash-1.png</path>
 			</preview>
 		</previews>
 
