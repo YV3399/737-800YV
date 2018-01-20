@@ -145,7 +145,7 @@
 				<y>   0 </y>
 				<z> -110.83 </z> <!-- BWL 106.57 -->
 			</location>
-			<static_friction>  0.80 </static_friction>
+			<static_friction>  0.40 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
 			<strut_force>
@@ -219,7 +219,7 @@
 				<y> -112.5 </y>
 				<z> -113.99 </z> <!-- BWL 98.31 -->
 			</location>
-			<static_friction>  0.80 </static_friction>
+			<static_friction>  0.40 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
 			<strut_force>
@@ -294,7 +294,7 @@
 				<y> 112.5 </y>
 				<z> -113.99 </z> <!-- BWL 98.31 -->
 			</location>
-			<static_friction>  0.80 </static_friction>
+			<static_friction>  0.40 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
 			<strut_force>
@@ -2070,7 +2070,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/bw-ft</property>
 					<property>fcs/rudder-pos-rad</property>
-					<value>-0.20</value>
+					<value>-0.11</value>
 				</product>
 			</function>
 		</axis>
