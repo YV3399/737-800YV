@@ -622,8 +622,8 @@ var fpa_calc = func {
 }
 
 setlistener("/it-autoflight/input/kts-mach", func {
-	var ias = getprop("/instrumentation/airspeed-indicator/indicated-speed-kt");
-	var mach = getprop("/instrumentation/airspeed-indicator/indicated-mach");
+	var ias = getprop("/it-autoflight/input/spd-kts");
+	var mach = getprop("/it-autoflight/input/spd-mach");
 	if (getprop("/it-autoflight/input/kts-mach") == 0) {
 		if (ias >= 100 and ias <= 360) {
 			setprop("/it-autoflight/input/spd-kts", math.round(ias, 1));
