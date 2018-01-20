@@ -1064,7 +1064,7 @@
     	</volume>
     </wow>
 
-    <rain>
+    <!--<rain>
     	<name>rain</name>
     	<mode>looped</mode>
     	<path>Aircraft/737-800YV/Sounds/rain.wav</path>
@@ -1086,7 +1086,7 @@
     		<factor>0.001</factor>
     		<offset>1.0</offset>
     	</pitch>
-    </rain>
+    </rain>-->
 
     
     <!-- Seatbelt/No smoking signs -->
