@@ -1006,7 +1006,7 @@
         <repeatable type="bool">false</repeatable>   
         <binding>
           <command>property-toggle</command>
-          <property>controls/anti-ice/wing-heat</property>
+          <property>/controls/deice/wing</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1017,7 +1017,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>wingantiice</object-name>  
-      <property>controls/anti-ice/wing-heat</property>
+      <property>/controls/deice/wing</property>
       <factor>30</factor>
       <center>
         <x-m>-0.10681</x-m>
@@ -1039,11 +1039,7 @@
         <repeatable type="bool">false</repeatable>  
         <binding>
           <command>property-toggle</command>
-          <property>controls/anti-ice/engine/carb-heat</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>controls/anti-ice/engine/inlet-heat</property>
+          <property>/controls/deice/lengine</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1054,7 +1050,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>enganti1</object-name>  
-      <property>controls/anti-ice/engine/carb-heat</property>
+      <property>/controls/deice/lengine</property>
       <factor>30</factor>
       <center>
         <x-m>-0.10643</x-m>
@@ -1076,11 +1072,7 @@
         <repeatable type="bool">false</repeatable>        
         <binding>
           <command>property-toggle</command>
-          <property>controls/anti-ice/engine[1]/carb-heat</property>
-        </binding>
-        <binding>
-          <command>property-toggle</command>
-          <property>controls/anti-ice/engine[1]/inlet-heat</property>
+          <property>/controls/deice/rengine</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1091,7 +1083,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>enganti2</object-name>  
-      <property>controls/anti-ice/engine[1]/carb-heat</property>
+      <property>/controls/deice/rengine</property>
       <factor>30</factor>
       <center>
         <x-m>-0.10643</x-m>
@@ -1116,7 +1108,7 @@
         <repeatable type="bool">false</repeatable>      
         <binding>
           <command>property-toggle</command>
-          <property>controls/anti-ice/window-heat</property>
+          <property>/controls/deice/windowprobeheat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1127,7 +1119,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>windowlf</object-name>  
-      <property>controls/anti-ice/window-heat</property>
+      <property>/controls/deice/windowprobeheat</property>
       <factor>30</factor>
       <center>
         <x-m>-0.24707</x-m>
@@ -1149,7 +1141,7 @@
         <repeatable type="bool">false</repeatable>   
         <binding>
           <command>property-toggle</command>
-          <property>controls/anti-ice/window-heat</property>
+          <property>/controls/deice/windowprobeheat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1160,7 +1152,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>windowlf1</object-name>  
-      <property>controls/anti-ice/window-heat</property>
+      <property>/controls/deice/windowprobeheat</property>
       <factor>30</factor>
       <center>
         <x-m>-0.24690</x-m>
@@ -1182,7 +1174,7 @@
         <repeatable type="bool">false</repeatable>  
         <binding>
           <command>property-toggle</command>
-          <property>controls/anti-ice/window-heat</property>
+          <property>/controls/deice/windowprobeheat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1193,7 +1185,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>windowctr</object-name>  
-      <property>controls/anti-ice/window-heat</property>
+      <property>/controls/deice/windowprobeheat</property>
       <factor>30</factor>
       <center>
         <x-m>-0.24691</x-m>
@@ -1215,7 +1207,7 @@
         <repeatable type="bool">false</repeatable>  
         <binding>
           <command>property-toggle</command>
-          <property>controls/anti-ice/window-heat</property>
+          <property>/controls/deice/windowprobeheat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1226,7 +1218,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>windowrt1</object-name>  
-      <property>controls/anti-ice/window-heat</property>
+      <property>/controls/deice/windowprobeheat</property>
       <factor>30</factor>
       <center>
         <x-m>-0.24696</x-m>
@@ -1248,7 +1240,7 @@
         <repeatable type="bool">false</repeatable>      
         <binding>
           <command>property-toggle</command>
-          <property>controls/anti-ice/window-heat</property>
+          <property>/controls/deice/windowprobeheat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1259,7 +1251,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>windowrt</object-name>  
-      <property>controls/anti-ice/window-heat</property>
+      <property>/controls/deice/windowprobeheat</property>
       <factor>30</factor>
       <center>
         <x-m>-0.24695</x-m>
