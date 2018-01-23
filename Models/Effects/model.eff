@@ -1,26 +1,36 @@
 <?xml version="1.0"?>
 <PropertyList>
-    <name>model</name>
-    <inherits-from>Effects/model-combined-deferred</inherits-from>
-    <parameters>
-        <!--
-        <ambient-correction type="float">0.25</ambient-correction>
-        <reflection-correction type="float">-1</reflection-correction>
-        <reflection-fresnel type="float">1</reflection-fresnel>
-        <reflection-fresnel-factor type="float">1</reflection-fresnel-factor>
-        <reflection-type type="int">2</reflection-type>
-        <reflection-noise type="float">0</reflection-noise>
-        <reflection-dynamic type="int">1</reflection-dynamic>
-        <reflection-rainbow type="float">0.01</reflection-rainbow>
-        -->
-        <reflection-enabled type="int"><use>/sim/model/rendering/reflection-enabled</use></reflection-enabled>
-        <reflection-type type="int"><use>/sim/model/rendering/reflection-type</use></reflection-type>
-        <reflection-correction type="float"><use>/sim/model/rendering/reflection-correction</use></reflection-correction>
-        <reflection-fresnel type="float"><use>/sim/model/rendering/reflection-fresnel</use></reflection-fresnel>
-        <reflection-fresnel-factor type="float"><use>/sim/model/rendering/reflection-fresnel-factor</use></reflection-fresnel-factor>
-        <reflection-rainbow type="float"><use>/sim/model/rendering/reflection-rainbow</use></reflection-rainbow>
-        <reflection-noise type="float"><use>/sim/model/rendering/reflection-noise</use></reflection-noise>
-        <reflection-dynamic type="int"><use>/sim/model/rendering/reflection-dynamic</use></reflection-dynamic>
-        <ambient-correction type="float"><use>/sim/model/rendering/ambient-correction</use></ambient-correction>
-    </parameters>
+	<name>model</name>
+	<inherits-from>Effects/model-combined-deferred</inherits-from>
+	<parameters>
+		<rain-enabled type="int"><use>/sim/model/rendering/rain-enabled</use></rain-enabled>
+		<reflect-map-enabled type="int">1</reflect-map-enabled>
+		<reflection-enabled type="int"><use>/sim/model/rendering/reflection-enabled</use></reflection-enabled>
+		<reflection-type type="int"><use>/sim/model/rendering/reflection-type</use></reflection-type>
+		<reflection-correction type="float"><use>/sim/model/rendering/reflection-correction</use></reflection-correction>
+		<reflection-fresnel type="float"><use>/sim/model/rendering/reflection-fresnel</use></reflection-fresnel>
+		<reflection-fresnel-factor type="float"><use>/sim/model/rendering/reflection-fresnel-factor</use></reflection-fresnel-factor>
+		<reflection-rainbow type="float"><use>/sim/model/rendering/reflection-rainbow</use></reflection-rainbow>
+		<reflection-noise type="float"><use>/sim/model/rendering/reflection-noise</use></reflection-noise>
+		<reflection-dynamic type="int"><use>/sim/model/rendering/reflection-dynamic</use></reflection-dynamic>
+		<ambient-correction type="float"><use>/sim/model/rendering/ambient-correction</use></ambient-correction>
+		<texture n="4">
+			<image>Aircraft/737-800YV/Models/Effects/greymap.png</image>
+				<filter>linear-mipmap-linear</filter>
+			<wrap-s>clamp</wrap-s>
+			<wrap-t>clamp</wrap-t>
+			<internal-format>normalized</internal-format>
+		</texture>
+		<texture n="5">
+			<type>cubemap</type>
+			<images>
+				<positive-x>Aircraft/Generic/Effects/CubeMaps/buildings/N.png</positive-x>
+				<negative-x>Aircraft/Generic/Effects/CubeMaps/buildings/S.png</negative-x>
+				<positive-y>Aircraft/Generic/Effects/CubeMaps/buildings/W.png</positive-y>
+				<negative-y>Aircraft/Generic/Effects/CubeMaps/buildings/E.png</negative-y>
+				<positive-z>Aircraft/Generic/Effects/CubeMaps/buildings/U.png</positive-z>
+				<negative-z>Aircraft/Generic/Effects/CubeMaps/buildings/D.png</negative-z>
+			</images>
+		</texture>	
+	</parameters>
 </PropertyList>

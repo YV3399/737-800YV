@@ -32,14 +32,15 @@
 				<newwinglets type="bool">false</newwinglets>   
 			</livery>
 			<rendering>
+				<rain-enabled type="int">2</rain-enabled>
 				<reflection-enabled type="int">1</reflection-enabled>
-				<reflection-type type="int">2</reflection-type>
+				<reflection-type type="int">1</reflection-type>
 				<reflection-dynamic type="int">1</reflection-dynamic>
-				<reflection-correction type="float">0.1</reflection-correction>
-				<reflection-fresnel type="float">0.5</reflection-fresnel>
-				<reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
-				<reflection-rainbow type="float">0.1</reflection-rainbow>
-				<reflection-noise type="float">0.05</reflection-noise>
+				<reflection-correction type="float">-0.8</reflection-correction>
+				<reflection-fresnel type="float">0.0</reflection-fresnel>
+				<reflection-fresnel-factor type="float">0.7</reflection-fresnel-factor>
+				<reflection-rainbow type="float">0.0</reflection-rainbow>
+				<reflection-noise type="float">0.00</reflection-noise>
 				<ambient-correction type="float">0.15</ambient-correction>
 			</rendering>
 		</model>    

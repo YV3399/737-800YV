@@ -23,12 +23,12 @@
  </animation>
 
  <effect>
-  <inherits-from>Effects/lightmap</inherits-from>
+  <inherits-from>Effects/model</inherits-from>
   <parameters>
-    <texture n="1">
+	  <lightmap-enabled><use>/controls/lighting/logo-lights</use></lightmap-enabled>
+    <texture n="3">
       <image>Aircraft/737-800YV/Models/Effects/LightMap/logolight_lightmap.png</image>
     </texture>
-    <factor><use>/controls/lighting/logo-lights</use></factor>
   </parameters>
   <object-name>rudder</object-name>
   <object-name>vstab</object-name>
