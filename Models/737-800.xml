@@ -56,14 +56,13 @@
   </effect>
 
 <effect>
-  <inherits-from>Effects/lightmap</inherits-from>
+  <inherits-from>Effects/model</inherits-from>
   <parameters>
-    <texture n="1">
+	  <lightmap-enabled><use>controls/lighting/landing-lights-norm</use></lightmap-enabled>
+    <texture n="3">
       <image>Aircraft/737-800YV/Models/Effects/LightMap/737-800lightmap.png</image>
     </texture>
-    <factor>
-      <use>controls/lighting/landing-lights-norm</use>
-    </factor>
+    
   </parameters>
   <object-name>fuselage</object-name>
   <object-name>EexitRR</object-name>
