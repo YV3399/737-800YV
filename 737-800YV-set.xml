@@ -69,7 +69,7 @@
 			</config>
 		</view>
 
-		<view n="100">
+		<view n="106">
 			<name>Copilot</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -85,7 +85,7 @@
 			</config>   
 		</view>
 
-		<view n="101">
+		<view n="100">
 			<name>CDU View</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -100,8 +100,7 @@
 				<z-offset-m archive="y">-17.6</z-offset-m>
 			</config>
 		</view>	
-
-		<view n="102">
+		<view n="101">
 			<name>Engine Left</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -116,8 +115,7 @@
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
 		</view>
-
-		<view n="103">
+		<view n="102">
 			<name>Engine Right</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -132,8 +130,7 @@
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
 		</view>
-
-		<view n="104">
+		<view n="103">
 			<name>Right Wing</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -148,8 +145,7 @@
 				<z-offset-m archive="y">2.19</z-offset-m>
 			</config>
 		</view>
-
-		<view n="105">
+		<view n="104">
 			<name>Left Wing</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -162,6 +158,21 @@
 				<x-offset-m archive="y">-1.80</x-offset-m>
 				<y-offset-m archive="y">0.91</y-offset-m>
 				<z-offset-m archive="y">2.19</z-offset-m>
+			</config>
+		</view>
+		<view n="105">
+			<name>Overhead Panel</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<default-field-of-view-deg type="double">108</default-field-of-view-deg>
+				<pitch-offset-deg>50</pitch-offset-deg>
+				<heading-offset-deg>0</heading-offset-deg>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">1.26</y-offset-m>
+				<z-offset-m archive="y">-17.26</z-offset-m>
 			</config>
 		</view>
 	</sim>
