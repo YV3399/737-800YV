@@ -42,6 +42,7 @@
  
 <PropertyList>
 
+
   <submodel>
     <name>left engine contrail</name>
     <model>Models/Geometry/contrail.xml</model>
@@ -63,6 +64,7 @@
 		<weight>10</weight>
 		<random>1</random>
   </submodel>
+
 
   <submodel>
     <name>right engine contrail</name>

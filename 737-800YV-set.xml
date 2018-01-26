@@ -17,6 +17,7 @@
                         <splash-texture>Aircraft/737-800YV/Splash/splash-7.png</splash-texture>
                         <splash-texture>Aircraft/737-800YV/Splash/splash-8.png</splash-texture>
                 </startup>
+
 		<previews>
 			<preview>
 				<type>exterior</type>
@@ -25,12 +26,13 @@
 			</preview>
 		</previews>
 
-		<model>
+		 <model>
 			<path>Aircraft/737-800YV/Models/737-800.xml</path>       
 			<livery>
 				<file>BOE</file>
 				<newwinglets type="bool">false</newwinglets>   
 			</livery>
+
 			<rendering>
 				<rain-enabled type="int">2</rain-enabled>
 				<reflection-enabled type="int">1</reflection-enabled>
@@ -43,13 +45,15 @@
 				<reflection-noise type="float">0.00</reflection-noise>
 				<ambient-correction type="float">0.15</ambient-correction>
 			</rendering>
-		</model>    
+		</model> 
+   
 		<rating>
 			<FDM type="int">3</FDM>
 			<systems type="int">3</systems>
 			<cockpit type="int">3</cockpit>
 			<model type="int">4</model>
 		</rating>
+
 		<view>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -64,6 +68,7 @@
 				<z-offset-m archive="y">-16.98</z-offset-m>
 			</config>
 		</view>
+
 		<view n="100">
 			<name>Copilot</name>
 			<type>lookfrom</type>
@@ -79,6 +84,7 @@
 				<z-offset-m archive="y">-16.98</z-offset-m>
 			</config>   
 		</view>
+
 		<view n="101">
 			<name>CDU View</name>
 			<type>lookfrom</type>
@@ -94,6 +100,7 @@
 				<z-offset-m archive="y">-17.6</z-offset-m>
 			</config>
 		</view>	
+
 		<view n="102">
 			<name>Engine Left</name>
 			<type>lookfrom</type>
@@ -109,6 +116,7 @@
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
 		</view>
+
 		<view n="103">
 			<name>Engine Right</name>
 			<type>lookfrom</type>
@@ -124,6 +132,7 @@
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
 		</view>
+
 		<view n="104">
 			<name>Right Wing</name>
 			<type>lookfrom</type>
@@ -139,6 +148,7 @@
 				<z-offset-m archive="y">2.19</z-offset-m>
 			</config>
 		</view>
+
 		<view n="105">
 			<name>Left Wing</name>
 			<type>lookfrom</type>
@@ -202,6 +212,7 @@
 	</limits>
 
 	<payload>
+
 		<pax>
 			<business type="double">6</business>
 			<tourist type="double">22</tourist>
@@ -261,6 +272,7 @@
 			<min-lb type="double">0.0</min-lb>
 			<max-lb type="double">886</max-lb>
 		</weight>
+
 	</payload>
 
 </PropertyList>

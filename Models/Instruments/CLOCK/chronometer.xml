@@ -1,25 +1,104 @@
 <!--
-777-200 Chronometer 
+New Chronometer By Gabriel Hernandez (YV3399)
 -->
 
 <PropertyList>
  <path>clock.ac</path>
 
-  <animation>
-  <type>material</type>
-  <object-name>Chronobezel</object-name>
-  <emission>
-    <red>0.3</red>
-    <green>0.25</green>
-    <blue>0.2</blue>
-    <factor-prop>controls/lighting/map-lights</factor-prop>	
-  </emission>
+<animation>
+<type>material</type> 
+<object-name>Chronobezel</object-name>
+<object-name>UTC.switch.002</object-name>
+<object-name>UTC.switch.001</object-name>
+<object-name>UTC.switch</object-name>
+<emission>
+    <red>1.055</red>
+    <green>0.312</green>
+    <blue>0.307</blue>
+	   <factor-prop>/controls/lighting/panel-lights</factor-prop>>
+ </emission>
 </animation>
+
+ <animation>
+   <type>select</type>
+   <object-name>Chronoface</object-name>
+   <object-name>UTC.switch</object-name>
+   <object-name>UTC.switch.001</object-name>
+   <object-name>UTC.switch.002</object-name>
+   <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+ </animation>
+
+ <animation>
+   <type>select</type>
+   <object-name>colon</object-name>
+   <condition>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+   <type>select</type>
+   <object-name>colon.001</object-name>
+   <condition>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+  </condition>
+ </animation>
+
+ <animation>
+   <type>select</type>
+   <object-name>Chronobezel</object-name>
+   <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+ </animation>
+  
+ <animation>
+   <type>select</type>
+   <object-name>Hr.10</object-name>
+   <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+ </animation>
 
  <animation>
    <type>textranslate</type>
    <object-name>Hr.10</object-name>
-   <property>instrumentation/clock/indicated-hour</property>
+   <property>/instrumentation/clock/indicated-hour</property>
    <factor>0.01</factor>
    <step>10</step>
    <axis>
@@ -30,9 +109,26 @@
  </animation>
 
  <animation>
+   <type>select</type>
+   <object-name>Hr.01</object-name>
+   <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+ </animation>
+
+ <animation>
    <type>textranslate</type>
    <object-name>Hr.01</object-name>
-   <property>instrumentation/clock/indicated-hour</property>
+   <property>/instrumentation/clock/indicated-hour</property>
    <factor>0.1</factor>
    <step>1</step>
    <axis>
@@ -41,11 +137,28 @@
      <z>0</z>
    </axis>
  </animation>
- 
+
+ <animation>
+   <type>select</type>
+   <object-name>Mn.10</object-name>
+   <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+ </animation>
+
   <animation>
    <type>textranslate</type>
    <object-name>Mn.10</object-name>
-   <property>instrumentation/clock/indicated-min</property>
+   <property>/instrumentation/clock/indicated-min</property>
    <factor>0.01</factor>
    <step>10</step>
    <axis>
@@ -56,9 +169,26 @@
  </animation>
 
  <animation>
+   <type>select</type>
+   <object-name>Mn.01</object-name>
+   <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+ </animation>
+
+ <animation>
    <type>textranslate</type>
    <object-name>Mn.01</object-name>
-   <property>instrumentation/clock/indicated-min</property>
+   <property>/instrumentation/clock/indicated-min</property>
    <factor>0.1</factor>
    <step>1</step>
    <axis>
@@ -71,7 +201,7 @@
  <animation>
    <type>textranslate</type>
    <object-name>ET10</object-name>
-   <property>instrumentation/clock/ET-hr</property>
+   <property>/instrumentation/clock/ET-hr</property>
    <factor>0.01</factor>
    <step>10</step>
    <axis>
@@ -84,7 +214,7 @@
  <animation>
    <type>textranslate</type>
    <object-name>ET01</object-name>
-   <property>instrumentation/clock/ET-hr</property>
+   <property>/instrumentation/clock/ET-hr</property>
    <factor>0.1</factor>
    <step>1</step>
    <axis>
@@ -95,9 +225,26 @@
  </animation>
 
  <animation>
+   <type>select</type>
+   <object-name>ET.10</object-name>
+   <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+ </animation>
+
+ <animation>
    <type>textranslate</type>
    <object-name>ET.10</object-name>
-   <property>instrumentation/clock/ET-min</property>
+   <property>/instrumentation/clock/ET-min</property>
    <factor>0.01</factor>
    <step>10</step>
    <axis>
@@ -108,9 +255,26 @@
  </animation>
 
  <animation>
+   <type>select</type>
+   <object-name>ET.01</object-name>
+   <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
+   <equals>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </equals>
+   </and>
+  </condition>
+ </animation>
+
+ <animation>
    <type>textranslate</type>
    <object-name>ET.01</object-name>
-   <property>instrumentation/clock/ET-min</property>
+   <property>/instrumentation/clock/ET-min</property>
    <factor>0.1</factor>
    <step>1</step>
    <axis>
@@ -124,10 +288,16 @@
    <type>select</type>
    <object-name>ET10</object-name>
    <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
 <greater-than>
-<property>instrumentation/clock/ET-hr</property>
+<property>/instrumentation/clock/ET-hr</property>
 <value>10</value>
 </greater-than>
+   </and>
 </condition>
  </animation>
 
@@ -135,10 +305,16 @@
    <type>select</type>
    <object-name>ET01</object-name>
    <condition>
+   <and>
+      <equals>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </equals>
 <greater-than>
-<property>instrumentation/clock/ET-hr</property>
+<property>/instrumentation/clock/ET-hr</property>
 <value>1</value>
 </greater-than>
+   </and>
 </condition>
  </animation>
 

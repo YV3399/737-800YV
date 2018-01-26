@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- New Sounds By Gabriel Hernandez(YV3399) -->
+<!-- Sounds By Gabriel Hernandez(YV3399) -->
 
 <PropertyList>
 	<fx>
@@ -489,26 +489,32 @@
 		</position>
 	</engine>
 		
-		<rumble>
+	        <rumble>
 			<name>rumble</name>
-			<mode>looped</mode>
 			<path>Aircraft/737-800YV/Sounds/rumble.wav</path>
+			<mode>looped</mode>
 			<condition>
-				<equals>
-					<property>/fdm/jsbsim/gear/wow</property>
-					<value>1</value>
-				</equals>
-				<greater-than>
-					<property>/velocities/groundspeed-kt</property>
-					<value>5</value>
-				</greater-than>
+				<property>sim/current-view/internal</property>
+				<or>
+					<property>/gear/gear[0]/wow</property>
+					<property>/gear/gear[1]/wow</property>
+					<property>/gear/gear[2]/wow</property>
+				</or>
 			</condition>
 			<volume>
-				<property>/velocities/airspeed-kt</property>
+				<property>/velocities/groundspeed-kt</property>
 				<type>log</type>
-				<factor>0.6</factor>
+				<factor>0.20</factor>
 			</volume>
+			<pitch>
+				<property>/velocities/groundspeed-kt</property>
+				<type>log</type>
+				<factor>0.28</factor>
+				<min>0.1</min>
+				<max>1.5</max>
+			</pitch>
 		</rumble>
+
 		
 		<flap>
 			<name>flaps</name>
@@ -1064,7 +1070,7 @@
     	</volume>
     </wow>
 
-    <!--<rain>
+    <rain>
     	<name>rain</name>
     	<mode>looped</mode>
     	<path>Aircraft/737-800YV/Sounds/rain.wav</path>
@@ -1086,7 +1092,7 @@
     		<factor>0.001</factor>
     		<offset>1.0</offset>
     	</pitch>
-    </rain>-->
+    </rain>
 
     
     <!-- Seatbelt/No smoking signs -->

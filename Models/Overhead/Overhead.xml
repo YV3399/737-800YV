@@ -854,7 +854,6 @@
   </axis>
 </animation>
 
-
 <!-- Engines Gen -->
 
  <animation>
@@ -1006,7 +1005,7 @@
         <repeatable type="bool">false</repeatable>   
         <binding>
           <command>property-toggle</command>
-          <property>/controls/deice/wing</property>
+          <property>/controls/deice/wing-heat</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1017,7 +1016,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>wingantiice</object-name>  
-      <property>/controls/deice/wing</property>
+      <property>/controls/deice/wing-heat</property>
       <factor>30</factor>
       <center>
         <x-m>-0.10681</x-m>
@@ -1119,7 +1118,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>windowlf</object-name>  
-      <property>/controls/deice/windowprobeheat</property>
+      <property>controls/anti-ice/window-heat</property>
       <factor>30</factor>
       <center>
         <x-m>-0.24707</x-m>
@@ -1449,11 +1448,11 @@
 
 <animation>
 	<type>pick</type>
-	<object-name>Mesh14</object-name>       
+	<object-name>EngStartLKnob</object-name>       
 </animation>
 <animation>
 	<type>pick</type>
-	<object-name>Mesh15</object-name>       
+	<object-name>EngStartRKnob</object-name>       
 </animation>
 <animation>
 	<type>pick</type>
@@ -1480,15 +1479,16 @@
 	</action>
 </animation>
 
+<!-- OLD ENG START BELOW KEPT UNTIL FINCTIONALITY AVAIL. REPLACE with COMMENTED OUT NEW ENG START BLOCK BELOW THESE WHEN READY -->
 <animation>
   <type>knob</type>
-  <object-name>Mesh14</object-name>
+  <object-name>EngStartLKnob</object-name>
   <property>/controls/engines/engine[0]/starter</property>
   <factor>17</factor>
   <center>
-    <x-m>0.29991</x-m>
-    <y-m>-0.01406</y-m>
-    <z-m>0.08895</z-m>
+    <x-m>0.29909</x-m>
+    <y-m>-0.01652</y-m>
+    <z-m>0.08176</z-m>
   </center>
   <axis>
     <x>0</x><y>0</y><z>-1</z>
@@ -1503,13 +1503,13 @@
 
 <animation>
   <type>knob</type>
-  <object-name>Mesh15</object-name>
+  <object-name>EngStartRKnob</object-name>
   <property>/controls/engines/engine[1]/starter</property>
   <factor>17</factor>
   <center>
-    <x-m>0.29872</x-m>
-    <y-m>0.09073</y-m>
-    <z-m>0.08895</z-m>
+    <x-m>0.29851</x-m>
+    <y-m>0.08864</y-m>
+    <z-m>0.08176</z-m>
   </center>
   <axis>
     <x>0</x><y>0</y><z>-1</z>
@@ -1522,10 +1522,398 @@
   </action>
 </animation>
 
+<!-- NEW ENG START KNOBS BLOCK with FULL range(GND/OFF/CONT/FLT) **UNCOMMENT  THIS BLOCK ONCE YOU HAVE FUNCTIONALITY**
+<animation>
+  <type>knob</type>
+  <object-name>EngStartLKnob</object-name>
+  <property>/controls/engines/engine[0]/WIPstarter</property>
+  <factor>25</factor>
+  <center>
+    <x-m>0.29909</x-m>
+    <y-m>-0.01652</y-m>
+    <z-m>0.08176</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[0]/WIPstarter</property>
+	  <min>0</min>
+	  <max>3</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>EngStartRKnob</object-name>
+  <property>/controls/engines/engine[1]/WIPstarter</property>
+  <factor>25</factor>
+  <center>
+    <x-m>0.29851</x-m>
+    <y-m>0.08864</y-m>
+    <z-m>0.08176</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/engines/engine[1]/WIPstarter</property>
+	  <min>0</min>
+	  <max>3</max>
+    </binding>
+  </action>
+</animation>
+ BLOCK END -->
+ 
+ 
+<animation>
+  <type>knob</type>
+  <object-name>NavSourceKnob</object-name>
+  <property>/controls/navigation/NavSource</property>
+  <factor>25</factor>
+  <center>
+    <x-m>0.01195</x-m>
+    <y-m>-0.29865</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/navigation/NavSource</property>
+	  <min>0</min>
+	  <max>2</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>CircitBreakerLightKnob</object-name>
+  <property>/controls/electrical/CircuitBreakerLight</property>
+  <factor>280</factor>
+  <center>
+    <x-m>-0.19264</x-m>
+    <y-m>0.0013</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/electrical/CircuitBreakerLight</property>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>PanelLightKnob</object-name>
+  <property>/controls/electrical/PanelLight</property>
+  <factor>280</factor>
+  <center>
+    <x-m>-0.14155</x-m>
+    <y-m>0.00130</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/electrical/PanelLight</property>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>ACVoltometerKnob</object-name>
+  <property>/controls/electrical/AC</property>
+  <factor>32</factor>
+  <center>
+    <x-m>-0.13729</x-m>
+    <y-m>-0.07099</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/electrical/AC</property>
+	  <min>0</min>
+	  <max>7</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>DCVoltometerKnob</object-name>
+  <property>/controls/electrical/DC</property>
+  <factor>32</factor>
+  <center>
+    <x-m>-0.13656</x-m>
+    <y-m>-0.15028</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/electrical/DC</property>
+	  <min>0</min>
+	  <max>7</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>WiperLKnob</object-name>
+  <property>/controls/electrical/WiperL</property>
+  <factor>25</factor>
+  <center>
+    <x-m>0.24019</x-m>
+    <y-m>-0.07332</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/electrical/WiperL</property>
+	  <min>0</min>
+	  <max>3</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>WiperRKnob</object-name>
+  <property>/controls/electrical/WiperR</property>
+  <factor>25</factor>
+  <center>
+    <x-m>0.23934</x-m>	
+    <y-m>0.00241</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/electrical/WiperR</property>
+	  <min>0</min>
+	  <max>3</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>TempLKnob</object-name>
+  <property>/controls/airco/TempL</property>
+  <factor>3</factor>
+  <center>
+    <x-m>-0.16329</x-m>	
+    <y-m>0.21995</y-m>
+    <z-m>0.0932</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/airco/TempL</property>
+	  <min>0</min>
+	  <max>100</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>TempCKnob</object-name>
+  <property>/controls/airco/TempC</property>
+  <factor>3</factor>
+  <center>
+    <x-m>-0.16193</x-m>	
+    <y-m>0.26083</y-m>
+    <z-m>0.0932</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/airco/TempC</property>
+	  <min>0</min>
+	  <max>100</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>TempRKnob</object-name>
+  <property>/controls/airco/TempR</property>
+  <factor>3</factor>
+  <center>
+    <x-m>-0.16193</x-m>	
+    <y-m>0.30287</y-m>
+    <z-m>0.0932	</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/airco/TempR</property>
+	  <min>0</min>
+	  <max>100</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>TempSupplyDuctKnob</object-name>
+  <property>/controls/airco/TempSupplyDuct</property>
+  <factor>45</factor>
+  <center>
+    <x-m>-0.2388</x-m>	
+    <y-m>0.30086</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>	
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/airco/TempSupplyDuct</property>
+	  <min>0</min>
+	  <max>6</max>
+    </binding>
+  </action>		
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>PressureKnob</object-name>
+  <property>/controls/airco/Pressure</property>
+  <factor>25</factor>
+  <center>
+    <x-m>0.19952</x-m>	
+    <y-m>0.29655</y-m>
+    <z-m>0.09376</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/airco/Pressure</property>
+	  <min>0</min>
+	  <max>2</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>CrossfeedKnob</object-name>
+  <property>/controls/fuel/Crossfeed</property>
+  <factor>90</factor>
+  <center>
+    <x-m>0.13917</x-m>
+    <y-m>-0.25965</y-m>
+    <z-m>0.08876</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-toggle</command>
+      <property>/controls/fuel/Crossfeed</property>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>FltAltDial</object-name>
+  <property>/controls/airco/FltAltDial</property>
+  <center>
+    <x-m>0.12742</x-m>	
+    <y-m>0.22775</y-m>
+    <z-m>0.09576</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/airco/FltAltDial</property>
+	  <factor>500</factor>
+	  <min>0</min>
+	  <max>42000</max>
+    </binding>
+  </action>
+</animation>
+
+<animation>
+  <type>knob</type>
+  <object-name>LandAltDial</object-name>
+  <property>/controls/airco/LandAltDial</property>
+  <center>
+    <x-m>0.19839</x-m>	
+    <y-m>0.22881</y-m>
+    <z-m>0.09576</z-m>
+  </center>
+  <axis>
+    <x>0</x><y>0</y><z>-1</z>
+  </axis>
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/airco/LandAltDial</property>
+	  <factor>50</factor>
+	  <min>0</min>
+	  <max>14000</max>
+    </binding>
+  </action>
+</animation>
+
 <animation>
 	<type>rotate</type>   
 	<object-name>Mesh282</object-name>
-	<object-name>Mesh283</object-name> 
+	<object-name>Mesh282</object-name> 
 	<property>/sim/input/selected/SelectedEngine738</property>
 	<factor>-30</factor>
 	<center>

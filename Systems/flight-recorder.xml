@@ -14,7 +14,7 @@
  -->
 
     <config n="0">
-        <name type="string">B737NG Flight Recorder</name>
+        <name type="string">B737-800 Flight Recorder</name>
 
         <!-- include generic stuff -->
         <signals include="/Aircraft/Generic/flightrecorder/components/position.xml" />
@@ -74,7 +74,7 @@
                 <type>bool</type><property type="string">controls/lighting/strobe</property>
             </signal>
             <signal>
-                <type>bool</type><property type="string">controls/lighting/wing-lights</property>
+                <type>bool</type><property type="string">controls/lighting/wing</property>
             </signal>
             <signal>
                 <type>bool</type><property type="string">controls/lighting/taxi-lights</property>

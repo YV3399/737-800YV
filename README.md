@@ -1,4 +1,4 @@
-# 737-800
+# 737-800YV
 Boeing 737 800 (Improved version)
 
 This aircraft was modified and updated in a joint effort by the following people:
@@ -13,5 +13,5 @@ This aircraft was modified and updated in a joint effort by the following people
 ![Image](http://imgur.com/gqGSLMs.png)
 
 ## Note:
-The 737 800 Has New Cockpit And Model 3D, Sounds, Animations, Systems, among many other things.
+The 737 800 Has New Cockpit And Model 3D, Sounds, Animations, Systems, Cockpit and among many other things.
  

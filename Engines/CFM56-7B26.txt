@@ -1,0 +1,45 @@
+ =========================================                                     
+  Gabriel Hernandez (YV3399) 2017 - 2018 - 737-800YV Project                                       
+ =========================================                                     
+       https://github.com/YV3399 
+       https://github.com/YV3399/737-800YV
+                                                                               
+       Creation :   January, 2018
+       Last update:                 
+ ======================================================================        
+ Contributions :                                                               
+      
+   Joshua Davidson (it0uchpods)
+   Gabriel Hernandez (YV3399)
+   
+ ======================================================================        
+
+737-800 Technical Characteristics
+
+Passengers 	 
+ Typical 2-class configuration 	162
+ Typical 1-class configuration 	189
+
+ Cargo 	966 cu ft (27.3 cu m)
+
+Engines
+(maximum thrust) 	CFMI CFM56-7
+26,300 lb
+Maximum Fuel Capacity 	6,875 U.S. gal (26,020 L)
+Maximum Takeoff Weight 	172,500 lb (78,245 kg)
+Maximum Landing Weight 	144,000 lb (65,317 kg)
+Maximum Range 	4,000 nautical miles (7,408 km)
+
+Typical Cruise Speed
+(at 41,000 feet) 	0.82 Mach
+
+Basic Dimensions
+	 
+  Wing Span
+  With Winglets 	112 ft 7 in (35.79 m)
+  117 ft 5 in (35.8 m)
+  Overall Length 	129 ft 7 in (39.50 m)
+  Tail Height 	41 ft 3 in (12.57 m)
+  Interior Cabin Width 	11 ft 7 in (3.54 m)
+
+SOURCE: http://www.flugzeuginfo.net/acdata_php/acdata_7378_en.php

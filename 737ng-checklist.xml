@@ -3,6 +3,7 @@
 <PropertyList>
 
  <checklist>
+
     <title>PREFLIGHT</title>
     <item>
       <name>Oxygen</name>
@@ -272,6 +273,7 @@
       <name>Start switches</name>
       <value>ON</value>
     </item>
+
   </checklist>
 
 </PropertyList>

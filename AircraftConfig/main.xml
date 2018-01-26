@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- B738 Aircraft Config Dialog -->
+<!--
+##############################################
+# Copyright (c) Joshua Davidson (it0uchpods) #
+##############################################
+-->
+
+<!-- Boeing 737-800 Aircraft Config Dialog -->
 
 <PropertyList>
 
@@ -11,7 +17,7 @@
 		<layout>hbox</layout>
 		<text>
 			<halign>left</halign>
-			<label>Aircraft Configuration V1.4.2</label>
+			<label>Aircraft Configuration V1.4.5</label>
 		</text>
 		<button>
 			<halign>right</halign>
@@ -367,7 +373,10 @@
 				</button>
 				
 			</group>
+
 		</group>
+
 	</group>
+
 	
 </PropertyList>

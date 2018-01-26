@@ -17213,6 +17213,7 @@ kids 0
 OBJECT poly
 name "Circle.167"
 loc -0.0149218 -0.006 0.0100305
+texture "pedestal.png"
 crease 30.000000
 numvert 106
 0.761963 0.665661 0.0689257
@@ -20685,6 +20686,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Circle.172"
+texture "pedestal.png"
 crease 30.000000
 numvert 42
 0.813435 0.65463 -0.052902
@@ -54981,6 +54983,7 @@ name "no3quad_0.002"
 kids 4
 OBJECT poly
 name "metalpart"
+texture "pedestal.png"
 crease 30.000000
 numvert 10
 0.741546 0.701364 0.071051
