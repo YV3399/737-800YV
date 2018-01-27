@@ -14,7 +14,12 @@
 		<debug>false</debug>
 		<type>gain</type>
 		<input>
-			<property>/it-autoflight/internal/altitude-5-sec-ahead</property>
+			<expression>
+				<sum>
+					<property>/it-autoflight/internal/altitude-5-sec-ahead</property>
+					<value>-2</value>
+				</sum>
+			</expression>
 		</input>
 		<reference>
 			<property>/it-autoflight/internal/alt</property>
