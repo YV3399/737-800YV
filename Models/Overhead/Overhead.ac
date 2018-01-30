@@ -44074,6 +44074,7 @@ name "LAVSMOKE.off"
 data 10
 Mesh86.002
 crease 35.000000
+texture "Ohpanel1-off.png"
 numvert 4
 -0.07904 0.09181 0.01264
 -0.09225 0.09181 -0.01339
@@ -44098,6 +44099,7 @@ name "LAVSMOKE.on"
 data 10
 Mesh86.003
 crease 35.000000
+texture "Ohpanel1.png"
 numvert 4
 -0.07904 0.09181 0.01264
 -0.09225 0.09181 -0.01339
