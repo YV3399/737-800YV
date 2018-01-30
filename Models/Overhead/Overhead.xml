@@ -121,11 +121,22 @@
 	<!-- External Power -->
 	<animation>
 		<type>select</type>
-		<object-name>GrdPowerAvail</object-name>
+		<object-name>GRDpw.on</object-name>
 		<condition>
 			<equals>
 				<property>services/ext-pwr/enable</property>
 				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GRDpw.off</object-name>
+		<condition>
+			<equals>
+				<property>services/ext-pwr/enable</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>

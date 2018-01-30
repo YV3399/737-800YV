@@ -33339,6 +33339,7 @@ name "GRDpw.off"
 data 10
 Mesh75.001
 crease 35.000000
+texture "Ohpanel3-off.png"
 numvert 4
 0.05458 0.07981 0.12167
 0.04138 0.07981 0.09564
@@ -33363,6 +33364,7 @@ name "GRDpw.on"
 data 6
 Mesh75
 crease 35.000000
+texture "Ohpanel3.png"
 numvert 4
 0.05458 0.07981 0.12167
 0.04138 0.07981 0.09564
