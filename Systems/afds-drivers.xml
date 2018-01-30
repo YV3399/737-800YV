@@ -519,8 +519,8 @@
 		<name>INTERNAL VERTICAL SPEED COMPUTER</name>
 		<debug>false</debug>
 		<type>gain</type>
-		<gain>60.0</gain>
-		<input>/velocities/vertical-speed-fps</input>
+		<gain>1.0</gain>
+		<input>/instrumentation/gps/indicated-vertical-speed</input>
 		<output>/it-autoflight/internal/vert-speed-fpm</output>
 	</filter>
 	
