@@ -7,9 +7,9 @@
 
 setlistener("/sim/signals/fdm-initialized", func {
 	var a_eng1_pump_sw = getprop("/controls/hydraulic/a-eng1-pump");
-	var a_eng2_pump_sw = getprop("/controls/hydraulic/a-eng2-pump");
+	var a_elec2_pump_sw = getprop("/controls/hydraulic/a-elec2-pump");
 	var b_elec1_pump_sw = getprop("/controls/hydraulic/b-elec1-pump");
-	var b_elec2_pump_sw = getprop("/controls/hydraulic/b-elec2-pump");
+	var b_eng2_pump_sw = getprop("/controls/hydraulic/b-eng2-pump");
 	var a_b_cross_pump_sw = getprop("/controls/hydraulic/a-b-cross-pump");
 	var stby_pump_sw = getprop("/controls/hydraulic/stby-pump");
 	var fctl_a_sw = getprop("/controls/hydraulic/fctl-a");
@@ -30,9 +30,9 @@ setlistener("/sim/signals/fdm-initialized", func {
 var hyd_init = func {
 	setprop("/b737/controls/gear/lever", 0);
 	setprop("/controls/hydraulic/a-eng1-pump", 1);
-	setprop("/controls/hydraulic/a-eng2-pump", 1);
+	setprop("/controls/hydraulic/a-elec2-pump", 1);
 	setprop("/controls/hydraulic/b-elec1-pump", 1);
-	setprop("/controls/hydraulic/b-elec2-pump", 1);
+	setprop("/controls/hydraulic/b-eng2-pump", 1);
 	setprop("/controls/hydraulic/a-b-cross-pump", 0);
 	setprop("/controls/hydraulic/stby-pump", 0);
 	setprop("/controls/hydraulic/fctl-a", 1);
@@ -61,9 +61,9 @@ var hyd_init = func {
 
 var master_hyd = func {
 	a_eng1_pump_sw = getprop("/controls/hydraulic/a-eng1-pump");
-	a_eng2_pump_sw = getprop("/controls/hydraulic/a-eng2-pump");
+	a_elec2_pump_sw = getprop("/controls/hydraulic/a-elec2-pump");
 	b_elec1_pump_sw = getprop("/controls/hydraulic/b-elec1-pump");
-	b_elec2_pump_sw = getprop("/controls/hydraulic/b-elec2-pump");
+	b_eng2_pump_sw = getprop("/controls/hydraulic/b-eng2-pump");
 	a_b_cross_pump_sw = getprop("/controls/hydraulic/a-b-cross-pump");
 	stby_pump_sw = getprop("/controls/hydraulic/stby-pump");
 	a_psi = getprop("/systems/hydraulic/a-psi");
@@ -74,7 +74,7 @@ var master_hyd = func {
 	n2_1 = getprop("/engines/engine[0]/n2");
 	n2_2 = getprop("/engines/engine[1]/n2");
 	
-	if ((a_eng1_pump_sw or a_eng2_pump_sw) and (n2_1 >= 47 or n2_2 >= 47)) {
+	if ((a_eng1_pump_sw or a_elec2_pump_sw) and (n2_1 >= 47 or n2_2 >= 47)) {
 		if (a_psi < 2900) {
 			setprop("/systems/hydraulic/a-psi", a_psi + 100);
 		} else {
@@ -94,7 +94,7 @@ var master_hyd = func {
 		}
 	}
 	
-	if ((b_elec1_pump_sw or b_elec2_pump_sw) and (acL >= 110 or acR >= 110)) {
+	if ((b_elec1_pump_sw or b_eng2_pump_sw) and (acL >= 110 or acR >= 110)) {
 		if (b_psi < 2900) {
 			setprop("/systems/hydraulic/b-psi", b_psi + 100);
 		} else {
