@@ -1097,7 +1097,32 @@
     </animation>
 
   <!--Window Heat-->
-
+	<animation>
+		<type>select</type>
+		<object-name>WINHEATLF.on</object-name>
+		<object-name>WINHEATRF.on</object-name>
+		<object-name>WINHEATLS.on</object-name>
+		<object-name>WINHEATRS.on</object-name>
+		<condition>
+			<equals>
+				<property>/controls/deice/windowprobeheat</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>WINHEATLF.off</object-name>
+		<object-name>WINHEATRF.off</object-name>
+		<object-name>WINHEATLS.off</object-name>
+		<object-name>WINHEATRS.off</object-name>
+		<condition>
+			<equals>
+				<property>/controls/deice/windowprobeheat</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
     <animation>
       <type>pick</type>
       <object-name>windowlf</object-name>         
