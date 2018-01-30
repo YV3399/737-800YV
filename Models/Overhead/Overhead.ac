@@ -19809,6 +19809,7 @@ OBJECT poly
 name "EQIPCOOLL.off"
 data 10
 Mesh85.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.01453 0.09181 0.02608
@@ -19833,6 +19834,7 @@ OBJECT poly
 name "EQIPCOOLL.on"
 data 6
 Mesh85
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.01453 0.09181 0.02608
@@ -19946,6 +19948,7 @@ OBJECT poly
 name "EQIPCOOLR.off"
 data 10
 Mesh86.004
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.01453 0.09181 -0.00107
@@ -19970,6 +19973,7 @@ OBJECT poly
 name "EQIPCOOLR.on"
 data 6
 Mesh86
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.01453 0.09181 -0.00107
@@ -46918,6 +46922,7 @@ name "MAINT.off"
 data 11
 Mesh101.002
 crease 35.000000
+texture "Ohpanel3-off.png"
 numvert 4
 0.16806 0.0918 0.02569
 0.15485 0.0918 -0.00034
@@ -46942,6 +46947,7 @@ name "MAINT.on"
 data 11
 Mesh101.001
 crease 35.000000
+texture "Ohpanel3.png"
 numvert 4
 0.16806 0.0918 0.02569
 0.15485 0.0918 -0.00034
@@ -159725,6 +159731,7 @@ name "NOTARMED.off"
 data 10
 Mesh88.001
 crease 35.000000
+texture "Ohpanel4-off.png"
 numvert 4
 0.02316 0.09181 0.02557
 0.04918 0.09181 0.01237
@@ -159749,6 +159756,7 @@ name "NOTARMED.on"
 data 6
 Mesh88
 crease 35.000000
+texture "Ohpanel4.png"
 numvert 4
 0.02316 0.09181 0.02557
 0.04918 0.09181 0.01237
@@ -159998,6 +160006,7 @@ OBJECT poly
 name "overheatHYDL.off"
 data 10
 Mesh96.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.06766 0.07981 -0.08061
@@ -160022,6 +160031,7 @@ OBJECT poly
 name "overheatHYDL.on"
 data 6
 Mesh96
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.06766 0.07981 -0.08061
@@ -160135,6 +160145,7 @@ OBJECT poly
 name "overheatHYDR.off"
 data 10
 Mesh60.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.06766 0.07981 -0.11498
@@ -160159,6 +160170,7 @@ OBJECT poly
 name "overheatHYDR.on"
 data 6
 Mesh60
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.06766 0.07981 -0.11498

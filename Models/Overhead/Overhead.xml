@@ -8,6 +8,39 @@
 
 	<path>Overhead.ac</path>
 	
+	<!-- overhead disused lights -->
+	<animation>
+		<type>select</type>
+		<object-name>overheatHYDL.on</object-name>
+		<object-name>overheatHYDR.on</object-name>
+		<object-name>LAVSMOKE.on</object-name>
+		<object-name>EQIPCOOLL.on</object-name>
+		<object-name>EQIPCOOLR.on</object-name>
+		<object-name>NOTARMED.on</object-name>
+		<object-name>MAINT.on</object-name>
+		<condition>
+			<equals>
+				<property>/options/OHPtemp</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>overheatHYDL.off</object-name>
+		<object-name>overheatHYDR.off</object-name>
+		<object-name>LAVSMOKE.off</object-name>
+		<object-name>EQIPCOOLL.off</object-name>
+		<object-name>EQIPCOOLR.off</object-name>
+		<object-name>NOTARMED.off</object-name>
+		<object-name>MAINT.off</object-name>
+		<condition>
+			<equals>
+				<property>/options/OHPtemp</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
 	<!-- Battery Cover/Switch -->
 	<animation>
 		<type>pick</type>
