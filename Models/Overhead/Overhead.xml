@@ -8,6 +8,39 @@
 
 	<path>Overhead.ac</path>
 	
+	<!-- overhead disused lights -->
+	<animation>
+		<type>select</type>
+		<object-name>overheatHYDL.on</object-name>
+		<object-name>overheatHYDR.on</object-name>
+		<object-name>LAVSMOKE.on</object-name>
+		<object-name>EQIPCOOLL.on</object-name>
+		<object-name>EQIPCOOLR.on</object-name>
+		<object-name>NOTARMED.on</object-name>
+		<object-name>MAINT.on</object-name>
+		<condition>
+			<equals>
+				<property>/options/OHPtemp</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>overheatHYDL.off</object-name>
+		<object-name>overheatHYDR.off</object-name>
+		<object-name>LAVSMOKE.off</object-name>
+		<object-name>EQIPCOOLL.off</object-name>
+		<object-name>EQIPCOOLR.off</object-name>
+		<object-name>NOTARMED.off</object-name>
+		<object-name>MAINT.off</object-name>
+		<condition>
+			<equals>
+				<property>/options/OHPtemp</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
 	<!-- Battery Cover/Switch -->
 	<animation>
 		<type>pick</type>
@@ -88,11 +121,22 @@
 	<!-- External Power -->
 	<animation>
 		<type>select</type>
-		<object-name>GrdPowerAvail</object-name>
+		<object-name>GRDpw.on</object-name>
 		<condition>
 			<equals>
 				<property>services/ext-pwr/enable</property>
 				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GRDpw.off</object-name>
+		<condition>
+			<equals>
+				<property>services/ext-pwr/enable</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -599,7 +643,7 @@
 </animation> 
 <animation>
   <type>rotate</type>   
-  <object-name>nosmoking</object-name>  
+  <object-name>nosmoking</object-name>         
   <property>controls/switches/no-smoking-sign</property>
   <factor>30</factor>
   <center>
@@ -618,7 +662,7 @@
 
 <animation>
   <type>pick</type>
-  <object-name>fastenseatbelts</object-name>         
+  <object-name>fastenseatbelts</object-name>            
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -631,7 +675,7 @@
 </animation> 
 <animation>
   <type>rotate</type>   
-  <object-name>fastenseatbelts</object-name>  
+  <object-name>fastenseatbelts</object-name>     
   <property>controls/switches/seatbelt-sign</property>
   <factor>30</factor>
   <center>
@@ -1097,7 +1141,32 @@
     </animation>
 
   <!--Window Heat-->
-
+	<animation>
+		<type>select</type>
+		<object-name>WINHEATLF.on</object-name>
+		<object-name>WINHEATRF.on</object-name>
+		<object-name>WINHEATLS.on</object-name>
+		<object-name>WINHEATRS.on</object-name>
+		<condition>
+			<equals>
+				<property>controls/deice/windowprobeheat</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>WINHEATLF.off</object-name>
+		<object-name>WINHEATRF.off</object-name>
+		<object-name>WINHEATLS.off</object-name>
+		<object-name>WINHEATRS.off</object-name>
+		<condition>
+			<equals>
+				<property>controls/deice/windowprobeheat</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
     <animation>
       <type>pick</type>
       <object-name>windowlf</object-name>         
@@ -1118,7 +1187,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>windowlf</object-name>  
-      <property>controls/anti-ice/window-heat</property>
+      <property>/controls/deice/windowprobeheat</property>
       <factor>30</factor>
       <center>
         <x-m>-0.24707</x-m>
@@ -1264,6 +1333,159 @@
       </axis>
     </animation> 
 
+	<!-- hyd lights -->
+	<animation>
+		<type>select</type>
+		<object-name>HYDAelec2lopress.on</object-name>
+		<condition>
+			<or>
+				<and>
+					<equals>
+						<property>systems/electrical/bus/acL</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>systems/electrical/bus/acR</property>
+						<value>0</value>
+					</equals>
+				</and>
+				<equals>
+					<property>controls/hydraulic/a-elec2-pump</property>
+					<value>0</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>HYDAelec2lopress.off</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>systems/electrical/bus/acL</property>
+					<value>0</value>
+				</greater-than>
+				<greater-than>
+					<property>systems/electrical/bus/acR</property>
+					<value>0</value>
+				</greater-than>
+				<equals>
+					<property>controls/hydraulic/a-elec2-pump</property>
+					<value>1</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>HYDBelec1lopress.on</object-name>
+		<condition>
+			<or>
+				<and>
+					<equals>
+						<property>systems/electrical/bus/acL</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>systems/electrical/bus/acR</property>
+						<value>0</value>
+					</equals>
+				</and>
+				<equals>
+					<property>controls/hydraulic/b-elec1-pump</property>
+					<value>0</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>HYDBelec1lopress.off</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>systems/electrical/bus/acL</property>
+					<value>0</value>
+				</greater-than>
+				<greater-than>
+					<property>systems/electrical/bus/acR</property>
+					<value>0</value>
+				</greater-than>
+				<equals>
+					<property>controls/hydraulic/b-elec1-pump</property>
+					<value>1</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>HYDAeng1lopress.on</object-name>
+		<condition>
+			<or>
+				<less-than>
+					<property>engines/engine[0]/n2</property>
+					<value>47</value>
+				</less-than>
+				<equals>
+					<property>controls/hydraulic/a-eng1-pump</property>
+					<value>0</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>HYDAeng1lopress.off</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>engines/engine[0]/n2</property>
+					<value>47</value>
+				</greater-than>
+				<equals>
+					<property>controls/hydraulic/a-eng1-pump</property>
+					<value>1</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>HYDBeng2lopress.on</object-name>
+		<condition>
+			<or>
+				<less-than>
+					<property>engines/engine[1]/n2</property>
+					<value>47</value>
+				</less-than>
+				<equals>
+					<property>controls/hydraulic/b-eng2-pump</property>
+					<value>0</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>HYDBeng2lopress.off</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>engines/engine[1]/n2</property>
+					<value>47</value>
+				</greater-than>
+				<equals>
+					<property>controls/hydraulic/b-eng2-pump</property>
+					<value>1</value>
+				</equals>
+			</and>
+		</condition>
+	</animation>
+	
     <!-- Eletric Hyd Pumps -->
 
     <animation>
@@ -1275,7 +1497,7 @@
         <repeatable type="bool">false</repeatable>    
         <binding>
           <command>property-toggle</command>
-          <property>controls/hydraulic/system/engine-pump</property>
+          <property>controls/hydraulic/a-eng1-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1286,7 +1508,7 @@
     <animation>
       <type>rotate</type>   
       <object-name>hydeng1</object-name>  
-      <property>controls/hydraulic/system/engine-pump</property>
+      <property>controls/hydraulic/a-eng1-pump</property>
       <factor>30</factor>
       <center>
         <x-m>-0.03142</x-m>
@@ -1302,14 +1524,14 @@
 
     <animation>
       <type>pick</type>
-      <object-name>hydeng2</object-name>         
+	  <object-name>hydeng2</object-name>         
       <visible>1</visible>
       <action>
         <button>0</button>
         <repeatable type="bool">false</repeatable>   
         <binding>
           <command>property-toggle</command>
-          <property>controls/hydraulic/system/engine-pump</property>
+          <property>controls/hydraulic/b-eng2-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1319,8 +1541,8 @@
     </animation>
     <animation>
       <type>rotate</type>   
-      <object-name>hydeng2</object-name>  
-      <property>controls/hydraulic/system/engine-pump</property>
+       <object-name>hydeng2</object-name>        
+      <property>controls/hydraulic/b-eng2-pump</property>
       <factor>30</factor>
       <center>
         <x-m>-0.03150</x-m>
@@ -1336,14 +1558,14 @@
 
     <animation>
       <type>pick</type>
-      <object-name>hydelectr2</object-name>         
+	 <object-name>hydelectr2</object-name>         
       <visible>1</visible>
       <action>
         <button>0</button>
         <repeatable type="bool">false</repeatable>
         <binding>
           <command>property-toggle</command>
-          <property>controls/hydraulic/system/electric-pump</property>
+          <property>controls/hydraulic/a-elec2-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1353,8 +1575,8 @@
     </animation>
     <animation>
       <type>rotate</type>   
-      <object-name>hydelectr2</object-name>  
-      <property>controls/hydraulic/system/electric-pump</property>
+	 <object-name>hydelectr2</object-name>  
+      <property>controls/hydraulic/a-elec2-pump</property>
       <factor>30</factor>
       <center>
         <x-m>-0.03147</x-m>
@@ -1370,14 +1592,14 @@
 
     <animation>
       <type>pick</type>
-      <object-name>hydelectr1</object-name>         
+	 <object-name>hydelectr1</object-name>         
       <visible>1</visible>
       <action>
         <button>0</button>
         <repeatable type="bool">false</repeatable>        
         <binding>
           <command>property-toggle</command>
-          <property>controls/hydraulic/system/electric-pump</property>
+          <property>controls/hydraulic/b-elec1-pump</property>
         </binding>
         <binding>
           <command>nasal</command>
@@ -1387,8 +1609,8 @@
     </animation>
     <animation>
       <type>rotate</type>   
-      <object-name>hydelectr1</object-name>  
-      <property>controls/hydraulic/system/electric-pump</property>
+	  <object-name>hydelectr1</object-name>  
+      <property>controls/hydraulic/b-elec1-pump</property>
       <factor>30</factor>
       <center>
         <x-m>-0.03146</x-m>
