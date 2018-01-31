@@ -7,7 +7,7 @@
 	<fileheader>
 		<author> Michael Soitanen, YV3399 And it0uchpods </author>
 		<filecreationdate> 2014-09-30 </filecreationdate>
-		<version>$Revison: 1.2 $</version>
+		<version>$Revison: 1.0 $</version>
 		<description> Models a 737-800. </description>
 	</fileheader>
 
@@ -700,7 +700,7 @@
 
 		</channel>
 
-	
+		
 		<channel name="Yaw">
 
 			<summer name="Rudder Command Sum">
@@ -779,7 +779,7 @@
 					</setting>
 					<setting>
 						<position>1</position>
-						<time>0.910</time> <!-- from reports about problems with jammed rudder -->
+						<time>0.909</time> <!-- from reports about problems with jammed rudder -->
 					</setting>
 				</traverse>
 				<output>fcs/rudder-sum</output>
@@ -788,8 +788,8 @@
 			<aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
 				<input>fcs/rudder-sum</input>
 				<range>
-					<min>-0.543</min>
-					<max> 0.543</max>
+					<min>-0.523</min>
+					<max> 0.523</max>
 				</range>
 				<output>fcs/rudder-pos-rad</output>
 			</aerosurface_scale>
@@ -797,8 +797,8 @@
 			<aerosurface_scale name="Rudder Normalized">
 				<input>fcs/rudder-pos-rad</input>
 				<domain>
-					<min>-0.543</min>
-					<max> 0.543</max>
+					<min>-0.523</min>
+					<max> 0.523</max>
 				</domain>
 				<range>
 					<min>-1</min>
