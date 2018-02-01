@@ -21,6 +21,10 @@
 		<object-name>STBYpwr.on</object-name>
 		<object-name>DRIVEL.on</object-name>
 		<object-name>DRIVER.on</object-name>
+		<object-name>TRANSL.on</object-name>
+		<object-name>TRANSR.on</object-name>
+		<object-name>SOURCEL.on</object-name>
+		<object-name>SOURCER.on</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -40,6 +44,10 @@
 		<object-name>STBYpwr.off</object-name>
 		<object-name>DRIVEL.off</object-name>
 		<object-name>DRIVER.off</object-name>
+		<object-name>TRANSL.off</object-name>
+		<object-name>TRANSR.off</object-name>
+		<object-name>SOURCEL.off</object-name>
+		<object-name>SOURCER.off</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -1095,7 +1103,86 @@
 			</or>
 		</condition>
 	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GENOFFL.on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>controls/electrical/eng/Lsw</property>
+					<value>1</value>
+				</not-equals>
+				<greater-than>
+					<property>engines/engine[0]/n2</property>
+					<value>94.9</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GENOFFL.off</object-name>
+		<condition>
+			<or>
+				<and>
+					<equals>
+						<property>controls/electrical/eng/Lsw</property>
+						<value>1</value>
+					</equals>
+					<greater-than>
+						<property>engines/engine[0]/n2</property>
+						<value>54</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>engines/engine[0]/n2</property>
+					<value>54</value>
+				</less-than>
+			</or>
+		</condition>
+	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>GENOFFR.on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>controls/electrical/eng/Rsw</property>
+					<value>1</value>
+				</not-equals>
+				<greater-than>
+					<property>engines/engine[1]/n2</property>
+					<value>94.9</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GENOFFR.off</object-name>
+		<condition>
+			<or>
+				<and>
+					<equals>
+						<property>controls/electrical/eng/Rsw</property>
+						<value>1</value>
+					</equals>
+					<greater-than>
+						<property>engines/engine[1]/n2</property>
+						<value>54</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>engines/engine[1]/n2</property>
+					<value>54</value>
+				</less-than>
+			</or>
+		</condition>
+	</animation>
 <!-- Anti Ice -->
 
 <animation>

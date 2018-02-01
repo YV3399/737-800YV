@@ -33070,6 +33070,7 @@ OBJECT poly
 name "GENOFFL.off"
 data 10
 Mesh80.001
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.14409 0.09181 0.17154
@@ -33094,6 +33095,7 @@ OBJECT poly
 name "GENOFFL.on"
 data 6
 Mesh80
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.14409 0.09181 0.17154
@@ -33207,6 +33209,7 @@ OBJECT poly
 name "GENOFFR.off"
 data 10
 Mesh81.001
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.14409 0.09181 0.0712
@@ -33231,6 +33234,7 @@ OBJECT poly
 name "GENOFFR.on"
 data 6
 Mesh81
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.14409 0.09181 0.0712
@@ -165627,6 +165631,7 @@ OBJECT poly
 name "SOURCEL.off"
 data 10
 Mesh77.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.12932 0.09181 0.17154
@@ -165651,6 +165656,7 @@ OBJECT poly
 name "SOURCEL.on"
 data 6
 Mesh77
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.12932 0.09181 0.17154
@@ -165764,6 +165770,7 @@ OBJECT poly
 name "SOURCER.off"
 data 10
 Mesh79.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.12932 0.09181 0.0712
@@ -165788,6 +165795,7 @@ OBJECT poly
 name "SOURCER.on"
 data 6
 Mesh79
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.12932 0.09181 0.0712
@@ -172695,6 +172703,7 @@ OBJECT poly
 name "TRANSL.off"
 data 10
 Mesh76.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 0.11504 0.09181 0.17154
@@ -172719,6 +172728,7 @@ OBJECT poly
 name "TRANSL.on"
 data 6
 Mesh76
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 0.11504 0.09181 0.17154
@@ -172832,6 +172842,7 @@ OBJECT poly
 name "TRANSR.off"
 data 10
 Mesh78.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 0.11504 0.09181 0.0712
@@ -172856,6 +172867,7 @@ OBJECT poly
 name "TRANSR.on"
 data 6
 Mesh78
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 0.11504 0.09181 0.0712
