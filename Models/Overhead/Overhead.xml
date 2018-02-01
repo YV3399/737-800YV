@@ -1057,7 +1057,7 @@
 		<object-name>APUbus.on</object-name>
 		<condition>
 			<and>
-				<or>
+				<and>
 					<not-equals>
 						<property>controls/electrical/apu/Lsw</property>
 						<value>1</value>
@@ -1066,7 +1066,7 @@
 						<property>controls/electrical/apu/Rsw</property>
 						<value>1</value>
 					</not-equals>
-				</or>
+				</and>
 				<greater-than>
 					<property>systems/apu/rpm</property>
 					<value>94.9</value>
@@ -1115,7 +1115,7 @@
 				</not-equals>
 				<greater-than>
 					<property>engines/engine[0]/n2</property>
-					<value>94.9</value>
+					<value>54</value>
 				</greater-than>
 			</and>
 		</condition>
@@ -1155,7 +1155,7 @@
 				</not-equals>
 				<greater-than>
 					<property>engines/engine[1]/n2</property>
-					<value>94.9</value>
+					<value>54</value>
 				</greater-than>
 			</and>
 		</condition>
