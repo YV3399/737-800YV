@@ -18,6 +18,22 @@
 		<object-name>EQIPCOOLR.on</object-name>
 		<object-name>NOTARMED.on</object-name>
 		<object-name>MAINT.on</object-name>
+		<object-name>STBYpwr.on</object-name>
+		<object-name>DRIVEL.on</object-name>
+		<object-name>DRIVER.on</object-name>
+		<object-name>TRANSL.on</object-name>
+		<object-name>TRANSR.on</object-name>
+		<object-name>SOURCEL.on</object-name>
+		<object-name>SOURCER.on</object-name>
+		<object-name>ELEC.on</object-name>
+		<object-name>TR.on</object-name>
+		<object-name>BATDISCHARGE.on</object-name>
+		<object-name>WINOVHTLS.on</object-name>
+		<object-name>WINOVHTLF.on</object-name>
+		<object-name>WINOVHTRF.on</object-name>
+		<object-name>WINOVHTRS.on</object-name>
+		<object-name>COWLICEL.on</object-name>
+		<object-name>COWLICER.on</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -34,6 +50,22 @@
 		<object-name>EQIPCOOLR.off</object-name>
 		<object-name>NOTARMED.off</object-name>
 		<object-name>MAINT.off</object-name>
+		<object-name>STBYpwr.off</object-name>
+		<object-name>DRIVEL.off</object-name>
+		<object-name>DRIVER.off</object-name>
+		<object-name>TRANSL.off</object-name>
+		<object-name>TRANSR.off</object-name>
+		<object-name>SOURCEL.off</object-name>
+		<object-name>SOURCER.off</object-name>
+		<object-name>ELEC.off</object-name>
+		<object-name>TR.off</object-name>
+		<object-name>BATDISCHARGE.off</object-name>
+		<object-name>WINOVHTLS.off</object-name>
+		<object-name>WINOVHTLF.off</object-name>
+		<object-name>WINOVHTRF.off</object-name>
+		<object-name>WINOVHTRS.off</object-name>
+		<object-name>COWLICEL.off</object-name>
+		<object-name>COWLICER.off</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -1037,9 +1069,207 @@
         <z>0</z>
       </axis>
     </animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>APUbus.on</object-name>
+		<condition>
+			<and>
+				<and>
+					<not-equals>
+						<property>controls/electrical/apu/Lsw</property>
+						<value>1</value>
+					</not-equals>
+					<not-equals>
+						<property>controls/electrical/apu/Rsw</property>
+						<value>1</value>
+					</not-equals>
+				</and>
+				<greater-than>
+					<property>systems/apu/rpm</property>
+					<value>94.9</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>APUbus.off</object-name>
+		<condition>
+			<or>
+				<and>
+					<or>
+						<equals>
+							<property>controls/electrical/apu/Lsw</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>controls/electrical/apu/Rsw</property>
+							<value>1</value>
+						</equals>
+					</or>
+					<greater-than>
+						<property>systems/apu/rpm</property>
+						<value>94.9</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>systems/apu/rpm</property>
+					<value>94.9</value>
+				</less-than>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GENOFFL.on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>controls/electrical/eng/Lsw</property>
+					<value>1</value>
+				</not-equals>
+				<greater-than>
+					<property>engines/engine[0]/n2</property>
+					<value>54</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GENOFFL.off</object-name>
+		<condition>
+			<or>
+				<and>
+					<equals>
+						<property>controls/electrical/eng/Lsw</property>
+						<value>1</value>
+					</equals>
+					<greater-than>
+						<property>engines/engine[0]/n2</property>
+						<value>54</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>engines/engine[0]/n2</property>
+					<value>54</value>
+				</less-than>
+			</or>
+		</condition>
+	</animation>
 
+	<animation>
+		<type>select</type>
+		<object-name>GENOFFR.on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>controls/electrical/eng/Rsw</property>
+					<value>1</value>
+				</not-equals>
+				<greater-than>
+					<property>engines/engine[1]/n2</property>
+					<value>54</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GENOFFR.off</object-name>
+		<condition>
+			<or>
+				<and>
+					<equals>
+						<property>controls/electrical/eng/Rsw</property>
+						<value>1</value>
+					</equals>
+					<greater-than>
+						<property>engines/engine[1]/n2</property>
+						<value>54</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>engines/engine[1]/n2</property>
+					<value>54</value>
+				</less-than>
+			</or>
+		</condition>
+	</animation>
 <!-- Anti Ice -->
-
+	<animation>
+		<type>select</type>
+		<object-name>WINGLvalve.off</object-name>
+		<object-name>WINGRvalve.off</object-name>
+		<condition>
+			<equals>
+				<property>controls/deice/wing-heat</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>WINGLvalve.on</object-name>
+		<object-name>WINGRvalve.on</object-name>
+		<condition>
+			<equals>
+				<property>controls/deice/wing-heat</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ENGLcowl.off</object-name>
+		<condition>
+			<equals>
+				<property>controls/deice/lengine</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ENGLcowl.on</object-name>
+		<condition>
+			<equals>
+				<property>controls/deice/lengine</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ENGRcowl.off</object-name>
+		<condition>
+			<equals>
+				<property>controls/deice/rengine</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ENGRcowl.on</object-name>
+		<condition>
+			<equals>
+				<property>controls/deice/rengine</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
 <animation>
       <type>pick</type>
       <object-name>wingantiice</object-name>         

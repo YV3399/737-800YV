@@ -24,8 +24,8 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var apuR = getprop("/controls/electrical/apu/Rsw");
 	var engL = getprop("/controls/electrical/eng/Lsw");
 	var engR = getprop("/controls/electrical/eng/Rsw");
-	var rpmL = getprop("/engines/engine[0]/n1");
-	var rpmR = getprop("/engines/engine[1]/n1");
+	var rpmL = getprop("/engines/engine[0]/n2");
+	var rpmR = getprop("/engines/engine[1]/n2");
 	var dcbusL = getprop("/systems/electrical/bus/dcL");
 	var dcbusR = getprop("/systems/electrical/bus/dcR");
 	var acbusL = getprop("/systems/electrical/bus/acL");
