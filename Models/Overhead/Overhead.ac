@@ -2680,6 +2680,7 @@ OBJECT poly
 name "APUbus.off"
 data 10
 Mesh87.001
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.14162 0.09181 0.12167
@@ -2704,6 +2705,7 @@ OBJECT poly
 name "APUbus.on"
 data 6
 Mesh87
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.14162 0.09181 0.12167
@@ -11979,6 +11981,7 @@ OBJECT poly
 name "DRIVEL.off"
 data 10
 Mesh72.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.03173 0.09181 0.1663
@@ -12003,6 +12006,7 @@ OBJECT poly
 name "DRIVEL.on"
 data 6
 Mesh72
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.03173 0.09181 0.1663
@@ -12116,6 +12120,7 @@ OBJECT poly
 name "DRIVER.off"
 data 10
 Mesh74.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.03173 0.09181 0.07649
@@ -12140,6 +12145,7 @@ OBJECT poly
 name "DRIVER.on"
 data 6
 Mesh74
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.03173 0.09181 0.07649
@@ -33338,8 +33344,8 @@ OBJECT poly
 name "GRDpw.off"
 data 10
 Mesh75.001
-crease 35.000000
 texture "Ohpanel3-off.png"
+crease 35.000000
 numvert 4
 0.05458 0.07981 0.12167
 0.04138 0.07981 0.09564
@@ -33363,8 +33369,8 @@ OBJECT poly
 name "GRDpw.on"
 data 6
 Mesh75
-crease 35.000000
 texture "Ohpanel3.png"
+crease 35.000000
 numvert 4
 0.05458 0.07981 0.12167
 0.04138 0.07981 0.09564
@@ -44075,8 +44081,8 @@ OBJECT poly
 name "LAVSMOKE.off"
 data 10
 Mesh86.002
-crease 35.000000
 texture "Ohpanel1-off.png"
+crease 35.000000
 numvert 4
 -0.07904 0.09181 0.01264
 -0.09225 0.09181 -0.01339
@@ -44100,8 +44106,8 @@ OBJECT poly
 name "LAVSMOKE.on"
 data 10
 Mesh86.003
-crease 35.000000
 texture "Ohpanel1.png"
+crease 35.000000
 numvert 4
 -0.07904 0.09181 0.01264
 -0.09225 0.09181 -0.01339
@@ -46925,8 +46931,8 @@ OBJECT poly
 name "MAINT.off"
 data 11
 Mesh101.002
-crease 35.000000
 texture "Ohpanel3-off.png"
+crease 35.000000
 numvert 4
 0.16806 0.0918 0.02569
 0.15485 0.0918 -0.00034
@@ -46950,8 +46956,8 @@ OBJECT poly
 name "MAINT.on"
 data 11
 Mesh101.001
-crease 35.000000
 texture "Ohpanel3.png"
+crease 35.000000
 numvert 4
 0.16806 0.0918 0.02569
 0.15485 0.0918 -0.00034
@@ -159734,8 +159740,8 @@ OBJECT poly
 name "NOTARMED.off"
 data 10
 Mesh88.001
-crease 35.000000
 texture "Ohpanel4-off.png"
+crease 35.000000
 numvert 4
 0.02316 0.09181 0.02557
 0.04918 0.09181 0.01237
@@ -159759,8 +159765,8 @@ OBJECT poly
 name "NOTARMED.on"
 data 6
 Mesh88
-crease 35.000000
 texture "Ohpanel4.png"
+crease 35.000000
 numvert 4
 0.02316 0.09181 0.02557
 0.04918 0.09181 0.01237
@@ -166580,6 +166586,7 @@ OBJECT poly
 name "STBYpwr.off"
 data 10
 Mesh73.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.04465 0.09181 0.12171
@@ -166604,6 +166611,7 @@ OBJECT poly
 name "STBYpwr.on"
 data 6
 Mesh73
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.04465 0.09181 0.12171

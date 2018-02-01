@@ -18,6 +18,9 @@
 		<object-name>EQIPCOOLR.on</object-name>
 		<object-name>NOTARMED.on</object-name>
 		<object-name>MAINT.on</object-name>
+		<object-name>STBYpwr.on</object-name>
+		<object-name>DRIVEL.on</object-name>
+		<object-name>DRIVER.on</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -34,6 +37,9 @@
 		<object-name>EQIPCOOLR.off</object-name>
 		<object-name>NOTARMED.off</object-name>
 		<object-name>MAINT.off</object-name>
+		<object-name>STBYpwr.off</object-name>
+		<object-name>DRIVEL.off</object-name>
+		<object-name>DRIVER.off</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -1037,6 +1043,58 @@
         <z>0</z>
       </axis>
     </animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>APUbus.on</object-name>
+		<condition>
+			<and>
+				<or>
+					<not-equals>
+						<property>controls/electrical/apu/Lsw</property>
+						<value>1</value>
+					</not-equals>
+					<not-equals>
+						<property>controls/electrical/apu/Rsw</property>
+						<value>1</value>
+					</not-equals>
+				</or>
+				<greater-than>
+					<property>systems/apu/rpm</property>
+					<value>94.9</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>APUbus.off</object-name>
+		<condition>
+			<or>
+				<and>
+					<or>
+						<equals>
+							<property>controls/electrical/apu/Lsw</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>controls/electrical/apu/Rsw</property>
+							<value>1</value>
+						</equals>
+					</or>
+					<greater-than>
+						<property>systems/apu/rpm</property>
+						<value>94.9</value>
+					</greater-than>
+				</and>
+				<less-than>
+					<property>systems/apu/rpm</property>
+					<value>94.9</value>
+				</less-than>
+			</or>
+		</condition>
+	</animation>
 
 <!-- Anti Ice -->
 
