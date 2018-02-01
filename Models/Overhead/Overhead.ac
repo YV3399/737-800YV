@@ -7116,6 +7116,7 @@ OBJECT poly
 name "BATDISCHARGE.off"
 data 10
 Mesh68.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.17425 0.09181 0.16166
@@ -7140,6 +7141,7 @@ OBJECT poly
 name "BATDISCHARGE.on"
 data 6
 Mesh68
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.17425 0.09181 0.16166
@@ -9953,6 +9955,7 @@ OBJECT poly
 name "COWLICEL.off"
 data 11
 Mesh117.002
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.1438 0.07981 -0.11357
@@ -9977,6 +9980,7 @@ OBJECT poly
 name "COWLICEL.on"
 data 7
 Mesh117
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.1438 0.07981 -0.11357
@@ -10090,6 +10094,7 @@ OBJECT poly
 name "COWLICER.off"
 data 11
 Mesh105.002
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.1438 0.07981 -0.14026
@@ -10114,6 +10119,7 @@ OBJECT poly
 name "COWLICER.on"
 data 7
 Mesh105
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.1438 0.07981 -0.14026
@@ -12396,6 +12402,7 @@ OBJECT poly
 name "ELEC.off"
 data 10
 Mesh71.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.17425 0.09181 0.10612
@@ -12420,6 +12427,7 @@ OBJECT poly
 name "ELEC.on"
 data 6
 Mesh71
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.17425 0.09181 0.10612
@@ -17986,6 +17994,7 @@ OBJECT poly
 name "ENGL.cowl.off"
 data 11
 Mesh117.004
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 -0.12954 0.07981 -0.11357
@@ -18010,6 +18019,7 @@ OBJECT poly
 name "ENGL.cowl.on"
 data 11
 Mesh117.001
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 -0.12954 0.07981 -0.11357
@@ -18308,6 +18318,7 @@ OBJECT poly
 name "ENGRcowl.off"
 data 11
 Mesh117.005
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 -0.12954 0.07981 -0.1402
@@ -18332,6 +18343,7 @@ OBJECT poly
 name "ENGRcowl.on"
 data 11
 Mesh117.003
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 -0.12954 0.07981 -0.1402
@@ -172566,6 +172578,7 @@ OBJECT poly
 name "TR.off"
 data 10
 Mesh70.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.17425 0.09181 0.13389
@@ -172590,6 +172603,7 @@ OBJECT poly
 name "TR.on"
 data 6
 Mesh70
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.17425 0.09181 0.13389
@@ -182690,6 +182704,7 @@ OBJECT poly
 name "WINGLvalve.off"
 data 11
 Mesh117.010
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 -0.12954 0.07981 -0.04989
@@ -184055,6 +184070,7 @@ OBJECT poly
 name "WINGLvalve.on"
 data 11
 Mesh117.009
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 -0.12954 0.07981 -0.04989
@@ -184168,6 +184184,7 @@ OBJECT poly
 name "WINGRvalve.off"
 data 11
 Mesh117.011
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 -0.12954 0.07981 -0.07663
@@ -184192,6 +184209,7 @@ OBJECT poly
 name "WINGRvalve.on"
 data 11
 Mesh117.006
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 -0.12954 0.07981 -0.07663
@@ -184861,6 +184879,7 @@ OBJECT poly
 name "WINOVHTLF.off"
 data 10
 Mesh89.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.28592 0.07981 -0.0787
@@ -184885,6 +184904,7 @@ OBJECT poly
 name "WINOVHTLF.on"
 data 6
 Mesh89
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.28592 0.07981 -0.0787
@@ -184998,6 +185018,7 @@ OBJECT poly
 name "WINOVHTLS.off"
 data 10
 Mesh59.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.28592 0.07981 -0.05201
@@ -185022,6 +185043,7 @@ OBJECT poly
 name "WINOVHTLS.on"
 data 6
 Mesh59
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.28592 0.07981 -0.05201
@@ -185135,6 +185157,7 @@ OBJECT poly
 name "WINOVHTRF.off"
 data 10
 Mesh90.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.28592 0.07981 -0.11357
@@ -185159,6 +185182,7 @@ OBJECT poly
 name "WINOVHTRF.on"
 data 6
 Mesh90
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.28592 0.07981 -0.11357
@@ -185272,6 +185296,7 @@ OBJECT poly
 name "WINOVHTRS.off"
 data 10
 Mesh91.001
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.28592 0.07981 -0.14026
@@ -185296,6 +185321,7 @@ OBJECT poly
 name "WINOVHTRS.on"
 data 6
 Mesh91
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.28592 0.07981 -0.14026
