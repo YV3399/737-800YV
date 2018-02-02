@@ -34,6 +34,13 @@
 		<object-name>WINOVHTRS.on</object-name>
 		<object-name>COWLICEL.on</object-name>
 		<object-name>COWLICER.on</object-name>
+		<object-name>YAWDAMP.on</object-name>
+		<object-name>STBYHYDQTY.on</object-name>
+		<object-name>STBYHYDPRESS.on</object-name>
+		<object-name>DIFFPRESS.on</object-name>
+		<object-name>AUTOSLATFAIL.on</object-name>
+		<object-name>SPDTRIM.on</object-name>
+		<object-name>MACHTRIM.on</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -66,6 +73,13 @@
 		<object-name>WINOVHTRS.off</object-name>
 		<object-name>COWLICEL.off</object-name>
 		<object-name>COWLICER.off</object-name>
+		<object-name>YAWDAMP.off</object-name>
+		<object-name>STBYHYDQTY.off</object-name>
+		<object-name>STBYHYDPRESS.off</object-name>
+		<object-name>DIFFPRESS.off</object-name>
+		<object-name>AUTOSLATFAIL.off</object-name>
+		<object-name>SPDTRIM.off</object-name>
+		<object-name>MACHTRIM.off</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -1564,6 +1578,95 @@
     </animation> 
 
 	<!-- hyd lights -->
+	
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDL.on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>controls/hydraulic/stby-pump</property>
+					<value>1</value>
+				</not-equals>
+				<less-than>
+					<property>systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</less-than>
+			</and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDL.off</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>controls/hydraulic/stby-pump</property>
+					<value>1</value>
+				</equals>
+				<greater-than>
+					<property>systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</greater-than>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDR.on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>controls/hydraulic/stby-pump</property>
+					<value>1</value>
+				</not-equals>
+				<less-than>
+					<property>systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</less-than>
+			</and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDR.off</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>controls/hydraulic/stby-pump</property>
+					<value>1</value>
+				</equals>
+				<greater-than>
+					<property>systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</greater-than>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDON.on</object-name>
+		<condition>
+			<equals>
+				<property>controls/hydraulic/stby-pump</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDON.off</object-name>
+		<condition>
+			<equals>
+				<property>controls/hydraulic/stby-pump</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	
 	<animation>
 		<type>select</type>
 		<object-name>HYDAelec2lopress.on</object-name>
