@@ -18048,6 +18048,7 @@ OBJECT poly
 name "engL.off"
 data 10
 Mesh49.006
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.05643 0.07981 0.31895
@@ -18072,6 +18073,7 @@ OBJECT poly
 name "engL.on"
 data 10
 Mesh49.005
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.05643 0.07981 0.31895
@@ -18185,6 +18187,7 @@ OBJECT poly
 name "engR.off"
 data 10
 Mesh49.010
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.05643 0.07981 0.22643
@@ -18209,6 +18212,7 @@ OBJECT poly
 name "engR.on"
 data 10
 Mesh49.011
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.05643 0.07981 0.22643
@@ -21724,6 +21728,7 @@ OBJECT poly
 name "filterbypassL.off"
 data 10
 Mesh49.002
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.31895
@@ -21748,6 +21753,7 @@ OBJECT poly
 name "filterbypassL.on"
 data 6
 Mesh49
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.31895
@@ -21861,6 +21867,7 @@ OBJECT poly
 name "filterbypassR.off"
 data 10
 Mesh67.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.22737
@@ -21885,6 +21892,7 @@ OBJECT poly
 name "filterbypassR.on"
 data 6
 Mesh67
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.22737
@@ -45718,6 +45726,7 @@ OBJECT poly
 name "LOPRESSC1.off"
 data 10
 Mesh69.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.17123 0.09181 0.2881
@@ -45742,6 +45751,7 @@ OBJECT poly
 name "LOPRESSC1.on"
 data 6
 Mesh69
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.17123 0.09181 0.2881
@@ -45855,6 +45865,7 @@ OBJECT poly
 name "LOPRESSC2.off"
 data 10
 Mesh50.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.17123 0.09181 0.2578
@@ -45879,6 +45890,7 @@ OBJECT poly
 name "LOPRESSC2.on"
 data 6
 Mesh50
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.17123 0.09181 0.2578
@@ -45992,6 +46004,7 @@ OBJECT poly
 name "LOPRESSL1.off"
 data 10
 Mesh51.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.32448
@@ -46016,6 +46029,7 @@ OBJECT poly
 name "LOPRESSL1.on"
 data 6
 Mesh51
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.32448
@@ -46129,6 +46143,7 @@ OBJECT poly
 name "LOPRESSL2.off"
 data 10
 Mesh52.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.29417
@@ -46153,6 +46168,7 @@ OBJECT poly
 name "LOPRESSL2.on"
 data 6
 Mesh52
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.29417
@@ -46266,6 +46282,7 @@ OBJECT poly
 name "LOPRESSR1.off"
 data 10
 Mesh53.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.25139
@@ -46290,6 +46307,7 @@ OBJECT poly
 name "LOPRESSR1.on"
 data 6
 Mesh53
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.25139
@@ -46403,6 +46421,7 @@ OBJECT poly
 name "LOPRESSR2.off"
 data 10
 Mesh54.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.22104
@@ -46427,6 +46446,7 @@ OBJECT poly
 name "LOPRESSR2.on"
 data 6
 Mesh54
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.22104
@@ -165927,6 +165947,7 @@ OBJECT poly
 name "sparL.off"
 data 10
 Mesh49.007
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.07067 0.07981 0.31895
@@ -165951,6 +165972,7 @@ OBJECT poly
 name "sparL.on"
 data 10
 Mesh49.004
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.07067 0.07981 0.31895
@@ -166064,6 +166086,7 @@ OBJECT poly
 name "sparR.off"
 data 10
 Mesh49.009
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.07067 0.07981 0.22637
@@ -166088,6 +166111,7 @@ OBJECT poly
 name "sparR.on"
 data 10
 Mesh49.008
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.07067 0.07981 0.22637
@@ -173013,6 +173037,7 @@ OBJECT poly
 name "valveopen.off"
 data 10
 Mesh49.003
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.27405
@@ -173037,6 +173062,7 @@ OBJECT poly
 name "valveopen.on"
 data 10
 Mesh49.001
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.27405
