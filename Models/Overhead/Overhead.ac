@@ -6979,6 +6979,7 @@ OBJECT poly
 name "AUTOSLATFAIL.off"
 data 10
 Mesh66.002
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.13929 0.09181 0.23633
@@ -7003,6 +7004,7 @@ OBJECT poly
 name "AUTOSLATFAIL.on"
 data 6
 Mesh66
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.13929 0.09181 0.23633
@@ -11850,6 +11852,7 @@ OBJECT poly
 name "DIFFPRESS.off"
 data 10
 Mesh64.002
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.18074 0.09181 0.23633
@@ -11874,6 +11877,7 @@ OBJECT poly
 name "DIFFPRESS.on"
 data 6
 Mesh64
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.18074 0.09181 0.23633
@@ -17902,7 +17906,7 @@ refs 3
 5 3.84636 3.77811
 kids 0
 OBJECT poly
-name "ENGL.cowl.base"
+name "ENGLcowl.base"
 data 7
 Mesh164
 texture "Overhead.png"
@@ -17991,7 +17995,7 @@ refs 3
 5 3.84636 3.77811
 kids 0
 OBJECT poly
-name "ENGL.cowl.off"
+name "ENGLcowl.off"
 data 11
 Mesh117.004
 texture "Ohpanel3-off.png"
@@ -18016,7 +18020,7 @@ refs 3
 3 0.088378 0.068193
 kids 0
 OBJECT poly
-name "ENGL.cowl.on"
+name "ENGLcowl.on"
 data 11
 Mesh117.001
 texture "Ohpanel3.png"
@@ -18044,6 +18048,7 @@ OBJECT poly
 name "engL.off"
 data 10
 Mesh49.006
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.05643 0.07981 0.31895
@@ -18068,6 +18073,7 @@ OBJECT poly
 name "engL.on"
 data 10
 Mesh49.005
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.05643 0.07981 0.31895
@@ -18181,6 +18187,7 @@ OBJECT poly
 name "engR.off"
 data 10
 Mesh49.010
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.05643 0.07981 0.22643
@@ -18205,6 +18212,7 @@ OBJECT poly
 name "engR.on"
 data 10
 Mesh49.011
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.05643 0.07981 0.22643
@@ -21720,6 +21728,7 @@ OBJECT poly
 name "filterbypassL.off"
 data 10
 Mesh49.002
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.31895
@@ -21744,6 +21753,7 @@ OBJECT poly
 name "filterbypassL.on"
 data 6
 Mesh49
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.31895
@@ -21857,6 +21867,7 @@ OBJECT poly
 name "filterbypassR.off"
 data 10
 Mesh67.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.22737
@@ -21881,6 +21892,7 @@ OBJECT poly
 name "filterbypassR.on"
 data 6
 Mesh67
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.22737
@@ -45714,6 +45726,7 @@ OBJECT poly
 name "LOPRESSC1.off"
 data 10
 Mesh69.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.17123 0.09181 0.2881
@@ -45738,6 +45751,7 @@ OBJECT poly
 name "LOPRESSC1.on"
 data 6
 Mesh69
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.17123 0.09181 0.2881
@@ -45851,6 +45865,7 @@ OBJECT poly
 name "LOPRESSC2.off"
 data 10
 Mesh50.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.17123 0.09181 0.2578
@@ -45875,6 +45890,7 @@ OBJECT poly
 name "LOPRESSC2.on"
 data 6
 Mesh50
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.17123 0.09181 0.2578
@@ -45988,6 +46004,7 @@ OBJECT poly
 name "LOPRESSL1.off"
 data 10
 Mesh51.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.32448
@@ -46012,6 +46029,7 @@ OBJECT poly
 name "LOPRESSL1.on"
 data 6
 Mesh51
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.32448
@@ -46125,6 +46143,7 @@ OBJECT poly
 name "LOPRESSL2.off"
 data 10
 Mesh52.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.29417
@@ -46149,6 +46168,7 @@ OBJECT poly
 name "LOPRESSL2.on"
 data 6
 Mesh52
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.29417
@@ -46262,6 +46282,7 @@ OBJECT poly
 name "LOPRESSR1.off"
 data 10
 Mesh53.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.25139
@@ -46286,6 +46307,7 @@ OBJECT poly
 name "LOPRESSR1.on"
 data 6
 Mesh53
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.25139
@@ -46399,6 +46421,7 @@ OBJECT poly
 name "LOPRESSR2.off"
 data 10
 Mesh54.001
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.22104
@@ -46423,6 +46446,7 @@ OBJECT poly
 name "LOPRESSR2.on"
 data 6
 Mesh54
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 0.22672 0.09181 0.22104
@@ -46810,6 +46834,7 @@ OBJECT poly
 name "MACHTRIM.off"
 data 10
 Mesh65.004
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.15346 0.09181 0.23633
@@ -46834,6 +46859,7 @@ OBJECT poly
 name "MACHTRIM.on"
 data 10
 Mesh65.002
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.15346 0.09181 0.23633
@@ -165921,6 +165947,7 @@ OBJECT poly
 name "sparL.off"
 data 10
 Mesh49.007
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.07067 0.07981 0.31895
@@ -165945,6 +165972,7 @@ OBJECT poly
 name "sparL.on"
 data 10
 Mesh49.004
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.07067 0.07981 0.31895
@@ -166058,6 +166086,7 @@ OBJECT poly
 name "sparR.off"
 data 10
 Mesh49.009
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.07067 0.07981 0.22637
@@ -166082,6 +166111,7 @@ OBJECT poly
 name "sparR.on"
 data 10
 Mesh49.008
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.07067 0.07981 0.22637
@@ -166195,6 +166225,7 @@ OBJECT poly
 name "SPDTRIM.off"
 data 10
 Mesh65.003
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.16667 0.09181 0.2103
@@ -166219,6 +166250,7 @@ OBJECT poly
 name "SPDTRIM.on"
 data 6
 Mesh65
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.16667 0.09181 0.2103
@@ -166332,6 +166364,7 @@ OBJECT poly
 name "STBYHYDPRESS.off"
 data 10
 Mesh61.004
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.2521 0.09181 0.23073
@@ -166356,6 +166389,7 @@ OBJECT poly
 name "STBYHYDPRESS.on"
 data 10
 Mesh61.002
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.2521 0.09181 0.23073
@@ -166469,6 +166503,7 @@ OBJECT poly
 name "STBYHYDQTY.off"
 data 10
 Mesh61.003
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.26662 0.09181 0.23073
@@ -166493,6 +166528,7 @@ OBJECT poly
 name "STBYHYDQTY.on"
 data 6
 Mesh61
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.26662 0.09181 0.23073
@@ -166745,6 +166781,7 @@ OBJECT poly
 name "STBYRUDL.off"
 data 10
 Mesh47.002
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.2208 0.09181 0.31548
@@ -166769,6 +166806,7 @@ OBJECT poly
 name "STBYRUDL.on"
 data 6
 Mesh47
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.2208 0.09181 0.31548
@@ -166882,6 +166920,7 @@ OBJECT poly
 name "STBYRUDON.off"
 data 10
 Mesh62.002
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.28147 0.09181 0.23073
@@ -166906,6 +166945,7 @@ OBJECT poly
 name "STBYRUDON.on"
 data 6
 Mesh62
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.28147 0.09181 0.23073
@@ -167019,6 +167059,7 @@ OBJECT poly
 name "STBYRUDR.off"
 data 10
 Mesh48.002
+texture "Ohpanel1-off.png"
 crease 35.000000
 numvert 4
 -0.2208 0.09181 0.28816
@@ -167043,6 +167084,7 @@ OBJECT poly
 name "STBYRUDR.on"
 data 6
 Mesh48
+texture "Ohpanel1.png"
 crease 35.000000
 numvert 4
 -0.2208 0.09181 0.28816
@@ -172995,6 +173037,7 @@ OBJECT poly
 name "valveopen.off"
 data 10
 Mesh49.003
+texture "Ohpanel3-off.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.27405
@@ -173019,6 +173062,7 @@ OBJECT poly
 name "valveopen.on"
 data 10
 Mesh49.001
+texture "Ohpanel3.png"
 crease 35.000000
 numvert 4
 0.11791 0.07981 0.27405
@@ -186805,6 +186849,7 @@ OBJECT poly
 name "YAWDAMP.off"
 data 10
 Mesh63.002
+texture "Ohpanel4-off.png"
 crease 35.000000
 numvert 4
 -0.13789 0.09181 0.30179
@@ -186829,6 +186874,7 @@ OBJECT poly
 name "YAWDAMP.on"
 data 6
 Mesh63
+texture "Ohpanel4.png"
 crease 35.000000
 numvert 4
 -0.13789 0.09181 0.30179

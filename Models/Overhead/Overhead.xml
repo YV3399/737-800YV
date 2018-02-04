@@ -34,6 +34,15 @@
 		<object-name>WINOVHTRS.on</object-name>
 		<object-name>COWLICEL.on</object-name>
 		<object-name>COWLICER.on</object-name>
+		<object-name>YAWDAMP.on</object-name>
+		<object-name>STBYHYDQTY.on</object-name>
+		<object-name>STBYHYDPRESS.on</object-name>
+		<object-name>DIFFPRESS.on</object-name>
+		<object-name>AUTOSLATFAIL.on</object-name>
+		<object-name>SPDTRIM.on</object-name>
+		<object-name>MACHTRIM.on</object-name>
+		<object-name>filterbypassL.on</object-name>
+		<object-name>filterbypassR.on</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -66,6 +75,15 @@
 		<object-name>WINOVHTRS.off</object-name>
 		<object-name>COWLICEL.off</object-name>
 		<object-name>COWLICER.off</object-name>
+		<object-name>YAWDAMP.off</object-name>
+		<object-name>STBYHYDQTY.off</object-name>
+		<object-name>STBYHYDPRESS.off</object-name>
+		<object-name>DIFFPRESS.off</object-name>
+		<object-name>AUTOSLATFAIL.off</object-name>
+		<object-name>SPDTRIM.off</object-name>
+		<object-name>MACHTRIM.off</object-name>
+		<object-name>filterbypassL.off</object-name>
+		<object-name>filterbypassR.off</object-name>
 		<condition>
 			<equals>
 				<property>/options/OHPtemp</property>
@@ -930,6 +948,210 @@
   </axis>
 </animation>
 
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSC1.on</object-name>
+	<condition>
+		<or>
+			<equals>
+				<property>controls/fuel/tank[2]/pump-left</property>
+				<value>0</value>
+			</equals>
+			<less-than> 
+				<property>fdm/jsbsim/propulsion/tank[2]/contents-lbs</property>
+				<value>1</value>
+			</less-than>
+		</or>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSC2.on</object-name>
+	<condition>
+		<or>
+			<equals>
+				<property>controls/fuel/tank[2]/pump-right</property>
+				<value>0</value>
+			</equals>
+			<less-than> 
+				<property>fdm/jsbsim/propulsion/tank[2]/contents-lbs</property>
+				<value>1</value>
+			</less-than>
+		</or>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSC1.off</object-name>
+	<condition>
+		<and>
+			<equals>
+				<property>controls/fuel/tank[2]/pump-left</property>
+				<value>1</value>
+			</equals>
+			<greater-than> 
+				<property>fdm/jsbsim/propulsion/tank[2]/contents-lbs</property>
+				<value>0</value>
+			</greater-than>
+		</and>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSC2.off</object-name>
+	<condition>
+		<and>
+			<equals>
+				<property>controls/fuel/tank[2]/pump-left</property>
+				<value>1</value>
+			</equals>
+			<greater-than> 
+				<property>fdm/jsbsim/propulsion/tank[2]/contents-lbs</property>
+				<value>0</value>
+			</greater-than>
+		</and>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSL1.on</object-name>
+	<condition>
+		<or>
+			<equals>
+				<property>controls/fuel/tank[0]/pump-aft</property>
+				<value>0</value>
+			</equals>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/tank[0]/contents-lbs</property>
+				<value>1</value>
+			</less-than>
+		</or>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSL2.on</object-name>
+	<condition>
+		<or>
+			<equals>
+				<property>controls/fuel/tank[0]/pump-fwd</property>
+				<value>0</value>
+			</equals>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/tank[0]/contents-lbs</property>
+				<value>1</value>
+			</less-than>
+		</or>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSL1.off</object-name>
+	<condition>
+		<and>
+			<equals>
+				<property>controls/fuel/tank[0]/pump-aft</property>
+				<value>1</value>
+			</equals>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/tank[0]/contents-lbs</property>
+				<value>0</value>
+			</greater-than>
+		</and>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSL2.off</object-name>
+	<condition>
+		<and>
+			<equals>
+				<property>controls/fuel/tank[0]/pump-fwd</property>
+				<value>1</value>
+			</equals>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/tank[0]/contents-lbs</property>
+				<value>0</value>
+			</greater-than>
+		</and>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSR1.on</object-name>
+	<condition>
+		<or>
+			<equals>
+				<property>controls/fuel/tank[1]/pump-fwd</property>
+				<value>0</value>
+			</equals>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/tank[1]/contents-lbs</property>
+				<value>1</value>
+			</less-than>
+		</or>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSR2.on</object-name>
+	<condition>
+		<or>
+			<equals>
+				<property>controls/fuel/tank[1]/pump-aft</property>
+				<value>0</value>
+			</equals>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/tank[1]/contents-lbs</property>
+				<value>1</value>
+			</less-than>
+		</or>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSR1.off</object-name>
+	<condition>
+		<and>
+			<equals>
+				<property>controls/fuel/tank[1]/pump-fwd</property>
+				<value>1</value>
+			</equals>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/tank[1]/contents-lbs</property>
+				<value>0</value>
+			</greater-than>
+		</and>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>LOPRESSR2.off</object-name>
+	<condition>
+		<and>
+			<equals>
+				<property>controls/fuel/tank[1]/pump-aft</property>
+				<value>1</value>
+			</equals>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/tank[1]/contents-lbs</property>
+				<value>0</value>
+			</greater-than>
+		</and>
+	</condition>
+</animation>
+
 <!-- Engines Gen -->
 
  <animation>
@@ -1564,6 +1786,95 @@
     </animation> 
 
 	<!-- hyd lights -->
+	
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDL.on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>controls/hydraulic/stby-pump</property>
+					<value>1</value>
+				</not-equals>
+				<less-than>
+					<property>systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</less-than>
+			</and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDL.off</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>controls/hydraulic/stby-pump</property>
+					<value>1</value>
+				</equals>
+				<greater-than>
+					<property>systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</greater-than>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDR.on</object-name>
+		<condition>
+			<and>
+				<not-equals>
+					<property>controls/hydraulic/stby-pump</property>
+					<value>1</value>
+				</not-equals>
+				<less-than>
+					<property>systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</less-than>
+			</and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDR.off</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>controls/hydraulic/stby-pump</property>
+					<value>1</value>
+				</equals>
+				<greater-than>
+					<property>systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</greater-than>
+			</or>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDON.on</object-name>
+		<condition>
+			<equals>
+				<property>controls/hydraulic/stby-pump</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>STBYRUDON.off</object-name>
+		<condition>
+			<equals>
+				<property>controls/hydraulic/stby-pump</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+	
 	<animation>
 		<type>select</type>
 		<object-name>HYDAelec2lopress.on</object-name>
@@ -2295,6 +2606,96 @@
   </action>
 </animation>
 
+<!-- fuel -->
+
+<animation>
+	<type>select</type>
+	<object-name>engL.on</object-name>
+	<condition>
+		<equals>
+			<property>controls/engines/engine[0]/cutoff</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>engL.off</object-name>
+	<condition>
+		<equals>
+			<property>controls/engines/engine[0]/cutoff</property>
+			<value>0</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>engR.on</object-name>
+	<condition>
+		<equals>
+			<property>controls/engines/engine[1]/cutoff</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>engR.off</object-name>
+	<condition>
+		<equals>
+			<property>controls/engines/engine[1]/cutoff</property>
+			<value>0</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>sparL.on</object-name>
+	<condition>
+		<equals>
+			<property>controls/engines/engine[0]/cutoff</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>sparL.off</object-name>
+	<condition>
+		<equals>
+			<property>controls/engines/engine[0]/cutoff</property>
+			<value>0</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>sparR.on</object-name>
+	<condition>
+		<equals>
+			<property>controls/engines/engine[1]/cutoff</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>sparR.off</object-name>
+	<condition>
+		<equals>
+			<property>controls/engines/engine[1]/cutoff</property>
+			<value>0</value>
+		</equals>
+	</condition>
+</animation>
+
 <animation>
   <type>knob</type>
   <object-name>CrossfeedKnob</object-name>
@@ -2314,6 +2715,27 @@
       <property>/controls/fuel/Crossfeed</property>
     </binding>
   </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>valveopen.off</object-name>
+	<condition>
+		<equals>
+			<property>controls/fuel/Crossfeed</property>
+			<value>0</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>select</type>
+	<object-name>valveopen.on</object-name>
+	<condition>
+		<equals>
+			<property>controls/fuel/Crossfeed</property>
+			<value>1</value>
+		</equals>
+	</condition>
 </animation>
 
 <animation>
