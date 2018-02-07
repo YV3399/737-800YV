@@ -4,8 +4,8 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">AeroMexico</name>
-            <texture>/Liveries-800/AMO.png</texture> 
+            <name type="string">Aviacsa</name>
+            <texture>/Liveries-800/ACV.png</texture> 
 			<newwinglets type="bool">true</newwinglets>			
         </livery>        
     </model>
