@@ -462,16 +462,22 @@
 		<initialize-to>output</initialize-to>
 		<enable>
 			<condition>
-				<or>
-					<equals>
-						<property>/it-autoflight/output/ap1</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/output/ap2</property>
-						<value>1</value>
-					</equals>
-				</or>
+				<and>
+					<or>
+						<equals>
+							<property>/it-autoflight/output/ap1</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/ap2</property>
+							<value>1</value>
+						</equals>
+					</or>
+					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>9</value>
+					</not-equals>
+				</and>
 			</condition>
 		</enable>
 		<input>
