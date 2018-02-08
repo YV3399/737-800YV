@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">AeroMexico-Corona</name>
+            <texture>/Liveries-800/AMX-861.png</texture> 
+			<newwinglets type="bool">true</newwinglets>			
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
