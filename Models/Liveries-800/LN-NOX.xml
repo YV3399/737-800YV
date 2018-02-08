@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Norwegian Air Shuttle (Christian Krohg)</name>
+            <texture>/Liveries-800/LN-NOX.png</texture>       
+			<newwinglets type="bool">false</newwinglets>     
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
