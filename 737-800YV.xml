@@ -2119,7 +2119,7 @@
 
 	</external_reactions>
 
-   <!-- <output name="B737_datalog.csv" rate="10" type="CSV">
+   <!-- <output name="B737_datalog.csv" rate=“120” type="CSV">
 		<property> /instrumentation/airspeed-indicator/indicated-speed-kt </property>
 		<property> /velocities/groundspeed-kt </property>
 		<property> /accelerations/pilot/x-accel-fps_sec </property>
