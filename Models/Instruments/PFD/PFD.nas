@@ -1,8 +1,7 @@
-# ==============================================================================
+# ======================================================================================================
 # Original Boeing 747-400 PFD by Gijs de Rooy
-# Modified for 737-800 by Michael Soitanen and Gabriel Hernandez(YV3399)
-# Modified for IT-AUTOFLIGHT by Joshua Davidson (it0uchpods/411)
-# ==============================================================================
+# Modified for 737-800 by Michael Soitanen, Gabriel Hernandez (YV3399), and Joshua Davidson (it0uchpods)
+# ======================================================================================================
 
 var roundToNearest = func(n, m) {
 	var x = int(n/m)*m;
@@ -815,14 +814,14 @@ var canvas_PFD = {
 		}
 
 		var rollChange = getprop("/autopilot/display/roll-mode-rectangle");
-		if (rollChange == 1 and getprop("/autopilot/display/roll-mode") != " ") {
+		if (rollChange == 1 and getprop("/autopilot/display/roll-mode") != " " and (itafap1 or itafap2 or itaffd1 or itaffd2)) {
 			me["rollModeChange"].show();
 		} else {
 			me["rollModeChange"].hide();
 		}
 
 		var pitchChange = getprop("/autopilot/display/pitch-mode-rectangle");
-		if (pitchChange == 1 and getprop("/autopilot/display/pitch-mode") != " ") {
+		if (pitchChange == 1 and getprop("/autopilot/display/pitch-mode") != " " and (itafap1 or itafap2 or itaffd1 or itaffd2)) {
 			me["pitchModeChange"].show();
 		} else {
 			me["pitchModeChange"].hide();
