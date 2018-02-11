@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Kulula Air (This Way Up)</name>
-            <texture>/Liveries-800/CAW.png</texture>    
+            <texture>/Liveries-800/ZS-ZWO.png</texture>    
             <newwinglets type="bool">false</newwinglets>         
         </livery>        
     </model>
