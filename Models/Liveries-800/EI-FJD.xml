@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Norwegian Air International (Miguel De Cervantes)</name>
+            <texture>/Liveries-800/EI-FJD.png</texture>       
+			<newwinglets type="bool">false</newwinglets>     
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
