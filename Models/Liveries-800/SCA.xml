@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<!-- Sun Country Boeing 737-800 livery- A brief history by E-Savageair
+
+     Often referred to as the "Hometown Airline", Sun Country was founded by CEO and Captain Jim Olsen in June 1982, and began flight operations in January 1983.  Some of the original staff were Braniff International Airways employees who just saw their company fold. It consisted of sixteen pilots, sixteen flight attendants, three mechanics, one office person, and one Boeing 727-200 jetliner. Olsen was also Chief Pilot and his wife Joan Smith-Olson acted as Chief Flight Attendant and Head of Inflight of Operations.  The name "Sun Country" came from the idea of flying to sunny destinations in the United States from the cold winters of the North.
+ 
+     The airline grew steadly from slow deliberate expansion throughout the 80's. In 1986 the high demand on its Minneapolis to Las Vegas route was getting too much for the 727-200 fleet to handle.  So the airline leased a McDonnell Douglas DC-10-40 from Northwest Airlines, their future competitor.  Sun Country was now providing ad-hoc charter service to sport teams, corporations, civic organizations, or anyone who wanted to charter an aircraft.  They also flew charter support during "Operation Desert Storm" in 1991; for their effort the now 130 employees were recognized by the U.S. Air Force.  After earning profits of $9.7 million in 1991, the airline acquired more 727 and DC-10 aircraft and the flights were extended out to Florida, Mexico, and the Caribbean. 
+
+     During the 90's came more change.  The Mark Travel Group led by Bill LaMacchina, Jr. soon bought Sun Country, changing it into more of a small niche-market airline.  However record demands extracted a toll on the aging, overworked aircraft.  The airline began an aircraft refurbishing program to keep up maintenance.  The problem was the DC-10 fleet's maintenance became more expensive and Sun Country started reducing the fleet, finally retiring the final DC-10 in early 2001.
+
+     In June of 1999 the Sun Country management decided to take the next step: making the company into a scheduled airline. By the end of the century, the major airlines started more sophisticated seating methods and the charter tours dropped out. Now there's new service across the nation with stops in Milwaukee, Los Angeles, Seattle, Detroit, Phoenix, And Washington, D.C.  The airline also started a frequent flyer program, "Smile Awards" that offered free flights for frequent flyers.  Even while Sun Country was struggling financially during the summer of 2001, it started to replace its aging fleet with new Boeing 737 Next-Generation aircraft.
+
+    Then came the event of September 11th.  The lost of revenue from being grounded after the attacks, the summer struggles and heavy competition from Northwest Airlines took its toll on Sun Country.  Despite cutting flights, planes, and destinations, the airline closed on Decemeber 8, 2001. During that time in bankruptcy, Sun Country almost lost its 727 fleet and four new 737 aircraft.  The strickened airline still retained its operating certificate and kept one 737.  Soon afterwards a local group of investors going by MN Airlines, LLC purchased the remaining assets in bankruptcy and restarted the airline.
+
+     Sun Country became profitable in 2004. Between then and 2005 following the standard of Southwest Airlines, the company began standardizing its fleet with new Boeing 737-NG aircraft.  To honor the airline's roots and history, Sun Country christened a new 737-800 as "The Spirit of Braniff".  The ceremony took place on September 24, 2005 in the airline's hangar at Minneapolis/St. Paul International Airport with 350 former Braniff and Mid-Continent employees attending.  A year later the airline was purchased by Petters Group Worldwide and Whitebox Advisors. 
+
+     By 2007, Jim Olsen had retired as CEO and Captain.  It seemed Sun Country had weathered its biggest storm and was in good hands. Then came even a bigger disaster! The airline ended up back in turbulence; rising fuel costs and the major rescession of 2008 was taking another toll on Sun Country.  It meant scaling back its summer flights and laying off some 45 of the existing 156 pilots.  Even worse? the discovery that Tom Petters, the CEO of the Petters Group was in investigated by the FBI for financial fraud on a major scale on the airline! The loss of revenue through the fraud scheme by Petters resulted in reducing or eliminating flights to San Francisco, financial loans to the state of Minnesota to keep afloat, and even down to charging a $12 fee on the first bag checked in by passengers!  By now Stan Gadek, former CEO of AirTran Airways took over as Sun Country's CEO.  He called for a 50% pay-deferral from the remaining employees with a promise they would receive back-pay with interest.  Then with that, once again Sun Country filed for Chapter 11 protection this time to separate itself from other Petters companies being taken over by a court appointee.  On Christmas Eve of 2008, full pay was restored with interest as promised.
+
+     The company emerged profitable in 2009 with a $1 million net profit and paid off a $5 million loan from Elite Landings that sells cooperate jets built by Airbus.  More flights grew out to Branson, Missouri, Boston, Lansing, and Washington, DC. It was then in July 2011 Sun Country was purchased out of bankruptcy by the Davis family, owners of the Minnesota-based counter-top company Cambria for $34 million.  Marty Davis, the CEO of Cambria would also be the chairman of Sun Country.  In 2015 Zarir Erani was hired as President and CEO of the airline.  As of 2017, Davis replaced Erani and appointed former Allegent Air President Jude Brickner as Sun Country's CEO when Erani stepped down.
+
+     Today, Sun Country files to 40 destinations, throughout the United States, Mexico, the Caribbean, Costa Rica, and as far away as London Gatwick in the UK. The main hub is located at the Hubert H. Humphrey Terminal at Minnneapolis/St. Paul International Airport.  Its focus airports are Dallas/Fort Worth and Southwest Florida International Airports. The company flies twenty-six 737 Next-Generation aircraft, partnering with KLM subsidiary Transavia in seasonal leasing. The company maintains interline agreements with Icelandair, Condor, China Airlines, and Emirates.  In addition the airline provides charter service for U.S. Armed Forces. 
+
+     As of 2001, the paint scheme Sun Country used went from a white, red, and orange color scheme, to an attractive rich-blue livery using orange and white as trim near the bottom of the fuselage, with thick, bold italized white lettering.  It featured a bright orange compass-like logo with a bold "S" in the middle, adorning the tail and winglets. The logo is also in a lighter blue as shadowing on the fuselage.  This is the livery being depicted. 
+
+To fly your own destination:
+
+Unzip your downloaded file to your desktop or.... 
+Flightgear/Data/Aircraft/737-800YV/Models/Liverives-800
+Place your XML/png. files in "Liveries-800"
+Run Flightgear.  If your have your livery,
+
+See you in St. Maarten.... 
+
+Thank you for downloading ;-)
+ESA-->     
+
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Sun Country Airlines</name>
+            <texture>/Liveries-800/SCA.png</texture>       
+			<newwinglets type="bool">false</newwinglets>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
