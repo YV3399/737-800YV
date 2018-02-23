@@ -39,7 +39,7 @@ ESA-->
     <model>
         <livery>                     
             <name type="string">Sun Country Airlines</name>
-            <texture>/Liveries-800/SCA.png</texture>       
+            <texture>/Liveries-800/SCX.png</texture>       
 			<newwinglets type="bool">false</newwinglets>            
         </livery>        
     </model>
