@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Norwegian Air International (Santiago Ramón y Cajal)</name>
-            <texture>/Liveries-800/EI-FVL.png</texture>       
+            <texture>/Liveries-800/EI-FVP.png</texture>       
 			<newwinglets type="bool">false</newwinglets>     
         </livery>        
     </model>
