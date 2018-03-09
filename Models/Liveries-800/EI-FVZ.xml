@@ -4,8 +4,8 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">Norwegian Air International (Santiago Ramón y Cajal)</name>
-            <texture>/Liveries-800/EI-FVP.png</texture>       
+            <name type="string">Norwegian Air International (Jan Baalsrud)</name>
+            <texture>/Liveries-800/EI-FVZ.png</texture>       
 			<newwinglets type="bool">false</newwinglets>     
         </livery>        
     </model>
