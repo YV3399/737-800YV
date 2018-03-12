@@ -1,279 +1,678 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-
- <checklist>
-
-    <title>PREFLIGHT</title>
-    <item>
-      <name>Oxygen</name>
-      <value>Tested, 100%</value>
-    </item>
-    <item>
-      <name>Navigation transfer and display switches</name>
-      <value>NORMAL, AUTO</value>
-    </item>
-    <item>
-      <name>Window heat</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Pressurization mode selector</name>
-      <value>AUTO</value>
-    </item>
-    <item>
-      <name>Flight instruments</name>
-      <value>Heading ___, Altimeter ___</value>
-    </item>
-    <item>
-      <name>Parking brake</name>
-      <value>Set</value>
-    </item>
-
-    <title>Before Start</title>
-    <item>
-      <name>Flight Deck Door</name>
-      <value>Closed and locked</value>
-    </item>
-    <item>
-      <name>N1 bugs</name>
-      <value>CHECK</value>
-    </item>
-    <item>
-      <name>IAS bugs</name>
-      <value>SET</value>
-    </item>
-    <item>
-      <name>MCP</name>
-      <value>SET</value>
-    </item>
-    <item>
-      <name>Auto-throttle ARM switch</name>
-      <value>ARM</value>
-    </item>
-    <item>
-      <name>IAS/Mach Selector</name>
-      <value>SET V2</value>
-    </item>
-    <item>
-      <name>Arm LNAV</name>
-      <value>AS NEEDED</value>
-    </item>
-    <item>
-      <name>Initial heading</name>
-      <value>SET</value>
-    </item>
-    <item>
-      <name>Initial altitude</name>
-      <value>SET</value>
-    </item>
-    <item>
-      <name>Exterior Doors</name>
-      <value>VERIFY CLOSED</value>
-    </item>
-    <item>
-      <name>Start Clearance</name>
-      <value>OBTAIN</value>
-    </item>
-    <item>
-      <name>Anti-collions Light</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Set takeoff trim</name>
-      <value>IN GREEN BAND</value>
-    </item>
-    <item>
-      <name>Autobrake</name>
-      <value>RTO</value>
-    </item>
-    <item>
-      <name>Parking brake</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Fuel</name>
-      <value>___ LBS/KGS, Pumps ON</value>
-    </item>
-    <item>
-      <name>Passenger signs</name>
-      <value>___</value>
-    </item>
-    <item>
-      <name>Windows</name>
-      <value>Locked</value>
-    </item>
-    <item>
-      <name>MCP</name>
-      <value>V2 ___, HEADING ___, ALTITUDE ___</value>
-    </item>
-    <item>
-      <name>Takeoff speeds</name>
-      <value>V1 ___, VR ___, V2 ___</value>
-    </item>
-    <item>
-      <name>CDU preflight</name>
-      <value>Completed</value>
-    </item>
-    <item>
-      <name>Rudder and aileron trim</name>
-      <value>Free and 0</value>
-    </item>
-    <item>
-      <name>Taxi and takeoff briefing</name>
-      <value>Completed</value>
-    </item>
-  </checklist>
-
-  <checklist>
-    <title>Engine Start</title>
-    <item>
-      <name>A/C pack switches</name>
-      <value>OFF</value>
-    </item>
-    <item>
-      <name>ENGINE START switch</name>
-      <value>GRD</value>
-    </item>
-    <item>
-      <name>Verify N2 increase</name>
-      <value/>
-    </item>
-    <item>
-      <name>Engine start lever</name>
-      <value>IDLE</value>
-    </item>
-    <!-- Custom -->
-    <item>
-      <name>Battery Switch</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>APU Switch</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>APU GEN - R L</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Fuel Pumps - ALL 6 Pumps</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Start 1 or 2 engines</name>
-      <value>START</value>
-    </item>
-    <item>
-      <name>Cutoff Fuel</name>
-      <value>ON</value>
-    </item>
-  </checklist>
-
-  <checklist>
-    <title>Before Taxi</title>
-    <item>
-      <name>Generator 1 and 2 switches</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Probe heat switches</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Wing anti-ice</name>
-      <value>AS NEEDED</value>
-    </item>
-    <item>
-      <name>Engine anti-ice</name>
-      <value>AS NEEDED</value>
-    </item>
-    <item>
-      <name>APU switch</name>
-      <value>OFF</value>
-    </item>
-    <item>
-      <name>Yaw damper</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Engine start switches</name>
-      <value>CONT</value>
-    </item>
-    <item>
-      <name>Engine start levers</name>
-      <value>IDLE</value>
-    </item>
-    <item>
-      <name>Takeoff flaps</name>
-      <value>SET</value>
-    </item>
-    <item>
-      <name>Flight controls</name>
-      <value>CHECK</value>
-    </item>
-    <item>
-      <name>Transponder</name>
-      <value>AS NEEDED</value>
-    </item>
-  </checklist>
-
-  <checklist>
-    <title>Before Takeoff</title>
-    <item>
-      <name>Taxi lights</name>
-      <value>OFF</value>
-    </item>
-    <item>
-      <name>Lights</name>
-      <value>ON</value>
-    </item>
-    <item>
-      <name>Position light</name>
-      <value>STROBE</value>
-    </item>
-  </checklist>
-
-  <checklist>
-    <title>After Takeoff</title>
-    <item>
-      <name>Lights</name>
-      <value>OFF</value>
-    </item>
-    <item>
-      <name>Autobrake</name>
-      <value>OFF</value>
-    </item>
-  </checklist>
-
-  <checklist>
-    <title>Descent / Approach</title>
-    <item>
-      <name>Anti-ice</name>
-      <value>AS REQUIRED</value>
-    </item>
-    <item>
-      <name>Autobrake</name>
-      <value>SET</value>
-    </item>
-  </checklist>
-
-  <checklist>
-    <title>Before landing</title>
-    <item>
-      <name>Speedbrake</name>
-      <value>SET</value>
-    </item>
-    <item>
-      <name>Landing gear</name>
-      <value>DOWN</value>
-      <value>THREE GREEN</value>
-    </item>
-    <item>
-      <name>Start switches</name>
-      <value>ON</value>
-    </item>
-
-  </checklist>
-
+	<checklist>
+		<title>PREFLIGHT</title>
+		<item>
+			<name>PARKING BREAK</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>BATTERY</name>
+			<value>GUARD CLOSED</value>
+		</item>
+		<item>
+			<name>STANDBY POWER</name>
+			<value>GUARD CLOSED</value>
+		</item>
+		<item>
+			<name>L CENTER FUEL PUMP</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>L AFT FUEL PUMP</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>APU</name>
+			<value>START</value>
+		</item>
+		<item>
+			<name>APU GEN</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>POS LIGHTS</name>
+			<value>STEADY</value>
+		</item>
+		<item>
+			<name>LOGO LIGHTS</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>CABIN LIGHTS</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>EMER EXIT LIGHTS</name>
+			<value>GUARD CLOSED</value>
+		</item>
+		<item>
+			<name>PASSENGER SIGNS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>IRS MODE SELECTORS</name>
+			<value>NAV</value>
+		</item>
+		<item>
+			<name>FMC</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>TRANSPONDER</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>IAS/MACH SPEED</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>HDG/TAKEOFF RWY</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>INITIAL ALT</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>YAW DAMPER</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>WINDOW HEAT</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>FLIGHT ALTITUDE</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>LANDING ALTITUDE</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>FLIGHT DIRECTORS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>LNAV</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>VNAV</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>MINIMUMS REF</name>
+			<value>BARO/RADIO</value>
+		</item>
+		<item>
+			<name>MINIMUMS</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>ALTIMETER REF</name>
+			<value>IN/HPA</value>
+		</item>
+		<item>
+			<name>AUTO BREAK</name>
+			<value>RTO</value>
+		</item>
+		<item>
+			<name>COM RADIOS</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>DOORS</name>
+			<value>CLOSED</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>BEFORE START</title>
+		<item>
+			<name>AUTOTHROTTLE</name>
+			<value>ARM</value>
+		</item>
+		<item>
+			<name>L & R C FUEL PUMPS</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>A & F FUEL PUMPS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>ELEC HYD PUMPS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>ANIT COLL LIGHT</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>PARKING BREAK</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>GROUND EQUIPMENT</name>
+			<value>REMOVED</value>
+		</item>
+		<item>
+			<name>ENGINE AREA</name>
+			<value>CLEAR</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>ENGINE START</title>
+		<item>
+			<name>SEC DISPLAY UNIT</name>
+			<value>ENGINE</value>
+		</item>
+		<item>
+			<name>PACKS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>ENGINE 1 START SWITCH</name>
+			<value>GND</value>
+		</item>
+		<item>
+			<name>ENGINE 1 FUEL CONTROL LEVER</name>
+			<value>RUN</value>
+		</item>
+		<item>
+			<name>ENGINE 2 START SWITCH</name>
+			<value>GND</value>
+		</item>
+		<item>
+			<name>ENGINE 2 FUEL CONTROL LEVER</name>
+			<value>RUN</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>BEFORE TAXI</title>
+		<item>
+			<name>GENERATOR 1&2</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>PROBE HEAT</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>WING ANTI ICE</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>ENGINE ANTI ICE</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>PACKS</name>
+			<value>AUTO</value>
+		</item>
+		<item>
+			<name>ISOLATION VALVE</name>
+			<value>AUTO</value>
+		</item>
+		<item>
+			<name>APU BLEED</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>APU</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>ENG START SWITCHES</name>
+			<value>CONT</value>
+		</item>
+		<item>
+			<name>FLAPS</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>ELEVATOR TRIM</name>
+			<value>SET FOR TAKEOFF</value>
+		</item>
+		<item>
+			<name>FLIGHTCONTROLS</name>
+			<value>FREE AND CORRECT</value>
+		</item>
+		<item>
+			<name>RECALL</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>LOWER DISPLAY UNIT</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>TAXI LIGHTS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>RWY TURN OFF LIGHTS</name>
+			<value>AS REQUIRED</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>TAXI</title>
+		<item>
+			<name>BRKS/GYRO/TURN COORDINATOR</name>
+			<value>CHECK(during taxi)</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>BEFORE TAKEOFF</title>
+		<item>
+			<name>PARKING BREAK</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>FUEL FLOW</name>
+			<value>RESET, then RATE</value>
+		</item>
+		<item>
+			<name>C FUEL PUMPS</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>DE-ICE</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>CABIN LIGHTS</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>FLIGHT INSTRUMENTS</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>ENGINE INSTRUMENTS</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>TAKEOFF DATA</name>
+			<value>(V1, VR, V2)CHECK</value>
+		</item>
+		<item>
+			<name>NAV EQUIPMENT</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>LANDING LIGHTS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>STROBE LIGHTS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>TAXI LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>TRANSPONDER</name>
+			<value>TA/RA</value>
+		</item>
+		<item>
+			<name>TFC</name>
+			<value>PUSH ON</value>
+		</item>
+		<item>
+			<name>CLOCK</name>
+			<value>START</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>AFTER TAKEOFF</title>
+		<item>
+			<name>GEAR</name>
+			<value>UP</value>
+		</item>
+		<item>
+			<name>AUTO BREAK</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>ENGINE START SWITCHES</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>GEAR LEVER</name>
+			<value>OFF POSITION</value>
+		</item>
+		<item>
+			<name>RWY TURN OFF LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>CABIN LIGHTS</name>
+			<value>AS REQUIRED</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>CLIMB OUT</title>
+		<item>
+			<name>CMD A or B</name>
+			<value>ENGAGE</value>
+		</item>
+		<item>
+			<name>ALTIMETER</name>
+			<value>SET TO STD</value>
+		</item>
+		<item>
+			<name>ATC</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>LANDING LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>FASTEN SEAT BELTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>C FUEL PUMPS</name>
+			<value>AS REQUIRED</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>DECEND</title>
+		<item>
+			<name>ATIS/AIRPORT INFORMATION</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>RADIOS</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>RESET MCP ALTITUDE</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>FMC APPR SPEED REF</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>LOCALIZER FREQ</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>ILS LOC COURSE</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>DE-ICE</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>LANDING ALT</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>RECALL</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>RADIO ALT/BARO MIN</name>
+			<value>SET/CHECK</value>
+		</item>
+		<item>
+			<name>AUTO BREAK</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>ALTIMETER</name>
+			<value>RESET TO LOCAL</value>
+		</item>
+		<item>
+			<name>SPEED</name>
+			<value>250 KIAS</value>
+		</item>
+		<item>
+			<name>LANDING LIGHTS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>PASSENGER SIGNS</name>
+			<value>ON</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>APPROACH</title>
+		<item>
+			<name>ALTIMETER</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>LOCALIZER FREQ</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>LOCALIZER COURSE</name>
+			<value>CHECK</value>
+		</item>
+		<item>
+			<name>APP</name>
+			<value>ARM</value>
+		</item>
+		<item>
+			<name>GLIDESLOPE</name>
+			<value>ALIVE</value>
+		</item>
+		<item>
+			<name>GEAR</name>
+			<value>DOWN</value>
+		</item>
+		<item>
+			<name>FLAPS</name>
+			<value>15</value>
+		</item>
+		<item>
+			<name>SPEED BREAKS</name>
+			<value>ARM</value>
+		</item>
+		<item>
+			<name>2ND AUTOPILOT</name>
+			<value>ARM(when ILS established)</value>
+		</item>
+		<item>
+			<name>ENGINE START SWITCHES</name>
+			<value>CONT</value>
+		</item>
+		<item>
+			<name>LANDING FLAPS</name>
+			<value>SET</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>LANDING</title>
+		<item>
+			<name>GO-AROUND ALTITUDE</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>RWY TURN-OFF LIGHTS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>LANDING GEAR</name>
+			<value>CHECK DOWN</value>
+		</item>
+		<item>
+			<name>AUTOPILOT</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>AUTO-THRUST</name>
+			<value>AS REQUIRED</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>AFTER LANDING</title>
+		<item>
+			<name>TRANSPONDER</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>FLAPS</name>
+			<value>RETRACT</value>
+		</item>
+		<item>
+			<name>SPEED BREAK</name>
+			<value>DOWN</value>
+		</item>
+		<item>
+			<name>LANDING LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>STROBE LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>TAXI LIGHTS</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>CABIN LIGHTS</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>ANTI ICE</name>
+			<value>AS REQUIRED</value>
+		</item>
+		<item>
+			<name>APU</name>
+			<value>START</value>
+		</item>
+		<item>
+			<name>PROBE HEAT</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>ENG START START SWITCHES</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>AUTO-BREAK</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>RWY TURN-OFF LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>LANDING LIGHTS</name>
+			<value>OFF</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>PARKING</title>
+		<item>
+			<name>PARKING BREAKES</name>
+			<value>SET</value>
+		</item>
+		<item>
+			<name>ENGINE FUEL CONTROL LEVERS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>GROUND CONTACT</name>
+			<value>ESTABLISHED</value>
+		</item>
+		<item>
+			<name>PASSENGER SIGNS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>APU BLEED AIR</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>ANTI COLL LIGHT</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>FUELPUMPS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>L AFT FUEL PUMP</name>
+			<value>ON</value>
+		</item>
+		<item>
+			<name>ANTI-ICE</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>ELEC HYD PUMPS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>ISOLATION VALVE</name>
+			<value>OPEN</value>
+		</item>
+		<item>
+			<name>FLIGHT DIRECTOR</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>ELECTRICAL POWER</name>
+			<value>ESTABLISHED</value>
+		</item>
+		<item>
+			<name>EXTERIOR LIGHTS</name>
+			<value>AS REQUIRED</value>
+		</item>
+	</checklist>
+	<checklist>
+		<title>SECURING AIRCRAFT</title>
+		<item>
+			<name>IRS MODE SELECTORS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>APU</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>L AFT FUEL PUMP</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>EMERGENCY EXIT LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>WINDOW HEAT</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>PACKS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>CABIN LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>EXTERIOR LIGHTS</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>STANDBY POWER</name>
+			<value>OFF</value>
+		</item>
+		<item>
+			<name>BATTERY</name>
+			<value>OFF</value>
+		</item>
+	</checklist>
 </PropertyList>
