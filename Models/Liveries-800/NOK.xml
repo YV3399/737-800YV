@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">NOK AIR</name>
-            <texture>Liveries-800/nok.png</texture>   
+            <texture>Liveries-800/NOK.png</texture>   
 			<newwinglets type="bool">false</newwinglets> 
         </livery>        
     </model>
