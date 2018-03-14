@@ -135,11 +135,11 @@
 			<value>ARM</value>
 		</item>
 		<item>
-			<name>L & R C FUEL PUMPS</name>
+			<name>L and R C FUEL PUMPS</name>
 			<value>AS REQUIRED</value>
 		</item>
 		<item>
-			<name>A & F FUEL PUMPS</name>
+			<name>A and F FUEL PUMPS</name>
 			<value>ON</value>
 		</item>
 		<item>
@@ -193,7 +193,7 @@
 	<checklist>
 		<title>BEFORE TAXI</title>
 		<item>
-			<name>GENERATOR 1&2</name>
+			<name>GENERATOR 1and2</name>
 			<value>ON</value>
 		</item>
 		<item>
