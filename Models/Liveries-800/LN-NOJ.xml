@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">Norwegian Air Shuttle (Tyco Brahe)</name>
+            <name type="string">Norwegian Air Shuttle (Tycho Brahe)</name>
             <texture>/Liveries-800/LN-NOJ.png</texture>       
 			<newwinglets type="bool">false</newwinglets>     
         </livery>        
