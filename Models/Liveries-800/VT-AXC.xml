@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Air India Express (Sitar / Tabla)</name>
+            <texture>/Liveries-800/VT-AXC.png</texture>  
+               <newwinglets type="bool">false</newwinglets>
+               <nowinglets type="bool">true</nowinglets>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
