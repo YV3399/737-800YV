@@ -5,7 +5,7 @@
     <model>
         <livery>                     
             <name type="string">Air India Express (Dancers)</name>
-            <texture>/Liveries-800/VT-AXD.png</texture>  
+            <texture>/Liveries-800/VT-AXE.png</texture>  
                <newwinglets type="bool">false</newwinglets>
                <nowinglets type="bool">false</nowinglets>            
         </livery>        
