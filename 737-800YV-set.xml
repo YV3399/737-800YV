@@ -130,7 +130,8 @@
 				<z-offset-m archive="y">-9.02</z-offset-m>
 			</config>   
 		</view>
-		<view n="103">
+		
+                <view n="103">
 			<name>Right Wing</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -145,7 +146,8 @@
 				<z-offset-m archive="y">2.19</z-offset-m>
 			</config>
 		</view>
-		<view n="104">
+		
+                <view n="104">
 			<name>Left Wing</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -160,7 +162,8 @@
 				<z-offset-m archive="y">2.19</z-offset-m>
 			</config>
 		</view>
-		<view n="105">
+		
+                <view n="105">
 			<name>Overhead Panel</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
@@ -223,7 +226,6 @@
 	</limits>
 
 	<payload>
-
 		<pax>
 			<business type="double">6</business>
 			<tourist type="double">22</tourist>
