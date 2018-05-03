@@ -1,11 +1,11 @@
  =========================================                                     
-  Gabriel Hernandez (YV3399) 2017 - 2018 - 737-800YV Project                                       
+  Gabriel Hernandez (YV3399) 2018 - 2019 - 737-800YV Project                                       
  =========================================                                     
        https://github.com/YV3399 
        https://github.com/YV3399/737-800YV
                                                                                
        Creation :   January, 2018
-       Last update:                 
+       Last update: May, 2018                
  ======================================================================        
  Contributions :                                                               
       
@@ -23,7 +23,7 @@ Passengers
  Cargo 	966 cu ft (27.3 cu m)
 
 Engines
-(maximum thrust) 	CFMI CFM56-7
+(maximum thrust) 	CFM CFM56-7
 26,300 lb
 Maximum Fuel Capacity 	6,875 U.S. gal (26,020 L)
 Maximum Takeoff Weight 	172,500 lb (78,245 kg)
