@@ -13,7 +13,8 @@
         <value>0</value>
       </binding>
     </key>
-	<key n="103">
+	
+    <key n="103">
       <name>g</name>
       <desc>Gear Up Custom Binding</desc>
       <binding>
