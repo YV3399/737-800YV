@@ -16,7 +16,7 @@
   
   <animation n="0">
     <type>material</type>
-	<object-name>engnose.001</object-name>
+    <object-name>engnose.001</object-name>
     <object-name>fuselage</object-name>
     <object-name>doorLF</object-name>
     <object-name>EexitLF</object-name>
@@ -154,7 +154,7 @@
   
   <model>
     <name>Pushback</name>
-    <path>Models/Airport/Pushback/Goldhofert.xml</path>
+    <path>Aircraft/737-800YV/Models/Pushback/pushback.xml</path>
     <offsets>
       <x-m>-16.5</x-m>
       <y-m>0</y-m>
