@@ -4,7 +4,7 @@
 <sim>
     <model>
        <livery>                     
-            <name type="string">Southwest (2014)</name>
+            <name type="string">Southwest Airlines (2014)</name>
             <texture>/Liveries-800/SWA-new.png</texture>       
 			<newwinglets type="bool">true</newwinglets>              
         </livery>        
