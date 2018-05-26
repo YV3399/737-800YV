@@ -17,8 +17,21 @@
 		<layout>hbox</layout>
 		<text>
 			<halign>left</halign>
-			<label>Aircraft Configuration V1.4.5</label>
+			<label>Aircraft Configuration V1.5.0</label>
 		</text>
+		<empty><stretch>1</stretch></empty>
+		<button>
+			<row>0</row>
+			<col>0</col>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>?</legend>
+			<binding>
+				<command>nasal</command>
+				<script>acconfig.help_dlg.open();</script>
+			</binding>
+		</button>
 		<button>
 			<halign>right</halign>
 			<pref-width>20</pref-width>
@@ -48,9 +61,7 @@
 						<pref-width>140</pref-width>
 						<binding>
 							<command>nasal</command>
-							<script>
-							acconfig.welcome_dlg.open();
-							</script>
+							<script>acconfig.welcome_dlg.open();</script>
 						</binding>
 					</button>
 					<button>
@@ -59,20 +70,7 @@
 						<pref-width>140</pref-width>
 						<binding>
 							<command>nasal</command>
-							<script>
-							aircraft.livery.dialog.toggle();
-							</script>
-						</binding>
-					</button>
-					<button>
-						<halign>center</halign>
-						<legend>Aircraft Help</legend>
-						<pref-width>140</pref-width>
-						<binding>
-							<command>nasal</command>
-							<script>
-							acconfig.help_dlg.open();
-							</script>
+							<script>aircraft.livery.dialog.toggle();</script>
 						</binding>
 					</button>
 				</group>
@@ -289,9 +287,7 @@
 				</binding>
 				<binding>
 					<command>nasal</command>
-					<script>
-					acconfig.saveSettings();
-					</script>
+					<script>acconfig.writeSettings();</script>
 				</binding>
 				<live>true</live>
 			</checkbox>
@@ -305,9 +301,7 @@
 				</binding>
 				<binding>
 					<command>nasal</command>
-					<script>
-					acconfig.saveSettings();
-					</script>
+					<script>acconfig.writeSettings();</script>
 				</binding>
 				<live>true</live>
 			</checkbox>
@@ -319,9 +313,7 @@
 					<legend>Fuel Truck Controls</legend>
 					<binding>
 						<command>nasal</command>
-						<script>
-						acconfig.fuel_dlg.open();
-						</script>
+						<script>acconfig.fuel_dlg.open();</script>
 					</binding>
 				</button>
 				
@@ -329,9 +321,7 @@
 					<legend>Announcements</legend>
 					<binding>
 						<command>nasal</command>
-						<script>
-						acconfig.announcements_dlg.open();
-						</script>
+						<script>acconfig.announcements_dlg.open();</script>
 					</binding>
 				</button>
 				
@@ -356,9 +346,7 @@
 					<legend>Flight Controls</legend>
 					<binding>
 						<command>nasal</command>
-						<script>
-						acconfig.fctl_dlg.open();
-						</script>
+						<script>acconfig.fctl_dlg.open();</script>
 					</binding>
 				</button>
 				
@@ -366,9 +354,7 @@
 					<legend>Failures</legend>
 					<binding>
 						<command>nasal</command>
-						<script>
-						acconfig.fail_dlg.open();
-						</script>
+						<script>acconfig.fail_dlg.open();</script>
 					</binding>
 				</button>
 				
@@ -377,6 +363,5 @@
 		</group>
 
 	</group>
-
 	
 </PropertyList>

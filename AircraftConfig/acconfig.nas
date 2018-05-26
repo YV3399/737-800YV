@@ -21,6 +21,9 @@ var spinning = maketimer(0.05, func {
 setprop("/systems/acconfig/autoconfig-running", 0);
 setprop("/systems/acconfig/spinning", 0);
 setprop("/systems/acconfig/spin", "-");
+setprop("/systems/acconfig/options/welcome-skip", 0);
+setprop("/systems/acconfig/options/yokes-visible", 0);
+setprop("/systems/acconfig/options/increase-fps", 0);
 var main_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/main/dialog", "Aircraft/737-800YV/AircraftConfig/main.xml");
 var welcome_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/welcome/dialog", "Aircraft/737-800YV/AircraftConfig/welcome.xml");
 var ps_load_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/psload/dialog", "Aircraft/737-800YV/AircraftConfig/psload.xml");
@@ -37,21 +40,25 @@ init_dlg.open();
 
 setlistener("/sim/signals/fdm-initialized", func {
 	init_dlg.close();
-	welcome_dlg.open();
+	readSettings();
+	if (getprop("/systems/acconfig/options/welcome-skip") != 1) {
+		welcome_dlg.open();
+	}
+	writeSettings();
 	spinning.stop();
 });
 
-var saveSettings = func {
-	aircraft.data.add("/sim/yokes-visible", "/controls/switches/increase-fps");
-	aircraft.data.save();
+var readSettings = func {
+	io.read_properties(getprop("/sim/fg-home") ~ "/Export/737-800YV-config.xml", "/systems/acconfig/options");
+	setprop("/sim/yokes-visible", getprop("/systems/acconfig/options/yokes-visible"));
+	setprop("/controls/switches/increase-fps", getprop("/systems/acconfig/options/increase-fps"));
 }
 
-saveSettings();
+var writeSettings = func {
+	setprop("/systems/acconfig/options/yokes-visible", getprop("/sim/yokes-visible"));
+	setprop("/systems/acconfig/options/increase-fps", getprop("/controls/switches/increase-fps"));
+	io.write_properties(getprop("/sim/fg-home") ~ "/Export/737-800YV-config.xml", "/systems/acconfig/options");
+}
 
 var systemsReset = func { # Not used yet, for panel states when implemented
-	systems.elec_init();
-	systems.hyd_init();
-  	itaf.ap_init();
-  	setprop("/it-autoflight/input/spd-kts", 100);
-	setprop("/it-autoflight/input/bank-limit-sw", 6);
 }

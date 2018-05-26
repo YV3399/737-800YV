@@ -260,7 +260,7 @@
 
 		<checklists include="737ng-checklist.xml"/>
 		
-		<yokes-visible userarchive="y" type="bool">1</yokes-visible>
+		<yokes-visible type="bool">1</yokes-visible>
 	</sim>
 
 	<lighting>
@@ -504,7 +504,7 @@
 	</input>
 
 	<switches>
-		<increase-fps userarchive="y" type="bool">0</increase-fps>
+		<increase-fps type="bool">0</increase-fps>
 		<no-smoking-sign type="bool">true</no-smoking-sign>
 		<seatbelt-sign type="bool">false</seatbelt-sign>
 	</switches>
