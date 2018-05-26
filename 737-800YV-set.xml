@@ -178,12 +178,12 @@
 		</view>
 	</sim>
 
-	<limits> <!-- based on EI-RUA aircraft data -->
+	<limits> 
 		<mass-and-balance>
-			<maximum-ramp-mass-lbs>173000</maximum-ramp-mass-lbs>
-			<maximum-takeoff-mass-lbs>172500</maximum-takeoff-mass-lbs>
-			<maximum-landing-mass-lbs>144076</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>136000</maximum-zero-fuel-mass-lbs>
+			<maximum-ramp-mass-lbs>174670.05</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>174169.6</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>146274.51</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>138276.14</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
 		<max-flap-extension-speed>
 			<flaps>0.125</flaps>
@@ -230,22 +230,22 @@
 			<economy type="double">50</economy>
 		</pax>
 		<weight>
-			<name type="string">Business class (8 pax max)</name>
+			<name type="string">Business class (12 pax max)</name>
 			<weight-lb alias="/payload/pax/business"/>
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">8</max-lb>
+			<max-lb type="double">12</max-lb>
 		</weight>
 		<weight>
-			<name type="string">Tourist class (54 pax max)</name>
+			<name type="string">Tourist class (53 pax max)</name>
 			<weight-lb alias="/payload/pax/tourist"/>
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">54</max-lb>
+			<max-lb type="double">53</max-lb>
 		</weight>
 		<weight>
-			<name type="string">Economy class (96 pax max)</name>
+			<name type="string">Economy class (95 pax max)</name>
 			<weight-lb alias="/payload/pax/economy"/>
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">96</max-lb>
+			<max-lb type="double">95</max-lb>
 		</weight>
 		<weight>
 			<name type="string">Cargo compartment 1A</name>
