@@ -7,6 +7,7 @@
             <name type="string">Neos Air (Radio Italia)</name>
             <texture>/Liveries-800/I-NEOT.png</texture>        
 			<newwinglets type="bool">true</newwinglets> 
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

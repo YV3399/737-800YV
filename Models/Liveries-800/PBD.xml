@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Pobeda</name>
             <texture>Liveries-800/PBD.png</texture>  
-			<newwinglets type="bool">false</newwinglets>     			
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     			
         </livery>        
     </model>
 </sim>

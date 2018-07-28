@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Norwegian Air Shuttle (UNICEF)</name>
             <texture>/Liveries-800/LN-NGE.png</texture>       
-			<newwinglets type="bool">false</newwinglets>     
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     
         </livery>        
     </model>
 </sim>

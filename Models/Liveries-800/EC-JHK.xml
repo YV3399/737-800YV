@@ -7,6 +7,7 @@
             <name type="string">Air Europa SkyTeam</name>
             <texture>Liveries-800/EC-JHK.png</texture>  
 			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>
         </livery>        
     </model>
 </sim>

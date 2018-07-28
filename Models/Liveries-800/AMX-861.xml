@@ -7,6 +7,7 @@
             <name type="string">AeroMexico-Corona</name>
             <texture>/Liveries-800/AMX-861.png</texture> 
 			<newwinglets type="bool">true</newwinglets>			
+			<nowinglets type="bool">false</nowinglets> 	
         </livery>        
     </model>
 </sim>

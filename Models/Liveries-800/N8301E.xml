@@ -6,7 +6,8 @@
        <livery>                     
             <name type="string">Southwest Airlines (Warrior One)</name>
             <texture>/Liveries-800/N8301E.png</texture>       
-			<newwinglets type="bool">true</newwinglets>              
+			<newwinglets type="bool">true</newwinglets>     
+			<nowinglets type="bool">false</nowinglets> 	         
         </livery>        
     </model>
 </sim>

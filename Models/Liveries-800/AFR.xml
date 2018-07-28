@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Air France (fictional)</name>
             <texture>/Liveries-800/AFR.png</texture> 
-			<newwinglets type="bool">false</newwinglets> 
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

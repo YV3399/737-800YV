@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Travel Service Polska (Air Explore)</name>
             <texture>/Liveries-800/TVP.png</texture>  
-			<newwinglets type="bool">fasle</newwinglets> 
+			<newwinglets type="bool">fasle</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

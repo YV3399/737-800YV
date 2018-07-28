@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">LATAM Colombia (LAN)</name>
             <texture>/Liveries-800/LAN.png</texture> 
-			<newwinglets type="bool">false</newwinglets> 
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

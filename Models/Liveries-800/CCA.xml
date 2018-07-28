@@ -5,7 +5,9 @@
     <model>
         <livery>                     
             <name type="string">Air China</name>
-            <texture>Liveries-800/CCA.png</texture>            
+            <texture>Liveries-800/CCA.png</texture>          
+            <newwinglets type="bool">false</newwinglets> 
+			<nowinglets type="bool">false</nowinglets>  
         </livery>        
     </model>
 </sim>

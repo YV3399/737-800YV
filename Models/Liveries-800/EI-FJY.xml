@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Norwegian Air International (Clara Campoamor)</name>
             <texture>/Liveries-800/EI-FJY.png</texture>       
-			<newwinglets type="bool">false</newwinglets>     
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     
         </livery>        
     </model>
 </sim>

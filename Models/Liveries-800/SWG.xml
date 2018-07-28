@@ -5,7 +5,9 @@
     <model>
         <livery>                     
             <name type="string">Sunwing Airlines</name>
-            <texture>/Liveries-800/SWG.png</texture>            
+            <texture>/Liveries-800/SWG.png</texture>
+            <newwinglets type="bool">true</newwinglets>
+            <nowinglets type="bool">false</nowinglets> 	            
         </livery>        
     </model>
 </sim>

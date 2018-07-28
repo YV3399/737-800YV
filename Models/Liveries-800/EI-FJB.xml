@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Norwegian Air International (H.F.S. Grundtvig)</name>
             <texture>/Liveries-800/EI-FJB.png</texture>       
-			<newwinglets type="bool">false</newwinglets>     
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     
         </livery>        
     </model>
 </sim>

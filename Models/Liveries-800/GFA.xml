@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Gulf Air</name>
             <texture>Liveries-800/GFA.png</texture>       
-			<newwinglets type="bool">false</newwinglets> 
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Tigerair Australia</name>
             <texture>/Liveries-800/TGG.png</texture>  
-               <newwinglets type="bool">false</newwinglets>            
+               <newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>            
         </livery>        
     </model>
 </sim>

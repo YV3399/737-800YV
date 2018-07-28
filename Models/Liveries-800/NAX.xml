@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Norwegian (Blank tail)</name>
             <texture>/Liveries-800/NAX.png</texture>  
-               <newwinglets type="bool">false</newwinglets>            
+               <newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>            
         </livery>        
     </model>
 </sim>

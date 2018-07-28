@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">NordStar (2019 Winter Universiade livery)</name>
             <texture>/Liveries-800/VQ-BNG.png</texture>  
-               <newwinglets type="bool">false</newwinglets>            
+               <newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>            
         </livery>        
     </model>
 </sim>
