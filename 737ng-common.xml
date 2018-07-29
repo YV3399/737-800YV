@@ -926,6 +926,7 @@
 			<file>Aircraft/737-800YV/Nasal/engine-fire.nas</file> 
 			<file>Aircraft/737-800YV/Nasal/limits.nas</file>
 			<file>Aircraft/737-800YV/Nasal/doors.nas</file> 
+			<file>Aircraft/737-800YV/Nasal/shake.nas</file> 
 		</boeing737>
 		<systems>
 			<file>Aircraft/737-800YV/Nasal/electrical.nas</file>

@@ -45,6 +45,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800YV/Systems/autopilot-dlg.xml");
   	setprop("/it-autoflight/input/spd-kts", 100);
 	setprop("/it-autoflight/input/bank-limit-sw", 6);
+	boeing737.shaketimer.start();
 });
 
 setprop("/it-autoflight/input/kts-mach", 0);
