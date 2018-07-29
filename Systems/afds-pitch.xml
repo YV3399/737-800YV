@@ -13,10 +13,11 @@
 		<name>ALTITUDE CAPTURE/HOLD</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>-5</gain>
 		<input>
 			<expression>
 				<sum>
-					<property>/it-autoflight/internal/altitude-5-sec-ahead</property>
+					<property>/instrumentation/altimeter/indicated-altitude-ft</property>
 					<value>-2</value>
 				</sum>
 			</expression>
@@ -24,7 +25,6 @@
 		<reference>
 			<property>/it-autoflight/internal/alt</property>
 		</reference>
-		<gain>-8</gain>
 		<output>
 			<property>/it-autoflight/internal/target-fpm</property>
 		</output>
@@ -77,12 +77,20 @@
 			<property>/it-autoflight/internal/target-fpm-d</property>
 		</output>
 		<config>
-			<Kp>120</Kp>
+			<Kp>
+				<expression>
+					<table>
+						<property>/velocities/mach</property>
+						<entry><ind>0.2</ind><dep>120</dep></entry>
+						<entry><ind>0.9</ind><dep>340</dep></entry>
+					</table>
+				</expression>
+			</Kp>
 			<beta>1.0</beta>
 			<alpha>0.1</alpha>
 			<gamma>0.0</gamma>
-			<Ti>1.0</Ti>
-			<Td>0.00001</Td>
+			<Ti>2.0</Ti>
+			<Td>0.002</Td>
 			<u_min>
 				<expression>
 					<dif>
@@ -539,7 +547,13 @@
 						<value>6</value>
 					</not-equals>
 				</condition>
-				<value>0.0017</value>
+				<expression>
+					<table>
+						<property>/velocities/mach</property>
+						<entry><ind>0.2</ind><dep>0.0029</dep></entry>
+						<entry><ind>0.9</ind><dep>0.0010</dep></entry>
+					</table>
+				</expression>
 			</Kp>
 			<Kp>
 				<condition>
@@ -550,7 +564,7 @@
 				</condition>
 				<value>0.0051</value>
 			</Kp>
-			<Ti>3.0</Ti>
+			<Ti>2.5</Ti>
 			<Td>0.0001</Td>
 			<u_min>
 				<condition>
@@ -559,7 +573,15 @@
 						<value>6</value>
 					</not-equals>
 				</condition>
-				<value>-10</value>
+				<expression>
+					<max>
+						<dif>
+							<property>/orientation/pitch-deg</property>
+							<value>5</value>
+						</dif>
+						<value>-10</value>
+					</max>
+				</expression>
 			</u_min>
 			<u_min>
 				<condition>
@@ -583,7 +605,15 @@
 						</equals>
 					</and>
 				</condition>
-				<value>30</value>
+				<expression>
+					<min>
+						<sum>
+							<property>/orientation/pitch-deg</property>
+							<value>5</value>
+						</sum>
+						<value>30</value>
+					</min>
+				</expression>
 			</u_max>
 			<u_max>
 				<condition>

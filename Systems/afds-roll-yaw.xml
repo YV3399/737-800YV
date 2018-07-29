@@ -56,7 +56,7 @@
 			<property>/it-autoflight/internal/target-roll-deg</property>
 		</output>
 		<config>
-			<Kp>-0.9</Kp>
+			<Kp>-1.3</Kp>
 			<Ki>-0.000001</Ki>
 			<min>
 				<property>/it-autoflight/internal/bank-limit</property>
