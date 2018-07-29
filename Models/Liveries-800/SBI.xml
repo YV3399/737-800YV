@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">S7 Airlines</name>
             <texture>/Liveries-800/SBI.png</texture> 
-               <newwinglets type="bool">false</newwinglets>            
+               <newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>            
         </livery>        
     </model>
 </sim>

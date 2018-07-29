@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Transavia (1998?-2015)</name>
             <texture>/Liveries-800/TRA.png</texture> 
-			<newwinglets type="bool">false</newwinglets> 			
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 			
         </livery>        
     </model>
 </sim>

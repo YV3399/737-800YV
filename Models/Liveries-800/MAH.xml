@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Malev Hungarian Airlines</name>
             <texture>Liveries-800/MAH.png</texture> 
-			<newwinglets type="bool">false</newwinglets> 
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Egypt Air Star Alliance</name>
             <texture>Liveries-800/SU-GCS.png</texture>  
-			<newwinglets type="bool">false</newwinglets> 
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

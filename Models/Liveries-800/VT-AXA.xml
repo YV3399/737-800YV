@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Air India Express (Elephant / Camel)</name>
             <texture>/Liveries-800/VT-AXA.png</texture>  
-               <newwinglets type="bool">false</newwinglets>            
+               <newwinglets type="bool">false</newwinglets>
+               <nowinglets type="bool">true</nowinglets>            
         </livery>        
     </model>
 </sim>

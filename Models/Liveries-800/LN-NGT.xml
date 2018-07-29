@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Norwegian Air Shuttle (Anton K.H. Jakobsen)</name>
             <texture>/Liveries-800/LN-NGT.png</texture>       
-			<newwinglets type="bool">false</newwinglets>     
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     
         </livery>        
     </model>
 </sim>

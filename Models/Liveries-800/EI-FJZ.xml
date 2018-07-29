@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Norwegian Air International (Cristopher Polhem)</name>
             <texture>/Liveries-800/EI-FJZ.png</texture>       
-			<newwinglets type="bool">false</newwinglets>     
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     
         </livery>        
     </model>
 </sim>

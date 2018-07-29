@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">El Al</name>
             <texture>Liveries-800/ELY.png</texture> 
-			<newwinglets type="bool">false</newwinglets> 
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

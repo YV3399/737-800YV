@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">ANA (Flower Jet)</name>
             <texture>/Liveries-800/JA85AN.png</texture>
-            <newwinglets type="bool">false</newwinglets>      
+            <newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>      
         </livery>        
     </model>
 </sim>

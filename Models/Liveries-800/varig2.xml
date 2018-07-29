@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">VARIG (PR-VBF)</name>
             <texture>/Liveries-800/varig2.png</texture>  
-			<newwinglets type="bool">false</newwinglets> 
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

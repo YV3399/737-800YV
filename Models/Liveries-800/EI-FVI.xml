@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Norwegian Air International (Gustaf Dalén)</name>
             <texture>/Liveries-800/EI-FVI.png</texture>       
-			<newwinglets type="bool">false</newwinglets>     
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     
         </livery>        
     </model>
 </sim>

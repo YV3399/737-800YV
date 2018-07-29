@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Air India Express (Rangoli design / Kites)</name>
             <texture>/Liveries-800/VT-AXB.png</texture>  
-               <newwinglets type="bool">false</newwinglets>            
+               <newwinglets type="bool">false</newwinglets>
+               <nowinglets type="bool">true</nowinglets>            
         </livery>        
     </model>
 </sim>

@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">United Airlines (Star Alliance)</name>
             <texture>Liveries-800/N76516-3.png</texture>   
-			<newwinglets type="bool">true</newwinglets> 
+			<newwinglets type="bool">true</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 	 
         </livery>        
     </model>
 </sim>

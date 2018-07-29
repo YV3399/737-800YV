@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">SAS (Star Alliance)</name>
             <texture>/Liveries-800/LN-RRW.png</texture> 
-               <newwinglets type="bool">false</newwinglets>            
+               <newwinglets type="bool">false</newwinglets>
+               <nowinglets type="bool">true</nowinglets>            
         </livery>        
     </model>
 </sim>

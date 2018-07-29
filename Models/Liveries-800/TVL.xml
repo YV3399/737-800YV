@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Travel Service</name>
             <texture>/Liveries-800/TVL.png</texture> 
-			<newwinglets type="bool">true</newwinglets> 
+			<newwinglets type="bool">true</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

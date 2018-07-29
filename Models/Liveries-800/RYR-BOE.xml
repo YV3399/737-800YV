@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Ryanair (Boeing Hybrid) (work in progress)</name>
             <texture>Liveries-800/RYR-BOE.png</texture>     
-	    <newwinglets type="bool">false</newwinglets> 
+	    <newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 
         </livery>        
     </model>
 </sim>

@@ -7,6 +7,7 @@
             <name type="string">Cathay Pacific Airways (Fictional) </name>
             <texture>Liveries-800/CPA.png</texture>      
 			<newwinglets type="bool">true</newwinglets> 
+			<nowinglets type="bool">false</nowinglets>
         </livery>        
     </model>
 </sim>

@@ -5,7 +5,9 @@
     <model>
         <livery>                     
             <name type="string">TAME</name>
-            <texture>Liveries-800/TAE.png</texture>            
+            <texture>Liveries-800/TAE.png</texture>   
+            <newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>          
         </livery>        
     </model>
 </sim>

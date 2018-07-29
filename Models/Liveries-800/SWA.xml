@@ -6,7 +6,8 @@
        <livery>                     
             <name type="string">Southwest Airlines (2001-2014)</name>
             <texture>/Liveries-800/SWA.png</texture>       
-			<newwinglets type="bool">true</newwinglets>              
+			<newwinglets type="bool">true</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 	              
         </livery>        
     </model>
 </sim>

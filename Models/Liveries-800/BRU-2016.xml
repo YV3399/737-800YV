@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Belavia (2016)</name>
+            <texture>/Liveries-800/BRU-2016.png</texture>  
+               <newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>

@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Transavia leased by Sun Country</name>
             <texture>/Liveries-800/TRA-SCX.png</texture> 
-			<newwinglets type="bool">false</newwinglets> 			
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 			
         </livery>        
     </model>
 </sim>

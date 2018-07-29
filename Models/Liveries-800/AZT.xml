@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Azteca</name>
             <texture>/Liveries-800/AZT.png</texture> 
-			<newwinglets type="bool">true</newwinglets>			
+			<newwinglets type="bool">true</newwinglets>	
+			<nowinglets type="bool">false</nowinglets> 			
         </livery>        
     </model>
 </sim>

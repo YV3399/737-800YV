@@ -6,7 +6,8 @@
        <livery>                     
             <name type="string">American Airlines (TWA Heritage Livery)</name>
             <texture>/Liveries-800/N915NN.png</texture>       
-			<newwinglets type="bool">false</newwinglets>              
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>              
         </livery>        
     </model>
 </sim>

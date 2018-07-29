@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Transavia (It Makes you Happy!)</name>
             <texture>/Liveries-800/PH-HSC.png</texture> 
-			<newwinglets type="bool">false</newwinglets> 			
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets> 			
         </livery>        
     </model>
 </sim>

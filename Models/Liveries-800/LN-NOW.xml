@@ -6,7 +6,8 @@
         <livery>                     
             <name type="string">Norwegian Air Shuttle (Oda Krohg)</name>
             <texture>/Liveries-800/LN-NOW.png</texture>       
-			<newwinglets type="bool">false</newwinglets>     
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     
         </livery>        
     </model>
 </sim>
