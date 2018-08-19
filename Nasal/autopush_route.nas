@@ -160,7 +160,9 @@ var _calculate_bezier = func() {
 					pointList[j][k].apply_course_distance(course, dist * i);
 				}
 			}
-			route.add(geo.Coord.new(pointList[PNumber - 1][0]));
+			if (i + step < 1) {
+				route.add(geo.Coord.new(pointList[PNumber - 1][0]));
+			}
 		}
 	}
 
