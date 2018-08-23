@@ -4,7 +4,7 @@
 # Copyright (c) 2018 Autopush authors:
 #  Michael Danilov <mike.d.ft402 -eh- gmail.com>
 #  Joshua Davidson http://github.com/it0uchpods
-#  Merspieler http://github.com/merspieler
+#  Merspieler http://gitlab.com/merspieler
 # Distribute under the terms of GPLv2.
 
 

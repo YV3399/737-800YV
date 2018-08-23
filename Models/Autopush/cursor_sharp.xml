@@ -13,7 +13,7 @@ Distribute under the terms of GPLv2.
 -->
 <PropertyList>
 
-	<path>cursor.ac</path>
+	<path>cursor_sharp.ac</path>
 
 	<animation>
 		<enable-hot>false</enable-hot>

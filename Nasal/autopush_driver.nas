@@ -6,7 +6,7 @@
 # Copyright (c) 2018 Autopush authors:
 #  Michael Danilov <mike.d.ft402 -eh- gmail.com>
 #  Joshua Davidson http://github.com/it0uchpods
-#  Merspieler http://github.com/merspieler
+#  Merspieler http://gitlab.com/merspieler
 # Distribute under the terms of GPLv2.
 
 
@@ -72,6 +72,8 @@ var start = func() {
 	if ((_route == nil) or size(_route) < 2) {
 		autopush_route.enter(1);
 		return;
+	}else{
+		autopush_route.done();
 	}
 	_K_V = getprop("/sim/model/pushback/driver/K_V");
 	_F_V = getprop("/sim/model/pushback/driver/F_V");

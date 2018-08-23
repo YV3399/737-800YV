@@ -5,9 +5,6 @@
 #  Merspieler http://gitlab.com/merspieler
 # Distribute under the terms of GPLv2.
 
-## ERRATA
-# delitation of objects
-
 ## Useage
 # to create a new object: var <name> = dynarr.new();
 # to add elements: <name>.add(<element>);
@@ -40,6 +37,15 @@ var dynarr =
 		# add object and increase used counter
 		me.arr[me.size] = obj;
 		me.size += 1;
+	},
+
+	# delete an element from the array
+	del: func(id)
+	{
+		me.size -= 1;
+		for(ii = id; ii < me.size - 1; ii += 1){
+			me.arr[ii] = me.arr[ii + 1];
+		}
 	},
 
 	# returns only the filled part of the array or nil if array is empty

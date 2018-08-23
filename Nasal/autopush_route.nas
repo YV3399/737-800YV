@@ -4,13 +4,14 @@
 # Copyright (c) 2018 Autopush authors:
 #  Michael Danilov <mike.d.ft402 -eh- gmail.com>
 #  Joshua Davidson http://github.com/it0uchpods
-#  Merspieler http://github.com/merspieler
+#  Merspieler http://gitlab.com/merspieler
 # Distribute under the terms of GPLv2.
 
 
 var _listener = nil;
 var _view_listener = nil;
 var _user_points = dynarr.dynarr.new(4);
+var _user_point_modes = dynarr.dynarr.new(4); # Modes: 0 = Bezier node, 1 = Bezier end/start node
 var _route = [];
 var _view_index = nil;
 var _user_point_models = [];
@@ -20,9 +21,6 @@ var _show = 0;
 var _view_changed_or_external = 0;
 var _start_immediately = nil;
 var _D_min = nil;
-
-# TODO find a proper value or add a calculated value so we can get ridge
-setprop("/demo/prec/", 10);
 
 
 var _add = func(pos) {
@@ -34,13 +32,35 @@ var _add = func(pos) {
 		}
 	}
 	_user_points.add(geo.Coord.new(pos));
+
+	if (_user_point_modes.maxsize == 1 and _user_point_modes.size == 1) {
+		_user_point_modes.arr[0] = 0;
+	} else {
+		_user_point_modes.add(0);
+	}
 	setsize(_user_point_models, _N + 1);
 	_user_point_models[_N] = geo.put_model("Models/Autopush/cursor.xml", pos, 0.0);
 	_N += 1;
 	if (_N == 1) {
 		gui.popupTip("Click waypoints, press \"Done\" to finish");
 	} else {
-		_calculate_bezier();
+		_calculate_route();
+		_place_waypoint_models();
+	}
+}
+
+var delete_last = func() {
+	if (_listener == nil) {
+		return;
+	}
+	if (_N > 1) {
+		_N -= 1;
+		_user_points.del(_N);
+		_user_point_modes.del(_N);
+		_user_point_models[_N].remove();
+		_user_point_models[_N] = nil;
+		setsize(_user_point_models, _N);
+		_calculate_route();
 		_place_waypoint_models();
 	}
 }
@@ -68,8 +88,12 @@ var _place_user_point_models = func() {
 	_clear_user_point_models();
 	setsize(_user_point_models, _N);
 	var user_points = _user_points.get_sliced();
-	for (var ii = 1; ii < _N; ii += 1) {
-		_user_point_models[ii] = geo.put_model("Models/Autopush/cursor.xml", user_points[ii], 0.0);
+	for (var ii = 0; ii < _N; ii += 1) {
+		var model = "Models/Autopush/cursor.xml";
+		if (_user_point_modes.arr[ii] == 1) {
+			model = "Models/Autopush/cursor_sharp.xml";
+		}
+		_user_point_models[ii] = geo.put_model(model, user_points[ii], 0.0);
 	}
 }
 
@@ -128,16 +152,40 @@ var _reset_view = func() {
 	}
 }
 
-var _calculate_bezier = func() {
-	# add the first point cause it will be fix at this pos
+var _calculate_route = func() {
 	_route = [];
 	user_points = _user_points.get_sliced();
 	var route = dynarr.dynarr.new();
+	# add the first point cause it will be fix at this pos
 	route.add(geo.Coord.new(user_points[0]));
+
+	n = size(user_points);
+	var base = 0;
+	for (var i = 0; i < n; i += 1) {
+		if (_user_point_modes.arr[i] == 1 or i == n - 1) {
+			if (i - base > 0) {
+				var bezier = _calculate_bezier(user_points[base:i]);
+
+				var m = size(bezier);
+				for (var j = 0; j < m; j += 1) {
+					route.add(geo.Coord.new(bezier[j]));
+				}
+			}
+			base = i;
+			route.add(geo.Coord.new(user_points[i]));
+		}
+	}
+
+	PNumber = size(user_points);
+	_route = route.get_sliced();
+}
+
+var _calculate_bezier = func(user_points) {
+	var route = dynarr.dynarr.new();
 
 	PNumber = size(user_points);
 
-	if (PNumber > 2) {
+	if (PNumber > 1) {
 		var pointList = [];
 		setsize(pointList, PNumber);
 		for (var i = 0; i < PNumber; i += 1) {
@@ -147,10 +195,14 @@ var _calculate_bezier = func() {
 
 		pointList[0] = user_points;
 
-		prec = getprop("/demo/prec");
-		step = prec / 100;
+		var len = 0;
+		for (var i = 0; i < PNumber - 1; i += 1) {
+			len += user_points[i].distance_to(user_points[i + 1]);
+		}
 
-		for (var i = step; i < 1; i+= step) {
+		var step = _D_min / len;
+
+		for (var i = step; i < 1 - step; i+= step) {
 			# start iterating from 1 cause we don't need to iterate over Pn
 			for (var j = 1; j < PNumber; j += 1) {
 				for (var k = 0; k < PNumber - j; k += 1) {
@@ -160,18 +212,12 @@ var _calculate_bezier = func() {
 					pointList[j][k].apply_course_distance(course, dist * i);
 				}
 			}
-			if (i + step < 1) {
-				route.add(geo.Coord.new(pointList[PNumber - 1][0]));
-			}
+			pointList[PNumber - 1][0].set_alt(geo.elevation(pointList[PNumber - 1][0].lat(),pointList[PNumber - 1][0].lon()));
+			route.add(geo.Coord.new(pointList[PNumber - 1][0]));
 		}
 	}
 
-	if (PNumber > 1) {
-		# append last user point to route
-		route.add(geo.Coord.new(user_points[-1]));
-	}
-
-	_route = route.get_sliced();
+	return route.get_sliced();
 }
 
 setlistener("/sim/model/pushback/route/show", func(p) {
@@ -205,6 +251,25 @@ var enter = func(start_immediately = 0) {
 	_start_immediately = start_immediately;
 }
 
+var toggle_node = func() {
+	if (_listener == nil) {
+		return;
+	}
+	if (_user_point_modes.arr[_N - 1] == 0) {
+		_user_point_modes.arr[_N - 1] = 1;
+	} else {
+		_user_point_modes.arr[_N - 1] = 0;
+	}
+	if (_user_point_models[_N - 1] != nil) {
+		_user_point_models[_N - 1].remove();
+		var model = "Models/Autopush/cursor.xml";
+		if (_user_point_modes.arr[_N - 1] == 1) {
+			model = "Models/Autopush/cursor_sharp.xml";
+		}
+		_user_point_models[_N - 1] = geo.put_model(model, _user_points.get_sliced()[_N - 1], 0.0);
+	}
+}
+
 var done = func() {
 	_stop(0);
 }
@@ -215,12 +280,13 @@ var clear = func() {
 	_clear_waypoint_models();
 	_N = 0;
 	_user_points = dynarr.dynarr.new(4);
+	_user_point_modes = dynarr.dynarr.new(1);
 }
 
 var route = func() {
 	if (_N < 2) {
 		return nil;
 	}
-	_calculate_bezier();
+	_calculate_route();
 	return _route;
 }

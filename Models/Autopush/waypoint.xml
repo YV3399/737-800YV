@@ -7,7 +7,7 @@ Waypoint model.
 Copyright (c) 2018 Autopush authors:
  Michael Danilov <mike.d.ft402 -eh- gmail.com>
  Joshua Davidson http://github.com/it0uchpods
- Merspieler http://github.com/merspieler
+ Merspieler http://gitlab.com/merspieler
 Distribute under the terms of GPLv2.
 
 -->
@@ -25,10 +25,5 @@ Distribute under the terms of GPLv2.
 		<z-factor>0.0</z-factor>
 		<z-min>1.0</z-min>
 	</animation>
-
-	<effect>
-		<object-name>Circle</object-name>
-		<inherits-from>Effects/cursor</inherits-from>
-	</effect>
 
 </PropertyList>
