@@ -28,26 +28,7 @@
 				<splash type="bool">true</splash>
 				<path>Splash/splash-4.png</path>
 			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/splash-5.png</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/splash-6.png</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/splash-7.png</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/splash-8.png</path>
-			</preview>
+			
 		</previews>
 
 		<systems>
@@ -65,7 +46,7 @@
 				<path>Aircraft/737-800YV/Systems/hydraulics.xml</path>
 			</autopilot>
 			<autopilot n="3">
-				<path>Aircraft/737-800YV/Systems/aircraft-systems-logic.xml</path>
+			<path>Aircraft/737-800YV/Systems/aircraft-systems-logic.xml</path>
 			</autopilot>
 			<autopilot n="4">
 				<name>AFDS DRIVERS</name>
@@ -96,9 +77,12 @@
 			<autopilot n="11">
 				<path>Aircraft/737-800YV/Systems/fadec.xml</path>
 			</autopilot>
+                         <autopilot n="12">
+				<path>Aircraft/737-800YV/Systems/zoom-views.xml</path>
+			</autopilot>
 			<path>Aircraft/737-800YV/Systems/systems.xml</path>
 			<property-rule n="101">
-				<path>Aircraft/737-800YV/Systems/instrument-filters.xml</path>
+			<path>Aircraft/737-800YV/Systems/instrument-filters.xml</path>
 			</property-rule>
 		</systems>
 
@@ -215,7 +199,6 @@
 
 				<flight-recorder include="Systems/flight-recorder.xml"/>
 
-
 		<ai>
 			<submodels>
 				<contrails type="bool">false</contrails>
@@ -275,13 +258,13 @@
 
 	<it-autoflight>
 		<settings>
-			<auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
-			<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
-			<land-flap>0.750</land-flap> <!-- Minimum Flap used for Landing -->
-			<retard-ft>35</retard-ft> <!-- Enable Thrust Retard -->
-			<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
-			<togaspd>156</togaspd> <!-- V2 + 10kts -->
-			<autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
+	        <auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
+		<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
+		<land-flap>0.750</land-flap> <!-- Minimum Flap used for Landing -->
+		<retard-ft>35</retard-ft> <!-- Enable Thrust Retard -->
+		<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
+		<togaspd>156</togaspd> <!-- V2 + 10kts -->
+		<autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
 		</settings>
 		<custom>
 			<athr-armed>0</athr-armed>
@@ -866,7 +849,7 @@
 		<radar-altimeter n="0">
 			<serviceable type="bool">true</serviceable>
 			<antenna>
-				<x-offset-m type="double">11.9359</x-offset-m> <!-- From MFEPD. Transmitter STA 430, receiver 450. -->
+			 <x-offset-m type="double">11.9359</x-offset-m> <!-- From MFEPD. Transmitter STA 430, receiver 450. -->
 				<y-offset-m type="double">0</y-offset-m>
 				<z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
 			</antenna>
