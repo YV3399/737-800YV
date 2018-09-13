@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Air India Express (Indian Artwork)</name>
+            <texture>/Liveries-800/VT-AXP.png</texture>  
+               <newwinglets type="bool">false</newwinglets>
+               <nowinglets type="bool">false</nowinglets>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
