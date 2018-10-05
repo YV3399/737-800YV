@@ -6,7 +6,7 @@
         <livery>                     
             <name type="string">Wing Air</name>
             <texture>/Liveries-800/WNG.png</texture>       
-			<newwinglets type="bool">false</newwinglets>
+			<newwinglets type="bool">true</newwinglets>
 			<nowinglets type="bool">false</nowinglets>     
         </livery>        
     </model>
