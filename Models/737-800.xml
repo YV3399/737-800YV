@@ -574,6 +574,23 @@
 </offsets>
 </model>
 
+<model>
+ <path>Aircraft/737-800YV/Models/Effects/fire.xml</path>
+ <condition>
+   <equals>
+    <property>controls/fires/fire[2]/phase</property>
+    <value>fire</value>
+  </equals>
+</condition>
+<name>~fire_2</name>
+<offsets>
+   <x-m>18.63</x-m>
+   <y-m>0.0</y-m>
+   <z-m>2.06</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
 <!-- Contrail -->
 
 <model>

@@ -139,6 +139,20 @@
 		</binding>
 		<live>true</live>
 	</checkbox>
+	
+	<checkbox>
+		<label>APU fire</label>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<binding>
+			<command>nasal</command>
+			<script>
+			setprop("/controls/fires/fire[2]/on-fire", 1);
+			</script>
+		</binding>
+		<live>true</live>
+	</checkbox>
 </group>
 
 	<hrule />
