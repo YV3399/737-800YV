@@ -612,6 +612,20 @@
 				<factor>1.0</factor>
 			</volume>
 		</altAlert>
+		
+		 <!-- fire warning -->
+		<altAlert>
+			<name>fireAlert</name>
+			<mode>looped</mode>
+			<path>Aircraft/737-800/Sounds/fire-bell.wav</path>
+			<property>/instrumentation/weu/outputs/fire-warn-lamp</property>
+			<volume>
+			  <factor>1.0</factor>
+			</volume>
+			<pitch>
+				<factor>0.5</factor>
+			</pitch>
+		</altAlert>
 
 		<!-- Autopilot disconnect siren -->
 

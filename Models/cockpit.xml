@@ -843,7 +843,7 @@
      <step>1</step>
      <min>-1</min>
      <max>4</max>                
-     <wrap>false</wrap>       
+     <wrap>true</wrap>       
    </binding>
  </action> 
 </animation> 
@@ -862,7 +862,7 @@
      <step>-1</step>
      <min>-1</min>
      <max>4</max>                
-     <wrap>false</wrap>       
+     <wrap>true</wrap>       
    </binding>
  </action> 
 </animation> 
