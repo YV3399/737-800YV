@@ -128,111 +128,45 @@ var warnings = {
 };
 
 ###############################################################################
+# helper functions for listeners
+###############################################################################
+var createFailedListener = func(system) {
+	setlistener("/systems/weu/" ~ system ~ "-failed", func {
+		if (getprop("/systems/weu/" ~ system ~ "-failed") == 1) {
+			activeWarnings.append(system);
+		}
+	}, 0, 0);
+}
+
+var createFireListener = func(object) {
+	setlistener("/systems/weu/" ~ object ~ "-fire", func {
+		if (getprop("/systems/weu/" ~ object ~ "-fire") == 1) {
+			fireWarnings.append(object);
+		}
+	}, 0, 0);
+}
+
+###############################################################################
 # listeners to enable warnings
 ###############################################################################
+createFailedListener("flt-cont");
+createFailedListener("irs");
+createFailedListener("elec");
+createFailedListener("fuel");
+createFailedListener("apu");
+createFailedListener("ovht");
+createFailedListener("anti-ice");
+createFailedListener("hyd");
+createFailedListener("door");
+createFailedListener("eng");
+createFailedListener("ovhd");
+createFailedListener("air-cond");
 
-
-setlistener("/systems/weu/flt-cont-failed", func {
-    if (fltContCond.getValue() == 1) {
-        activeWarnings.append('flt-cont');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/irs-failed", func {
-    if (irsCond.getValue() == 1) {
-        activeWarnings.append('irs');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/fuel-failed", func {
-    if (fuelCond.getValue() == 1) {
-        activeWarnings.append('fuel');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/elec-failed", func {
-    if (elecCond.getValue() == 1) {
-        activeWarnings.append('elec');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/apu-failed", func {
-    if (apuCond.getValue() == 1) {
-        activeWarnings.append('apu');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/ovht-failed", func {
-    if (ovhtCond.getValue() == 1) {
-        activeWarnings.append('ovht');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/anti-ice-failed", func {
-    if (antiIceCond.getValue() == 1) {
-        activeWarnings.append('anti-ice');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/hyd-failed", func {
-    if (hydCond.getValue() == 1) {
-        activeWarnings.append('hyd');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/door-failed", func {
-    if (doorCond.getValue() == 1) {
-        activeWarnings.append('door');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/eng-failed", func {
-    if (engCond.getValue() == 1) {
-        activeWarnings.append('eng');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/ovhd-failed", func {
-    if (ovhdCond.getValue() == 1) {
-        activeWarnings.append('ovhd');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/air-cond-failed", func {
-    if (airConCond.getValue() == 1) {
-        activeWarnings.append('air-cond');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/engine1-fire", func {
-    if (engine1Fire.getValue() == 1) {
-        fireWarnings.append('engine1-fire');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/engine2-fire", func {
-    if (engine2Fire.getValue() == 1) {
-        fireWarnings.append('engine2-fire');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/apu-fire", func {
-    if (apuFire.getValue() == 1) {
-        fireWarnings.append('apu-fire');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/gear-fire", func {
-    if (gearFire.getValue() == 1) {
-        fireWarnings.append('gear-fire');
-    }
-}, 0, 0);
-
-setlistener("/systems/weu/cargo-fire", func {
-    if (cargoFire.getValue() == 1) {
-        fireWarnings.append('cargo-fire');
-    }
-}, 0, 0);
+createFireListener("engine1");
+createFireListener("engine2");
+createFireListener("apu");
+createFireListener("cargo");
+createFireListener("gear");
 
 ###############################################################################
 # Init and start loop

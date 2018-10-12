@@ -1715,130 +1715,231 @@
 
 <!-- Pedestal -->
 
-<!-- Eng 1 Fire -->
+<!-- Fire -->
 <animation>
-  <type>pick</type>
-  <object-name>Circle.169</object-name>         
-  <visible>1</visible>
-  <action>
-    <button>0</button>
-    <repeatable>true</repeatable>        
-    <binding>
-      <command>nasal</command>
-      <script>
-        if(!getprop("/controls/fires/fire/on-fire")) return;
-        props.globals.getNode("controls/switches/switch").setBoolValue(1);
-        props.globals.getNode("controls/switches/fire/engine[0]/on-fire").setBoolValue(1);
-        setprop("/controls/fires/fire/phase", "no-fire");
-        setprop("/controls/fires/fire/on-fire", 0);
-        setprop("/controls/fires/fire/burn-time", 0);
-        settimer(
-        func {
-        props.globals.getNode("controls/switches/fire/engine[0]/on-fire").setBoolValue(0);
-        }
-        , 1);
-      </script>
-    </binding>
-  </action> 
-</animation>
-<animation>
-  <type>rotate</type>   
-  <object-name>Circle.169</object-name>  
-  <property>controls/switches/fire/engine[0]/on-fire</property>
-  <factor>30</factor>
-  <center>
-    <x-m>0.87797</x-m>
-    <y-m>-0.09724</y-m>
-    <z-m>0.62533</z-m>
-  </center>
-  <axis>
-    <x>0</x>
-    <y>1</y>
-    <z>0</z>
-  </axis>
-</animation>
-<!-- Apu Fire -->
-<animation>
-  <type>pick</type>
-  <object-name>Circle.170</object-name>         
-  <visible>1</visible>
-  <action>
-    <button>0</button>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>nasal</command>
-      <script>
-        if(!getprop("controls/fires/apu/on-fire")) return;
-        props.globals.getNode("controls/switches/switch").setBoolValue(1);
-        props.globals.getNode("controls/switches/fire/apu/on-fire").setBoolValue(1);
-        settimer(
-        func {
-        props.globals.getNode("controls/switches/fire/apu/on-fire").setBoolValue(0);
-        }
-        , 1);
-      </script>
-    </binding>  
-  </action> 
-</animation>
-<animation>
-  <type>rotate</type>   
-  <object-name>Circle.170</object-name>  
-  <property>controls/switches/fire/apu/on-fire</property>
-  <factor>30</factor>
-  <center>
-    <x-m>0.87699</x-m>
-    <y-m>-0.02388</y-m>
-    <z-m>0.62825</z-m>
-  </center>
-  <axis>
-    <x>0</x>
-    <y>1</y>
-    <z>0</z>
-  </axis>
-</animation>
-
-<!-- Eng 2 Fire -->
-<animation>
-  <type>pick</type>
-  <object-name>Circle.171</object-name>         
-  <visible>1</visible>
-  <action>
-    <button>0</button>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>nasal</command>
-      <script>
-        if(!getprop("controls/fires/fire[1]/on-fire")) return;
-        props.globals.getNode("controls/switches/switch").setBoolValue(1);
-        props.globals.getNode("controls/switches/fire/engine[1]/on-fire").setBoolValue(1);
-        setprop("/controls/fires/fire[1]/phase", "no-fire");
-        setprop("/controls/fires/fire[1]/on-fire", 0);
-        setprop("/controls/fires/fire[1]/burn-time", 0);
-        settimer(
-        func {
-        props.globals.getNode("controls/switches/fire/engine[1]/on-fire").setBoolValue(0);
-        }
-        , 1);
-      </script>
-    </binding>  
-  </action> 
-</animation>
-<animation>
-  <type>rotate</type>   
-  <object-name>Circle.171</object-name>  
-  <property>controls/switches/fire/engine[1]/on-fire</property>
-  <factor>30</factor>
-  <center>
-    <x-m>0.87789</x-m>
-    <y-m>0.05651</y-m>
-    <z-m>0.62564</z-m>
-  </center>
-  <axis>
-    <x>0</x>
-    <y>1</y>
-    <z>0</z>
-  </axis>
-</animation>
+        <type>translate</type>
+        <object-name>Circle.169</object-name>
+        <property>/controls/fires/fire[0]/extinguish-handle-armed</property>
+        <factor>0.02</factor>
+        <axis>
+           <x>0</x>
+           <y>0</y>
+           <z>1</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>Circle.169</object-name>
+        <condition>
+            <and>
+                <not>
+                    <property>/controls/fires/fire[0]/extinguish-handle-armed</property>
+                </not>
+                <property>/controls/fires/fire[0]/on-fire</property>
+            </and>
+        </condition>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/fires/fire[0]/extinguish-handle-armed</property>
+                <value>1</value>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+        <type>translate</type>
+        <object-name>Circle.170</object-name>
+        <property>/controls/fires/fire[2]/extinguish-handle-armed</property>
+        <factor>0.02</factor>
+        <axis>
+           <x>0</x>
+           <y>0</y>
+           <z>1</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>Circle.170</object-name>
+        <condition>
+            <and>
+                <not>
+                    <property>/controls/fires/fire[2]/extinguish-handle-armed</property>
+                </not>
+                <property>/controls/fires/fire[2]/on-fire</property>
+            </and>
+        </condition>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/fires/fire[2]/extinguish-handle-armed</property>
+                <value>1</value>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+        <type>translate</type>
+        <object-name>Circle.171</object-name>
+        <property>/controls/fires/fire[1]/extinguish-handle-armed</property>
+        <factor>0.02</factor>
+        <axis>
+           <x>0</x>
+           <y>0</y>
+           <z>1</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>Circle.171</object-name>
+        <condition>
+            <and>
+                <not>
+                    <property>/controls/fires/fire[1]/extinguish-handle-armed</property>
+                </not>
+                <property>/controls/fires/fire[1]/on-fire</property>
+            </and>
+        </condition>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/fires/fire[1]/extinguish-handle-armed</property>
+                <value>1</value>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+        <type>knob</type>
+        <object-name>Circle.169</object-name>
+        <property>/controls/fires/fire[0]/extinguish-handle-pos</property>
+        <condition>
+                <property>/controls/fires/fire[0]/extinguish-handle-armed</property>
+        </condition>
+        <factor>30</factor>
+        <center>
+            <x-m>0.872059</x-m>
+            <y-m>-0.097029</y-m>
+            <z-m>0.60127</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/fires/fire[0]/extinguish-handle-pos</property>
+                <factor>1</factor> 
+				<min>-1</min>
+				<max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+        <type>knob</type>
+        <object-name>Circle.170</object-name>
+        <property>/controls/fires/fire[2]/extinguish-handle-pos</property>
+        <condition>
+                <property>/controls/fires/fire[2]/extinguish-handle-armed</property>
+        </condition>
+        <factor>30</factor>
+        <center>
+            <x-m>0.872454</x-m>
+            <y-m>-0.020167</y-m>
+            <z-m>0.60127</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/fires/fire[2]/extinguish-handle-pos</property>
+                <factor>1</factor>  
+				<min>-1</min>
+				<max>1</max>				
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+        <type>knob</type>
+        <object-name>Circle.171</object-name>
+        <property>/controls/fires/fire[1]/extinguish-handle-pos</property>
+        <condition>
+                <property>/controls/fires/fire[1]/extinguish-handle-armed</property>
+        </condition>
+        <center>
+            <x-m>0.872059</x-m>
+            <y-m>0.057091</y-m>
+            <z-m>0.60127</z-m>
+        </center>
+        <factor>30</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/fires/fire[1]/extinguish-handle-pos</property>
+                <factor>1</factor> 
+				<min>-1</min>
+				<max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+	
+	<animation>
+		<object-name>Circle.169</object-name>
+		<type>material</type>
+		<emission>
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>1.0</blue>
+			<factor-prop>/controls/fires/fire[0]/on-fire</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<object-name>Circle.170</object-name>
+		<type>material</type>
+		<emission>
+			<red>0.6</red>
+			<green>0.6</green>
+			<blue>0.6</blue>
+			<factor-prop>/controls/fires/fire[2]/on-fire</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<object-name>Circle.171</object-name>
+		<type>material</type>
+		<emission>
+			<red>0.6</red>
+			<green>0.6</green>
+			<blue>0.6</blue>
+			<factor-prop>/controls/fires/fire[1]/on-fire</factor-prop>
+		</emission>
+	</animation>
 
 <animation>
   <type>rotate</type>

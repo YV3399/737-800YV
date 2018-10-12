@@ -30,12 +30,13 @@ var vspeed = {
 		me.vr = 0;
 		me.wt = 0;
 		me.vref = 0;
-        vspeedLoop.start();
     },
 
-    update: func() {
+    modeKnob: func() {
 		mode = vSpeedSelectorMode.getValue();
 		airgnd = airground.getValue();
+		bug = vSpeedBug.getValue();
+		
 		if (mode == 0) {
 			setFlag.setBoolValue(0);
 			vSpeedSelectorModeText.setValue("AUTO"); # when setting in cdu is simulated, remove the below setValue()s
@@ -46,11 +47,11 @@ var vspeed = {
 			whiteBugSpeed.setValue(0);
 			return;
 		} 
+		
 		if (mode == 1) {
 			if (airgnd == 1) {
 				vSpeedSelectorModeText.setValue("V1");
-				me.v1 = vSpeedBug.getValue();
-				vSpeedSelectorPFDText.setValue(me.v1);
+				vSpeedSelectorPFDText.setValue(bug);
 			} else {
 				vSpeedSelectorModeText.setValue("INVALID ENTRY");
 				vSpeedSelectorPFDText.setValue(999);
@@ -58,22 +59,18 @@ var vspeed = {
 		} elsif (mode == 2) {
 			if (airgnd == 1) {
 				vSpeedSelectorModeText.setValue("VR");
-				me.vr = vSpeedBug.getValue();
-				vSpeedSelectorPFDText.setValue(me.vr);
+				vSpeedSelectorPFDText.setValue(bug);
 			} else {
 				vSpeedSelectorModeText.setValue("INVALID ENTRY");
 				vSpeedSelectorPFDText.setValue(999);
 			}
 		} elsif (mode == 3) {
 			vSpeedSelectorModeText.setValue("WT");
-			wtRaw = vSpeedBug.getValue();
-			me.wt = wtRaw * 500;
-			vSpeedSelectorPFDText.setValue(me.wt);
+				vSpeedSelectorPFDText.setValue(bug*500);
 		} elsif (mode == 4) {
 			if (airgnd == 0) {
 				vSpeedSelectorModeText.setValue("VREF");
-				me.vref = vSpeedBug.getValue();
-				vSpeedSelectorPFDText.setValue(me.vref);
+				vSpeedSelectorPFDText.setValue(bug);
 			} else {
 				vSpeedSelectorModeText.setValue("INVALID ENTRY");
 				vSpeedSelectorPFDText.setValue(999);
@@ -85,28 +82,55 @@ var vspeed = {
 			# whiteBugSpeed.setValue(whiteBug);
 		} elsif (mode == 6) {
 			vSpeedSelectorModeText.setValue("SET");
-			if (airgnd == 1) {
-				if (me.v1 != nil) {
-					v1Speed.setValue(me.v1);
-				}
-				if (me.vr != nil) {
-					vrSpeed.setValue(me.vr);
-				}
-			} elsif (airgnd == 0) {
-				if (me.vref != nil) {
-					vrefSpeed.setValue(me.vref);
-				}
+			if (me.v1 != nil) {
+				v1Speed.setValue(me.v1);
+			}
+			if (me.vr != nil) {
+				vrSpeed.setValue(me.vr);
+			}
+			if (me.vref != nil) {
+				vrefSpeed.setValue(me.vref);
 			}
 			gWeight.setValue(me.wt);
 			setFlag.setBoolValue(1);
 		}
     },
+	
+	speedKnob: func() {
+		mode = vSpeedSelectorMode.getValue();
+		airgnd = airground.getValue();
+		bug = vSpeedBug.getValue();
+		if (mode == 0 or mode == 6) {return;}
+		
+		if (mode == 1 and airgnd == 1) {
+			me.v1 = bug;
+			vSpeedSelectorPFDText.setValue(me.v1);
+		} elsif (mode == 2 and airgnd == 1) {
+			me.vr = bug;
+			vSpeedSelectorPFDText.setValue(me.vr);
+		} elsif (mode == 3) {
+			wtRaw = bug;
+			me.wt = wtRaw * 500;
+			vSpeedSelectorPFDText.setValue(me.wt);
+		} elsif (mode == 4 and airgnd == 0) {
+			me.vref = bug;
+			vSpeedSelectorPFDText.setValue(me.vref);
+		}
+	},
 };
 
 ###############################################################################
-# Init and start loop
+# Listeners
 ###############################################################################
+setlistener("/controls/fmc/v-speed-mode", func {
+	vspeed.modeKnob();
+}, 0, 0);
 
-var vspeedLoop = maketimer(0.05, func {vspeed.update();});
+setlistener("/controls/fmc/v-speed-bug", func {
+	vspeed.speedKnob();
+}, 0, 0);
 
+###############################################################################
+# Init
+###############################################################################
 vspeed.init();
