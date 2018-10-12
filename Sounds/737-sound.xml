@@ -617,7 +617,7 @@
 		<altAlert>
 			<name>fireAlert</name>
 			<mode>looped</mode>
-			<path>Aircraft/737-800/Sounds/fire-bell.wav</path>
+			<path>Aircraft/737-800YV/Sounds/fire-bell.wav</path>
 			<property>/instrumentation/weu/outputs/fire-warn-lamp</property>
 			<volume>
 			  <factor>1.0</factor>
