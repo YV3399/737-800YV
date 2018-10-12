@@ -46,6 +46,15 @@
             <texture>boeing_grey.png</texture>
         </overlay>
     </model>
+    <model>
+        <name>737RadioPanel</name>
+        <path>Aircraft/737-800YV/Models/RadioPanel/737RadioPanel.xml</path>
+        <offsets>
+            <x-m>1.13659</x-m>
+            <z-m>0.438363</z-m>
+            <y-m>-0.0201713</y-m>
+        </offsets>
+    </model>
 	
 <animation>
   <type>knob</type>
