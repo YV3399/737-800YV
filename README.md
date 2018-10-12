@@ -13,7 +13,3 @@ This aircraft was modified and updated in a joint effort by the following people
 ![image](https://imgur.com/A03GZVi.png)
 ![Image](https://imgur.com/wmfyjHC.png)
 ![Image](http://imgur.com/gqGSLMs.png)
-
-## Note:
-The 737 800 Has New Cockpit And Model 3D, Sounds, Animations, Systems, Cockpit and among many other things.
- 
