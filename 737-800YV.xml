@@ -517,9 +517,9 @@
 	<system file="pushback"/>
 	<system file="fuel"/>
 	<system file="fmc"/>
+	<system file="hydraulics-jsb"/>
 
 	<flight_control name="FCS: 737">
-
 		<channel name="Pitch">
 
 			<summer name="Pitch Trim Sum Cmd">
