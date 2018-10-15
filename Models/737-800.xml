@@ -156,7 +156,7 @@
     <name>Pushback</name>
     <path>Aircraft/737-800YV/Models/Pushback/pushback.xml</path>
     <offsets>
-      <x-m>-15.6</x-m>
+      <x-m>-16.5</x-m>
       <y-m>0</y-m>
       <z-m>-2.75</z-m>
     </offsets>
