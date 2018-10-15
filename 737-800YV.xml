@@ -517,9 +517,9 @@
 	<system file="pushback"/>
 	<system file="fuel"/>
 	<system file="fmc"/>
+	<system file="hydraulics-jsb"/>
 
 	<flight_control name="FCS: 737">
-
 		<channel name="Pitch">
 
 			<summer name="Pitch Trim Sum Cmd">
@@ -2078,7 +2078,7 @@
 
 	<external_reactions>
 
-		<force name="tractor" frame="BODY">
+		<force name="pushback" frame="BODY">
 			<location unit="IN">
 				<x>  -139 </x>
 				<y>    0.0 </y>

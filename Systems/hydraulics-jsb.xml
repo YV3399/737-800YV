@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!-- 
+
+  
+-->
+<system name="Hydraulics">
+    <property value="1" type="bool">/controls/hydraulic/a-eng1-pump</property>
+    <property value="1" type="bool">/controls/hydraulic/a-elec2-pump</property>
+    <property value="1" type="bool">/controls/hydraulic/b-elec1-pump</property>
+    <property value="1" type="bool">/controls/hydraulic/b-eng2-pump</property>
+    <property value="0">/systems/hydraulic/a-psi</property>
+    <property value="0">/systems/hydraulic/b-psi</property>
+    <property value="0">/systems/hydraulic/stby-psi</property>
+    <property value="1" type="bool">/controls/hydraulic/fctl-a</property>
+    <property value="1" type="bool">/controls/hydraulic/fctl-b</property>
+    <property value="1" type="bool">/controls/hydraulic/spoiler-a</property>
+    <property value="1" type="bool">/controls/hydraulic/spoiler-b</property>
+    
+    <channel name="Hyd">
+        <switch name="/systems/hydraulic/aileron-active">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /systems/hydraulic/a-psi ge 1500
+                /controls/hydraulic/fctl-a eq 1
+            </test>
+            <test logic="AND" value="1">
+                /systems/hydraulic/b-psi ge 1500
+                /controls/hydraulic/fctl-b eq 1
+            </test>
+        </switch>
+        
+        <switch name="/systems/hydraulic/elevator-active">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /systems/hydraulic/a-psi ge 1500
+                /controls/hydraulic/fctl-a eq 1
+            </test>
+            <test logic="AND" value="1">
+                /systems/hydraulic/b-psi ge 1500
+                /controls/hydraulic/fctl-b eq 1
+            </test>
+        </switch>
+        
+        <switch name="/systems/hydraulic/spoiler-a-active">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /systems/hydraulic/a-psi ge 1500
+                /controls/hydraulic/spoiler-a eq 1
+            </test>
+        </switch>
+        
+        <switch name="/systems/hydraulic/spoiler-b-active">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /systems/hydraulic/b-psi ge 1500
+                /controls/hydraulic/spoiler-b eq 1
+            </test>
+        </switch>
+        
+        <switch name="/systems/hydraulic/rudder-active">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /systems/hydraulic/a-psi ge 1500
+                /controls/hydraulic/fctl-a eq 1
+            </test>
+            <test logic="AND" value="1">
+                /systems/hydraulic/b-psi ge 1500
+                /controls/hydraulic/fctl-b eq 1
+            </test>
+            <test logic="AND" value="1">
+                /systems/hydraulic/stby-psi ge 1500
+                /controls/hydraulic/fctl-a eq 0
+            </test>
+        </switch>
+    </channel>
+    
+    <channel name="Warnings" execrate="6">
+        <switch name="systems/hydraulics/output/a-eng1-pump-lo-press">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /controls/hydraulic/a-eng1-pump eq 1
+                /systems/hydraulic/a-psi lt 1500
+            </test>
+        </switch>
+        <switch name="systems/hydraulics/output/b-eng2-pump-lo-press">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /controls/hydraulic/b-eng2-pump eq 1
+                /systems/hydraulic/b-psi lt 1500
+            </test>
+        </switch>
+        <switch name="systems/hydraulics/output/a-elec2-pump-lo-press">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /controls/hydraulic/a-elec2-pump eq 1
+                /systems/hydraulic/a-psi lt 1500
+            </test>
+        </switch>
+        <switch name="systems/hydraulics/output/b-elec1-pump-lo-press">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /controls/hydraulic/b-elec1-pump eq 1
+                /systems/hydraulic/b-psi lt 1500
+            </test>
+        </switch>
+        
+        <switch name="rubbish/weu/hyd-failed">
+            <default value="0"/>
+            <test logic="OR" value="1">
+                systems/hydraulics/output/a-eng1-pump-lo-press eq 1
+                systems/hydraulics/output/b-eng2-pump-lo-press eq 1
+                systems/hydraulics/output/a-elec2-pump-lo-press eq 1
+                systems/hydraulics/output/b-elec1-pump-lo-press eq 1
+            </test>
+            <output>/systems/weu/hyd-failed</output>
+        </switch>
+    </channel>
+</system>

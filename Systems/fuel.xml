@@ -436,5 +436,83 @@
       </summer>
 
   </channel>
+  
+   <channel name="Warnings" execrate="6">
+		<switch name="fuel/fwd-left-fuel-pressure-low">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				/controls/fuel/tank[0]/pump-fwd eq 1
+				propulsion/tank[0]/contents-lbs lt 100 
+			</test>
+		</switch>
+		
+		<switch name="fuel/fwd-right-fuel-pressure-low">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				/controls/fuel/tank[1]/pump-fwd eq 1
+				propulsion/tank[1]/contents-lbs lt 100  
+			</test>
+		</switch>
+		
+		<switch name="fuel/aft-left-fuel-pressure-low">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				/controls/fuel/tank[0]/pump-aft eq 1
+				propulsion/tank[0]/contents-lbs lt 100 
+			</test>
+		</switch>
+		
+		<switch name="fuel/aft-right-fuel-pressure-low">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				/controls/fuel/tank[1]/pump-aft eq 1
+				propulsion/tank[1]/contents-lbs lt 100 
+			</test>
+		</switch>
+		
+		<switch name="fuel/center-left-fuel-pressure-low">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				/controls/fuel/tank[2]/pump-left eq 1
+				propulsion/tank[2]/contents-lbs lt 100
+			</test>
+		</switch>
+		
+		<switch name="fuel/center-right-fuel-pressure-low">
+			<default value="0"/>
+			<test logic="AND" value="1">
+				/controls/fuel/tank[2]/pump-right eq 1
+				propulsion/tank[2]/contents-lbs lt 100
+			</test>
+		</switch>
+		
+		<switch name="rubbish/weu/fuel-failed">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				fuel/fwd-left-fuel-pressure-low eq 1
+				fuel/aft-left-fuel-pressure-low eq 1
+				fuel/fwd-right-fuel-pressure-low eq 1
+				fuel/aft-right-fuel-pressure-low eq 1
+			</test>
+			<test logic="AND" value="1">
+				fuel/center-left-fuel-pressure-low eq 1
+				fuel/center-right-fuel-pressure-low eq 1
+				/controls/fuel/tank[2]/pump-left eq 1
+				/controls/fuel/tank[2]/pump-right eq 1
+			</test>
+			<test logic="AND" value="1">
+				fuel/center-right-fuel-pressure-low eq 1
+				/controls/fuel/tank[2]/pump-left eq 0
+				/controls/fuel/tank[2]/pump-right eq 1
+			</test>
+			<test logic="AND" value="1">
+				fuel/center-left-fuel-pressure-low eq 1
+				/controls/fuel/tank[2]/pump-left eq 1
+				/controls/fuel/tank[2]/pump-right eq 0
+			</test>
+			<output>/systems/weu/fuel-failed</output>
+		</switch>
+  </channel>
+
 
 </system>

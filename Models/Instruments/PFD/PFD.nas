@@ -64,7 +64,7 @@ var canvas_PFD = {
 		"selAltBox","selAltPtr","selHdgText","spdTape","spdTrend","speedText","spdTapeWhiteBug",
 		"singleCh","singleChBox",
 		"tenThousand","touchdown",
-		"v1","v2","vertSpdUp","vertSpdDn","vr","vref",
+		"v1","v2","vertSpdUp","vertSpdDn","vr","vref", "PFDspeedMode", "PFDspeedValue",
 		"vsiNeedle","vsPointer","spdModeChange","rollModeChange","pitchModeChange", "bankPointerTriangle"];
 		foreach(var key; svg_keys) {
 			m[key] = pfd.getElementById(key);
@@ -836,6 +836,23 @@ var canvas_PFD = {
 		var apSpd = getprop("/it-autoflight/input/spd-kts");
 		var dh = getprop("instrumentation/mk-viii/inputs/arinc429/decision-height");
 		
+		var mode = getprop("controls/fmc/v-speed-mode-text");
+		var pfd_spd_value = getprop("controls/fmc/v-speed-pfd-text");
+		
+		if (mode != "AUTO" and mode != "SET" and mode != "") {
+			me["PFDspeedMode"].show();
+			me["PFDspeedMode"].setText(mode);
+			if (pfd_spd_value != 999) {
+				me["PFDspeedValue"].show();
+				me["PFDspeedValue"].setText(sprintf("%0.0f", pfd_spd_value));
+			} else {
+				me["PFDspeedValue"].hide();
+			}
+		} else {
+			me["PFDspeedMode"].hide();
+			me["PFDspeedValue"].hide();
+		}
+		
 		var v1 = getprop("instrumentation/fmc/speeds/v1-kt") or 0;
 		if (v1 > 0) {
 			if (air_ground) {
@@ -854,19 +871,33 @@ var canvas_PFD = {
 
 		me["v2"].hide(); #i have never seen V2 bug on 737-800 PFD
 
-		me["spdTapeWhiteBug"].hide(); #will implement in future
-
-			
-		if (getprop("instrumentation/fmc/phase-name") == "APPROACH") {
-			if (flaps == 1)
-				var vref = getprop("instrumentation/pfd/flaps-30-kt");
-			else
-				var vref = getprop("instrumentation/pfd/flaps-25-kt");
+		var whitebug = getprop("/instrumentation/fmc/speeds/white-bug-kt") or 0;
+		
+		#if (whitebug > 60 and (getprop("controls/fmc/v-speed-mode-text") != "AUTO")) { DISABLED UNTIL I CAN FIX IT
+		#	me["spdTapeWhiteBug"].show();
+		#	me["spdTapeWhiteBug"].setTranslation(0,-(whitebug)*6.145425);
+		#	# simulate V2 + 15 when V2 is simulated, VREF + 20, and 80kt / 100kt bugs
+		#} else {
+			me["spdTapeWhiteBug"].hide();
+		#}
+	
+		if (getprop("instrumentation/fmc/phase-name") == "APPROACH" and getprop("controls/fmc/v-speed-mode-text") == "AUTO") {
+			if (flaps == 0.875)
+				var vref = getprop("instrumentation/fmc/v-ref-30");
+			elsif (flaps == 1)
+				var vref = getprop("instrumentation/fmc/v-ref-40");
+			elsif (flaps > 0.625) 
+				var vref = getprop("instrumentation/fmc/v-ref-15");
+			me["vref"].show();
+			me["vref"].setTranslation(0,-vref*6.145425);
+		} elsif (getprop("controls/fmc/v-speed-mode-text") == "SET" and getprop("instrumentation/fmc/speeds/vref-kt") != 0) {
+			var vref = getprop("instrumentation/fmc/speeds/vref-kt");
 			me["vref"].show();
 			me["vref"].setTranslation(0,-vref*6.145425);
 		} else {
 			me["vref"].hide();
 		}
+		
 		
 		var vref40 = getprop("instrumentation/fmc/v-ref-40") or 0;
 		vref40 = roundToNearest(vref40,1);

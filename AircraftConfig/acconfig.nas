@@ -22,7 +22,7 @@ setprop("/systems/acconfig/autoconfig-running", 0);
 setprop("/systems/acconfig/spinning", 0);
 setprop("/systems/acconfig/spin", "-");
 setprop("/systems/acconfig/options/welcome-skip", 0);
-setprop("/systems/acconfig/options/yokes-visible", 0);
+setprop("/systems/acconfig/options/yokes-visible", 1);
 setprop("/systems/acconfig/options/increase-fps", 0);
 var main_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/main/dialog", "Aircraft/737-800YV/AircraftConfig/main.xml");
 var welcome_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/welcome/dialog", "Aircraft/737-800YV/AircraftConfig/welcome.xml");

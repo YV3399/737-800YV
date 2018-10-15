@@ -30,38 +30,35 @@
     <name>static</name>
     <number>0</number>
     <tau>1</tau>
+    <type>1</type>
   </static>
 
   <static>
     <name>static</name>
     <number>1</number>
     <tau>1</tau>
+    <type>1</type>
   </static>
 
   <static>
     <name>static</name>
     <number>2</number>
     <tau>1</tau>
-  </static>
-
-  <static>
-    <name>static</name>
-    <number>3</number>
-    <tau>1</tau>
+    <type>1</type>
   </static>
 
   <vacuum>
     <name>vacuum</name>
     <number>0</number>
     <rpm>/engines/engine[0]n1</rpm>
-    <scale>20.0</scale>
+    <scale>15.0</scale>
   </vacuum>
 
   <vacuum>
     <name>vacuum</name>
     <number>1</number>
     <rpm>/engines/engine[1]/n1</rpm>
-    <scale>20.0</scale>
+    <scale>15.0</scale>
   </vacuum>
 
 </PropertyList>
