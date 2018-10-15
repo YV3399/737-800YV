@@ -2078,7 +2078,7 @@
 
 	<external_reactions>
 
-		<force name="pushback" frame="BODY">
+		<force name="tractor" frame="BODY">
 			<location unit="IN">
 				<x>  -139 </x>
 				<y>    0.0 </y>
