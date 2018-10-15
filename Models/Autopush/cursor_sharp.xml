@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+AUTOPUSH
+Cursor model.
+
+Copyright (c) 2018 Autopush authors:
+ Michael Danilov <mike.d.ft402 -eh- gmail.com>
+ Joshua Davidson http://github.com/it0uchpods
+ Merspieler http://gitlab.com/merspieler
+Distribute under the terms of GPLv2.
+
+-->
+<PropertyList>
+
+	<path>cursor_sharp.ac</path>
+
+	<animation>
+		<enable-hot>false</enable-hot>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<property>/sim/model/pushback/driver/D_min-m</property>
+		<z-factor>0.0</z-factor>
+		<z-min>1.0</z-min>
+	</animation>
+
+</PropertyList>
