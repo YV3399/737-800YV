@@ -57,18 +57,18 @@ var warnings = {
     },
 
     update: func() {
-		if (activeWarnings.size() != 0) { 
-			foreach(var k; activeWarnings.vector) {
-				setprop("/instrumentation/weu/outputs/" ~ k ~ "-lamp", 1);
-			}
-			masterCaution.setBoolValue(1);
-		}
-		
-		if (fireWarnings.size() != 0) {
-			fireWarning.setBoolValue(1);
-		}
+        if (activeWarnings.size() != 0) { 
+            foreach(var k; activeWarnings.vector) {
+                setprop("/instrumentation/weu/outputs/" ~ k ~ "-lamp", 1);
+            }
+            masterCaution.setBoolValue(1);
+        }
+        
+        if (fireWarnings.size() != 0) {
+            fireWarning.setBoolValue(1);
+        }
     },
-	
+    
     toggleLamps: func(n) {
         if (n < 0 or int(n) == nil) {return;} else {n = int(n);} # sanity check for n
 
@@ -86,44 +86,44 @@ var warnings = {
         ovhdLamp.setBoolValue(n);
         airConLamp.setBoolValue(n);
     },
-	
-	cautionBtn: func() {
-		foreach(var i; activeWarnings.vector) {
-			storedWarnings.append(i);
-			activeWarnings.remove(i);
-			setprop("/instrumentation/weu/outputs/" ~ i ~ "-lamp", 0);
-		}
+    
+    cautionBtn: func() {
+        foreach(var i; activeWarnings.vector) {
+            storedWarnings.append(i);
+            activeWarnings.remove(i);
+            setprop("/instrumentation/weu/outputs/" ~ i ~ "-lamp", 0);
+        }
 
-		masterCaution.setBoolValue(0);
-	},
+        masterCaution.setBoolValue(0);
+    },
 
-	fireBtn: func() {
-		if (fireWarnings.size() > 0) {
-			foreach(var j; fireWarnings.vector) {
-				fireWarnings.remove(j);
-			}
-		}
-		
-		fireWarning.setBoolValue(0);
-	},
+    fireBtn: func() {
+        if (fireWarnings.size() > 0) {
+            foreach(var j; fireWarnings.vector) {
+                fireWarnings.remove(j);
+            }
+        }
+        
+        fireWarning.setBoolValue(0);
+    },
 
-	recallBtn: func() {
-		if (storedWarnings.size() == 0 and activeWarnings.size() == 0) {
-			warnings.toggleLamps(1);
-		} elsif (storedWarnings.size() > 0) {
-			foreach(var k; storedWarnings.vector) {
-				activeWarnings.append(k);
-				setprop("/instrumentation/weu/outputs/" ~ k ~ "-lamp", 1);
-				storedWarnings.remove(k);
-			}
-		}
-	},
+    recallBtn: func() {
+        if (storedWarnings.size() == 0 and activeWarnings.size() == 0) {
+            warnings.toggleLamps(1);
+        } elsif (storedWarnings.size() > 0) {
+            foreach(var k; storedWarnings.vector) {
+                activeWarnings.append(k);
+                setprop("/instrumentation/weu/outputs/" ~ k ~ "-lamp", 1);
+                storedWarnings.remove(k);
+            }
+        }
+    },
 
-	recallOff: func() {
-		if (storedWarnings.size() == 0 and activeWarnings.size() == 0) {
-			warnings.toggleLamps(0);
-		}
-	}
+    recallOff: func() {
+        if (storedWarnings.size() == 0 and activeWarnings.size() == 0) {
+            warnings.toggleLamps(0);
+        }
+    }
 
 };
 
@@ -131,19 +131,21 @@ var warnings = {
 # helper functions for listeners
 ###############################################################################
 var createFailedListener = func(system) {
-	setlistener("/systems/weu/" ~ system ~ "-failed", func {
-		if (getprop("/systems/weu/" ~ system ~ "-failed") == 1) {
-			activeWarnings.append(system);
-		}
-	}, 0, 0);
+    setlistener("/systems/weu/" ~ system ~ "-failed", func {
+        if (getprop("/systems/weu/" ~ system ~ "-failed") == 1) {
+            activeWarnings.append(system);
+        } elsif (storedWarnings.contains(system) == 1 and getprop("/systems/weu/" ~ system ~ "-failed") == 0) {
+            storedWarnings.remove(system);
+        }
+    }, 0, 0);
 }
 
 var createFireListener = func(object) {
-	setlistener("/systems/weu/" ~ object ~ "-fire", func {
-		if (getprop("/systems/weu/" ~ object ~ "-fire") == 1) {
-			fireWarnings.append(object);
-		}
-	}, 0, 0);
+    setlistener("/systems/weu/" ~ object ~ "-fire", func {
+        if (getprop("/systems/weu/" ~ object ~ "-fire") == 1) {
+            fireWarnings.append(object);
+        }
+    }, 0, 0);
 }
 
 ###############################################################################
