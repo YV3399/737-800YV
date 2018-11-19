@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>                     
-            <name type="string">Eastern Airlines</name>
+            <name type="string">Eastern Air Lines</name>
             <texture>/Liveries-800/EAL.png</texture> 
                <newwinglets type="bool">false</newwinglets>
 			<nowinglets type="bool">false</nowinglets>            
