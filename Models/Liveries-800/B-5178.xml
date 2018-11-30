@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Air China (Silver Peony Livery)</name>
+            <texture>Liveries-800/B-5178.png</texture>          
+            <newwinglets type="bool">false</newwinglets> 
+			<nowinglets type="bool">true</nowinglets>  
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
