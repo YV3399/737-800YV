@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Air India Express (Dal Lake Boat / Thar Desert Woman)</name>
+            <texture>/Liveries-800/VT-AXZ.png</texture>  
+               <newwinglets type="bool">false</newwinglets>
+               <nowinglets type="bool">false</nowinglets>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
