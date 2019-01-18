@@ -134,8 +134,16 @@ var createFailedListener = func(system) {
     setlistener("/systems/weu/" ~ system ~ "-failed", func {
         if (getprop("/systems/weu/" ~ system ~ "-failed") == 1) {
             activeWarnings.append(system);
-        } elsif (storedWarnings.contains(system) == 1 and getprop("/systems/weu/" ~ system ~ "-failed") == 0) {
-            storedWarnings.remove(system);
+        } else {
+			if (storedWarnings.contains(system) == 1 and getprop("/systems/weu/" ~ system ~ "-failed") == 0) {
+				storedWarnings.remove(system);
+			}
+			if (activeWarnings.contains(system) == 1 and getprop("/systems/weu/" ~ system ~ "-failed") == 0) {
+				activeWarnings.remove(system);
+			}
+			if (getprop("/instrumentation/weu/outputs/" ~ system ~ "-lamp") == 1) {
+                setprop("/instrumentation/weu/outputs/" ~ system ~ "-lamp", 0);
+			}
         }
     }, 0, 0);
 }
