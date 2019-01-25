@@ -79,7 +79,13 @@
 		</output>
 		<config>
 			<Kp>
-				<property>/it-autoflight/config/roll/kp</property>
+				<expression>
+					<table>
+						<property>/fdm/jsbsim/velocities/vc-kts</property>
+						<entry><ind>140</ind><dep>0.14</dep></entry>
+						<entry><ind>360</ind><dep>0.05</dep></entry>
+					</table>
+				</expression>
 			</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
@@ -239,7 +245,13 @@
 		</output>
 		<config>
 			<Kp>
-				<property>/it-autoflight/config/pitch/kp</property>
+				<expression>
+					<table>
+						<property>/fdm/jsbsim/velocities/vc-kts</property>
+						<entry><ind>140</ind><dep>-0.28</dep></entry>
+						<entry><ind>360</ind><dep>-0.09</dep></entry>
+					</table>
+				</expression>
 			</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
