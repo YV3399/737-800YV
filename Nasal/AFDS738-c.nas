@@ -64,7 +64,7 @@ setlistener("/it-autoflight/output/thr-mode", func {
 
 var thrIdle = maketimer(0.25, func {
 	var newthr = getprop("/autopilot/display/throttle-mode");
-	if (getprop("/controls/engines/throttle-cmd-norm") < 0.011) {
+	if (getprop("/controls/engines/throttle-cmd-norm") < 0.021) {
 		setprop("/it-autoflight/custom/athr-deactivate", 1);
 		if (newthr != "ARM") {
 			setprop("/autopilot/display/throttle-mode", "ARM");

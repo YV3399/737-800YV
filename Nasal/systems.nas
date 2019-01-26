@@ -41,10 +41,6 @@ setprop("/controls/lighting/AFDSbrt","0");
 setlistener("/sim/signals/fdm-initialized", func {	
 	systems.elec_init();
 	systems.hyd_init();
-  	itaf.ap_init();
-	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/737-800YV/Systems/autopilot-dlg.xml");
-  	setprop("/it-autoflight/input/spd-kts", 100);
-	setprop("/it-autoflight/input/bank-limit-sw", 6);
 	boeing737.shaketimer.start();
 });
 
@@ -54,8 +50,8 @@ setprop("/it-autoflight/input/ap2", 0);
 setprop("/it-autoflight/input/athr", 0);
 setprop("/it-autoflight/input/fd1", 0);
 setprop("/it-autoflight/input/fd2", 0);
-setprop("/it-autoflight/input/spd-kts", 200);
-setprop("/it-autoflight/input/spd-mach", 0.68);
+setprop("/it-autoflight/input/spd-kts", 100);
+setprop("/it-autoflight/input/spd-mach", 0.5);
 setprop("/it-autoflight/input/hdg", 360);
 setprop("/it-autoflight/input/alt", 10000);
 setprop("/it-autoflight/input/vs", 0);
@@ -73,10 +69,6 @@ setprop("/it-autoflight/output/appr-armed", 0);
 setprop("/it-autoflight/output/thr-mode", 0);
 setprop("/it-autoflight/output/retard", 0);
 setprop("/it-autoflight/internal/alt", 10000);
-
-setlistener("/it-autoflight/input/vs", func {
-	setprop("/it-autoflight/input/vs-reduced", getprop("/it-autoflight/input/vs") / 100);
-});
 	
 var timerstall = maketimer(5, func(){
 
@@ -153,12 +145,6 @@ var aglgears = func {
 }
 
 aglgears();
-
-setlistener("/it-autoflight/output/athr", func {
-	if (getprop("/it-autoflight/output/athr") == 1) {
-		setprop("/it-autoflight/custom/athr-armed", 1);
-	}
-});
 
 # selected engine system
 props.globals.initNode("sim/input/selected/SelectedEngine738", 0, "INT");

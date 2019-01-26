@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- IT-AUTOFLIGHT Autopilot Control Dialog -->
-<!-- (c) Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2019 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
 
 	<name>autopilot</name>
 	<layout>vbox</layout>
-    <pref-width>260</pref-width>
+	<pref-width>260</pref-width>
 
-    <group>
-        <layout>hbox</layout>
-        <text>
-            <halign>left</halign>
-            <label>IT-AUTOFLIGHT System (B738)</label>
-        </text>
-        <button>
-            <halign>right</halign>
-            <pref-width>20</pref-width>
-            <pref-height>20</pref-height>
-            <legend>X</legend>
-            <key>Esc</key>
-            <binding>
-                <command>dialog-close</command>
-            </binding>
-        </button>
-    </group>
+	<group>
+		<layout>hbox</layout>
+		<text>
+			<halign>left</halign>
+			<label>IT-AUTOFLIGHT System (B738)</label>
+		</text>
+		<button>
+			<halign>right</halign>
+			<pref-width>20</pref-width>
+			<pref-height>20</pref-height>
+			<legend>X</legend>
+			<key>Esc</key>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
 	
-    <hrule/>
+	<hrule/>
 
 	<group>
 		<layout>hbox</layout>
@@ -386,14 +386,14 @@
 		<checkbox>
 			<label>A/T ARM Switch (Required to use A/T)</label>
 			<property>/it-autoflight/custom/athr-armed</property>
-    		<binding>
+			<binding>
 				<command>nasal</command>
 				<script>
 				if (getprop("/it-autoflight/custom/athr-armed") == 1) {
 					setprop("/it-autoflight/input/athr", 0);
 				}
 				</script>
-    		</binding>
+			</binding>
 			<binding>
 				<command>dialog-apply</command>
 			</binding>
@@ -412,8 +412,8 @@
 			<button>
 				<row>0</row>
 				<col>1</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
 				<enable>
 					<equals>
@@ -433,8 +433,8 @@
 			<button>
 				<row>0</row>
 				<col>2</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;</legend>
 				<enable>
 					<equals>
@@ -455,7 +455,7 @@
 			<input>
 				<row>0</row>
 				<col>3</col>
-                <pref-width>50</pref-width>
+				<pref-width>50</pref-width>
 				<property>/it-autoflight/input/spd-kts</property>
 				<live type="bool">true</live>
 				<enable>
@@ -472,8 +472,8 @@
 			<button>
 				<row>0</row>
 				<col>4</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;</legend>
 				<enable>
 					<equals>
@@ -494,8 +494,8 @@
 				<row>0</row>
 				<col>5</col>
 				<halign>left</halign>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
 				<enable>
 					<equals>
@@ -527,8 +527,8 @@
 			<button>
 				<row>0</row>
 				<col>1</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
 				<enable>
 					<equals>
@@ -548,8 +548,8 @@
 			<button>
 				<row>0</row>
 				<col>2</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;</legend>
 				<enable>
 					<equals>
@@ -570,7 +570,7 @@
 			<input>
 				<row>0</row>
 				<col>3</col>
-                <pref-width>50</pref-width>
+				<pref-width>50</pref-width>
 				<property>/it-autoflight/input/spd-mach</property>
 				<live type="bool">true</live>
 				<enable>
@@ -587,8 +587,8 @@
 			<button>
 				<row>0</row>
 				<col>4</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;</legend>
 				<enable>
 					<equals>
@@ -609,8 +609,8 @@
 				<row>0</row>
 				<col>5</col>
 				<halign>left</halign>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
 				<enable>
 					<equals>
@@ -648,7 +648,7 @@
 			<layout>hbox</layout>
 		
 			<button>
-                <pref-width>76</pref-width>
+				<pref-width>76</pref-width>
 				<legend>HDG</legend>
 				<binding>
 				<command>nasal</command>
@@ -657,7 +657,7 @@
 			</button>
 			
 			<button>
-                <pref-width>76</pref-width>
+				<pref-width>76</pref-width>
 				<legend>LNAV</legend>
 				<binding>
 				<command>nasal</command>
@@ -666,7 +666,7 @@
 			</button>
 			
 			<button>
-                <pref-width>76</pref-width>
+				<pref-width>76</pref-width>
 				<legend>VOR/LOC</legend>
 				<binding>
 				<command>nasal</command>
@@ -687,8 +687,8 @@
 			<button>
 				<row>0</row>
 				<col>1</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
@@ -702,8 +702,8 @@
 			<button>
 				<row>0</row>
 				<col>2</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
@@ -718,7 +718,7 @@
 			<input>
 				<row>0</row>
 				<col>3</col>
-                <pref-width>40</pref-width>
+				<pref-width>40</pref-width>
 				<property>/it-autoflight/input/hdg</property>
 				<live type="bool">true</live>
 				<binding>
@@ -729,8 +729,8 @@
 			<button>
 				<row>0</row>
 				<col>4</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
@@ -745,8 +745,8 @@
 				<row>0</row>
 				<col>5</col>
 				<halign>left</halign>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
@@ -808,7 +808,7 @@
 			<layout>hbox</layout>
 			
 			<button>
-                <pref-width>43</pref-width>
+				<pref-width>43</pref-width>
 				<legend>HLD</legend>
 				<binding>
 				<command>nasal</command>
@@ -817,7 +817,7 @@
 			</button>
 		
 			<button>
-                <pref-width>70</pref-width>
+				<pref-width>70</pref-width>
 				<legend>LVL CHG</legend>
 				<binding>
 				<command>nasal</command>
@@ -826,7 +826,7 @@
 			</button>
 			
 			<button>
-                <pref-width>43</pref-width>
+				<pref-width>43</pref-width>
 				<legend>V/S</legend>
 				<binding>
 				<command>nasal</command>
@@ -835,7 +835,7 @@
 			</button>
 			
 			<button>
-                <pref-width>70</pref-width>
+				<pref-width>70</pref-width>
 				<legend>APPR</legend>
 				<binding>
 				<command>nasal</command>
@@ -856,8 +856,8 @@
 			<button>
 				<row>0</row>
 				<col>1</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
@@ -871,8 +871,8 @@
 			<button>
 				<row>0</row>
 				<col>2</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;</legend>
 				<binding>
 					<command>property-adjust</command>
@@ -887,7 +887,7 @@
 			<input>
 				<row>0</row>
 				<col>3</col>
-                <pref-width>55</pref-width>
+				<pref-width>55</pref-width>
 				<property>/it-autoflight/input/alt</property>
 				<live type="bool">true</live>
 				<binding>
@@ -898,8 +898,8 @@
 			<button>
 				<row>0</row>
 				<col>4</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
@@ -914,8 +914,8 @@
 				<row>0</row>
 				<col>5</col>
 				<halign>left</halign>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
 				<binding>
 					<command>property-adjust</command>
@@ -940,8 +940,8 @@
 			<button>
 				<row>0</row>
 				<col>1</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;&lt;</legend>
 				<enable>
 					<equals>
@@ -953,7 +953,7 @@
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/vs</property>
 					<min>-6000</min>
-					<max>8000</max>
+					<max>6000</max>
 					<step>-1000</step>
 					<wrap>false</wrap>
 				</binding>
@@ -961,8 +961,8 @@
 			<button>
 				<row>0</row>
 				<col>2</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&lt;</legend>
 				<enable>
 					<equals>
@@ -974,7 +974,7 @@
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/vs</property>
 					<min>-6000</min>
-					<max>8000</max>
+					<max>6000</max>
 					<step>-100</step>
 					<wrap>false</wrap>
 				</binding>
@@ -983,7 +983,7 @@
 			<input>
 				<row>0</row>
 				<col>3</col>
-                <pref-width>55</pref-width>
+				<pref-width>55</pref-width>
 				<property>/it-autoflight/input/vs</property>
 				<live type="bool">true</live>
 				<enable>
@@ -1000,8 +1000,8 @@
 			<button>
 				<row>0</row>
 				<col>4</col>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;</legend>
 				<enable>
 					<equals>
@@ -1013,7 +1013,7 @@
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/vs</property>
 					<min>-6000</min>
-					<max>8000</max>
+					<max>6000</max>
 					<step>100</step>
 					<wrap>false</wrap>
 				</binding>
@@ -1022,8 +1022,8 @@
 				<row>0</row>
 				<col>5</col>
 				<halign>left</halign>
-                <pref-width>25</pref-width>
-                <pref-height>25</pref-height>
+				<pref-width>25</pref-width>
+				<pref-height>25</pref-height>
 				<legend>&gt;&gt;</legend>
 				<enable>
 					<equals>
@@ -1035,7 +1035,7 @@
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/vs</property>
 					<min>-6000</min>
-					<max>8000</max>
+					<max>6000</max>
 					<step>1000</step>
 					<wrap>false</wrap>
 				</binding>
