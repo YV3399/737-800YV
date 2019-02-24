@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Sun Country Airlines (2017)</name>
+            <texture>/Liveries-800/SCX-2017.png</texture>       
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
