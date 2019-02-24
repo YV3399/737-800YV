@@ -611,10 +611,10 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<greater-than>
+				<greater-than-equals>
 					<property>/it-autoflight/internal/heading-predicted-cmd</property>
-					<value>360</value>
-				</greater-than>
+					<value>360.5</value>
+				</greater-than-equals>
 			</condition>
 			<expression>
 				<dif>
