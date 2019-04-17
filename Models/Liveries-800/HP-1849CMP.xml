@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Copa Airlines (ConnectMiles.com)</name>
+            <texture>Liveries-800/HP-1849CMP.png</texture>   
+			<newwinglets type="bool">true</newwinglets>
+			<nowinglets type="bool">false</nowinglets>  
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
