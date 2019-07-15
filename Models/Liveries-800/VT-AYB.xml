@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Air India Express (White Tiger / Deer)</name>
+            <texture>/Liveries-800/VT-AYB.png</texture>  
+               <newwinglets type="bool">false</newwinglets>
+               <nowinglets type="bool">false</nowinglets>            
+        </livery>        
+    </model>
+</sim>
+</PropertyList>

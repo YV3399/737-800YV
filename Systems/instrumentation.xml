@@ -113,12 +113,14 @@ This file selects the instrumentation modules that should be available.
     <comm-radio>
       <name>comm</name>
       <number>0</number>
+    <eight-point-three>true</eight-point-three>
     </comm-radio>
 
     <comm-radio>
       <name>comm</name>
       <number>1</number>
-    </comm-radio>
+      <eight-point-three>true</eight-point-three>   
+     </comm-radio>
 
     <nav-radio>
         <name>nav</name>
