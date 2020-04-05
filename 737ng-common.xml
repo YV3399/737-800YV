@@ -1125,6 +1125,7 @@
 			<file>Aircraft/737-800YV/Nasal/warnings.nas</file>
 			<file>Aircraft/737-800YV/Nasal/v-speed.nas</file>
 			<file>Aircraft/737-800YV/Nasal/throttle-auto.nas</file>
+			<file>Aircraft/737-800YV/Nasal/printGforce.nas</file>
 		</boeing737>
 		<systems>
 			<file>Aircraft/737-800YV/Nasal/electrical.nas</file>
