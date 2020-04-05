@@ -1368,7 +1368,7 @@
 			<command>set-tooltip</command>
 			<tooltip-id>mach-spd</tooltip-id>
 			<mapping>mach</mapping>
-			<label>Mach Speed: %.2f</label>
+			<label>Mach Speed: %.3f</label>
 			<property>it-autoflight/input/spd-mach</property>
 		</binding>
 	</hovered>
