@@ -34,15 +34,15 @@
     <interpolation>
       <entry>
         <ind>0</ind>
-        <dep>1</dep>
+        <dep>0.2</dep>
       </entry>
       <entry>
         <ind>1500</ind>
-        <dep>20</dep>
+        <dep>4</dep>
       </entry>
       <entry>
         <ind>3500</ind>
-        <dep>25</dep>
+        <dep>5</dep>
       </entry>
     </interpolation>
   </animation>
