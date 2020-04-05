@@ -7,6 +7,8 @@
 -->
 
 <PropertyList>
+ 
+        <property value="1">/controls/engines/n1-flex-ratio</property>
 
 	<filter>
 		<name>OAT Thrust Scale</name>
@@ -33,6 +35,8 @@
         <update-interval-secs type="double">0.05</update-interval-secs>
         <input>
             <expression>
+                        <product>
+                                <property>/controls/engines/n1-flex-ratio</property>
 				<div>
 					<floor>
 						<product>
@@ -49,6 +53,7 @@
 					</floor>
 					<value>10</value>
 				</div>
+                        </product>
             </expression>
         </input>
 		<output>/systems/thrust/n1/toga-lim</output>
@@ -61,6 +66,8 @@
         <update-interval-secs type="double">0.05</update-interval-secs>
         <input>
             <expression>
+                        <product>
+                                <property>/controls/engines/n1-flex-ratio</property>
 				<div>
 					<floor>
 						<product>
@@ -77,6 +84,7 @@
 					</floor>
 					<value>10</value>
 				</div>
+                        </product>
             </expression>
         </input>
 		<output>/systems/thrust/n1/clb-lim</output>
