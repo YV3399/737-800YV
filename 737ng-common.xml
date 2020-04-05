@@ -676,6 +676,25 @@
             </mod-up>
         </key>
 
+        <key n="109">
+                <name>m</name>
+                <desc>Set full throttle</desc>
+          <binding>
+              <command>nasal</command>
+              <script>boeing737.setMaxPower();</script>
+          </binding>
+        </key>
+
+        <key n="110">
+                <name>n</name>
+                <desc>Set idle throttle</desc>
+          <binding>
+              <command>nasal</command>
+              <script>boeing737.setIdlePower();</script>
+          </binding>
+        </key>
+
+
 		</keyboard>
 	</input>
 
@@ -1105,6 +1124,7 @@
 			<file>Aircraft/737-800YV/Nasal/shake.nas</file> 
 			<file>Aircraft/737-800YV/Nasal/warnings.nas</file>
 			<file>Aircraft/737-800YV/Nasal/v-speed.nas</file>
+			<file>Aircraft/737-800YV/Nasal/throttle-auto.nas</file>
 		</boeing737>
 		<systems>
 			<file>Aircraft/737-800YV/Nasal/electrical.nas</file>
