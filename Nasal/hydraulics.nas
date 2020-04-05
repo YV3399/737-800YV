@@ -5,10 +5,10 @@
 # Init Vars #
 #############
 
-var a_eng1_pump_switch = props.globals.initNode("/controls/hydraulic/a-eng1-pump", 1, "BOOL");
-var a_elec2_pump_switch = props.globals.initNode("/controls/hydraulic/a-elec2-pump", 1, "BOOL");
-var b_elec1_pump_switch = props.globals.initNode("/controls/hydraulic/b-elec1-pump", 1, "BOOL");
-var b_eng2_pump_switch = props.globals.initNode("/controls/hydraulic/b-eng2-pump", 1, "BOOL");
+var a_eng1_pump_switch = props.globals.initNode("/controls/hydraulic/a-eng1-pump", 0, "BOOL");
+var a_elec2_pump_switch = props.globals.initNode("/controls/hydraulic/a-elec2-pump", 0, "BOOL");
+var b_elec1_pump_switch = props.globals.initNode("/controls/hydraulic/b-elec1-pump", 0, "BOOL");
+var b_eng2_pump_switch = props.globals.initNode("/controls/hydraulic/b-eng2-pump", 0, "BOOL");
 var a_b_cross_pump_switch = props.globals.initNode("/controls/hydraulic/a-b-cross-pump", 0, "BOOL");
 var stby_pump_switch = props.globals.initNode("/controls/hydraulic/stby-pump", 0, "BOOL");
 var fctl_a_switch = props.globals.initNode("/controls/hydraulic/fctl-a", 1, "BOOL");
