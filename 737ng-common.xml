@@ -953,6 +953,9 @@
 
 		<transponder>
 			<id-code>1200</id-code>
+                        <inputs>
+                            <knob-mode>0</knob-mode>
+                        </inputs>
 		</transponder>
 
 		<airspeed-indicator n="1">
