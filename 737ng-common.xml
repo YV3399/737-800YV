@@ -156,7 +156,7 @@
 			</config>
 		</view>
 		
-		<chase-distance-m>-30</chase-distance-m>
+		<chase-distance-m>-60</chase-distance-m>
 		
 		<flaps>
 			<setting>0.000</setting><!-- Flaps Up -->
