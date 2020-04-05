@@ -144,7 +144,7 @@ var aglgears = func {
     setprop("/position/gear-agl-ft", aglft);
     setprop("/position/gear-agl-m", aglm);
 
-    settimer(aglgears, 0.01);
+    settimer(aglgears, 0.1);
 }
 
 aglgears();

@@ -140,9 +140,9 @@ var canvas_PFD = {
     
     newMFD: func()
  	{
- 		me.update_timer = maketimer(0.04, func me.update() );
- 		me.update_slow_timer = maketimer(0.1, func me.update_slow() );
- 		me.update_ap_modes_timer = maketimer(0.1, func me.update_ap_modes() );
+ 		me.update_timer = maketimer(0.05, func me.update() );
+ 		me.update_slow_timer = maketimer(0.2, func me.update_slow() );
+ 		me.update_ap_modes_timer = maketimer(0.2, func me.update_ap_modes() );
  		
  		me["curAltDig45Low2"].enableUpdate();
  		

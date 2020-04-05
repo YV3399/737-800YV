@@ -64,10 +64,11 @@ for (var i = 0; i < points_of_contact; i += 1) {
 
 
 var update_reactions = func {
-    settimer(update_reactions, 0.1);
 
-    if (getprop("fdm/jsbsim/position/h-agl-ft") > 100)
+    if (getprop("fdm/jsbsim/position/h-agl-ft") > 200) {
+        settimer(update_reactions, 1);
         return;
+    }
 
     var lat = getprop("fdm/jsbsim/position/lat-geod-deg");
     var lon = getprop("fdm/jsbsim/position/long-gc-deg");
@@ -155,6 +156,8 @@ var update_reactions = func {
         setprop(prop~"/friction/lat", p_lat);
         setprop(prop~"/friction/lon", p_lon);
     }
+
+    settimer(update_reactions, 0.1);
 }
 
 setprop("sim/fdm/surface/override-level", 1);

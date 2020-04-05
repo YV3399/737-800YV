@@ -66,7 +66,7 @@ setlistener("gear/gear[2]/position-norm", func {
 
 #============================ Tyre Smoke ===================================
 
-var update_tire_smoke = maketimer(0, func {
+var update_tire_smoke = maketimer(0.2, func {
 
 #print ("run_tyresmoke ",run_tyresmoke0);
 
@@ -85,7 +85,7 @@ var update_tire_smoke = maketimer(0, func {
 #============================ Rain ===================================
 aircraft.rain.init();
 
-var update_rain_smoke = maketimer(0, func {
+var update_rain_smoke = maketimer(0.2, func {
 aircraft.rain.update();
 } );
 # == fire it up ===

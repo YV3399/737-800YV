@@ -48,7 +48,7 @@ var canvas_lowerEICAS = {
 		me["ff_0"].setText(sprintf("%01.2f",fuel_flow_0));
 		me["ff_1"].setText(sprintf("%01.2f",fuel_flow_1));
 
-		settimer(func me.update(), 0.04);
+		settimer(func me.update(), 0.1);
 	},
 };
 

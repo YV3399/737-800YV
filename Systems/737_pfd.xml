@@ -116,7 +116,7 @@
 
   <predict-simple>
     <name>speed predictor (smoothed)</name>
-    <update-interval-secs type="double">0.04</update-interval-secs>
+    <update-interval-secs type="double">0.05</update-interval-secs>
     <input>instrumentation/pfd/airspeed-kt-1sec-avg</input>
     <output>instrumentation/pfd/speed-lookahead</output>
     <seconds>10.0</seconds>

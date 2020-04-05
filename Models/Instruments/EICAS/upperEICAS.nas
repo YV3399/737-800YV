@@ -43,7 +43,7 @@ var canvas_upperEICAS = {
 	},
           newMFD: func()
  	{
- 		me.update_timer = maketimer(0.04, func me.update() );
+ 		me.update_timer = maketimer(0.1, func me.update() );
  		
  		me.update_timer.start();
         },

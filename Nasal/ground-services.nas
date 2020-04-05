@@ -5,7 +5,7 @@ var RAD2DEG = 57.3;
 
 var ground_services = {
 	init : func {
-		me.UPDATE_INTERVAL = 0.1;
+		me.UPDATE_INTERVAL = 0.2;
 	me.loopid = 0;
 	
 	me.ice_time = 0;
