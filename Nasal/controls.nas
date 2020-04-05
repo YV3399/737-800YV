@@ -182,8 +182,8 @@ var landing_check = func{
 	var ab_pos = getprop("/controls/gear/autobrakes");
 	var ab_used = getprop("/fdm/jsbsim/fcs/autobrake/autobrake-used");
 
-	if ((air_ground or spin_up) and was_ia and throttle_1 < 0.05 and throttle_2 
-   < 0.05 and !landing) { #normal landing
+	if ((air_ground or spin_up) and was_ia and throttle_1 < 0.5 and throttle_2
+   < 0.5 and !landing) { #normal landing
 		if (lever_pos == 1) {
 			setprop("b737/controls/flight/spoilers-lever-pos", 6);
 			setprop("b737/sound/spoiler-auto", 1);
