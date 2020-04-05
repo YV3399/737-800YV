@@ -461,7 +461,7 @@
 				<z> 10.91 </z>
 			</drain_location>
 			<capacity unit="LBS"> 8630 </capacity>
-			<contents unit="LBS"> 8630 </contents>
+			<contents unit="LBS"> 0 </contents>
 			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
 		</tank>
 		<tank type="FUEL"><!-- Right wing tank -->
@@ -476,7 +476,7 @@
 				<z> 10.91 </z>
 			</drain_location>
 			<capacity unit="LBS"> 8630 </capacity>
-			<contents unit="LBS"> 8630 </contents>
+			<contents unit="LBS"> 0 </contents>
 			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
 		</tank>
 		<tank type="FUEL"><!-- Center tank -->
@@ -491,7 +491,7 @@
 				<z> -97.4 </z>
 			</drain_location>
 			<capacity unit="LBS"> 28803 </capacity>
-			<contents unit="LBS">  9000 </contents>
+			<contents unit="LBS">  0 </contents>
 			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
 		</tank>
 		<tank type="FUEL"><!-- Feed pipe for left engine -->

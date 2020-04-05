@@ -283,7 +283,7 @@
 			</tank>
 			<tank n="2">
 				<name>Center Tank</name>
-				<level-lbs archive="y">0000</level-lbs>
+				<level-lbs archive="y">0</level-lbs>
 			</tank>
 			<tank n="3">
 				<hidden type="bool">1</hidden>

@@ -90,18 +90,20 @@ var ground_services = {
 			if (getprop("/services/fuel-truck/transfer")) {
 			
 				if (getprop("consumables/fuel/total-fuel-lbs") < getprop("/services/fuel-truck/request-lbs")) {
+                                        var useCenter = 1;
+					if (getprop("consumables/fuel/tank/level-lbs") < 8621) {
 
-					if (getprop("consumables/fuel/tank/level-lbs") < 9266) {
-
-						setprop("/consumables/fuel/tank/level-lbs", getprop("/consumables/fuel/tank/level-lbs") + 30);
+						setprop("/consumables/fuel/tank/level-lbs", getprop("/consumables/fuel/tank/level-lbs") + 15);
+                                                useCenter = 0;
 					}
 
-					if (getprop("consumables/fuel/tank[1]/level-lbs") < 9266) {
+					if (getprop("consumables/fuel/tank[1]/level-lbs") < 8621) {
 
-						setprop("/consumables/fuel/tank[1]/level-lbs", getprop("/consumables/fuel/tank[1]/level-lbs") + 30);
+						setprop("/consumables/fuel/tank[1]/level-lbs", getprop("/consumables/fuel/tank[1]/level-lbs") + 15);
+                                                useCenter = 0;
 					}
 
-					if (getprop("consumables/fuel/tank[2]/level-lbs") < 20596) {
+					if (useCenter and getprop("consumables/fuel/tank[2]/level-lbs") < 20596) {
 
 						setprop("/consumables/fuel/tank[2]/level-lbs", getprop("/consumables/fuel/tank[2]/level-lbs") + 30);
 
