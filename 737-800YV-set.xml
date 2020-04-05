@@ -234,16 +234,16 @@
 			<max-lb type="double">12</max-lb>
 		</weight>
 		<weight>
-			<name type="string">Tourist class (53 pax max)</name>
+			<name type="string">Tourist class (66 pax max)</name>
 			<weight-lb alias="/payload/pax/tourist"/>
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">53</max-lb>
+			<max-lb type="double">66</max-lb>
 		</weight>
 		<weight>
-			<name type="string">Economy class (95 pax max)</name>
+			<name type="string">Economy class (102 pax max)</name>
 			<weight-lb alias="/payload/pax/economy"/>
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">95</max-lb>
+			<max-lb type="double">102</max-lb>
 		</weight>
 		<weight>
 			<name type="string">Cargo compartment 1A</name>
