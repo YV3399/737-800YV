@@ -38,11 +38,14 @@ setlistener( "/b737/warnings/altitude-alert", altAlertModeSwitch, 0, 0);
 
 setprop("/controls/lighting/AFDSbrt","0");
 
+var systems_started = 0;
 setlistener("/sim/signals/fdm-initialized", func {	
+        if (systems_started == 1) return;
+        systems_started = 1;
 	systems.elec_init();
 	systems.hyd_init();
 	boeing737.shaketimer.start();
-});
+}, 0, 0);
 
 setprop("/it-autoflight/input/kts-mach", 0);
 setprop("/it-autoflight/input/ap1", 0);
@@ -96,7 +99,7 @@ setlistener("controls/switches/seatbelt-sign", func
   {
   props.globals.getNode("sim/sound/seatbelt-sign").setBoolValue(0);
   }, 2);
- });
+ }, 0, 0);
 setlistener("controls/switches/no-smoking-sign", func
  {
  props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(1);
@@ -105,7 +108,7 @@ setlistener("controls/switches/no-smoking-sign", func
   {
   props.globals.getNode("sim/sound/no-smoking-sign").setBoolValue(0);
   }, 2);
- });
+ }, 0, 0);
 
 setlistener("controls/switches/switch",
 	func {
@@ -115,7 +118,7 @@ setlistener("controls/switches/switch",
   				props.globals.getNode("controls/switches/switch").setBoolValue(0);
  			}
  		, 0.1);
- 	}
+ 	}, 0, 0
  );
  setlistener("controls/doors/cockpitdoor/sound",
 	func {
@@ -125,12 +128,12 @@ setlistener("controls/switches/switch",
   				props.globals.getNode("controls/doors/cockpitdoor/sound").setBoolValue(0);
  			}
  		, 3);
- 	}
+ 	}, 0, 0
  );
 setlistener("controls/lighting/landing-lights",
 	func {
 		if(getprop("controls/lighting/landing-lights")) setprop("controls/lighting/landing-lights-norm",1); else setprop("controls/lighting/landing-lights-norm",0);
-	}
+	}, 0, 0
 );
 
 
@@ -161,4 +164,4 @@ setlistener("sim/input/selected/SelectedEngine738", func {
 		setprop("sim/input/selected/engine", 1);
 		setprop("sim/input/selected/engine[1]", 0);
 	}
-});
+}, 0, 0);

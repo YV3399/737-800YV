@@ -228,7 +228,7 @@ setlistener("sim/signals/fdm-initialized", func() {
 	upperEICAS_canvas = canvas_upperEICAS.new(group);
         upperEICAS_canvas.newMFD();
  	#upperEICAS_canvas.update();
-});
+}, 0, 0);
 
 #setlistener("sim/signals/reinit", func upperEICAS_display.del());
 

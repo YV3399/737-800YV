@@ -1063,7 +1063,7 @@ setlistener("sim/signals/fdm-initialized", func() {
 	var group = pfd_display.createGroup();
 	pfd_canvas = canvas_PFD.new(group);
 	pfd_canvas.newMFD();
-});
+}, 0, 0);
 
 #setlistener("sim/signals/reinit", func pfd_display.del());
 

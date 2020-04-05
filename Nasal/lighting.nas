@@ -2,8 +2,10 @@
 #By Gabriel Hernandez(YV3399)
 
 
+var ll_started = 0;
 setlistener("/sim/signals/fdm-initialized", func {
-
+    if (ll_started == 1) return;
+    ll_started = 1;
 
 var beacon = aircraft.light.new( "/sim/model/lights/beacon", [0,2, ], "/controls/lighting/beacon" );
 var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0,2, ], "/controls/lighting/strobe" );
@@ -26,7 +28,7 @@ setlistener("controls/lighting/landing-lights[0]", func
  } else {
  setprop("sim/rendering/als-secondary-lights/use-landing-light",0);
  }
- });
+ }, 0, 0);
  
  setlistener("controls/lighting/landing-lights[2]", func
  {
@@ -36,5 +38,5 @@ setlistener("controls/lighting/landing-lights[0]", func
  } else {
  setprop("sim/rendering/als-secondary-lights/use-alt-landing-light",0);
  }
- });
+ }, 0, 0);
 

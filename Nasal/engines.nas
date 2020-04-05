@@ -23,7 +23,7 @@ setlistener("/controls/APU/master", func {
 	} else if (getprop("/controls/APU/master") == 0) {
 		apu_stop();
 	}
-});
+}, 0, 0);
 
 var apu_start = func {
 	if (getprop("/systems/apu/rpm") >= 20) {

@@ -204,6 +204,10 @@ var toggle_parkingbrakes = func {
 
 }
 
+var gs_init = 0;
 setlistener("sim/signals/fdm-initialized", func {
-	ground_services.init();
-});
+        if (!gs_init) {
+                gs_init = 1;
+        	ground_services.init();
+        }
+}, 0, 0);

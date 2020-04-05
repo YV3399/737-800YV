@@ -71,8 +71,8 @@ var checkGear = func(n) {
 
 
 # Set the listeners
-setlistener("controls/flight/flaps", checkFlaps);
-setlistener("controls/gear/gear-down", checkGear);
+setlistener("controls/flight/flaps", checkFlaps, 0, 0);
+setlistener("controls/gear/gear-down", checkGear, 0, 0);
 
 # =============================== Pilot G stuff (taken from hurricane.nas) =================================
 var pilot_g = props.globals.getNode("fdm/jsbsim/accelerations/a-pilot-z-ft_sec2", 1);

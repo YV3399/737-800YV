@@ -45,7 +45,7 @@ var trim_handler = func {
   if( delta > 0.0 ) elevatorTrim(1);
   if( delta < 0.0 ) elevatorTrim(-1);
 }
-setlistener( "/controls/flight/elevator-trim", trim_handler );
+setlistener( "/controls/flight/elevator-trim", trim_handler, 0, 0 );
 
 var elev_trim_rate = func {
 	var ap_a_on = getprop("/autopilot/internal/CMDA");
@@ -169,7 +169,7 @@ setlistener("/controls/flight/autospeedbrake-cmd", func {
 	if (getprop("/controls/flight/autospeedbrake-cmd") == 1) {
 		setprop("/b737/controls/flight/spoilers-lever-pos", 6);
 	}
-});
+}, 0, 0);
 
 var landing_check = func{
 	var air_ground = getprop("/b737/sensors/air-ground");

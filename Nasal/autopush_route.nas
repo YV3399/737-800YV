@@ -135,7 +135,7 @@ var _set_view = func() {
 	_view_changed_or_external = 0;
 	_view_listener = setlistener("/sim/current-view/name", func {
 		_view_changed_or_external = 1;
-	});
+	}, 0, 0);
 }
 
 var _reset_view = func() {
@@ -232,7 +232,7 @@ setlistener("/sim/model/pushback/route/show", func(p) {
 		}
 	}
 	_show = show;
-});
+}, 0, 0);
 
 
 var enter = func(start_immediately = 0) {
@@ -247,7 +247,7 @@ var enter = func(start_immediately = 0) {
 	_add(wp);
 	_listener = setlistener("/sim/signals/click", func {
 		_add(geo.click_position());
-	});
+	}, 0, 0);
 	_start_immediately = start_immediately;
 }
 

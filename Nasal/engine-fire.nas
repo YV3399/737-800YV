@@ -98,10 +98,10 @@ var createFireHandleListener = func(n) {
 
 setlistener("sim/signals/fdm-initialized", func {
     if (!fire_init){
-        fire_mgmt.init();
         fire_init = 1;
+        fire_mgmt.init();
     }
- });
+ }, 0, 0);
 
 setlistener("/controls/fires/fire[0]/on-fire", func {
 	if (getprop("/controls/fires/fire[0]/on-fire") == 1) {

@@ -10,7 +10,10 @@ var ac_volt_min = 110;
 var dc_volt_std = 28;
 var dc_volt_min = 25;
 
+var elec_started =0;
 setlistener("/sim/signals/fdm-initialized", func {
+        if (elec_started == 1) return;
+        elec_started = 1;
 	var battery_on = getprop("/controls/electric/battery-switch");
 	var extpwr_on = getprop("/services/ext-pwr/enable");
 	var ext = getprop("/controls/electrical/ext/sw");
@@ -33,7 +36,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var Lgen = getprop("/systems/electrical/bus/genL");
 	var Rgen = getprop("/systems/electrical/bus/genR");
 	var galley = getprop("/controls/electrical/galley");
-});
+}, 0, 0);
 
 var elec_init = func {
 	setprop("/controls/electric/battery-switch", 0);   # Set all the stuff I need
@@ -254,7 +257,7 @@ setlistener("/systems/electrical/bus/dcL", func {
         setprop("systems/electrical/outputs/transponder", 0);
         setprop("systems/electrical/outputs/turn-coordinator", 0);
 	}
-});
+}, 0, 0);
 
 setlistener("/systems/electrical/bus/acR", func {
 	if (getprop("/systems/electrical/bus/acR") >= 100) {
@@ -266,7 +269,7 @@ setlistener("/systems/electrical/bus/acR", func {
 	} else {
 		setprop("systems/electrical/bus/galley", 0);
 	}
-});
+}, 0, 0);
 
 ###################
 # Update Function #

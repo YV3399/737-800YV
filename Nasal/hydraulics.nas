@@ -116,7 +116,7 @@ setlistener("/b737/controls/gear/lever", func {
 		setprop("/controls/gear/gear-down", 1);
 		setprop("/b737/controls/gear/lever", 0);
 	} 
-});
+}, 0, 0);
 
 ###################
 # Update Function #

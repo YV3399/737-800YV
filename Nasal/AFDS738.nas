@@ -81,9 +81,13 @@ var ap_init = func {
 	thrustmode();
 }
 
+var afds738_started = 0;
 setlistener("/sim/signals/fdm-initialized", func {
-	ap_init();
-});
+        if (!afds738_started) {
+            afds738_started = 1;
+            ap_init();
+        }
+}, 0, 0);
 
 # AP 1 Master System
 setlistener("/it-autoflight/input/ap1", func {
@@ -92,7 +96,7 @@ setlistener("/it-autoflight/input/ap1", func {
 	if (apmas != apout) {
 		AP1Master();
 	}
-});
+}, 0, 0);
 
 var AP1Master = func {
 	var apmas = getprop("/it-autoflight/input/ap1");
@@ -133,7 +137,7 @@ setlistener("/it-autoflight/input/ap2", func {
 	if (apmas != apout) {
 		AP2Master();
 	}
-});
+}, 0, 0);
 
 var AP2Master = func {
 	var apmas = getprop("/it-autoflight/input/ap2");
@@ -174,7 +178,7 @@ setlistener("/it-autoflight/input/athr", func {
 	if (athrmas != athrout) {
 		ATHRMaster();
 	}
-});
+}, 0, 0);
 
 var ATHRMaster = func {
 	var athrmas = getprop("/it-autoflight/input/athr");
@@ -199,7 +203,7 @@ setlistener("/it-autoflight/input/fd1", func {
 	if (fdmas != fdout) {
 		FD1Master();
 	}
-});
+}, 0, 0);
 
 var FD1Master = func {
 	var fdmas = getprop("/it-autoflight/input/fd1");
@@ -226,7 +230,7 @@ setlistener("/it-autoflight/input/fd2", func {
 	if (fdmas != fdout) {
 		FD2Master();
 	}
-});
+}, 0, 0);
 
 var FD2Master = func {
 	var fdmas = getprop("/it-autoflight/input/fd2");
@@ -280,7 +284,7 @@ setlistener("/it-autoflight/input/lat", func {
 		setprop("/it-autoflight/input/lat-arm", 0);
 		lateral();
 	}
-});
+}, 0, 0);
 
 var lateral = func {
 	var latset = getprop("/it-autoflight/input/lat");
@@ -389,7 +393,7 @@ setlistener("/it-autoflight/input/vert", func {
 	if (getprop("/it-autoflight/input/vert") == 9 or getprop("/it-autoflight/input/vert") == 10) {
 		vertical();
 	}
-});
+}, 0, 0);
 
 var vertical = func {
 	var vertset = getprop("/it-autoflight/input/vert");
@@ -609,7 +613,7 @@ var trkfpa_on = func {
 
 setlistener("/autopilot/route-manager/current-wp", func {
 	setprop("/autopilot/internal/wp-change-time", getprop("/sim/time/elapsed-sec"));
-});
+}, 0, 0);
 
 var ap_various = func {
 	trueSpeedKts = getprop("/instrumentation/airspeed-indicator/true-speed-kt");
@@ -738,7 +742,7 @@ setlistener("/it-autoflight/input/kts-mach", func {
 			setprop("/it-autoflight/input/spd-mach", 0.95);
 		}
 	}
-});
+}, 0, 0);
 
 # Takeoff Modes
 # TOGA
@@ -751,7 +755,7 @@ setlistener("/it-autoflight/input/toga", func {
 		setprop("/it-autoflight/input/toga", 0);
 		togasel();
 	}
-});
+}, 0, 0);
 
 var togasel = func {
 	if ((getprop("/gear/gear[1]/wow") == 0) and (getprop("/gear/gear[2]/wow") == 0)) {
@@ -774,7 +778,7 @@ var togasel = func {
 # Altitude Capture and FPA Timer Logic
 setlistener("/it-autoflight/output/vert", func {
 	updateTimers();
-});
+}, 0, 0);
 
 var updateTimers = func {
 	if (getprop("/it-autoflight/output/fd1") == 1 or getprop("/it-autoflight/output/fd2") == 1 or getprop("/it-autoflight/output/ap1") == 1 or getprop("/it-autoflight/output/ap2") == 1) {
@@ -880,15 +884,15 @@ var thrustmode = func {
 # LOC and G/S arming
 setlistener("/it-autoflight/input/lat-arm", func {
 	check_arms();
-});
+}, 0, 0);
 
 setlistener("/it-autoflight/output/loc-armed", func {
 	check_arms();
-});
+}, 0, 0);
 
 setlistener("/it-autoflight/output/appr-armed", func {
 	check_arms();
-});
+}, 0, 0);
 
 var check_arms = func {
 	if (getprop("/it-autoflight/input/lat-arm") or getprop("/it-autoflight/output/loc-armed") or getprop("/it-autoflight/output/appr-armed")) {
@@ -1014,11 +1018,11 @@ var aland1 = func {
 # For Canvas Nav Display.
 setlistener("/it-autoflight/input/hdg", func {
 	setprop("/autopilot/settings/heading-bug-deg", getprop("/it-autoflight/input/hdg"));
-});
+}, 0, 0);
 
 setlistener("/it-autoflight/internal/alt", func {
 	setprop("/autopilot/settings/target-altitude-ft", getprop("/it-autoflight/internal/alt"));
-});
+}, 0, 0);
 
 # Timers
 var update_armst = maketimer(0.5, update_arms);

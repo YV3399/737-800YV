@@ -12,9 +12,13 @@ setprop("/autopilot/display/afds-mode-rectangle-time", 0);
 setprop("/it-autoflight/custom/athr-deactivate", 0);
 setprop("/controls/engines/throttle-cmd-norm", 0);
 
+var loop_started = 0;
 setlistener("sim/signals/fdm-initialized", func {
-	loopFMA.start();
-});
+        if (!loop_started) {
+            loop_started = 1;
+            loopFMA.start();
+        }
+}, 0, 0);
 
 var loopFMA = maketimer(0.05, func {
 	# Boxes
@@ -60,7 +64,7 @@ setlistener("/it-autoflight/output/thr-mode", func {
 			setprop("/autopilot/display/throttle-mode", "N1");
 		}
 	}
-});
+}, 0, 0);
 
 var thrIdle = maketimer(0.25, func {
 	var newthr = getprop("/autopilot/display/throttle-mode");
@@ -110,7 +114,7 @@ setlistener("/it-autoflight/mode/lat", func {
 			setprop("/autopilot/display/roll-mode", " ");
 		}
 	}
-});
+}, 0, 0);
 
 # Master Vertical
 setlistener("/it-autoflight/mode/vert", func {
@@ -185,7 +189,7 @@ setlistener("/it-autoflight/mode/vert", func {
 			setprop("/autopilot/display/pitch-mode", " ");
 		}
 	}
-});
+}, 0, 0);
 
 # Arm LOC
 setlistener("/it-autoflight/output/loc-armed", func {
@@ -195,7 +199,7 @@ setlistener("/it-autoflight/output/loc-armed", func {
 	} else {
 		setprop("/autopilot/display/roll-mode-armed", " ");
 	}
-});
+}, 0, 0);
 
 # Arm G/S
 setlistener("/it-autoflight/output/appr-armed", func {
@@ -205,7 +209,7 @@ setlistener("/it-autoflight/output/appr-armed", func {
 	} else {
 		setprop("/autopilot/display/pitch-mode-armed", " ");
 	}
-});
+}, 0, 0);
 
 # CMD or FD or CWS
 var apfd = func {
@@ -238,44 +242,44 @@ var apfd = func {
 # Update CMD or FD or CWS
 setlistener("/it-autoflight/output/ap1", func {
 	apfd();
-});
+}, 0, 0);
 setlistener("/it-autoflight/output/ap2", func {
 	apfd();
-});
+}, 0, 0);
 setlistener("/it-autoflight/output/fd1", func {
 	apfd();
-});
+}, 0, 0);
 setlistener("/it-autoflight/output/fd2", func {
 	apfd();
-});
+}, 0, 0);
 setlistener("/it-cws/cwsa-output", func {
 	apfd();
-});
+}, 0, 0);
 setlistener("/it-cws/cwsb-output", func {
 	apfd();
-});
+}, 0, 0);
 
 # Boxes
 setlistener("/autopilot/display/throttle-mode", func {
 	if (getprop("/autopilot/display/throttle-mode") != " " and getprop("/autopilot/display/throttle-mode") != "ARM") {
 		setprop("/autopilot/display/throttle-mode-rectangle-time", getprop("/sim/time/elapsed-sec"));
 	}
-});
+}, 0, 0);
 
 setlistener("/autopilot/display/roll-mode", func {
 	if (getprop("/autopilot/display/roll-mode") != " ") {
 		setprop("/autopilot/display/roll-mode-rectangle-time", getprop("/sim/time/elapsed-sec"));
 	}
-});
+}, 0, 0);
 
 setlistener("/autopilot/display/pitch-mode", func {
 	if (getprop("/autopilot/display/pitch-mode") != " ") {
 		setprop("/autopilot/display/pitch-mode-rectangle-time", getprop("/sim/time/elapsed-sec"));
 	}
-});
+}, 0, 0);
 
 setlistener("/autopilot/display/afds-mode", func {
 	if (getprop("/autopilot/display/afds-mode") != " ") {
 		setprop("/autopilot/display/afds-mode-rectangle-time", getprop("/sim/time/elapsed-sec"));
 	}
-});
+}, 0, 0);
