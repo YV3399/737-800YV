@@ -842,7 +842,7 @@
      <property>controls/gear/autobrakes</property>        
      <step>1</step>
      <min>-1</min>
-     <max>4</max>                
+     <max>5</max>
      <wrap>true</wrap>       
    </binding>
  </action> 
