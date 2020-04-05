@@ -4,12 +4,7 @@
 # ======================================================================================================
 
 var roundToNearest = func(n, m) {
-	var x = int(n/m)*m;
-	if((math.mod(n,m)) > (m/2) and n > 0)
-			x = x + m;
-	if((m - (math.mod(n,m))) > (m/2) and n < 0)
-			x = x - m;
-	return x;
+    return math.round(n, m);
 }
 
 var normten = func(x) {
