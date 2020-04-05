@@ -56,7 +56,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">65</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">75</default-field-of-view-deg>
 				<pitch-offset-deg>-16</pitch-offset-deg>
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">-0.51</x-offset-m>
@@ -72,7 +72,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<default-field-of-view-deg type="double">65</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">75</default-field-of-view-deg>
 				<pitch-offset-deg>-16</pitch-offset-deg>
 				<heading-offset-deg>0</heading-offset-deg>
 				<x-offset-m archive="y">0.51</x-offset-m>
