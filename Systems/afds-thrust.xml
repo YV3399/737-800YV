@@ -108,7 +108,7 @@
 		<reference>/it-autoflight/internal/kts</reference>
 		<output>/controls/engines/throttle-cmd-pid</output>
 		<config>
-			<Kp>0.06</Kp>
+			<Kp>0.12</Kp>
 			<Ti>9.0</Ti>
 			<Td>0.00001</Td> 
 			<u_min>0.005</u_min>
@@ -141,15 +141,15 @@
 		</enable>
 		<input>
 			<property>/instrumentation/airspeed-indicator/indicated-mach</property>
-			<scale>1000.0</scale>
+			<scale>5000.0</scale>
 		</input>
 		<reference>
 			<property>/it-autoflight/internal/mach</property>
-			<scale>1000.0</scale>
+			<scale>5000.0</scale>
 		</reference>
 		<output>/controls/engines/throttle-cmd-pid</output>
 		<config>
-			<Kp>0.06</Kp>
+			<Kp>0.02</Kp> <!-- 0.02 is good, slow up -->
 			<Ti>9.0</Ti>
 			<Td>0.00001</Td>  
 			<u_min>0.005</u_min>
