@@ -5,7 +5,7 @@ var RAD2DEG = 57.3;
 
 var ground_services = {
 	init : func {
-		me.UPDATE_INTERVAL = 0.1;
+		me.UPDATE_INTERVAL = 0.2;
 	me.loopid = 0;
 	
 	me.ice_time = 0;
@@ -90,18 +90,20 @@ var ground_services = {
 			if (getprop("/services/fuel-truck/transfer")) {
 			
 				if (getprop("consumables/fuel/total-fuel-lbs") < getprop("/services/fuel-truck/request-lbs")) {
+                                        var useCenter = 1;
+					if (getprop("consumables/fuel/tank/level-lbs") < 8621) {
 
-					if (getprop("consumables/fuel/tank/level-lbs") < 9266) {
-
-						setprop("/consumables/fuel/tank/level-lbs", getprop("/consumables/fuel/tank/level-lbs") + 30);
+						setprop("/consumables/fuel/tank/level-lbs", getprop("/consumables/fuel/tank/level-lbs") + 15);
+                                                useCenter = 0;
 					}
 
-					if (getprop("consumables/fuel/tank[1]/level-lbs") < 9266) {
+					if (getprop("consumables/fuel/tank[1]/level-lbs") < 8621) {
 
-						setprop("/consumables/fuel/tank[1]/level-lbs", getprop("/consumables/fuel/tank[1]/level-lbs") + 30);
+						setprop("/consumables/fuel/tank[1]/level-lbs", getprop("/consumables/fuel/tank[1]/level-lbs") + 15);
+                                                useCenter = 0;
 					}
 
-					if (getprop("consumables/fuel/tank[2]/level-lbs") < 20596) {
+					if (useCenter and getprop("consumables/fuel/tank[2]/level-lbs") < 20596) {
 
 						setprop("/consumables/fuel/tank[2]/level-lbs", getprop("/consumables/fuel/tank[2]/level-lbs") + 30);
 
@@ -202,6 +204,10 @@ var toggle_parkingbrakes = func {
 
 }
 
+var gs_init = 0;
 setlistener("sim/signals/fdm-initialized", func {
-	ground_services.init();
-});
+        if (!gs_init) {
+                gs_init = 1;
+        	ground_services.init();
+        }
+}, 0, 0);

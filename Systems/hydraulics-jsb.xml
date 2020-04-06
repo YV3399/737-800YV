@@ -4,10 +4,10 @@
   
 -->
 <system name="Hydraulics">
-    <property value="1" type="bool">/controls/hydraulic/a-eng1-pump</property>
-    <property value="1" type="bool">/controls/hydraulic/a-elec2-pump</property>
-    <property value="1" type="bool">/controls/hydraulic/b-elec1-pump</property>
-    <property value="1" type="bool">/controls/hydraulic/b-eng2-pump</property>
+    <property value="0" type="bool">/controls/hydraulic/a-eng1-pump</property>
+    <property value="0" type="bool">/controls/hydraulic/a-elec2-pump</property>
+    <property value="0" type="bool">/controls/hydraulic/b-elec1-pump</property>
+    <property value="0" type="bool">/controls/hydraulic/b-eng2-pump</property>
     <property value="0">/systems/hydraulic/a-psi</property>
     <property value="0">/systems/hydraulic/b-psi</property>
     <property value="0">/systems/hydraulic/stby-psi</property>

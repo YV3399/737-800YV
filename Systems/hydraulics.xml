@@ -11,7 +11,7 @@
         <name>Aileron Min/Max</name>
         <type>gain</type>
         <gain>1</gain>
-        <update-interval-secs type="double">0.05</update-interval-secs>
+        <update-interval-secs type="double">0.15</update-interval-secs>
         <input>
             <expression>
                 <table>
@@ -29,7 +29,7 @@
         <name>Elevator Min/Max</name>
         <type>gain</type>
         <gain>1</gain>
-        <update-interval-secs type="double">0.05</update-interval-secs>
+        <update-interval-secs type="double">0.15</update-interval-secs>
         <input>
             <expression>
                 <table>
@@ -47,7 +47,7 @@
         <name>Aileron Manual Control</name>
         <type>gain</type>
         <gain>1</gain>
-        <update-interval-secs type="double">0.01</update-interval-secs>
+        <update-interval-secs type="double">0.02</update-interval-secs>
         <input>/controls/flight/aileron-fde</input>
         <output>/systems/hydraulic/aileron-manual</output>
         <min>
@@ -77,7 +77,7 @@
         <name>Elevator Manual Control</name>
         <type>gain</type>
         <gain>1</gain>
-        <update-interval-secs type="double">0.01</update-interval-secs>
+        <update-interval-secs type="double">0.02</update-interval-secs>
         <input>/controls/flight/elevator-fde</input>
         <output>/systems/hydraulic/elevator-manual</output>
         <min>

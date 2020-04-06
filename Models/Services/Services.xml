@@ -142,7 +142,7 @@ GabrielYV
       <and>
         <property>controls/switches/stairs1</property>
         <less-than>
-          <property>velocities/airspeed-kt</property>
+          <property>velocities/groundspeed-kt</property>
           <value>2</value>
         </less-than>
       </and>
@@ -163,7 +163,7 @@ GabrielYV
       <and>
         <property>controls/switches/stairs2</property>
         <less-than>
-          <property>velocities/airspeed-kt</property>
+          <property>velocities/groundspeed-kt</property>
           <value>2</value>
         </less-than>
       </and>

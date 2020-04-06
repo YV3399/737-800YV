@@ -7,7 +7,8 @@
 
 var icingInit = func {
 	setprop("/systems/icing/severity", "0"); # maximum severity: we will make it random
-	setprop("/systems/icing/factor", 0.0); # the factor is how many inches we add per second
+	setprop("/systems/icing/factor", 0.00005); # the factor is how many inches we add per second
+        setprop("/systems/icing/window-alpha", 0.0);
 	setprop("/systems/icing/max-spread-degc", 0.0);
 	setprop("/systems/icing/melt-w-heat-factor", -0.00005000);
 	setprop("/systems/icing/icingcond", 0);
@@ -111,15 +112,16 @@ var icingModel = func {
 	
 	var icing4 = getprop("/sim/model/icing/iceable[3]/ice-inches");
 	var sensitive4 = getprop("/sim/model/icing/iceable[3]/sensitivity");
-	var s = icing4 + (factor * sensitive4);
-	var d = icing4 + melt;
+	var d = 0.0;
 	if (icing4 < 0.0 and !pause) {
-		setprop("/sim/model/icing/iceable[3]/ice-inches", 0.0);
 	} else if (windowprobe) {
-		setprop("/sim/model/icing/iceable[3]/ice-inches", d);
+		d = icing4 + melt;
 	} else if (!pause and !windowprobe) {
-		setprop("/sim/model/icing/iceable[3]/ice-inches", s);
+                d = icing4 + (factor * sensitive4);
 	}
+        setprop("/sim/model/icing/iceable[3]/ice-inches", d);
+        var alpha = math.min(1.0, math.sqrt(math.min(0.3, math.max(d - 0.0005, 0.0)) * 1.825742));
+        setprop("/systems/icing/window-alpha", alpha);
 	
 	var icing5 = getprop("/sim/model/icing/iceable[4]/ice-inches");
 	var sensitive5 = getprop("/sim/model/icing/iceable[4]/sensitivity");
@@ -175,4 +177,4 @@ var update_Icing = func {
 	icingModel();
 }
 
-var icing_timer = maketimer(0.2, update_Icing);
+var icing_timer = maketimer(2, update_Icing);

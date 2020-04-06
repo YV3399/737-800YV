@@ -4,9 +4,13 @@ setprop("/systems/thrust/n1/toga-lim", 0.0);
 setprop("/systems/thrust/n1/clb-lim", 0.0);
 setprop("/controls/engines/n1-limit", 0.0);
 
+var fadec_init = 0;
 setlistener("/sim/signals/fdm-initialized", func {
-	fadecLoopT.start();
-});
+        if (!fadec_init) {
+            fadec_init = 1;
+            fadecLoopT.start();
+        }
+}, 0, 0);
 
 var fadecLoop = func {
 	var n1toga = getprop("/systems/thrust/n1/toga-lim");

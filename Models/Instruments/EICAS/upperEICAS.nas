@@ -43,7 +43,7 @@ var canvas_upperEICAS = {
 	},
           newMFD: func()
  	{
- 		me.update_timer = maketimer(0.04, func me.update() );
+ 		me.update_timer = maketimer(0.1, func me.update() );
  		
  		me.update_timer.start();
         },
@@ -228,7 +228,7 @@ setlistener("sim/signals/fdm-initialized", func() {
 	upperEICAS_canvas = canvas_upperEICAS.new(group);
         upperEICAS_canvas.newMFD();
  	#upperEICAS_canvas.update();
-});
+}, 0, 0);
 
 #setlistener("sim/signals/reinit", func upperEICAS_display.del());
 

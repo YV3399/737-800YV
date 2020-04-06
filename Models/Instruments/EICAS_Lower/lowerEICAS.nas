@@ -48,7 +48,7 @@ var canvas_lowerEICAS = {
 		me["ff_0"].setText(sprintf("%01.2f",fuel_flow_0));
 		me["ff_1"].setText(sprintf("%01.2f",fuel_flow_1));
 
-		settimer(func me.update(), 0.04);
+		settimer(func me.update(), 0.1);
 	},
 };
 
@@ -63,7 +63,7 @@ setlistener("sim/signals/fdm-initialized", func() {
 	var group = lowerEICAS_display.createGroup();
 	lowerEICAS_canvas = canvas_lowerEICAS.new(group);
 	lowerEICAS_canvas.update();
-});
+}, 0, 0);
 
 var showlowerEICAS = func() {
 	var dlg = canvas.Window.new([512, 512], "dialog").set("resize", 1);

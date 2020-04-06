@@ -5,6 +5,7 @@ MATERIAL "DefaultWhite" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.5 0.5 0.5
 MATERIAL "DefaultWhite.000" rgb 1 1 1  amb 1 1 1  emis 0.15 0.15 0.15  spec 0.5 0.5 0.5  shi 64  trans 0
 MATERIAL "Numbers" rgb 1 1 0.8896  amb 1 1 1  emis 0.9 0.9 0.9  spec 0.5 0.5 0.5  shi 64  trans 0
 MATERIAL "Lettering" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0.7 0.7 0.55  spec 1 1 1  shi 12  trans 0
+MATERIAL "Red" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0.3 0.3 0.3  spec 1 1 1  shi 64  trans 0
 OBJECT world
 kids 83
 OBJECT poly
@@ -4456,88 +4457,88 @@ numvert 24
 0.025295 0.022438 0.035976
 numsurf 13
 SURF 0x20
-mat 2
+mat 6
 refs 4
 0 0 0
 1 0 0
 2 0 0
 3 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 4
 4 0 0
 7 0 0
 6 0 0
 5 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 4
 0 0 0
 4 0 0
 5 0 0
 1 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 4
 1 0 0
 5 0 0
 6 0 0
 2 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 4
 4 0 0
 0 0 0
 3 0 0
 7 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 3
 12 0 0
 14 0 0
 13 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 4
 9 0 0
 15 0 0
 14 0 0
 10 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 4
 8 0 0
 16 0 0
 15 0 0
 9 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 4
 8 0 0
 23 0 0
 17 0 0
 16 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 4
 17 0 0
 23 0 0
 22 0 0
 18 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 3
 20 0 0
 22 0 0
 21 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 3
 18 0 0
 20 0 0
 19 0 0
 SURF 0x20
-mat 2
+mat 6
 refs 3
 10 0 0
 12 0 0

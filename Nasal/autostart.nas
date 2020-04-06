@@ -72,6 +72,13 @@ var shutdown = func {
 #	  setprop("/controls/engines/autostart",1);
 }
 
+var inair_started = 0;
+var inAirStart_check = func {
+    if (inair_started == 1) return;
+    inair_started = 1;
+    inAirStart();
+}
+
 var inAirStart = func {
     if (getprop("position/altitude-agl-ft")>400) {
     	settimer(func {setprop("controls/gear/brake-parking",0);}, 3);
@@ -141,6 +148,6 @@ var inAirStart = func {
     }
 }
 
-setlistener("sim/signals/fdm-initialized", inAirStart);
-setlistener("sim/signals/reinit", inAirStart);
+setlistener("sim/signals/fdm-initialized", inAirStart_check, 0, 0);
+setlistener("sim/signals/reinit", inAirStart, 0, 0);
 

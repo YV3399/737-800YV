@@ -156,7 +156,7 @@
 			</config>
 		</view>
 		
-		<chase-distance-m>-30</chase-distance-m>
+		<chase-distance-m>-60</chase-distance-m>
 		
 		<flaps>
 			<setting>0.000</setting><!-- Flaps Up -->
@@ -283,7 +283,7 @@
 			</tank>
 			<tank n="2">
 				<name>Center Tank</name>
-				<level-lbs archive="y">0000</level-lbs>
+				<level-lbs archive="y">0</level-lbs>
 			</tank>
 			<tank n="3">
 				<hidden type="bool">1</hidden>
@@ -366,14 +366,59 @@
 					<command>property-cycle</command>
 					<property>/b737/controls/flight/spoilers-lever-pos</property>
 					<value>0</value>
-					<value>1</value>
-					<value>2</value>
-					<value>3</value>
-					<value>4</value>
-					<value>5</value>
 					<value>6</value>
 				</binding>
 			</key>
+
+    <key n="108">
+      <name>l</name>
+      <desc>Toggle landing lights</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/landing-lights</property>
+      </binding>
+    </key>
+	
+
+    <key n="76">
+      <name>L</name>
+      <desc>Toggle taxi lights</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/Taxi-light</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/RB-light</property>
+      </binding>
+    </key>
+
+    <key n="82">
+      <name>R</name>
+      <desc>Decrease auto-brake setting</desc>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/gear/autobrakes</property>
+         <step>-1</step>
+         <min>-1</min>
+         <max>5</max>
+         <wrap>true</wrap>
+        </binding>
+    </key>
+
+    <key n="114">
+      <name>r</name>
+      <desc>Increase auto-brake setting</desc>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/gear/autobrakes</property>
+         <step>1</step>
+         <min>-1</min>
+         <max>5</max>
+         <wrap>true</wrap>
+        </binding>
+    </key>
+
 
 			<key n="127">
 				<name>Delete</name>
@@ -483,6 +528,173 @@
 					<time>3</time>
 				</binding>
 			</key>
+
+
+			<key n="8">
+				<name>Backspace</name>
+				<desc>Thrust reversers toggle</desc>
+				<binding>
+					<condition>
+						<and>
+							<property>/sim/input/selected/engine[0]</property>
+							<less-than>
+								<property>/autopilot/internal/servo-throttle[0]</property>
+								<value>0.03</value>
+							</less-than>
+							<less-than>
+								<property>/autopilot/internal/servo-throttle[1]</property>
+								<value>0.03</value>
+							</less-than>
+							<or>
+								<less-than>
+									<property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+									<value>17.5</value>
+								</less-than>
+								<property>/b737/sensors/air-ground</property>
+							</or>
+							<equals>
+								<property>/engines/engine[0]/reverser-pos-norm</property>
+								<value>0</value>
+							</equals>
+						</and>
+					</condition>
+					<command>property-interpolate</command>
+					<property>/engines/engine[0]/reverser-pos-norm</property>
+					<value>1</value>
+					<time>2</time>
+				</binding>
+				<binding>
+					<condition>
+						<and>
+							<less-than>
+								<property>/autopilot/internal/servo-throttle[0]</property>
+								<value>0.03</value>
+							</less-than>
+							<less-than>
+								<property>/autopilot/internal/servo-throttle[1]</property>
+								<value>0.03</value>
+							</less-than>
+							<equals>
+								<property>/engines/engine[0]/reverser-pos-norm</property>
+								<value>1</value>
+							</equals>
+						</and>
+					</condition>
+					<command>property-interpolate</command>
+					<property>/engines/engine[0]/reverser-pos-norm</property>
+					<value>0</value>
+					<time>3</time>
+				</binding>
+				<binding>
+					<condition>
+						<and>
+							<property>/sim/input/selected/engine[1]</property>
+							<less-than>
+								<property>/autopilot/internal/servo-throttle[0]</property>
+								<value>0.03</value>
+							</less-than>
+							<less-than>
+								<property>/autopilot/internal/servo-throttle[1]</property>
+								<value>0.03</value>
+							</less-than>
+							<or>
+								<less-than>
+									<property>/instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+									<value>17.5</value>
+								</less-than>
+								<property>/b737/sensors/air-ground</property>
+							</or>
+							<equals>
+								<property>/engines/engine[1]/reverser-pos-norm</property>
+								<value>0</value>
+							</equals>
+						</and>
+					</condition>
+					<command>property-interpolate</command>
+					<property>/engines/engine[1]/reverser-pos-norm</property>
+					<value>1</value>
+					<time>2</time>
+				</binding>
+				<binding>
+					<condition>
+						<and>
+							<less-than>
+								<property>/autopilot/internal/servo-throttle[0]</property>
+								<value>0.03</value>
+							</less-than>
+							<less-than>
+								<property>/autopilot/internal/servo-throttle[1]</property>
+								<value>0.03</value>
+							</less-than>
+							<equals>
+								<property>/engines/engine[1]/reverser-pos-norm</property>
+								<value>1</value>
+							</equals>
+						</and>
+					</condition>
+					<command>property-interpolate</command>
+					<property>/engines/engine[1]/reverser-pos-norm</property>
+					<value>0</value>
+					<time>3</time>
+				</binding>
+			</key>
+
+        <key n="32">
+          <name>space</name>
+          <desc>Disable Autopilot</desc>
+            <binding>
+                        <command>property-assign</command>
+                        <property>it-autoflight/input/ap1</property>
+                        <value>0</value>
+                        </binding>
+            <binding>
+                        <command>property-assign</command>
+                        <property>it-autoflight/input/ap2</property>
+                        <value>0</value>
+                        </binding>
+            <binding>
+                        <command>property-assign</command>
+                        <property>it-cws/cwsa</property>
+                        <value>0</value>
+                        </binding>
+            <binding>
+                        <command>property-assign</command>
+                        <property>it-cws/cwsb</property>
+                        <value>0</value>
+                        </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/flight/apoff</property>
+                <value>1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/flight/apoff</property>
+                    <value>0</value>
+                </binding>
+            </mod-up>
+        </key>
+
+        <key n="109">
+                <name>m</name>
+                <desc>Set full throttle</desc>
+          <binding>
+              <command>nasal</command>
+              <script>boeing737.setMaxPower();</script>
+          </binding>
+        </key>
+
+        <key n="110">
+                <name>n</name>
+                <desc>Set idle throttle</desc>
+          <binding>
+              <command>nasal</command>
+              <script>boeing737.setIdlePower();</script>
+          </binding>
+        </key>
+
+
 		</keyboard>
 	</input>
 
@@ -741,6 +953,9 @@
 
 		<transponder>
 			<id-code>1200</id-code>
+                        <inputs>
+                            <knob-mode>0</knob-mode>
+                        </inputs>
 		</transponder>
 
 		<airspeed-indicator n="1">
@@ -775,7 +990,7 @@
 				<category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
 			</configuration-module>
 			<voice>		
-				<file-prefix type="string">Aircraft/737-800YV/Sounds/GPWS/</file-prefix>		
+				<file-prefix type="string">Aircraft/737-800YV/Sounds/gpws/</file-prefix>		
 			</voice>
 			<inputs>                            <!-- Module I/O -->
 				<arinc429>
@@ -912,6 +1127,8 @@
 			<file>Aircraft/737-800YV/Nasal/shake.nas</file> 
 			<file>Aircraft/737-800YV/Nasal/warnings.nas</file>
 			<file>Aircraft/737-800YV/Nasal/v-speed.nas</file>
+			<file>Aircraft/737-800YV/Nasal/throttle-auto.nas</file>
+			<file>Aircraft/737-800YV/Nasal/printGforce.nas</file>
 		</boeing737>
 		<systems>
 			<file>Aircraft/737-800YV/Nasal/electrical.nas</file>

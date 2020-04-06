@@ -24,7 +24,11 @@ var myCockpit_switches = {
 	# add new switches here
 };
 
+var nd_started = 0;
 var _list = setlistener("sim/signals/fdm-initialized", func() {
+        if (nd_started == 1) return;
+        nd_started = 1;
+
 	var ND = canvas.NavDisplay;
 
 	# TODO: is this just an object decsribing a ND? Can we move this out of the listener?
@@ -58,7 +62,7 @@ var _list = setlistener("sim/signals/fdm-initialized", func() {
 	NDFo.update();
 
 	removelistener(_list); # run ONCE
-});
+}, 0, 0);
 
 var showNd = func(pilot='cpt') {
 	var dlg = canvas.Window.new([512, 512], "dialog");
