@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">EASTAR jet (HL8269)</name>
+            <texture>/Liveries-800/ESR.png</texture>       
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
