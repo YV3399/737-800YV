@@ -111,7 +111,8 @@
 
 <animation>
   <type>rotate</type>   
-  <object-name>cutoffNo1</object-name>  
+  <object-name>cutoffNo1_0</object-name>  
+  <object-name>cutoffNo1_1</object-name>  
   <property>controls/engines/engine[0]/cutoff</property> 
   <offset-deg>-25</offset-deg>     
   <factor>25</factor>      
@@ -129,7 +130,8 @@
 
 <animation>
   <type>rotate</type>   
-  <object-name>cutoffNo2</object-name>  
+  <object-name>cutoffNo2_0</object-name>  
+  <object-name>cutoffNo2_1</object-name>  
   <property>controls/engines/engine[1]/cutoff</property>
   <offset-deg>-25</offset-deg>     
   <factor>25</factor>      
@@ -869,7 +871,7 @@
 
 <animation>
   <type>pick</type>
-  <object-name>cutoffNo1</object-name>         
+  <object-name>cutoffNo1_1</object-name>         
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -885,23 +887,7 @@
 
 <animation>
   <type>pick</type>
-  <object-name>cutoffNo1</object-name>         
-  <visible>1</visible>
-  <action>
-   <button>1</button>
-   <repeatable>true</repeatable>           
-   <binding>   
-     <command>property-cycle</command>
-     <property>controls/engines/engine[0]/cutoff</property>     
-	  <value>0</value>	 
-	  <value>1</value>    
-   </binding>
- </action> 
-</animation> 
-
-<animation>
-  <type>pick</type>
-  <object-name>cutoffNo2</object-name>         
+  <object-name>cutoffNo2_1</object-name>         
   <visible>1</visible>
   <action>
    <button>0</button>
@@ -914,22 +900,6 @@
    </binding>
  </action> 
 </animation>
-
-<animation>
-  <type>pick</type>
-  <object-name>cutoffNo2</object-name>         
-  <visible>1</visible>
-  <action>
-   <button>1</button>
-   <repeatable>true</repeatable>           
-   <binding>   
-     <command>property-cycle</command>
-     <property>controls/engines/engine[1]/cutoff</property>     
-	  <value>0</value>	 
-	  <value>1</value>        
-   </binding>
- </action> 
-</animation> 
 
 <!--Radio Section--> 
 
@@ -2030,7 +2000,7 @@
 
 <animation>
   <type>knob</type>
-  <object-name>autobrake.008</object-name>
+  <object-name>autobrake.000</object-name>
   <property>controls/lighting/floor</property>
   <factor>125</factor>
   <center>
