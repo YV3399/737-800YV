@@ -3,7 +3,7 @@
 <PropertyList>
 
 	<sim>
-		<author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), Jonanthan Redpath (legoboyvdlp), RenanMsV (BR-RVD)</author>
+		<author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), legoboyvdlp, RenanMsV (BR-RVD)</author>
 		<status>Version 0.5</status>
 		<flight-model>jsb</flight-model>
                 
