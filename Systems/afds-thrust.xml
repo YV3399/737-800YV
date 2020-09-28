@@ -180,10 +180,16 @@
 		</enable>
 		<input>
 			<condition>
+				<and>
 				<equals>
 					<property>/it-autoflight/mode/thr</property>
 					<value>RETARD</value>
 				</equals>
+				<less-than>
+					<property>position/gear-agl-ft</property>
+					<value>25</value>
+				</less-than>
+				</and>
 			</condition>
 			<value>0.0</value>
 		</input>
