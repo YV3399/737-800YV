@@ -184,6 +184,10 @@
 					<property>/it-autoflight/mode/thr</property>
 					<value>RETARD</value>
 				</equals>
+				<equals>
+					<property>it-autoflight/custom/athr-armed</property>
+					<value>0</value>
+				</equals>	
 			</condition>
 			<value>0.0</value>
 		</input>
