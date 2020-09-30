@@ -187,7 +187,7 @@
 				</equals>
 				<less-than>
 					<property>position/gear-agl-ft</property>
-					<value>25</value>
+					<value>27</value>
 				</less-than>
 				</and>
 			</condition>
