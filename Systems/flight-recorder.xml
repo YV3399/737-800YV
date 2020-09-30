@@ -152,13 +152,13 @@
                 <type>float</type>
                 <property type="string">surface-positions/speedbrake-norm</property>
             </signal>
-            <signal>
-                <type>float</type>
-                <property type="string">surface-positions/reverser-norm[0]</property>
+	    <signal>
+                <type>double</type>
+                <property type="string">engines/engine/reverser-pos-norm</property>
             </signal>
             <signal>
-                <type>float</type>
-                <property type="string">surface-positions/reverser-norm[1]</property>
+                <type>double</type>
+                <property type="string">engines/engine[1]/reverser-pos-norm</property>
             </signal>
 			
            <signal>
