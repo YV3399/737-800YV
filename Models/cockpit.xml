@@ -1667,6 +1667,24 @@
   </emission>
 </animation>
 
+<!--Tiller animation-->
+<animation>
+  <type>rotate</type>
+  <object-name>TillerL</object-name>
+  <property>gear/gear/steering-norm</property>
+  <factor>78</factor>
+  <center>
+   <x-m>0.816</x-m>
+   <y-m>0.826</y-m>
+   <z-m>0.588</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+</animation>
+	
 <animation>
   <type>material</type>
   <object-name>seatfo</object-name>
