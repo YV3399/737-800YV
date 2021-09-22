@@ -23,10 +23,10 @@
 		</previews>
 
 		 <model>
-			<path>Aircraft/737-800YV/Models/737-800.xml</path>       
+			<path>Aircraft/737-800YV/Models/737-800.xml</path>
 			<livery>
 				<file>BOE</file>
-				<newwinglets type="bool">false</newwinglets>   
+				<newwinglets type="bool">false</newwinglets>
 			</livery>
 
 			<rendering>
@@ -41,8 +41,15 @@
 				<reflection-noise type="float">0.00</reflection-noise>
 				<ambient-correction type="float">0.15</ambient-correction>
 			</rendering>
-		</model> 
-   
+
+			<door>
+ 				<position-x-m type="float">-14.567</position-x-m>
+ 				<position-y-m type="float">-1.68447</position-y-m>
+ 				<position-z-m type="float">0.110668</position-z-m>
+ 				<jetway-hood-deg type="float">0</jetway-hood-deg>
+			</door>
+		</model>
+
 		<rating>
 			<FDM type="int">3</FDM>
 			<systems type="int">3</systems>
@@ -78,7 +85,7 @@
 				<x-offset-m archive="y">0.51</x-offset-m>
 				<y-offset-m archive="y">1.28</y-offset-m>
 				<z-offset-m archive="y">-16.98</z-offset-m>
-			</config>   
+			</config>
 		</view>
 
 		<view n="100">
@@ -95,7 +102,7 @@
 				<y-offset-m archive="y">1.3</y-offset-m>
 				<z-offset-m archive="y">-17.6</z-offset-m>
 			</config>
-		</view>	
+		</view>
 		<view n="101">
 			<name>Engine Left</name>
 			<type>lookfrom</type>
@@ -109,7 +116,7 @@
 				<x-offset-m archive="y">-1.83</x-offset-m>
 				<y-offset-m archive="y">1.2</y-offset-m>
 				<z-offset-m archive="y">-9.02</z-offset-m>
-			</config>   
+			</config>
 		</view>
 		<view n="102">
 			<name>Engine Right</name>
@@ -124,9 +131,9 @@
 				<x-offset-m archive="y">1.83</x-offset-m>
 				<y-offset-m archive="y">1.2</y-offset-m>
 				<z-offset-m archive="y">-9.02</z-offset-m>
-			</config>   
+			</config>
 		</view>
-		
+
                 <view n="103">
 			<name>Right Wing</name>
 			<type>lookfrom</type>
@@ -142,7 +149,7 @@
 				<z-offset-m archive="y">2.19</z-offset-m>
 			</config>
 		</view>
-		
+
                 <view n="104">
 			<name>Left Wing</name>
 			<type>lookfrom</type>
@@ -158,7 +165,7 @@
 				<z-offset-m archive="y">2.19</z-offset-m>
 			</config>
 		</view>
-		
+
                 <view n="105">
 			<name>Overhead Panel</name>
 			<type>lookfrom</type>
@@ -176,7 +183,7 @@
 		</view>
 	</sim>
 
-	<limits> 
+	<limits>
 		<mass-and-balance>
 			<maximum-ramp-mass-lbs>174670.05</maximum-ramp-mass-lbs>
 			<maximum-takeoff-mass-lbs>174169.6</maximum-takeoff-mass-lbs>
@@ -218,7 +225,7 @@
 		<max-gear-extension-speed>270</max-gear-extension-speed>
 		<max-gear-retraction-speed>235</max-gear-retraction-speed>
 		<vne>340</vne>
-		<max-positive-g>2.5</max-positive-g> 
+		<max-positive-g>2.5</max-positive-g>
 	</limits>
 
 	<payload>
