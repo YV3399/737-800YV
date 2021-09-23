@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 
-<PropertyList>
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
 
 	<sim>
 		<author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), legoboyvdlp, RenanMsV (BR-RVD)</author>
 		<status>Version 0.5</status>
 		<flight-model>jsb</flight-model>
-                
+
 		<previews>
 			<preview>
 				<type>exterior</type>
@@ -28,7 +28,7 @@
 				<splash type="bool">true</splash>
 				<path>Splash/splash-4.png</path>
 			</preview>
-			
+
 		</previews>
 
 		<systems>
@@ -89,14 +89,14 @@
 		<instrumentation>
 			<path>Aircraft/737-800YV/Systems/instrumentation.xml</path>
 		</instrumentation>
-		
+
 		<sound>
 			<path>Aircraft/737-800YV/Sounds/737-sound.xml</path>
 		</sound>
-		
+
 		<virtual-cockpit archive="y">true</virtual-cockpit>
 		<allow-toggle-cockpit archive="y">false</allow-toggle-cockpit>
-		
+
 		<model>
 			<pushback>
 				<kp type="double">1000</kp>
@@ -149,15 +149,15 @@
 				</iceable>
 			</icing>
 		</model>
-		
+
 		<view n="1">
 			<config>
 				<z-offset-m type="double" archive="y">-80.0</z-offset-m>
 			</config>
 		</view>
-		
+
 		<chase-distance-m>-60</chase-distance-m>
-		
+
 		<flaps>
 			<setting>0.000</setting><!-- Flaps Up -->
 			<setting>0.125</setting><!-- Flaps 1  -->
@@ -242,7 +242,7 @@
 		</menubar>
 
 		<checklists include="737ng-checklist.xml"/>
-		
+
 		<yokes-visible type="bool">1</yokes-visible>
 	</sim>
 
@@ -320,7 +320,7 @@
 					<value>0</value>
 					</binding>
 			</key>
-			
+
 						<key n="103">
 				<name>g</name>
 				<desc>Gear Up Custom Binding</desc>
@@ -353,7 +353,7 @@
 					<max type="double">6</max>
 				</binding>
 			</key>
-			
+
 						<key n="2">
 				<name>Ctrl-b</name>
 				<desc>Cycle speedbrake setting</desc>
@@ -378,7 +378,7 @@
         <property>/controls/lighting/landing-lights</property>
       </binding>
     </key>
-	
+
 
     <key n="76">
       <name>L</name>
@@ -789,7 +789,7 @@
 				<pump-right type="bool">0</pump-right>
 			</tank>
 		</fuel>
-		
+
 		<OH>
 			<apugenl-switch type="int">1</apugenl-switch>
 			<apugenr-switch type="int">1</apugenr-switch>
@@ -797,7 +797,7 @@
 			<gen1-switch type="int">1</gen1-switch>
 			<gen2-switch type="int">1</gen2-switch>
 		</OH>
-		
+
 	</controls>
 
 	<fdm>
@@ -903,13 +903,13 @@
 
 		<comm>
 			<volume type="double">0.7</volume>
-			<power-btn type="bool">1</power-btn>  
+			<power-btn type="bool">1</power-btn>
 			<power-good type="bool">1</power-good>
 		</comm>
 
 		<comm n="1">
 			<volume type="double">0.7</volume>
-			<power-btn type="bool">1</power-btn>  
+			<power-btn type="bool">1</power-btn>
 			<power-good type="bool">1</power-good>
 		</comm>
 
@@ -978,29 +978,29 @@
 			<serviceable>true</serviceable>     <!-- EGPWS_ENABLE -->
 			<configuration-module>
 				<category-1>  255 </category-1>
-				<category-3>   2 </category-3>  <!-- POSITION_INPUT_SELECT -->		
-				<category-4>  13 </category-4>  <!-- ALTITUDE_CALLOUTS -->		
-				<category-5>   0 </category-5>  <!-- AUDIO_MENU_SELECT -->		
-				<category-6>   1 </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->		
-				<category-7> 124 </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->		
+				<category-3>   2 </category-3>  <!-- POSITION_INPUT_SELECT -->
+				<category-4>  13 </category-4>  <!-- ALTITUDE_CALLOUTS -->
+				<category-5>   0 </category-5>  <!-- AUDIO_MENU_SELECT -->
+				<category-6>   1 </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->
+				<category-7> 124 </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->
 				<category-8>   3 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT-->
-				<category-9>   3 </category-9>  <!-- NAVIGATION_INPUT_SELECT -->		
-				<category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->		
+				<category-9>   3 </category-9>  <!-- NAVIGATION_INPUT_SELECT -->
+				<category-10>  6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->
 				<category-13>  7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
 				<category-14>  0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
 			</configuration-module>
-			<voice>		
-				<file-prefix type="string">Aircraft/737-800YV/Sounds/gpws/</file-prefix>		
+			<voice>
+				<file-prefix type="string">Aircraft/737-800YV/Sounds/gpws/</file-prefix>
 			</voice>
 			<inputs>                            <!-- Module I/O -->
 				<arinc429>
 					<decision-height-ncd> true </decision-height-ncd>
 					<decision-height> 200 </decision-height>
 				</arinc429>
-				<rs-232>		
-					<present-status>		
-						<landing-flaps type="double">0.5</landing-flaps>		
-					</present-status>		
+				<rs-232>
+					<present-status>
+						<landing-flaps type="double">0.5</landing-flaps>
+					</present-status>
 				</rs-232>
 			</inputs>
 			<speaker>                           <!-- Speaker Configuration -->
@@ -1069,7 +1069,7 @@
 				<z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
 			</antenna>
 		</radar-altimeter>
-		
+
 		<radar-altimeter n="1">
 			<serviceable type="bool">true</serviceable>
 			<antenna>
@@ -1078,7 +1078,7 @@
 				<z-offset-m type="double">1.44804</z-offset-m> <!-- WL 148. From MFEPD. -->
 			</antenna>
 		</radar-altimeter>
-		
+
 		<efis n="0">
 			<inputs>
 				<range-knob type="int">3</range-knob>
@@ -1088,7 +1088,7 @@
 				<baro-previous-show type="bool">0</baro-previous-show>
 			</inputs>
 		</efis>
-		
+
 		<efis n="1">
 			<inputs>
 				<range-knob type="int">3</range-knob>
@@ -1098,7 +1098,7 @@
 				<baro-previous-show type="bool">0</baro-previous-show>
 			</inputs>
 		</efis>
-		
+
 		<slip-skid-ball>
 			<side-accel-filtered-norm type="double">0</side-accel-filtered-norm>
 		</slip-skid-ball>
@@ -1116,15 +1116,15 @@
 			<file>Aircraft/737-800YV/Nasal/autostart.nas</file>
 			<file>Aircraft/737-800YV/Nasal/controls.nas</file>
 			<file>Aircraft/737-800YV/Nasal/friction.nas</file>
-			<file>Aircraft/737-800YV/Nasal/lighting.nas</file>     
+			<file>Aircraft/737-800YV/Nasal/lighting.nas</file>
 			<file>Aircraft/737-800YV/Nasal/tire-smoke.nas</file>
-			<file>Aircraft/737-800YV/Nasal/ground-services.nas</file>      
+			<file>Aircraft/737-800YV/Nasal/ground-services.nas</file>
 			<file>Aircraft/737-800YV/Nasal/liveries.nas</file>
 			<file>Aircraft/737-800YV/Nasal/systems.nas</file>
-			<file>Aircraft/737-800YV/Nasal/engine-fire.nas</file> 
+			<file>Aircraft/737-800YV/Nasal/engine-fire.nas</file>
 			<file>Aircraft/737-800YV/Nasal/limits.nas</file>
-			<file>Aircraft/737-800YV/Nasal/doors.nas</file> 
-			<file>Aircraft/737-800YV/Nasal/shake.nas</file> 
+			<file>Aircraft/737-800YV/Nasal/doors.nas</file>
+			<file>Aircraft/737-800YV/Nasal/shake.nas</file>
 			<file>Aircraft/737-800YV/Nasal/warnings.nas</file>
 			<file>Aircraft/737-800YV/Nasal/v-speed.nas</file>
 			<file>Aircraft/737-800YV/Nasal/throttle-auto.nas</file>
