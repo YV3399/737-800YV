@@ -1,7 +1,9 @@
 # 737-800YV
 Boeing 737 800
 
-A very advanced simulation of the Boeing 737 800 for FlightGear by GabrielYV.
+A very advanced simulation of the Boeing 737 800 for FlightGear.
+
+Extra package of liveries in this link: https://github.com/YV3399/B737800-Liveries
 
 This aircraft was modified and updated in a joint effort by the following people:
 
