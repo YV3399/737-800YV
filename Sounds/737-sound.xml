@@ -32,69 +32,6 @@
                             </and>
                     </condition>
             </callout>
-	
-    <callout>
-    	<name>V1</name>
-      <mode>once</mode>
-      <path>v1.wav</path>
-      <condition>
-        <and>
-          <or>
-            <property>gear/gear[0]/wow</property>
-            <property>gear/gear[1]/wow</property>
-            <property>gear/gear[2]/wow</property>
-          </or>
-          <less-than>
-            <property>velocities/airspeed-kt</property>
-            <property>it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
-          </less-than>
-         <greater-than-equals>
-           	<property>velocities/airspeed-kt</property>
-            <property>instrumentation/fmc/speeds/v1-kt</property>
-          </greater-than-equals>
-          <greater-than>
-                <property>instrumentation/fmc/speeds/v1-kt</property>
-            <value>0</value>
-          </greater-than>
-          <less-than>
-           	<property>velocities/airspeed-kt</property>
-                <property>instrumentation/fmc/speeds/vr-kt</property>
-          </less-than>
-        </and>
-      </condition>
-    </callout>
-
-    <callout>
-			<name>Vr</name>
-			<mode>once</mode>
-			<path>vr.wav</path>
-			<condition>
-        <and>
-          <or>
-            <property>gear/gear[0]/wow</property>
-            <property>gear/gear[1]/wow</property>
-            <property>gear/gear[2]/wow</property>
-          </or>
-          <less-than>
-            <property>velocities/airspeed-kt</property>
-            <property>it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
-          </less-than>
-       		<greater-than-equals>
-						<property>velocities/airspeed-kt</property>
-						<property>instrumentation/fmc/speeds/vr-kt</property>
-          </greater-than-equals>
-            <greater-than>
-                <property>instrumentation/fmc/speeds/vr-kt</property>
-            <value>0</value>
-            </greater-than>
-          <less-than>
-                <property>velocities/airspeed-kt</property>
-                <value>200</value>
-          </less-than>
-        </and>
-      </condition>
-    </callout>
-
 
 	<engine>
 		<name>a320_a1s</name>

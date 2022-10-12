@@ -75,7 +75,7 @@
         <name>VSI needle</name>
         <type>gain</type>
         <gain>1.0</gain>
-        <update-interval-secs type="double">0.04</update-interval-secs>
+        <update-interval-secs type="double">0.05</update-interval-secs>
         <input> 
             <expression>
                 <table>
