@@ -538,7 +538,7 @@
 
   <animation>
         <type>pick</type>
-        <object-name>TaxiLight</object-name>         
+        <object-name>taxilight</object-name>         
         <visible>1</visible>
         <action>
          <button>0</button>
@@ -555,7 +555,7 @@
     </animation> 
   <animation>
       <type>rotate</type>   
-        <object-name>TaxiLight</object-name>  
+        <object-name>taxilight</object-name>  
             <property>controls/lighting/Taxi-light</property>
       <factor>30</factor>
       <center>
