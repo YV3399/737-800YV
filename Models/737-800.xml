@@ -152,15 +152,17 @@
     </offsets>
   </model>
   
-  <model>
-    <name>Pushback</name>
-    <path>Aircraft/737-800YV/Models/Pushback/pushback.xml</path>
-    <offsets>
+
+ <model>
+        <name>Pushback</name>
+         <path>Aircraft/737-800YV/Models/Autopush/pushback.xml</path>
+       <offsets>
       <x-m>-16.5</x-m>
       <y-m>0</y-m>
       <z-m>-2.75</z-m>
     </offsets>
-  </model> 
+    </model>
+
 
   <model>
     <name>Winglet2</name>

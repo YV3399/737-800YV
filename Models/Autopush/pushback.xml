@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- SETTINGS -->
+
+<!DOCTYPE PropertyList [
+ <!-- Property defining whether the pushback is connected. -->
+ <!ENTITY CONNECTED-PROP "sim/model/autopush/connected">
+ <!-- Property for aircraft's front wheel rollspeed in m/s. -->
+ <!ENTITY ROLLSPEED-PROP "gear/gear[0]/rollspeed-ms">
+ <!-- Property for front wheel steering. -->
+ <!-- <!ENTITY YAW-PROP "sim/model/autopush/yaw-filtered"> -->
+ <!ENTITY YAW-PROP "/fdm/jsbsim/fcs/steer-pos-deg">
+ <!-- Scaling factor for the steering property, must be equal to /sim/model/autopush/yaw-mult. -->
+ <!ENTITY YAW-MULT "1.0">
+ <!ENTITY COUNTER-PROP "sim/model/autopush/counter-yaw">
+ <!ENTITY COUNTER-MULT "1.0">
+ <!ENTITY STEER-PROP "sim/model/autopush/steer-effective">
+ <!ENTITY STEER-MULT "1.0">
+ <!-- Property for gear compression in ft. -->
+ <!ENTITY COMPRESSION-PROP "gear/gear[0]/compression-ft">
+ <!-- Property for aircraft pitch in degrees, or pushback's pitch if it is variable. -->
+ <!ENTITY PITCH-PROP "orientation/pitch-deg">
+ <!-- Scaling factor for the pitch property. -->
+ <!ENTITY PITCH-FACTOR "0.0">
+ <!-- Pitch offset, must be equal to /sim/model/autopush/pitch-deg. If pitch is variable, must be "0.0". -->
+ <!ENTITY PITCH-OFFSET "0.7">
+]>
+
+
+<!--
+
+AUTOPUSH
+
+Copyright (c) 2018 Autopush authors:
+ Michael Danilov <mike.d.ft402 -eh- gmail.com>
+ Joshua Davidson http://github.com/Octal450
+ Merspieler http://github.com/merspieler
+Original code (c) FlightGear
+Distribute under the terms of GPLv2.
+
+-->
+
+
+<PropertyList>
+  <model>
+    <path>Models/Autopush/Kalmar_FB250.ac</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.3</z-m>
+      <heading-deg>0</heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Models/Airport/Pushback/Goldhofert-warning-light.xml</path>
+    <name>WarningLight1</name>
+    <offsets>
+	<x-m>-5.839</x-m>
+	<y-m>0.941</y-m>
+	<z-m>2.407</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Models/Airport/Pushback/Goldhofert-warning-light.xml</path>
+    <name>WarningLight2</name>
+    <offsets>
+	<x-m>-5.839</x-m>
+	<y-m>-0.941</y-m>
+	<z-m>2.407</z-m>
+    </offsets>
+  </model>
+
+ <animation>
+   <type>select</type>
+   <condition>
+     <property>&CONNECTED-PROP;</property>
+   </condition>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <property>&YAW-PROP;</property>
+   <factor>&YAW-MULT;</factor>
+   <center>
+     <x-m>0</x-m>
+     <y-m>0</y-m>
+     <z-m>0</z-m>
+   </center>
+   <axis>
+     <x>0</x>
+     <y>0</y>
+     <z>-1</z>
+   </axis>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>Pushback</object-name>
+   <object-name>WarningLight1</object-name>
+   <object-name>WarningLight2</object-name>
+   <object-name>wheel.fl</object-name>
+   <object-name>wheel.fr</object-name>
+   <object-name>wheel.rl</object-name>
+   <object-name>wheel.rr</object-name>
+   <property>&COUNTER-PROP;</property>
+   <factor>&COUNTER-MULT;</factor>
+   <center>
+     <x-m>-4.9</x-m>
+     <y-m>0</y-m>
+     <z-m>0</z-m>
+   </center>
+   <axis>
+     <x>0</x>
+     <y>0</y>
+     <z>-1</z>
+   </axis>
+ </animation>
+
+ <animation>
+   <type>translate</type>
+   <property>&COMPRESSION-PROP;</property>
+   <factor>0.3048</factor>
+   <axis>
+     <x>0</x>
+     <y>0</y>
+     <z>1</z>
+   </axis>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <property>&PITCH-PROP;</property>
+   <factor>&PITCH-FACTOR;</factor>
+   <offset-deg>&PITCH-OFFSET;</offset-deg>
+   <center>
+     <x-m>0</x-m>
+     <y-m>0</y-m>
+     <z-m>0</z-m>
+   </center>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+ </animation>
+
+ <animation>
+    <type>rotate</type>
+    <object-name>wheel.rr</object-name>
+    <property>&STEER-PROP;</property>
+    <factor>&STEER-MULT;</factor>
+    <center>
+        <x-m>-11.78438</x-m>
+        <y-m>-0.868919</y-m>
+        <z-m>0</z-m>
+    </center>
+    <axis>
+        <x>0</x>
+        <y>0</y>
+        <z>1</z>
+    </axis>
+ </animation>
+ <animation>
+    <type>rotate</type>
+    <object-name>wheel.rl</object-name>
+    <property>&STEER-PROP;</property>
+    <factor>&STEER-MULT;</factor>
+    <center>
+        <x-m>-11.78438</x-m>
+        <y-m>0.868919</y-m>
+        <z-m>0</z-m>
+    </center>
+    <axis>
+        <x>0</x>
+        <y>0</y>
+        <z>1</z>
+    </axis>
+ </animation>
+
+
+ <animation>
+   <type>spin</type>
+   <object-name>wheel.fl</object-name>
+   <object-name>wheel.fr</object-name>
+   <property>&ROLLSPEED-PROP;</property>
+   <factor>-12</factor>
+   <center>
+     <x-m>-8.51984</x-m>
+     <y-m>0</y-m>
+     <z-m>0.69259</z-m>
+   </center>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+ </animation>
+
+ <animation>
+   <type>spin</type>
+   <object-name>wheel.rl</object-name>
+   <object-name>wheel.rr</object-name>
+   <property>&ROLLSPEED-PROP;</property>
+   <factor>-12</factor>
+   <center>
+     <x-m>-11.78438</x-m>
+     <y-m>0</y-m>
+     <z-m>0.69259</z-m>
+   </center>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+ </animation>
+</PropertyList>

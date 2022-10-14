@@ -104,6 +104,10 @@
 				<kd type="double">0</kd>
 				<position-norm type="double">0</position-norm>
 			</pushback>
+
+
+  <autopush include="Models/autopush-config.xml" />
+			
 			<icing>
 				<iceable>
 					<name>Wing</name>
@@ -229,14 +233,14 @@
 							<script>aircraft.livery.dialog.toggle();</script>
 						</binding>
 					</item>
-					<item n="10">
-						<label>Pushback</label>
-						<name>pushback</name>
-						<binding>
-							<command>dialog-show</command>
-							<dialog-name>pushback</dialog-name>
-						</binding>
-					</item>
+					<item>
+                        <name>autopush</name>
+                        <label>Pushback</label>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>autopush</dialog-name>
+                        </binding>
+                    </item>
 				</menu>
 			</default>
 		</menubar>
@@ -802,6 +806,17 @@
 
 	<fdm>
 		<jsbsim>
+
+		 <external_reactions>
+                <tractor>
+                    <magnitude alias="/sim/model/autopush/force-lbf"/>
+                    <x alias="/sim/model/autopush/force-x"/>
+                    <y alias="/sim/model/autopush/force-y"/>
+                    <z alias="/sim/model/autopush/force-z"/>
+                </tractor>
+            </external_reactions>
+
+			
 			<fcs>
 				<flap-lrs type="double">0</flap-lrs>
 				<slats-cmd type="double">0</slats-cmd>
@@ -1158,6 +1173,21 @@
 		<icing>
 			<file>Aircraft/737-800YV/Nasal/icing.nas</file>
 		</icing>
+
+ <autopush>
+            <file>Aircraft/737-800YV/Nasal/Autopush/autopush.nas</file>
+        </autopush>
+        <autopush_driver>
+            <file>Aircraft/737-800YV/Nasal/Autopush/driver.nas</file>
+        </autopush_driver>
+        <dynarr>
+            <file>Aircraft/737-800YV/Nasal/Autopush/dynarr.nas</file>
+        </dynarr>
+        <autopush_route>
+            <file>Aircraft/737-800YV/Nasal/Autopush/route.nas</file>
+        </autopush_route>
+
+
 	</nasal>
 
 </PropertyList>
