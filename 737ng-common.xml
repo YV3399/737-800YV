@@ -4,7 +4,7 @@
 
 	<sim>
 		<author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), legoboyvdlp, RenanMsV (BR-RVD)</author>
-		<status>Version 0.5</status>
+		<status>Version 0.6</status>
 		<flight-model>jsb</flight-model>
 
 		<previews>
@@ -383,7 +383,6 @@
       </binding>
     </key>
 
-
     <key n="76">
       <name>L</name>
       <desc>Toggle taxi lights</desc>
@@ -422,7 +421,6 @@
          <wrap>true</wrap>
         </binding>
     </key>
-
 
 			<key n="127">
 				<name>Delete</name>
@@ -532,7 +530,6 @@
 					<time>3</time>
 				</binding>
 			</key>
-
 
 			<key n="8">
 				<name>Backspace</name>
@@ -1173,8 +1170,7 @@
 		<icing>
 			<file>Aircraft/737-800YV/Nasal/icing.nas</file>
 		</icing>
-
- <autopush>
+        <autopush>
             <file>Aircraft/737-800YV/Nasal/Autopush/autopush.nas</file>
         </autopush>
         <autopush_driver>
