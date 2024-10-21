@@ -1,5 +1,26 @@
 # 737-800 JSB Engine System
-# Joshua Davidson (it0uchpods)
+# Josh Davidson (Octal450)
+
+# Reverser logic patch 2024 - Octal450
+var toggleRevThrust = func() {
+	if (getprop("/instrumentation/radar-altimeter[0]/radar-altitude-ft") < 17.5 and getprop("/b737/sensors/air-ground") and getprop("/controls/engines/engine[0]/throttle") <= 0.05 and getprop("/controls/engines/engine[1]/throttle") <= 0.05) {
+		if (getprop("/systems/engines/reverse-1/engage") or getprop("/systems/engines/reverse-2/engage")) {
+			setprop("/controls/engines/engine[0]/throttle", 0);
+			setprop("/controls/engines/engine[1]/throttle", 0);
+			setprop("/systems/engines/reverse-1/engage", 0);
+			setprop("/systems/engines/reverse-2/engage", 0);
+		} else {
+			setprop("/systems/engines/reverse-1/engage", 1);
+			setprop("/systems/engines/reverse-2/engage", 1);
+		}
+	} else {
+		setprop("/controls/engines/engine[0]/throttle", 0);
+		setprop("/controls/engines/engine[1]/throttle", 0);
+		setprop("/systems/engines/reverse-1/engage", 0);
+		setprop("/systems/engines/reverse-2/engage", 0);
+	}
+}
+# End reverser logic patch 2024 - Octal450
 
 #####################
 # Initializing Vars #

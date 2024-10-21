@@ -5,7 +5,7 @@
 	xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 	<fileheader>
-		<author> Michael Soitanen, YV3399 And it0uchpods </author>
+		<author> Michael Soitanen, YV3399 And Octal450 </author>
 		<filecreationdate> 2014-09-30 </filecreationdate>
 		<version>$Revison: 1.0 $</version>
 		<description> Models a 737-800. </description>
@@ -1378,7 +1378,21 @@
 		</channel>
 
 		<channel name="reversers">
-
+			
+			<!-- Reverser logic patch 2024 - Octal450 -->
+			<actuator name="/systems/engines/reverse-1/position-norm">
+				<input>/systems/engines/reverse-1/engage</input>
+				<rate_limit>1.0</rate_limit>
+				<output>/engines/engine[0]/reverser-pos-norm</output>
+			</actuator>
+			
+			<actuator name="/systems/engines/reverse-2/position-norm">
+				<input>/systems/engines/reverse-2/engage</input>
+				<rate_limit>1.0</rate_limit>
+				<output>/engines/engine[1]/reverser-pos-norm</output>
+			</actuator>
+			<!-- End reverser logic patch 2024 - Octal450 -->
+			
 			<fcs_function name="Reverser angle left">
 				<function>
 					<description>Reverse thrust calculation</description>

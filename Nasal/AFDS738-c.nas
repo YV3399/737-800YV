@@ -1,5 +1,5 @@
 # Boeing PFD FMA
-# Joshua Davidson (it0uchpods)
+# Josh Davidson (Octal450)
 
 setprop("/autopilot/display/throttle-mode-rectangle", 0);
 setprop("/autopilot/display/roll-mode-rectangle", 0);

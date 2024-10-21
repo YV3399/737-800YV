@@ -1,4 +1,4 @@
-# 737-800 FADEC by Joshua Davidson (it0uchpods)
+# 737-800 FADEC
 
 setprop("/systems/thrust/n1/toga-lim", 0.0);
 setprop("/systems/thrust/n1/clb-lim", 0.0);

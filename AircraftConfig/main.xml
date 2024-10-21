@@ -2,7 +2,7 @@
 
 <!--
 ##############################################
-# Copyright (c) Joshua Davidson (it0uchpods) #
+# Copyright (c) Josh Davidson (Octal450) #
 ##############################################
 -->
 
@@ -115,71 +115,6 @@
 						<binding>
 							<command>nasal</command>
 							<script>boeing737.shutdown();</script>
-						</binding>
-						<binding>
-							<command>dialog-close</command>
-						</binding>
-					</button>
-					
-					<button>
-						<halign>center</halign>
-						<legend>Cold and Dark</legend>
-						<pref-width>140</pref-width>
-						<enable>
-							<!--not><property>/systems/acconfig/autoconfig-running</property></not-->
-							<property>unused/I-AM-OCTAL</property>
-						</enable>
-						<binding>
-							<command>nasal</command>
-							<script>acconfig.colddark();</script>
-						</binding>
-						<binding>
-							<command>dialog-close</command>
-						</binding>
-					</button>
-					<button>
-						<halign>center</halign>
-						<legend>Ready to Start Eng</legend>
-						<pref-width>140</pref-width>
-						<enable>
-							<!--not><property>/systems/acconfig/autoconfig-running</property></not-->
-							<property>unused/I-AM-OCTAL</property>
-						</enable>
-						<binding>
-							<command>nasal</command>
-							<script>acconfig.beforestart();</script>
-						</binding>
-						<binding>
-							<command>dialog-close</command>
-						</binding>
-					</button>
-					<button>
-						<halign>center</halign>
-						<legend>Ready for Taxi</legend>
-						<pref-width>140</pref-width>
-						<enable>
-							<!--not><property>/systems/acconfig/autoconfig-running</property></not-->
-							<property>unused/I-AM-OCTAL</property>
-						</enable>
-						<binding>
-							<command>nasal</command>
-							<script>acconfig.taxi();</script>
-						</binding>
-						<binding>
-							<command>dialog-close</command>
-						</binding>
-					</button>
-					<button>
-						<halign>center</halign>
-						<legend>Ready for Takeoff</legend>
-						<pref-width>140</pref-width>
-						<enable>
-							<!--not><property>/systems/acconfig/autoconfig-running</property></not-->
-							<property>unused/I-AM-OCTAL</property>
-						</enable>
-						<binding>
-							<command>nasal</command>
-							<script>acconfig.takeoff();</script>
 						</binding>
 						<binding>
 							<command>dialog-close</command>

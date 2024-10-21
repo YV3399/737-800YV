@@ -1,5 +1,5 @@
 # 737-800 Autoflight
-# (c) Joshua Davidson (it0uchpods)
+# (c) Josh Davidson (Octal450)
 
 var buttonN1 = func {
 	if (getprop("/it-autoflight/output/athr") == 1 and getprop("/it-autoflight/output/thr-mode") != 0) {

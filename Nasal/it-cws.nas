@@ -1,4 +1,4 @@
-# B737-800 CWS System by Joshua Davidson (it0uchpods)
+# B737-800 CWS System by Josh Davidson (Octal450)
 # V0.1.0
 
 #######
