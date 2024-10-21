@@ -7,10 +7,10 @@ Extra package of liveries in this link: https://github.com/YV3399/B737800-Liveri
 
 This aircraft was modified and updated in a joint effort by the following people:
 
-- FDM: Joshua Davidson (it0uchpods), Gabriel Hernandez (YV3399)
-- Systems: Joshua Davidson (it0uchpods), Jonanthan Redpath (legoboyvdlp), Gabriel Hernandez (YV3399)
-- Cockpit: Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), Jonanthan Redpath (legoboyvdlp)
-- Instruments: Joshua Davidson (it0uchpods), Jonanthan Redpath (legoboyvdlp), Gabriel Hernandez (YV3399), RenanMsV (BR-RVD)
+- FDM: Josh Davidson (Octal450), Gabriel Hernandez (YV3399)
+- Systems: Josh Davidson (Octal450), Jonanthan Redpath (legoboyvdlp), Gabriel Hernandez (YV3399)
+- Cockpit: Gabriel Hernandez (YV3399), Josh Davidson (Octal450), Jonanthan Redpath (legoboyvdlp)
+- Instruments: Josh Davidson (Octal450), Jonanthan Redpath (legoboyvdlp), Gabriel Hernandez (YV3399), RenanMsV (BR-RVD)
 
 ![image](https://imgur.com/A03GZVi.png)
 ![Image](https://imgur.com/wmfyjHC.png)
