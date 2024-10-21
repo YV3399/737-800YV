@@ -1,5 +1,5 @@
 # 737-800 Autoflight
-# Copyright (c) 2019 Joshua Davidson (it0uchpods)
+# Copyright (c) 2019 Josh Davidson (Octal450)
 
 #################################
 # IT-AUTOFLIGHT Based Autopilot #

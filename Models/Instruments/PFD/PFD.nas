@@ -1,6 +1,6 @@
 # ======================================================================================================
 # Original Boeing 747-400 PFD by Gijs de Rooy
-# Modified for 737-800 by Michael Soitanen, Gabriel Hernandez (YV3399), and Joshua Davidson (it0uchpods)
+# Modified for 737-800 by Michael Soitanen, Gabriel Hernandez (YV3399), and Josh Davidson (Octal450)
 # ======================================================================================================
 
 var roundToNearest = func(n, m) {

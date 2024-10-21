@@ -1,5 +1,5 @@
 # 737-800 JSB Engine System
-# Joshua Davidson (it0uchpods)
+# Josh Davidson (Octal450)
 
 #####################
 # Initializing Vars #

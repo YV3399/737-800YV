@@ -1,5 +1,5 @@
 # Aircraft Config Center
-# Joshua Davidson (it0uchpods)
+# Josh Davidson (Octal450)
 
 var spinning = maketimer(0.05, func {
 	var spinning = getprop("/systems/acconfig/spinning");

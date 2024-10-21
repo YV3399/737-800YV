@@ -3,7 +3,7 @@
 <PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
 
 	<sim>
-		<author>Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods), legoboyvdlp, RenanMsV (BR-RVD)</author>
+		<author>Gabriel Hernandez (YV3399), Josh Davidson (Octal450), legoboyvdlp, RenanMsV (BR-RVD)</author>
 		<status>Version 0.6</status>
 		<flight-model>jsb</flight-model>
 

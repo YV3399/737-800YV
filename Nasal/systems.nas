@@ -8,7 +8,7 @@ print("|  _ <  / /  |__ <  / /______> _ <| | | | | | |");
 print("| |_) |/ /   ___) |/ /      | (_) | |_| | |_| |");
 print("|____//_/   |____//_/        \___/ \___/ \___/ ");
 print("-----------------------------------------------------------------------");
-print("(c) 2022-2023 Gabriel Hernandez (YV3399), Joshua Davidson (it0uchpods)");
+print("(c) 2022-2023 Gabriel Hernandez (YV3399), Josh Davidson (Octal450)");
 print("Report all bugs on GitHub Issues tab, or the forums. :)");
 print("Enjoy your flight!!!");
 print("-----------------------------------------------------------------------");
