@@ -21,9 +21,9 @@
 		</condition>
 	</animation>
 
-<animation> 
-	<type>material</type> 
-	<texture alias="../../texture"/> 
+<animation>
+	<type>material</type>
+	<texture alias="../../texture"/>
 </animation>
 
 <effect>
@@ -933,7 +933,7 @@
 	<object-name>Btn.side.l.1</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable> 
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK1L');</script>
@@ -946,7 +946,7 @@
 	<object-name>Btn.side.r.1</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK1R');</script>
@@ -959,7 +959,7 @@
 	<object-name>Btn.side.l.2</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK2L');</script>
@@ -972,7 +972,7 @@
 	<object-name>Btn.side.r.2</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK2R');</script>
@@ -985,7 +985,7 @@
 	<object-name>Btn.side.l.3</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK3L');</script>
@@ -998,7 +998,7 @@
 	<object-name>Btn.side.r.3</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK3R');</script>
@@ -1011,7 +1011,7 @@
 	<object-name>Btn.side.l.4</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK4L');</script>
@@ -1024,7 +1024,7 @@
 	<object-name>Btn.side.r.4</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK4R');</script>
@@ -1037,7 +1037,7 @@
 	<object-name>Btn.side.l.5</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK5L');</script>
@@ -1050,7 +1050,7 @@
 	<object-name>Btn.side.r.5</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK5R');</script>
@@ -1075,7 +1075,7 @@
 	<object-name>Btn.side.r.6</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('LSK6R');</script>
@@ -1102,7 +1102,7 @@
 	<object-name>Btn.init-ref</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
 			<property>instrumentation/cdu/display</property>
@@ -1116,7 +1116,7 @@
 	<object-name>Btn.rte</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
 			<property>instrumentation/cdu/display</property>
@@ -1130,7 +1130,7 @@
 	<object-name>Btn.nav-rad</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
 			<property>instrumentation/cdu/display</property>
@@ -1138,13 +1138,13 @@
 		</binding>
 	</action>
 </animation>
- 
+
 <animation>
 	<type>pick</type>
 	<object-name>Btn.dep-arr</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
 			<property>instrumentation/cdu/display</property>
@@ -1158,7 +1158,7 @@
 	<object-name>Btn.legs</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
 			<property>instrumentation/cdu/display</property>
@@ -1166,13 +1166,13 @@
 		</binding>
 	</action>
 </animation>
- 
+
 <animation>
 	<type>pick</type>
 	<object-name>Btn.menu</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>property-assign</command>
 			<property>instrumentation/cdu/display</property>
@@ -1186,7 +1186,7 @@
 	<object-name>Btn.prev-page</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('prev');</script>
@@ -1199,7 +1199,7 @@
 	<object-name>Btn.next-page</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.key('next');</script>
@@ -1212,7 +1212,7 @@
 	<object-name>Btn.zero</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('0');</script>
@@ -1225,7 +1225,7 @@
 	<object-name>Btn.num1</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('1');</script>
@@ -1238,7 +1238,7 @@
 	<object-name>Btn.num2</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('2');</script>
@@ -1251,7 +1251,7 @@
 	<object-name>Btn.num3</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('3');</script>
@@ -1264,7 +1264,7 @@
 	<object-name>Btn.num4</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('4');</script>
@@ -1277,7 +1277,7 @@
 	<object-name>Btn.num5</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('5');</script>
@@ -1290,7 +1290,7 @@
 	<object-name>Btn.num6</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('6');</script>
@@ -1303,7 +1303,7 @@
 	<object-name>Btn.num7</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('7');</script>
@@ -1316,7 +1316,7 @@
 	<object-name>Btn.num8</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('8');</script>
@@ -1329,7 +1329,7 @@
 	<object-name>Btn.num9</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('9');</script>
@@ -1342,7 +1342,7 @@
 	<object-name>Btn.A</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('A');</script>
@@ -1355,7 +1355,7 @@
 	<object-name>Btn.B</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('B');</script>
@@ -1368,7 +1368,7 @@
 	<object-name>Btn.C</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('C');</script>
@@ -1381,7 +1381,7 @@
 	<object-name>Btn.D</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('D');</script>
@@ -1394,7 +1394,7 @@
 	<object-name>Btn.E</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('E');</script>
@@ -1407,7 +1407,7 @@
 	<object-name>Btn.F</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('F');</script>
@@ -1420,7 +1420,7 @@
 	<object-name>Btn.G</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('G');</script>
@@ -1433,7 +1433,7 @@
 	<object-name>Btn.H</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('H');</script>
@@ -1446,7 +1446,7 @@
 	<object-name>Btn.I</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('I');</script>
@@ -1459,7 +1459,7 @@
 	<object-name>Btn.J</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('J');</script>
@@ -1472,7 +1472,7 @@
 	<object-name>Btn.K</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('K');</script>
@@ -1485,7 +1485,7 @@
 	<object-name>Btn.L</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('L');</script>
@@ -1498,7 +1498,7 @@
 	<object-name>Btn.M</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('M');</script>
@@ -1511,7 +1511,7 @@
 	<object-name>Btn.N</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('N');</script>
@@ -1524,7 +1524,7 @@
 	<object-name>Btn.O</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('O');</script>
@@ -1537,7 +1537,7 @@
 	<object-name>Btn.P</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('P');</script>
@@ -1550,7 +1550,7 @@
 	<object-name>Btn.Q</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('Q');</script>
@@ -1563,7 +1563,7 @@
 	<object-name>Btn.R</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('R');</script>
@@ -1576,7 +1576,7 @@
 	<object-name>Btn.S</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('S');</script>
@@ -1589,7 +1589,7 @@
 	<object-name>Btn.T</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('T');</script>
@@ -1602,7 +1602,7 @@
 	<object-name>Btn.U</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('U');</script>
@@ -1615,7 +1615,7 @@
 	<object-name>Btn.V</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('V');</script>
@@ -1628,7 +1628,7 @@
 	<object-name>Btn.W</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('W');</script>
@@ -1641,7 +1641,7 @@
 	<object-name>Btn.X</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('X');</script>
@@ -1680,7 +1680,7 @@
 	<object-name>Btn.period</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('.');</script>
@@ -1693,7 +1693,7 @@
 	<object-name>Btn.plusminus</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.plusminus();</script>
@@ -1706,7 +1706,7 @@
 	<object-name>Btn.sp</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input(' ');</script>
@@ -1719,7 +1719,7 @@
 	<object-name>Btn.slash</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.input('/');</script>
@@ -1732,7 +1732,7 @@
 	<object-name>Btn.del</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>cdu.delete_func();</script>
@@ -1755,7 +1755,7 @@
 	<object-name>Btn.clr</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>setprop("/instrumentation/cdu/input","");</script>
