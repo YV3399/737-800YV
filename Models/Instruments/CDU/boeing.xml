@@ -909,7 +909,7 @@
 	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
-		<y-m> 0.000</y-m>
+		<y-m> -0.049</y-m>
 		<z-m> 0.024</z-m>
 	</offsets>
 	<overlay>
@@ -923,7 +923,7 @@
 				<green type="double">0.6</green>
 				<blue  type="double">0.8</blue>
 			</color>
-			<alignment>center-center</alignment>
+			<alignment>left-center</alignment>
 		</params>
 	</overlay>
 </model>
