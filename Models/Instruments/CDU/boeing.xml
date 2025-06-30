@@ -82,7 +82,7 @@
 	<object-name>Btn.rte</object-name>
 	<object-name>Btn.dep-arr</object-name>
 	<object-name>Btn.altn</object-name>
-	<object-name>Btn.vnav</object-name>
+	<object-name>Btn.des</object-name>
 	<object-name>Btn.fix</object-name>
 	<object-name>Btn.legs</object-name>
 	<object-name>Btn.hold</object-name>
@@ -90,7 +90,7 @@
 	<object-name>Btn.prog</object-name>
 	<object-name>Btn.exec</object-name>
 	<object-name>Btn.menu</object-name>
-	<object-name>Btn.nav-rad</object-name>
+	<object-name>Btn.n1limit</object-name>
 	<object-name>Btn.prev-page</object-name>
 	<object-name>Btn.next-page</object-name>
 	<object-name>Btn.side.l.1</object-name>
@@ -1177,6 +1177,19 @@
 			<command>property-assign</command>
 			<property>instrumentation/cdu/display</property>
 			<value type="string">MENU</value>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.n1limit</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key('n1limit');</script>
 		</binding>
 	</action>
 </animation>

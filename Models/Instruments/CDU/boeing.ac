@@ -2937,7 +2937,7 @@ refs 3
 11 0.913591 0.438454
 kids 0
 OBJECT poly
-name "Btn.fix"
+name "Btn.menu"
 data 8
 Mesh.032
 texture "boeing_grey.png"
@@ -3407,7 +3407,7 @@ refs 3
 11 0.573145 0.441905
 kids 0
 OBJECT poly
-name "Btn.menu"
+name "Btn.n1limit"
 data 8
 Mesh.037
 texture "boeing_grey.png"
@@ -3501,7 +3501,7 @@ refs 3
 11 0.494617 0.378545
 kids 0
 OBJECT poly
-name "Btn.nav-rad"
+name "Btn.fix"
 data 8
 Mesh.038
 texture "boeing_grey.png"
@@ -6321,7 +6321,7 @@ refs 3
 11 0.729429 0.0758723
 kids 0
 OBJECT poly
-name "Btn.vnav"
+name "Btn.des"
 data 8
 Mesh.057
 texture "boeing_grey.png"
