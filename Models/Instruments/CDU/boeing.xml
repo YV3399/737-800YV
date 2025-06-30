@@ -119,9 +119,9 @@
 			<property type="string">instrumentation/cdu/output/title</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -140,9 +140,9 @@
 			<property type="string">instrumentation/cdu/output/page</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -161,9 +161,9 @@
 			<property type="string">instrumentation/cdu/output/line1/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -182,9 +182,9 @@
 			<property type="string">instrumentation/cdu/output/line1/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -203,9 +203,9 @@
 			<property type="string">instrumentation/cdu/output/line1/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -224,9 +224,9 @@
 			<property type="string">instrumentation/cdu/output/line1/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -245,9 +245,9 @@
 			<property type="string">instrumentation/cdu/output/line1/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -266,9 +266,9 @@
 			<property type="string">instrumentation/cdu/output/line1/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -287,9 +287,9 @@
 			<property type="string">instrumentation/cdu/output/line2/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -308,9 +308,9 @@
 			<property type="string">instrumentation/cdu/output/line2/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -329,9 +329,9 @@
 			<property type="string">instrumentation/cdu/output/line2/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -350,9 +350,9 @@
 			<property type="string">instrumentation/cdu/output/line2/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -371,9 +371,9 @@
 			<property type="string">instrumentation/cdu/output/line2/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -392,9 +392,9 @@
 			<property type="string">instrumentation/cdu/output/line2/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -413,9 +413,9 @@
 			<property type="string">instrumentation/cdu/output/line3/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -434,9 +434,9 @@
 			<property type="string">instrumentation/cdu/output/line3/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -455,9 +455,9 @@
 			<property type="string">instrumentation/cdu/output/line3/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -476,9 +476,9 @@
 			<property type="string">instrumentation/cdu/output/line3/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -497,9 +497,9 @@
 			<property type="string">instrumentation/cdu/output/line3/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -518,9 +518,9 @@
 			<property type="string">instrumentation/cdu/output/line3/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -539,9 +539,9 @@
 			<property type="string">instrumentation/cdu/output/line4/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -560,9 +560,9 @@
 			<property type="string">instrumentation/cdu/output/line4/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -581,9 +581,9 @@
 			<property type="string">instrumentation/cdu/output/line4/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -602,9 +602,9 @@
 			<property type="string">instrumentation/cdu/output/line4/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -623,9 +623,9 @@
 			<property type="string">instrumentation/cdu/output/line4/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -644,9 +644,9 @@
 			<property type="string">instrumentation/cdu/output/line4/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -665,9 +665,9 @@
 			<property type="string">instrumentation/cdu/output/line5/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -686,9 +686,9 @@
 			<property type="string">instrumentation/cdu/output/line5/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -707,9 +707,9 @@
 			<property type="string">instrumentation/cdu/output/line5/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -728,9 +728,9 @@
 			<property type="string">instrumentation/cdu/output/line5/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -749,9 +749,9 @@
 			<property type="string">instrumentation/cdu/output/line5/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -770,9 +770,9 @@
 			<property type="string">instrumentation/cdu/output/line5/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -791,9 +791,9 @@
 			<property type="string">instrumentation/cdu/output/line6/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -812,9 +812,9 @@
 			<property type="string">instrumentation/cdu/output/line6/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -833,9 +833,9 @@
 			<property type="string">instrumentation/cdu/output/line6/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -854,9 +854,9 @@
 			<property type="string">instrumentation/cdu/output/line6/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -875,9 +875,9 @@
 			<property type="string">instrumentation/cdu/output/line6/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -896,9 +896,9 @@
 			<property type="string">instrumentation/cdu/output/line6/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -919,9 +919,9 @@
 			<factor>1</factor>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
