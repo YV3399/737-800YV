@@ -3,7 +3,7 @@
 <PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
 
 	<sim>
-		<author>Michael Soitanen, Gabriel Hernandez (YV3399), Josh Davidson (Octal450), legoboyvdlp, RenanMsV (BR-RVD)</author>
+		<author>Michael Soitanen, Gabriel Hernandez (YV3399), Josh Davidson (Octal450), legoboyvdlp, RenanMsV (BR-RVD), Xavier Del Campo Romero</author>
 		<status>Version 0.6</status>
 		<flight-model>jsb</flight-model>
 
@@ -107,7 +107,7 @@
 
 
   <autopush include="Models/autopush-config.xml" />
-			
+
 			<icing>
 				<iceable>
 					<name>Wing</name>
@@ -613,7 +613,7 @@
                 </tractor>
             </external_reactions>
 
-			
+
 			<fcs>
 				<flap-lrs type="double">0</flap-lrs>
 				<slats-cmd type="double">0</slats-cmd>
@@ -849,18 +849,7 @@
 			<spin type="double">1</spin>
 		</turn-indicator>
 
-		<cdu>
-			<display>IDENT</display>
-			<ident>
-				<model>737-800</model>
-				<engines>CFM56-7B26</engines>
-			</ident>
-			<input type="string"/>
-			<serviceable type="bool">true</serviceable>
-		</cdu>
-
 		<fmc>
-			<to-flap type="double">5</to-flap>
 			<derated-to>
 				<zone type="int">1</zone>
 				<assumed-temp-degc type="double">15</assumed-temp-degc>

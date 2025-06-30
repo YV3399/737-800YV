@@ -21,7 +21,7 @@
     </model>
     <model>
         <name>CDU1</name>
-        <path>Aircraft/737-800YV/Models/Instruments/CDU/boeing.xml</path>
+        <path>Aircraft/737-800YV/Models/Instruments/CDU/captain.xml</path>
         <offsets>
             <x-m>0.460</x-m>
             <y-m>-0.203</y-m>
@@ -32,10 +32,10 @@
             <texture>boeing_grey.png</texture>
         </overlay>
     </model>
-	
+
     <model>
         <name>CDU2</name>
-        <path>Aircraft/737-800YV/Models/Instruments/CDU/boeing.xml</path>
+        <path>Aircraft/737-800YV/Models/Instruments/CDU/fo.xml</path>
         <offsets>
             <x-m>0.460</x-m>
             <y-m>0.162</y-m>
