@@ -149,6 +149,8 @@ var master_elec = func {
 		setprop("/systems/electrical/bus/dcL", dc_volt_std);
 	} else if (xtieL == 1 and dcxtie == 1) {
 		setprop("/systems/electrical/bus/dcL", dc_volt_std);
+	} else if (battery_on) {
+		setprop("/systems/electrical/bus/dcL", dc_volt_std);
 	} else {
 		setprop("/systems/electrical/bus/dcL", 0);
 	}
@@ -161,6 +163,8 @@ var master_elec = func {
 	} else if (rpmR >= 54 and engR) {
 		setprop("/systems/electrical/bus/dcR", dc_volt_std);
 	} else if (xtieR == 1 and dcxtie == 1) {
+		setprop("/systems/electrical/bus/dcR", dc_volt_std);
+	} else if (battery_on) {
 		setprop("/systems/electrical/bus/dcR", dc_volt_std);
 	} else {
 		setprop("/systems/electrical/bus/dcR", 0);

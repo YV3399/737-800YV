@@ -21,9 +21,9 @@
 		</condition>
 	</animation>
 
-<animation> 
-	<type>material</type> 
-	<texture alias="../../texture"/> 
+<animation>
+	<type>material</type>
+	<texture alias="../../texture"/>
 </animation>
 
 <effect>
@@ -82,7 +82,7 @@
 	<object-name>Btn.rte</object-name>
 	<object-name>Btn.dep-arr</object-name>
 	<object-name>Btn.altn</object-name>
-	<object-name>Btn.vnav</object-name>
+	<object-name>Btn.des</object-name>
 	<object-name>Btn.fix</object-name>
 	<object-name>Btn.legs</object-name>
 	<object-name>Btn.hold</object-name>
@@ -90,7 +90,7 @@
 	<object-name>Btn.prog</object-name>
 	<object-name>Btn.exec</object-name>
 	<object-name>Btn.menu</object-name>
-	<object-name>Btn.nav-rad</object-name>
+	<object-name>Btn.n1limit</object-name>
 	<object-name>Btn.prev-page</object-name>
 	<object-name>Btn.next-page</object-name>
 	<object-name>Btn.side.l.1</object-name>
@@ -119,9 +119,9 @@
 			<property type="string">instrumentation/cdu/output/title</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -140,9 +140,9 @@
 			<property type="string">instrumentation/cdu/output/page</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -161,9 +161,9 @@
 			<property type="string">instrumentation/cdu/output/line1/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -182,9 +182,9 @@
 			<property type="string">instrumentation/cdu/output/line1/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -203,9 +203,9 @@
 			<property type="string">instrumentation/cdu/output/line1/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -224,9 +224,9 @@
 			<property type="string">instrumentation/cdu/output/line1/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -245,9 +245,9 @@
 			<property type="string">instrumentation/cdu/output/line1/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -266,9 +266,9 @@
 			<property type="string">instrumentation/cdu/output/line1/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -287,9 +287,9 @@
 			<property type="string">instrumentation/cdu/output/line2/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -308,9 +308,9 @@
 			<property type="string">instrumentation/cdu/output/line2/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -329,9 +329,9 @@
 			<property type="string">instrumentation/cdu/output/line2/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -350,9 +350,9 @@
 			<property type="string">instrumentation/cdu/output/line2/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -371,9 +371,9 @@
 			<property type="string">instrumentation/cdu/output/line2/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -392,9 +392,9 @@
 			<property type="string">instrumentation/cdu/output/line2/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -413,9 +413,9 @@
 			<property type="string">instrumentation/cdu/output/line3/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -434,9 +434,9 @@
 			<property type="string">instrumentation/cdu/output/line3/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -455,9 +455,9 @@
 			<property type="string">instrumentation/cdu/output/line3/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -476,9 +476,9 @@
 			<property type="string">instrumentation/cdu/output/line3/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -497,9 +497,9 @@
 			<property type="string">instrumentation/cdu/output/line3/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -518,9 +518,9 @@
 			<property type="string">instrumentation/cdu/output/line3/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -539,9 +539,9 @@
 			<property type="string">instrumentation/cdu/output/line4/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -560,9 +560,9 @@
 			<property type="string">instrumentation/cdu/output/line4/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -581,9 +581,9 @@
 			<property type="string">instrumentation/cdu/output/line4/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -602,9 +602,9 @@
 			<property type="string">instrumentation/cdu/output/line4/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -623,9 +623,9 @@
 			<property type="string">instrumentation/cdu/output/line4/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -644,9 +644,9 @@
 			<property type="string">instrumentation/cdu/output/line4/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -665,9 +665,9 @@
 			<property type="string">instrumentation/cdu/output/line5/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -686,9 +686,9 @@
 			<property type="string">instrumentation/cdu/output/line5/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -707,9 +707,9 @@
 			<property type="string">instrumentation/cdu/output/line5/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -728,9 +728,9 @@
 			<property type="string">instrumentation/cdu/output/line5/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -749,9 +749,9 @@
 			<property type="string">instrumentation/cdu/output/line5/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -770,13 +770,34 @@
 			<property type="string">instrumentation/cdu/output/line5/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
 	</overlay>
+</model>
+
+<model>
+    <path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+    <offsets>
+        <x-m> 0.004</x-m>
+        <y-m>-0.049</y-m>
+        <z-m> 0.037</z-m>
+    </offsets>
+    <overlay>
+        <params>
+            <property type="string">/instrumentation/cdu/output/line6/bar</property>
+            <character-size type="double">0.007</character-size>
+            <color>
+                <red   type="double">0.6</red>
+                <green type="double">0.6</green>
+                <blue  type="double">0.8</blue>
+            </color>
+            <alignment>left-center</alignment>
+        </params>
+    </overlay>
 </model>
 
 <model>
@@ -791,9 +812,9 @@
 			<property type="string">instrumentation/cdu/output/line6/left-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -812,9 +833,9 @@
 			<property type="string">instrumentation/cdu/output/line6/left</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>left-center</alignment>
 		</params>
@@ -833,9 +854,9 @@
 			<property type="string">instrumentation/cdu/output/line6/center-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -854,9 +875,9 @@
 			<property type="string">instrumentation/cdu/output/line6/center</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>center-center</alignment>
 		</params>
@@ -875,9 +896,9 @@
 			<property type="string">instrumentation/cdu/output/line6/right-title</property>
 			<character-size type="double">0.004</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -896,9 +917,9 @@
 			<property type="string">instrumentation/cdu/output/line6/right</property>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
 			<alignment>right-center</alignment>
 		</params>
@@ -909,7 +930,7 @@
 	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
 	<offsets>
 		<x-m> 0.004</x-m>
-		<y-m> 0.000</y-m>
+		<y-m> -0.049</y-m>
 		<z-m> 0.024</z-m>
 	</offsets>
 	<overlay>
@@ -919,11 +940,11 @@
 			<factor>1</factor>
 			<character-size type="double">0.007</character-size>
 			<color>
-				<red   type="double">0.1</red>
-				<green type="double">1.0</green>
-				<blue  type="double">0.1</blue>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
 			</color>
-			<alignment>center-center</alignment>
+			<alignment>left-center</alignment>
 		</params>
 	</overlay>
 </model>
@@ -933,10 +954,10 @@
 	<object-name>Btn.side.l.1</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable> 
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK1L');</script>
+			<script>cdu.key(0, 'LSK1L');</script>
 		</binding>
 	</action>
 </animation>
@@ -946,10 +967,10 @@
 	<object-name>Btn.side.r.1</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK1R');</script>
+			<script>cdu.key(0, 'LSK1R');</script>
 		</binding>
 	</action>
 </animation>
@@ -959,10 +980,10 @@
 	<object-name>Btn.side.l.2</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK2L');</script>
+			<script>cdu.key(0, 'LSK2L');</script>
 		</binding>
 	</action>
 </animation>
@@ -972,10 +993,10 @@
 	<object-name>Btn.side.r.2</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK2R');</script>
+			<script>cdu.key(0, 'LSK2R');</script>
 		</binding>
 	</action>
 </animation>
@@ -985,10 +1006,10 @@
 	<object-name>Btn.side.l.3</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK3L');</script>
+			<script>cdu.key(0, 'LSK3L');</script>
 		</binding>
 	</action>
 </animation>
@@ -998,10 +1019,10 @@
 	<object-name>Btn.side.r.3</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK3R');</script>
+			<script>cdu.key(0, 'LSK3R');</script>
 		</binding>
 	</action>
 </animation>
@@ -1011,10 +1032,10 @@
 	<object-name>Btn.side.l.4</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK4L');</script>
+			<script>cdu.key(0, 'LSK4L');</script>
 		</binding>
 	</action>
 </animation>
@@ -1024,10 +1045,10 @@
 	<object-name>Btn.side.r.4</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK4R');</script>
+			<script>cdu.key(0, 'LSK4R');</script>
 		</binding>
 	</action>
 </animation>
@@ -1037,10 +1058,10 @@
 	<object-name>Btn.side.l.5</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK5L');</script>
+			<script>cdu.key(0, 'LSK5L');</script>
 		</binding>
 	</action>
 </animation>
@@ -1050,10 +1071,10 @@
 	<object-name>Btn.side.r.5</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK5R');</script>
+			<script>cdu.key(0, 'LSK5R');</script>
 		</binding>
 	</action>
 </animation>
@@ -1065,7 +1086,7 @@
 		<button>0</button>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK6L');</script>
+			<script>cdu.key(0, 'LSK6L');</script>
 		</binding>
 	</action>
 </animation>
@@ -1075,10 +1096,10 @@
 	<object-name>Btn.side.r.6</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('LSK6R');</script>
+			<script>cdu.key(0, 'LSK6R');</script>
 		</binding>
 
 	</action>
@@ -1092,7 +1113,20 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('exec');</script>
+			<script>cdu.key(0, 'exec');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.prog</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(0, 'prog');</script>
 		</binding>
 	</action>
 </animation>
@@ -1102,11 +1136,10 @@
 	<object-name>Btn.init-ref</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>instrumentation/cdu/display</property>
-			<value type="string">INIT_REF</value>
+			<command>nasal</command>
+			<script>cdu.key(0, 'init_ref');</script>
 		</binding>
 	</action>
 </animation>
@@ -1116,11 +1149,10 @@
 	<object-name>Btn.rte</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>instrumentation/cdu/display</property>
-			<value type="string">RTE1_1</value>
+			<command>nasal</command>
+			<script>cdu.key(0, 'rte');</script>
 		</binding>
 	</action>
 </animation>
@@ -1130,25 +1162,36 @@
 	<object-name>Btn.nav-rad</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>instrumentation/cdu/display</property>
-			<value type="string">NAV_RAD</value>
+			<command>nasal</command>
+			<script>cdu.key(0, 'nav_rad');</script>
 		</binding>
 	</action>
 </animation>
- 
+
 <animation>
 	<type>pick</type>
 	<object-name>Btn.dep-arr</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>instrumentation/cdu/display</property>
-			<value type="string">DEP_ARR_INDEX</value>
+			<command>nasal</command>
+			<script>cdu.key(0, 'dep_arr');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.fix</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(0, 'fix');</script>
 		</binding>
 	</action>
 </animation>
@@ -1158,25 +1201,36 @@
 	<object-name>Btn.legs</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>instrumentation/cdu/display</property>
-			<value type="string">RTE1_LEGS</value>
+			<command>nasal</command>
+			<script>cdu.key(0, 'legs');</script>
 		</binding>
 	</action>
 </animation>
- 
+
 <animation>
 	<type>pick</type>
 	<object-name>Btn.menu</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
-			<command>property-assign</command>
-			<property>instrumentation/cdu/display</property>
-			<value type="string">MENU</value>
+			<command>nasal</command>
+			<script>cdu.key(0, 'menu');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.n1limit</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(0, 'n1limit');</script>
 		</binding>
 	</action>
 </animation>
@@ -1186,10 +1240,10 @@
 	<object-name>Btn.prev-page</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('prev');</script>
+			<script>cdu.key(0, 'prev');</script>
 		</binding>
 	</action>
 </animation>
@@ -1199,10 +1253,10 @@
 	<object-name>Btn.next-page</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.key('next');</script>
+			<script>cdu.key(0, 'next');</script>
 		</binding>
 	</action>
 </animation>
@@ -1212,10 +1266,10 @@
 	<object-name>Btn.zero</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('0');</script>
+			<script>cdu.input(0, '0');</script>
 		</binding>
 	</action>
 </animation>
@@ -1225,10 +1279,10 @@
 	<object-name>Btn.num1</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('1');</script>
+			<script>cdu.input(0, '1');</script>
 		</binding>
 	</action>
 </animation>
@@ -1238,10 +1292,10 @@
 	<object-name>Btn.num2</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('2');</script>
+			<script>cdu.input(0, '2');</script>
 		</binding>
 	</action>
 </animation>
@@ -1251,10 +1305,10 @@
 	<object-name>Btn.num3</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('3');</script>
+			<script>cdu.input(0, '3');</script>
 		</binding>
 	</action>
 </animation>
@@ -1264,10 +1318,10 @@
 	<object-name>Btn.num4</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('4');</script>
+			<script>cdu.input(0, '4');</script>
 		</binding>
 	</action>
 </animation>
@@ -1277,10 +1331,10 @@
 	<object-name>Btn.num5</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('5');</script>
+			<script>cdu.input(0, '5');</script>
 		</binding>
 	</action>
 </animation>
@@ -1290,10 +1344,10 @@
 	<object-name>Btn.num6</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('6');</script>
+			<script>cdu.input(0, '6');</script>
 		</binding>
 	</action>
 </animation>
@@ -1303,10 +1357,10 @@
 	<object-name>Btn.num7</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('7');</script>
+			<script>cdu.input(0, '7');</script>
 		</binding>
 	</action>
 </animation>
@@ -1316,10 +1370,10 @@
 	<object-name>Btn.num8</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('8');</script>
+			<script>cdu.input(0, '8');</script>
 		</binding>
 	</action>
 </animation>
@@ -1329,10 +1383,10 @@
 	<object-name>Btn.num9</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('9');</script>
+			<script>cdu.input(0, '9');</script>
 		</binding>
 	</action>
 </animation>
@@ -1342,10 +1396,10 @@
 	<object-name>Btn.A</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('A');</script>
+			<script>cdu.input(0, 'A');</script>
 		</binding>
 	</action>
 </animation>
@@ -1355,10 +1409,10 @@
 	<object-name>Btn.B</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('B');</script>
+			<script>cdu.input(0, 'B');</script>
 		</binding>
 	</action>
 </animation>
@@ -1368,10 +1422,10 @@
 	<object-name>Btn.C</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('C');</script>
+			<script>cdu.input(0, 'C');</script>
 		</binding>
 	</action>
 </animation>
@@ -1381,10 +1435,10 @@
 	<object-name>Btn.D</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('D');</script>
+			<script>cdu.input(0, 'D');</script>
 		</binding>
 	</action>
 </animation>
@@ -1394,10 +1448,10 @@
 	<object-name>Btn.E</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('E');</script>
+			<script>cdu.input(0, 'E');</script>
 		</binding>
 	</action>
 </animation>
@@ -1407,10 +1461,10 @@
 	<object-name>Btn.F</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('F');</script>
+			<script>cdu.input(0, 'F');</script>
 		</binding>
 	</action>
 </animation>
@@ -1420,10 +1474,10 @@
 	<object-name>Btn.G</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('G');</script>
+			<script>cdu.input(0, 'G');</script>
 		</binding>
 	</action>
 </animation>
@@ -1433,10 +1487,10 @@
 	<object-name>Btn.H</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('H');</script>
+			<script>cdu.input(0, 'H');</script>
 		</binding>
 	</action>
 </animation>
@@ -1446,10 +1500,10 @@
 	<object-name>Btn.I</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('I');</script>
+			<script>cdu.input(0, 'I');</script>
 		</binding>
 	</action>
 </animation>
@@ -1459,10 +1513,10 @@
 	<object-name>Btn.J</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('J');</script>
+			<script>cdu.input(0, 'J');</script>
 		</binding>
 	</action>
 </animation>
@@ -1472,10 +1526,10 @@
 	<object-name>Btn.K</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('K');</script>
+			<script>cdu.input(0, 'K');</script>
 		</binding>
 	</action>
 </animation>
@@ -1485,10 +1539,10 @@
 	<object-name>Btn.L</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('L');</script>
+			<script>cdu.input(0, 'L');</script>
 		</binding>
 	</action>
 </animation>
@@ -1498,10 +1552,10 @@
 	<object-name>Btn.M</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('M');</script>
+			<script>cdu.input(0, 'M');</script>
 		</binding>
 	</action>
 </animation>
@@ -1511,10 +1565,10 @@
 	<object-name>Btn.N</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('N');</script>
+			<script>cdu.input(0, 'N');</script>
 		</binding>
 	</action>
 </animation>
@@ -1524,10 +1578,10 @@
 	<object-name>Btn.O</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('O');</script>
+			<script>cdu.input(0, 'O');</script>
 		</binding>
 	</action>
 </animation>
@@ -1537,10 +1591,10 @@
 	<object-name>Btn.P</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('P');</script>
+			<script>cdu.input(0, 'P');</script>
 		</binding>
 	</action>
 </animation>
@@ -1550,10 +1604,10 @@
 	<object-name>Btn.Q</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('Q');</script>
+			<script>cdu.input(0, 'Q');</script>
 		</binding>
 	</action>
 </animation>
@@ -1563,10 +1617,10 @@
 	<object-name>Btn.R</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('R');</script>
+			<script>cdu.input(0, 'R');</script>
 		</binding>
 	</action>
 </animation>
@@ -1576,10 +1630,10 @@
 	<object-name>Btn.S</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('S');</script>
+			<script>cdu.input(0, 'S');</script>
 		</binding>
 	</action>
 </animation>
@@ -1589,10 +1643,10 @@
 	<object-name>Btn.T</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('T');</script>
+			<script>cdu.input(0, 'T');</script>
 		</binding>
 	</action>
 </animation>
@@ -1602,10 +1656,10 @@
 	<object-name>Btn.U</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('U');</script>
+			<script>cdu.input(0, 'U');</script>
 		</binding>
 	</action>
 </animation>
@@ -1615,10 +1669,10 @@
 	<object-name>Btn.V</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('V');</script>
+			<script>cdu.input(0, 'V');</script>
 		</binding>
 	</action>
 </animation>
@@ -1628,10 +1682,10 @@
 	<object-name>Btn.W</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('W');</script>
+			<script>cdu.input(0, 'W');</script>
 		</binding>
 	</action>
 </animation>
@@ -1641,10 +1695,10 @@
 	<object-name>Btn.X</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('X');</script>
+			<script>cdu.input(0, 'X');</script>
 		</binding>
 	</action>
 </animation>
@@ -1657,7 +1711,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('Y');</script>
+			<script>cdu.input(0, 'Y');</script>
 		</binding>
 	</action>
 </animation>
@@ -1670,7 +1724,7 @@
 		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('Z');</script>
+			<script>cdu.input(0, 'Z');</script>
 		</binding>
 	</action>
 </animation>
@@ -1680,10 +1734,10 @@
 	<object-name>Btn.period</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('.');</script>
+			<script>cdu.input(0, '.');</script>
 		</binding>
 	</action>
 </animation>
@@ -1693,10 +1747,10 @@
 	<object-name>Btn.plusminus</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.plusminus();</script>
+			<script>cdu.plusminus(0);</script>
 		</binding>
 	</action>
 </animation>
@@ -1706,10 +1760,10 @@
 	<object-name>Btn.sp</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input(' ');</script>
+			<script>cdu.input(0, ' ');</script>
 		</binding>
 	</action>
 </animation>
@@ -1719,10 +1773,10 @@
 	<object-name>Btn.slash</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.input('/');</script>
+			<script>cdu.input(0, '/');</script>
 		</binding>
 	</action>
 </animation>
@@ -1732,20 +1786,10 @@
 	<object-name>Btn.del</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
-			<script>cdu.delete_func();</script>
-		</binding>
-		<binding>
-			<condition>
-				<equals>
-					<property>instrumentation/cdu/display</property>
-					<value>RTE1_LEGS</value>
-				</equals>
-			</condition>
-			<command>nasal</command>
-			<script>cdu.input('DELETE');</script>
+			<script>cdu.delete_func(0);</script>
 		</binding>
 	</action>
 </animation>
@@ -1755,7 +1799,7 @@
 	<object-name>Btn.clr</object-name>
 	<action>
 		<button>0</button>
-		<repeatable>false</repeatable>  
+		<repeatable>false</repeatable>
 		<binding>
 			<command>nasal</command>
 			<script>setprop("/instrumentation/cdu/input","");</script>

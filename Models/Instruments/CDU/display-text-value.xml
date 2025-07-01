@@ -28,7 +28,7 @@
   <offset alias="../../params/offset"/>
   <format>%s</format>
   <truncate type="bool">false</truncate>
-  <font type="string">Helvetica.txf</font>
+  <font type="string">BoeingCDU.ttf</font>
   <draw-text type="bool">true</draw-text>
   <draw-alignment type="bool">false</draw-alignment>
   <draw-boundingbox type="bool">false</draw-boundingbox>

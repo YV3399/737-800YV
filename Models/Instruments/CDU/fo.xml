@@ -1,0 +1,1797 @@
+<PropertyList>
+
+<path>boeing.ac</path>
+
+ 	<!-- Power on/off -->
+	<animation>
+		<name>Power on/off</name>
+		<type>select</type>
+		<object-name>Off</object-name>
+		<condition>
+			<and>
+			<less-than>
+				<property>systems/electrical/bus/dcL</property>
+				<value>15</value>
+			</less-than>
+			<less-than>
+				<property>systems/electrical/bus/dcR</property>
+				<value>15</value>
+			</less-than>
+			</and>
+		</condition>
+	</animation>
+
+<animation>
+	<type>material</type>
+	<texture alias="../../texture"/>
+</animation>
+
+<effect>
+	<inherits-from>Effects/lightmap</inherits-from>
+	<parameters>
+		<texture n="1">
+			<image>Aircraft/Instruments-3d/cdu/boeing_lightmap.png</image>
+		</texture>
+		<condition><use>/instrumentation/cdu[1]/serviceable</use></condition>
+		<factor><use>/controls/lighting/panel-norm</use></factor>
+	</parameters>
+	<object-name>CDU</object-name>
+ 	<object-name>Btn.A</object-name>
+	<object-name>Btn.B</object-name>
+	<object-name>Btn.C</object-name>
+	<object-name>Btn.D</object-name>
+	<object-name>Btn.E</object-name>
+	<object-name>Btn.F</object-name>
+	<object-name>Btn.G</object-name>
+	<object-name>Btn.H</object-name>
+	<object-name>Btn.I</object-name>
+	<object-name>Btn.J</object-name>
+	<object-name>Btn.K</object-name>
+	<object-name>Btn.L</object-name>
+	<object-name>Btn.M</object-name>
+	<object-name>Btn.N</object-name>
+	<object-name>Btn.O</object-name>
+	<object-name>Btn.P</object-name>
+	<object-name>Btn.Q</object-name>
+	<object-name>Btn.R</object-name>
+	<object-name>Btn.S</object-name>
+	<object-name>Btn.T</object-name>
+	<object-name>Btn.U</object-name>
+	<object-name>Btn.V</object-name>
+	<object-name>Btn.W</object-name>
+	<object-name>Btn.X</object-name>
+	<object-name>Btn.Y</object-name>
+	<object-name>Btn.Z</object-name>
+	<object-name>Btn.zero</object-name>
+	<object-name>Btn.num1</object-name>
+	<object-name>Btn.num2</object-name>
+	<object-name>Btn.num3</object-name>
+	<object-name>Btn.num4</object-name>
+	<object-name>Btn.num5</object-name>
+	<object-name>Btn.num6</object-name>
+	<object-name>Btn.num7</object-name>
+	<object-name>Btn.num8</object-name>
+	<object-name>Btn.num9</object-name>
+	<object-name>Btn.period</object-name>
+	<object-name>Btn.plusminus</object-name>
+	<object-name>Btn.sp</object-name>
+	<object-name>Btn.slash</object-name>
+	<object-name>Btn.del</object-name>
+	<object-name>Btn.clr</object-name>
+	<object-name>Btn.init-ref</object-name>
+	<object-name>Btn.rte</object-name>
+	<object-name>Btn.dep-arr</object-name>
+	<object-name>Btn.altn</object-name>
+	<object-name>Btn.des</object-name>
+	<object-name>Btn.fix</object-name>
+	<object-name>Btn.legs</object-name>
+	<object-name>Btn.hold</object-name>
+	<object-name>Btn.fmc-comm</object-name>
+	<object-name>Btn.prog</object-name>
+	<object-name>Btn.exec</object-name>
+	<object-name>Btn.menu</object-name>
+	<object-name>Btn.n1limit</object-name>
+	<object-name>Btn.prev-page</object-name>
+	<object-name>Btn.next-page</object-name>
+	<object-name>Btn.side.l.1</object-name>
+	<object-name>Btn.side.l.2</object-name>
+	<object-name>Btn.side.l.3</object-name>
+	<object-name>Btn.side.l.4</object-name>
+	<object-name>Btn.side.l.5</object-name>
+	<object-name>Btn.side.l.6</object-name>
+	<object-name>Btn.side.r.1</object-name>
+	<object-name>Btn.side.r.2</object-name>
+	<object-name>Btn.side.r.3</object-name>
+	<object-name>Btn.side.r.4</object-name>
+	<object-name>Btn.side.r.5</object-name>
+	<object-name>Btn.side.r.6</object-name>
+</effect>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.104</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/title</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.043</y-m>
+		<z-m> 0.103</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/page</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.045</y-m>
+		<z-m> 0.097</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line1/left-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.049</y-m>
+		<z-m> 0.092</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line1/left</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.097</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line1/center-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.092</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line1/center</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.045</y-m>
+		<z-m> 0.097</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line1/right-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.049</y-m>
+		<z-m> 0.092</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line1/right</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.045</y-m>
+		<z-m> 0.085</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line2/left-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.049</y-m>
+		<z-m> 0.080</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line2/left</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.085</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line2/center-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.080</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line2/center</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.045</y-m>
+		<z-m> 0.085</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line2/right-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.049</y-m>
+		<z-m> 0.080</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line2/right</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.045</y-m>
+		<z-m> 0.073</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line3/left-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.049</y-m>
+		<z-m> 0.068</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line3/left</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.073</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line3/center-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.068</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line3/center</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.045</y-m>
+		<z-m> 0.073</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line3/right-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.049</y-m>
+		<z-m> 0.068</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line3/right</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.045</y-m>
+		<z-m> 0.061</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line4/left-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.049</y-m>
+		<z-m> 0.056</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line4/left</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.061</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line4/center-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.056</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line4/center</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.045</y-m>
+		<z-m> 0.061</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line4/right-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.049</y-m>
+		<z-m> 0.056</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line4/right</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.045</y-m>
+		<z-m> 0.049</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line5/left-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.049</y-m>
+		<z-m> 0.044</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line5/left</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.049</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line5/center-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.044</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line5/center</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.045</y-m>
+		<z-m> 0.049</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line5/right-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.049</y-m>
+		<z-m> 0.044</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line5/right</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+    <path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+    <offsets>
+        <x-m> 0.004</x-m>
+        <y-m>-0.049</y-m>
+        <z-m> 0.037</z-m>
+    </offsets>
+    <overlay>
+        <params>
+            <property type="string">/instrumentation/cdu[1]/output/line6/bar</property>
+            <character-size type="double">0.007</character-size>
+            <color>
+                <red   type="double">0.6</red>
+                <green type="double">0.6</green>
+                <blue  type="double">0.8</blue>
+            </color>
+            <alignment>left-center</alignment>
+        </params>
+    </overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.045</y-m>
+		<z-m> 0.037</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line6/left-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m>-0.049</y-m>
+		<z-m> 0.032</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line6/left</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.037</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line6/center-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.000</y-m>
+		<z-m> 0.032</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line6/center</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>center-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.045</y-m>
+		<z-m> 0.037</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line6/right-title</property>
+			<character-size type="double">0.004</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> 0.049</y-m>
+		<z-m> 0.032</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/output/line6/right</property>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>right-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<model>
+	<path>Aircraft/737-800YV/Models/Instruments/CDU/display-text-value.xml</path>
+	<offsets>
+		<x-m> 0.004</x-m>
+		<y-m> -0.049</y-m>
+		<z-m> 0.024</z-m>
+	</offsets>
+	<overlay>
+		<params>
+			<property type="string">instrumentation/cdu[1]/input</property>
+			<format type="string">%03.1f</format>
+			<factor>1</factor>
+			<character-size type="double">0.007</character-size>
+			<color>
+				<red   type="double">0.6</red>
+				<green type="double">0.6</green>
+				<blue  type="double">0.8</blue>
+			</color>
+			<alignment>left-center</alignment>
+		</params>
+	</overlay>
+</model>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.l.1</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK1L');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.r.1</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK1R');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.l.2</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK2L');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.r.2</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK2R');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.l.3</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK3L');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.r.3</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK3R');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.l.4</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK4L');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.r.4</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK4R');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.l.5</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK5L');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.r.5</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK5R');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.l.6</object-name>
+	<action>
+		<button>0</button>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK6L');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.side.r.6</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'LSK6R');</script>
+		</binding>
+
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.exec</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'exec');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.init-ref</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'init_ref');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.rte</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'rte');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.nav-rad</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'nav_rad');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.dep-arr</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'dep_arr');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.fix</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'fix');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.legs</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'legs');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.menu</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'menu');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.n1limit</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'n1limit');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.prev-page</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'prev');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.next-page</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.key(1, 'next');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.zero</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '0');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num1</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '1');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num2</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '2');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num3</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '3');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num4</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '4');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num5</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '5');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num6</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '6');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num7</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '7');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num8</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '8');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.num9</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '9');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.A</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'A');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.B</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'B');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.C</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'C');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.D</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'D');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.E</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'E');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.F</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'F');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.G</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'G');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.H</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'H');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.I</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'I');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.J</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'J');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.K</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'K');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.L</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'L');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.M</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'M');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.N</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'N');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.O</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'O');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.P</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'P');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.Q</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'Q');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.R</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'R');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.S</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'S');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.T</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'T');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.U</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'U');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.V</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'V');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.W</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'W');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.X</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'X');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.Y</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'Y');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.Z</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, 'Z');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.period</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '.');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.plusminus</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.plusminus(1);</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.sp</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, ' ');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.slash</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.input(1, '/');</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.del</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cdu.delete_func(1);</script>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>Btn.clr</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>setprop("/instrumentation/cdu[1]/input","");</script>
+		</binding>
+	</action>
+</animation>
+
+</PropertyList>
