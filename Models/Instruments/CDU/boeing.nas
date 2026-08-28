@@ -49,6 +49,66 @@ var lontodmm = func(dec) {
 	return sprintf("%s%03u*%.1f", sign, dmm.deg, dmm.min);
 }
 
+var todec = func(dmm) {
+	# 53 25.8795
+	var sep = find(" ", dmm);
+
+	if (sep < 0)
+		return nil;
+
+	var integer = substr(dmm, 0, sep);
+
+	if (int(integer) == nil)
+		return nil;
+
+	var minutes = substr(dmm, sep + 1);
+
+	if (num(minutes) == nil)
+		return nil;
+
+	return num(integer) + num(minutes) / 60;
+}
+
+var dmmtolat = func(lat) {
+	var sign = sprintf("%c", lat[0]);
+
+	if (sign != "N" and sign != "S")
+		return nil;
+
+	var dec = todec(substr(lat, 1));
+
+	if (dec != nil and sign == "S")
+		dec = -dec;
+
+	return dec;
+}
+
+var dmmtolon = func(lon) {
+	var sign = sprintf("%c", lon[0]);
+
+	if (sign != "W" and sign != "E")
+		return nil;
+
+	var dec = todec(substr(lon, 1));
+
+	if (dec != nil and sign == "W")
+		dec = -dec;
+
+	return dec;
+}
+
+var lontodmm = func(dec) {
+	if (typeof(dec) != "scalar") {
+		return nil;
+	}
+
+	var dmm = todmm(dec);
+	var sign = dec > 0 ? "E" : "W";
+
+	return sprintf("%s%03u*%.1f", sign, dmm.deg, dmm.min);
+}
+
+
 var parsescratchpadcoords = func(coords) {
 	var fmt = "N0000.0E00000.0";
 
@@ -83,8 +143,14 @@ var parsescratchpadcoords = func(coords) {
 		or lonminnum == nil)
 		return nil;
 
-	var lat = (latsign == 'N' ? latdegnum : -latdegnum) + latminnum / 60;
-	var lon = (lonsign == 'E' ? londegnum : -londegnum) + lonminnum / 60;
+	var lat = latdegnum + latminnum / 60;
+	var lon = londegnum + lonminnum / 60;
+
+	if (latsign == 'S')
+		lat = -lat;
+
+	if (lonsign == 'W')
+		lon = -lon;
 
 	return {lat: lat, lon: lon};
 }
@@ -252,12 +318,28 @@ var setarrrunway = func(num) {
 var getgate = func(icao, gate) {
 	var ret = nil;
 	var tag = func(name, attr) {
-		if (name == "Parking" and attr.name == gate) {
-			ret = {
-				name: attr.name,
-				lat: attr.lat,
-				lon: attr.lon
-			};
+		if (name == "Parking") {
+			if (attr.name == gate) {
+				ret = {
+					name: attr.name,
+					lat: attr.lat,
+					lon: attr.lon
+				};
+			}
+			else if (attr.number != nil) {
+				# Some gates are labeled as <name><number>.
+				# For example, EIDW lists gate 119L, where '1' is the name
+				# and '19L' is the number.
+				var lname = attr.name ~ attr.number;
+
+				if (lname == gate) {
+					ret = {
+						name: lname,
+						lat: attr.lat,
+						lon: attr.lon
+					}
+				}
+			}
 		}
 	}
 
@@ -1123,7 +1205,7 @@ var plusminus = func(num) {
 	}
 
 var getversion = func {
-	var path = string.normpath(getprop("/sim/fg-root") ~ "/flightgear-version");
+	var path = string.normpath(getprop("/sim/fg-root") ~ "/version");
 
 	return io.readfile(path);
 }
@@ -1158,10 +1240,18 @@ var irspos = func {
 	var empty = "___*__._";
 	# IRS alignment is not implemented yet. Therefore,
 	# always assume the IRS as aligned.
-	var latstr = irslat != "" ? "" : empty;
-	var lonstr = irslon != "" ? "" : empty;
 
-	sprintf("%s %s", latstr, lonstr);
+	if (irslat != "" and irslon != "")
+		sprintf("%s %s", lattodmm(irslat), lontodmm(irslon));
+	else
+		sprintf("%s %s", empty, empty);
+}
+
+var parsegatecoords = func(gate) {
+	var glat = dmmtolat(gate.lat);
+	var glon = dmmtolon(gate.lon);
+
+	return sprintf("%s %s", lattodmm(glat), lontodmm(glon));
 }
 
 var cdu = func(num) {
@@ -1396,6 +1486,7 @@ var cdu = func(num) {
 		}
 		line3lt = "GATE";
 		line3l = gate != nil ? gate.name : "-----";
+		line3r = gate != nil ? parsegatecoords(gate) : "";
 		line4rt = "SET IRS POS";
 		line4r = irspos();
 		line5lt = "GMT-MON/DY";
