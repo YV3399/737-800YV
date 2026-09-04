@@ -49,24 +49,24 @@
       <!-- Pipe to left engine -->
       <switch name="fuel/left-pipe-feed">
          <default value="0"/>
-         <test logic="AND" value="3.5">
+         <test logic="AND" value="5.5">
             fuel/pump-left-on EQ 1               
             propulsion/tank[0]/contents-lbs GT 0
             propulsion/tank[3]/contents-lbs LT 0.25
          </test>            
-         <test logic="AND" value="3.5">
+         <test logic="AND" value="5.5">
             /controls/fuel/tank[2]/pump-left EQ 1               
             propulsion/tank[2]/contents-lbs GT 0
             propulsion/tank[3]/contents-lbs LT 0.25
          </test>
           
-         <test logic="AND" value="3.5">
+         <test logic="AND" value="5.5">
             fuel/pump-right-on EQ 1               
             propulsion/tank[1]/contents-lbs GT 0
             propulsion/tank[3]/contents-lbs LT 0.25
             /controls/fuel/crossfeed EQ 1
          </test>
-         <test logic="AND" value="3.5">
+         <test logic="AND" value="5.5">
             /controls/fuel/tank[2]/pump-right EQ 1               
             propulsion/tank[2]/contents-lbs GT 0
             propulsion/tank[3]/contents-lbs LT 0.25
@@ -77,25 +77,25 @@
       <!-- Pipe to right engine -->
       <switch name="fuel/right-pipe-feed">
          <default value="0"/>
-         <test logic="AND" value="3.5">
+         <test logic="AND" value="5.5">
             fuel/pump-left-on EQ 1               
             propulsion/tank[0]/contents-lbs GT 0
             propulsion/tank[4]/contents-lbs LT 0.25
             /controls/fuel/crossfeed EQ 1
          </test>            
-         <test logic="AND" value="3.5">
+         <test logic="AND" value="5.5">
             /controls/fuel/tank[2]/pump-left EQ 1               
             propulsion/tank[2]/contents-lbs GT 0
             propulsion/tank[4]/contents-lbs LT 0.25
             /controls/fuel/crossfeed EQ 1
          </test>
           
-         <test logic="AND" value="3.5">
+         <test logic="AND" value="5.5">
             fuel/pump-right-on EQ 1               
             propulsion/tank[1]/contents-lbs GT 0
             propulsion/tank[4]/contents-lbs LT 0.25
          </test>
-         <test logic="AND" value="3.5">
+         <test logic="AND" value="5.5">
             /controls/fuel/tank[2]/pump-right EQ 1               
             propulsion/tank[2]/contents-lbs GT 0
             propulsion/tank[4]/contents-lbs LT 0.25

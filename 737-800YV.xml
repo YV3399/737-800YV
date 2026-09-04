@@ -40,478 +40,747 @@
 		</location>
 	</metrics>
 
-	<mass_balance> <!-- MOIs based on reverse engineering of FFS certification tests -->
-		<ixx unit="SLUG*FT2">    445000 </ixx>
-		<iyy unit="SLUG*FT2"> 2.141e+06 </iyy>
-		<izz unit="SLUG*FT2"> 2.588e+06 </izz>
-		<ixy unit="SLUG*FT2">         0 </ixy>
-		<ixz unit="SLUG*FT2">    110000 </ixz>
-		<iyz unit="SLUG*FT2">         0 </iyz>
-		<emptywt unit="LBS">      97060 </emptywt> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
+	<mass_balance>
+		<!--
+			Base-aircraft mass properties.
+
+			Moments of inertia are based on reverse engineering of
+			full-flight-simulator certification-test behaviour.
+
+			The base empty weight includes 2 flight crew and 5 cabin crew.
+			Passenger and cargo payloads are represented separately below.
+		-->
+
+		<ixx unit="SLUG*FT2">4.450e+05</ixx>
+		<iyy unit="SLUG*FT2">2.141e+06</iyy>
+
+		<!--
+			Reduced from 2.588e+06 to make the inertia tensor
+			physically admissible while preserving the original tuning.
+		-->
+		<izz unit="SLUG*FT2">2.574e+06</izz>
+
+		<!-- Symmetry eliminates Ixy and Iyz. -->
+		<ixy unit="SLUG*FT2">0.0</ixy>
+		<ixz unit="SLUG*FT2">1.100e+05</ixz>
+		<iyz unit="SLUG*FT2">0.0</iyz>
+
+		<!-- Customer-specific operating-empty configuration. -->
+		<emptywt unit="LBS">97060.0</emptywt>
+
 		<location name="CG" unit="IN">
-			<x> 729.56 </x> <!-- based on real info about EI-RUA aircraft. 2 pilots and 5 cabin crew included -->
-			<y>   0 </y>
-			<z>   0 </z>
+			<x>729.56</x>
+			<y>0.00</y>
+			<z>0.00</z>
 		</location>
 
-		<pointmass name="Cabin Zone 0A"> <!-- Business class (8 pax max) Row 1-2 -->
-			<weight unit="LBS"> 1324 </weight>
+		<!--
+			Passenger zones.
+
+			Initial weights match the default payload configured in
+			737-800YV-set.xml. During operation, aircraft-systems-logic.xml
+			updates point masses 0-2 from the passenger-count controls.
+		-->
+
+		<pointmass name="Business-class passengers">
+			<!-- Default: 6 passengers at 185 lb each; maximum 12. -->
+			<weight unit="LBS">1110.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 301.5 </x>
-				<y> 0 </y>
-				<z> 27.5 </z>
+				<x>301.50</x>
+				<y>0.00</y>
+				<z>27.50</z>
 			</location>
 		</pointmass>
 
-		<pointmass name="Cabin Zone 0B"> <!-- Tourist class (54 pax max) Row 10-19 -->
-			<weight unit="LBS"> 1324 </weight>
+		<pointmass name="Tourist-class passengers">
+			<!-- Default: 22 passengers at 170 lb each; maximum 66. -->
+			<weight unit="LBS">3740.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 541 </x>
-				<y> 0 </y>
-				<z> 27.5 </z>
+				<x>541.00</x>
+				<y>0.00</y>
+				<z>27.50</z>
 			</location>
 		</pointmass>
 
-		<pointmass name="Cabin Zone 0C"> <!-- Economy class (96 pax max) Row 20-36 -->
-			<weight unit="LBS"> 1324 </weight>
+		<pointmass name="Economy-class passengers">
+			<!-- Default: 50 passengers at 170 lb each; maximum 102. -->
+			<weight unit="LBS">8500.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 874 </x>
-				<y> 0 </y>
-				<z> 27.5 </z>
+				<x>874.00</x>
+				<y>0.00</y>
+				<z>27.50</z>
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 1A"> <!-- max 553 kg/1218 lbs -->
-			<weight unit="LBS"> 500 </weight>
+		<!-- Forward lower-deck cargo compartments. -->
+
+		<pointmass name="Cargo compartment 1A">
+			<!-- Maximum: 553 kg / 1,218 lb. -->
+			<weight unit="LBS">500.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 284 </x>
-				<y> 0 </y>
-				<z> -30 </z>
+				<x>284.00</x>
+				<y>0.00</y>
+				<z>-30.00</z>
 			</location>
 		</pointmass>
 
-
-		<pointmass name="Cargo compartment 1B"> <!-- max 336 kg/741 lbs -->
-			<weight unit="LBS"> 200 </weight>
+		<pointmass name="Cargo compartment 1B">
+			<!-- Maximum: 336 kg / 741 lb. -->
+			<weight unit="LBS">200.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 334 </x>
-				<y> 0 </y>
-				<z> -30 </z>
+				<x>334.00</x>
+				<y>0.00</y>
+				<z>-30.00</z>
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 2"> <!-- max 2670 kg/5887 lbs -->
-			<weight unit="LBS"> 2500 </weight>
+		<pointmass name="Cargo compartment 2">
+			<!-- Maximum: 2,670 kg / 5,887 lb. -->
+			<weight unit="LBS">2500.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 464 </x>
-				<y> 0 </y>
-				<z> -30 </z>
+				<x>464.00</x>
+				<y>0.00</y>
+				<z>-30.00</z>
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 3"> <!-- max 4086 kg/9008 lbs -->
-			<weight unit="LBS"> 4000 </weight>
+		<!-- Aft lower-deck cargo compartments. -->
+
+		<pointmass name="Cargo compartment 3">
+			<!-- Maximum: 4,086 kg / 9,008 lb. -->
+			<weight unit="LBS">4000.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 932.5 </x>
-				<y> 0 </y>
-				<z> -30 </z>
+				<x>932.50</x>
+				<y>0.00</y>
+				<z>-30.00</z>
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 4A"> <!-- max 362 kg/798 lbs -->
-			<weight unit="LBS"> 400 </weight>
+		<pointmass name="Cargo compartment 4A">
+			<!-- Maximum: 362 kg / 798 lb. -->
+			<weight unit="LBS">400.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 1097.5 </x>
-				<y> 0 </y>
-				<z> -30 </z>
+				<x>1097.50</x>
+				<y>0.00</y>
+				<z>-30.00</z>
 			</location>
 		</pointmass>
 
-		<pointmass name="Cargo compartment 4B"> <!-- max 402 kg/886 lbs -->
-			<weight unit="LBS"> 200 </weight>
+		<pointmass name="Cargo compartment 4B">
+			<!-- Maximum: 402 kg / 886 lb. -->
+			<weight unit="LBS">200.0</weight>
 			<location name="POINTMASS" unit="IN">
-				<x> 1175.5 </x>
-				<y> 0 </y>
-				<z> -30 </z>
+				<x>1175.50</x>
+				<y>0.00</y>
+				<z>-30.00</z>
 			</location>
 		</pointmass>
 
 	</mass_balance>
 
 	<ground_reactions>
-		<contact name="Nose Gear" type="BOGEY"> <!-- from AMM - maximum NLG compression is 15.5 in -->
+
+		<!--
+			Landing-gear contact locations are model-aligned tire-contact
+			points in the fully extended configuration.
+
+			The nonlinear strut-force tables model the air-oil oleos.
+			Positive compression velocity means compression; negative
+			compression velocity means rebound.
+		-->
+
+		<contact name="Nose Gear" type="BOGEY">
+			<!-- AMM-derived maximum nominal NLG compression: 15.5 in. -->
 			<location unit="IN">
-				<x> 161 </x>
-				<y>   0 </y>
-				<z> -110.83 </z> <!-- BWL 106.57 -->
+				<x>161.00</x>
+				<y>0.00</y>
+				<z>-110.83</z> <!-- Effective contact-point BWL 97.27 -->
 			</location>
-			<static_friction>  0.80 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-			<rolling_friction> 0.02 </rolling_friction>
+
+			<!--
+				Use the common dry-runway baseline coefficient.
+				Do not artificially increase this to repair steering.
+			-->
+			<static_friction>0.40</static_friction>
+			<dynamic_friction>0.50</dynamic_friction>
+			<rolling_friction>0.02</rolling_friction>
+
 			<strut_force>
 				<function>
 					<sum>
+						<!-- Nonlinear air-spring force. -->
 						<product>
-							<value>-1</value>
+							<value>-1.0</value>
 							<table>
-								<independentVar>gear/unit[0]/compression-ft</independentVar>
+								<independentVar>
+									gear/unit[0]/compression-ft
+								</independentVar>
 								<tableData>
-									0       0
+									0.000   0
 									0.042   840
 									0.083   969
 									0.125   1108
 									0.167   1256
 									0.208   1414
-									0.25    1585
+									0.250   1585
 									0.292   1770
 									0.333   1969
 									0.375   2185
 									0.417   2421
 									0.458   2679
-									0.5     2962
+									0.500   2962
 									0.542   3274
 									0.583   3621
 									0.625   4007
 									0.667   4440
 									0.708   4930
-									0.75    5488
+									0.750   5488
 									0.792   6129
 									0.833   6873
 									0.875   7748
 									0.917   8792
 									0.958   10059
-									1       11627
+									1.000   11627
 									1.042   13620
 									1.083   16238
 									1.125   19828
 									1.167   25055
 									1.208   33371
-									1.25    48660
+									1.250   48660
 									1.292   86030
-									1.3     200000
+									1.300   200000
 								</tableData>
 							</table>
 						</product>
+
+						<!--
+							Compression damping: 8,000 lb/(ft/s).
+							Rebound damping:    12,000 lb/(ft/s).
+						-->
 						<ifthen>
 							<ge>
-								<property> gear/unit[0]/compression-velocity-fps </property>
-								<value> 0.0 </value>
+								<property>
+									gear/unit[0]/compression-velocity-fps
+								</property>
+								<value>0.0</value>
 							</ge>
+
 							<product>
-								<value> -8000 </value>
-								<property> gear/unit[0]/compression-velocity-fps </property>
+								<value>-8000.0</value>
+								<property>
+									gear/unit[0]/compression-velocity-fps
+								</property>
 							</product>
+
 							<product>
-								<value> -12000 </value>
-								<property> gear/unit[0]/compression-velocity-fps </property>
+								<value>-12000.0</value>
+								<property>
+									gear/unit[0]/compression-velocity-fps
+								</property>
 							</product>
 						</ifthen>
 					</sum>
 				</function>
 			</strut_force>
-			<max_steer unit="DEG"> 78 </max_steer>
-			<brake_group> NONE </brake_group>
+
+			<!-- Mechanical tiller limit; normal FCS commands may be lower. -->
+			<max_steer unit="DEG">78.0</max_steer>
+			<brake_group>NONE</brake_group>
 			<retractable>1</retractable>
 		</contact>
-		<contact name="Left Main Gear" type="BOGEY"> <!-- from AMM - maximum MLG compression is 16 in -->
+
+
+		<contact name="Left Main Gear" type="BOGEY">
+			<!-- AMM-derived maximum nominal MLG compression: 16.0 in. -->
 			<location unit="IN">
-				<x>  775 </x>
-				<y> -112.5 </y>
-				<z> -113.99 </z> <!-- BWL 98.31 -->
+				<x>775.00</x>
+				<y>-112.50</y>
+				<z>-113.99</z> <!-- Effective contact-point BWL 94.11 -->
 			</location>
-			<static_friction>  0.40 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-			<rolling_friction> 0.02 </rolling_friction>
+
+			<static_friction>0.40</static_friction>
+			<dynamic_friction>0.50</dynamic_friction>
+			<rolling_friction>0.02</rolling_friction>
+
 			<strut_force>
 				<function>
 					<sum>
+						<!-- Nonlinear air-spring force. -->
 						<product>
-							<value>-1</value>
+							<value>-1.0</value>
 							<table>
-								<independentVar>gear/unit[1]/compression-ft</independentVar>
+								<independentVar>
+									gear/unit[1]/compression-ft
+								</independentVar>
 								<tableData>
-									0       0
+									0.000   0
 									0.042   555
 									0.083   1160
 									0.125   1804
 									0.167   2490
 									0.208   3222
-									0.25    4005
+									0.250   4005
 									0.292   4844
 									0.333   5747
 									0.375   6719
 									0.417   7770
 									0.458   8910
-									0.5     10150
+									0.500   10150
 									0.542   11504
 									0.583   12989
 									0.625   14625
 									0.667   16435
 									0.708   18449
-									0.75    20705
+									0.750   20705
 									0.792   23247
 									0.833   26135
 									0.875   29444
 									0.917   33273
 									0.958   37755
-									1       43073
+									1.000   43073
 									1.042   49485
 									1.083   57368
 									1.125   67292
 									1.167   80169
 									1.208   97547
-									1.25    122286
+									1.250   122286
 									1.292   160318
 									1.333   226295
-									1.35    500000
+									1.350   500000
 								</tableData>
 							</table>
 						</product>
+
+						<!--
+							Compression damping: 20,000 lb/(ft/s).
+							Rebound damping:    30,000 lb/(ft/s).
+						-->
 						<ifthen>
 							<ge>
-								<property> gear/unit[1]/compression-velocity-fps </property>
-								<value> 0.0 </value>
+								<property>
+									gear/unit[1]/compression-velocity-fps
+								</property>
+								<value>0.0</value>
 							</ge>
+
 							<product>
-								<value> -20000 </value>
-								<property> gear/unit[1]/compression-velocity-fps </property>
+								<value>-20000.0</value>
+								<property>
+									gear/unit[1]/compression-velocity-fps
+								</property>
 							</product>
+
 							<product>
-								<value> -30000 </value>
-								<property> gear/unit[1]/compression-velocity-fps </property>
+								<value>-30000.0</value>
+								<property>
+									gear/unit[1]/compression-velocity-fps
+								</property>
 							</product>
 						</ifthen>
 					</sum>
 				</function>
 			</strut_force>
-			<max_steer unit="DEG"> 0.0 </max_steer>
-			<brake_group> LEFT </brake_group>
+
+			<max_steer unit="DEG">0.0</max_steer>
+			<brake_group>LEFT</brake_group>
 			<retractable>1</retractable>
 		</contact>
-		<contact name="Right Main Gear" type="BOGEY"> <!-- from AMM - maximum MLG compression is 16 in -->
+
+
+		<contact name="Right Main Gear" type="BOGEY">
+			<!-- AMM-derived maximum nominal MLG compression: 16.0 in. -->
 			<location unit="IN">
-				<x> 775 </x>
-				<y> 112.5 </y>
-				<z> -113.99 </z> <!-- BWL 98.31 -->
+				<x>775.00</x>
+				<y>112.50</y>
+				<z>-113.99</z> <!-- Effective contact-point BWL 94.11 -->
 			</location>
-			<static_friction>  0.40 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-			<rolling_friction> 0.02 </rolling_friction>
+
+			<static_friction>0.40</static_friction>
+			<dynamic_friction>0.50</dynamic_friction>
+			<rolling_friction>0.02</rolling_friction>
+
 			<strut_force>
 				<function>
 					<sum>
+						<!-- Nonlinear air-spring force. -->
 						<product>
-							<value>-1</value>
+							<value>-1.0</value>
 							<table>
-								<independentVar>gear/unit[2]/compression-ft</independentVar>
+								<independentVar>
+									gear/unit[2]/compression-ft
+								</independentVar>
 								<tableData>
-									0       0
+									0.000   0
 									0.042   555
 									0.083   1160
 									0.125   1804
 									0.167   2490
 									0.208   3222
-									0.25    4005
+									0.250   4005
 									0.292   4844
 									0.333   5747
 									0.375   6719
 									0.417   7770
 									0.458   8910
-									0.5     10150
+									0.500   10150
 									0.542   11504
 									0.583   12989
 									0.625   14625
 									0.667   16435
 									0.708   18449
-									0.75    20705
+									0.750   20705
 									0.792   23247
 									0.833   26135
 									0.875   29444
 									0.917   33273
 									0.958   37755
-									1       43073
+									1.000   43073
 									1.042   49485
 									1.083   57368
 									1.125   67292
 									1.167   80169
 									1.208   97547
-									1.25    122286
+									1.250   122286
 									1.292   160318
 									1.333   226295
-									1.35    500000
+									1.350   500000
 								</tableData>
 							</table>
 						</product>
+
+						<!--
+							Compression damping: 20,000 lb/(ft/s).
+							Rebound damping:    30,000 lb/(ft/s).
+						-->
 						<ifthen>
 							<ge>
-								<property> gear/unit[2]/compression-velocity-fps </property>
-								<value> 0.0 </value>
+								<property>
+									gear/unit[2]/compression-velocity-fps
+								</property>
+								<value>0.0</value>
 							</ge>
+
 							<product>
-								<value> -20000 </value>
-								<property> gear/unit[2]/compression-velocity-fps </property>
+								<value>-20000.0</value>
+								<property>
+									gear/unit[2]/compression-velocity-fps
+								</property>
 							</product>
+
 							<product>
-								<value> -30000 </value>
-								<property> gear/unit[2]/compression-velocity-fps </property>
+								<value>-30000.0</value>
+								<property>
+									gear/unit[2]/compression-velocity-fps
+								</property>
 							</product>
 						</ifthen>
 					</sum>
 				</function>
 			</strut_force>
-			<max_steer unit="DEG"> 0.0 </max_steer>
-			<brake_group> RIGHT </brake_group>
+
+			<max_steer unit="DEG">0.0</max_steer>
+			<brake_group>RIGHT</brake_group>
 			<retractable>1</retractable>
 		</contact>
 
-		<contact type="STRUCTURE" name="TAIL_SKID">
+
+		<!--
+			Existing strike contacts. These are not a complete collision
+			envelope; engine-nacelle and wingtip contacts remain absent.
+		-->
+
+		<contact name="TAIL_SKID" type="STRUCTURE">
 			<location unit="IN">
-				<x> 1417.05 </x>
-				<y> 0 </y>
-				<z> -13.5 </z> <!-- BWL 194.60 -->
+				<x>1417.05</x>
+				<y>0.00</y>
+				<z>-13.50</z> <!-- BWL 194.60 -->
 			</location>
-			<static_friction> 1 </static_friction>
-			<dynamic_friction> 1 </dynamic_friction>
-			<rolling_friction> 0 </rolling_friction>
-			<spring_coeff unit="LBS/FT"> 20000 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 5000 </damping_coeff>
-			<max_steer unit="DEG"> 0 </max_steer>
-			<brake_group> NONE </brake_group>
-			<retractable> 0 </retractable>
+
+			<static_friction>1.00</static_friction>
+			<dynamic_friction>1.00</dynamic_friction>
+			<rolling_friction>0.00</rolling_friction>
+
+			<spring_coeff unit="LBS/FT">20000.0</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">5000.0</damping_coeff>
+
+			<max_steer unit="DEG">0.0</max_steer>
+			<brake_group>NONE</brake_group>
+			<retractable>0</retractable>
 		</contact>
 
-		<contact type="STRUCTURE" name="NOSE">
+
+		<contact name="NOSE" type="STRUCTURE">
 			<location unit="IN">
-				<x> 0 </x>
-				<y> 0 </y>
-				<z> 0 </z>
+				<x>0.00</x>
+				<y>0.00</y>
+				<z>0.00</z>
 			</location>
-			<static_friction> 1 </static_friction>
-			<dynamic_friction> 1 </dynamic_friction>
-			<rolling_friction> 0 </rolling_friction>
-			<spring_coeff unit="LBS/FT"> 20000 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 5000 </damping_coeff>
-			<max_steer unit="DEG"> 0 </max_steer>
-			<brake_group> NONE </brake_group>
-			<retractable> 0 </retractable>
+
+			<static_friction>1.00</static_friction>
+			<dynamic_friction>1.00</dynamic_friction>
+			<rolling_friction>0.00</rolling_friction>
+
+			<spring_coeff unit="LBS/FT">20000.0</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">5000.0</damping_coeff>
+
+			<max_steer unit="DEG">0.0</max_steer>
+			<brake_group>NONE</brake_group>
+			<retractable>0</retractable>
 		</contact>
+
 	</ground_reactions>
 
+	<external_reactions>
+
+		<!--
+			Pushback/towing force.
+
+			The force name must match Systems/pushback.xml, which writes
+			to external_reactions/pushback/magnitude.
+
+			The longitudinal location matches the nose-gear station.
+			The vertical location represents an approximate tow-fitting
+			height rather than the tire-ground contact patch.
+		-->
+		<force name="pushback" frame="BODY">
+			<location unit="IN">
+				<x>161.00</x>
+				<y>0.00</y>
+				<z>-71.00</z>
+			</location>
+
+			<!--
+				Positive magnitude pulls the aircraft forward.
+				Negative magnitude pushes the aircraft backward.
+			-->
+			<direction>
+				<x>1.00</x>
+				<y>0.00</y>
+				<z>0.00</z>
+			</direction>
+		</force>
+
+
+		<!--
+			Additional left-engine reverse-flow drag.
+
+			Magnitude is supplied by:
+			external_reactions/reverse-drag-left/magnitude
+		-->
+		<force name="reverse-drag-left" frame="BODY">
+			<location unit="IN">
+				<x>715.60</x>
+				<y>-193.68</y>
+				<z>-52.38</z>
+			</location>
+
+			<direction>
+				<x>-1.00</x>
+				<y>0.00</y>
+				<z>0.00</z>
+			</direction>
+		</force>
+
+
+		<!--
+			Additional right-engine reverse-flow drag.
+
+			Magnitude is supplied by:
+			external_reactions/reverse-drag-right/magnitude
+		-->
+		<force name="reverse-drag-right" frame="BODY">
+			<location unit="IN">
+				<x>715.60</x>
+				<y>193.68</y>
+				<z>-52.38</z>
+			</location>
+
+			<direction>
+				<x>-1.00</x>
+				<y>0.00</y>
+				<z>0.00</z>
+			</direction>
+		</force>
+
+	</external_reactions>
+
 	<propulsion>
+
+		<!--
+			Tank index contract used by Systems/fuel.xml:
+
+			0 = left main tank
+			1 = right main tank
+			2 = center tank
+			3 = left-engine feed manifold
+			4 = right-engine feed manifold
+
+			Do not reorder these tanks without updating Systems/fuel.xml
+			and the engine <feed> indices.
+		-->
+
+
+		<!-- Left engine -->
 		<engine file="cfm56_7b26">
-			<location unit="IN">
-				<x>  715.6 </x> <!-- value from simulator data -->
-				<y> -193.68 </y> <!-- value from simulator data -->
-				<z>  -52.38 </z> <!-- BWL 155.72 -->
-			</location>
-			<orient unit="DEG">
-				<roll>  0 </roll>
-				<pitch> 0 </pitch>
-				<yaw>   1 </yaw>
-			</orient>
+
+			<!--
+				Engine 1 burns only from feed manifold tank 3.
+				Systems/fuel.xml replenishes tank 3 from the selected
+				main or center-tank pumps.
+			-->
 			<feed>3</feed>
+
+			<!--
+				JSBSim uses only the thruster location and orientation.
+				Positive yaw on the left engine points the thrust line
+				slightly inward.
+			-->
 			<thruster file="direct">
 				<location unit="IN">
-					<x>  715.6 </x> <!-- value from simulator data -->
-					<y> -193.68 </y> <!-- value from simulator data -->
-					<z>  -52.38 </z> <!-- BWL 155.72 -->
+					<x>715.60</x>
+					<y>-193.68</y>
+					<z>-52.38</z> <!-- BWL 155.72 -->
 				</location>
+
 				<orient unit="DEG">
-					<roll>  0 </roll>
-					<pitch> 0 </pitch>
-					<yaw>   1 </yaw>
-				</orient>
-			</thruster>
-		</engine>
-		<engine file="cfm56_7b26">
-			<location unit="IN">
-				<x> 715.6 </x> <!-- value from simulator data -->
-				<y> 193.68 </y> <!-- value from simulator data -->
-				<z>  -52.38 </z> <!-- BWL 155.72 -->
-			</location>
-			<orient unit="DEG">
-				<roll>  0 </roll>
-				<pitch> 0 </pitch>
-				<yaw>  -1 </yaw>
-			</orient>
-			<feed>4</feed>
-			<thruster file="direct">
-				<location unit="IN">
-					<x> 715.6 </x> <!-- value from simulator data -->
-					<y> 193.68 </y> <!-- value from simulator data -->
-					<z>  -52.38 </z> <!-- BWL 155.72 -->
-				</location>
-				<orient unit="DEG">
-					<roll>  0 </roll>
-					<pitch> 0 </pitch>
-					<yaw>   -1 </yaw>
+					<roll>0.00</roll>
+					<pitch>0.00</pitch>
+					<yaw>1.00</yaw>
 				</orient>
 			</thruster>
 		</engine>
 
-		<tank type="FUEL"><!-- Left wing tank -->
+
+		<!-- Right engine -->
+		<engine file="cfm56_7b26">
+
+			<!-- Right-engine feed manifold: tank 4. -->
+			<feed>4</feed>
+
+			<thruster file="direct">
+				<location unit="IN">
+					<x>715.60</x>
+					<y>193.68</y>
+					<z>-52.38</z> <!-- BWL 155.72 -->
+				</location>
+
+				<orient unit="DEG">
+					<roll>0.00</roll>
+					<pitch>0.00</pitch>
+					<yaw>-1.00</yaw>
+				</orient>
+			</thruster>
+		</engine>
+
+
+		<!-- ========================================================= -->
+		<!-- Storage tanks: indices 0-2                               -->
+		<!-- ========================================================= -->
+
+
+		<tank name="Left main tank" type="FUEL">
 			<location unit="IN">
-				<x> 767.01 </x> <!-- based on trimsheet calculation. Correct value -->
-				<y> -350 </y>
-				<z> 26.58 </z>
+				<!-- Full-tank fuel CG. -->
+				<x>767.01</x>
+				<y>-350.00</y>
+				<z>26.58</z>
 			</location>
+
 			<drain_location unit="IN">
-				<x> 703.09</x> <!-- based on trimsheet calculation. Correct value -->
-				<y> -200 </y>
-				<z> 10.91 </z>
+				<!-- Fuel CG approached as the tank empties. -->
+				<x>703.09</x>
+				<y>-200.00</y>
+				<z>10.91</z>
 			</drain_location>
-			<capacity unit="LBS"> 8630 </capacity>
-			<contents unit="LBS"> 0 </contents>
-			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
+
+			<capacity unit="LBS">8630.00</capacity>
+			<contents unit="LBS">0.00</contents>
+
+			<!-- Fuel grade also establishes density for reporting. -->
+			<type>JET-A1</type>
+			<temperature>59.0</temperature>
 		</tank>
-		<tank type="FUEL"><!-- Right wing tank -->
+
+
+		<tank name="Right main tank" type="FUEL">
 			<location unit="IN">
-				<x> 767.01 </x> <!-- based on trimsheet calculation. Correct value -->
-				<y> 350 </y>
-				<z> 26.58 </z>
+				<x>767.01</x>
+				<y>350.00</y>
+				<z>26.58</z>
 			</location>
+
 			<drain_location unit="IN">
-				<x> 703.09</x> <!-- based on trimsheet calculation. Correct value -->
-				<y> 200 </y>
-				<z> 10.91 </z>
+				<x>703.09</x>
+				<y>200.00</y>
+				<z>10.91</z>
 			</drain_location>
-			<capacity unit="LBS"> 8630 </capacity>
-			<contents unit="LBS"> 0 </contents>
-			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
+
+			<capacity unit="LBS">8630.00</capacity>
+			<contents unit="LBS">0.00</contents>
+
+			<type>JET-A1</type>
+			<temperature>59.0</temperature>
 		</tank>
-		<tank type="FUEL"><!-- Center tank -->
+
+
+		<tank name="Center tank" type="FUEL">
 			<location unit="IN">
-				<x> 675.41 </x> <!-- based on trimsheet calculation. Correct value -->
-				<y>   0 </y>
-				<z> -19.54 </z>
+				<x>675.41</x>
+				<y>0.00</y>
+				<z>-19.54</z>
 			</location>
+
 			<drain_location unit="IN">
-				<x> 675.46 </x> <!-- based on trimsheet calculation. Correct value -->
-				<y> 0 </y>
-				<z> -97.4 </z>
+				<x>675.46</x>
+				<y>0.00</y>
+				<z>-97.40</z>
 			</drain_location>
-			<capacity unit="LBS"> 28803 </capacity>
-			<contents unit="LBS">  0 </contents>
-			<temperature> 59.0 </temperature> <!-- Fuel temp in degrees F -->
+
+			<capacity unit="LBS">28803.00</capacity>
+			<contents unit="LBS">0.00</contents>
+
+			<type>JET-A1</type>
+			<temperature>59.0</temperature>
 		</tank>
-		<tank type="FUEL"><!-- Feed pipe for left engine -->
+
+
+		<!-- ========================================================= -->
+		<!-- Engine feed manifolds: indices 3-4                        -->
+		<!-- ========================================================= -->
+
+
+		<tank name="Left engine feed manifold" type="FUEL">
 			<location unit="IN">
-				<x> 700 </x>
-				<y>-193 </y>
-				<z> -40 </z>
+				<x>700.00</x>
+				<y>-193.00</y>
+				<z>-40.00</z>
 			</location>
-			<capacity unit="LBS"> 0.5 </capacity>
-			<contents unit="LBS"> 0.25 </contents>
+
+			<!--
+				Small buffer tank used by Systems/fuel.xml.
+				Engine 1 consumes directly from this tank.
+			-->
+			<capacity unit="LBS">0.50</capacity>
+			<contents unit="LBS">0.25</contents>
+
+			<type>JET-A1</type>
 		</tank>
-		<tank type="FUEL"><!-- Feed pipe for right engine -->
+
+
+		<tank name="Right engine feed manifold" type="FUEL">
 			<location unit="IN">
-				<x> 700 </x>
-				<y> 193 </y>
-				<z> -40 </z>
+				<x>700.00</x>
+				<y>193.00</y>
+				<z>-40.00</z>
 			</location>
-			<capacity unit="LBS"> 0.5 </capacity>
-			<contents unit="LBS"> 0.25 </contents>
+
+			<!-- Engine 2 consumes directly from this tank. -->
+			<capacity unit="LBS">0.50</capacity>
+			<contents unit="LBS">0.25</contents>
+
+			<type>JET-A1</type>
 		</tank>
+
 	</propulsion>
 
 	<system file="pushback"/>
@@ -702,61 +971,66 @@
 		
 		<channel name="Yaw">
 
+			<!--
+				Use the hydraulic-system output. It already includes pilot
+				rudder, rudder trim, hydraulic availability and actuator rate.
+			-->
 			<summer name="Rudder Command Sum">
-				<input>fcs/rudder-cmd-norm</input>
-				<input>fcs/yaw-trim-cmd-norm</input>
+				<input>/controls/flight/rudder-sum</input>
 				<clipto>
-					<min>-1</min>
-					<max> 1</max>
+					<min>-1.0</min>
+					<max>1.0</max>
 				</clipto>
 			</summer>
 
-			<!--Yaw damper-->        
+			<!-- High-pass yaw-rate damping. -->
 			<washout_filter name="yaw-wf">
 				<input>velocities/r-aero-rad_sec</input>
-				<c1>4</c1>
+				<c1>4.0</c1>
 			</washout_filter>
 
 			<pure_gain name="Yaw Damper">
 				<input>fcs/yaw-wf</input>
-				<gain>5</gain>
+				<gain>5.0</gain>
 			</pure_gain>
 
-
-			<!--Slip stabilizer-->
+			<!-- Disable lateral-acceleration feedback near or on the ground. -->
 			<switch name="accelerations/Ny-switched">
 				<default value="0.0"/>
 				<test logic="AND" value="accelerations/Ny">
-					aero/h_b-mac-ft GE 1
+					aero/h_b-mac-ft GE 1.0
 					/b737/controls/flight/yaw-damper NE 0
 				</test>
 			</switch>
 
-			<pid name="fcs/yaw-slip">
+			<!--
+				P-only slip correction. The former positive integral gain
+				opposed the proportional correction and retained stale bias.
+			-->
+			<pure_gain name="fcs/yaw-slip">
 				<input>accelerations/Ny-switched</input>
-				<kp> -0.1 </kp>
-				<ki> 0.05 </ki>
-				<kd> 0.0 </kd>
+				<gain>-0.10</gain>
 				<clipto>
 					<min>-0.12</min>
 					<max>0.12</max>
 				</clipto>
-				<!--<output>fcs/yaw-slip-out</output> possible for debug -->
-			</pid>
+			</pure_gain>
 
 			<summer name="Yaw Damper Sum">
 				<input>fcs/yaw-damper</input>
 				<input>fcs/yaw-slip</input>
 				<clipto>
 					<min>-0.12</min>
-					<max> 0.12</max>
+					<max>0.12</max>
 				</clipto>
 			</summer>
 
 			<switch name="Yaw Damper Final">
 				<default value="0.0"/>
-				<test value="fcs/yaw-damper-sum">
-					/b737/controls/flight/yaw-damper ne 0
+
+				<test logic="AND" value="fcs/yaw-damper-sum">
+					/b737/controls/flight/yaw-damper NE 0
+					/systems/hydraulic/rudder-active EQ 1
 				</test>
 			</switch>
 
@@ -764,8 +1038,8 @@
 				<input>fcs/rudder-command-sum</input>
 				<input>fcs/yaw-damper-final</input>
 				<clipto>
-					<min>-1</min>
-					<max> 1</max>
+					<min>-1.0</min>
+					<max>1.0</max>
 				</clipto>
 			</summer>
 
@@ -773,22 +1047,22 @@
 				<input>fcs/rudder-sum-cmd</input>
 				<traverse>
 					<setting>
-						<position>-1</position>
-						<time>0</time>
+						<position>-1.0</position>
+						<time>0.0</time>
 					</setting>
 					<setting>
-						<position>1</position>
-						<time>0.909</time> <!-- from reports about problems with jammed rudder -->
+						<position>1.0</position>
+						<time>0.909</time>
 					</setting>
 				</traverse>
 				<output>fcs/rudder-sum</output>
 			</kinematic>
 
-			<aerosurface_scale name="Rudder Control"> <!-- -30...+30 degrees range -->
+			<aerosurface_scale name="Rudder Control">
 				<input>fcs/rudder-sum</input>
 				<range>
 					<min>-0.523</min>
-					<max> 0.523</max>
+					<max>0.523</max>
 				</range>
 				<output>fcs/rudder-pos-rad</output>
 			</aerosurface_scale>
@@ -797,11 +1071,11 @@
 				<input>fcs/rudder-pos-rad</input>
 				<domain>
 					<min>-0.523</min>
-					<max> 0.523</max>
+					<max>0.523</max>
 				</domain>
 				<range>
-					<min>-1</min>
-					<max> 1</max>
+					<min>-1.0</min>
+					<max>1.0</max>
 				</range>
 				<output>fcs/rudder-pos-norm</output>
 			</aerosurface_scale>
@@ -1224,25 +1498,27 @@
 
 		<channel name="Autobrake">
 
-			<switch name="fcs/autobrake/errorfree-target-decel-fps_sec2-filtered">
+			<!-- Reduce MAX landing deceleration below approximately 79 kt. -->
+			<switch name="fcs/autobrake/target-decel-fps_sec2-filtered">
 				<default value="fcs/autobrake/target-decel-fps_sec2"/>
-				<test value="12">
-					velocities/u-fps LE 134
-					fcs/autobrake/target-decel-fps_sec2 == 14
+				<test logic="AND" value="12.0">
+					velocities/u-fps LE 134.0
+					fcs/autobrake/target-decel-fps_sec2 EQ 14.0
 				</test>
-				<output>fcs/autobrake/target-decel-fps_sec2-filtered</output>
 			</switch>
 
 			<summer name="fcs/autobrake/time-work">
-				<input> sim-time-sec </input>
-				<input>-fcs/autobrake/start-time-sec </input>
+				<input>sim-time-sec</input>
+				<input>-fcs/autobrake/start-time-sec</input>
 			</summer>
 
+			<!-- Initial 0-to-3 ft/s^2 ramp over 1.5 seconds. -->
 			<pure_gain name="fcs/autobrake/target-decel-15sec">
 				<input>fcs/autobrake/time-work</input>
-				<gain>2</gain>
+				<gain>2.0</gain>
 			</pure_gain>
 
+			<!-- Ramp from 3 ft/s^2 to the selected target by 2.5 seconds. -->
 			<fcs_function name="fcs/autobrake/target-decel-25sec">
 				<function>
 					<sum>
@@ -1250,15 +1526,15 @@
 							<property>fcs/autobrake/time-work</property>
 							<sum>
 								<property>fcs/autobrake/target-decel-fps_sec2-filtered</property>
-								<value>-3</value>
+								<value>-3.0</value>
 							</sum>
 						</product>
 						<sum>
-							<value>3</value>
+							<value>3.0</value>
 							<product>
 								<sum>
 									<property>fcs/autobrake/target-decel-fps_sec2-filtered</property>
-									<value>-3</value>
+									<value>-3.0</value>
 								</sum>
 								<value>-1.5</value>
 							</product>
@@ -1267,113 +1543,80 @@
 				</function>
 			</fcs_function>
 
-			<switch name="fcs/autobrake/errorfree-target-decel-fps_sec2-final">
+			<switch name="fcs/autobrake/target-decel-fps_sec2-final">
 				<default value="fcs/autobrake/target-decel-fps_sec2-filtered"/>
-				<test value="25">
-					fcs/autobrake/target-decel-fps_sec2-filtered == 25
+				<!-- RTO receives maximum braking immediately. -->
+				<test value="25.0">
+					fcs/autobrake/target-decel-fps_sec2-filtered EQ 25.0
 				</test>
 				<test value="fcs/autobrake/target-decel-15sec">
 					fcs/autobrake/time-work LE 1.5
 				</test>
-				<test value="fcs/autobrake/target-decel-25sec">
-					fcs/autobrake/time-work LE 2.5
+				<test logic="AND" value="fcs/autobrake/target-decel-25sec">
 					fcs/autobrake/time-work GT 1.5
+					fcs/autobrake/time-work LE 2.5
 				</test>
-				<output>fcs/autobrake/target-decel-fps_sec2-final</output>
 			</switch>
 
+			<!-- Positive error requests additional braking. -->
 			<summer name="fcs/autobrake/decel-error">
-				<input> fcs/autobrake/target-decel-fps_sec2-final </input>
-				<input> accelerations/udot-ft_sec2 </input>
+				<input>fcs/autobrake/target-decel-fps_sec2-final</input>
+				<input>accelerations/udot-ft_sec2</input>
 			</summer>
 
-			<pure_gain>
+			<!--
+				Trigger values: -1 resets, 0 integrates, +1 freezes.
+				The saturation tests prevent integrator windup.
+			-->
+			<switch name="fcs/autobrake/controller-trigger">
+				<default value="0.0"/>
+				<test logic="OR" value="-1.0">
+					fcs/autobrake/autobrake-in-use NE 1
+					/controls/gear/autobrakes EQ 0
+				</test>
+				<test logic="AND" value="1.0">
+					fcs/autobrake/autobrake-cmd GE 0.999
+					fcs/autobrake/decel-error GT 0.0
+				</test>
+				<test logic="AND" value="1.0">
+					fcs/autobrake/autobrake-cmd LE 0.001
+					fcs/autobrake/decel-error LT 0.0
+				</test>
+			</switch>
+
+			<!--
+				Equivalent to the former 0.01-per-cycle controller at
+				a 120 Hz FDM rate, but independent of frame rate.
+			-->
+			<pid name="fcs/autobrake/autobrake-cmd">
 				<input>fcs/autobrake/decel-error</input>
-				<gain>0.01</gain>
-				<output>fcs/autobrake/brake-cmd-gain</output>
-			</pure_gain>
-
-			<summer name="fcs/autobrake/errorfree-autobrake-cmd">
-				<input> fcs/autobrake/autobrake-cmd </input>
-				<input> fcs/autobrake/brake-cmd-gain </input>
+				<kp>0.0</kp>
+				<ki type="trap">1.2</ki>
+				<kd>0.0</kd>
+				<trigger>fcs/autobrake/controller-trigger</trigger>
 				<clipto>
-					<min>0</min>
-					<max>1</max>
+					<min>0.0</min>
+					<max>1.0</max>
 				</clipto>
-				<output>fcs/autobrake/autobrake-cmd</output>
-			</summer>
+			</pid>
 
 			<switch name="fcs/autobrake/brake-left-cmd-final">
 				<default value="fcs/brake-left-cmd"/>
-				<test value="fcs/autobrake/autobrake-cmd">
-					fcs/autobrake/autobrake-in-use == 1
+				<test logic="AND" value="fcs/autobrake/autobrake-cmd">
+					fcs/autobrake/autobrake-in-use EQ 1
+					/controls/gear/autobrakes NE 0
 				</test>
 				<output>fcs/left-brake-cmd-norm</output>
 			</switch>
 
 			<switch name="fcs/autobrake/brake-right-cmd-final">
 				<default value="fcs/brake-right-cmd"/>
-				<test value="fcs/autobrake/autobrake-cmd">
-					fcs/autobrake/autobrake-in-use == 1
+				<test logic="AND" value="fcs/autobrake/autobrake-cmd">
+					fcs/autobrake/autobrake-in-use EQ 1
+					/controls/gear/autobrakes NE 0
 				</test>
 				<output>fcs/right-brake-cmd-norm</output>
 			</switch>
-
-		</channel>
-
-		<channel name="Throttle">
-
-			<switch name="fcs/throttle/max-reverse">
-				<default value="1"/>
-				<test value="0.742">
-					/engines/engine[0]/reverser-pos-norm GT 0.6
-					/engines/engine[1]/reverser-pos-norm GT 0.6
-				</test>
-				<test value="0.119">
-					/engines/engine[0]/reverser-pos-norm LE 0.6
-					/engines/engine[1]/reverser-pos-norm LE 0.6
-					/engines/engine[0]/reverser-pos-norm GT 0
-					/engines/engine[1]/reverser-pos-norm GT 0
-				</test>
-			</switch>
-
-			<fcs_function name="fcs/throttle/throttle-cmd-norm[0]">
-				<function>
-					<product>
-						<property>/controls/engines/engine[0]/throttle</property>
-						<value>1</value>
-					</product>
-				</function>
-				<output>fcs/throttle-cmd-norm[0]</output>
-			</fcs_function>
-
-			<summer name="fcs/throttle/throttle-pos-norm[0]">
-				<input>fcs/throttle/throttle-cmd-norm[0]</input>
-				<clipto>
-					<min>0.0</min>
-					<max>fcs/throttle/max-reverse</max>
-				</clipto>
-				<output>fcs/throttle-pos-norm[0]</output>
-			</summer>
-
-			<fcs_function name="fcs/throttle/throttle-cmd-norm[1]">
-				<function>
-					<product>
-						<property>/controls/engines/engine[1]/throttle</property>
-						<value>1</value>
-					</product>
-				</function>
-				<output>fcs/throttle-cmd-norm[1]</output>
-			</fcs_function>
-
-			<summer name="fcs/throttle/throttle-pos-norm[1]">
-				<input>fcs/throttle/throttle-cmd-norm[1]</input>
-				<clipto>
-					<min>0.0</min>
-					<max>fcs/throttle/max-reverse</max>
-				</clipto>
-				<output>fcs/throttle-pos-norm[1]</output>
-			</summer>
 
 		</channel>
 
@@ -1458,35 +1701,115 @@
 			</fcs_function>
 			
 		</channel>
+
+		<channel name="Throttle">
+
+			<!-- Left-engine reverse-throttle limit. -->
+			<switch name="fcs/throttle/max-reverse[0]">
+				<default value="1.0"/>
+				<test value="0.742">
+					/engines/engine[0]/reverser-pos-norm GT 0.6
+				</test>
+				<test value="0.119">
+					/engines/engine[0]/reverser-pos-norm GT 0.0
+				</test>
+			</switch>
+
+			<!-- Right-engine reverse-throttle limit. -->
+			<switch name="fcs/throttle/max-reverse[1]">
+				<default value="1.0"/>
+				<test value="0.742">
+					/engines/engine[1]/reverser-pos-norm GT 0.6
+				</test>
+				<test value="0.119">
+					/engines/engine[1]/reverser-pos-norm GT 0.0
+				</test>
+			</switch>
+
+			<fcs_function name="fcs/throttle/throttle-cmd-norm[0]">
+				<function>
+					<product>
+						<property>/controls/engines/engine[0]/throttle</property>
+						<value>1.0</value>
+					</product>
+				</function>
+				<output>fcs/throttle-cmd-norm[0]</output>
+			</fcs_function>
+
+			<summer name="fcs/throttle/throttle-pos-norm[0]">
+				<input>fcs/throttle/throttle-cmd-norm[0]</input>
+				<clipto>
+					<min>0.0</min>
+					<max>fcs/throttle/max-reverse[0]</max>
+				</clipto>
+				<output>fcs/throttle-pos-norm[0]</output>
+			</summer>
+
+			<fcs_function name="fcs/throttle/throttle-cmd-norm[1]">
+				<function>
+					<product>
+						<property>/controls/engines/engine[1]/throttle</property>
+						<value>1.0</value>
+					</product>
+				</function>
+				<output>fcs/throttle-cmd-norm[1]</output>
+			</fcs_function>
+
+			<summer name="fcs/throttle/throttle-pos-norm[1]">
+				<input>fcs/throttle/throttle-cmd-norm[1]</input>
+				<clipto>
+					<min>0.0</min>
+					<max>fcs/throttle/max-reverse[1]</max>
+				</clipto>
+				<output>fcs/throttle-pos-norm[1]</output>
+			</summer>
+
+		</channel>
+
+
 		
 		<channel name="Tiller">
-			
-			<fcs_function name="Nose Wheel Steering 0">
-				<function name="fcs/steer-nose-deg[0]">
-					<description>Steering command for nose gear</description>
-                                            <table>
-                                                    <independentVar lookup="row">/velocities/groundspeed-kt</independentVar>
-                                                    <independentVar lookup="column">/controls/flight/rudder</independentVar>
-                                                    <tableData>
-                                                                    -1  0   1
-                                                    30.000 -70  0  70
-                                                    30.001 -10  0  10
-                                                    </tableData>
-                                            </table>
+
+			<!--
+				Continuous speed-scheduled steering. This preserves the former
+				70-degree low-speed and 10-degree high-speed endpoints without
+				the 0.001-knot discontinuity.
+			-->
+			<fcs_function name="fcs/steer-nose-deg[0]">
+				<function>
+					<description>Speed-scheduled nose-wheel steering command</description>
+					<table>
+						<independentVar lookup="row">/velocities/groundspeed-kt</independentVar>
+						<independentVar lookup="column">/controls/flight/rudder</independentVar>
+						<tableData>
+							       -1.0   0.0   1.0
+							0.0    -70.0   0.0  70.0
+							10.0   -70.0   0.0  70.0
+							20.0   -45.0   0.0  45.0
+							30.0   -10.0   0.0  10.0
+							200.0  -10.0   0.0  10.0
+						</tableData>
+					</table>
 				</function>
 			</fcs_function>
-			
+
 			<actuator name="Gear Nose Actuator">
 				<input>fcs/steer-nose-deg[0]</input>
-				<rate_limit>70</rate_limit>
+				<rate_limit>70.0</rate_limit>
 				<output>fcs/steer-pos-deg[0]</output>
 			</actuator>
-			
+
 		</channel>
 
 	</flight_control>
 
 	<aerodynamics>
+		<!--
+			Aerodynamic forces are applied at AERORP. JSBSim automatically
+			adds the AERORP-to-current-CG moment (r x F). Explicit control-
+			surface moments below therefore contain only the fixed arm from
+			AERORP to the modeled surface.
+		-->
 
 		<function name="aero/function/kCDge">
 			<description>Change_in_drag_due_to_ground_effect</description>
@@ -1527,28 +1850,6 @@
                                               1.1000	1.0000
                                       </tableData>
                               </table>
-		</function>
-
-		<function name="aero/function/kCLsb">
-			<description>Change_in_lift_due_to_speed_brake</description>
-                              <table>
-                                      <independentVar>fcs/speedbrake-pos-norm</independentVar>
-                                      <tableData>
-                                              0.0000	1.0
-                                              0.1000	0.85
-                                      </tableData>
-                              </table>
-		</function>
-
-		<function name="aero/function/kCLsp">
-			<description>Change_in_lift_due_to_spoilers</description>
-				  <table>
-					  <independentVar>fcs/spoiler-pos-norm</independentVar>
-					  <tableData>
-						  0.0000	1.0
-						  0.1000	0.6
-					  </tableData>
-				  </table>
 		</function>
 
 		<axis name="DRAG">
@@ -1924,15 +2225,14 @@
 
 			<function name="aero/coefficient/Cldla">
 				<description>Roll_moment_due_to_left_aileron</description>
+				<!--
+					The aileron lift force is applied at AERORP by JSBSim.
+					This term supplies only the fixed spanwise arm from AERORP
+					to the left aileron; JSBSim adds the AERORP-to-CG moment.
+				-->
 				<product>
 					<property>aero/coefficient/CLdlail</property>
-					<sum>
-						<value>44.5</value>
-						<quotient>
-							<property>inertia/cg-y-in</property>
-							<value>12</value>
-						</quotient>
-					</sum>
+					<value>44.5</value>
 				</product>
 			</function>
 
@@ -1940,13 +2240,7 @@
 				<description>Roll_moment_due_to_right_aileron</description>
 				<product>
 					<property>aero/coefficient/CLdrail</property>
-					<sum>
-						<value>-44.5</value>
-						<quotient>
-							<property>inertia/cg-y-in</property>
-							<value>12</value>
-						</quotient>
-					</sum>
+					<value>-44.5</value>
 				</product>
 			</function>
 
@@ -1954,13 +2248,7 @@
 				<description>Roll_moment_due_to_spoilers_2_3</description>
 				<product>
 					<property>aero/coefficient/CLdspl23</property>
-					<sum>
-						<value>30</value>
-						<quotient>
-							<property>inertia/cg-y-in</property>
-							<value>12</value>
-						</quotient>
-					</sum>
+					<value>30.0</value>
 				</product>
 			</function>
 
@@ -1968,13 +2256,7 @@
 				<description>Roll_moment_due_to_spoilers_4_5</description>
 				<product>
 					<property>aero/coefficient/CLdspl45</property>
-					<sum>
-						<value>24.5</value>
-						<quotient>
-							<property>inertia/cg-y-in</property>
-							<value>12</value>
-						</quotient>
-					</sum>
+					<value>24.5</value>
 				</product>
 			</function>
 
@@ -1982,13 +2264,7 @@
 				<description>Roll_moment_due_to_spoilers_8_9</description>
 				<product>
 					<property>aero/coefficient/CLdspl89</property>
-					<sum>
-						<value>-24.5</value>
-						<quotient>
-							<property>inertia/cg-y-in</property>
-							<value>12</value>
-						</quotient>
-					</sum>
+					<value>-24.5</value>
 				</product>
 			</function>
 
@@ -1996,13 +2272,7 @@
 				<description>Roll_moment_due_to_spoilers_10_11</description>
 				<product>
 					<property>aero/coefficient/CLdspl1011</property>
-					<sum>
-						<value>-30</value>
-						<quotient>
-							<property>inertia/cg-y-in</property>
-							<value>12</value>
-						</quotient>
-					</sum>
+					<value>-30.0</value>
 				</product>
 			</function>
 
@@ -2036,19 +2306,15 @@
 			</function>
 			<function name="aero/coefficient/Cmde">
 				<description>Pitch_moment_due_to_elevator</description>
+				<!--
+					CLde is applied at AERORP. The explicit moment therefore
+					uses only the AERORP-to-tail arm; JSBSim automatically
+					transfers the aerodynamic force from AERORP to the live CG.
+				-->
 				<product>
-					<sum>
-						<property>metrics/lh-ft</property>
-						<quotient>
-							<difference>
-								<value>734</value>
-								<property>inertia/cg-x-in</property>
-							</difference>
-							<value>12</value>
-						</quotient>
-					</sum>
+					<property>metrics/lh-ft</property>
 					<property>aero/coefficient/CLde</property>
-					<value>-1</value>
+					<value>-1.0</value>
 				</product>
 			</function>
 			<function name="aero/coefficient/Cmdstab">
@@ -2118,49 +2384,6 @@
 		</axis>
 	</aerodynamics>
 
-	<external_reactions>
-
-		<force name="tractor" frame="BODY">
-			<location unit="IN">
-				<x>  -139 </x>
-				<y>    0.0 </y>
-				<z>  -71.0 </z>
-			</location>
-			<direction>
-				<x>1</x>
-				<y>0</y>
-				<z>0</z>
-			</direction>
-		</force>
-
-		<force name="reverse-drag-left" frame="BODY">
-			<location unit="IN">
-				<x>  715.6  </x>
-				<y> -193.68 </y>
-				<z>  -52.38 </z>
-			</location>
-			<direction>
-				<x>   -1 </x>
-				<y>    0 </y>
-				<z>    0 </z>
-			</direction>
-		</force>
-
-		<force name="reverse-drag-right" frame="BODY">
-			<location unit="IN">
-				<x>  715.6  </x>
-				<y>  193.68 </y>
-				<z>  -52.38 </z>
-			</location>
-			<direction>
-				<x>   -1 </x>
-				<y>    0 </y>
-				<z>    0 </z>
-			</direction>
-		</force>
-
-	</external_reactions>
-
    <!-- <output name="B737_datalog.csv" rate=“120” type="CSV">
 		<property> /instrumentation/airspeed-indicator/indicated-speed-kt </property>
 		<property> /velocities/groundspeed-kt </property>
@@ -2181,4 +2404,3 @@
 	</output>-->
 
 </fdm_config>
-
